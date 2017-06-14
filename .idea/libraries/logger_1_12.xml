@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="logger-1.12">
+    <CLASSES>
+      <root url="jar://E:/android-sdk/.android/build-cache/5e52c9c9f5ac5712e98c93ebfb98182b072fba18/output/jars/classes.jar!/" />
+      <root url="file://E:/android-sdk/.android/build-cache/5e52c9c9f5ac5712e98c93ebfb98182b072fba18/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

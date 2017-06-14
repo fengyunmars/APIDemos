@@ -73,16 +73,16 @@ public class ApiDemos extends ListActivity {
 
         String[] prefixPath;
         String prefixWithSlash = prefix;
-        
+
         if (prefix.equals("")) {
             prefixPath = null;
         } else {
             prefixPath = prefix.split("/");
             prefixWithSlash = prefix + "/";
         }
-        
+
         int len = list.size();
-        
+
         Map<String, Boolean> entries = new HashMap<>();
 
         for (int i = 0; i < len; i++) {
@@ -91,9 +91,9 @@ public class ApiDemos extends ListActivity {
             String label = labelSeq != null
                     ? labelSeq.toString()
                     : info.activityInfo.name;
-            
+
             if (prefixWithSlash.length() == 0 || label.startsWith(prefixWithSlash)) {
-                
+
                 String[] labelPath = label.split("/");
 
                 String nextLabel = prefixPath == null ? labelPath[0] : labelPath[prefixPath.length];
@@ -112,7 +112,7 @@ public class ApiDemos extends ListActivity {
         }
 
         Collections.sort(myData, sDisplayNameComparator);
-        
+
         return myData;
     }
 
