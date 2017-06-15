@@ -367,4 +367,10 @@
         <item>NAVIGATION_MODE_LIST</item>
     </string-array>
 
+    <string-array name="drawer_menu">
+        <item>news</item>
+        <item>activity</item>
+        <item>setting</item>
+        <item>about</item>
+    </string-array>
 </resources>
