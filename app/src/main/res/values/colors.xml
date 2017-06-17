@@ -35,4 +35,10 @@
          background color. -->
     <color name="custom_theme_color">#b0b0ff</color>
 
+    <color name="status_bar_back">#ff676767</color> <!-- this is blended with immersive_bars to produce the desired status bar color i.e. background_super_dark -->
+
+    <color name="nev_item">#ffffffff</color>
+
+    <color name="text_primary_light">#ffffffff</color>
+    <color name="colorPrimaryDark">#ff676767</color>
 </resources>

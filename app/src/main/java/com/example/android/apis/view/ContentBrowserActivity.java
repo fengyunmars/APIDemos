@@ -52,7 +52,7 @@ public class ContentBrowserActivity extends Activity
         implements OnQueryTextListener, ActionBar.TabListener {
 
     /**
-     * Implementation of a view for displaying immersive content, using system UI
+     * Implementation of a view for displaying immersive 拟真的 content, using system UI
      * flags to transition in and out of modes where the user is focused on that
      * content.
      */
@@ -89,14 +89,15 @@ public class ContentBrowserActivity extends Activity
         }
 
         public void init(TextView title, SeekBar seek) {
-            // This called by the containing activity to supply the surrounding
+            // This called by the containing activity to supply the surrounding 周围的
             // state of the content browser that it will interact with.
             mTitleView = title;
             mSeekView = seek;
             setNavVisibility(true);
         }
 
-        @Override public void onSystemUiVisibilityChange(int visibility) {
+        @Override
+        public void onSystemUiVisibilityChange(int visibility) {
             // Detect when we go out of low-profile mode, to also go out
             // of full screen.  We only do this when the low profile mode
             // is changing from its last state, and turning off.
@@ -108,10 +109,11 @@ public class ContentBrowserActivity extends Activity
             }
         }
 
-        @Override protected void onWindowVisibilityChanged(int visibility) {
+        @Override
+        protected void onWindowVisibilityChanged(int visibility) {
             super.onWindowVisibilityChanged(visibility);
 
-            // When we become visible, we show our navigation elements briefly
+            // When we become visible, we show our navigation elements briefly 简单的
             // before hiding them.
             setNavVisibility(true);
             getHandler().postDelayed(mNavHider, 2000);
@@ -131,6 +133,7 @@ public class ContentBrowserActivity extends Activity
         }
 
         void setBaseSystemUiVisibility(int visibility) {
+
             mBaseSystemUiVisibility = visibility;
         }
 

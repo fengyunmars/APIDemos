@@ -242,6 +242,11 @@
     <string name="toggle_dogs">Toggle dogs</string>
     <string name="long_click_for_context_menu">Long click for context menu</string>
 
+    <string name="open">open</string>
+
+    <string name="open_drawer">open drawer</string>
+    <string name="close_drawer">close drawer</string>
+
     <string name="local_service_started">Local service has started</string>
     <string name="local_service_stopped">Local service has stopped</string>
     <string name="local_service_label">Sample Local Service</string>
@@ -1577,4 +1582,24 @@
     <string name="process_text_no_text_process_intent_received">Try selecting some text in another app and find this app\'s name in the list of options for its selection menu.</string>
     <string name="process_text_send_title">Select text to process</string>
     <string name="process_text_send_description">Select a piece of text from this box to trigger the text selection action mode. In there, you will find \"ApiDemos\". That is because this app declares it can handle text processing intents. Try selecting that action to send the selected text to that activity and retrieve processed text back.</string>
+    <string name="app_name">ApiDemos</string>
+    <string name="one_text">Be kind one another</string>
+
+    <string name="zhihu" translatable="false">知乎日报</string>
+    <string name="topnews" translatable="false">网易头条</string>
+    <string name="meizi" translatable="false">每日看看</string>
+
+    <string name="pre_refresh_data" translatable="false">refresh_data</string>
+    <string name="pre_get_image" translatable="false">get_image</string>
+    <string name="pre_cache_size" translatable="false">cache_size</string>
+    <string name="pre_feedback" translatable="false">feedback</string>
+    <string name="pre_author" translatable="false">author</string>
+    <string name="pre_version" translatable="false">version</string>
+    <string name="pre_nav_color" translatable="false">pre_nav_color</string>
+    <string name="pre_use_local" translatable="false">pre_use_local</string>
+    <string name="pre_status_bar" translatable="false">pre_status_bar</string>
+
+    <string name="nevigation_item" translatable="false">nevigation_item</string>
+    <string name="title_activity_about">AboutActivity</string>
+
 </resources>
