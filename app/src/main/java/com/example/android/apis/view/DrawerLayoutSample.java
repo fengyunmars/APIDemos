@@ -2,10 +2,10 @@ package com.example.android.apis.view;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -101,7 +101,7 @@ public class DrawerLayoutSample extends Activity {
         @Nullable
         @Override
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-            View v = getLayoutInflater(savedInstanceState).inflate(R.layout.hello_world, container, false);
+            View v = getActivity().getLayoutInflater().inflate(R.layout.hello_world, container, false);
             TextView textview = (TextView) v.findViewById(R.id.text);
             int position = getArguments() == null? -1:getArguments().getInt(POSITION);
             textview.setText("current position is " + position);

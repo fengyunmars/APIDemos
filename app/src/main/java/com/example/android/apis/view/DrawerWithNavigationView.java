@@ -1,47 +1,35 @@
 package com.example.android.apis.view;
 
-import android.app.Activity;
+import android.app.Fragment;
 import android.content.Intent;
 import android.content.res.ColorStateList;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.app.Fragment;
 import android.support.v4.util.SimpleArrayMap;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.ActionMenuView;
 import android.support.v7.widget.SwitchCompat;
-import android.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowInsets;
-import android.view.animation.AnimationUtils;
 import android.widget.CompoundButton;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
-
+import android.support.v7.widget.Toolbar;
 
 import com.example.android.apis.AboutActivity;
-import com.example.android.apis.MainActivity;
 import com.example.android.apis.R;
 import com.example.android.apis.util.SharePreferenceUtil;
 import com.example.android.apis.util.ViewUtils;
 
-import java.io.File;
 
-
-public class DrawerWithNavigationView extends Activity {
+public class DrawerWithNavigationView extends AppCompatActivity {
 
     FrameLayout mFragmentContainer;
     Toolbar mToolbar;
@@ -69,6 +57,7 @@ public class DrawerWithNavigationView extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.drawerlayout_with_navigation_view);
         
@@ -76,7 +65,7 @@ public class DrawerWithNavigationView extends Activity {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         mNavView = (NavigationView) findViewById(R.id.nav_view);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer);
-        setActionBar(mToolbar);
+        setSupportActionBar(mToolbar);
 
         mToolbar.setOnMenuItemClickListener(onMenuItemClick);
 
