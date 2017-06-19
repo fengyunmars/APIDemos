@@ -101,7 +101,7 @@ public class DrawerLayoutSample extends Activity {
         @Nullable
         @Override
         public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-            View v = getActivity().getLayoutInflater().inflate(R.layout.hello_world, container, false);
+            View v = inflater.inflate(R.layout.hello_world, container, false);
             TextView textview = (TextView) v.findViewById(R.id.text);
             int position = getArguments() == null? -1:getArguments().getInt(POSITION);
             textview.setText("current position is " + position);

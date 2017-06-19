@@ -79,14 +79,15 @@ public class ActionBarTabs extends Activity {
      * is provided to each of these callbacks; if any operations are added
      * to it, it will be committed at the end of the full tab switch operation.
      * This lets tab switches be atomic without the app needing to track
-     * the interactions between different tabs.
+     * the interactions 互动 between different tabs.
      *
-     * NOTE: This is a very simple implementation that does not retain
+     * NOTE: This is a very simple implementation that does not retain 保持
      * fragment state of the non-visible tabs across activity instances.
      * Look at the FragmentTabs example for how to do a more complete
      * implementation.
      */
     private class TabListener implements ActionBar.TabListener {
+
         private TabContentFragment mFragment;
 
         public TabListener(TabContentFragment fragment) {
