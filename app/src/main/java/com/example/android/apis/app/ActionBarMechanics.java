@@ -23,9 +23,9 @@ import android.view.Window;
 import android.widget.Toast;
 
 /**
- * This demonstrates the basics of the Action Bar and how it interoperates with the
- * standard options menu. This demo is for informative purposes only; see ActionBarUsage for
- * an example of using the Action Bar in a more idiomatic manner.
+ * This demonstrates the basics of the Action Bar and how it interoperates 交互 with the
+ * standard options menu. This demo is for informative 提供信息 purposes only; see ActionBarUsage for
+ * an example of using the Action Bar in a more idiomatic 符合语言习惯 manner 方式 .
  */
 public class ActionBarMechanics extends Activity {
     @Override
@@ -52,14 +52,14 @@ public class ActionBarMechanics extends Activity {
 
         MenuItem actionItem = menu.add("Action Button");
 
-        // Items that show as actions should favor the "if room" setting, which will
+        // Items that show as actions should favor 支持 the "if room" setting, which will
         // prevent too many buttons from crowding the bar. Extra items will show in the
-        // overflow area.
+        //  area.
         actionItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
 
-        // Items that show as actions are strongly encouraged to use an icon.
+        // Items that show as actions are strongly encouraged 鼓励 to use an icon.
         // These icons are shown without a text description, and therefore should
-        // be sufficiently descriptive on their own.
+        // be sufficiently 足够的 descriptive on their own.
         actionItem.setIcon(android.R.drawable.ic_menu_share);
 
         return true;

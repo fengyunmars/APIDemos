@@ -29,12 +29,13 @@ import android.widget.Toast;
 import com.example.android.apis.R;
 
 /**
- * This demonstrates idiomatic usage of the Action Bar. The default Honeycomb theme
+ * This demonstrates idiomatic 符合语言习惯的 usage of the Action Bar. The default Honeycomb 3.0 蜂窝 theme
  * includes the action bar by default and a menu resource is used to populate the
  * menu data itself. If you'd like to see how these things work under the hood, see
  * ActionBarMechanics.
  */
 public class ActionBarUsage extends Activity implements OnQueryTextListener {
+
     TextView mSearchText;
     int mSortMode = -1;
 

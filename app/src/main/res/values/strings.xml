@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2007 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -1540,7 +1539,7 @@
     <!-- =========================== -->
     <!--  Security API demo strings  -->
     <!-- =========================== -->
-    <skip/>
+    <skip />
 
     <string name="keystore_entries_list">List of entries:</string>
 
@@ -1601,5 +1600,9 @@
 
     <string name="nevigation_item" translatable="false">nevigation_item</string>
     <string name="title_activity_about">AboutActivity</string>
+    <string name="textview01">textview01</string>
+    <string name="textview02">textview02</string>
+    <string name="textview03">textview03</string>
+    <string name="textview04">textview04</string>
 
 </resources>

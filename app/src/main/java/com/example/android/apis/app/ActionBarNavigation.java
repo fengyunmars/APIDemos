@@ -28,7 +28,7 @@ import android.widget.Toast;
 import com.example.android.apis.R;
 
 /**
- * This demonstrates implementing common navigation flows with the action bar.
+ * This demonstrates 展示 implementing common navigation flows with the action bar.
  */
 public class ActionBarNavigation extends Activity {
     @Override
