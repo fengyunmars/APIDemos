@@ -28,14 +28,15 @@ import android.widget.Toast;
 
 import com.example.android.apis.R;
 
+import java.lang.reflect.Method;
+
 /**
- * This demonstrates idiomatic 符合语言习惯的 usage of the Action Bar. The default Honeycomb 3.0 蜂窝 theme
+ * This demonstrates idiomatic usage of the Action Bar. The default Honeycomb theme
  * includes the action bar by default and a menu resource is used to populate the
  * menu data itself. If you'd like to see how these things work under the hood, see
  * ActionBarMechanics.
  */
 public class ActionBarUsage extends Activity implements OnQueryTextListener {
-
     TextView mSearchText;
     int mSortMode = -1;
 
@@ -48,9 +49,12 @@ public class ActionBarUsage extends Activity implements OnQueryTextListener {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        setIconEnable(menu, true);
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.actions, menu);
         SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+        searchView.setOnQueryTextListener(this);
+        return true;
     }
 
     @Override
@@ -69,7 +73,7 @@ public class ActionBarUsage extends Activity implements OnQueryTextListener {
     }
 
     // This method is specified as an onClick handler in the menu xml and will
-    // take precedence over the Activity's onOptionsItemSelected method.
+    // take precedence 优先 over the Activity's onOptionsItemSelected method.
     // See res/menu/actions.xml for more info.
     public void onSort(MenuItem item) {
         mSortMode = item.getItemId();
@@ -88,5 +92,21 @@ public class ActionBarUsage extends Activity implements OnQueryTextListener {
     public boolean onQueryTextSubmit(String query) {
         Toast.makeText(this, "Searching for: " + query + "...", Toast.LENGTH_SHORT).show();
         return true;
+    }
+
+    //enable为true时，菜单添加图标有效，enable为false时无效。4.0系统默认无效
+    private void setIconEnable(Menu menu, boolean enable) {
+        try {
+            Class<?> clazz = Class.forName("com.android.internal.view.menu.MenuBuilder");
+            Method m = clazz.getDeclaredMethod("setOptionalIconsVisible", boolean.class);
+            m.setAccessible(true);
+
+            //MenuBuilder实现Menu接口，创建菜单时，传进来的menu其实就是MenuBuilder对象(java的多态特征)
+            m.invoke(menu, enable);
+
+        } catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 }

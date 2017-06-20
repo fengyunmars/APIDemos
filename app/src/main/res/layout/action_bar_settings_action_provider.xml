@@ -24,7 +24,7 @@
     style="?android:attr/actionButtonStyle">
 
     <ImageButton android:id="@+id/button"
-        android:background="@drawable/ic_launcher_settings"
+        android:background="@drawable/ic_settings"
         android:layout_width="32dip"
         android:layout_height="32dip"
         android:layout_gravity="center"

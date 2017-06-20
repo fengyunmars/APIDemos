@@ -54,7 +54,7 @@ public class ActionBarSettingsActionProviderActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // If this callback does not handle the item click, onPerformDefaultAction
-        // of the ActionProvider is invoked. Hence, the provider encapsulates the
+        // of the ActionProvider is invoked. Hence 因此 , the provider encapsulates the
         // complete functionality of the menu item.
         Toast.makeText(this, R.string.action_bar_settings_action_provider_no_handling,
                 Toast.LENGTH_SHORT).show();
