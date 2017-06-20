@@ -33,7 +33,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * This activity demonstrates how to use an {@link android.view.ActionProvider}
+ * This activity demonstrates 显示 how to use an {@link android.view.ActionProvider}
  * for adding functionality to the Action Bar. In particular this demo is adding
  * a menu item with ShareActionProvider as its action provider. The
  * ShareActionProvider is responsible for managing the UI for sharing actions.
