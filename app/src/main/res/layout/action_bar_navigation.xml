@@ -15,35 +15,48 @@
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:padding="4dip"
-    android:gravity="center_horizontal"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal"
+              android:orientation="vertical"
+              android:padding="4dip">
 
     <TextView
-        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="16dp"
         android:layout_weight="0"
-        android:layout_marginTop="16dp" android:layout_marginBottom="16dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/action_bar_navigation_msg"/>
-
-    <TextView android:id="@+id/launchedfrom"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:layout_weight="0" android:layout_marginBottom="32dp"
+        android:text="@string/action_bar_navigation_msg"
+        />
+        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+    <TextView
+        android:id="@+id/launchedfrom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:layout_weight="0"
         android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-    <Button android:id="@+id/newactivity"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/newactivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:onClick="onNewActivity"
         android:text="@string/btn_newactivity">
-        <requestFocus />
+
+        <requestFocus/>
     </Button>
 
-    <Button android:id="@+id/newdoc"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/newdoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:onClick="onNewDocument"
         android:text="@string/btn_newdoc">
-        <requestFocus />
+
+        <requestFocus/>
     </Button>
 
 </LinearLayout>
