@@ -50,8 +50,6 @@ public class ActionBarUsage extends Activity implements OnQueryTextListener {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.actions, menu);
         SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
-        searchView.setOnQueryTextListener(this);
-        return true;
     }
 
     @Override
