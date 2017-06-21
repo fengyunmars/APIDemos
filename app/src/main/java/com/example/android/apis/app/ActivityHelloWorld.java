@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008 The Android Open Source Project
+ * Copyright (C) 2007 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,26 +23,44 @@ import com.example.android.apis.R;
 import android.app.Activity;
 import android.os.Bundle;
 
+
 /**
- * <h3>Dialog Activity</h3>
- * 
- * <p>This demonstrates the how to write an activity that looks like 
- * a pop-up dialog with a custom theme using a different text color.</p>
+ * Simple example of writing an application Activity.
+ * Hello World</a></h3>
+
+<p>This demonstrates the basic code needed to write a Screen activity.</p>
+
+<h4>Demo</h4>
+App/Activity/Hello World
+ 
+<h4>Source files</h4>
+ * <table class="LinkTable">
+ *         <tr>
+ *             <td >src/com.example.android.apis/app/ActivityHelloWorld.java</td>
+ *             <td >The Hello World Screen implementation</td>
+ *         </tr>
+ *         <tr>
+ *             <td >/res/any/layout/hello_world.xml</td>
+ *             <td >Defines contents of the screen</td>
+ *         </tr>
+ * </table> 
  */
-public class CustomDialogActivity extends Activity {
+public class ActivityHelloWorld extends Activity
+{
     /**
      * Initialization of the Activity after it is first created.  Must at least
      * call {@link android.app.Activity#setContentView setContentView()} to
      * describe what is to be displayed in the screen.
      */
     @Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState)
+    {
         // Be sure to call the super class.
         super.onCreate(savedInstanceState);
-        
-        // See assets/res/any/layout/dialog_activity.xml for this
+
+        // See assets/res/any/layout/hello_world.xml for this
         // view layout definition, which is being set here as
         // the content of our screen.
-        setContentView(R.layout.custom_dialog_activity);
+        setContentView(R.layout.hello_world);
     }
 }

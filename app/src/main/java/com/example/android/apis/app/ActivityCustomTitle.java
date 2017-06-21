@@ -30,7 +30,7 @@ import com.example.android.apis.R;
 
 /**
  * Example of how to use a custom title {@link android.view.Window#FEATURE_CUSTOM_TITLE}.
- * <h3>CustomTitle</h3>
+ * <h3>ActivityCustomTitle</h3>
 
 <p>This demonstrates how a custom title can be used.</p>
 
@@ -40,7 +40,7 @@ App/Title/Custom Title
 <h4>Source files</h4>
  * <table class="LinkTable">
  *         <tr>
- *             <td >src/com.example.android.apis/app/CustomTitle.java</td>
+ *             <td >src/com.example.android.apis/app/ActivityCustomTitle.java</td>
  *             <td >The Custom Title implementation</td>
  *         </tr>
  *         <tr>
@@ -49,7 +49,7 @@ App/Title/Custom Title
  *         </tr>
  * </table> 
  */
-public class CustomTitle extends Activity {
+public class ActivityCustomTitle extends Activity {
     
     /**
      * Initialization of the Activity after it is first created.  Must at least

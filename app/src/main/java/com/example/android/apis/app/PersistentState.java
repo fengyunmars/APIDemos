@@ -39,7 +39,7 @@ import android.widget.TextView;
  * directly on top of the existing instance, the state can get out of sync
  * because the new instance is resumed before the old one is paused.</p>
  *
- * <p>For any persistent state that is not simplistic, a content
+ * <p>For any persistent state that is not simplistic 简单的 , a content
  * provider is often a better choice.</p>
  *
  * <p>In this example we are currently saving and restoring the state of the
@@ -81,7 +81,7 @@ public class PersistentState extends Activity
         // the content of our screen.
         setContentView(R.layout.save_restore_state);
 
-        // Set message to be appropriate for this screen.
+        // Set message to be appropriate 合适的 for this screen.
         ((TextView)findViewById(R.id.msg)).setText(R.string.persistent_msg);
 
         // Retrieve the EditText widget whose state we will save.

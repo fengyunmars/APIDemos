@@ -57,8 +57,10 @@ public class ActionBarDisplayOptions extends Activity implements View.OnClickLis
         mCustomView = getLayoutInflater().inflate(R.layout.action_bar_display_options_custom, null);
         // Configure several action bar elements that will be toggled by display options.
         final ActionBar bar = getActionBar();
-        bar.setCustomView(mCustomView,
-                new ActionBar.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+        if (bar != null) {
+            bar.setCustomView(mCustomView,
+                    new ActionBar.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+        }
 
         bar.addTab(bar.newTab().setText("Tab 1").setTabListener(this));
         bar.addTab(bar.newTab().setText("Tab 2").setTabListener(this));

@@ -15,19 +15,25 @@
 -->
 
 <!-- Demonstrates how to use a custom title.
-     See corresponding Java code com.example.android.apis.app.CustomTitle.java. -->
+     See corresponding Java code com.example.android.apis.app.ActivityCustomTitle.java. -->
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/screen"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:orientation="vertical">
-    <TextView android:id="@+id/left_text"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/screen"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/left_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:text="@string/custom_title_left" />
-    <TextView android:id="@+id/right_text"
+        android:text="@string/custom_title_left"/>
+
+    <TextView
+        android:id="@+id/right_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:text="@string/custom_title_right" />
+        android:text="@string/custom_title_right"/>
 </RelativeLayout>

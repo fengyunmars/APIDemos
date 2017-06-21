@@ -45,13 +45,13 @@ import android.widget.Button;
  * <p>See {@link com.example.android.apis.AllTests} for documentation on running
  * all tests and individual tests in this application.
  */
-public class ForwardingTest extends ActivityUnitTestCase<Forwarding> {
+public class ActivityForwardingTest extends ActivityUnitTestCase<ActivityForwarding> {
 
     private Intent mStartIntent;
     private Button mButton;
 
-    public ForwardingTest() {
-        super(Forwarding.class);
+    public ActivityForwardingTest() {
+        super(ActivityForwarding.class);
       }
 
     @Override
@@ -84,7 +84,7 @@ public class ForwardingTest extends ActivityUnitTestCase<Forwarding> {
      */
     @MediumTest
     public void testSubLaunch() {
-        Forwarding activity = startActivity(mStartIntent, null, null);
+        ActivityForwarding activity = startActivity(mStartIntent, null, null);
         mButton = (Button) activity.findViewById(R.id.go);
         
         // This test confirms that when you click the button, the activity attempts to open
@@ -100,7 +100,7 @@ public class ForwardingTest extends ActivityUnitTestCase<Forwarding> {
      */
     @MediumTest
     public void testLifeCycleCreate() {
-        Forwarding activity = startActivity(mStartIntent, null, null);
+        ActivityForwarding activity = startActivity(mStartIntent, null, null);
         
         // At this point, onCreate() has been called, but nothing else
         // Complete the startup of the activity

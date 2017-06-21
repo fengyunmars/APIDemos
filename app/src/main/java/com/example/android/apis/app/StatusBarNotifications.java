@@ -149,7 +149,7 @@ public class StatusBarNotifications extends Activity {
         // The PendingIntent to launch our activity if the user selects this
         // notification.  Note the use of FLAG_UPDATE_CURRENT so that if there
         // is already an active matching pending intent, we will update its
-        // extras (and other Intents in the array) to be the ones passed in here.
+        // extras (and other ActivityIntent in the array) to be the ones passed in here.
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
                 new Intent(this, NotificationDisplay.class).putExtra("moodimg", moodId),
                 PendingIntent.FLAG_UPDATE_CURRENT);
@@ -183,7 +183,7 @@ public class StatusBarNotifications extends Activity {
         // The PendingIntent to launch our activity if the user selects this
         // notification.  Note the use of FLAG_UPDATE_CURRENT so that if there
         // is already an active matching pending intent, we will update its
-        // extras (and other Intents in the array) to be the ones passed in here.
+        // extras (and other ActivityIntent in the array) to be the ones passed in here.
         PendingIntent contentIntent = PendingIntent.getActivities(this, 0,
                 intents, PendingIntent.FLAG_UPDATE_CURRENT);
         return contentIntent;

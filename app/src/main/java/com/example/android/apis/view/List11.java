@@ -43,7 +43,7 @@ public class List11 extends ListActivity {
 
 
     private static final String[] GENRES = new String[] {
-        "Action", "Adventure", "Animation", "Children", "Comedy", "Documentary", "Drama",
+        "Action", "Adventure", "ActivityAnimation", "Children", "Comedy", "Documentary", "Drama",
         "Foreign", "History", "Independent", "Romance", "Sci-Fi", "Television", "Thriller"
     };
 }

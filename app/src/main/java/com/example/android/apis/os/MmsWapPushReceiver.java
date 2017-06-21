@@ -28,7 +28,7 @@ public class MmsWapPushReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-//        if (Telephony.Sms.Intents.WAP_PUSH_RECEIVED_ACTION.equals(intent.getAction())
+//        if (Telephony.Sms.ActivityIntent.WAP_PUSH_RECEIVED_ACTION.equals(intent.getAction())
 //                && ContentType.MMS_MESSAGE.equals(intent.getType())) {
 //            final byte[] data = intent.getByteArrayExtra("data");
 //            final PduParser parser = new PduParser(

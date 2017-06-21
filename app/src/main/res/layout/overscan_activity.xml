@@ -17,22 +17,22 @@
 <!-- BEGIN_INCLUDE(complete) -->
 <!-- This layout is designed for use with FLAG_LAYOUT_IN_OVERSCAN, so its window will
      be placed into the overscan region of the display (if there is one).  Thus the contents
-     of the top-level view may be obscured around the edges by the display, leaving the
+     of the top-level view may be obscured 掩盖 around the edges by the display, leaving the
      edge of the box background used here invisible. -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/box_white">
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:background="@drawable/box_white">
 
     <!-- This is still in the same position as the top-level FrameLayout, so the contentx
         of this TextView may also be obscured. -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
         android:layout_marginLeft="3dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Overscan" />
+        android:layout_marginTop="3dp"
+        android:text="Overscan"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
     <!-- This FrameLayout uses android:fitsSystemWindows to have its padding adjusted so
          that within that space its content is offset to not be obscured by the overscan
@@ -47,21 +47,23 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/frantic"
-            android:scaleType="fitXY" />
+            android:scaleType="fitXY"
+            android:src="@drawable/frantic"/>
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/box_white" />
+            android:background="@drawable/box_white"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
             android:layout_marginLeft="3dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Content" />
+            android:layout_marginTop="3dp"
+            android:text="Content"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
 
     </FrameLayout>
 
 </FrameLayout>
-<!-- END_INCLUDE(complete) -->
+    <!-- END_INCLUDE(complete) -->

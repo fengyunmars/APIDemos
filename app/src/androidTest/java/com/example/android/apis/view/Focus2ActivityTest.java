@@ -17,6 +17,7 @@
 package com.example.android.apis.view;
 
 import com.example.android.apis.R;
+import com.example.android.apis.app.ActivityForwardingTest;
 
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.suitebuilder.annotation.MediumTest;
@@ -37,7 +38,7 @@ import android.widget.Button;
  * the necessary {@link android.app.Instrumentation} will be injected for you to
  * user via {@link #getInstrumentation} in your tests.
  *
- * See {@link com.example.android.apis.app.ForwardingTest} for an example of an Activity unit test.
+ * See {@link ActivityForwardingTest} for an example of an Activity unit test.
  *
  * See {@link com.example.android.apis.AllTests} for documentation on running
  * all tests and individual tests in this application.

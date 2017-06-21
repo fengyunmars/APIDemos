@@ -15,31 +15,44 @@
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:padding="4dip"
-    android:gravity="center_horizontal"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal"
+              android:orientation="vertical"
+              android:padding="4dip">
 
     <TextView
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:layout_weight="0" android:paddingBottom="4dip"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="No matter how deep you go, Activity.finishAffinity() will get you back."/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:paddingBottom="4dip"
+        android:text="No matter how deep you go, Activity.finishAffinity() will get you back."
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-    <TextView android:id="@+id/seq"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:layout_weight="0" android:paddingBottom="4dip"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+    <TextView
+        android:id="@+id/seq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:paddingBottom="4dip"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-    <Button android:id="@+id/nest"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/nest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Nest some more">
-        <requestFocus />
+
+        <requestFocus/>
     </Button>
 
-    <Button android:id="@+id/finish"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/finish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="FINISH!">
-        <requestFocus />
+
+        <requestFocus/>
     </Button>
 
 </LinearLayout>

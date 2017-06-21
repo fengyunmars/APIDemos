@@ -17,6 +17,7 @@
 package com.example.android.apis.view;
 
 import com.example.android.apis.R;
+import com.example.android.apis.app.ActivityForwardingTest;
 
 import android.content.Context;
 import android.test.AndroidTestCase;
@@ -47,7 +48,7 @@ import android.widget.Button;
  * {@link AndroidTestCase}, and when run via an {@link android.test.InstrumentationTestRunner},
  * the context will be injected for you.
  * 
- * See {@link com.example.android.apis.app.ForwardingTest} for an example of an Activity unit test.
+ * See {@link ActivityForwardingTest} for an example of an Activity unit test.
  *
  * See {@link com.example.android.apis.AllTests} for documentation on running
  * all tests and individual tests in this application.

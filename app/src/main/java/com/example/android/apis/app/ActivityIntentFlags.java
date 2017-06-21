@@ -17,7 +17,7 @@ import android.widget.Button;
 /**
  * Example of various Intent flags to modify the activity stack.
  */
-public class IntentActivityFlags extends Activity {
+public class ActivityIntentFlags extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +38,7 @@ public class IntentActivityFlags extends Activity {
 //BEGIN_INCLUDE(intent_array)
     private Intent[] buildIntentsToViewsLists() {
         // We are going to rebuild our task with a new back stack.  This will
-        // be done by launching an array of Intents, representing the new
+        // be done by launching an array of ActivityIntent, representing the new
         // back stack to be created, with the first entry holding the root
         // and requesting to reset the back stack.
         Intent[] intents = new Intent[3];
@@ -50,12 +50,12 @@ public class IntentActivityFlags extends Activity {
                 com.example.android.apis.ApiDemos.class));
 
         Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.setClass(IntentActivityFlags.this, com.example.android.apis.ApiDemos.class);
+        intent.setClass(ActivityIntentFlags.this, com.example.android.apis.ApiDemos.class);
         intent.putExtra("com.example.android.apis.Path", "Views");
         intents[1] = intent;
 
         intent = new Intent(Intent.ACTION_MAIN);
-        intent.setClass(IntentActivityFlags.this, com.example.android.apis.ApiDemos.class);
+        intent.setClass(ActivityIntentFlags.this, com.example.android.apis.ApiDemos.class);
         intent.putExtra("com.example.android.apis.Path", "Views/Lists");
 
         intents[2] = intent;
@@ -71,7 +71,7 @@ public class IntentActivityFlags extends Activity {
 
     private OnClickListener mFlagActivityClearTaskPIListener = new OnClickListener() {
         public void onClick(View v) {
-            Context context = IntentActivityFlags.this;
+            Context context = ActivityIntentFlags.this;
 //BEGIN_INCLUDE(pending_intent)
             PendingIntent pi = PendingIntent.getActivities(context, 0,
                     buildIntentsToViewsLists(), PendingIntent.FLAG_UPDATE_CURRENT);
@@ -79,7 +79,7 @@ public class IntentActivityFlags extends Activity {
             try {
                 pi.send();
             } catch (CanceledException e) {
-                Log.w("IntentActivityFlags", "Failed sending PendingIntent", e);
+                Log.w("ActivityIntentFlags", "Failed sending PendingIntent", e);
             }
         }
     };

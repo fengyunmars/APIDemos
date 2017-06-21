@@ -45,16 +45,16 @@ App/Activity/Receive Result
 <h4>Source files</h4>
 <table class="LinkTable">
         <tr>
-            <td class="LinkColumn">src/com.example.android.apis/app/Forwarding.java</td>
+            <td class="LinkColumn">src/com.example.android.apis/app/ActivityForwarding.java</td>
             <td class="DescrColumn">Forwards the user to another activity when its button is pressed</td>
         </tr>
         <tr>
             <td class="LinkColumn">/res/any/layout/forwarding.xml</td>
-            <td class="DescrColumn">Defines contents of the Forwarding screen</td>
+            <td class="DescrColumn">Defines contents of the ActivityForwarding screen</td>
         </tr>
 </table>
  */
-public class Forwarding extends Activity
+public class ActivityForwarding extends Activity
 {
     @Override
 	protected void onCreate(Bundle savedInstanceState)
@@ -76,7 +76,7 @@ public class Forwarding extends Activity
             // so that our own will stop running and be removed from the
             // history stack.
             Intent intent = new Intent();
-            intent.setClass(Forwarding.this, ForwardTarget.class);
+            intent.setClass(ActivityForwarding.this, ActivityForwardTarget.class);
             startActivity(intent);
             finish();
         }

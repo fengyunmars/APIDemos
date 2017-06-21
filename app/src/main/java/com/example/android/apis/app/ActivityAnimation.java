@@ -35,8 +35,9 @@ import android.widget.Button;
 /**
  * <p>Example of using a custom animation when transitioning between activities.</p>
  */
-public class Animation extends Activity {
-    private static final String TAG = "Animation";
+public class ActivityAnimation extends Activity {
+
+    private static final String TAG = "ActivityAnimation";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +78,7 @@ public class Animation extends Activity {
         public void onClick(View v) {
             Log.i(TAG, "Starting fade-in animation...");
             // Request the next activity transition (here starting a new one).
-            startActivity(new Intent(Animation.this, AlertDialogSamples.class));
+            startActivity(new Intent(ActivityAnimation.this, AlertDialogSamples.class));
             // Supply a custom animation.  This one will just fade the new
             // activity on top.  Note that we need to also supply an animation
             // (here just doing nothing for the same amount of time) for the
@@ -90,7 +91,7 @@ public class Animation extends Activity {
         public void onClick(View v) {
             Log.i(TAG, "Starting zoom-in animation...");
             // Request the next activity transition (here starting a new one).
-            startActivity(new Intent(Animation.this, AlertDialogSamples.class));
+            startActivity(new Intent(ActivityAnimation.this, AlertDialogSamples.class));
             // This is a more complicated animation, involving transformations
             // on both this (exit) and the new (enter) activity.  Note how for
             // the duration of the animation we force the exiting activity
@@ -103,15 +104,15 @@ public class Animation extends Activity {
     private OnClickListener mModernFadeListener = new OnClickListener() {
         public void onClick(View v) {
             Log.i(TAG, "Starting modern-fade-in animation...");
-            // Create the desired custom animation, involving transformations
+            // Create the desired custom animation, involving 涉及 transformations
             // on both this (exit) and the new (enter) activity.  Note how for
             // the duration of the animation we force the exiting activity
             // to be Z-ordered on top (even though it really isn't) to achieve
             // the effect we want.
-            ActivityOptions opts = ActivityOptions.makeCustomAnimation(Animation.this,
+            ActivityOptions opts = ActivityOptions.makeCustomAnimation(ActivityAnimation.this,
                     R.anim.fade, R.anim.hold);
             // Request the activity be started, using the custom animation options.
-            startActivity(new Intent(Animation.this, AlertDialogSamples.class), opts.toBundle());
+            startActivity(new Intent(ActivityAnimation.this, AlertDialogSamples.class), opts.toBundle());
         }
     };
 
@@ -123,10 +124,10 @@ public class Animation extends Activity {
             // the duration of the animation we force the exiting activity
             // to be Z-ordered on top (even though it really isn't) to achieve
             // the effect we want.
-            ActivityOptions opts = ActivityOptions.makeCustomAnimation(Animation.this,
+            ActivityOptions opts = ActivityOptions.makeCustomAnimation(ActivityAnimation.this,
                     R.anim.zoom_enter, R.anim.zoom_enter);
             // Request the activity be started, using the custom animation options.
-            startActivity(new Intent(Animation.this, AlertDialogSamples.class), opts.toBundle());
+            startActivity(new Intent(ActivityAnimation.this, AlertDialogSamples.class), opts.toBundle());
         }
     };
 
@@ -138,7 +139,7 @@ public class Animation extends Activity {
             ActivityOptions opts = ActivityOptions.makeScaleUpAnimation(
                     v, 0, 0, v.getWidth(), v.getHeight());
             // Request the activity be started, using the custom animation options.
-            startActivity(new Intent(Animation.this, AlertDialogSamples.class), opts.toBundle());
+            startActivity(new Intent(ActivityAnimation.this, AlertDialogSamples.class), opts.toBundle());
         }
     };
 
@@ -158,7 +159,7 @@ public class Animation extends Activity {
             ActivityOptions opts = ActivityOptions.makeThumbnailScaleUpAnimation(
                     v, bm, 0, 0);
             // Request the activity be started, using the custom animation options.
-            startActivity(new Intent(Animation.this, AlertDialogSamples.class), opts.toBundle());
+            startActivity(new Intent(ActivityAnimation.this, AlertDialogSamples.class), opts.toBundle());
             v.setDrawingCacheEnabled(false);
         }
     };
@@ -167,7 +168,7 @@ public class Animation extends Activity {
         public void onClick(View v) {
             Log.i(TAG, "Starting no animation transition...");
             // Request the next activity transition (here starting a new one).
-            startActivity(new Intent(Animation.this, AlertDialogSamples.class));
+            startActivity(new Intent(ActivityAnimation.this, AlertDialogSamples.class));
             overridePendingTransition(0, 0);
         }
     };

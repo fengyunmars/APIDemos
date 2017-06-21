@@ -36,7 +36,7 @@
     <!-- This is a theme that will adjust itself depending on the API version.
          The default definition is the safe one, using a theme that has always
          been defined.  Look at values-11/styles.xml for a variation that is
-         selected when the holographic theme is available, or look at
+         selected when the holographic 全息的 theme is available, or look at
          values-XX/styles.xml for a variation that is selected when the material
          theme is available. -->
     <style name="ThemeCurrentDialog" parent="android:Theme.Dialog" />
@@ -69,6 +69,9 @@
         <item name="android:windowBackground">@drawable/filled_box</item>
     </style>
 
+    <style name="Theme.CustomtTitle" parent="android:style/Theme">
+        <item name="android:windowTitleSize">40dip</item>
+    </style>
     <!-- A theme that has a wallpaper background.  Here we explicitly specify
          that this theme is to inherit from the system's wallpaper theme,
          which sets up various attributes correctly. -->

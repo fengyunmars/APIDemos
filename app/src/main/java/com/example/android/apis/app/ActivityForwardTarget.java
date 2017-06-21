@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 The Android Open Source Project
+ * Copyright (C) 2007 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,22 +18,24 @@ package com.example.android.apis.app;
 
 // Need the following import to get access to the app resources, since this
 // class is in a sub-package.
-import android.widget.ImageView;
 import com.example.android.apis.R;
 
 import android.app.Activity;
 import android.os.Bundle;
 
+
 /**
- * <h3>Overscan Activity</h3>
- * 
- * <p>This demonstrates the how to write an activity that extends into the
- * overscan region.</p>
+ * Example of removing yourself from the history stack after forwarding to
+ * another activity.
  */
-public class OverscanActivity extends Activity {
+public class ActivityForwardTarget extends Activity
+{
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.overscan_activity);
+
+        setContentView(R.layout.forward_target);
     }
 }
+

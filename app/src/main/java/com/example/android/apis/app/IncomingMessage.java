@@ -114,7 +114,7 @@ public class IncomingMessage extends Activity {
         // The PendingIntent to launch our activity if the user selects this
         // notification.  Note the use of FLAG_CANCEL_CURRENT so that, if there
         // is already an active matching pending intent, cancel it and replace
-        // it with the new array of Intents.
+        // it with the new array of ActivityIntent.
         PendingIntent contentIntent = PendingIntent.getActivities(this, 0,
                 makeMessageIntentStack(this, from, message), PendingIntent.FLAG_CANCEL_CURRENT);
 
