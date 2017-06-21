@@ -53,7 +53,7 @@ import android.widget.TextView;
  * <h4>Source files</h4>
  * <table class="LinkTable">
  *         <tr>
- *             <td class="LinkColumn">src/com.example.android.apis/app/PersistentState.java</td>
+ *             <td class="LinkColumn">src/com.example.android.apis/app/ActivitySharedPreferences.java</td>
  *             <td class="DescrColumn">The Save/Restore Screen implementation</td>
  *         </tr>
  *         <tr>
@@ -63,8 +63,10 @@ import android.widget.TextView;
  * </table>
  *
  */
-public class PersistentState extends Activity
-{
+public class ActivitySharedPreferences extends Activity {
+
+    private EditText mSaved;
+
     /**
      * Initialization of the Activity after it is first created.  Here we use
      * {@link android.app.Activity#setContentView setContentView()} to set up
@@ -117,12 +119,11 @@ public class PersistentState extends Activity
     protected void onPause() {
         super.onPause();
 
-        SharedPreferences.Editor editor = getPreferences(0).edit();
+        SharedPreferences.Editor editor = getPreferences(MODE_PRIVATE).edit();
         editor.putString("text", mSaved.getText().toString());
         editor.putInt("selection-start", mSaved.getSelectionStart());
         editor.putInt("selection-end", mSaved.getSelectionEnd());
         editor.commit();
     }
 
-    private EditText mSaved;
 }

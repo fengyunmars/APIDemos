@@ -54,31 +54,32 @@ import android.widget.TextView;
 
 //BEGIN_INCLUDE(activity)
 /**
- * <h3>Presentation Activity</h3>
+ * <h3>Presentation 描述 Activity</h3>
  *
  * <p>
  * This demonstrates how to create an activity that shows some content
  * on a secondary display using a {@link Presentation}.
  * </p><p>
- * The activity uses the {@link DisplayManager} API to enumerate displays.
+ * The activity uses the {@link DisplayManager} API to enumerate 枚举 displays.
  * When the user selects a display, the activity opens a {@link Presentation}
  * on that display.  We show a different photograph in each presentation
  * on a unique background along with a label describing the display.
  * We also write information about displays and display-related events to
  * the Android log which you can read using <code>adb logcat</code>.
  * </p><p>
- * You can try this out using an HDMI or Wifi display or by using the
- * "Simulate secondary displays" feature in Development Settings to create a few
+ * You can try this out using an HDMI （High-Definition 清晰度 Multimedia Interface）or Wifi display or by
+ * using the "Simulate 模拟的 secondary displays" feature in Development Settings to create a few
  * simulated secondary displays.  Each display will appear in the list along with a
  * checkbox to show a presentation on that display.
  * </p><p>
  * See also the {@link PresentationWithMediaRouterActivity} sample which
- * uses the media router to automatically select a secondary display
+ * uses the media router 路由器 to automatically select a secondary display
  * on which to show content based on the currently selected route.
  * </p>
  */
 public class PresentationActivity extends Activity
         implements OnCheckedChangeListener, OnClickListener, OnItemSelectedListener {
+
     private final String TAG = "PresentationActivity";
 
     // Key for storing saved instance state.
@@ -459,7 +460,7 @@ public class PresentationActivity extends Activity
     /**
      * The presentation to show on the secondary display.
      *
-     * Note that the presentation display may have different metrics from the display on which
+     * Note that the presentation display may have different metrics 度量 from the display on which
      * the main activity is showing so we must be careful to use the presentation's
      * own {@link Context} whenever we load resources.
      */
@@ -513,7 +514,7 @@ public class PresentationActivity extends Activity
             drawable.setShape(GradientDrawable.RECTANGLE);
             drawable.setGradientType(GradientDrawable.RADIAL_GRADIENT);
 
-            // Set the background to a random gradient.
+            // Set the background to a random gradient 梯度 .
             Point p = new Point();
             getDisplay().getSize(p);
             drawable.setGradientRadius(Math.max(p.x, p.y) / 2);

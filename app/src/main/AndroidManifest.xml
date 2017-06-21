@@ -196,7 +196,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.PersistentState"
+            android:name=".app.ActivitySharedPreferences"
             android:label="@string/activity_persistent"
             android:windowSoftInputMode="stateVisible|adjustResize">
             <intent-filter>

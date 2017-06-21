@@ -31,6 +31,7 @@ import android.widget.ResourceCursorAdapter;
 import android.widget.TextView;
 
 public class QuickContactsDemo extends ListActivity {
+
     static final String[] CONTACTS_SUMMARY_PROJECTION = new String[] {
             Contacts._ID, // 0
             Contacts.DISPLAY_NAME, // 1
