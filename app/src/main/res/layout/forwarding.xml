@@ -15,7 +15,7 @@
 -->
 
 <!-- Demonstrates receiving activity results.
-     See corresponding Java code com.android.sdk.app.ReceiveResult.java. -->
+     See corresponding Java code com.android.sdk.app.ActivityReceiveResult.java. -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"

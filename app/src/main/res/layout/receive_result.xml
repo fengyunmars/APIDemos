@@ -16,34 +16,43 @@
 
 <!--
     Demonstrates receiving activity results.
-    See corresponding Java code com.android.sdk.app.ReceiveResult.java.
+    See corresponding Java code com.android.sdk.app.ActivityReceiveResult.java.
 -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:padding="4dip"
-    android:gravity="center_horizontal"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal"
+              android:orientation="vertical"
+              android:padding="4dip">
 
     <TextView
-        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="0"
         android:paddingBottom="4dip"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/receive_result_instructions"/>
+        android:text="@string/receive_result_instructions"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-    <TextView android:id="@+id/results"
-        android:layout_width="match_parent" android:layout_height="10dip"
+    <TextView
+        android:id="@+id/results"
+        android:layout_width="match_parent"
+        android:layout_height="10dip"
         android:layout_weight="1"
+        android:background="@drawable/green"
         android:paddingBottom="4dip"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#000"
-        android:background="@drawable/green">
+        android:textColor="#000">
     </TextView>
 
-    <Button android:id="@+id/get"
-        android:layout_width="wrap_content" android:layout_height="wrap_content" 
+    <Button
+        android:id="@+id/get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_weight="0"
         android:text="@string/receive_result_result">
-        <requestFocus />
+
+        <requestFocus/>
     </Button>
 
 </LinearLayout>

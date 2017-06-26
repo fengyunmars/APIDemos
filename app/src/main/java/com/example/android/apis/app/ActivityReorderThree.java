@@ -25,20 +25,20 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class ReorderTwo extends Activity {
+public class ActivityReorderThree extends Activity {
     @Override
     protected void onCreate(Bundle savedState) {
         super.onCreate(savedState);
         
-        setContentView(R.layout.reorder_two);
+        setContentView(R.layout.reorder_three);
         
-        Button twoButton = (Button) findViewById(R.id.reorder_launch_three);
+        Button twoButton = (Button) findViewById(R.id.reorder_launch_four);
         twoButton.setOnClickListener(mClickListener);
     }
 
     private final OnClickListener mClickListener = new OnClickListener() {
         public void onClick(View v) {
-            startActivity(new Intent(ReorderTwo.this, ReorderThree.class));
+            startActivity(new Intent(ActivityReorderThree.this, ActivityReorderFour.class));
         }
     };
 }

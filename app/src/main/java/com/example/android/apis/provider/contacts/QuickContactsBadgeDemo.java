@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.apis.app;
+package com.example.android.apis.provider.contacts;
 
 import com.example.android.apis.R;
 
@@ -30,7 +30,7 @@ import android.widget.QuickContactBadge;
 import android.widget.ResourceCursorAdapter;
 import android.widget.TextView;
 
-public class QuickContactsDemo extends ListActivity {
+public class QuickContactsBadgeDemo extends ListActivity {
 
     static final String[] CONTACTS_PROJECTION = new String[] {
             Contacts._ID, // 0
@@ -56,6 +56,8 @@ public class QuickContactsDemo extends ListActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         String select = "((" + Contacts.DISPLAY_NAME + " NOTNULL) AND ("
                 + Contacts.HAS_PHONE_NUMBER + "=1) AND ("
                 + Contacts.DISPLAY_NAME + " != '' ))";

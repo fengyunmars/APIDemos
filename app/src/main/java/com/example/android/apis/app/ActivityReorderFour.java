@@ -25,7 +25,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class ReorderFour extends Activity {
+public class ActivityReorderFour extends Activity {
     @Override
     protected void onCreate(Bundle savedState) {
         super.onCreate(savedState);
@@ -38,7 +38,7 @@ public class ReorderFour extends Activity {
 
     private final OnClickListener mClickListener = new OnClickListener() {
         public void onClick(View v) {
-            Intent intent = new Intent(ReorderFour.this, ReorderTwo.class);
+            Intent intent = new Intent(ActivityReorderFour.this, ActivityReorderTwo.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
             startActivity(intent);
         }

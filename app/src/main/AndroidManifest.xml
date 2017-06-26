@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
  Copyright (C) 2007 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,7 +13,8 @@
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
      See the License for the specific language governing permissions and
      limitations under the License.
---><!--
+-->
+<!--
  Declare the contents of this Android application.  The namespace
      attribute brings in the Android platform namespace, and the package
      supplies a unique name for the application.  When writing your
@@ -138,8 +140,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.QuickContactsDemo"
+            android:name=".provider.contacts.QuickContactsBadgeDemo"
             android:label="@string/quick_contacts_demo">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".provider.contacts.ContactsContractDemo"
+            android:label="@string/contacts_contract_demo"
+            android:theme="@style/Theme.AppCompat">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -236,7 +249,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.ReceiveResult"
+            android:name=".app.ActivityReceiveResult"
             android:label="@string/activity_receive_result">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -245,8 +258,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.SendResult"
-            android:theme="@style/ThemeDialogWhenLarge"></activity>
+            android:name=".app.ActivitySendResult"
+            android:theme="@style/ThemeDialogWhenLarge"/>
         <activity
             android:name=".app.ActivityForwarding"
             android:label="@string/activity_forwarding">
@@ -256,9 +269,9 @@
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
-        <activity android:name=".app.ActivityForwardTarget"></activity>
+        <activity android:name=".app.ActivityForwardTarget"/>
         <activity
-            android:name=".app.RedirectEnter"
+            android:name=".app.ActivityRedirectEnter"
             android:label="@string/activity_redirect">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -266,8 +279,8 @@
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
-        <activity android:name=".app.RedirectMain"></activity>
-        <activity android:name=".app.RedirectGetter"></activity>
+        <activity android:name=".app.ActivityRedirectMain"/>
+        <activity android:name=".app.ActivityRedirectGetter"/>
 
         <!--
              This sample doesn't work with the new action bar, so use
@@ -285,7 +298,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.ReorderOnLaunch"
+            android:name=".app.ActivityReorderOnLaunch"
             android:label="@string/activity_reorder">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -302,9 +315,9 @@
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
-        <activity android:name=".app.ReorderTwo"/>
-        <activity android:name=".app.ReorderThree"/>
-        <activity android:name=".app.ReorderFour"/>
+        <activity android:name=".app.ActivityReorderTwo"/>
+        <activity android:name=".app.ActivityReorderThree"/>
+        <activity android:name=".app.ActivityReorderFour"/>
         <activity
             android:name=".app.SetWallpaperActivity"
             android:label="@string/activity_setwallpaper">
@@ -860,7 +873,7 @@
         </activity>
         <activity
             android:name=".app.IncomingMessageView"
-            android:label="App/Notification/IncomingMessageView"></activity>
+            android:label="App/Notification/IncomingMessageView"/>
 
         <!-- BEGIN_INCLUDE(interstitial_affinity) -->
         <activity
@@ -869,7 +882,7 @@
             android:label="You have messages"
             android:launchMode="singleTask"
             android:taskAffinity=""
-            android:theme="@style/ThemeCurrentDialog"></activity>
+            android:theme="@style/ThemeCurrentDialog"/>
         <!-- END_INCLUDE(interstitial_affinity) -->
 
 
@@ -884,7 +897,7 @@
             android:excludeFromRecents="true"
             android:noHistory="true"
             android:taskAffinity=""
-            android:theme="@style/Theme.Transparent"></activity>
+            android:theme="@style/Theme.Transparent"/>
         <activity
             android:name=".app.StatusBarNotifications"
             android:label="App/Notification/Status Bar"
@@ -1187,7 +1200,7 @@
             android:enabled="@bool/atLeastJellyBean"
             android:label="@string/action_bar_navigation_target"
             android:parentActivityName=".app.ActionBarNavigation"
-            android:taskAffinity=":bar_navigation"></activity>
+            android:taskAffinity=":bar_navigation"/>
         <activity
             android:name=".app.PrintBitmap"
             android:enabled="@bool/atLeastKitKat"
@@ -3864,6 +3877,7 @@
             android:label="Views/Style/StyleBasic">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>

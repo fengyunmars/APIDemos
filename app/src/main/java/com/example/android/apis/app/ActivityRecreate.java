@@ -46,6 +46,7 @@ public class ActivityRecreate extends Activity {
                     mCurTheme = android.R.style.Theme_Holo_Light;
                     break;
             }
+
             setTheme(mCurTheme);
         }
 

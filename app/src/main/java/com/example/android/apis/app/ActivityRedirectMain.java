@@ -30,7 +30,7 @@ import android.widget.TextView;
 /**
  * Entry into our redirection example, describing what will happen.
  */
-public class RedirectMain extends Activity {
+public class ActivityRedirectMain extends Activity {
     static final int INIT_TEXT_REQUEST = 0;
     static final int NEW_TEXT_REQUEST = 1;
 
@@ -52,7 +52,7 @@ public class RedirectMain extends Activity {
         // temporarily hide our own activity so it is not displayed until the
         // result is returned.
         if (!loadPrefs()) {
-            Intent intent = new Intent(this, RedirectGetter.class);
+            Intent intent = new Intent(this, ActivityRedirectGetter.class);
             startActivityForResult(intent, INIT_TEXT_REQUEST);
         }
     }
@@ -113,7 +113,7 @@ public class RedirectMain extends Activity {
     private OnClickListener mNewListener = new OnClickListener() {
         public void onClick(View v) {
             // Retrieve new text preferences.
-            Intent intent = new Intent(RedirectMain.this, RedirectGetter.class);
+            Intent intent = new Intent(ActivityRedirectMain.this, ActivityRedirectGetter.class);
             startActivityForResult(intent, NEW_TEXT_REQUEST);
         }
     };

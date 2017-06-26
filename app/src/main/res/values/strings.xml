@@ -48,7 +48,8 @@
 
     <string name="activity_overscan">App/Activity/Overscan</string>
 
-    <string name="quick_contacts_demo">App/Activity/QuickContactsDemo</string>
+    <string name="quick_contacts_demo">Content/Provider/ContactsProvider/QuickContactsDemo</string>
+    <string name="contacts_contract_demo">Content/Provider/ContactsProvider/ContactsContractDemo</string>
 
     <string name="activity_wallpaper">App/Activity/Wallpaper</string>
     <string name="activity_setwallpaper">App/Activity/SetWallpaper</string>
@@ -114,7 +115,7 @@
     <string name="forward_target">Press back button and notice we don\'t see the previous activity.</string>
 
     <string name="activity_redirect">App/Activity/Redirection</string>
-    <string name="redirect_enter">Press the button to start the example.  The next activity will conditionally redirect to another activity to collect data from the user.</string>
+    <string name="redirect_enter">Press the button to start the example.  The next activity will conditionally 有条件的 redirect to another activity to collect data from the user.</string>
     <string name="redirect_main">You now see the main activity running normally because the user text has been set to:</string>
     <string name="clear_text">Clear and Exit</string>
     <string name="new_text">New Text</string>
@@ -383,7 +384,7 @@
     <string name="custom_title_right_button">Change Right</string>
 
     <string name="activity_reorder">App/Activity/Reorder Activities</string>
-    <string name="reorder_on_launch">This is the first of a sequence of four Activities.  A button on the fourth will use the Intent.FLAG_ACTIVITY_REORDER_TO_FRONT flag to bring the second of the activities to the front of the history stack. After that, proceeding back through the history should begin with the newly-frontmost second reorder activity, then the fourth, the third, and finally the first.</string>
+    <string name="reorder_on_launch">This is the first of a sequence of four Activities.  A button on the fourth will use the Intent.FLAG_ACTIVITY_REORDER_TO_FRONT flag to bring the second of the activities to the front of the history stack. After that, proceeding 进行 back through the history should begin with the newly-frontmost second reorder activity, then the fourth, the third, and finally the first.</string>
     <string name="reorder_launch_two">Go to the second</string>
     <string name="reorder_two_text">This is the second in a sequence of four Activities.</string>
     <string name="reorder_launch_three">Go to the third</string>
@@ -1539,7 +1540,7 @@
     <!-- =========================== -->
     <!--  Security API demo strings  -->
     <!-- =========================== -->
-    <skip />
+    <skip/>
 
     <string name="keystore_entries_list">List of entries:</string>
 

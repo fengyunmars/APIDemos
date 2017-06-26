@@ -33,10 +33,10 @@ import android.widget.TextView;
  * Shows how an activity can send data to its launching activity when done.y.
  * <p>This can be used, for example, to implement a dialog alowing the user to
 pick an e-mail address or image -- the picking activity sends the selected
-data back to the originating activity when done.</p>
+data back to the originating 来源 activity when done.</p>
 
-<p>The example here is composed of two activities: ReceiveResult launches
-the picking activity and receives its results; SendResult allows the user
+<p>The example here is composed of two activities: ActivityReceiveResult launches
+the picking activity and receives its results; ActivitySendResult allows the user
 to pick something and sends the selection back to its caller.  Implementing
 this functionality involves the
 {@link android.app.Activity#setResult setResult()} method for sending a
@@ -50,25 +50,25 @@ App/Activity/Receive Result
 <h4>Source files</h4>
 <table class="LinkTable">
         <tr>
-            <td class="LinkColumn">src/com.example.android.apis/app/ReceiveResult.java</td>
+            <td class="LinkColumn">src/com.example.android.apis/app/ActivityReceiveResult.java</td>
             <td class="DescrColumn">Launches pick activity and receives its result</td>
         </tr>
         <tr>
-            <td class="LinkColumn">src/com.example.android.apis/app/SendResult.java</td>
+            <td class="LinkColumn">src/com.example.android.apis/app/ActivitySendResult.java</td>
             <td class="DescrColumn">Allows user to pick an option and sends it back to its caller</td>
         </tr>
         <tr>
             <td class="LinkColumn">/res/any/layout/receive_result.xml</td>
-            <td class="DescrColumn">Defines contents of the ReceiveResult screen</td>
+            <td class="DescrColumn">Defines contents of the ActivityReceiveResult screen</td>
         </tr>
         <tr>
             <td class="LinkColumn">/res/any/layout/send_result.xml</td>
-            <td class="DescrColumn">Defines contents of the SendResult screen</td>
+            <td class="DescrColumn">Defines contents of the ActivitySendResult screen</td>
         </tr>
 </table>
 
  */
-public class ReceiveResult extends Activity {
+public class ActivityReceiveResult extends Activity {
     /**
      * Initialization of the Activity after it is first created.  Must at least
      * call {@link android.app.Activity#setContentView setContentView()} to
@@ -143,7 +143,7 @@ public class ReceiveResult extends Activity {
         public void onClick(View v) {
             // Start the activity whose result we want to retrieve.  The
             // result will come back with request code GET_CODE.
-            Intent intent = new Intent(ReceiveResult.this, SendResult.class);
+            Intent intent = new Intent(ActivityReceiveResult.this, ActivitySendResult.class);
             startActivityForResult(intent, GET_CODE);
         }
     };

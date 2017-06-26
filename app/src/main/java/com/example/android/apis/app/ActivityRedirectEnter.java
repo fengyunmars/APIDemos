@@ -31,8 +31,7 @@ import android.widget.Button;
 /**
  * Entry into our redirection example, describing what will happen.
  */
-public class RedirectEnter extends Activity
-{
+public class ActivityRedirectEnter extends Activity {
     @Override
 	protected void onCreate(Bundle savedInstanceState)
     {
@@ -51,7 +50,7 @@ public class RedirectEnter extends Activity
         {
             // Here we start up the main entry point of our redirection
             // example.
-            Intent intent = new Intent(RedirectEnter.this, RedirectMain.class);
+            Intent intent = new Intent(ActivityRedirectEnter.this, ActivityRedirectMain.class);
             startActivity(intent);
         }
     };

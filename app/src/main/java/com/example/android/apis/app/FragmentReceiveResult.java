@@ -62,7 +62,7 @@ public class FragmentReceiveResult extends Activity {
             public void onClick(View v) {
                 // Start the activity whose result we want to retrieve.  The
                 // result will come back with request code GET_CODE.
-                Intent intent = new Intent(getActivity(), SendResult.class);
+                Intent intent = new Intent(getActivity(), ActivitySendResult.class);
                 startActivityForResult(intent, GET_CODE);
             }
         };
