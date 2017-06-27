@@ -101,7 +101,7 @@
     <string name="activity_recreate_msg">Demonstration recreating an activity, to have
         it reconstructed with significant new changes.  In this case the theme is changed.</string>
     <string name="recreate">Recreate</string>
-
+    <string name="themeprompt">Select Theme</string>
     <string name="activity_finish_affinity">App/Activity/Finish Affinity</string>
 
     <string name="activity_receive_result">App/Activity/Receive Result</string>

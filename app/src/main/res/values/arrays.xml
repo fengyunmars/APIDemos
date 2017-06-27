@@ -15,7 +15,7 @@
 -->
 
 <resources>
-    <!-- Used in View/Spinner1.java -->
+    <!-- Used in View/SpinnerDemo.java -->
     <string-array name="colors">
         <item>red</item>
         <item>orange</item>
@@ -25,7 +25,7 @@
         <item>violet</item>
     </string-array>
     
-    <!-- Used in View/Spinner1.java -->
+    <!-- Used in View/SpinnerDemo.java -->
     <string-array name="planets">
         <item>Mercury</item>
         <item>Venus</item>

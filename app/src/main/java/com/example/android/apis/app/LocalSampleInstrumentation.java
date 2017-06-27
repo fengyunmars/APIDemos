@@ -54,8 +54,8 @@ public class LocalSampleInstrumentation extends Instrumentation {
         // text.
         Intent intent = new Intent(Intent.ACTION_MAIN);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.setClass(getTargetContext(), SaveRestoreState.class);
-        SaveRestoreState activity = (SaveRestoreState)startActivitySync(intent);
+        intent.setClass(getTargetContext(), ActivitySaveRestoreState.class);
+        ActivitySaveRestoreState activity = (ActivitySaveRestoreState)startActivitySync(intent);
 
         // This is the Activity object that was started, to do with as we want.
         Log.i("LocalSampleInstrumentation",
@@ -64,7 +64,7 @@ public class LocalSampleInstrumentation extends Instrumentation {
         // Clear the text so we start fresh.
         runOnMainSync(new ActivityRunnable(activity) {
             public void run() {
-                ((SaveRestoreState)activity).setSavedText("");
+                ((ActivitySaveRestoreState)activity).setSavedText("");
             }
         });
 

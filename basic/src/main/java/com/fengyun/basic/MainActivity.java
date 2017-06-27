@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         Resources.Theme theme = getTheme();
         if(savedInstanceState != null) {
-            setTheme(android.R.style.Theme_DeviceDefault_Light_DarkActionBar);
+            setTheme(android.R.style.Theme_DeviceDefault_Light);
         }
         setContentView(R.layout.activity_main);
         Button button = (Button) findViewById(R.id.recreate);

@@ -50,7 +50,7 @@ import android.widget.TextView;
  * <h4>Source files</h4>
  * <table class="LinkTable">
         <tr>
-            <td class="LinkColumn">src/com.example.android.apis/app/SaveRestoreState.java</td>
+            <td class="LinkColumn">src/com.example.android.apis/app/ActivitySaveRestoreState.java</td>
             <td class="DescrColumn">The Save/Restore Screen implementation</td>
         </tr>
         <tr>
@@ -59,7 +59,7 @@ import android.widget.TextView;
         </tr>
 </table>
  */
-public class SaveRestoreState extends Activity
+public class ActivitySaveRestoreState extends Activity
 {
     /**
      * Initialization of the Activity after it is first created.  Here we use
@@ -77,7 +77,7 @@ public class SaveRestoreState extends Activity
         // the content of our screen.
         setContentView(R.layout.save_restore_state);
 
-        // Set message to be appropriate for this screen.
+        // Set message to be appropriate 适当的 for this screen.
         ((TextView)findViewById(R.id.msg)).setText(R.string.save_restore_msg);
     }
 

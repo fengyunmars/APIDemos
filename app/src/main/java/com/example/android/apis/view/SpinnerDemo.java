@@ -30,16 +30,12 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 
-public class Spinner1 extends Activity {
+public class SpinnerDemo extends Activity {
 
-    void showToast(CharSequence msg) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
-    }
-    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.spinner_1);
+        setContentView(R.layout.spinner_demo);
 
         Spinner s1 = (Spinner) findViewById(R.id.spinner1);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
@@ -74,5 +70,10 @@ public class Spinner1 extends Activity {
                         showToast("Spinner2: unselected");
                     }
                 });
+    }
+
+
+    void showToast(CharSequence msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 }

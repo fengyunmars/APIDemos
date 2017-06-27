@@ -1,4 +1,4 @@
-package com.example.android.apis.util;
+package com.fengyun.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;

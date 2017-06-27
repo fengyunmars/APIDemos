@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.apis.util;
+package com.fengyun.util;
 
 /**
  * Borrowed from github.com/romannurik/muzei

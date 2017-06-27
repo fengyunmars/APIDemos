@@ -28,7 +28,7 @@ import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 
 
-public class RotationAnimation extends Activity {
+public class ActivityRotationAnimation extends Activity {
 
     private int mRotationAnimation = LayoutParams.ROTATION_ANIMATION_ROTATE;
 

@@ -15,7 +15,7 @@
 -->
 
 <!-- Demonstrates saving and restoring activity state.
-     See corresponding Java code com.android.sdk.app.SaveRestoreState.java. -->
+     See corresponding Java code com.android.sdk.app.ActivitySaveRestoreState.java. -->
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"

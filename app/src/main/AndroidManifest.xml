@@ -199,7 +199,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.SaveRestoreState"
+            android:name=".app.ActivitySaveRestoreState"
             android:label="@string/activity_save_restore"
             android:windowSoftInputMode="stateVisible|adjustResize">
             <intent-filter>
@@ -221,10 +221,10 @@
         <activity
             android:name=".app.ActivityRecreate"
             android:enabled="@bool/atLeastHoneycomb"
-            android:label="@string/activity_recreate">
+            android:label="@string/activity_recreate"
+            android:theme="@style/Theme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
@@ -307,7 +307,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.RotationAnimation"
+            android:name=".app.ActivityRotationAnimation"
             android:label="@string/activity_rotation_animation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -328,7 +328,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.ScreenOrientation"
+            android:name=".app.ActivityScreenOrientation"
             android:label="@string/activity_screen_orientation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -2517,7 +2517,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.Spinner1"
+            android:name=".view.SpinnerDemo"
             android:label="Views/Spinner">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

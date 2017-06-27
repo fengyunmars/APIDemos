@@ -28,7 +28,12 @@
         android:paddingBottom="4dip"
         android:text="@string/activity_recreate_msg"
         android:textAppearance="?android:attr/textAppearanceMedium"/>
-
+    <Spinner
+        android:id="@+id/themeSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/themeprompt"
+        />
     <Button
         android:id="@+id/recreate"
         android:layout_width="wrap_content"
