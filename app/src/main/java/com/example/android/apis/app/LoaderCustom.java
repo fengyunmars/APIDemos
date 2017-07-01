@@ -82,6 +82,15 @@ public class LoaderCustom extends Activity {
      * This class holds the per-item data in our Loader.
      */
     public static class AppEntry {
+
+
+        private final AppListLoader mLoader;
+        private final ApplicationInfo mInfo;
+        private final File mApkFile;
+        private String mLabel;
+        private Drawable mIcon;
+        private boolean mMounted;
+
         public AppEntry(AppListLoader loader, ApplicationInfo info) {
             mLoader = loader;
             mInfo = info;
@@ -136,13 +145,6 @@ public class LoaderCustom extends Activity {
                 }
             }
         }
-
-        private final AppListLoader mLoader;
-        private final ApplicationInfo mInfo;
-        private final File mApkFile;
-        private String mLabel;
-        private Drawable mIcon;
-        private boolean mMounted;
     }
 
     /**
