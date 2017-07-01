@@ -15,50 +15,61 @@
 -->
 
 <!-- Demonstrates different soft input modes.
-     See corresponding Java code com.android.sdk.app.SoftInputModes.java. -->
+     See corresponding Java code com.android.sdk.app.ActivitySoftInputModes.java. -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
     <TextView
-        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="0"
         android:paddingBottom="4dip"
-        android:textAppearance="?android:textAppearanceMedium"
-        android:text="@string/soft_input_modes_summary"/>
+        android:text="@string/soft_input_modes_summary"
+        android:textAppearance="?android:textAppearanceMedium"/>
 
-    <LinearLayout android:orientation="horizontal" android:gravity="center"
-        android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <TextView
-            android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:textAppearance="?android:textAppearanceMedium"
-            android:text="@string/soft_input_modes_label"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/soft_input_modes_label"
+            android:textAppearance="?android:textAppearanceMedium"/>
 
-        <Spinner android:id="@+id/resize_mode"
+        <Spinner
+            android:id="@+id/resize_mode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawSelectorOnTop="true">
         </Spinner>
 
     </LinearLayout>
-    
-    <TextView
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:paddingBottom="6dip"
-        android:background="@drawable/red"
-        android:textAppearance="?android:textAppearanceMedium"
-        android:text="@string/soft_input_modes_content"/>
 
-    <EditText android:id="@+id/saved"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/red"
+        android:paddingBottom="6dip"
+        android:text="@string/soft_input_modes_content"
+        android:textAppearance="?android:textAppearanceMedium"/>
+
+    <EditText
+        android:id="@+id/saved"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="0"
         android:background="@drawable/green"
-        android:text="@string/soft_input_modes_initial_text"
-        android:freezesText="true">
-        <requestFocus />
+        android:freezesText="true"
+        android:text="@string/soft_input_modes_initial_text">
+
+        <requestFocus/>
     </EditText>
 
 </LinearLayout>

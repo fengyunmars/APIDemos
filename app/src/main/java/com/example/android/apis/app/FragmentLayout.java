@@ -150,11 +150,12 @@ public class FragmentLayout extends Activity {
                     // Execute a transaction, replacing any existing fragment
                     // with this one inside the frame.
                     FragmentTransaction ft = getFragmentManager().beginTransaction();
-                    if (index == 0) {
-                        ft.replace(R.id.details, details);
-                    } else {
-                        ft.replace(R.id.a_item, details);
-                    }
+                    ft.replace(R.id.details, details);
+//                    if (index == 0) {
+//                        ft.replace(R.id.details, details);
+//                    } else {
+//                        ft.replace(R.id.a_item, details);
+//                    }
                     ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                     ft.commit();
                 }

@@ -22,7 +22,7 @@ import javax.microedition.khronos.opengles.GL10;
 import android.opengl.GLSurfaceView;
 
 /**
- * Render a pair of tumbling cubes.
+ * Render a pair of tumbling 歪斜状的 cubes 立方形 .
  */
 
 public class CubeRenderer implements GLSurfaceView.Renderer {

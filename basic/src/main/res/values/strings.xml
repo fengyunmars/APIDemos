@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Basic</string>
     <string name="recreate">recreate</string>
+    <string name="title_activity_ringtone_manager">RingtoneManagerActivity</string>
+    <string name="select">select</string>
+    <string name="select_audio">select audio</string>
+    <string name="select2">select2</string>
 </resources>

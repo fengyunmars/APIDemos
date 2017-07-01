@@ -36,10 +36,10 @@ import android.widget.Toast;
  * response to an alarm, allowing us to move long duration work out of an
  * intent receiver.
  * 
- * @see AlarmService
- * @see AlarmService_Alarm
+ * @see AlarmServiceActivity
+ * @see AlarmServiceMy
  */
-public class AlarmService_Service extends Service {
+public class AlarmServiceMy extends Service {
     NotificationManager mNM;
 
     @Override
@@ -52,7 +52,7 @@ public class AlarmService_Service extends Service {
         // Start up the thread running the service.  Note that we create a
         // separate thread because the service normally runs in the process's
         // main thread, which we don't want to block.
-        Thread thr = new Thread(null, mTask, "AlarmService_Service");
+        Thread thr = new Thread(null, mTask, "AlarmServiceMy");
         thr.start();
     }
 
@@ -83,7 +83,7 @@ public class AlarmService_Service extends Service {
             }
 
             // Done with our work...  stop the service!
-            AlarmService_Service.this.stopSelf();
+            AlarmServiceMy.this.stopSelf();
         }
     };
 
@@ -101,7 +101,7 @@ public class AlarmService_Service extends Service {
 
         // The PendingIntent to launch our activity if the user selects this notification
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
-                new Intent(this, AlarmService.class), 0);
+                new Intent(this, AlarmServiceActivity.class), 0);
 
         // Set the info for the views that show in the notification panel.
         Notification notification = new Notification.Builder(this)

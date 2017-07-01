@@ -17,29 +17,41 @@
 <!-- Demonstrates starting and stopping a local service.
      See corresponding Java code com.android.sdk.app.LocalSerice.java. -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:padding="4dip"
-    android:gravity="center_horizontal"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal"
+              android:orientation="vertical"
+              android:padding="4dip">
 
     <TextView
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:layout_weight="0" android:paddingBottom="4dip"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/alarm_controller"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:paddingBottom="4dip"
+        android:text="@string/alarm_controller"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-    <Button android:id="@+id/one_shot"
-        android:layout_width="wrap_content" android:layout_height="wrap_content" 
+    <Button
+        android:id="@+id/one_shot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/one_shot_alarm">
-        <requestFocus />
+
+        <requestFocus/>
     </Button>
 
-    <Button android:id="@+id/start_repeating"
-        android:layout_width="wrap_content" android:layout_height="wrap_content" 
-        android:text="@string/start_repeating_alarm" />
+    <Button
+        android:id="@+id/start_repeating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start_repeating_alarm"/>
 
-    <Button android:id="@+id/stop_repeating"
-        android:layout_width="wrap_content" android:layout_height="wrap_content" 
-        android:text="@string/stop_repeating_alarm" />
+    <Button
+        android:id="@+id/stop_repeating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/stop_repeating_alarm"/>
 
 </LinearLayout>
 

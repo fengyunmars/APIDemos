@@ -129,19 +129,20 @@ public class FragmentRetainInstance extends Activity {
                         }
 
                         // Now update the progress.  Note it is important that
-                        // we touch the progress bar with the lock held, so it
+                        // we touch the progress bar with the lock held 保留的 , so it
                         // doesn't disappear on us.
                         mPosition++;
                         max = mProgressBar.getMax();
                         mProgressBar.setProgress(mPosition);
                     }
 
-                    // Normally we would be doing some work, but put a kludge
-                    // here to pretend like we are.
+                    // Normally we would be doing some work, but put a kludge 杂牌电脑
+                    // here to pretend 假装 like we are.
                     synchronized (this) {
                         try {
                             wait(50);
                         } catch (InterruptedException e) {
+
                         }
                     }
                 }

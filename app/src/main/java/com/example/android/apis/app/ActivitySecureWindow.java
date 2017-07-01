@@ -17,20 +17,17 @@
 package com.example.android.apis.app;
 
 import com.example.android.apis.R;
-import com.example.android.apis.graphics.CubeRenderer;
 
 import android.app.Activity;
-import android.opengl.GLSurfaceView;
 import android.os.Bundle;
-import android.view.SurfaceView;
 import android.view.WindowManager;
 
 /**
  * <h3>Secure Window Activity</h3>
  *
  * <p>
- * This activity demonstrates how to create a {@link SurfaceView} backed by
- * a secure surface using {@link SurfaceView#setSecure}.
+ * This activity demonstrates how to create an activity whose window is backed by
+ * a secure surface using {@link WindowManager.LayoutParams#FLAG_SECURE}.
  * Because the surface is secure, its contents cannot be captured in screenshots
  * and will not be visible on non-secure displays even when mirrored.
  * </p><p>
@@ -50,9 +47,7 @@ import android.view.WindowManager;
  * </ul>
  * </p>
  */
-public class SecureSurfaceViewActivity extends Activity {
-    private GLSurfaceView mSurfaceView;
-
+public class ActivitySecureWindow extends Activity {
     /**
      * Initialization of the Activity after it is first created.  Must at least
      * call {@link android.app.Activity#setContentView setContentView()} to
@@ -63,39 +58,14 @@ public class SecureSurfaceViewActivity extends Activity {
         // Be sure to call the super class.
         super.onCreate(savedInstanceState);
 
-        // See assets/res/any/layout/secure_surface_view_activity.xml for this
+        // See assets/res/any/layout/secure_window_activity.xml for this
         // view layout definition, which is being set here as
         // the content of our screen.
-        setContentView(R.layout.secure_surface_view_activity);
+        setContentView(R.layout.secure_window_activity);
 
-        // Set up the surface view.
-        // We use a GLSurfaceView in this demonstration but ordinary
-        // SurfaceViews also support the same secure surface functionality.
-        mSurfaceView = (GLSurfaceView)findViewById(R.id.surface_view);
-        mSurfaceView.setRenderer(new CubeRenderer(false));
-
-        // Make the surface view secure.  This must be done at the time the surface view
-        // is created before the surface view's containing window is attached to
-        // the window manager which happens after onCreate returns.
-        // It cannot be changed later.
-        mSurfaceView.setSecure(true);
-    }
-
-    @Override
-    protected void onResume() {
-        // Be sure to call the super class.
-        super.onResume();
-
-        // Resume rendering.
-        mSurfaceView.onResume();
-    }
-
-    @Override
-    protected void onPause() {
-        // Be sure to call the super class.
-        super.onPause();
-
-        // Pause rendering.
-        mSurfaceView.onPause();
+        // Make the window secure.  This must be done at the time the activity
+        // is created.  It cannot be changed later.
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,
+                WindowManager.LayoutParams.FLAG_SECURE);
     }
 }

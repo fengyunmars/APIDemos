@@ -17,53 +17,105 @@
 <!-- Demonstrates different uses of the android.app.AlertDialog.
      See corresponding Java code com.example.android.apis.app.AlertDialogSamples.java. -->
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/screen"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:orientation="vertical">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/screen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
     <LinearLayout
-        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical">
-        <Button android:id="@+id/two_buttons"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
+
+        <Button
+            android:id="@+id/two_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/alert_dialog_two_buttons"/>
-        <Button android:id="@+id/two_buttons2"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
+
+        <Button
+            android:id="@+id/two_buttons_nodismiss"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/alert_dialog_two_buttons_nodismiss"/>
+
+        <Button
+            android:id="@+id/two_buttons_long"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/alert_dialog_two_buttons2"/>
-        <Button android:id="@+id/two_buttons2ultra"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
+
+        <Button
+            android:id="@+id/two_buttons_ultra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/alert_dialog_two_buttons2ultra"/>
-        <Button android:id="@+id/select_button"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
+
+        <Button
+            android:id="@+id/list_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/alert_dialog_select_button"/>
-        <Button android:id="@+id/progress_button"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
+
+        <Button
+            android:id="@+id/progress_bar_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/alert_dialog_progress_button"/>
-        <Button android:id="@+id/progress_spinner_button"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
+
+        <Button
+            android:id="@+id/progress_spinner_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/alert_dialog_progress_spinner_button"/>
-        <Button android:id="@+id/radio_button"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
+
+        <Button
+            android:id="@+id/radio_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/alert_dialog_single_choice"/>
-        <Button android:id="@+id/checkbox_button"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
+
+        <Button
+            android:id="@+id/checkbox_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/alert_dialog_multi_choice"/>
-        <Button android:id="@+id/checkbox_button2"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
+
+        <Button
+            android:id="@+id/checkbox_contactsprovider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/alert_dialog_multi_choice_cursor"/>
-        <Button android:id="@+id/text_entry_button"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
+
+        <Button
+            android:id="@+id/text_entry_dialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/alert_dialog_text_entry"/>
-        <Button android:id="@+id/two_buttons_old_school"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
+
+        <Button
+            android:id="@+id/two_buttons_traditionnal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/alert_dialog_two_buttons_old_school"/>
-        <Button android:id="@+id/two_buttons_holo_light"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
+
+        <Button
+            android:id="@+id/two_buttons_holo_light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/alert_dialog_two_buttons_holo_light"/>
-        <Button android:id="@+id/two_buttons_default_light"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
+
+        <Button
+            android:id="@+id/two_buttons_default_light"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/alert_dialog_two_buttons_default_light"/>
-        <Button android:id="@+id/two_buttons_default_dark"
-            android:layout_width="match_parent" android:layout_height="wrap_content"
+
+        <Button
+            android:id="@+id/two_buttons_default_dark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/alert_dialog_two_buttons_default_dark"/>
     </LinearLayout>
 </ScrollView>

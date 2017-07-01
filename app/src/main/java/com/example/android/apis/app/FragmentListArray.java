@@ -21,6 +21,7 @@ import com.example.android.apis.Shakespeare;
 import android.app.Activity;
 import android.app.ListFragment;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -48,6 +49,13 @@ public class FragmentListArray extends Activity {
         @Override
         public void onActivityCreated(Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
+//            setListAdapter(new ArrayAdapter<>(getActivity(),
+//                    android.R.layout.simple_list_item_1, Shakespeare.TITLES));
+        }
+
+        @Override
+        public void onCreate(@Nullable Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
             setListAdapter(new ArrayAdapter<>(getActivity(),
                     android.R.layout.simple_list_item_1, Shakespeare.TITLES));
         }

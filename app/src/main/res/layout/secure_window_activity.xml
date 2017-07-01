@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 
-<!-- See corresponding Java code SecureWindowActivity.java. -->
+<!-- See corresponding Java code ActivitySecureWindow.java. -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"

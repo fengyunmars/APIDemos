@@ -258,7 +258,7 @@
     <string name="stop_service">Stop Service</string>
 
     <string name="activity_local_service_binding">App/Service/Local Service Binding</string>
-    <string name="local_service_binding">This demonstrates how you can connect with a persistent
+    <string name="local_service_binding">This demonstrates how you can connect with a persistent 持久的
         service.  Notice how it automatically starts for you, and play around with the
         interaction between this and Local Service Controller.</string>
     <string name="bind_service">Bind Service</string>
@@ -534,6 +534,7 @@
 
     <string name="activity_alert_dialog">App/Alert Dialogs</string>
     <string name="alert_dialog_two_buttons">OK Cancel dialog with a message</string>
+    <string name="alert_dialog_two_buttons_nodismiss">OK Cancel dialog with a message no dismiss!</string>
     <string name="alert_dialog_two_buttons_old_school">OK Cancel dialog with traditional theme</string>
     <string name="alert_dialog_two_buttons_holo_light">OK Cancel dialog with Holo Light theme</string>
     <string name="alert_dialog_two_buttons_default_light">OK Cancel dialog with DeviceDefault Light theme</string>
@@ -541,9 +542,9 @@
     <string name="alert_dialog_two_buttons2">OK Cancel dialog with a long message</string>
     <string name="alert_dialog_two_buttons2ultra">OK Cancel dialog with ultra long message</string>
     <string name="alert_dialog_select_button">List dialog</string>
-    <string name="alert_dialog_single_choice">Single choice list</string>
-    <string name="alert_dialog_multi_choice">Repeat alarm</string>
-    <string name="alert_dialog_multi_choice_cursor">Send Call to VoiceMail</string>
+    <string name="alert_dialog_single_choice">Single choice dialog</string>
+    <string name="alert_dialog_multi_choice">CheckBox dialog</string>
+    <string name="alert_dialog_multi_choice_cursor">CheckBox dialog contacts provider</string>
     <string name="alert_dialog_progress_button">Progress bar dialog</string>
     <string name="alert_dialog_progress_spinner_button">Progress spinner dialog</string>
     <string name="alert_dialog_text_entry">Text Entry dialog</string>
@@ -1605,5 +1606,6 @@
     <string name="textview02">textview02</string>
     <string name="textview03">textview03</string>
     <string name="textview04">textview04</string>
+    <string name="choose_wallpaper">Choose Wallpaper</string>
 
 </resources>

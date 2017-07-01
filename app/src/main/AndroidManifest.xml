@@ -101,7 +101,7 @@
         </activity>
         <activity
             android:name=".app.ActivityNoLayout"
-            android:label="App/Activity/ActivityNoLayout">
+            android:label="App/Activity/NoLayout">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -160,7 +160,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.WallpaperActivity"
+            android:name=".app.ActivityWallpaperTheme"
             android:label="@string/activity_wallpaper"
             android:theme="@style/Theme.Wallpaper">
             <intent-filter>
@@ -170,17 +170,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.TranslucentActivity"
+            android:name=".app.ActivityTranslucent"
             android:label="@string/activity_translucent"
             android:theme="@style/Theme.Translucent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.TranslucentBlurActivity"
+            android:name=".app.ActivityTranslucentBlur"
             android:label="@string/activity_translucent_blur"
             android:theme="@style/Theme.Transparent">
             <intent-filter>
@@ -240,7 +239,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.SoftInputModes"
+            android:name=".app.ActivitySoftInputModes"
             android:label="@string/soft_input_modes">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -319,7 +318,7 @@
         <activity android:name=".app.ActivityReorderThree"/>
         <activity android:name=".app.ActivityReorderFour"/>
         <activity
-            android:name=".app.SetWallpaperActivity"
+            android:name=".app.ActivitySetWallpaper"
             android:label="@string/activity_setwallpaper">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -355,7 +354,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.SecureWindowActivity"
+            android:name=".app.ActivitySecureWindow"
             android:label="@string/activity_secure_window">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -364,7 +363,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.SecureDialogActivity"
+            android:name=".app.ActivitySecureDialog"
             android:label="@string/activity_secure_dialog">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -373,7 +372,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.SecureSurfaceViewActivity"
+            android:name=".app.ActivitySecureSurfaceView"
             android:label="@string/activity_secure_surface_view">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -753,11 +752,11 @@
         </activity>
 
         <service
-            android:name=".app.AlarmService_Service"
+            android:name=".app.AlarmServiceMy"
             android:process=":remote"/>
 
         <activity
-            android:name=".app.AlarmService"
+            android:name=".app.AlarmServiceActivity"
             android:label="@string/activity_alarm_service">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

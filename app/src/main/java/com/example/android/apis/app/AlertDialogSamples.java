@@ -57,20 +57,22 @@ App/Dialog/Alert Dialog
  * </table> 
  */
 public class AlertDialogSamples extends Activity {
+
     private static final String TAG = "AlertDialogSamples";
     private static final int DIALOG_YES_NO_MESSAGE = 1;
+    private static final int DIALOG_YES_NO_MESSAGE_NODISMISS = 15;
     private static final int DIALOG_YES_NO_LONG_MESSAGE = 2;
-    private static final int DIALOG_LIST = 3;
-    private static final int DIALOG_PROGRESS = 4;
-    private static final int DIALOG_SINGLE_CHOICE = 5;
-    private static final int DIALOG_MULTIPLE_CHOICE = 6;
-    private static final int DIALOG_TEXT_ENTRY = 7;
-    private static final int DIALOG_MULTIPLE_CHOICE_CURSOR = 8;
-    private static final int DIALOG_YES_NO_ULTRA_LONG_MESSAGE = 9;
-    private static final int DIALOG_YES_NO_OLD_SCHOOL_MESSAGE = 10;
-    private static final int DIALOG_YES_NO_HOLO_LIGHT_MESSAGE = 11;
-    private static final int DIALOG_YES_NO_DEFAULT_LIGHT_MESSAGE = 12;
-    private static final int DIALOG_YES_NO_DEFAULT_DARK_MESSAGE = 13;
+    private static final int DIALOG_YES_NO_ULTRA_LONG_MESSAGE = 3;
+    private static final int DIALOG_YES_NO_OLD_SCHOOL_MESSAGE = 4;
+    private static final int DIALOG_YES_NO_HOLO_LIGHT_MESSAGE = 5;
+    private static final int DIALOG_YES_NO_DEFAULT_LIGHT_MESSAGE = 6;
+    private static final int DIALOG_YES_NO_DEFAULT_DARK_MESSAGE = 7;
+    private static final int DIALOG_LIST = 8;
+    private static final int DIALOG_PROGRESS = 9;
+    private static final int DIALOG_SINGLE_CHOICE = 10;
+    private static final int DIALOG_MULTIPLE_CHOICE = 11;
+    private static final int DIALOG_TEXT_ENTRY = 12;
+    private static final int DIALOG_MULTIPLE_CHOICE_CURSOR = 13;
     private static final int DIALOG_PROGRESS_SPINNER = 14;
 
     private static final int MAX_PROGRESS = 100;
@@ -99,6 +101,34 @@ public class AlertDialogSamples extends Activity {
                     }
                 })
                 .create();
+            case DIALOG_YES_NO_MESSAGE_NODISMISS:
+                final AlertDialog mDialog = new AlertDialog.Builder(AlertDialogSamples.this)
+                    .setTitle(R.string.alert_dialog_two_buttons_title)
+                .setPositiveButton(R.string.alert_dialog_ok, null)
+                .setNegativeButton(R.string.alert_dialog_cancel, null)
+                .create();
+                mDialog.setOnShowListener(new DialogInterface.OnShowListener() {
+                    @Override
+                    public void onShow(DialogInterface dialog) {
+                        Button positive = mDialog.getButton(AlertDialog.BUTTON_POSITIVE);
+                        Button negative = mDialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+                        positive.setOnClickListener(new OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(AlertDialogSamples.this,"确定",Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                        negative.setOnClickListener(new OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Toast.makeText(AlertDialogSamples.this,"取消",Toast.LENGTH_SHORT).show();
+                                mDialog.dismiss();
+                            }
+                        });
+                    }
+                });
+                return mDialog;
         case DIALOG_YES_NO_OLD_SCHOOL_MESSAGE:
             return new AlertDialog.Builder(AlertDialogSamples.this, AlertDialog.THEME_TRADITIONAL)
                 .setIconAttribute(android.R.attr.alertDialogIcon)
@@ -341,25 +371,32 @@ public class AlertDialogSamples extends Activity {
         setContentView(R.layout.alert_dialog);
                 
         /* Display a text message with yes/no buttons and handle each message as well as the cancel action */
-        Button twoButtonsTitle = (Button) findViewById(R.id.two_buttons);
-        twoButtonsTitle.setOnClickListener(new OnClickListener() {
+        Button twoButtons = (Button) findViewById(R.id.two_buttons);
+        twoButtons.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 showDialog(DIALOG_YES_NO_MESSAGE);
             }
         });
+        /* Display a text message with yes/no buttons and handle each message as well as the cancel action */
+        Button twoButtonsNoDismiss = (Button) findViewById(R.id.two_buttons_nodismiss);
+        twoButtonsNoDismiss.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                showDialog(DIALOG_YES_NO_MESSAGE_NODISMISS);
+            }
+        });
         
         /* Display a long text message with yes/no buttons and handle each message as well as the cancel action */
-        Button twoButtons2Title = (Button) findViewById(R.id.two_buttons2);
-        twoButtons2Title.setOnClickListener(new OnClickListener() {
+        Button twoButtonsLong = (Button) findViewById(R.id.two_buttons_long);
+        twoButtonsLong.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 showDialog(DIALOG_YES_NO_LONG_MESSAGE);
             }
         });
         
         
-        /* Display an ultra long text message with yes/no buttons and handle each message as well as the cancel action */
-        Button twoButtons2UltraTitle = (Button) findViewById(R.id.two_buttons2ultra);
-        twoButtons2UltraTitle.setOnClickListener(new OnClickListener() {
+        /* Display an ultra 极端的 long text message with yes/no buttons and handle each message as well as the cancel action */
+        Button twoButtonsUltra = (Button) findViewById(R.id.two_buttons_ultra);
+        twoButtonsUltra.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 showDialog(DIALOG_YES_NO_ULTRA_LONG_MESSAGE);
             }
@@ -367,16 +404,16 @@ public class AlertDialogSamples extends Activity {
 
 
         /* Display a list of items */
-        Button selectButton = (Button) findViewById(R.id.select_button);
-        selectButton.setOnClickListener(new OnClickListener() {
+        Button listDialog = (Button) findViewById(R.id.list_dialog);
+        listDialog.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 showDialog(DIALOG_LIST);
             }
         });
         
         /* Display a custom progress bar */
-        Button progressButton = (Button) findViewById(R.id.progress_button);
-        progressButton.setOnClickListener(new OnClickListener() {
+        Button progressBarDialog = (Button) findViewById(R.id.progress_bar_dialog);
+        progressBarDialog.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 showDialog(DIALOG_PROGRESS);
                 mProgress = 0;
@@ -386,72 +423,72 @@ public class AlertDialogSamples extends Activity {
         });
 
         /* Display a custom progress bar */
-        Button progressSpinnerButton = (Button) findViewById(R.id.progress_spinner_button);
-        progressSpinnerButton.setOnClickListener(new OnClickListener() {
+        Button progressSpinnerDialog = (Button) findViewById(R.id.progress_spinner_dialog);
+        progressSpinnerDialog.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 showDialog(DIALOG_PROGRESS_SPINNER);
             }
         });
         
         /* Display a radio button group */
-        Button radioButton = (Button) findViewById(R.id.radio_button);
-        radioButton.setOnClickListener(new OnClickListener() {
+        Button radioDialog = (Button) findViewById(R.id.radio_dialog);
+        radioDialog.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 showDialog(DIALOG_SINGLE_CHOICE);
             }
         });
         
         /* Display a list of checkboxes */
-        Button checkBox = (Button) findViewById(R.id.checkbox_button);
-        checkBox.setOnClickListener(new OnClickListener() {
+        Button checkBoxDialog = (Button) findViewById(R.id.checkbox_dialog);
+        checkBoxDialog.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 showDialog(DIALOG_MULTIPLE_CHOICE);
             }
         });
         
         /* Display a list of checkboxes, backed by a cursor */
-        Button checkBox2 = (Button) findViewById(R.id.checkbox_button2);
-        checkBox2.setOnClickListener(new OnClickListener() {
+        Button checkBoxContactsProvider = (Button) findViewById(R.id.checkbox_contactsprovider);
+        checkBoxContactsProvider.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 showDialog(DIALOG_MULTIPLE_CHOICE_CURSOR);
             }
         });
 
         /* Display a text entry dialog */
-        Button textEntry = (Button) findViewById(R.id.text_entry_button);
-        textEntry.setOnClickListener(new OnClickListener() {
+        Button textEntryDialog = (Button) findViewById(R.id.text_entry_dialog);
+        textEntryDialog.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 showDialog(DIALOG_TEXT_ENTRY);
             }
         });
         
         /* Two points, in the traditional theme */
-        Button twoButtonsOldSchoolTitle = (Button) findViewById(R.id.two_buttons_old_school);
-        twoButtonsOldSchoolTitle.setOnClickListener(new OnClickListener() {
+        Button twoButtonsTraditionnal = (Button) findViewById(R.id.two_buttons_traditionnal);
+        twoButtonsTraditionnal.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 showDialog(DIALOG_YES_NO_OLD_SCHOOL_MESSAGE);
             }
         });
         
         /* Two points, in the light holographic theme */
-        Button twoButtonsHoloLightTitle = (Button) findViewById(R.id.two_buttons_holo_light);
-        twoButtonsHoloLightTitle.setOnClickListener(new OnClickListener() {
+        Button twoButtonsHoloLight = (Button) findViewById(R.id.two_buttons_holo_light);
+        twoButtonsHoloLight.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 showDialog(DIALOG_YES_NO_HOLO_LIGHT_MESSAGE);
             }
         });
 
         /* Two points, in the light default theme */
-        Button twoButtonsDefaultLightTitle = (Button) findViewById(R.id.two_buttons_default_light);
-        twoButtonsDefaultLightTitle.setOnClickListener(new OnClickListener() {
+        Button twoButtonsDefaultLight = (Button) findViewById(R.id.two_buttons_default_light);
+        twoButtonsDefaultLight.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 showDialog(DIALOG_YES_NO_DEFAULT_LIGHT_MESSAGE);
             }
         });
 
         /* Two points, in the dark default theme */
-        Button twoButtonsDefaultDarkTitle = (Button) findViewById(R.id.two_buttons_default_dark);
-        twoButtonsDefaultDarkTitle.setOnClickListener(new OnClickListener() {
+        Button twoButtonsDefaultDark = (Button) findViewById(R.id.two_buttons_default_dark);
+        twoButtonsDefaultDark.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
                 showDialog(DIALOG_YES_NO_DEFAULT_DARK_MESSAGE);
             }

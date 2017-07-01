@@ -131,7 +131,7 @@ public class AlarmController extends Activity {
             // Schedule the alarm!
             AlarmManager am = (AlarmManager)getSystemService(ALARM_SERVICE);
             am.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
-                            firstTime, 15*1000, sender);
+                            firstTime, 7*1000, sender);
 
             // Tell the user about what we did.
             if (mToast != null) {

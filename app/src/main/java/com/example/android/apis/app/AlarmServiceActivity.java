@@ -37,7 +37,8 @@ import android.widget.Toast;
  * be started.  This is useful when you want to schedule alarms that initiate
  * long-running operations, such as retrieving recent e-mails.
  */
-public class AlarmService extends Activity {
+public class AlarmServiceActivity extends Activity {
+
     private PendingIntent mAlarmSender;
     
     @Override
@@ -46,8 +47,8 @@ public class AlarmService extends Activity {
 
         // Create an IntentSender that will launch our service, to be scheduled
         // with the alarm manager.
-        mAlarmSender = PendingIntent.getService(AlarmService.this,
-                0, new Intent(AlarmService.this, AlarmService_Service.class), 0);
+        mAlarmSender = PendingIntent.getService(AlarmServiceActivity.this,
+                0, new Intent(AlarmServiceActivity.this, AlarmServiceMy.class), 0);
         
         setContentView(R.layout.alarm_service);
 
@@ -69,7 +70,7 @@ public class AlarmService extends Activity {
                             firstTime, 30*1000, mAlarmSender);
 
             // Tell the user about what we did.
-            Toast.makeText(AlarmService.this, R.string.repeating_scheduled,
+            Toast.makeText(AlarmServiceActivity.this, R.string.repeating_scheduled,
                     Toast.LENGTH_LONG).show();
         }
     };
@@ -81,7 +82,7 @@ public class AlarmService extends Activity {
             am.cancel(mAlarmSender);
 
             // Tell the user about what we did.
-            Toast.makeText(AlarmService.this, R.string.repeating_unscheduled,
+            Toast.makeText(AlarmServiceActivity.this, R.string.repeating_unscheduled,
                     Toast.LENGTH_LONG).show();
 
         }

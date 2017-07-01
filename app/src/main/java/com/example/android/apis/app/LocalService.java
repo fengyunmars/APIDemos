@@ -39,11 +39,12 @@ import com.example.android.apis.R;
  *
  * <p>Notice the use of the {@link NotificationManager} when interesting things
  * happen in the service.  This is generally how background services should
- * interact with the user, rather than doing something more disruptive such as
+ * interact with the user, rather than doing something more disruptive 扰乱的 such as
  * calling startActivity().
  */
 //BEGIN_INCLUDE(service)
 public class LocalService extends Service {
+
     private NotificationManager mNM;
 
     // Unique Identification Number for the Notification.

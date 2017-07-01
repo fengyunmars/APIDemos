@@ -94,7 +94,7 @@ public class FragmentNestingTabs extends Activity {
                 ft.commit();
             }
         }
-
+        @Override
         public void onTabSelected(Tab tab, FragmentTransaction ft) {
             if (mFragment == null) {
                 mFragment = Fragment.instantiate(mActivity, mClass.getName(), mArgs);
@@ -103,13 +103,13 @@ public class FragmentNestingTabs extends Activity {
                 ft.attach(mFragment);
             }
         }
-
+        @Override
         public void onTabUnselected(Tab tab, FragmentTransaction ft) {
             if (mFragment != null) {
                 ft.detach(mFragment);
             }
         }
-
+        @Override
         public void onTabReselected(Tab tab, FragmentTransaction ft) {
             Toast.makeText(mActivity, "Reselected!", Toast.LENGTH_SHORT).show();
         }

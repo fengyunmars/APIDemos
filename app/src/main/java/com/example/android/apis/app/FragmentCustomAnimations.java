@@ -34,6 +34,7 @@ import android.widget.TextView;
  * pushing and popping a stack.
  */
 public class FragmentCustomAnimations extends Activity {
+
     int mStackLevel = 1;
 
     @Override
@@ -49,6 +50,13 @@ public class FragmentCustomAnimations extends Activity {
             }
         });
 
+        Button pop = (Button)findViewById(R.id.delete_fragment);
+        pop.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                deleteFragmentFromStack();
+            }
+        });
+
         if (savedInstanceState == null) {
             // Do first time initialization -- add initial fragment.
             Fragment newFragment = CountingFragment.newInstance(mStackLevel);
@@ -57,6 +65,10 @@ public class FragmentCustomAnimations extends Activity {
         } else {
             mStackLevel = savedInstanceState.getInt("level");
         }
+    }
+
+    private void deleteFragmentFromStack() {
+        getFragmentManager().popBackStackImmediate();
     }
 
     @Override
@@ -123,7 +135,7 @@ public class FragmentCustomAnimations extends Activity {
             View v = inflater.inflate(R.layout.hello_world, container, false);
             View tv = v.findViewById(R.id.text);
             ((TextView)tv).setText("Fragment #" + mNum);
-            tv.setBackgroundDrawable(getResources().getDrawable(android.R.drawable.gallery_thumb));
+            tv.setBackground(getResources().getDrawable(android.R.drawable.gallery_thumb));
             return v;
         }
     }

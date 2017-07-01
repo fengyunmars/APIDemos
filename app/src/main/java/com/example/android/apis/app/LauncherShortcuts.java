@@ -39,7 +39,7 @@ import com.example.android.apis.R;
  * We handle stage 1 (creating a shortcut) by simply sending back the information (in the form
  * of an {@link android.content.Intent} that the launcher will use to create the shortcut.
  * 
- * You can also implement this in an interactive way, by having your activity actually present
+ * You can also implement this in an interactive 交互式 way, by having your activity actually present
  * UI for the user to select the specific nature of the shortcut, such as a contact, picture, URL,
  * media item, or action.
  * 
@@ -70,7 +70,7 @@ public class LauncherShortcuts extends Activity {
             return;
         }
 
-        // If we weren't launched with a CREATE_SHORTCUT intent, simply put up an informative
+        // If we weren't launched with a CREATE_SHORTCUT intent, simply put up an informative 提供信息的
         // display.
 
         // Inflate our UI from its XML layout description.

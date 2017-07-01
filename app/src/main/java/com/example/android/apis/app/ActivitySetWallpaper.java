@@ -24,6 +24,7 @@ import java.io.IOException;
 
 import android.app.Activity;
 import android.app.WallpaperManager;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
@@ -39,7 +40,8 @@ import android.widget.ImageView;
  * <p>This demonstrates the how to write an activity that gets the current system wallpaper,
  * modifies it and sets the modified bitmap as system wallpaper.</p>
  */
-public class SetWallpaperActivity extends Activity {
+public class ActivitySetWallpaper extends Activity {
+
     final static private int[] mColors =
             {Color.BLUE, Color.GREEN, Color.RED, Color.LTGRAY, Color.MAGENTA, Color.CYAN,
                     Color.YELLOW, Color.WHITE};
@@ -53,10 +55,10 @@ public class SetWallpaperActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         // Be sure to call the super class.
         super.onCreate(savedInstanceState);
-        // See res/layout/wallpaper_2.xml for this
+        // See res/layout/set_wallpaperer.xml for this
         // view layout definition, which is being set here as
         // the content of our screen.
-        setContentView(R.layout.wallpaper_2);
+        setContentView(R.layout.set_wallpaper);
         final WallpaperManager wallpaperManager = WallpaperManager.getInstance(this);
         final Drawable wallpaperDrawable = wallpaperManager.getDrawable();
         final ImageView imageView = (ImageView) findViewById(R.id.imageview);
@@ -82,6 +84,14 @@ public class SetWallpaperActivity extends Activity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+            }
+        });
+
+        Button chooseWallpaper = (Button) findViewById(R.id.choosewallpaper);
+        chooseWallpaper.setOnClickListener(new OnClickListener() {
+            public void onClick(View view) {
+                Intent chooseIntent = new Intent(Intent.ACTION_SET_WALLPAPER);
+                startActivity(Intent.createChooser(chooseIntent, "选择壁纸"));
             }
         });
     }

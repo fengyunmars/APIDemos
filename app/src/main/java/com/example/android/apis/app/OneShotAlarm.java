@@ -16,6 +16,8 @@
 
 package com.example.android.apis.app;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.BroadcastReceiver;
@@ -24,6 +26,8 @@ import android.widget.Toast;
 // Need the following import to get access to the app resources, since this
 // class is in a sub-package.
 import com.example.android.apis.R;
+
+import java.util.Calendar;
 
 /**
  * This is an example of implement an {@link BroadcastReceiver} for an alarm that
@@ -37,6 +41,19 @@ public class OneShotAlarm extends BroadcastReceiver
     public void onReceive(Context context, Intent intent)
     {
         Toast.makeText(context, R.string.one_shot_received, Toast.LENGTH_SHORT).show();
+
+        Intent newintent = new Intent(context, OneShotAlarm.class);
+        PendingIntent sender = PendingIntent.getBroadcast(context,
+                0, newintent, 0);
+
+        // We want the alarm to go off 30 seconds from now.
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.add(Calendar.SECOND, 30);
+
+        // Schedule the alarm!
+        AlarmManager am = (AlarmManager)context.getSystemService(context.ALARM_SERVICE);
+        am.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender);
     }
 }
 
