@@ -15,7 +15,7 @@
 -->
 
 <!-- The content that we show on secondary displays.
-     See corresponding Java code PresentationWithMediaRouterActivity.java. -->
+     See corresponding Java code ActivityPresentationWithMediaRouter.java. -->
 
 <android.opengl.GLSurfaceView  xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/surface_view"

@@ -336,7 +336,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.PresentationActivity"
+            android:name=".app.ActivityPresentation"
             android:label="@string/activity_presentation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -345,7 +345,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.PresentationWithMediaRouterActivity"
+            android:name=".app.ActivityPresentationWithMediaRouter"
             android:label="@string/activity_presentation_with_media_router">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -614,11 +614,11 @@
         <!-- Service Samples -->
 
         <service
-            android:name=".app.LocalService"
+            android:name=".app.ServiceLocal"
             android:stopWithTask="true"/>
 
         <activity
-            android:name=".app.LocalServiceActivities$Controller"
+            android:name=".app.ServiceLocalActivities$Controller"
             android:label="@string/activity_local_service_controller"
             android:launchMode="singleTop">
             <intent-filter>
@@ -628,7 +628,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.LocalServiceActivities$Binding"
+            android:name=".app.ServiceLocalActivities$Binding"
             android:label="@string/activity_local_service_binding">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -639,12 +639,12 @@
 
         <!-- BEGIN_INCLUDE(remote_service_declaration) -->
         <service
-            android:name=".app.MessengerService"
+            android:name=".app.ServiceMessenger"
             android:process=":remote"/>
         <!-- END_INCLUDE(remote_service_declaration) -->
 
         <activity
-            android:name=".app.MessengerServiceActivities$Binding"
+            android:name=".app.ServiceMessengerActivities$Binding"
             android:label="@string/activity_messenger_service_binding">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -654,11 +654,11 @@
         </activity>
 
         <service
-            android:name=".app.RemoteService"
+            android:name=".app.ServiceRemote"
             android:process=":remote"/>
 
         <activity
-            android:name=".app.RemoteService$Controller"
+            android:name=".app.ServiceRemote$Controller"
             android:label="@string/activity_remote_service_controller"
             android:launchMode="singleTop">
             <intent-filter>
@@ -668,7 +668,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.RemoteService$Binding"
+            android:name=".app.ServiceRemote$Binding"
             android:label="@string/activity_remote_service_binding">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -677,7 +677,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.RemoteService$BindingOptions"
+            android:name=".app.ServiceRemote$BindingOptions"
             android:label="@string/activity_remote_service_binding_options">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -699,10 +699,10 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".app.ForegroundService"/>
+        <service android:name=".app.ServiceForeground"/>
 
         <activity
-            android:name=".app.ForegroundService$Controller"
+            android:name=".app.ServiceForeground$Controller"
             android:label="@string/activity_foreground_service_controller"
             android:launchMode="singleTop">
             <intent-filter>
@@ -712,7 +712,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.IsolatedService$Controller"
+            android:name=".app.ServiceIsolated$Controller"
             android:enabled="@bool/atLeastJellyBean"
             android:label="@string/activity_isolated_service_controller"
             android:launchMode="singleTop">
@@ -724,21 +724,21 @@
         </activity>
 
         <service
-            android:name=".app.IsolatedService"
+            android:name=".app.ServiceIsolated"
             android:enabled="@bool/atLeastJellyBean"
             android:isolatedProcess="true"/>
         <service
-            android:name=".app.IsolatedService2"
+            android:name=".app.ServiceIsolated2"
             android:enabled="@bool/atLeastJellyBean"
             android:isolatedProcess="true"/>
 
         <!-- Alarm Samples -->
 
         <receiver
-            android:name=".app.OneShotAlarm"
+            android:name=".app.AlarmBroadcastReceiverOneShot"
             android:process=":remote"/>
         <receiver
-            android:name=".app.RepeatingAlarm"
+            android:name=".app.AlarmBroadcastReceiverRepeating"
             android:process=":remote"/>
 
         <activity
@@ -853,7 +853,7 @@
         <!-- Notifications samples -->
 
         <activity
-            android:name=".app.NotifyWithText"
+            android:name=".app.NotificationToast"
             android:label="App/Notification/NotifyWithText">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -862,7 +862,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.IncomingMessage"
+            android:name=".app.NotificationIncomingMessage"
             android:label="App/Notification/IncomingMessage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -871,12 +871,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.IncomingMessageView"
+            android:name=".app.NotificationIncomingMessageView"
             android:label="App/Notification/IncomingMessageView"/>
 
         <!-- BEGIN_INCLUDE(interstitial_affinity) -->
         <activity
-            android:name=".app.IncomingMessageInterstitial"
+            android:name=".app.NotificationIncomingMessageInterstitial"
             android:excludeFromRecents="true"
             android:label="You have messages"
             android:launchMode="singleTask"
@@ -887,7 +887,7 @@
 
         <!--
              This is used to display a notification selected by the user
-             from StatusBarNotifications.  Note the configuration here so
+             from NotificationStatusBar.  Note the configuration here so
              that the activity layers on top of whatever the user is doing,
              allowing them to press back to return.
         -->
@@ -898,7 +898,7 @@
             android:taskAffinity=""
             android:theme="@style/Theme.Transparent"/>
         <activity
-            android:name=".app.StatusBarNotifications"
+            android:name=".app.NotificationStatusBar"
             android:label="App/Notification/Status Bar"
             android:launchMode="singleTop">
             <intent-filter>
@@ -908,10 +908,10 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".app.NotifyingService"/>
+        <service android:name=".app.NotificationService"/>
 
         <activity
-            android:name=".app.NotifyingController"
+            android:name=".app.NotificationServiceController"
             android:label="App/Notification/Notifying Service Controller">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -1365,6 +1365,17 @@
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
+
+        <provider
+            android:authorities="com.example.android.apis.fileprovider"
+            android:name="android.support.v4.content.FileProvider"
+            android:grantUriPermissions="true"
+            android:exported="false">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths"
+            />
+        </provider>
         <activity
             android:name=".content.ExternalStorage"
             android:label="@string/activity_external_storage">
@@ -1376,7 +1387,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".content.StyledText"
+            android:name=".content.ResourcesStyledText"
             android:label="@string/activity_styled_text">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -1428,7 +1439,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".content.ReadAsset"
+            android:name=".content.AssetRead"
             android:label="@string/activity_read_asset">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -1510,12 +1521,11 @@
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
+
         <activity android:name=".content.ProcessText">
             <intent-filter>
                 <action android:name="android.intent.action.PROCESS_TEXT"/>
-
                 <category android:name="android.intent.category.DEFAULT"/>
-
                 <data android:mimeType="text/plain"/>
             </intent-filter>
         </activity>
@@ -1875,7 +1885,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.LinearLayout1"
+            android:name=".view.LinearLayoutVerticalBasic"
             android:label="Views/Layouts/LinearLayout/01. Vertical">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -1884,7 +1894,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.LinearLayout2"
+            android:name=".view.LinearLayoutVerticalFillScreen"
             android:label="Views/Layouts/LinearLayout/02. Vertical (Fill Screen)">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -1893,7 +1903,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.LinearLayout3"
+            android:name=".view.LinearLayoutVerticalExpand"
             android:label="Views/Layouts/LinearLayout/03. Vertical (Padded)">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -1902,11 +1912,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.LinearLayout4"
-            android:label="Views/Layouts/LinearLayout/04. Horizontal">
+            android:name=".view.LinearLayoutHorizontalAverage"
+            android:label="Views/Layouts/LinearLayout/04. Horizontal Average">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.LinearLayoutHorizontalAverageReal"
+            android:label="Views/Layouts/LinearLayout/04. Horizontal Average Real">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>

@@ -252,7 +252,7 @@
     <string name="local_service_label">Sample Local Service</string>
 
     <string name="activity_local_service_controller">App/Service/Local Service Controller</string>
-    <string name="local_service_controller">This demonstrates how you can implement persistent services that
+    <string name="local_service_controller">This demonstrates how you can implement persistent 持久的 services that
         may be started and stopped as desired.</string>
     <string name="start_service">Start Service</string>
     <string name="stop_service">Stop Service</string>
@@ -454,7 +454,7 @@
     <string name="activity_read_asset">Content/Assets/Read Asset</string>
 
     <string name="activity_themes">Content/Resources/Themes</string>
-    <string name="activity_resources">Content/Resources/Resources</string>
+    <string name="activity_resources">Content/Resources/Sample</string>
 
     <string name="activity_pick_contact">Content/Provider/Pick Contact</string>
     <string name="pick_contact_msg">Invoke Contacts to pick various kinds of
@@ -631,7 +631,7 @@
     <string name="email_reply">Reply</string>
     <string name="email_forward">Forward</string>
     <string name="jump">Jump</string>
-    <string name="dive">Dive</string>
+    <string name="dive">Dive 潜水</string>
 
     <!-- ============================== -->
     <!--  app/menu examples strings     -->
@@ -1607,5 +1607,8 @@
     <string name="textview03">textview03</string>
     <string name="textview04">textview04</string>
     <string name="choose_wallpaper">Choose Wallpaper</string>
+    <string name="copy_styled_text">copy styled text</string>
+    <string name="copy_plain_text">copy plain text</string>
+    <string name="copy_html_text">copy html text</string>
 
 </resources>

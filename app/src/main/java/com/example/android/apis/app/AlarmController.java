@@ -35,8 +35,8 @@ import java.util.Calendar;
 
 /**
  * Example of scheduling one-shot and repeating alarms.  See
- * {@link OneShotAlarm} for the code run when the one-shot alarm goes off, and
- * {@link RepeatingAlarm} for the code run when the repeating alarm goes off.
+ * {@link AlarmBroadcastReceiverOneShot} for the code run when the one-shot alarm goes off, and
+ * {@link AlarmBroadcastReceiverRepeating} for the code run when the repeating alarm goes off.
  * <h4>Demo</h4>
 App/Service/Alarm Controller
  
@@ -47,12 +47,12 @@ App/Service/Alarm Controller
             <td class="DescrColumn">The activity that lets you schedule alarms</td>
         </tr>
         <tr>
-            <td class="LinkColumn">src/com.example.android.apis/app/OneShotAlarm.java</td>
+            <td class="LinkColumn">src/com.example.android.apis/app/AlarmBroadcastReceiverOneShot.java</td>
             <td class="DescrColumn">This is an intent receiver that executes when the
                 one-shot alarm goes off</td>
         </tr>
         <tr>
-            <td class="LinkColumn">src/com.example.android.apis/app/RepeatingAlarm.java</td>
+            <td class="LinkColumn">src/com.example.android.apis/app/AlarmBroadcastReceiverRepeating.java</td>
             <td class="DescrColumn">This is an intent receiver that executes when the
                 repeating alarm goes off</td>
         </tr>
@@ -88,7 +88,7 @@ public class AlarmController extends Activity {
             // name to have our own receiver (which has been published in
             // AndroidManifest.xml) instantiated and called, and then create an
             // IntentSender to have the intent executed as a broadcast.
-            Intent intent = new Intent(AlarmController.this, OneShotAlarm.class);
+            Intent intent = new Intent(AlarmController.this, AlarmBroadcastReceiverOneShot.class);
             PendingIntent sender = PendingIntent.getBroadcast(AlarmController.this,
                     0, intent, 0);
 
@@ -120,7 +120,7 @@ public class AlarmController extends Activity {
             // IntentSender to have the intent executed as a broadcast.
             // Note that unlike above, this IntentSender is configured to
             // allow itself to be sent multiple times.
-            Intent intent = new Intent(AlarmController.this, RepeatingAlarm.class);
+            Intent intent = new Intent(AlarmController.this, AlarmBroadcastReceiverRepeating.class);
             PendingIntent sender = PendingIntent.getBroadcast(AlarmController.this,
                     0, intent, 0);
             
@@ -147,7 +147,7 @@ public class AlarmController extends Activity {
         public void onClick(View v) {
             // Create the same intent, and thus a matching IntentSender, for
             // the one that was scheduled.
-            Intent intent = new Intent(AlarmController.this, RepeatingAlarm.class);
+            Intent intent = new Intent(AlarmController.this, AlarmBroadcastReceiverRepeating.class);
             PendingIntent sender = PendingIntent.getBroadcast(AlarmController.this,
                     0, intent, 0);
             

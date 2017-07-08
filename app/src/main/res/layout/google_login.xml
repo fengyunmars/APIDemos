@@ -15,7 +15,7 @@
 -->
 
 <!-- Demonstrates styled string resources.
-     See corresponding Java code com.android.sdk.content.StyledText -->
+     See corresponding Java code com.android.sdk.content.ResourcesStyledText -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"

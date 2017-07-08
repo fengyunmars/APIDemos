@@ -22,10 +22,12 @@
 -->
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    <LinearLayout android:layout_width="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -34,16 +36,18 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button android:id="@+id/copy_styled_text"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
+            <Button
+                android:id="@+id/copy_styled_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:onClick="pasteStyledText"
-                android:text="@string/copy_text" />
+                android:text="@string/copy_styled_text"/>
 
             <TextView
                 android:id="@+id/styled_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="normal" />
+                android:textStyle="normal"/>
 
         </LinearLayout>
 
@@ -52,16 +56,18 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button android:id="@+id/copy_plain_text"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
+            <Button
+                android:id="@+id/copy_plain_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:onClick="pastePlainText"
-                android:text="@string/copy_text" />
+                android:text="@string/copy_plain_text"/>
 
             <TextView
                 android:id="@+id/plain_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="normal" />
+                android:textStyle="normal"/>
 
         </LinearLayout>
 
@@ -70,16 +76,18 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button android:id="@+id/copy_html_text"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
+            <Button
+                android:id="@+id/copy_html_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:onClick="pasteHtmlText"
-                android:text="@string/copy_text" />
+                android:text="@string/copy_html_text"/>
 
             <TextView
                 android:id="@+id/html_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textStyle="normal" />
+                android:textStyle="normal"/>
 
         </LinearLayout>
 
@@ -88,15 +96,19 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <Button android:id="@+id/copy_intent"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
+            <Button
+                android:id="@+id/copy_intent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:onClick="pasteIntent"
-                android:text="@string/copy_intent" />
+                android:text="@string/copy_intent"/>
 
-            <Button android:id="@+id/copy_uri"
-                android:layout_width="wrap_content" android:layout_height="wrap_content"
+            <Button
+                android:id="@+id/copy_uri"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:onClick="pasteUri"
-                android:text="@string/copy_uri" />
+                android:text="@string/copy_uri"/>
 
         </LinearLayout>
 
@@ -109,15 +121,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Data type: " />
+                android:text="Data type: "
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-            <Spinner android:id="@+id/clip_type"
+            <Spinner
+                android:id="@+id/clip_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:drawSelectorOnTop="true"
                 android:prompt="@string/clip_type_prompt"
-            />
+                />
 
         </LinearLayout>
 
@@ -130,27 +143,27 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="MIME types: " />
+                android:text="MIME types: "
+                android:textAppearance="?android:attr/textAppearanceMedium"/>
 
             <TextView
                 android:id="@+id/clip_mime_types"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:background="#ff303030"
                 android:padding="4dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 />
 
-            </LinearLayout>
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="Data content:" />
+            android:text="Data content:"
+            android:textAppearance="?android:attr/textAppearanceMedium"/>
 
         <TextView
             android:id="@+id/clip_text"

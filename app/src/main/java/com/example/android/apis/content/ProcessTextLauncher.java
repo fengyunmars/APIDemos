@@ -13,7 +13,7 @@ public class ProcessTextLauncher extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.process_text_send);
+        setContentView(R.layout.process_text_launcher);
     }
 
     @Override

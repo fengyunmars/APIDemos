@@ -146,7 +146,7 @@ public class ServiceStartArguments extends Service {
             }
         }
         
-        // Normally we would consistently return one kind of result...
+        // Normally we would consistently 坚持的 return one kind of result...
         // however, here we will select between these two, so you can see
         // how they impact the behavior.  Try killing the process while it
         // is in the middle of executing the different commands.

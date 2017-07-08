@@ -119,7 +119,7 @@ public class AlarmServiceMy extends Service {
     }
 
     /**
-     * This is the object that receives interactions from clients.  See RemoteService
+     * This is the object that receives interactions from clients.  See ServiceRemote
      * for a more complete example.
      */
     private final IBinder mBinder = new Binder() {

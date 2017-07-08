@@ -15,36 +15,36 @@
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="8dp">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="8dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Display a notification that will switch to the app in a new activity stack." />
+        android:text="Display a notification that will switch to the app in a new activity stack."
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
     <Button
         android:id="@+id/notify_app"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show App Notification" />
+        android:text="Show App Notification"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:paddingTop="16dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Display a notification that will go to a dedicated interstitial activity." />
+        android:text="Display a notification that will go to a dedicated 专用的 interstitial 空隙的 activity."
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
     <Button
         android:id="@+id/notify_interstitial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show Interstitial Notification" />
+        android:text="Show Interstitial Notification"/>
 
 </LinearLayout>

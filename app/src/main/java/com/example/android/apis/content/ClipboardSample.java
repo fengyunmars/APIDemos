@@ -21,9 +21,7 @@ import com.example.android.apis.R;
 import android.app.Activity;
 import android.content.ClipboardManager;
 import android.content.ClipData;
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
@@ -35,7 +33,7 @@ import android.widget.TextView;
 import android.widget.AdapterView.OnItemSelectedListener;
 
 public class ClipboardSample extends Activity {
-    ClipboardManager mClipboard;
+    ClipboardManager mClipboardManager;
 
     Spinner mSpinner;
     TextView mMimeTypes;
@@ -57,7 +55,7 @@ public class ClipboardSample extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mClipboard = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
+        mClipboardManager = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
 
         // See res/any/layout/resources.xml for this view layout definition.
         setContentView(R.layout.clipboard);
@@ -95,39 +93,39 @@ public class ClipboardSample extends Activity {
         mMimeTypes = (TextView)findViewById(R.id.clip_mime_types);
         mDataText = (TextView)findViewById(R.id.clip_text);
 
-        mClipboard.addPrimaryClipChangedListener(mPrimaryChangeListener);
+        mClipboardManager.addPrimaryClipChangedListener(mPrimaryChangeListener);
         updateClipData(true);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mClipboard.removePrimaryClipChangedListener(mPrimaryChangeListener);
+        mClipboardManager.removePrimaryClipChangedListener(mPrimaryChangeListener);
     }
 
     public void pasteStyledText(View button) {
-        mClipboard.setPrimaryClip(ClipData.newPlainText("Styled Text", mStyledText));
+        mClipboardManager.setPrimaryClip(ClipData.newPlainText("Styled Text", mStyledText));
     }
 
     public void pastePlainText(View button) {
-        mClipboard.setPrimaryClip(ClipData.newPlainText("Styled Text", mPlainText));
+        mClipboardManager.setPrimaryClip(ClipData.newPlainText("Styled Text", mPlainText));
     }
 
     public void pasteHtmlText(View button) {
-        mClipboard.setPrimaryClip(ClipData.newHtmlText("HTML Text", mHtmlPlainText, mHtmlText));
+        mClipboardManager.setPrimaryClip(ClipData.newHtmlText("HTML Text", mHtmlPlainText, mHtmlText));
     }
 
     public void pasteIntent(View button) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.android.com/"));
-        mClipboard.setPrimaryClip(ClipData.newIntent("VIEW intent", intent));
+        mClipboardManager.setPrimaryClip(ClipData.newIntent("VIEW intent", intent));
     }
 
     public void pasteUri(View button) {
-        mClipboard.setPrimaryClip(ClipData.newRawUri("URI", Uri.parse("http://www.android.com/")));
+        mClipboardManager.setPrimaryClip(ClipData.newRawUri("URI", Uri.parse("http://www.android.com/")));
     }
 
     void updateClipData(boolean updateType) {
-        ClipData clip = mClipboard.getPrimaryClip();
+        ClipData clip = mClipboardManager.getPrimaryClip();
         String[] mimeTypes = clip != null ? clip.getDescription().filterMimeTypes("*/*") : null;
         if (mimeTypes != null) {
             mMimeTypes.setText("");

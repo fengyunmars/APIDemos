@@ -18,8 +18,7 @@ public class ProcessText extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.process_text_main);
-
+        setContentView(R.layout.process_text);
         CharSequence text = getIntent().getCharSequenceExtra(Intent.EXTRA_PROCESS_TEXT);
         boolean readonly =
                 getIntent().getBooleanExtra(Intent.EXTRA_PROCESS_TEXT_READONLY, false);

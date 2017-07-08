@@ -35,7 +35,7 @@ import android.widget.TextView;
  * the Context class (an Activity is a Context) has a getString convenience
  * method getString() that looks up a string resource.
  *
- * @see StyledText for more depth about using styled text, both with getString()
+ * @see ResourcesStyledText for more depth about using styled text, both with getString()
  *                 and in the layout xml files.
  */
 public class ResourcesSample extends Activity {

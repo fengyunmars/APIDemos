@@ -27,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.apis.R;
+import com.fengyun.util.MenuUtils;
 
 import java.lang.reflect.Method;
 
@@ -49,7 +50,7 @@ public class ActionBarUsage extends Activity implements OnQueryTextListener {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        setIconEnable(menu, true);
+        MenuUtils.setIconEnable(menu, true);
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.actions, menu);
         SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
@@ -94,19 +95,4 @@ public class ActionBarUsage extends Activity implements OnQueryTextListener {
         return true;
     }
 
-    //enable为true时，菜单添加图标有效，enable为false时无效。4.0系统默认无效
-    private void setIconEnable(Menu menu, boolean enable) {
-        try {
-            Class<?> clazz = Class.forName("com.android.internal.view.menu.MenuBuilder");
-            Method m = clazz.getDeclaredMethod("setOptionalIconsVisible", boolean.class);
-            m.setAccessible(true);
-
-            //MenuBuilder实现Menu接口，创建菜单时，传进来的menu其实就是MenuBuilder对象(java的多态特征)
-            m.invoke(menu, enable);
-
-        } catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-    }
 }

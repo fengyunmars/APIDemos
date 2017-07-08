@@ -71,7 +71,7 @@ public class NotificationDisplay extends Activity implements View.OnClickListene
         // Pressing on the button brings the user back to our mood ring,
         // as part of the api demos app.  Note the use of NEW_TASK here,
         // since the notification display activity is run as a separate task.
-        Intent intent = new Intent(this, StatusBarNotifications.class);
+        Intent intent = new Intent(this, NotificationStatusBar.class);
         intent.setAction(Intent.ACTION_MAIN);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);

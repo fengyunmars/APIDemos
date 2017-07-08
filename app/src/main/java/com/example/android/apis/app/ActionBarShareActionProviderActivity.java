@@ -21,16 +21,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ShareActionProvider;
 
 import com.example.android.apis.R;
+import com.fengyun.util.FileUtils;
+import com.orhanobut.logger.Logger;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 
 /**
  * This activity demonstrates 显示 how to use an {@link android.view.ActionProvider}
@@ -82,8 +87,19 @@ public class ActionBarShareActionProviderActivity extends Activity {
     private Intent createShareIntent() {
         Intent shareIntent = new Intent(Intent.ACTION_SEND);
         shareIntent.setType("image/*");
-        Uri uri = Uri.fromFile(getFileStreamPath("shared.png"));
+//        File file = getFileStreamPath("shared.png");
+//        File dir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+//        File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+//        File file = new File(dir, SHARED_FILE_NAME);
+        File file = new File(FileUtils.getFileProviderPath("apidemos"),SHARED_FILE_NAME);
+        if(file.setReadable(true,false)){
+            Logger.i("setReadable success!");
+        }
+        Uri uri = FileUtils.getUriForFile(this,file);
         shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+//        shareIntent.setFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+        shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        shareIntent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
         return shareIntent;
     }
 
@@ -94,34 +110,21 @@ public class ActionBarShareActionProviderActivity extends Activity {
     private void copyPrivateRawResuorceToPubliclyAccessibleFile() {
         InputStream inputStream = null;
         FileOutputStream outputStream = null;
+
+        inputStream = getResources().openRawResource(R.raw.robot);
         try {
-            inputStream = getResources().openRawResource(R.raw.robot);
-            outputStream = openFileOutput(SHARED_FILE_NAME,
-                    Context.MODE_WORLD_READABLE | Context.MODE_APPEND);
-            byte[] buffer = new byte[1024];
-            int length;
-            try {
-                while ((length = inputStream.read(buffer)) > 0){
-                    outputStream.write(buffer, 0, length);
-                }
-            } catch (IOException ioe) {
-                /* ignore */
-            }
-        } catch (FileNotFoundException fnfe) {
-            /* ignore */
-        } finally {
-            try {
-                if (inputStream != null)
-                    inputStream.close();
-            } catch (IOException ioe) {
-               /* ignore */
-            }
-            try {
-                if (outputStream != null)
-                    outputStream.close();
-            } catch (IOException ioe) {
-               /* ignore */
-            }
+            //        outputStream = openFileOutput(SHARED_FILE_NAME,
+            //        Context.MODE_WORLD_READABLE | Context.MODE_APPEND);
+//            outputStream = openFileOutput(SHARED_FILE_NAME, Context.MODE_APPEND);
+//            File dir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+//            File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
+//            File file = new File(dir, SHARED_FILE_NAME);
+            File file = new File(FileUtils.getFileProviderPath("apidemos"), SHARED_FILE_NAME);
+            outputStream = new FileOutputStream(file);
+            //dir.
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
+        FileUtils.inputStreamToOutputStream(inputStream,outputStream);
     }
 }
