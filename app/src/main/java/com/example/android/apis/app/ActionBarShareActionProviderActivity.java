@@ -91,15 +91,12 @@ public class ActionBarShareActionProviderActivity extends Activity {
 //        File dir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
 //        File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
 //        File file = new File(dir, SHARED_FILE_NAME);
-        File file = new File(FileUtils.getFileProviderPath("apidemos"),SHARED_FILE_NAME);
-        if(file.setReadable(true,false)){
-            Logger.i("setReadable success!");
-        }
+        File file = new File(this.getExternalFilesDir(""),SHARED_FILE_NAME);
         Uri uri = FileUtils.getUriForFile(this,file);
         shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
 //        shareIntent.setFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
-        shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-        shareIntent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+//        shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+//        shareIntent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
         return shareIntent;
     }
 
@@ -119,7 +116,7 @@ public class ActionBarShareActionProviderActivity extends Activity {
 //            File dir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
 //            File dir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
 //            File file = new File(dir, SHARED_FILE_NAME);
-            File file = new File(FileUtils.getFileProviderPath("apidemos"), SHARED_FILE_NAME);
+            File file = new File(this.getExternalFilesDir(""), SHARED_FILE_NAME);
             outputStream = new FileOutputStream(file);
             //dir.
         } catch (FileNotFoundException e) {

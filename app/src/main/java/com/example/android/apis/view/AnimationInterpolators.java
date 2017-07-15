@@ -30,7 +30,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-public class Animation3 extends Activity implements AdapterView.OnItemSelectedListener {
+public class AnimationInterpolators extends Activity implements AdapterView.OnItemSelectedListener {
     private static final String[] INTERPOLATORS = {
             "Accelerate", "Decelerate", "Accelerate/Decelerate",
             "Anticipate", "Overshoot", "Anticipate/Overshoot",
@@ -40,7 +40,7 @@ public class Animation3 extends Activity implements AdapterView.OnItemSelectedLi
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.animation_3);
+        setContentView(R.layout.animation_interpolators);
 
         Spinner s = (Spinner) findViewById(R.id.spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,

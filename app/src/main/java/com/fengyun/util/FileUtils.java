@@ -49,14 +49,6 @@ public class FileUtils {
         return true;
     }
 
-    public static File getFileProviderPath(String path){
-        File dir = Environment.getExternalStorageDirectory();
-        File dir1 = new File(dir, path);
-        if(!dir1.exists())
-            dir1.mkdirs();
-        return dir1;
-    }
-
     public static Uri getUriForFile(Context context, File file){
         if(context == null || file == null){
             throw new NullPointerException();

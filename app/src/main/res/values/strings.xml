@@ -427,7 +427,7 @@
     <string name="styled_text">Plain, <b>bold</b>, <i>italic</i>, <b><i>bold-italic</i></b></string>
     <string name="styled_text_prog">Assigned programmatically:</string>
 
-    <string name="activity_text_undo">Content/Undo</string>
+    <string name="activity_text_undo">Content/TextUndo</string>
     <string name="text_undo_default_edit_msg">TextView with the default Control-Z undo behavior.</string>
     <string name="text_undo_set_text">SetText</string>
     <string name="text_undo_append_text">Append</string>
@@ -456,7 +456,7 @@
     <string name="activity_themes">Content/Resources/Themes</string>
     <string name="activity_resources">Content/Resources/Sample</string>
 
-    <string name="activity_pick_contact">Content/Provider/Pick Contact</string>
+    <string name="activity_pick_contact">Content/Provider/ContactsProvider/Pick Contact</string>
     <string name="pick_contact_msg">Invoke Contacts to pick various kinds of
         contact data.  None of these require that the caller hold the
         READ_CONTACTS permission.</string>
@@ -470,7 +470,7 @@
         to a specific URI in its content provider.</string>
     <string name="share_image">Share Image</string>
 
-    <string name="activity_changed_contact">Content/Provider/Changed Contacts</string>
+    <string name="activity_changed_contact">Content/Provider/ContactsProvider/Changed Contacts</string>
 
     <string name="activity_install_apk">Content/Packages/Install Apk</string>
 
@@ -1610,5 +1610,6 @@
     <string name="copy_styled_text">copy styled text</string>
     <string name="copy_plain_text">copy plain text</string>
     <string name="copy_html_text">copy html text</string>
+    <string name="start">start</string>
 
 </resources>

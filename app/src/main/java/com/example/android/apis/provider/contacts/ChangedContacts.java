@@ -14,7 +14,7 @@
  * limitations under the License
  */
 
-package com.example.android.apis.content;
+package com.example.android.apis.provider.contacts;
 
 import android.app.Activity;
 import android.app.LoaderManager;

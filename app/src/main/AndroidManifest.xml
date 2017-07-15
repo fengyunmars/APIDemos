@@ -148,7 +148,6 @@
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
-
         <activity
             android:name=".provider.contacts.ContactsContractDemo"
             android:label="@string/contacts_contract_demo"
@@ -175,6 +174,7 @@
             android:theme="@style/Theme.Translucent">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
@@ -224,6 +224,7 @@
             android:theme="@style/Theme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
@@ -1367,15 +1368,15 @@
         </activity>
 
         <provider
-            android:authorities="com.example.android.apis.fileprovider"
             android:name="android.support.v4.content.FileProvider"
-            android:grantUriPermissions="true"
-            android:exported="false">
+            android:authorities="com.example.android.apis.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/filepaths"
-            />
+                android:resource="@xml/filepaths"/>
         </provider>
+
         <activity
             android:name=".content.ExternalStorage"
             android:label="@string/activity_external_storage">
@@ -1458,7 +1459,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".content.PickContact"
+            android:name=".provider.contacts.PickContact"
             android:label="@string/activity_pick_contact">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -1476,7 +1477,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".content.ChangedContacts"
+            android:name=".provider.contacts.ChangedContacts"
             android:label="@string/activity_changed_contact">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -1521,11 +1522,12 @@
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
-
         <activity android:name=".content.ProcessText">
             <intent-filter>
                 <action android:name="android.intent.action.PROCESS_TEXT"/>
+
                 <category android:name="android.intent.category.DEFAULT"/>
+
                 <data android:mimeType="text/plain"/>
             </intent-filter>
         </activity>
@@ -1836,7 +1838,7 @@
 
         <activity
             android:name=".animation.Transition3d"
-            android:label="Views/Animation/3D Transition">
+            android:label="Animation/3D Transition">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -1925,6 +1927,7 @@
             android:label="Views/Layouts/LinearLayout/04. Horizontal Average Real">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
@@ -2651,7 +2654,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.Animation1"
+            android:name=".view.AnimationShake"
             android:label="Views/Animation/Shake">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -2660,7 +2663,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.Animation2"
+            android:name=".view.AnimationPush"
             android:label="Views/Animation/Push">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -2669,7 +2672,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.Animation3"
+            android:name=".view.AnimationInterpolators"
             android:label="Views/Animation/Interpolators">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -3895,6 +3898,14 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".content.IntentActivity"
+            android:label="Content/IntentSample">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>

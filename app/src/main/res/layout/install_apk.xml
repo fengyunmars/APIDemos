@@ -17,40 +17,54 @@
 <!-- Demonstrates starting and stopping a local service.
      See corresponding Java code com.android.sdk.app.LocalSerice.java. -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:padding="4dip"
-    android:gravity="center_horizontal"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal"
+              android:orientation="vertical"
+              android:padding="4dip">
 
     <TextView
-        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="0"
         android:paddingBottom="4dip"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Demonstrates using the INSTALL_PACKAGE Intent to install an application."/>
+        android:text="Demonstrates using the INSTALL_PACKAGE Intent to install an application."
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-    <Button android:id="@+id/unknown_source"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/unknown_source"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Unknown Source">
     </Button>
 
-    <Button android:id="@+id/my_source"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/my_source"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="My Source">
     </Button>
 
-    <Button android:id="@+id/replace"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/replace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Replace">
     </Button>
 
-    <Button android:id="@+id/uninstall"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/uninstall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Uninstall">
     </Button>
 
-    <Button android:id="@+id/uninstall_result"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="Uninstall w/Result">
+    <Button
+        android:id="@+id/uninstall_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Uninstall Result">
     </Button>
 
 </LinearLayout>

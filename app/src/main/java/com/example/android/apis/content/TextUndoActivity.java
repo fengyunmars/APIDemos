@@ -34,6 +34,7 @@ import android.widget.EditText;
  * Simple example of using an UndoManager for editing text in a TextView.
  */
 public class TextUndoActivity extends Activity {
+
     // Characters allowed as input in the credit card field.
     private static final String CREDIT_CARD_CHARS = "0123456789 ";
 
@@ -72,7 +73,7 @@ public class TextUndoActivity extends Activity {
         mLengthLimitText.setFilters(new InputFilter[] { new InputFilter.LengthFilter(4) });
 
         mCreditCardText = (EditText) findViewById(R.id.credit_card_text);
-        mCreditCardText.setKeyListener(DigitsKeyListener.getInstance(CREDIT_CARD_CHARS));
+//        mCreditCardText.setKeyListener(DigitsKeyListener.getInstance(CREDIT_CARD_CHARS));
         mCreditCardText.addTextChangedListener(new CreditCardTextWatcher());
      }
 

@@ -15,20 +15,27 @@
 -->
 
 <!-- Demonstrates selecting various types of contact data. -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:padding="4dip"
-    android:gravity="center_horizontal"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center_horizontal"
+              android:orientation="vertical"
+              android:padding="4dip">
 
     <TextView
-        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:paddingBottom="8dip"
-        android:text="@string/share_content_msg"/>
+        android:text="@string/share_content_msg"
+        android:textAppearance="?android:attr/textAppearanceMedium"/>
 
-    <Button android:id="@+id/share_image"
-        android:layout_width="wrap_content" android:layout_height="wrap_content"
+    <Button
+        android:id="@+id/share_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/share_image">
-        <requestFocus />
+
+        <requestFocus/>
     </Button>
 </LinearLayout>

@@ -40,16 +40,16 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * Example that exercises client side of {@link DocumentsContract}.
+ * Example that exercises 练习 client side of {@link DocumentsContract}.
  */
 public class DocumentsSample extends Activity {
     private static final String TAG = "DocumentsSample";
 
+    private static final String E = DocumentsContract.EXTRA_PROMPT;
     private static final int CODE_READ = 42;
     private static final int CODE_WRITE = 43;
     private static final int CODE_TREE = 44;
     private static final int CODE_RENAME = 45;
-
     private TextView mResult;
 
     @Override
@@ -106,6 +106,24 @@ public class DocumentsSample extends Activity {
                     intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
                 }
                 startActivityForResult(intent, CODE_READ);
+            }
+        });
+        view.addView(button);
+
+        button = new Button(context);
+        button.setText("Intent.ACTION_GET_CONTENT audio/*");
+        button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                intent.setType("audio/*");
+                if (multiple.isChecked()) {
+                    intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+                }
+                if (localOnly.isChecked()) {
+                    intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
+                }
+                startActivityForResult(Intent.createChooser(intent, "select music !"), CODE_READ);
             }
         });
         view.addView(button);

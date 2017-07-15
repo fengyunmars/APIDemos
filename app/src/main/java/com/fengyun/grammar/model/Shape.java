@@ -5,6 +5,7 @@ package com.fengyun.grammar.model;
  */
 
 public class Shape {
+    private int circumference;
     protected void onCreate(){
         System.out.println("Shape onCreate");
     }

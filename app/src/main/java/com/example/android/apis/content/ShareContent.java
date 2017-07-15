@@ -53,6 +53,7 @@ public class ShareContent extends Activity {
                 intent.putExtra(Intent.EXTRA_STREAM, uri);
                 intent.setClipData(ClipData.newUri(getContentResolver(), "image", uri));
                 startActivity(Intent.createChooser(intent, "Select share target"));
+
             }
         });
     }

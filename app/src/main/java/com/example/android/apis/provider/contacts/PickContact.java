@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.android.apis.content;
+package com.example.android.apis.provider.contacts;
 
 // Need the following import to get access to the app resources, since this
 // class is in a sub-package.

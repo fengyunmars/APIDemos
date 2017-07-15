@@ -19,6 +19,7 @@ package com.example.android.apis.content;
 // Need the following import to get access to the app resources, since this
 // class is in a sub-package.
 import com.example.android.apis.R;
+import com.fengyun.util.FileUtils;
 
 import android.app.Activity;
 import android.content.ContentProvider;
@@ -49,6 +50,7 @@ import java.io.InputStream;
  * Demonstration of styled text resources.
  */
 public class InstallApk extends Activity {
+
     static final int REQUEST_INSTALL = 1;
     static final int REQUEST_UNINSTALL = 2;
 
@@ -95,7 +97,8 @@ public class InstallApk extends Activity {
     private OnClickListener mUnknownSourceListener = new OnClickListener() {
         public void onClick(View v) {
             Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
-            intent.setData(Uri.fromFile(prepareApk("HelloActivity.apk")));
+            intent.setData(FileUtils.getUriForFile(InstallApk.this,prepareApk("basic.apk")));
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION|Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
             startActivity(intent);
         }
     };
@@ -103,7 +106,8 @@ public class InstallApk extends Activity {
     private OnClickListener mMySourceListener = new OnClickListener() {
         public void onClick(View v) {
             Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
-            intent.setData(Uri.fromFile(prepareApk("HelloActivity.apk")));
+            intent.setData(FileUtils.getUriForFile(InstallApk.this,prepareApk("basic.apk")));
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION|Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
             intent.putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true);
             intent.putExtra(Intent.EXTRA_RETURN_RESULT, true);
             intent.putExtra(Intent.EXTRA_INSTALLER_PACKAGE_NAME,
@@ -115,7 +119,8 @@ public class InstallApk extends Activity {
     private OnClickListener mReplaceListener = new OnClickListener() {
         public void onClick(View v) {
             Intent intent = new Intent(Intent.ACTION_INSTALL_PACKAGE);
-            intent.setData(Uri.fromFile(prepareApk("HelloActivity.apk")));
+            intent.setData(FileUtils.getUriForFile(InstallApk.this,prepareApk("basic.apk")));
+            intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION|Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
             intent.putExtra(Intent.EXTRA_NOT_UNKNOWN_SOURCE, true);
             intent.putExtra(Intent.EXTRA_RETURN_RESULT, true);
             intent.putExtra(Intent.EXTRA_ALLOW_REPLACE, true);
@@ -128,8 +133,7 @@ public class InstallApk extends Activity {
     private OnClickListener mUninstallListener = new OnClickListener() {
         public void onClick(View v) {
             Intent intent = new Intent(Intent.ACTION_UNINSTALL_PACKAGE);
-            intent.setData(Uri.parse(
-                    "package:com.example.android.helloactivity"));
+            intent.setData(Uri.parse("package:com.fengyun.basic"));
             startActivity(intent);
         }
     };
@@ -137,8 +141,7 @@ public class InstallApk extends Activity {
     private OnClickListener mUninstallResultListener = new OnClickListener() {
         public void onClick(View v) {
             Intent intent = new Intent(Intent.ACTION_UNINSTALL_PACKAGE);
-            intent.setData(Uri.parse(
-                    "package:com.example.android.helloactivity"));
+            intent.setData(Uri.parse("package:com.fengyun.basic"));
             intent.putExtra(Intent.EXTRA_RETURN_RESULT, true);
             startActivityForResult(intent, REQUEST_UNINSTALL);
         }
@@ -147,33 +150,15 @@ public class InstallApk extends Activity {
     private File prepareApk(String assetName) {
         // Copy the given asset out into a file so that it can be installed.
         // Returns the path to the file.
-        byte[] buffer = new byte[8192];
         InputStream is = null;
         FileOutputStream fout = null;
         try {
             is = getAssets().open(assetName);
-            fout = openFileOutput("tmp.apk", Context.MODE_WORLD_READABLE);
-            int n;
-            while ((n=is.read(buffer)) >= 0) {
-                fout.write(buffer, 0, n);
-            }
+            fout = new FileOutputStream(new File(this.getExternalFilesDir(""),"basic.apk"));
         } catch (IOException e) {
-            Log.i("InstallApk", "Failed transferring", e);
-        } finally {
-            try {
-                if (is != null) {
-                    is.close();
-                }
-            } catch (IOException e) {
-            }
-            try {
-                if (fout != null) {
-                    fout.close();
-                }
-            } catch (IOException e) {
-            }
+            e.printStackTrace();
         }
-
-        return getFileStreamPath("tmp.apk");
+        FileUtils.inputStreamToOutputStream(is,fout);
+        return new File(this.getExternalFilesDir(""),"basic.apk");
     }
 }
