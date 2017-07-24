@@ -26,7 +26,7 @@ import android.os.Bundle;
 /**
  * A gallery of the different styles of buttons.
  */
-public class Buttons1 extends Activity {
+public class ButtonsDemo extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

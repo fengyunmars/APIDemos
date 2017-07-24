@@ -11,10 +11,15 @@ public class Circle extends Shape {
 
     private int circumference;
 
+
     @Override
     protected void onCreate() {
         super.onCreate();
         System.out.println("Circle onCreate");
 //        this.circumference = super.circumference;
+    }
+
+    void testNoModifiersAccess(int duration){
+        mDuration = duration;
     }
 }

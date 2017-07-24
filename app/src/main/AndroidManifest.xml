@@ -2837,7 +2837,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.Buttons1"
+            android:name=".view.ButtonsDemo"
             android:label="Views/Buttons">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -3906,6 +3906,7 @@
             android:label="Content/IntentSample">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>

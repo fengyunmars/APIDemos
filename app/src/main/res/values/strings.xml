@@ -424,7 +424,7 @@
 
     <string name="activity_styled_text">Content/Resources/<i>Styled</i> <b>Text</b></string>
     <string name="styled_text_rsrc">Initialized from a resource:</string>
-    <string name="styled_text">Plain, <b>bold</b>, <i>italic</i>, <b><i>bold-italic</i></b></string>
+    <string name="styled_text">Plain, <b>bold</b>, <i>italic</i>, <b><i>bold-italic</i></b> , <b>Another bold</b></string>
     <string name="styled_text_prog">Assigned programmatically:</string>
 
     <string name="activity_text_undo">Content/TextUndo</string>
@@ -1611,5 +1611,6 @@
     <string name="copy_plain_text">copy plain text</string>
     <string name="copy_html_text">copy html text</string>
     <string name="start">start</string>
+    <string name="rename">rename</string>
 
 </resources>

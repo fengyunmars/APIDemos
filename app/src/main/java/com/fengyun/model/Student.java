@@ -13,7 +13,6 @@ public class Student {
     private int age;
 
     public Student(){
-        setName("fengyun");
     }
 
     public Student(int id, String name, Date birthday, int age) {

@@ -36,7 +36,7 @@ public class AnimationPush extends Activity implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.animation_2);
+        setContentView(R.layout.animation_push);
 
         mFlipper = ((ViewFlipper) this.findViewById(R.id.flipper));
         mFlipper.startFlipping();
