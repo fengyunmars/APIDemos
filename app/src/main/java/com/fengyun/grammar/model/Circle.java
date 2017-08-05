@@ -10,7 +10,7 @@ import com.fengyun.grammar.model.Shape;
 public class Circle extends Shape {
 
     private int circumference;
-
+    public int area;
 
     @Override
     protected void onCreate() {

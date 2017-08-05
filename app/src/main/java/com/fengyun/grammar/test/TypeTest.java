@@ -73,5 +73,11 @@ public class TypeTest {
         return i;
     }
 
-
+    @Test
+    public void testIfVar(){
+        if(true){
+            int i = 0;
+        }
+//        i = 1;
+    }
 }

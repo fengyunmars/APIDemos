@@ -7,6 +7,7 @@ package com.fengyun.grammar.model;
 public class Shape {
     private int circumference;
     int mDuration;
+    public int area;
     protected void onCreate(){
         System.out.println("Shape onCreate");
     }
