@@ -86,9 +86,9 @@ public class AlertDialogSamples extends Activity {
     protected Dialog onCreateDialog(int id) {
         switch (id) {
         case DIALOG_YES_NO_MESSAGE:
-            return new AlertDialog.Builder(AlertDialogSamples.this)
+            return new AlertDialog.Builder(this)                     //// TODO: 2017/8/18
                 .setTitle(R.string.alert_dialog_two_buttons_title)
-                .setPositiveButton(R.string.alert_dialog_ok, new DialogInterface.OnClickListener() {
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
 
                         /* User clicked OK so do some stuff */
