@@ -1,10 +1,12 @@
 package com.fengyun.basic;
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -13,7 +15,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class StorageActivity extends Activity {
-
+    ImageView myImageView;
     TextView memory;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +31,9 @@ public class StorageActivity extends Activity {
                 memory.setText(String.valueOf(getTotalMemory()));
             }
         });
+        myImageView = (ImageView) findViewById(R.id.myimage);
+        Drawable drawable = getDrawable(android.R.drawable.real_device);
+        myImageView.setImageDrawable(drawable);
     }
 
     @Override

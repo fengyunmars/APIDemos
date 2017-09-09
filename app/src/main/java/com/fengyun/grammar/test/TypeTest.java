@@ -16,6 +16,15 @@ import java.util.Arrays;
 public class TypeTest {
 
     @Test
+    public void testDivideZero(){
+//        int i = 10 / 0;
+        float j = 10 / 0f;
+        float k = 10f / 0;
+//        System.out.println(i);
+        System.out.println(j);
+        System.out.println(k);
+    }
+    @Test
     public void testIntFloatEqual(){
         boolean equals = (1 == 1.0f);
         Assert.assertTrue(equals);
@@ -80,4 +89,29 @@ public class TypeTest {
         }
 //        i = 1;
     }
+
+    @Test
+    public void testIntegerToString(){
+        int value = -255;
+        String s = Integer.toString(value,16);
+        String s1 = Integer.toHexString(value);
+        System.out.println(s);
+        System.out.println(s1);
+    }
+
+    @Test
+    public void testMaxInteger(){
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println(Integer.MIN_VALUE);
+        System.out.println(Integer.valueOf(Integer.MAX_VALUE).toString().length());
+    }
+    @Test
+    public void testObjectArrayToArray(){
+        Object objs = new Object[0];
+//        Student student = new Student[0];
+        Object students = new Student[0];
+        System.out.println(objs);
+        System.out.println(students);
+    }
+
 }

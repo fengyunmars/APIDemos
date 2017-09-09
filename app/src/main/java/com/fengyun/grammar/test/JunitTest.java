@@ -10,6 +10,8 @@ import com.fengyun.model.Student;
 import org.junit.Test;
 
 import java.security.spec.ECField;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by prize on 2017/7/5.
@@ -81,6 +83,26 @@ public class JunitTest {
         student2 = student1;
         student1 = null;
         System.out.println(student2);
+    }
+
+    @Test
+    public void testRegex(){
+        String s = "22520 分";
+        String rex = "([0-9]+) 分";
+        Pattern p = Pattern.compile(rex);
+        Matcher m = p.matcher(s);
+        String s1,s2;
+        int score;
+        if(m.find()){
+            System.out.println(m);
+            System.out.println(m.group(1));
+            s1 = m.group(1);
+            score = Integer.parseInt(s1);
+            score *= 2;
+            s2 = Integer.toString(score);
+            s = s.replace(s1 , s2);
+            System.out.println(s);
+        }
     }
 }
 

@@ -15,6 +15,11 @@
             android:id="@+id/memory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+        <ImageView
+            android:id="@+id/myimage"
+            android:padding="10dip"
+            android:layout_width="70dip"
+            android:layout_height="70dip" />
         <Button
             android:id="@+id/get"
             android:layout_width="wrap_content"

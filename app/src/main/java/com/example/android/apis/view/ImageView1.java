@@ -17,7 +17,10 @@
 package com.example.android.apis.view;
 
 import android.app.Activity;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.widget.ImageView;
 
 import com.example.android.apis.R;
 
@@ -27,10 +30,14 @@ import com.example.android.apis.R;
  *
  */
 public class ImageView1 extends Activity {
-    
+
+    ImageView myImageView;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.image_view_1);
+        myImageView = (ImageView) findViewById(R.id.myimage);
+        Drawable drawable = getDrawable(android.R.drawable.real_device);
+//        myImageView.setImageDrawable(drawable);
     }
 }
