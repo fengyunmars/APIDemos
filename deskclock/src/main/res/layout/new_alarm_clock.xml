@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PRIZE- 宏开关打开后DeskClock中AlarmClockFragment使用此布局文件- 李星-2015-4-8-start -->
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- android:paddingTop="?android:attr/actionBarSize" -->
+    <FrameLayout
+        android:id="@+id/alarm_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/alarm_controller"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/framelayout_top"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/white">
+                <ListView
+                    android:id="@+id/alarms_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:clipToPadding="false"
+                    android:descendantFocusability="beforeDescendants"
+                    android:divider="@drawable/list_divider"
+                    android:dividerHeight="1px" />
+                <TextView
+                    android:id="@+id/alarms_empty_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/no_alarms"
+                    android:drawableTop="@drawable/ic_noalarms_new"
+                    android:drawablePadding="14dp"
+                    android:text="@string/no_alarms"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="#969696"
+                    android:visibility="gone"/>
+            </FrameLayout>
+
+            <!-- <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/prize_divide_line_default" /> -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/prize_bottom_nav_height"
+                android:layout_alignParentBottom="true"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:layoutDirection="ltr">"
+
+                <Button
+                    android:id="@+id/addalarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_bottom"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/bottom_button_margin_left"
+                    android:layout_weight="1"
+                    android:background="@drawable/left_btn"
+                    android:gravity="center"
+                    android:text="@string/add_alarm"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black_3"
+                    android:textSize="@dimen/prize_normal" />
+
+                <Button
+                    android:id="@+id/alarm_set"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_bottom"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/bottom_button_margin_left"
+                    android:layout_weight="1"
+                    android:background="@drawable/right_btn"
+                    android:gravity="center"
+                    android:text="@string/settings"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black_3"
+                    android:textSize="@dimen/prize_normal" />
+            </LinearLayout>
+            
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <include
+        android:id="@+id/addalarmlayout"
+        layout="@layout/addalarmclock" />
+
+</FrameLayout>
+<!-- PRIZE- 宏开关打开后DeskClock中AlarmClockFragment使用此布局文件- 李星-2015-4-8-end -->
+

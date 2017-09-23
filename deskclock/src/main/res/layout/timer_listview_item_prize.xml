@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"    
+    android:orientation="horizontal" 
+    android:layout_height="@dimen/list_item"
+    android:background="@drawable/list_item_backgroud_color_selector"
+    >
+    
+   	<!-- android:background="@drawable/alarmitemlinear" -->
+  
+
+
+    <TextView        
+        android:id="@+id/timer_item_text"
+        android:layout_width="fill_parent"
+        android:layout_marginLeft="14dp"
+   		android:layout_marginRight="@dimen/bottom_button_margin_left"
+   		android:layout_height="@dimen/list_item"
+       	android:gravity="center|start"
+       	android:layout_gravity="center"
+        android:textColor="@color/black_3"
+        android:textSize="@dimen/main_title_font_size"
+        android:enabled="false"
+        android:focusable="false"   								
+        />
+    
+    
+	<View
+         android:layout_width="match_parent"
+         android:layout_height="1px"       
+         android:background="@color/prize_divide_line_default"
+         android:layout_alignParentBottom="true"         
+         android:layout_marginRight="@dimen/prize_margin_default"         
+         android:layout_marginLeft="@dimen/prize_margin_default"        
+         />  
+    
+</RelativeLayout>
+
+
+
+

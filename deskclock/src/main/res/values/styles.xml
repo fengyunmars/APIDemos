@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2015 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <style name="clock">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+    
+    <style name="DeskClockParentTheme" parent="@android:style/Theme.Material.Light.DarkActionBar">
+        <item name="android:statusBarColor">@color/status_bar</item>
+        <!-- <item name="android:colorControlActivated">@color/white</item> -->
+        <item name="android:colorControlNormal">@color/white</item>
+        <item name="android:popupMenuStyle">?android:attr/actionOverflowMenuStyle</item>
+        <item name="android:buttonStyle">?android:attr/borderlessButtonStyle</item>       
+    </style>
+
+    <style name="AlarmSwitchTheme">
+        <item name="android:colorControlActivated">@color/hot_pink</item>
+    </style>
+    <style name="TimePickerTheme" parent="@android:style/Theme.Material.Dialog">
+        <item name="android:background">@color/time_picker_gray</item>
+        <item name="android:timePickerStyle">@style/TimePickerStyle</item>
+        <item name="android:textColorPrimaryInverse">@color/hot_pink</item>
+        <item name="android:colorAccent">@color/hot_pink</item>
+    </style>
+    
+    <style name="TimePickerStyle" parent="@android:style/Widget.Material.TimePicker">
+        <item name="android:headerBackground">@color/time_picker_gray</item>
+        <item name="android:headerTimeTextAppearance">@style/TimeLabelTextAppearance</item>
+        <item name="android:headerAmPmTextAppearance">@style/AmPmTextAppearance</item>
+        <item name="android:numbersBackgroundColor">@color/time_picker_gray</item>
+        <item name="android:numbersTextColor">@color/white</item>
+        <item name="android:amPmTextColor">@color/white</item>
+    </style>
+
+    <style name="TimeLabelTextAppearance" parent="@android:style/TextAppearance.Material">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">50sp</item>
+    </style>
+
+    <style name="AmPmTextAppearance" parent="@android:style/TextAppearance.Material">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    
+    <!--  
+    	-->
+    <style name="DeskClock" parent="@style/DeskClockParentTheme">
+        <item name="android:windowActionBarOverlay">true</item> 
+        <!--prize-添加过渡页面-lixing-2015-5-18-start  -->
+		<item name="android:statusBarColor">@android:color/transparent</item>
+		<item name="android:windowBackground">@drawable/deskclock_background</item>
+    	<item name="android:windowIsTranslucent">false</item>
+        <!--prize-添加过渡页面-lixing-2015-5-18-start  -->
+        <item name="android:actionBarTabStyle">@style/DeskClockTabStyle</item>
+  		<item name="android:actionBarStyle">@style/DeskClockBarStyle</item>       
+        <item name="android:actionBarTabBarStyle">@style/DeskClockTabBarStyle</item>
+        <item name="android:dropDownListViewStyle">@style/DeskClockDropDownListView</item>        
+    </style>
+	
+    <style name="DeskClockTabStyle" parent="@style/DeskClockParentTheme">
+        <item name="android:paddingStart">@dimen/actionbar_tab_padding</item>
+        <item name="android:paddingEnd">@dimen/actionbar_tab_padding</item>
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+        <item name="android:gravity">center</item>
+       	
+    </style>
+    
+    
+    <style name="DeskClockTabBarStyle" parent="@style/DeskClockParentTheme">
+        <item name="android:dividerPadding">12dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+    
+    <style name="DeskClockBarStyle" parent="@android:style/Widget.Material.ActionBar">
+		
+        <item name="android:background">@null</item>
+        <item name="android:backgroundStacked">@null</item>
+        <item name="android:backgroundSplit">@null</item>
+        <!-- Empty displayOptions is to hide App title at app launch -->
+        <item name="android:displayOptions"></item>
+    </style>
+    
+    <style name="DeskClockDropDownListView"
+           parent="@android:style/Widget.Material.ListView.DropDown" />
+
+    <style name="AlarmClockTheme" parent="@style/DeskClockParentTheme">
+        <item name="android:actionBarStyle">@style/SettingsTheme.ActionBar</item>
+        <item name="android:dropDownListViewStyle">@style/DeskClockDropDownListView</item>
+    </style>
+
+    
+    
+   <style name="SettingsTheme" parent="@style/DeskClockParentThemeNew"> 
+ 		
+ <!--    <style name="SettingsTheme" parent="@android:style/Theme">    -->  
+        <item name="android:actionBarStyle">@style/SettingsTheme.ActionBar</item>
+        <item name="android:detailsElementBackground">@null</item>
+        <item name="android:dropDownListViewStyle">@style/DeskClockDropDownListView</item>
+        <!-- M: Comment out the attribute of android:fontFamily, for it can not be override
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/white_69p</item>
+        --> 
+        <item name="@*android:preferenceCategoryStyle">@style/Preference.Category</item>
+        <item name="@*android:preferenceStyle">@style/Preference</item>
+        <item name="android:prizeActiobBarStyle">@style/PrizeActionBar</item>
+        <item name="@*android:actionBarSize">@dimen/actionbar_height_prize</item>
+    </style>
+    
+   <style name="PrizeActionBar">
+        <item name="android:visibility">visible</item>
+    </style>
+   
+    <!-- add by liuweiquan 20160722 start -->
+   <style name="Preference">
+        <item name="android:layout">@layout/preference_material_settings</item>
+        <item name="android:widgetLayout">@layout/preference_widget_right_arrow</item>
+    </style>
+    
+    <style name="Preference.Category">
+        <item name="android:layout">@layout/preference_category_material_settings</item>
+        
+        <item name="android:shouldDisableView">true</item>
+        <item name="android:selectable">true</item>
+    </style>
+	<!-- add by liuweiquan 20160722 end -->
+   
+   <style name="AddOrEditAlarmTheme" parent="@style/DeskClockParentTheme"> 
+ 		
+ <!--    <style name="SettingsTheme" parent="@android:style/Theme">    -->  
+        <!-- <item name="android:actionBarStyle">@style/AddOrEditAlarmTheme.ActionBar</item>
+        <item name="android:detailsElementBackground">@null</item>
+        <item name="android:dropDownListViewStyle">@style/DeskClockDropDownListView</item>
+        <item name="android:actionOverflowButtonStyle">@style/OverflowStyle</item>  -->       
+        <!-- M: Comment out the attribute of android:fontFamily, for it can not be override
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/white_69p</item>
+        --> 
+        <!-- PRIZE- 设置状态栏颜色为黑色- 李星-2015-5-12-start -->
+        <item name="android:statusBarColor">@color/white</item>    
+        <!-- PRIZE- 设置状态栏颜色为黑色- 李星-2015-5-12-end -->
+        <item name = "android:windowActionBar">false</item>
+        <item name = "android:windowNoTitle">true</item>
+        <!-- PRIZE- 设置PreferencActiviy 中文字颜色- 李星-2015-5-12-start -->	      
+        <item name="android:textColor">@color/black_9</item>
+        <!-- PRIZE- 设置PreferencActiviy 中文字颜色- 李星-2015-5-12-start -->	
+        <item name="android:textSize">@dimen/label_text_size</item>
+        
+    </style>
+
+    <style name="DeskClockParentThemeNew" parent="@android:style/Theme.Material.Light">
+        <!-- <item name="android:colorControlActivated">@color/white</item> -->
+        <item name="android:colorControlNormal">@color/white</item>
+        <item name="android:popupMenuStyle">?android:attr/actionOverflowMenuStyle</item>
+        <item name="android:buttonStyle">?android:attr/borderlessButtonStyle</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:statusBarInverse">gray</item>       
+    </style>
+    
+    <style name="CitiesTheme" parent="@style/DeskClockParentThemeNew">
+        <item name="android:fastScrollThumbDrawable">@drawable/red_fastscroll_thumb</item>
+        <item name="android:fastScrollStyle">@style/FastScrollStyle</item>
+        <item name="android:actionBarStyle">@style/CitiesTheme.ActionBar</item>
+        <item name="android:homeAsUpIndicator">@drawable/go_home</item>
+        <item name="android:prizeActiobBarStyle">@style/PrizeActionBar</item>
+        <item name="@*android:actionBarSize">@dimen/actionbar_height_prize</item>
+        <!-- PRIZE- 设置字体颜色为黑色- 李星-2015-5-12-start -->
+        <!-- <item name="android:textColor">@color/black_6</item> -->
+        <!-- PRIZE- 设置字体颜色为黑色- 李星-2015-5-12-start -->
+         <!-- PRIZE- 设置状态栏颜色为黑色- 李星-2015-5-12-start -->
+        <!--< item name="android:statusBarColor">@color/city_actionbar_grey</item> -->    
+        <!-- PRIZE- 设置状态栏颜色为黑色- 李星-2015-5-12-end -->
+    </style>
+    
+    <style name="FastScrollStyle" parent="@android:style/Widget.Material.FastScroll">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:padding">24dip</item>
+    </style>
+    
+    <style name="CitiesTheme.ActionBar" parent="@android:style/Widget.Material.ActionBar">
+        <item name="android:displayOptions">useLogo</item>
+        <!-- PRIZE- set actionbar background with underline- pengcancan-2016-08-05-start -->
+        <item name="android:background">@color/white</item>
+        <!-- PRIZE- set actionbar background with underline- pengcancan-2016-08-05-end -->
+    </style>
+
+    <style name="SettingsTheme.ActionBar" parent="@android:style/Widget.Material.ActionBar">
+        <item name="android:titleTextStyle">@style/SettingsTheme.TextAppearance.ActionBar.Title</item>
+        <item name="android:displayOptions">useLogo|showTitle</item>
+        <item name="android:homeAsUpIndicator">@drawable/go_home</item>
+        <!-- PRIZE- 设置PreferencActiviy 中actionBar背景颜色为黑色- 李星-2015-5-12-start -->	      
+        <item name="android:background">@drawable/actionbar_background</item> 
+        <!-- PRIZE- 设置PreferencActiviy 中actionBar背景颜色为黑色- 李星-2015-5-12-end-->
+        	      
+    </style>
+    
+    <style name="AddOrEditAlarmTheme.ActionBar" parent="@android:style/Widget.Material.ActionBar">
+        <item name="android:titleTextStyle">@style/AddOrEditAlarmTheme.TextAppearance.ActionBar.Title</item>
+        <item name="android:displayOptions">useLogo|showTitle</item>
+        <item name="android:homeAsUpIndicator">@drawable/cancel_mark</item>
+        
+        <item name="android:background">@color/add_or_edit_alarm_actionbar_background</item> 
+        	      
+    </style>
+    
+    <style name="OverflowStyle">  
+        <item name="android:src">@drawable/check_mark</item>  
+    </style> 
+    
+    <style name="AddOrEditAlarmTheme.TextAppearance.ActionBar.Title"
+        parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title">
+        <item name="android:textSize">@dimen/actionbar_title_font_size</item>        
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="SettingsTheme.TextAppearance.ActionBar.Title"
+        parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title">
+        <item name="android:textSize">@dimen/actionbar_title_font_size</item>        
+    </style>
+
+    
+    <!-- NOTE: This must be a fullscreen theme, or else the fullscreen alarm will
+         be unable to turn the screen on. -->
+    <style name="AlarmAlertFullScreenTheme"
+           parent="@android:style/Theme.Material.Wallpaper.NoTitleBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="TimerAlertFullScreenTheme"
+           parent="@android:style/Theme.Material.Wallpaper.NoTitleBar">
+        <item name="android:statusBarColor">@color/status_bar</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="ScreensaverActivityTheme" parent="@android:style/Theme.Material.NoActionBar">
+        <!-- Hide navigation bar when Dream is started from within the Clock app -->
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+    </style>
+    
+    <!--prize-huangdianjun-20150904-start-->
+    <style name="ScreensaverSettingsActivityTheme" parent="@android:style/Theme.Material.Settings" />
+    <!--prize-huangdianjun-20150904-end-->
+	
+    <style name="RoundTouchButton">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="alarm_list_left_column">
+        <item name="android:layout_width">68dip</item>
+        <item name="android:layout_height">68dip</item>
+    </style>
+
+    <style name="small_bold">
+        <item name="android:textSize">@dimen/small_font_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="small_thin">
+        <item name="android:textSize">@dimen/small_font_size</item>
+        <item name="android:fontFamily">sans-serif-thin</item>
+    </style>
+
+    <style name="no_alarms">
+        <item name="android:textSize">@dimen/alarm_info_font_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="small_light">
+        <item name="android:textSize">@dimen/small_font_size</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style>
+
+    <style name="timer_setup_digit">
+        <item name="android:textSize">@dimen/timer_setup_font_size</item>
+        <item name="android:fontFamily">sans-serif-thin</item>
+    </style>
+
+    <style name="timer_setup_label">
+        <item name="android:textSize">@dimen/timer_setup_label_size</item>
+    </style>
+
+    <style name="medium_light">
+        <item name="android:textSize">@dimen/medium_font_size</item>
+        <item name="android:fontFamily">sans-serif-thin</item>
+    </style>
+
+    <style name="widget_medium_thin">
+        <item name="android:textSize">@dimen/widget_medium_font_size</item>
+        <item name="android:fontFamily">sans-serif-thin</item>
+    </style>
+
+    <style name="label">
+        <item name="android:textSize">@dimen/label_font_size</item>
+    </style>
+
+    <style name="label_not_caps" parent="label">
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="widget_label" parent="label">
+        <item name="android:textSize">@dimen/widget_label_font_size</item>
+    </style>
+
+    <style name="header">
+        <item name="android:textSize">@dimen/header_font_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="header_not_caps" parent ="header">
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="big_thin">
+        <item name="android:textSize">@dimen/big_font_size</item>
+        <item name="android:fontFamily">sans-serif-thin</item>
+    </style>
+
+    <style name="alarm_lockscreen_thin">
+        <item name="android:textSize">@dimen/alarm_info_font_size</item>
+        <item name="android:fontFamily">sans-serif-thin</item>
+    </style>
+
+    <style name="widget_big_thin" parent="big_thin">
+        <item name="android:textSize">@dimen/widget_big_font_size</item>
+    </style>
+
+    <style name="alarm_label">
+        <item name="android:textSize">@dimen/alarm_label_size</item>
+    </style>
+
+    <style name="alarm_label_not_caps" parent="alarm_label">
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="alarm_label_bold" parent="alarm_label">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="body">
+        <item name="android:textSize">@dimen/body_font_size</item>
+    </style>
+
+    <style name="body_not_caps" parent="body">
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="body_bold">
+        <item name="android:textSize">@dimen/body_font_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="button">
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+        <item name="android:textSize">@dimen/button_font_size</item>
+    </style>
+
+    <style name="labelEditTextStyle">
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:inputType">textCapSentences</item>
+        <item name="android:selectAllOnFocus">true</item>
+    </style>
+
+    <style name="bold_button" parent="button">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="dialpad">
+        <item name="android:textSize">@dimen/dialpad_font_size</item>
+        <item name="android:fontFamily">sans-serif-thin</item>
+    </style>
+    
+    <style name="PrimaryLabelTextAppearance">
+        <item name="android:textSize">@dimen/main_title_font_size</item>
+        <item name="android:textColor">@color/black_3</item>
+    </style>
+    
+    <style name="SecondaryLabelTextAppearance">
+        <item name="android:textSize">@dimen/sub_title_font_size</item>
+        <item name="android:textColor">@color/black_9</item>
+    </style>
+
+    <style name="TextAppearance">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- Status Bar Styles -->
+    <style name="TextAppearance.StatusBar">
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+    </style>
+
+    <!-- Notification content styles -->
+    <style name="TextAppearance.StatusBar.EventContent">
+        <item name="android:textSize">@dimen/notification_text_size</item>
+        <item name="android:textColor">@color/black_54p</item>
+    </style>
+
+    <style name="TextAppearance.StatusBar.EventContent.Title">
+        <item name="android:textSize">@dimen/notification_title_text_size</item>
+        <item name="android:textColor">@color/black_87p</item>
+    </style>
+
+    <style name="ToastBarStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dip</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:layout_marginLeft">4dip</item>
+        <item name="android:layout_marginRight">4dip</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/panel_undo_holo</item>
+        <item name="android:visibility">gone</item>
+        <item name="android:alpha">0</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <!-- PRIZE-添加deskclock actionBar tab 中的 text资源- 李星-2015-4-17-start -->
+   
+    <style name="deskclock_TabTextColor">  
+	 <item name="android:textColor">@color/deskclock_actionbar_tabtext</item>  
+	</style>
+	   
+    <style name="my_actionbar_style" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:titleTextStyle">@style/AcBar_titleStyle</item>  
+    </style>
+    
+    <style name="AcBar_titleStyle"
+        parent="@android:style/TextAppearance.Material.Widget.ActionBar.Title">  
+        <item name="android:textSize">14sp</item>  
+    </style>
+    
+    
+    <style 
+        name="OctopusActionBarTittle" 
+        parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title.Inverse">
+        <item name="android:textColor">#000000</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+    
+    <style 
+        name="newDeskClockActionBarStyle" 
+        parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+    	<item name="android:titleTextStyle">@style/OctopusActionBarTittle</item>
+	</style>
+     <!-- PRIZE-添加deskclock actionBar tab 中的 text资源- 李星-2015-4-17-end -->
+    
+    
+    
+    
+    
+    
+     <!-- PRIZE-删除闹钟的style- 李星-2015-4-23-start -->
+     <style name="deletalarmstyle" parent="android:Animation">  
+         
+        <item name="@android:windowEnterAnimation">@anim/deletealarm_dialog_enter</item>  
+        <item name="@android:windowExitAnimation">@anim/deletealarm_dialog_exit</item>    
+    </style>  
+     
+     
+     <!-- <item name="android:windowAnimationStyle">@style/deletalarmstyle</item> -->
+     <style name="delete_Dialog_style" parent="@android:style/Theme.Holo.DialogWhenLarge">
+         
+         <item name="android:backgroundDimEnabled">true</item>
+     </style>  
+  	  <!-- PRIZE-删除闹钟的style- 李星-2015-4-23-end -->
+</resources>

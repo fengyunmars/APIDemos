@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PRIZE- 添加闹钟界面，选择时钟按钮- lixing-2015-4-16-start -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/clock_white">
+    <item>
+        <bitmap
+            android:src="@drawable/addalarm_hour_bg"				
+            android:tint="@color/addalarm_hourset_tint_color"
+            android:gravity="center" />
+        <!-- android:src 这是提供一个画布，真正改变背景 在 android:tint 中-->
+    </item>
+    <item android:id="@android:id/mask">
+        <bitmap
+            android:src="@drawable/addalarm_hour_bg"
+            android:gravity="center" />
+    </item>
+</ripple>
+
+
+<!-- PRIZE- 添加闹钟界面，选择时钟按钮- lixing-2015-4-16-end -->

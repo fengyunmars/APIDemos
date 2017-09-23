@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PRIZE- 宏开关打开后DeskClock中AlarmClockFragment中闹钟Item使用此布局文件- 李星-2015-4-8-start -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
+	android:layout_width="match_parent"
+	android:layout_height="@dimen/list_item_double"
+	android:id="@+id/item_layout">
+	    
+	<FrameLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"	
+	    	   
+	    >
+	    <LinearLayout 
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"	     
+	        android:orientation="vertical"	        
+	        android:layout_gravity="center|start"
+	        android:id="@+id/alarmitemlinear"	
+	        android:background="@drawable/alarmitemlinear"               
+	        >
+	        
+	        <TextView
+	            android:layout_width="wrap_content"
+	            android:layout_height="0dp"
+	            android:layout_weight="2"
+	            android:id="@+id/digital_clock"
+	            android:textSize="@dimen/main_title_font_size"
+	            android:textColor="@color/black_3"
+	            android:gravity="start|bottom" 
+	            android:layout_marginStart="14dp"
+	            />
+	        
+	        <LinearLayout 
+	            android:layout_width="wrap_content"
+	            android:layout_height="0dp"
+	            android:layout_weight="2"
+	            android:orientation="horizontal"
+	            android:id="@+id/repeatlinear"	
+	            android:layout_marginStart="14dp"	                       
+	            >
+	            <TextView android:id="@+id/alarm_label"
+	                android:layout_width="45dp"
+	                android:textSize="@dimen/sub_title_font_size"
+	                android:textColor="@color/black_9"
+	                android:layout_height="wrap_content"
+	                android:singleLine="true"
+	                android:maxLength="10"
+	                android:ellipsize="end"
+	                android:gravity="start"/>
+	            <Button
+				    android:layout_width="wrap_content"
+				    android:layout_height="match_parent"
+				    android:background="@android:color/transparent"
+				    android:textColor="@color/black_9"
+				    android:layout_marginStart="10dp"
+				    android:textSize="@dimen/sub_title_font_size"
+				   	android:gravity="start"
+				   	android:id="@+id/alldays"
+				   	android:clickable="false"
+				   	/>
+	        </LinearLayout>
+	        
+	    </LinearLayout>
+
+	    <LinearLayout
+	        android:id="@+id/onoff_linearlayou"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:layout_gravity="center|end"
+	        android:gravity="center|end" >
+
+	        <Switch
+	            android:id="@+id/onoff"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_marginEnd="8dp"
+	            android:layout_marginStart="8dp"
+	            android:clickable="false"
+	            android:gravity="center" />
+	    </LinearLayout>
+	    
+	    <LinearLayout 
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:id="@+id/delete_alarm_linearlayout"
+	        android:layout_gravity="center|end"
+	        android:gravity="center|end"
+	        android:layout_marginEnd="5dp"	
+	        android:visibility="gone"        
+	        >
+	    
+	        <Button android:id="@+id/delete_alarm_btn"
+	            android:layout_width="40dp"
+	            android:layout_height="40dp"
+	            android:layout_gravity="center"
+	            android:background="@drawable/delete_alarm_btn"/>
+	       
+	    </LinearLayout>
+	     <!--  android:background="@drawable/alarmitemswitch_track" 
+	        android:button="@null"
+	     	        -->
+	        
+	</FrameLayout>
+</LinearLayout>
+
+<!-- PRIZE- 宏开关打开后DeskClock中AlarmClockFragment中闹钟Item使用此布局文件- 李星-2015-4-8-end -->

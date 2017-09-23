@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- PRIZE- 秒表时钟指针资源文件- lixing-2015-4-13-start -->
+
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:mipMap="true"
+    android:src="@drawable/new_minutehand" />
+<!-- PRIZE- 秒表时钟指针资源文件- lixing-2015-4-13-end -->

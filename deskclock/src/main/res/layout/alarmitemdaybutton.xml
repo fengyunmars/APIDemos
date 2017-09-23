@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<Button
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/addalrm_day_button_width"
+    android:layout_height="@dimen/addalrm_day_button_width"
+    android:background="@drawable/daybutton"
+    android:textSize="@dimen/prize_content"
+   	android:gravity="center" 
+   	/>
+
+
+<!-- android:textColor="@color/black_6" -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+   	

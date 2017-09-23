@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+/*******************************************
+ *版权所有©2015,深圳市铂睿智恒科技有限公司
+ *
+ *内容摘要：自定义view 用来显示时间
+ *当前版本：
+ *作	者：zhuxiaoli
+ *完成日期：2015.4.15
+ *修改记录：
+ *修改日期：
+ *版 本 号：
+ *修 改 人：
+ *修改内容：
+ ...
+ *修改记录：
+ *修改日期：
+ *版 本 号：
+ *修 改 人：
+ *修改内容：
+*********************************************/
+
+  -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/timer_background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/clock_prize_area"
+    >
+    
+     <com.android.deskclock.prize.widget.TimerClockPrizeView
+       android:id="@+id/thisclock"
+       android:layout_marginTop="10dp"
+       android:layout_width="@dimen/new_clock_width"
+	  	android:layout_height="@dimen/new_clock_height"
+       android:layout_gravity="center"/>
+        
+         <LinearLayout
+             android:id="@+id/timer_time_show"
+             android:orientation="horizontal"
+             android:layout_height="wrap_content"
+             android:layout_width="match_parent"
+             android:layout_gravity="center"
+             android:layout_marginTop="10dp"
+             android:gravity="center"
+             >
+             <TextView 
+                 android:id="@+id/timer_hour_show"
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"
+                 android:textSize="@dimen/timer_texttime_text"
+                  android:textColor="@color/toumin_white"
+                 android:clickable="true"
+                 android:gravity="center"
+                 />
+             <TextView 
+                 android:layout_width="wrap_content"
+                 android:layout_height="match_parent"
+                 android:text="@string/maohao"
+                 android:textColor="@color/white"
+                 android:textSize="@dimen/timer_texttime_text"
+                 android:gravity="center"
+                 />
+             
+             <TextView 
+                 android:id="@+id/timer_minute_show"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"               
+                 android:textSize="@dimen/timer_texttime_text"
+                 android:textColor="@color/toumin_white"
+                 android:clickable="true"
+                 android:gravity="center"
+                 />
+             
+               <TextView 
+                 android:layout_width="wrap_content"
+                 android:layout_height="match_parent"
+                 android:text="@string/maohao"
+                 android:textColor="@color/white"
+                 android:textSize="@dimen/timer_texttime_text"
+                 android:gravity="center"
+                 />
+             
+             <TextView 
+                 android:id="@+id/timer_secondes_show"
+                 android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"           
+                 android:textSize="@dimen/timer_texttime_text"
+                  android:textColor="@color/toumin_white"
+                  android:clickable="true"
+                  android:gravity="center"
+                 />
+             </LinearLayout>
+    	<!--<TextView android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_gravity="bottom|center_horizontal"
+    	    android:layout_marginBottom="8dp"
+    	    android:textColor="@color/white"
+    	    android:textSize="14sp"
+    	    android:text="@string/timer_tip_prize"/>-->
+</FrameLayout>

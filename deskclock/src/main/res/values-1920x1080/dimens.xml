@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- PRIZE- 增加新1920x1080资源,- 李星-2015-4-21-start -->
+    
+    
+  	<dimen name="framelayout_top">350dp</dimen>
+    <dimen name="all_bottom">230dip</dimen>
+    <dimen name="listview_bottom">165dp</dimen>
+    <dimen name="list_item">50dp</dimen>
+    <dimen name="button_layout">65dp</dimen>
+    <dimen name="button_bottom">42.5dp</dimen>
+    <dimen name="button_bottom_width">320dp</dimen>
+    
+    <dimen name="new_clock_width">300dp</dimen>
+    <dimen name="new_clock_height">300dp</dimen>
+    <dimen name="new_stopwatch_width">300dp</dimen>
+    <dimen name="bottom_button_margin_left">15dp</dimen>
+    
+    
+    <dimen name="timepicker_text">37sp</dimen>
+    
+    <dimen name="bottom_button_text">16sp</dimen>
+    <dimen name="alarm_list_item_text_up">20sp</dimen>
+    <dimen name="alarm_list_item_text_down">15sp</dimen>
+    <dimen name="addalamrbutton_marginbuttom">9dp</dimen>
+    
+    
+    <dimen name="clock_list_item_text_up">20sp</dimen>
+    <dimen name="clock_list_item_text_down">13sp</dimen>
+    
+    
+    
+    <dimen name="stopwatch_list_item_text_left">20sp</dimen>
+    <dimen name="stopwatch_list_item_text_middle">17sp</dimen>
+    <dimen name="stopwatch_ico_width">30dp</dimen>
+    <dimen name="stopwatch_texttime">32sp</dimen>
+    
+    
+    <dimen name="addalarm_checkbox_width">75px</dimen>
+    <dimen name="addalarm_checkbox_heigth">42px</dimen>
+    <dimen name="addalarm_confirm_width">85dp</dimen>
+    <dimen name="addalarm_confirm_heigth">32dp</dimen>
+    <dimen name="addalarm_confirm_text">17sp</dimen>
+    <dimen name="addalrm_day_button_width">100px</dimen>
+    <dimen name="addalrm_day_button_text">15sp</dimen>
+    
+    
+    <dimen name="timer_texttime_text">32sp</dimen>
+    <dimen name="timer_linsheng_left">20sp</dimen>
+    <dimen name="timer_linsheng_right">14sp</dimen>
+    <dimen name="timer_list_item_text">20sp</dimen>
+    
+    
+    
+    
+    <!-- PRIZE- 增加新1280x720资源- 李星-2015-4-21-end -->
+    
+    
+</resources>

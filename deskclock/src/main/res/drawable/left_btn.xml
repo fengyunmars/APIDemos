@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PRIZE- 宏开关打开后DeskClock中StopWatchFragmentz中左边按钮使用此布局文件- 李星-2015-4-14-start -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/left_bt_pressed" android:state_enabled="true" android:state_pressed="true"/>
+    <item android:drawable="@drawable/left_bt_normal" android:state_enabled="true"/>
+
+</selector><!-- PRIZE- 宏开关打开后DeskClock中StopWatchFragmentz中左边按钮使用此布局文件- 李星-2015-4-14-end -->

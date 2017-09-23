@@ -420,6 +420,7 @@
 
     <string name="activity_external_storage">Content/Storage/External Storage</string>
     <string name="create">Create</string>
+    <string name="create2">Create for long</string>
     <string name="delete">Delete</string>
 
     <string name="activity_styled_text">Content/Resources/<i>Styled</i> <b>Text</b></string>
@@ -1612,5 +1613,6 @@
     <string name="copy_html_text">copy html text</string>
     <string name="start">start</string>
     <string name="rename">rename</string>
+    <string name="onlyme">onlyme</string>
 
 </resources>

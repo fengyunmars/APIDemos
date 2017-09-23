@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--prize-增加960x540P 资源-lixing-205-6-4-start  -->
+    
+    <item type="integer" name="dial_stroke_width">30</item>
+    <item type="integer" name="dial_text_size">25</item>
+    
+
+    <item type="integer" name="stopwatch_hand__width">9</item>
+    <item type="integer" name="stopwatch_circle_out_radius">10</item>
+    
+     <item type="integer" name="hour_hand_width">9</item>
+    <item type="integer" name="seconde_hand_width">5</item>
+    
+    <!--prize-增加960x540P 资源-lixing-205-6-4-end  -->
+</resources>

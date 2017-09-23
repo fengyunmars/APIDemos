@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PRIZE- 添加闹钟界面，选择日期按钮- lixing-2015-4-8-start -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/clock_white">
+    <item>
+        <bitmap
+            android:src="@drawable/day_bg"
+            android:tint="@color/new_bg_day_tint_color"
+            android:gravity="center" />
+    </item>
+    <item android:id="@android:id/mask">
+        <bitmap
+            android:src="@drawable/day_bg"
+            android:gravity="center" />
+    </item>
+</ripple>
+<!-- PRIZE- 添加闹钟界面，选择日期按钮- lixing-2015-4-8-end -->

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- prize-设置listview 的item 的背景-lixing-2015-8-13-start -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:state_pressed="true"  android:drawable="@color/list_item_bg_press" />
+    <item android:drawable="@color/list_item_bg_normal" />
+</selector>
+<!-- prize-设置listview 的item 的背景-lixing-2015-8-13-end -->

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/list_item_double"
+    android:orientation="horizontal" 
+    android:background="@drawable/alarmitemlinear"
+    android:id="@+id/clock_linear">
+    
+
+    <LinearLayout 
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/bottom_button_margin_left"        
+        android:gravity="center|start" >
+        
+        <TextClock 
+            android:id="@+id/digital_clock"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:gravity="bottom"
+            android:textColor="@color/black_3"
+            android:textSize="@dimen/main_title_font_size"
+            />
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal"
+            
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/city_day"
+                android:gravity="center|start"
+                android:textColor="@color/black_9"
+                android:textSize="@dimen/prize_content"
+                />
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/city_name"
+                android:gravity="center|start"
+                android:textColor="@color/black_9"
+                android:textSize="@dimen/prize_content"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    
+    <RelativeLayout android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="7dp"
+        android:layout_gravity="center">
+    	<com.android.deskclock.widget.CityAnalogClock 
+	        android:id="@+id/analog_clock"
+	        android:layout_width="34dp"
+	        android:layout_height="34dp"
+			android:layout_centerInParent="true"/>
+    	<Button android:id="@+id/delete_clock_btn"
+	            android:layout_width="40dp"
+	            android:layout_height="40dp"
+	            android:layout_gravity="center"
+	            android:visibility="gone"
+	            android:background="@drawable/delete_alarm_btn"
+	            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+    
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

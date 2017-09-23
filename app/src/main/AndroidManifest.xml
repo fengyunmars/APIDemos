@@ -1887,7 +1887,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.LinearLayoutVerticalBasic"
+            android:name=".view.LinearLayout01VerticalBasic"
             android:label="Views/Layouts/LinearLayout/01. Vertical">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -1896,7 +1896,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.LinearLayoutVerticalFillScreen"
+            android:name=".view.LinearLayout02VerticalFillScreen"
             android:label="Views/Layouts/LinearLayout/02. Vertical (Fill Screen)">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -1905,8 +1905,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.LinearLayoutVerticalExpand"
-            android:label="Views/Layouts/LinearLayout/03. Vertical (Padded)">
+            android:name=".view.LinearLayout03VerticalExpand"
+            android:label="Views/Layouts/LinearLayout/03. Vertical (Expand)">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -1914,7 +1914,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.LinearLayoutHorizontalAverage"
+            android:name=".view.LinearLayout04HorizontalAverage"
             android:label="Views/Layouts/LinearLayout/04. Horizontal Average">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -1923,8 +1923,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.LinearLayoutHorizontalAverageReal"
-            android:label="Views/Layouts/LinearLayout/04. Horizontal Average Real">
+            android:name=".view.LinearLayout05HorizontalAverageButton"
+            android:label="Views/Layouts/LinearLayout/04. Horizontal Average Button">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -3906,9 +3906,18 @@
             android:label="Content/IntentSample">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".app.ActivityStart"
+            android:label="App/Activity/StartAcitity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".app.ActivityTarget">
         </activity>
     </application>
 

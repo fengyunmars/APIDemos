@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/add_or_edit_alarm_actionbar_height" >
+
+        <RelativeLayout
+            android:layout_width="@dimen/add_or_edit_alarm_actionbar_height"
+            android:layout_height="@dimen/add_or_edit_alarm_actionbar_height"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="15dp" >
+
+            <TextView
+                android:id="@+id/home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/add_edit_alarm_btn"
+                android:gravity="center"
+                android:text="@string/cancel"
+                android:textColor="#33cbcc"
+                android:textSize="12sp" />
+
+            <!--
+                 <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/cancel_mark" />
+            -->
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:layout_width="@dimen/add_or_edit_alarm_actionbar_height"
+            android:layout_height="@dimen/add_or_edit_alarm_actionbar_height"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="15dp" >
+
+            <TextView
+                android:id="@+id/confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/add_edit_alarm_btn"
+                android:gravity="center"
+                android:text="@string/confirm"
+                android:textColor="#33cbcc"
+                android:textSize="12sp" />
+
+            <!-- <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/check_mark" /> -->
+        </RelativeLayout>
+    </RelativeLayout>
+    
+    <View android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/prize_divide_line_default"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/day_select_wheel_height"
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/day_select_wheel_margin"
+        android:paddingEnd="@dimen/day_select_wheel_margin" >
+
+        <!-- <include layout="@layout/time_select_left" /> -->
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <RelativeLayout
+                android:id="@+id/hour_rll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp" >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true" >
+
+                    <com.android.deskclock.alarms.WheelView
+                        android:id="@+id/hour"
+                        android:layout_width="80dp"
+                        android:layout_height="fill_parent" />
+
+                    <TextView
+                        android:id="@+id/hour_tvl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/hour"
+                        android:text="@string/alarm_hour"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="16sp" />
+
+                    <com.android.deskclock.alarms.WheelView
+                        android:id="@+id/mins"
+                        android:layout_width="80dp"
+                        android:layout_height="fill_parent"
+                        android:layout_toEndOf="@id/hour_tvl" />
+
+                    <TextView
+                        android:id="@+id/minute_tvv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/mins"
+                        android:text="@string/alarm_minute"
+                        android:textColor="@android:color/darker_gray"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <include layout="@layout/time_select_line" />
+        </FrameLayout>
+
+        <!-- <include layout="@layout/time_select_left" /> -->
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/prize_divide_line_default" />
+
+    <LinearLayout
+        android:id="@+id/first_linear"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/expand_level"
+        android:background="@drawable/alarmitemlinear"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/bottom_button_margin_left"
+            android:gravity="center|start" >
+
+            <TextView
+                android:id="@+id/repeat_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/alarm_repeat"
+                android:textColor="@color/black_3"
+                android:textSize="@dimen/prize_normal"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/day_linearlayout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="@dimen/bottom_button_margin_left"
+            android:layout_weight="1"
+            android:gravity="center|end"
+            android:orientation="horizontal" >
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/prize_divide_line_default"
+        android:layout_marginStart="@dimen/bottom_button_margin_left"
+        android:layout_marginEnd="@dimen/bottom_button_margin_left"/>
+
+    <LinearLayout
+        android:id="@+id/second_linear"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/expand_level"
+        android:background="@drawable/alarmitemlinear"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/bottom_button_margin_left" >
+
+            <TextView
+                android:id="@+id/vibrate_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/alarm_vibrate"
+                android:textColor="@color/black_3"
+                android:textSize="@dimen/prize_normal"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/bottom_button_margin_left"
+            android:layout_weight="1"
+            android:gravity="center|end" >
+
+            <LinearLayout
+                android:id="@+id/vibration_linearlayou"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center|end" >
+
+                <Switch
+                    android:id="@+id/vibration_onoff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:gravity="center" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/prize_divide_line_default"
+        android:layout_marginStart="@dimen/bottom_button_margin_left"
+        android:layout_marginEnd="@dimen/bottom_button_margin_left"/>
+
+    <LinearLayout
+        android:id="@+id/third_linear"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/expand_level"
+        android:background="@drawable/alarmitemlinear"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/bottom_button_margin_left" >
+
+            <TextView
+                android:id="@+id/voice_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/voice"
+                android:textColor="@color/black_3"
+                android:textSize="@dimen/prize_normal"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/bottom_button_margin_left"
+            android:layout_weight="1"
+            android:gravity="center|end" >
+
+            <Button
+                android:id="@+id/choice_ringtone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:background="@android:color/transparent"
+                android:gravity="center|end"
+                android:text="@string/voice"
+                android:textColor="@color/black_9"
+                android:textSize="@dimen/prize_content" />
+
+            <ImageButton
+                android:layout_width="8dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center|end"
+                android:layout_marginEnd="2dp"
+                android:background="#00FFFFFF"
+                android:src="@drawable/right_arrow" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/prize_divide_line_default"
+        android:layout_marginStart="@dimen/bottom_button_margin_left"
+        android:layout_marginEnd="@dimen/bottom_button_margin_left"/>
+
+    <LinearLayout
+        android:id="@+id/fourth_linear"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/expand_level"
+        android:background="@drawable/alarmitemlinear"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/bottom_button_margin_left" >
+
+            <TextView
+                android:id="@+id/sleep_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/sleep"
+                android:textColor="@color/black_3"
+                android:textSize="@dimen/prize_normal"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/bottom_button_margin_left"
+            android:layout_weight="1"
+            android:gravity="center|end" >
+
+            <Button
+                android:id="@+id/snooze_time"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:background="@android:color/transparent"
+                android:gravity="center|end"
+                android:textColor="@color/black_9"
+                android:textSize="@dimen/prize_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/prize_divide_line_default"
+        android:layout_marginStart="@dimen/bottom_button_margin_left"
+        android:layout_marginEnd="@dimen/bottom_button_margin_left"/>
+
+    <LinearLayout
+        android:id="@+id/fifth_linear"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/expand_level"
+        android:background="@drawable/alarmitemlinear"
+        android:baselineAligned="false"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/bottom_button_margin_left" >
+
+            <TextView
+                android:id="@+id/label_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/label"
+                android:textColor="@color/black_3"
+                android:textSize="@dimen/prize_normal"
+                android:typeface="serif" />
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/bottom_button_margin_left"
+            android:layout_weight="1"
+            android:gravity="center|end" >
+
+            <Button
+                android:id="@+id/label_info"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="20dp"
+                android:background="@android:color/transparent"
+                android:gravity="center|end"
+                android:text="@string/default_label"
+                android:textColor="@color/black_9"
+                android:textSize="@dimen/prize_content" />
+
+            <ImageButton
+                android:layout_width="8dp"
+                android:layout_height="14dp"
+                android:layout_gravity="center|end"
+                android:layout_marginEnd="2dp"
+                android:background="#00FFFFFF"
+                android:src="@drawable/right_arrow" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/prize_divide_line_default"
+        android:layout_marginStart="@dimen/bottom_button_margin_left"
+        android:layout_marginEnd="@dimen/bottom_button_margin_left"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

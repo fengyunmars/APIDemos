@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ListView
+        android:id="@+id/alarms_list"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/listview_height"
+        android:layout_marginTop="@dimen/listview_margintop_max"
+        android:background="@color/white"
+        android:clipToPadding="false"
+        android:descendantFocusability="beforeDescendants"
+        android:divider="@null"
+        android:dividerHeight="0dip" />
+
+    <LinearLayout
+        android:id="@+id/alarm_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/alarm_primary_container"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/whatsthetime"
+            android:layout_marginTop="@dimen/whatsthetime_margintop"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/current_time_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" >
+            </View>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_layout"
+                android:background="@color/white"
+                android:orientation="horizontal" >
+
+                <Button
+                    android:id="@+id/addalarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_bottom"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/bottom_button_margin_left"
+                    android:layout_weight="1"
+                    android:background="@drawable/prize_add_alarm_button"
+                    android:gravity="center"
+                    android:text="@string/add_alarm"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black_3"
+                    android:textSize="@dimen/prize_normal" />
+
+                <Button
+                    android:id="@+id/alarm_set"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/button_bottom"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/bottom_button_margin_left"
+                    android:layout_weight="1"
+                    android:background="@drawable/prize_alarm_set_button"
+                    android:gravity="center"
+                    android:text="@string/settings"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black_3"
+                    android:textSize="@dimen/prize_normal" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <include
+        android:id="@+id/addalarmlayout"
+        layout="@layout/prize_add_alarm_clock" />
+
+</FrameLayout>
+

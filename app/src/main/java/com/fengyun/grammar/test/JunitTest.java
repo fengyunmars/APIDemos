@@ -104,5 +104,28 @@ public class JunitTest {
             System.out.println(s);
         }
     }
+
+    @Test
+    public void testBrackets(){
+        {
+            System.out.println("hello");
+        }
+
+        {
+            System.out.println("world");
+        }
+        String s = "123";
+        s.equals("");
+    }
+
+    @Test
+    public void testPrintThis(){
+        System.out.println(this);
+    }
+
+    @Override
+    public String toString() {
+        return "hello";
+    }
 }
 

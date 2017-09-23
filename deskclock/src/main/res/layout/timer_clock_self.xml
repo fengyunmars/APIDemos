@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    android:id="@+id/clock_prize_image"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    
+    
+    <com.android.deskclock.widget.timerClockPrizeView
+       android:id="@+id/thisclock"
+       android:layout_width="@dimen/new_clock_width"
+       android:layout_height="@dimen/new_clock_height" 
+       android:layout_gravity="center" 
+        />
+    
+    
+    </LinearLayout>

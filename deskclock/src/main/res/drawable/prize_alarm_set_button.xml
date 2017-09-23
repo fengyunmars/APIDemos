@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PRIZE- 宏开关打开后DeskClock中AlarmClockFragmentz中设置按钮使用此布局文件- 李星-2015-4-8-start -->
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+     <item android:state_enabled="true" android:state_pressed="true"  android:drawable="@drawable/set_down"
+         />
+    <item android:state_enabled="true"  android:drawable="@drawable/set_up"
+        />
+   
+
+</selector>
+<!-- PRIZE- 宏开关打开后DeskClock中AlarmClockFragmentz中设置按钮使用此布局文件- 李星-2015-4-8-end -->
+

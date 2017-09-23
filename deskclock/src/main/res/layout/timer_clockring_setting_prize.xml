@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- timer clock ring setting -->
+<!--
+/*******************************************
+ *版权所有©2015,深圳市铂睿智恒科技有限公司
+ *
+ *内容摘要：铃声选择界面
+ *当前版本：
+ *作	者：zhuxiaoli
+ *完成日期：2015.4.15
+ *修改记录：
+ *修改日期：
+ *版 本 号：
+ *修 改 人：
+ *修改内容：
+ ...
+ *修改记录：
+ *修改日期：
+ *版 本 号：
+ *修 改 人：
+ *修改内容：
+*********************************************/-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ring_choice_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:clickable="true" >
+
+    <TextView
+        android:id="@+id/timer_page"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="14dp"
+        android:text="@string/timer_clock_ring_text"
+        android:textColor="@color/black_3"
+        android:textSize="@dimen/main_title_font_size" />
+
+    <ImageView
+        android:id="@+id/timer_clockring_choice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/prize_go_to_setting" />
+
+    <TextView
+        android:id="@+id/timer_clockring_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@id/timer_clockring_choice"
+        android:ellipsize="end"
+        android:maxEms="10"
+        android:singleLine="true"
+        android:text="@string/timer_clockring_name"
+        android:textColor="@color/black_9"
+        android:textSize="@dimen/prize_content" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/bottom_button_margin_left"
+        android:layout_marginRight="@dimen/bottom_button_margin_left"
+        android:background="@drawable/hriozion_prize" />
+
+</RelativeLayout>

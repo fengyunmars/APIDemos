@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- PRIZE- 宏开关打开后DeskClock中AlarmClockFragment添加闹钟时候使用此布局文件- 李星-2015-4-8-start -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/addalarm_layout"
+        android:visibility="gone"
+        >
+        
+        <View 
+            android:layout_width="match_parent"
+      		android:layout_height="@dimen/framelayout_top"
+            />
+
+        <ScrollView 
+            android:layout_width="match_parent"
+          	 android:layout_height="0dp"
+          	 android:layout_weight="1"
+            >
+        
+       <LinearLayout 
+           android:layout_width="match_parent"
+           android:layout_height="@dimen/all_bottom"
+           android:orientation="vertical"
+           android:background="#FFFFFF"
+           android:id="@+id/four_linear"
+           android:gravity="top"
+           >
+        
+           <LinearLayout 
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/list_item"          
+               android:background="@drawable/alarmitemlinear"
+               android:orientation="horizontal"
+               android:id="@+id/first_linear"              
+               >
+                 <LinearLayout 
+                   android:layout_width="0dp"
+                   android:layout_height="match_parent"
+                   android:layout_weight="1"
+                   android:layout_marginLeft="@dimen/bottom_button_margin_left"
+                   android:gravity="center|start"
+                   >
+                      <TextView 
+	                   android:layout_width="wrap_content"
+	                   android:layout_height="match_parent"
+	                   android:text="@string/alarm_repeat"
+	                   android:gravity="center"
+	                   android:textSize="@dimen/prize_normal"
+	                   android:textColor="@color/black_3"
+	                   android:typeface="serif"
+	                   android:id="@+id/repeat_title"
+	                   />                    
+                 </LinearLayout>
+             
+                <LinearLayout 
+                    android:id="@+id/day_linearlayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                   	android:gravity="center|end"
+                   	android:layout_marginRight="@dimen/bottom_button_margin_left"  
+                   	android:orientation="horizontal"                        	           	
+                    >
+                                      
+                </LinearLayout> 
+                 
+              
+           </LinearLayout>
+           
+          <LinearLayout 
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/list_item"                   
+               android:background="@drawable/alarmitemlinear"
+               android:orientation="horizontal"
+               android:id="@+id/second_linear"
+               >  
+          <LinearLayout 
+               android:layout_width="wrap_content"
+               android:layout_height="match_parent"
+               android:layout_marginStart="@dimen/bottom_button_margin_left"
+              >
+                 <TextView 
+	                android:layout_width="wrap_content"
+	               	android:layout_height="match_parent"
+	                android:text="@string/alarm_vibrate"
+	                android:gravity="center"
+	                android:textSize="@dimen/prize_normal"
+	                android:textColor="@color/black_3"
+	                android:typeface="serif"
+	                android:id="@+id/vibrate_title"
+	                  />                    
+                 </LinearLayout>
+                 
+          <LinearLayout 
+              android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:layout_weight="1"
+              android:layout_marginRight="@dimen/bottom_button_margin_left"
+              android:gravity="center|end"
+              >
+                 
+              
+              
+               <LinearLayout 
+			        android:layout_width="match_parent"
+			        android:layout_height="match_parent"
+			        android:id="@+id/vibration_linearlayou"
+			        android:gravity="center|end"
+			        >
+			        <Switch
+				        android:id="@+id/vibration_onoff"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"
+				        android:gravity="center"
+			        />	   
+			        <!-- 
+			        @dimen/addalarm_checkbox_width
+			        @dimen/addalarm_checkbox_heigth
+			        android:button="@null"
+			        android:background="@drawable/alarmitemswitch_track"
+			        style = "@style/Preze_Switch_Button" -->
+	    	</LinearLayout>
+              
+          	</LinearLayout>
+          
+         </LinearLayout>
+           
+           <LinearLayout 
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/list_item"                    
+               android:background="@drawable/alarmitemlinear"
+               android:orientation="horizontal"
+               android:id="@+id/third_linear"
+               >  
+	          <LinearLayout 
+	               android:layout_width="wrap_content"
+	               android:layout_height="match_parent"
+	               android:layout_marginLeft="@dimen/bottom_button_margin_left"	               
+	              >
+	                 <TextView 
+		                android:layout_width="wrap_content"
+		               	android:layout_height="match_parent"
+		                android:text="@string/voice"
+		                android:gravity="center"
+		                android:textSize="@dimen/prize_normal"
+		                android:textColor="@color/black_3"
+		                android:typeface="serif"
+		                android:id="@+id/voice_title"
+		                  />                    
+		                 </LinearLayout>
+	          	 <FrameLayout 
+	              android:layout_width="0dp"
+	              android:layout_height="match_parent"
+	              android:layout_weight="1"
+	              android:layout_marginEnd="@dimen/bottom_button_margin_left"
+	              android:gravity="center|end"
+	              >
+	                 <Button 
+	                     android:layout_width="match_parent"
+	                     android:layout_height="match_parent"
+	                     android:background="@android:color/transparent"
+	                     android:text="@string/voice"
+	                     android:id="@+id/choice_ringtone"
+	                     android:textColor="@color/black_9"
+	                     android:textSize="@dimen/prize_content"	                     
+	                     android:gravity="center|end"
+	                     android:layout_marginEnd="20dp"	
+	                     
+	                     />
+	                 
+	                 <ImageButton 
+	                     android:layout_width="8dp"
+	                     android:layout_height="14dp"
+	                     android:src="@drawable/right_arrow"
+	                     android:layout_gravity="center|end"
+	                     android:background="#00FFFFFF"
+	                     android:layout_marginEnd="2dp"
+	                     />
+	                 
+	             </FrameLayout>
+           </LinearLayout>
+           
+           
+           
+           <LinearLayout 
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/list_item"                     
+               android:background="@drawable/alarmitemlinear"
+               android:orientation="horizontal"
+               android:id="@+id/fourth_linear"
+               >  
+	          <LinearLayout 
+	               android:layout_width="wrap_content"
+	               android:layout_height="match_parent"
+	               android:layout_marginLeft="@dimen/bottom_button_margin_left"
+	              >
+	                 <TextView 
+		                android:layout_width="wrap_content"
+		               	android:layout_height="match_parent"
+		                android:text="@string/sleep"
+		                android:gravity="center"
+		                android:textSize="@dimen/prize_normal"
+		                android:textColor="@color/black_3"
+		                android:typeface="serif"
+		                android:id="@+id/sleep_title"	
+		                  />                    
+		        </LinearLayout>
+		        
+	          	 <LinearLayout 
+	              android:layout_width="0dp"
+	              android:layout_height="match_parent"
+	              android:layout_weight="1"
+	              android:layout_marginEnd="@dimen/bottom_button_margin_left"
+	              android:gravity="center|end"
+	              >
+	                 <Button 
+	                     android:layout_width="match_parent"
+	                     android:layout_height="match_parent"
+	                     android:background="@android:color/transparent"
+	                     android:textColor="@color/black_9"
+	                     android:textSize="@dimen/prize_content"
+	                     android:gravity="center|end"
+	                     android:id="@+id/snooze_time"
+	                     android:layout_marginEnd="5dp"
+	                     />
+	             </LinearLayout>
+           </LinearLayout>
+           
+           <View 
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               />
+      	 </LinearLayout>
+      	 
+      </ScrollView>
+    </LinearLayout>
+    
+</FrameLayout>
+<!-- PRIZE- 宏开关打开后DeskClock中AlarmClockFragment添加闹钟时候使用此布局文件- 李星-2015-4-8-end -->
+

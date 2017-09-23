@@ -44,11 +44,12 @@
         android:id="@+id/delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="1.07"
         android:text="@string/delete"/>
 
     <View
         android:layout_width="0dip"
         android:layout_height="0dip"
         android:layout_weight="1"/>
+
 </LinearLayout>

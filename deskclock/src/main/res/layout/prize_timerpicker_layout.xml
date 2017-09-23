@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/timepicker_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/framelayout_top"
+        layout="@layout/prize_edit_alarm_timepicker_layout" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:id="@+id/four_linear"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/all_bottom"
+            android:background="#FFFFFF"
+            android:gravity="top"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/first_linear"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item"
+                android:background="@drawable/alarmitemlinear"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/bottom_button_margin_left"
+                    android:layout_weight="1"
+                    android:gravity="center|start" >
+
+                    <TextView
+                        android:id="@+id/repeat_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/alarm_repeat"
+                        android:textColor="@color/black_3"
+                        android:textSize="@dimen/prize_normal"
+                        android:typeface="serif" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/day_linearlayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/bottom_button_margin_left"
+                    android:gravity="center|end"
+                    android:orientation="horizontal" >
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/second_linear"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item"
+                android:background="@drawable/alarmitemlinear"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/bottom_button_margin_left" >
+
+                    <TextView
+                        android:id="@+id/vibrate_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/alarm_vibrate"
+                        android:textColor="@color/black_3"
+                        android:textSize="@dimen/prize_normal"
+                        android:typeface="serif" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/bottom_button_margin_left"
+                    android:layout_weight="1"
+                    android:gravity="center|end" >
+
+                    <LinearLayout
+                        android:id="@+id/vibration_linearlayou"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center|end" >
+
+                        <Switch
+                            android:id="@+id/vibration_onoff"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center" />
+                        <!--
+			        @dimen/addalarm_checkbox_width
+			        @dimen/addalarm_checkbox_heigth
+			        android:button="@null"
+			        android:background="@drawable/alarmitemswitch_track"
+			        style = "@style/Preze_Switch_Button"
+                        -->
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/third_linear"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item"
+                android:background="@drawable/alarmitemlinear"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/bottom_button_margin_left" >
+
+                    <TextView
+                        android:id="@+id/voice_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/voice"
+                        android:textColor="@color/black_3"
+                        android:textSize="@dimen/prize_normal"
+                        android:typeface="serif" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/bottom_button_margin_left"
+                    android:layout_weight="1"
+                    android:gravity="center|end" >
+
+                    <Button
+                        android:id="@+id/choice_ringtone"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="20dp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center|end"
+                        android:text="@string/voice"
+                        android:textColor="@color/black_9"
+                        android:textSize="@dimen/prize_content" />
+
+                    <ImageButton
+                        android:layout_width="8dp"
+                        android:layout_height="14dp"
+                        android:layout_gravity="center|end"
+                        android:layout_marginEnd="2dp"
+                        android:background="#00FFFFFF"
+                        android:src="@drawable/right_arrow" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fourth_linear"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/list_item"
+                android:background="@drawable/alarmitemlinear"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/bottom_button_margin_left" >
+
+                    <TextView
+                        android:id="@+id/sleep_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="@string/sleep"
+                        android:textColor="@color/black_3"
+                        android:textSize="@dimen/prize_normal"
+                        android:typeface="serif" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/bottom_button_margin_left"
+                    android:layout_weight="1"
+                    android:gravity="center|end" >
+
+                    <Button
+                        android:id="@+id/snooze_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginEnd="5dp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center|end"
+                        android:textColor="@color/black_9"
+                        android:textSize="@dimen/prize_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

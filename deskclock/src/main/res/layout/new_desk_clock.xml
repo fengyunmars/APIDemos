@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- PRIZE- 宏开关打开后DeskClock中Activity使用此布局文件- 李星-2015-4-6-start -->
+<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/deskclock_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >-->
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:custom="http://schemas.android.com/apk/res/com.android.deskclock"
+        android:id="@+id/viewpager_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        
+        <com.android.deskclock.prize.widget.NonSwipeableViewPager
+            android:id="@+id/desk_clock_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >-->
+
+            <!--<FrameLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/framelayout_top"-->
+                <!--android:layout_gravity="center|top" >-->
+
+                <LinearLayout
+                    android:id="@+id/allclockslinear"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/framelayout_top"
+                    android:layout_gravity="center|top"
+                    android:orientation="vertical" >
+                    
+                    <FrameLayout
+                        android:id="@+id/alarmclock_framelayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/alarm_background"
+                        android:visibility="gone" >
+
+                        <FrameLayout
+                            android:id="@+id/analogclock_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" >
+
+                            <com.android.deskclock.prize.widget.PrizeAnalogClock
+                                android:id="@+id/analogclock"
+                                android:layout_marginTop="10dp"
+                                android:layout_width="@dimen/new_clock_width"
+                                android:layout_height="@dimen/new_clock_height"
+                                android:layout_gravity="center" />
+
+                            <!--<TextView
+                                android:id="@+id/time_zone"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center|bottom"
+                                android:layout_marginBottom="20dp"
+                                android:text="@string/Standard_time"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/prize_normal"
+                                android:visibility="gone" />-->
+                        </FrameLayout>
+
+                       <!-- <include
+                            android:id="@+id/timepicker_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            layout="@layout/addalarm_timepicker_layout" />-->
+                        <include
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            layout="@layout/addalarm_timepicker_layout" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/clock_framelayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/clock_background"
+                        android:visibility="gone" >
+
+                        <com.android.deskclock.prize.widget.PrizeAnalogClock
+                            android:id="@+id/world_clock"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="@dimen/new_clock_width"
+                            android:layout_height="@dimen/new_clock_height"
+                            custom:outsidecircle="@drawable/clockfragment_outside_circle"
+                            custom:minutepointer="@drawable/clockfragment_minute_pointer"
+                            android:layout_gravity="center" />
+
+                        <!--<TextView
+                            android:id="@+id/worldclock_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|bottom"
+                            android:layout_marginBottom="20dp"
+                            android:text="@string/Standard_time"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/prize_normal"
+                            android:visibility="gone" />-->
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/stopwatch_framelayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/stopwatch_background"
+                        android:gravity="center"
+                        android:visibility="gone" >
+
+                        <!--<TextView
+                            android:id="@+id/showtime_textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/stopwatch_texttime" />-->
+
+                        <com.android.deskclock.prize.widget.PrizeStopWatchClock
+                            android:id="@+id/stopwatch_clock"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="@dimen/new_clock_width"
+                            android:layout_height="@dimen/new_clock_height"
+                            android:layout_gravity="center" />
+
+                        <TextView
+                            android:id="@+id/showtime_textview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/stopwatch_texttime" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/timer_framelayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:visibility="gone" >
+
+                        <include
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            layout="@layout/timerclock_prize" />
+                    </FrameLayout>
+                    
+                    <!--<FrameLayout
+                        android:id="@+id/text_framelayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:visibility="gone">
+                        &lt;!&ndash;<LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">&ndash;&gt;
+                            <TextView android:id="@+id/show_time_tv"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/whatsthetime"
+                                android:textSize="24sp"
+                                android:textColor="@color/white"
+                                android:layout_gravity="center"/>
+                        &lt;!&ndash;</LinearLayout>&ndash;&gt;
+                    </FrameLayout>-->
+                    
+                </LinearLayout>
+
+                <!--
+           <LinearLayout 
+               android:id="@+id/title_container"
+               android:layout_gravity="top"
+               android:layout_width="match_parent"
+               android:layout_height="47dp"
+               android:orientation="horizontal"
+               android:gravity="center"
+               android:background="@android:color/transparent"
+               >
+               <TextView 
+                   android:id="@+id/alarm_title"
+                   android:layout_height="match_parent"
+                   android:layout_width="67dp"
+                   android:textSize="@dimen/prize_normal"
+                   android:text="@string/menu_alarm"
+                   android:background="@android:color/transparent"
+                   android:gravity="center"
+                   />
+               <TextView 
+                   android:id="@+id/clock_title"
+                   android:layout_height="match_parent"
+                   android:layout_width="67dp"
+                   android:textSize="@dimen/prize_normal"
+                   android:text="@string/menu_clock"
+                   android:background="@android:color/transparent"
+                   android:gravity="center"
+                   />
+                <TextView 
+                   android:id="@+id/stopwatch_title"
+                   android:layout_height="match_parent"
+                   android:layout_width="67dp"
+                   android:textSize="@dimen/prize_normal"
+                   android:text="@string/menu_stopwatch"
+                   android:background="@android:color/transparent"
+                   android:gravity="center"
+                   />
+                <TextView 
+                   android:id="@+id/timer_title"
+                   android:layout_height="match_parent"
+                   android:layout_width="67dp"
+                   android:textSize="@dimen/prize_normal"
+                   android:text="@string/menu_timer"
+                   android:background="@android:color/transparent"
+                   android:gravity="center"
+                   />
+           </LinearLayout>
+                -->
+            <!--</FrameLayout>-->
+
+            <!--<View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />-->
+        <!--</LinearLayout>-->
+        
+    </FrameLayout>
+
+<!--</FrameLayout>-->
+<!-- PRIZE- 宏开关打开后DeskClock中Activity使用此布局文件- 李星-2015-4-6-end -->
+
+
+
+
+

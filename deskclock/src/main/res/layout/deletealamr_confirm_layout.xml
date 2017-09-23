@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/delete_alarm_confirm"
+        android:textColor="@color/black_3"
+        android:textSize="@dimen/prize_normal"
+        />
+    
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <Button 
+            android:layout_width="match_parent"
+	        android:layout_height="@dimen/button_bottom"
+	        android:layout_marginStart="@dimen/bottom_button_margin_left"	            		
+            android:layout_gravity="center"
+            android:textColor="@color/black_3"
+            android:text="@string/time_picker_set"
+            android:id="@+id/confirm"
+    	   android:background="@drawable/deletealarm_confirm" 
+            android:layout_weight="1"
+            android:textSize="@dimen/prize_normal"
+            />
+        <!--      
+        -->
+        
+        <Button 
+           android:layout_width="match_parent"
+	       android:layout_height="@dimen/button_bottom"
+	       android:layout_marginEnd="@dimen/bottom_button_margin_left"
+           android:layout_gravity="center"
+           android:textColor="@color/black_3"
+           android:text="@string/time_picker_cancel"
+           android:id="@+id/cancel"
+           android:textSize="@dimen/prize_normal"
+           android:background="@drawable/deletealarm_confirm_right"
+           android:layout_weight="1"
+            />
+    </LinearLayout>
+    
+    <View 
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/white"
+        />
+
+</LinearLayout>
