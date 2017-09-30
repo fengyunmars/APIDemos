@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2015 The Android Open Source Project
+ * Copyright (C) 2007 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,22 +16,23 @@
 
 package com.example.android.apis.view;
 
-import android.app.Activity;
-import android.os.Bundle;
-
 // Need the following import to get access to the app resources, since this
 // class is in a sub-package.
 import com.example.android.apis.R;
 
+import android.app.Activity;
+import android.os.Bundle;
+
 
 /**
- * Demonstrates the {@link android.widget.TextView} widget.
+ * Demonstrates using match_parent within a linear layout whose size is not fixed.
+ *
  */
-public class TextViewDemo extends Activity {
+public class LinearLayout08UniformSizeHorizontal extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.text_view_demo);
+        setContentView(R.layout.linear_layout_08_uniformsize_horizontal);
     }
 }

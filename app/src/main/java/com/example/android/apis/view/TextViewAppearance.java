@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007 The Android Open Source Project
+ * Copyright (C) 2015 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,23 +16,26 @@
 
 package com.example.android.apis.view;
 
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+
 // Need the following import to get access to the app resources, since this
 // class is in a sub-package.
 import com.example.android.apis.R;
 
-import android.app.Activity;
-import android.os.Bundle;
-
 
 /**
- * Demonstrates building a simple form with nested LinearLayouts.
- *
+ * Demonstrates the {@link android.widget.TextView} widget.
  */
-public class LinearLayout5 extends Activity {
+public class TextViewAppearance extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.linear_layout_5);
+        setContentView(R.layout.text_view_appearance);
+        View root = findViewById(R.id.text_small).getRootView();
+        Log.d("dingxiaoquan", root.toString());
     }
 }

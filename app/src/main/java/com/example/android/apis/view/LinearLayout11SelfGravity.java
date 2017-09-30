@@ -31,7 +31,7 @@ import android.widget.LinearLayout;
 /**
  * Demonstrates horizontal and vertical gravity
  */
-public class LinearLayout8 extends Activity {
+public class LinearLayout11SelfGravity extends Activity {
 
     private LinearLayout mLinearLayout;
 
@@ -50,7 +50,7 @@ public class LinearLayout8 extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.linear_layout_8);
+        setContentView(R.layout.linear_layout_11_self_gravity);
         mLinearLayout = (LinearLayout)findViewById(R.id.layout);
     }
 

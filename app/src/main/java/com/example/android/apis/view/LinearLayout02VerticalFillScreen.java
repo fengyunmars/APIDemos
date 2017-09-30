@@ -32,6 +32,6 @@ public class LinearLayout02VerticalFillScreen extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.linear_layout_vertical_fillscreen);
+        setContentView(R.layout.linear_layout_03_vertical_fillscreen);
     }
 }

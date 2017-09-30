@@ -24,14 +24,15 @@ import android.app.Activity;
 import android.os.Bundle;
 
 
+
 /**
  * Demonstrates the use of LinearLayout backgrounds to group labels,
  * EditTexts, and buttons,
  */
-public class LinearLayout10 extends Activity {
+public class LinearLayout13AddStatesFromChildren extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.linear_layout_10);
+        setContentView(R.layout.linear_layout_13_addstates_fromchildren);
     }
 }

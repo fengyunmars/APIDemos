@@ -181,8 +181,41 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@android:color/holo_red_light">
-        <Button
+        <TextView
             android:id="@+id/onlyme1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/onlyme"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/holo_red_light">
+        <Button
+            android:id="@+id/onlyme2"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:text="@string/onlyme"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/onlyme3"
+            android:layout_width="180dp"
+            android:layout_height="match_parent"
+            android:text="@string/onlyme"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/onlyme4"
             android:layout_width="180dp"
             android:layout_height="match_parent"
             android:text="@string/onlyme"/>

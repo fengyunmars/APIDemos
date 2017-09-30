@@ -1924,7 +1924,7 @@
         </activity>
         <activity
             android:name=".view.LinearLayout05HorizontalAverageButton"
-            android:label="Views/Layouts/LinearLayout/04. Horizontal Average Button">
+            android:label="Views/Layouts/LinearLayout/05. Horizontal Average Button">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -1932,8 +1932,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.LinearLayout5"
-            android:label="Views/Layouts/LinearLayout/05. Simple Form">
+            android:name=".view.LinearLayout06GravityVSLayoutGravity"
+            android:label="Views/Layouts/LinearLayout/06. Gravity VS LayoutGravity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -1941,8 +1941,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.LinearLayout6"
-            android:label="Views/Layouts/LinearLayout/06. Uniform Size">
+            android:name=".view.LinearLayout07UniformSize"
+            android:label="Views/Layouts/LinearLayout/07. Uniform Size">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -1950,8 +1950,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.LinearLayout7"
-            android:label="Views/Layouts/LinearLayout/07. Fill Parent">
+            android:name=".view.LinearLayout08UniformSizeHorizontal"
+            android:label="Views/Layouts/LinearLayout/08. Uniform Size Horizontal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -1959,8 +1959,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.LinearLayout8"
-            android:label="Views/Layouts/LinearLayout/08. Gravity">
+            android:name=".view.LinearLayout09UniformSizeHorizontalFull"
+            android:label="Views/Layouts/LinearLayout/09. Uniform Size Horizontal Full">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -1968,8 +1968,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.LinearLayout9"
-            android:label="Views/Layouts/LinearLayout/09. Layout Weight">
+            android:name=".view.LinearLayout10UniformSizeHorizontalFullSuccess"
+            android:label="Views/Layouts/LinearLayout/10. Uniform Size Horizontal Full Success">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -1977,8 +1977,26 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.LinearLayout10"
-            android:label="Views/Layouts/LinearLayout/10. Background Image">
+            android:name=".view.LinearLayout11SelfGravity"
+            android:label="Views/Layouts/LinearLayout/11. Self Gravity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.LinearLayout12WeightShrink"
+            android:label="Views/Layouts/LinearLayout/12. Weight Shrink">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.LinearLayout13AddStatesFromChildren"
+            android:label="Views/Layouts/LinearLayout/13. AddStates From Children">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -2636,8 +2654,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.TextViewDemo"
-            android:label="Views/Text/TextView">
+            android:name=".view.TextViewAppearance"
+            android:label="Views/Text/Appearance">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -3906,6 +3924,7 @@
             android:label="Content/IntentSample">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
@@ -3914,10 +3933,27 @@
             android:label="App/Activity/StartAcitity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
         <activity android:name=".app.ActivityTarget">
+        </activity>
+        <activity android:name=".view.TextViewMoreText"
+                   android:label="Views/Text/MoreText">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.TextViewMoreTextHorizontal"
+                   android:label="Views/Text/MoreTextHorizontal">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
         </activity>
     </application>
 

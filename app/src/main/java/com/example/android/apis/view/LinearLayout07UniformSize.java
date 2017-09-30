@@ -25,14 +25,14 @@ import android.os.Bundle;
 
 
 /**
- * Demonstrates using match_parent within a linear layout whose size is not fixed.
+ * Demonstrates using the uniformSize attribute
  *
  */
-public class LinearLayout7 extends Activity {
+public class LinearLayout07UniformSize extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.linear_layout_7);
+        setContentView(R.layout.linear_layout_07_uniformsize);
     }
 }

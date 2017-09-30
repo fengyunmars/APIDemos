@@ -1615,4 +1615,9 @@
     <string name="rename">rename</string>
     <string name="onlyme">onlyme</string>
 
+    <string name="funnyshort">Martin Villeneuve</string>
+    <string name="funnymedium">Problems are hidden opportunities, and constraints can actually boost creativity.</string>
+    <string name="funnylong">I had a classmate in the sixth grade who raised his hand and he pointed to the outline of
+        the east coast of South America and he pointed to the west coast of Africa and he asked, “Did they ever fit together?”</string>
+
 </resources>

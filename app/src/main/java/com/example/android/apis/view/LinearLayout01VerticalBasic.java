@@ -32,6 +32,6 @@ public class LinearLayout01VerticalBasic extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.linear_layout_vertical_basic);
+        setContentView(R.layout.linear_layout_01_vertical_basic);
     }
 }

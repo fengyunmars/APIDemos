@@ -25,13 +25,14 @@ import android.os.Bundle;
 
 
 /**
- * A simple linear layout that fills the screen vertically, and the middle child is padded with extra space.
+ * Demonstrates building a simple form with nested LinearLayouts.
+ *
  */
-public class LinearLayout03VerticalExpand extends Activity {
+public class LinearLayout06GravityVSLayoutGravity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.linear_layout_02_vertical_expand);
+        setContentView(R.layout.linear_layout_06_gravity_vs_layoutgravity);
     }
 }

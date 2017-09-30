@@ -1,15 +1,18 @@
 package com.fengyun.grammar.test;
 
+import android.content.Intent;
 import android.os.Handler;
-import android.os.SystemClock;
 import android.util.Log;
+import android.view.Choreographer;
+import android.view.FChoreographer;
 
 import com.fengyun.grammar.model.Circle;
+import com.fengyun.grammar.model.FGender;
 import com.fengyun.model.Student;
 
 import org.junit.Test;
 
-import java.security.spec.ECField;
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -123,9 +126,117 @@ public class JunitTest {
         System.out.println(this);
     }
 
+    @Test
+    public void testViscousFluidInterpolator(){
+//        System.out.println(FScroller.);
+    }
+
     @Override
     public String toString() {
         return "hello";
     }
+
+    @Test
+    public void testIntent(){
+        Intent intent = new Intent(Intent.ACTION_ANSWER);
+        System.out.println(intent);
+    }
+
+    @Test
+    public void test1f(){
+        System.out.println(1 == 1.f);
+        System.out.println(1f == 1.f);
+        System.out.println(1.0 == 1.f);
+        System.out.println(1.0f == 1.f);
+    }
+
+    @Test
+    public void testBreakOuter(){
+
+        outer:
+        for(int i = 0; i < 10; i ++){
+            if(i == 5)
+                break outer;
+            System.out.println("i = " + i);
+        }
+        System.out.println();
+
+        for(int i = 0; i < 10; i ++){
+            if(i == 5)
+                break ;
+            System.out.println("i = " + i);
+        }
+        System.out.println();
+
+
+        for(int i = 0; i < 10; i ++){
+            for(int j = 0; j < 10; j ++) {
+                if(j == 5)
+                    break;
+                System.out.println("j = " + j);
+            }
+            System.out.println("i = " + i);
+        }
+        System.out.println();
+
+        outer1:
+        for(int i = 0; i < 10; i ++){
+            for(int j = 0; j < 10; j ++) {
+                if(j == 5)
+                    break outer1;
+                System.out.println("j = " + j);
+            }
+            System.out.println("i = " + i);
+        }
+        System.out.println();
+    }
+
+    @Test
+    public void testSemicolon(){
+        ;
+    }
+
+    @Test
+    public void testChoreographer(){
+        Choreographer c = Choreographer.getInstance();
+        System.out.println(c);
+    }
+
+    @Test
+    public void testEnum(){
+        System.out.println(FGender.FAMALE);
+        System.out.println(FGender.MALE);
+        System.out.println(FGender.UNKNOW);
+//        System.out.println(FGender.valueOf("hello"));
+        System.out.println(FGender.valueOf("FAMALE"));
+        System.out.println(FGender.valueOf("MALE"));
+        System.out.println(FGender.valueOf("UNKNOW"));
+//        System.out.println(FGender.valueOf("famale"));
+//        System.out.println(FGender.valueOf("male"));
+//        System.out.println(FGender.valueOf("unknow"));
+        System.out.println(FGender.values());
+        System.out.println(Arrays.toString(FGender.values()));
+        System.out.println(FGender.class);
+        System.out.println(FGender.class.getSuperclass());
+        System.out.println(FGender.class.getSuperclass().getSuperclass());
+//        FGender.getSharedConstants();
+//        FGender.valueOf();
+
+        System.out.println(FGender.FAMALE.name());
+        System.out.println(FGender.FAMALE.ordinal());
+        System.out.println(FGender.FAMALE.toString());
+
+        System.out.println(FGender.MALE.name());
+        System.out.println(FGender.MALE.ordinal());
+        System.out.println(FGender.MALE.toString());
+
+        System.out.println(FGender.UNKNOW.name());
+        System.out.println(FGender.UNKNOW.ordinal());
+        System.out.println(FGender.UNKNOW.toString());
+
+    }
+
+
+
 }
 

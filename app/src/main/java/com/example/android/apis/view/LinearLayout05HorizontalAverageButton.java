@@ -21,6 +21,8 @@ package com.example.android.apis.view;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Button;
 
 import com.example.android.apis.R;
 
@@ -34,6 +36,15 @@ public class LinearLayout05HorizontalAverageButton extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.linear_layout_horizontal_average_button);
+        setContentView(R.layout.linear_layout_05_horizontal_average_button);
+        Button textView = (Button) findViewById(R.id.onlyme3);
+        Log.d("dingxiaoquan" , textView.toString());
+        Log.d("textView getX() = " , String.valueOf(textView.getX()));
+        Log.d("getPaddingLeft() =" , String.valueOf(textView.getPaddingLeft()));
+        Log.d("getPaddingRight() =" , String.valueOf(textView.getPaddingRight()));
+        Log.d("getPaddingTop() =" , String.valueOf(textView.getPaddingTop()));
+        Log.d("getPaddingBottom() =" , String.valueOf(textView.getPaddingBottom()));
+        textView.setPadding(0,0,0,0);
+        Log.d("getPaddingBottom() =" , this.getTheme().toString());
     }
 }

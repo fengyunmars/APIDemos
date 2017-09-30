@@ -15,41 +15,41 @@
 -->
 
 <!--
-    Demonstrates a horizontal linear layout with equally sized columns
+    Demonstrates a horizontal linear layout with equally sized columns.
+    Some columns force their height to match the parent.
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:layout_height="wrap_content">
 
-    <View
+    <TextView
+        android:background="@drawable/red"
         android:layout_width="0dip"
-        android:layout_height="0dip"
-        android:layout_weight="1"/>
-
-    <Button
-        android:id="@+id/create"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="@string/create"/>
+        android:text="@string/linear_layout_7_small"/>
 
-    <View
+    <TextView
+        android:background="@drawable/green"
         android:layout_width="0dip"
-        android:layout_height="0dip"
-        android:layout_weight="1"/>
-
-    <Button
-        android:id="@+id/delete"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1.07"
-        android:text="@string/delete"/>
+        android:layout_weight="1"
+        android:text="@string/linear_layout_7_big"/>
 
-    <View
+    <TextView
+        android:background="@drawable/blue"
         android:layout_width="0dip"
-        android:layout_height="0dip"
-        android:layout_weight="1"/>
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/linear_layout_7_small" />
+
+    <TextView
+        android:background="@drawable/yellow"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/linear_layout_7_wrap"/>
 
 </LinearLayout>

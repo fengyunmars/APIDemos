@@ -18,20 +18,22 @@ package com.example.android.apis.view;
 
 // Need the following import to get access to the app resources, since this
 // class is in a sub-package.
-import com.example.android.apis.R;
 
 import android.app.Activity;
 import android.os.Bundle;
 
+import com.example.android.apis.R;
+
 
 /**
- * A simple linear layout that fills the screen vertically, and the middle child is padded with extra space.
+ * Demonstrates using match_parent within a linear layout whose size is not fixed.
+ *
  */
-public class LinearLayout03VerticalExpand extends Activity {
+public class LinearLayout09UniformSizeHorizontalFull extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.linear_layout_02_vertical_expand);
+        setContentView(R.layout.linear_layout_09_uniformsize_horizontal_full);
     }
 }
