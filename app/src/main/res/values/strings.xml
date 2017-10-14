@@ -1300,9 +1300,11 @@
     <string name="table_layout_1_open_shortcut">Ctrl-O</string>
     <string name="table_layout_1_save">Save As\u2026</string>
     <string name="table_layout_1_save_shortcut">(Save Document)</string>
+    <string name="table_layout_1_save_shortcut_long">(Save Document Long Text)</string>
     <string name="table_layout_1_quit">Quit Application</string>
     <string name="table_layout_1_quit_shortcut">Ctrl-Shift-Q</string>
     <string name="table_layout_2_path_1">~/path/to/file/to/open</string>
+    <string name="table_layout_2_path_1_long">~/path/to/file/to/open/long/text</string>
     <string name="table_layout_2_path_2">~/.profile</string>
     <string name="table_layout_2_open">Open</string>
     <string name="table_layout_2_save">Save</string>
@@ -1313,7 +1315,8 @@
     <string name="table_layout_3_open_shortcut">Ctrl-O</string>
     <string name="table_layout_3_save">Save As\u2026</string>
     <string name="table_layout_3_save_shortcut">(Save Document)</string>
-    <string name="table_layout_3_too_long">Too Long</string>
+    <string name="table_layout_3_save_shortcut_long">(Save Document)</string>
+    <string name="table_layout_3_too_long">Too Long Texta See What Happen</string>
     <string name="table_layout_3_quit">Quit Application</string>
     <string name="table_layout_3_quit_shortcut">Ctrl-Shift-Q</string>
     <string name="table_layout_4_open">Open\u2026</string>

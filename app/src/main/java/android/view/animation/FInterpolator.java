@@ -14,11 +14,9 @@
  * limitations under the License.
  */
 
-package com.fengyun.android.view.animation;
+package android.view.animation;
 
-import android.animation.TimeInterpolator;
-
-import com.fengyun.android.animation.FTimeInterpolator;
+import android.animation.FTimeInterpolator;
 
 /**
  * An interpolator defines the rate of change of an animation. This allows

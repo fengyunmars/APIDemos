@@ -25,6 +25,15 @@
             android:text="@string/table_layout_2_path_1"
             android:padding="3dip" />
     </TableRow>
+
+    <TableRow>
+        <Button
+            android:text="@string/table_layout_2_open" />
+        <TextView
+            android:text="@string/table_layout_2_path_1_long"
+            android:padding="3dip" />
+    </TableRow>
+
     <TableRow>
         <Button
             android:text="@string/table_layout_2_save_all"/>
@@ -33,6 +42,14 @@
         <Button
             android:text="@string/table_layout_2_save"
             android:visibility="invisible" />
+        <TextView
+            android:text="@string/table_layout_2_path_2"
+            android:padding="3dip" />
+    </TableRow>
+    <TableRow>
+        <Button
+            android:text="@string/table_layout_2_save"
+            android:visibility="gone" />
         <TextView
             android:text="@string/table_layout_2_path_2"
             android:padding="3dip" />

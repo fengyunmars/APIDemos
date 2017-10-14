@@ -12,4 +12,8 @@ public class FView {
     public String toString() {
         return "" + mId;
     }
+
+    public void requestLayout(){
+
+    }
 }

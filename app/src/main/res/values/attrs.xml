@@ -15,6 +15,31 @@
 -->
 
 <resources>
+
+    <!-- Standard axis_type constant. -->
+    <attr name="axis_type">
+        <!-- Defines an horizontal widget. -->
+        <enum name="numeric" value="0" />
+        <!-- Defines a vertical widget. -->
+        <enum name="month" value="1" />
+    </attr>
+
+    <!-- Standard axis_type constant. -->
+    <attr name="x_axis_type">
+        <!-- Defines an horizontal widget. -->
+        <enum name="numeric" value="0" />
+        <!-- Defines a vertical widget. -->
+        <enum name="month" value="1" />
+    </attr>
+
+    <!-- Standard axis_type constant. -->
+    <attr name="y_axis_type">
+        <!-- Defines an horizontal widget. -->
+        <enum name="numeric" value="0" />
+        <!-- Defines a vertical widget. -->
+        <enum name="month" value="1" />
+    </attr>
+
     <!-- These are the attributes that we want to retrieve from the theme
          in app/PreferencesFromCode.java -->
     <declare-styleable name="TogglePrefAttrs">
@@ -59,4 +84,30 @@
         <attr name="android:label" />
     </declare-styleable>
 <!-- END_INCLUDE(fragment_arguments) -->
+
+    <declare-styleable name="CoordinateAxis">
+        <!-- Standard orientation constant. -->
+        <attr name="axis_type"/>
+        <attr name="axis_start"/>
+        <attr name="axis_end"/>
+        <attr name="axis_step"/>
+        <attr name="arrowH"/>
+        <attr name="arrowW"/>
+        <attr name="textSize" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="CoordinateGraph">
+    </declare-styleable>
+
+    <declare-styleable name="CoordinateSystem">
+        <attr name="x_axis_type"/>
+        <attr name="y_axis_type"/>
+        <attr name="x_axis_start"/>
+        <attr name="x_axis_end"/>
+        <attr name="x_axis_step"/>
+        <attr name="y_axis_start"/>
+        <attr name="y_axis_end"/>
+        <attr name="y_axis_step"/>
+        <attr name="axis_textSize" format="dimension"/>
+    </declare-styleable>
 </resources>

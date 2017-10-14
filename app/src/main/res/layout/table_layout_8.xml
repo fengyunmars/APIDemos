@@ -53,7 +53,8 @@
             <TextView
                 android:text="@string/table_layout_8_save_as_shortcut"
                 android:gravity="right"
-                android:padding="3dip" />
+                android:padding="3dip"
+                android:layout_weight="1"/>
         </TableRow>
 
         <TableRow>
@@ -62,7 +63,8 @@
                 android:padding="3dip" />
             <TextView
                 android:text="@string/table_layout_8_import"
-                android:padding="3dip" />
+                android:padding="3dip"
+                />
         </TableRow>
 
         <TableRow>

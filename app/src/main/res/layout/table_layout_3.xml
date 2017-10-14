@@ -17,10 +17,10 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:shrinkColumns="2, 3">
+    android:shrinkColumns="2,3">
 
     <!-- Rows have different number of columns and content doesn't fit on
-         screen: column 4 of row 2 shrinks all of the other columns -->
+         screen: column 4 of row 2 shrinks 收缩 all of the other columns -->
     <TableRow>
         <TextView
             android:text="@string/table_layout_3_star"
@@ -33,19 +33,25 @@
             android:padding="3dip" />
     </TableRow>
 
-    <TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
         <TextView
-            android:text="@string/table_layout_3_triple_star"
-            android:padding="3dip" />
+            android:padding="3dip"
+            android:text="@string/table_layout_3_triple_star"/>
+
         <TextView
-            android:text="@string/table_layout_3_save"
-            android:padding="3dip" />
+            android:padding="3dip"
+            android:text="@string/table_layout_3_save"/>
+
         <TextView
-            android:text="@string/table_layout_3_save_shortcut"
-            android:padding="3dip" />
+            android:padding="3dip"
+            android:text="@string/table_layout_3_save_shortcut_long"/>
+
         <TextView
-            android:text="@string/table_layout_3_too_long"
-            android:padding="3dip" />
+            android:padding="3dip"
+            android:text="@string/table_layout_3_too_long"/>
     </TableRow>
 
     <TableRow>

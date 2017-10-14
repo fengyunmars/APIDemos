@@ -1,13 +1,9 @@
 package android.widget;
-import android.content.Intent;
-
-import com.fengyun.android.view.animation.FInterpolator;
-
-import junit.framework.TestCase;
 
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Random;
 
 /**
  * Created by prize on 2017/9/25.
@@ -33,6 +29,45 @@ public class AJunitTest{
         System.out.println("SPLINE_POSITION = " + s1);
         System.out.println("SPLINE_TIME = " + s2);
         System.out.println("DECELERATION_RATE = " + FScroller.DECELERATION_RATE);
+    }
+
+    @Test
+    public void testCreateIndex(){
+        Integer[] array = {0,1,2,2,3,4,4,6,8,8,10,2,2,3,3,8};
+        System.out.println(Arrays.toString(array));
+
+        int[] res = FGridLayout.FPackedMap.createIndex(array);
+        System.out.println(Arrays.toString(res));
+
+        Integer[] compact = FGridLayout.FPackedMap.compact(array,res);
+        System.out.println(Arrays.toString(compact));
+
+        FGridLayout.FPackedMap map = new FGridLayout.FPackedMap(array,array);
+        Integer[] values = new Integer[array.length];
+        for(int i = 0; i < array.length; i ++)
+            values[i] = (Integer) map.getValue(i);
+        System.out.println(Arrays.toString(values));
+    }
+
+    @Test
+    public void testTopologicalSort(){
+        FGridLayout grid = new FGridLayout();
+        FGridLayout.FAxis axis = grid.new FAxis();
+        Random random = new Random();
+        FGridLayout.FArc[] arcs = new FGridLayout.FArc[20];
+        for(int i = 0; i < 20; i ++){
+            int min = (int)random.nextInt(100);
+            int max = (int)random.nextInt(100);
+//            while(max < min){
+//                max = (int)random.nextInt(100);
+//            }
+            FGridLayout.FInterval span = new FGridLayout.FInterval(min, max);
+            FGridLayout.FMutableInt value = new FGridLayout.FMutableInt(random.nextInt(100));
+            arcs[i] = new FGridLayout.FArc(span, value);
+        }
+        FGridLayout.FArc[] sorted = axis.topologicalSort(arcs);
+        System.out.println(Arrays.toString(arcs));
+        System.out.println(Arrays.toString(sorted));
     }
 
 }

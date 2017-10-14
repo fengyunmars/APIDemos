@@ -2132,7 +2132,7 @@
         </activity>
         <activity
             android:name=".view.TableLayout3"
-            android:label="Views/Layouts/TableLayout/03. Long Content">
+            android:label="Views/Layouts/TableLayout/03. Shrinkable">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -3949,6 +3949,14 @@
         </activity>
         <activity android:name=".view.TextViewMoreTextHorizontal"
                    android:label="Views/Text/MoreTextHorizontal">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.fengyun.app.CustomViewActivity"
+                   android:label="Fenyun/Views/CustomView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 

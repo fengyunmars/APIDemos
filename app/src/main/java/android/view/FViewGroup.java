@@ -4,7 +4,7 @@ package android.view;
  * Created by prize on 2017/9/30.
  */
 
-public class FViewGroup extends FView{
+public class FViewGroup extends FView implements FViewParent{
 
 
     protected FViewGroup.FOnHierarchyChangeListener mOnHierarchyChangeListener;

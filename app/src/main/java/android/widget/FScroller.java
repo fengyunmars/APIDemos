@@ -17,7 +17,7 @@
 package android.widget;
 
 
-import com.fengyun.android.view.animation.FInterpolator;
+import android.view.animation.FInterpolator;
 
 
 /**

@@ -18,7 +18,7 @@
  * Created by prize on 2017/9/25.
  */
 
-package com.fengyun.android.animation;
+package android.animation;
 
 /**
  * A time interpolator 插值器 defines the rate of change of an animation. This allows animations
