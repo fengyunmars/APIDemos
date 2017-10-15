@@ -37,8 +37,7 @@ public class CoordinateGraph extends LinearLayout implements BaseViewCustom{
         final TypedArray a = context.obtainStyledAttributes(
                 attrs, R.styleable.CoordinateGraph, defStyleAttr, defStyleRes);
 
-        if (axisX > 0) {
-        }
+
         a.recycle();
         init();
     }

@@ -4,31 +4,14 @@
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
               android:orientation="vertical">
-    <LinearLayout
-          android:id="@+id/root"
-          android:layout_width="match_parent"
-          android:layout_height="0dp"
-          android:layout_weight="1">
-
-        <com.fengyun.view.CoordinateAxis
-            android:id="@+id/coordinateAxisY"
-            app:textAppearance="aa"
-            android:layout_width="20dp"
-            android:layout_height="match_parent"
-            />
-
-        <com.fengyun.view.CoordinateGraph
-            android:id="@+id/coordinateGraph"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@android:color/holo_red_dark">
-        </com.fengyun.view.CoordinateGraph>
-    </LinearLayout>
-
-    <com.fengyun.view.CoordinateAxis
-        android:id="@+id/coordinateAxisX"
+    <com.fengyun.view.CoordinateSystem
         android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_alignParentBottom="true"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:axis_textSize="12sp"
+        app:x_axis_height="10dp"
+        app:y_axis_width="10dp"
+        app:x_axis_type="numeric"
+        app:y_axis_type="numeric"
+        />
 </LinearLayout>

@@ -27,7 +27,7 @@ public class CoordinateAxis extends View implements BaseViewCustom{
 //    @android.support.annotation.IntDef({LinearLayout.HORIZONTAL, LinearLayout.VERTICAL})
 //    @Retention(RetentionPolicy.SOURCE)
 //    public @interface OrientationMode {}
-
+    /** @hide */
     @android.support.annotation.IntDef({NUMERIC, MONTH})
     @Retention(RetentionPolicy.SOURCE)
     public @interface AxisType {}
@@ -43,6 +43,7 @@ public class CoordinateAxis extends View implements BaseViewCustom{
     protected int orientation = LinearLayout.HORIZONTAL;
     protected int type;
     protected Paint mPaint = new Paint();
+    protected int textSize;
 
     protected int arrowHY;
     protected int calibrationHY;
@@ -188,5 +189,14 @@ public class CoordinateAxis extends View implements BaseViewCustom{
             triangle.close();
             canvas.drawPath(triangle, mPaint);
         }
+    }
+
+    public int getTextSize() {
+        return textSize;
+    }
+
+    public void setTextSize(int textSize) {
+        this.textSize = textSize;
+        mPaint.setTextSize(textSize);
     }
 }

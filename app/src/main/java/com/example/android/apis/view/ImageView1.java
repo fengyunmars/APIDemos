@@ -37,7 +37,7 @@ public class ImageView1 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.image_view_1);
         myImageView = (ImageView) findViewById(R.id.myimage);
-        Drawable drawable = getDrawable(android.R.drawable.real_device);
+//        Drawable drawable = getDrawable(android.R.drawable.real_device);
 //        myImageView.setImageDrawable(drawable);
     }
 }

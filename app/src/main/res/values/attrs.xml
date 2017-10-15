@@ -15,6 +15,15 @@
 -->
 
 <resources>
+    <attr name="textSize" format="dimension" />
+
+    <!-- Standard orientation constant. -->
+    <attr name="orientation">
+        <!-- Defines an horizontal widget. -->
+        <enum name="horizontal" value="0" />
+        <!-- Defines a vertical widget. -->
+        <enum name="vertical" value="1" />
+    </attr>
 
     <!-- Standard axis_type constant. -->
     <attr name="axis_type">
@@ -49,7 +58,7 @@
      <declare-styleable name="LabelView">
         <attr name="text" format="string" />
         <attr name="textColor" format="color" />
-        <attr name="textSize" format="dimension" />
+        <attr name="textSize"/>
     </declare-styleable>
 
     <!-- These are the attributes that we want to retrieve for
@@ -86,28 +95,24 @@
 <!-- END_INCLUDE(fragment_arguments) -->
 
     <declare-styleable name="CoordinateAxis">
-        <!-- Standard orientation constant. -->
+        <attr name="orientation"/>
         <attr name="axis_type"/>
-        <attr name="axis_start"/>
-        <attr name="axis_end"/>
-        <attr name="axis_step"/>
-        <attr name="arrowH"/>
-        <attr name="arrowW"/>
-        <attr name="textSize" format="dimension"/>
+        <attr name="axis_start" format="float"/>
+        <attr name="axis_end" format="float"/>
+        <attr name="axis_step" format="float"/>
+        <attr name="arrowH" format="float"/>
+        <attr name="arrowW" format="float"/>
+        <attr name="textSize"/>
     </declare-styleable>
 
     <declare-styleable name="CoordinateGraph">
     </declare-styleable>
 
     <declare-styleable name="CoordinateSystem">
+        <attr name="axis_textSize" format="dimension"/>
         <attr name="x_axis_type"/>
         <attr name="y_axis_type"/>
-        <attr name="x_axis_start"/>
-        <attr name="x_axis_end"/>
-        <attr name="x_axis_step"/>
-        <attr name="y_axis_start"/>
-        <attr name="y_axis_end"/>
-        <attr name="y_axis_step"/>
-        <attr name="axis_textSize" format="dimension"/>
+        <attr name="x_axis_height" format="dimension"/>
+        <attr name="y_axis_width" format="dimension"/>
     </declare-styleable>
 </resources>

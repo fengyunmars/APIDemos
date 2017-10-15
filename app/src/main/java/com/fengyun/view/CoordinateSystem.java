@@ -23,6 +23,7 @@ public class CoordinateSystem extends LinearLayout implements BaseViewCustom{
     private CoordinateAxis mCoordinateAxisY;
     private CoordinateGraph mCoordinateGraph;
 
+
     public CoordinateSystem(Context context) {
         this(context, null);
     }
@@ -45,10 +46,30 @@ public class CoordinateSystem extends LinearLayout implements BaseViewCustom{
         final TypedArray a = context.obtainStyledAttributes(
                 attrs, R.styleable.CoordinateSystem, defStyleAttr, defStyleRes);
 
-        int axitTextSize = a.getResourceId(R.styleable.CoordinateSystem_axis_textSize, -1);
+        int axitTextSize = a.getDimensionPixelSize(R.styleable.CoordinateSystem_axis_textSize, -1);
+
         if (axitTextSize > 0) {
-            setmCoordinateAxisX();
+            mCoordinateAxisX.setTextSize(axitTextSize);
+            mCoordinateAxisY.setTextSize(axitTextSize);
         }
+        int axisXHeight = a.getDimensionPixelSize(R.styleable.CoordinateSystem_x_axis_height,-1);
+        if(axisXHeight > 0){
+            mCoordinateAxisX.getLayoutParams().height = axisXHeight;
+        }
+        int axisYWidth = a.getDimensionPixelSize(R.styleable.CoordinateSystem_y_axis_width,-1);
+        if(axisYWidth > 0){
+            mCoordinateAxisY.getLayoutParams().width = axisXHeight;
+        }
+        int axisXType = a.getInt(R.styleable.CoordinateSystem_x_axis_type,-1);
+        if(axisXType > 0) {
+            mCoordinateAxisX.setType(axisXType);
+        }
+
+        int axisYType = a.getInt(R.styleable.CoordinateSystem_y_axis_type,-1);
+        if(axisXType > 0) {
+            mCoordinateAxisY.setType(axisYType);
+        }
+
         a.recycle();
         init();
     }
