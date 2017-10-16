@@ -82,7 +82,7 @@ public class CoordinateSystem extends LinearLayout implements BaseViewCustom{
 
     @Override
     public void init() {
-
+        setWillNotDraw(false);
     }
 
     public CoordinateAxis getmCoordinateAxisX() {
@@ -99,5 +99,14 @@ public class CoordinateSystem extends LinearLayout implements BaseViewCustom{
 
     public void setmCoordinateAxisY(CoordinateAxis mCoordinateAxisY) {
         this.mCoordinateAxisY = mCoordinateAxisY;
+    }
+
+
+    public CoordinateGraph getmCoordinateGraph() {
+        return mCoordinateGraph;
+    }
+
+    public void setmCoordinateGraph(CoordinateGraph mCoordinateGraph) {
+        this.mCoordinateGraph = mCoordinateGraph;
     }
 }

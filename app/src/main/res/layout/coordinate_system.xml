@@ -10,34 +10,38 @@
         <com.fengyun.view.CoordinateAxis
             android:id="@+id/coordinateAxisY"
             app:orientation="vertical"
-            app:textSize="16sp"
-            app:arrowH="10"
-            app:arrowW="10"
+            app:arrowH="10dp"
+            app:arrowW="5dp"
+            app:arrowLineWidth="1dp"
             app:axis_type="numeric"
+            app:textSize="5sp"
             app:axis_start="0"
-            app:axis_end="100"
+            app:axis_end="110"
             app:axis_step="10"
             android:layout_width="20dp"
             android:layout_height="match_parent"/>
-
         <com.fengyun.view.CoordinateGraph
             android:id="@+id/coordinateGraph"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@android:color/holo_red_dark">
+            >
+            <!--android:background="@android:color/holo_red_light"-->
         </com.fengyun.view.CoordinateGraph>
     </LinearLayout>
 
     <com.fengyun.view.CoordinateAxis
         android:id="@+id/coordinateAxisX"
-        app:textSize="16sp"
-        app:arrowH="10"
-        app:arrowW="10"
+        app:arrowH="10dp"
+        app:arrowW="5dp"
+        app:arrowLineWidth="1dp"
         app:axis_type="numeric"
+        app:textSize="5sp"
         app:axis_start="0"
-        app:axis_end="100"
+        app:axis_end="110"
         app:axis_step="10"
+        app:axis_start_offset="20dp"
         android:layout_width="match_parent"
         android:layout_height="20dp"/>
+
 </merge>

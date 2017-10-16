@@ -43,22 +43,22 @@ public class Arrows {
         return getFoots(w, h, start.x, start.y, end.x, end.y);
     }
 
-    public static PointF[] getFoots(int w, int h, Point start, Point end){
+    public static PointF[] getFoots(int w, int h, PointF start, PointF end){
         return getFoots(w, h, start.x, start.y, end.x, end.y);
     }
     
-    public static PointF[] getFoots(int w, int h, int sx, int sy, int ex, int ey){
+    public static PointF[] getFoots(int w, int h, float sx, float sy, float ex, float ey){
         double angle = Math.atan(w * 0.5 / h); // 箭头角度
         BiVector start = new BiVector(sx, sy);
         BiVector end = new BiVector(ex, ey);
-        BiVector headVector = BiVector.minus(end, start).mirrowX();
+        BiVector headVector = BiVector.minus(end, start);
         BiVector reverseHypotenuseVector = BiVector.reverse(headVector).scaleToLength(new BiVector((w * 0.5), h).length());
         BiVector rotate1 = BiVector.rotate(reverseHypotenuseVector, angle);
-        BiVector foot1Vector = BiVector.plus(headVector,rotate1).mirrowX();
+        BiVector foot1Vector = BiVector.plus(headVector,rotate1).plus(start);
         PointF foot1 = foot1Vector.toPoint();
 
         BiVector rotate2 = BiVector.rotate(reverseHypotenuseVector, -angle);
-        BiVector foot2Vector = BiVector.plus(headVector,rotate2).mirrowX();
+        BiVector foot2Vector = BiVector.plus(headVector,rotate2).plus(start);
         PointF foot2 = foot2Vector.toPoint();
 
         return new PointF[]{foot1,foot2};

@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class FGridLayout {
 
-    final static class FInterval {
+    public final static class FInterval {
 
         public final int min;
         public final int max;
@@ -68,7 +68,7 @@ public class FGridLayout {
         }
     }
 
-    final static class FMutableInt {
+    public final static class FMutableInt {
         public int value;
 
         public FMutableInt() {
@@ -91,7 +91,7 @@ public class FGridLayout {
 
 
 
-    final static class FArc {
+    public final static class FArc {
         public final FInterval span;
         public final FMutableInt value;
         public boolean valid = true;
@@ -108,7 +108,7 @@ public class FGridLayout {
     }
 
 
-    final class FAxis {
+    public final class FAxis {
 
         private static final int NEW = 0;
         private static final int PENDING = 1;
@@ -137,7 +137,7 @@ public class FGridLayout {
             return result;
         }
         // 拓扑学的
-        FArc[] topologicalSort(final FArc[] arcs) {
+        public FArc[] topologicalSort(final FArc[] arcs) {
             return new Object() {
                 FArc[] result = new FArc[arcs.length];
                 int cursor = result.length - 1;

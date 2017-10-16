@@ -100,8 +100,10 @@
         <attr name="axis_start" format="float"/>
         <attr name="axis_end" format="float"/>
         <attr name="axis_step" format="float"/>
-        <attr name="arrowH" format="float"/>
-        <attr name="arrowW" format="float"/>
+        <attr name="axis_start_offset" format="dimension"/>
+        <attr name="arrowH" format="dimension"/>
+        <attr name="arrowW" format="dimension"/>
+        <attr name="arrowLineWidth" format="dimension"/>
         <attr name="textSize"/>
     </declare-styleable>
 
