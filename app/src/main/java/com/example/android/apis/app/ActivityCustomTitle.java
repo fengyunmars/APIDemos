@@ -27,6 +27,9 @@ import android.widget.TextView;
 
 import com.example.android.apis.R;
 
+import java.util.Objects;
+import java.util.function.Predicate;
+
 
 /**
  * Example of how to use a custom title {@link android.view.Window#FEATURE_CUSTOM_TITLE}.
@@ -82,4 +85,15 @@ public class ActivityCustomTitle extends Activity {
             }
         });
     }
+
+    static <T> Predicate<T> isEqual(Object targetRef) {
+        return (null == targetRef)
+                ? Objects::isNull
+                : new Predicate<T>() {
+                    @Override
+                    public boolean test(T object) {
+                        return targetRef.equals(object);
+                    }
+                };
+        }
 }

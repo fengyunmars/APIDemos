@@ -51,12 +51,19 @@
         android:ems="8"
     />
     <Button
-        android:text="Manual setup"
-        android:layout_row="5"
+        android:text="Manual setup 4"
+        android:layout_row="4"
         android:layout_column="3"
     />
     <Button
+        android:text="Manual setup 5"
+        android:layout_row="5"
+        android:layout_gravity="fill"
+        android:layout_column="3"
+        />
+    <Button
         android:text="Next"
+        android:layout_row="7"
         android:layout_column="3"
         android:layout_gravity="fill_horizontal"
     />

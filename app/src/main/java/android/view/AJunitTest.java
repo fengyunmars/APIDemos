@@ -46,6 +46,19 @@ public class AJunitTest {
         System.out.println(queue);
     }
 
+    @Test
+    public  void testOnClick(){
+        FView.OnClickListener li = new FView.OnClickListener() {
+            @Override
+            public void onClick(FView v) {
+                System.out.println("on click view = " + v.toString());
+            }
+        };
+        FView view = new FView();
+        view.setOnClickListener(li);
+        view.performClick();
+    }
+
     class Action extends Object{
         String action;
         public Action(String action){

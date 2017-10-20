@@ -1886,6 +1886,16 @@
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".view.LinearLayout00SimpleForm"
+            android:label="Views/Layouts/LinearLayout/00. Simple Form">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".view.LinearLayout01VerticalBasic"
             android:label="Views/Layouts/LinearLayout/01. Vertical">
@@ -2220,8 +2230,36 @@
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".view.GridLayout1"
+            android:name=".view.AbsoluteLayout00SimpleForm"
+            android:label="Views/Layouts/AbsoluteLayout/0. Simple Form">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.FrameLayout00SimpleForm"
+            android:label="Views/Layouts/FrameLayout/0. Simple Form">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.GridLayout00SimpleForm"
+            android:label="Views/Layouts/GridLayout/0. Simple Form">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.GridLayout01"
             android:label="Views/Layouts/GridLayout/1. Simple Form">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -2229,8 +2267,9 @@
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".view.GridLayout2"
+            android:name=".view.GridLayout02"
             android:label="Views/Layouts/GridLayout/2. Form (XML)">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -2239,7 +2278,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.GridLayout3"
+            android:name=".view.GridLayout03"
             android:label="Views/Layouts/GridLayout/3. Form (Java)">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

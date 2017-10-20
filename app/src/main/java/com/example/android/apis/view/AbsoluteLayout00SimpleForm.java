@@ -16,17 +16,18 @@
 
 package com.example.android.apis.view;
 
-import com.example.android.apis.R;
-
 import android.app.Activity;
 import android.os.Bundle;
 
+import com.example.android.apis.R;
+
 /**
- * A form, showing use of the GridLayout API from XML.
+ * Demonstrates using GridLayout to build the same "Simple Form" as in the
+ * LinearLayout and RelativeLayout demos.
  */
-public class GridLayout2 extends Activity {
+public class AbsoluteLayout00SimpleForm extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.grid_layout_2);
+        setContentView(R.layout.absolute_layout_00_simple_form);
     }
 }
