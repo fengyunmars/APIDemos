@@ -26,4 +26,15 @@ public class MathUtils {
     public static float constrain(float min, float max, float v) {
         return Math.max(min, Math.min(max, v));
     }
+
+    public static String formatIntBinaryString(String bytes){
+        StringBuilder sb = new StringBuilder(bytes);
+        int len = sb.length();
+        if(len < 32){
+            for(int i = 0; i < 32 - len; i++){
+                sb.insert(0, '0');
+            }
+        }
+        return sb.toString();
+    }
 }

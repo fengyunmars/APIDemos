@@ -25,6 +25,7 @@
 
     <!-- put first view to left. -->
     <TextView
+            android:id="@+id/left1"
             android:background="@drawable/filled_box"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,6 +35,7 @@
 
     <!-- stack second view to left. -->
     <TextView
+            android:id="@+id/left2"
             android:background="@drawable/filled_box"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -43,6 +45,7 @@
 
     <!-- also put a view on the right. -->
     <TextView
+            android:id="@+id/right1"
             android:background="@drawable/filled_box"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -52,6 +55,7 @@
 
     <!-- by default views go in the middle; use fill vertical gravity -->
     <TextView
+        android:id="@+id/fillvert"
             android:background="@drawable/green"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -60,6 +64,7 @@
 
     <!-- by default views go in the middle; use fill horizontal gravity -->
     <TextView
+            android:id="@+id/fillhorizontal"
             android:background="@drawable/green"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -68,6 +73,7 @@
 
     <!-- by default views go in the middle; use top-left gravity -->
     <TextView
+        android:id="@+id/topleft"
             android:background="@drawable/blue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,6 +82,7 @@
 
     <!-- by default views go in the middle; use center gravity -->
     <TextView
+            android:id="@+id/center"
             android:background="@drawable/blue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -84,6 +91,7 @@
 
     <!-- by default views go in the middle; use bottom-right -->
     <TextView
+            android:id="@+id/bottomright"
             android:background="@drawable/blue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

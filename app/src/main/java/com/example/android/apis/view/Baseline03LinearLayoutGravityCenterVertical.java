@@ -16,8 +16,6 @@
 
 package com.example.android.apis.view;
 
-// Need the following import to get access to the app resources, since this
-// class is in a sub-package.
 import com.example.android.apis.R;
 
 import android.app.Activity;
@@ -25,13 +23,14 @@ import android.os.Bundle;
 
 
 /**
- * A simple layout which demonstrates stretching a view to fill the space between two other views.
+ * Baseline alignement in LinearLayout with a center_vertical gravity. This sample shows that
+ * using a center_vertical gravity disables baseline alignment.
  */
-public class RelativeLayout1 extends Activity {
+public class Baseline03LinearLayoutGravityCenterVertical extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.relative_layout_1);
+        setContentView(R.layout.baseline_03_linearlayout_gravity_center_vertical);
     }
 }

@@ -16,8 +16,6 @@
 
 package com.example.android.apis.view;
 
-// Need the following import to get access to the app resources, since this
-// class is in a sub-package.
 import com.example.android.apis.R;
 
 import android.app.Activity;
@@ -25,14 +23,13 @@ import android.os.Bundle;
 
 
 /**
- * Builds building a simple form using a RelativeLayout
- * 
+ * Baseline alignment in LinearLayout.
  */
-public class RelativeLayout2 extends Activity {
+public class Baseline01LinearLayout extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.relative_layout_2);
+        setContentView(R.layout.baseline_01_linearlayout);
     }
 }

@@ -35,6 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="3dip"
             android:layout_gravity="center_vertical"
+            android:textSize="30sp"
             android:text="@string/baseline_3_label" />
 
         <Button

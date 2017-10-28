@@ -159,14 +159,14 @@ public class JunitTest {
                 break outer;
             System.out.println("i = " + i);
         }
-        System.out.println();
+        System.out.println("------------------");
 
         for(int i = 0; i < 10; i ++){
             if(i == 5)
                 break ;
             System.out.println("i = " + i);
         }
-        System.out.println();
+        System.out.println("------------------");
 
 
         for(int i = 0; i < 10; i ++){
@@ -177,7 +177,7 @@ public class JunitTest {
             }
             System.out.println("i = " + i);
         }
-        System.out.println();
+        System.out.println("------------------");
 
         outer1:
         for(int i = 0; i < 10; i ++){
@@ -188,7 +188,7 @@ public class JunitTest {
             }
             System.out.println("i = " + i);
         }
-        System.out.println();
+        System.out.println("------------------");
     }
 
     @Test
@@ -235,8 +235,12 @@ public class JunitTest {
         System.out.println(FGender.UNKNOW.toString());
 
     }
+    @Test
+    public void testSource(){
+        String s = "aaa";
+        s = s.substring(1);
 
-
+    }
 
 }
 

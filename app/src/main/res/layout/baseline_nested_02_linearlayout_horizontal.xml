@@ -23,7 +23,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="3dip"
-        android:layout_gravity="center_vertical"
         android:text="@string/baseline_nested_1_label" />
 
     <!-- We want the middle textview of this vertical linear layout to
@@ -32,8 +31,7 @@
             android:orientation="vertical"
             android:baselineAlignedChildIndex="1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical">
+            android:layout_height="wrap_content">
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -42,7 +40,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dip"
-            android:text="@string/baseline_nested_1_label" />
+            android:text="@string/baseline_nested_1_label"
+            android:textSize="20sp"/>
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -53,10 +52,9 @@
     <!-- We want the third index textview of this vertical linear layout to
       be baseline aligned with the others.-->
     <LinearLayout
-            android:orientation="vertical"
+            android:orientation="horizontal"
             android:baselineAlignedChildIndex="2"
             android:layout_width="wrap_content"
-            android:layout_gravity="center_vertical"
             android:layout_height="wrap_content">
         <ImageView
             android:layout_width="wrap_content"
@@ -70,15 +68,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dip"
-            android:text="@string/baseline_nested_1_label" />
+            android:text="@string/baseline_nested_1_label"
+            android:textSize="30sp"/>
     </LinearLayout>
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_gravity="center_vertical"
+        android:textSize="40sp"
         android:text="@string/baseline_nested_1_label" />
 
 

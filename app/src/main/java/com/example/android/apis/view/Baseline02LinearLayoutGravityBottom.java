@@ -21,16 +21,15 @@ import com.example.android.apis.R;
 import android.app.Activity;
 import android.os.Bundle;
 
+
 /**
- * Baseline alignment includes elements within nested vertical
- * {@link android.widget.LinearLayout}s.
+ * Baseline alignment in LinearLayout with a BOTTOM gravity.
  */
-public class BaselineNested1 extends Activity {
+public class Baseline02LinearLayoutGravityBottom extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.baseline_nested_1);
+        setContentView(R.layout.baseline_02_linearlayout_gravity_bottom);
     }
 }

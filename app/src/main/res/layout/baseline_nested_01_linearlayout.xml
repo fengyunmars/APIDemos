@@ -16,6 +16,7 @@
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
+    android:gravity="center_horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -23,9 +24,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="3dip"
-        android:layout_gravity="center_vertical"
         android:text="@string/baseline_nested_1_label" />
-
+        <!--android:layout_gravity="center_vertical"-->
     <!-- We want the middle textview of this vertical linear layout to
       be baseline aligned with the others.-->
     <LinearLayout
@@ -33,7 +33,8 @@
             android:baselineAlignedChildIndex="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical">
+            >
+        <!--android:layout_gravity="center_vertical"-->
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -50,38 +51,27 @@
     </LinearLayout>
 
 
-    <!-- We'll point to the linear layout to baseline align by, which
-      in turn will point to a text view inside of it -->
+    <!-- We want the third index textview of this vertical linear layout to
+      be baseline aligned with the others.-->
     <LinearLayout
-        android:orientation="vertical"
-                android:baselineAlignedChildIndex="1"
-                android:layout_width="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_height="wrap_content">
+            android:orientation="vertical"
+            android:baselineAlignedChildIndex="2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <!--android:layout_gravity="center_vertical"-->
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/arrow_up_float"/>
-        <LinearLayout
-                android:orientation="vertical"
-                android:baselineAlignedChildIndex="2"
-                android:layout_width="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_height="wrap_content">
-            <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/arrow_up_float"/>
-            <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/arrow_up_float"/>
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="5dip"
-                    android:text="@string/baseline_nested_1_label"/>
-        </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_up_float"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dip"
+            android:text="@string/baseline_nested_1_label" />
     </LinearLayout>
 
 
@@ -89,8 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:layout_gravity="center_vertical"
         android:text="@string/baseline_nested_1_label" />
-
+    <!--android:layout_gravity="center_vertical"-->
 
 </LinearLayout>

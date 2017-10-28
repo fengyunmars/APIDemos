@@ -20,6 +20,7 @@ package com.example.android.apis.view;
 // class is in a sub-package.
 import android.graphics.Rect;
 import com.example.android.apis.R;
+import com.fengyun.util.ViewUtils;
 
 //BEGIN_INCLUDE(Complete)
 import android.content.Context;
@@ -32,7 +33,7 @@ import android.widget.RemoteViews;
 
 /**
  * Example of writing a custom layout manager.  This is a fairly full-featured
- * layout manager that is relatively general, handling all layout cases.  You
+ * layout manager that is relatively 相当地 general, handling all layout cases.  You
  * can simplify it for more specific cases.
  */
 @RemoteViews.RemoteView
@@ -81,23 +82,38 @@ public class CustomLayout extends ViewGroup {
         mLeftWidth = 0;
         mRightWidth = 0;
 
-        // Measurement will ultimately be computing these values.
+        // Measurement will ultimately 最后 be computing these values.
         int maxHeight = 0;
         int maxWidth = 0;
         int childState = 0;
 
         // Iterate through all children, measuring them and computing our dimensions
         // from their size.
+        String sw = MeasureSpec.toString(widthMeasureSpec);
+        String sh = MeasureSpec.toString(heightMeasureSpec);
         for (int i = 0; i < count; i++) {
             final View child = getChildAt(i);
             if (child.getVisibility() != GONE) {
                 // Measure the child.
+                // add fengyun
+                String sid = ViewUtils.getViewIdString(child);
+                // add fengyun
                 measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, 0);
+
+                int widthAndState = child.getMeasuredWidthAndState();
+                int heightAndState = child.getMeasuredHeightAndState();
+
+                int width = child.getMeasuredWidth();
+                int height = child.getMeasuredHeight();
+
+                int state = child.getMeasuredState();
 
                 // Update our size information based on the layout params.  Children
                 // that asked to be positioned on the left or right go in those gutters.
+
                 final LayoutParams lp = (LayoutParams) child.getLayoutParams();
                 if (lp.position == LayoutParams.POSITION_LEFT) {
+                    //// TODO: 2017/10/24  
                     mLeftWidth += Math.max(maxWidth,
                             child.getMeasuredWidth() + lp.leftMargin + lp.rightMargin);
                 } else if (lp.position == LayoutParams.POSITION_RIGHT) {
@@ -160,6 +176,7 @@ public class CustomLayout extends ViewGroup {
                     leftPos = mTmpContainerRect.right;
                 } else if (lp.position == LayoutParams.POSITION_RIGHT) {
                     mTmpContainerRect.right = rightPos - lp.rightMargin;
+                  //mTmpContainerRect.left = mTmpContainerRect.right - width = rightPos - lp.rightMargin - width;
                     mTmpContainerRect.left = rightPos - width - lp.leftMargin;
                     rightPos = mTmpContainerRect.left;
                 } else {

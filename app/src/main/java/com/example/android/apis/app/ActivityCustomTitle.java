@@ -86,14 +86,5 @@ public class ActivityCustomTitle extends Activity {
         });
     }
 
-    static <T> Predicate<T> isEqual(Object targetRef) {
-        return (null == targetRef)
-                ? Objects::isNull
-                : new Predicate<T>() {
-                    @Override
-                    public boolean test(T object) {
-                        return targetRef.equals(object);
-                    }
-                };
-        }
+
 }

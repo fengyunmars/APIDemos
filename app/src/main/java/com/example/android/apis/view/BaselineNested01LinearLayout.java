@@ -21,16 +21,16 @@ import com.example.android.apis.R;
 import android.app.Activity;
 import android.os.Bundle;
 
-
 /**
- * Baseline alignement in LinearLayout with a center_vertical gravity. This sample shows that
- * using a center_vertical gravity disables baseline alignment.
+ * Baseline alignment includes elements within nested vertical
+ * {@link android.widget.LinearLayout}s.
  */
-public class Baseline3 extends Activity {
+public class BaselineNested01LinearLayout extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.baseline_3);
+
+        setContentView(R.layout.baseline_nested_01_linearlayout);
     }
 }

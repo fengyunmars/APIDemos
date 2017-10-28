@@ -1869,7 +1869,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.RelativeLayout1"
+            android:name=".view.RelativeLayout01VerticalStrech"
             android:label="Views/Layouts/RelativeLayout/1. Vertical">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -1878,7 +1878,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.RelativeLayout2"
+            android:name=".view.RelativeLayout00SimpleForm"
             android:label="Views/Layouts/RelativeLayout/2. Simple Form">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -2287,7 +2287,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.Baseline1"
+            android:name=".view.Baseline01LinearLayout"
             android:label="Views/Layouts/Baseline/1. Top">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -2296,7 +2296,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.Baseline2"
+            android:name=".view.Baseline02LinearLayoutGravityBottom"
             android:label="Views/Layouts/Baseline/2. Bottom">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -2305,7 +2305,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.Baseline3"
+            android:name=".view.Baseline03LinearLayoutGravityCenterVertical"
             android:label="Views/Layouts/Baseline/3. Center">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -2314,7 +2314,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.Baseline4"
+            android:name=".view.Baseline04LinearLayoutGravityMixed"
             android:label="Views/Layouts/Baseline/4. Everywhere">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -2323,7 +2323,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.Baseline6"
+            android:name=".view.Baseline06RelativeLayoutMultiLine"
             android:label="Views/Layouts/Baseline/5. Multi-line">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -2332,7 +2332,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.Baseline7"
+            android:name=".view.Baseline05RelativeLayout"
             android:label="Views/Layouts/Baseline/6. Relative">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -2341,7 +2341,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.BaselineNested1"
+            android:name=".view.BaselineNested01LinearLayout"
             android:label="Views/Layouts/Baseline/Nested Example 1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -2350,7 +2350,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.BaselineNested2"
+            android:name=".view.BaselineNested02LinearLayoutHorizontal"
             android:label="Views/Layouts/Baseline/Nested Example 2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -2359,7 +2359,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.BaselineNested3"
+            android:name=".view.BaselineNested3LinearLayoutNested"
             android:label="Views/Layouts/Baseline/Nested Example 3">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

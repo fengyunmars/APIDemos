@@ -21,15 +21,16 @@ import com.example.android.apis.R;
 import android.app.Activity;
 import android.os.Bundle;
 
-
 /**
- * Baseline alignment in LinearLayout with mixed gravities.
+ * Baseline alignment includes an element within a nested horizontal
+ * {@link android.widget.LinearLayout}.
  */
-public class Baseline4 extends Activity {
+public class BaselineNested02LinearLayoutHorizontal extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.baseline_4);
+
+        setContentView(R.layout.baseline_nested_02_linearlayout_horizontal);
     }
 }

@@ -17,20 +17,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <TextView android:id="@+id/anchor"
-        android:layout_width="wrap_content"
+    <!-- it is a EditText -->
+    <EditText android:id="@+id/anchor"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:textStyle="bold"
-        android:text="@string/baseline_7_fat" />
-
+        android:text="@string/baseline_6_multi_line"
+        android:layout_alignParentTop="true"/>
+    <!--android:textSize="20sp"-->
     <TextView
         android:layout_width="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignBaseline="@id/anchor"
         android:layout_height="wrap_content"
-        android:text="@string/baseline_7_lean" />
-    
+        android:layout_alignBaseline="@id/anchor"
+        android:layout_alignRight="@id/anchor"
+        android:text="@string/baseline_6_baseline" />
+
 </RelativeLayout>

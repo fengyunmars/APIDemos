@@ -246,4 +246,43 @@ public class ViewUtils {
                 paddingBottom);
     }
 
+    public static String getViewIdString(View view){
+        StringBuilder out = new StringBuilder(128);
+        out.append(view.getClass().getName());
+        out.append('{');
+        final int id = view.getId();
+        if (id != View.NO_ID) {
+            out.append(" #");
+            out.append(Integer.toHexString(id));
+            final Resources r = view.getResources();
+            if (id > 0 && Resources.resourceHasPackage(id) && r != null) {
+                try {
+                    String pkgname;
+                    switch (id&0xff000000) {
+                        case 0x7f000000:
+                            pkgname="app";
+                            break;
+                        case 0x01000000:
+                            pkgname="android";
+                            break;
+                        default:
+                            pkgname = r.getResourcePackageName(id);
+                            break;
+                    }
+                    String typename = r.getResourceTypeName(id);
+                    String entryname = r.getResourceEntryName(id);
+                    out.append(" ");
+                    out.append(pkgname);
+                    out.append(":");
+                    out.append(typename);
+                    out.append("/");
+                    out.append(entryname);
+                } catch (Resources.NotFoundException e) {
+                }
+            }
+        }
+        out.append("}");
+        return out.toString();
+    }
+
 }

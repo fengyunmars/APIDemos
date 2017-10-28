@@ -21,16 +21,15 @@ import com.example.android.apis.R;
 import android.app.Activity;
 import android.os.Bundle;
 
+
 /**
- * Baseline alignment includes a {@link android.widget.LinearLayout}
- * within another {@link android.widget.LinearLayout}.
+ * Baseline alignment in RelativeLayout with various font weights.
  */
-public class BaselineNested3 extends Activity {
+public class Baseline05RelativeLayout extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.baseline_nested_3);
+        setContentView(R.layout.baseline_05_relative_layout);
     }
 }

@@ -23,13 +23,13 @@ import android.os.Bundle;
 
 
 /**
- * Baseline alignment in RelativeLayout.
+ * Baseline alignment in LinearLayout with mixed gravities.
  */
-public class Baseline6 extends Activity {
+public class Baseline04LinearLayoutGravityMixed extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.baseline_6);
+        setContentView(R.layout.baseline_04_linearlayout_gravity_mixed);
     }
 }

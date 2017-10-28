@@ -1146,7 +1146,7 @@
     <string name="baseline_4_bigger">Bigger</string>
     <string name="baseline_4_label_2">Label Again</string>
     <string name="baseline_4_label_3">Label Me</string>
-    <string name="baseline_6_multi_line">This is a\nmulti-line field.</string>
+    <string name="baseline_6_multi_line">This is a \n multi-line field.</string>
     <string name="baseline_6_baseline">Baseline Aligned</string>
     <string name="baseline_7_fat">Big and bold</string>
     <string name="baseline_7_lean">Slim and slick.</string>

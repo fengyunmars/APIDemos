@@ -1,5 +1,8 @@
 package com.fengyun.grammar.test;
 
+import com.example.android.apis.app.LoaderCustom;
+import com.fengyun.util.MathUtils;
+
 import org.junit.Test;
 
 /**
@@ -24,6 +27,14 @@ public class BinaryTest {
             int j = ~i;
             System.out.println("i = " + i + "---->" + "j = " + j);
         }
+    }
+
+    @Test
+    public void test2(){
+        int i = 1;
+        System.out.println(MathUtils.formatIntBinaryString(Integer.toString(i, 2)));
+        int j = 1 << 26;
+        System.out.println(MathUtils.formatIntBinaryString(Integer.toString(j, 2)));
     }
 
 }

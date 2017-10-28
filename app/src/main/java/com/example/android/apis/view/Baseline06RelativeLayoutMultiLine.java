@@ -23,13 +23,13 @@ import android.os.Bundle;
 
 
 /**
- * Baseline alignment in RelativeLayout with various font weights.
+ * Baseline alignment in RelativeLayout.
  */
-public class Baseline7 extends Activity {
+public class Baseline06RelativeLayoutMultiLine extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.baseline_7);
+        setContentView(R.layout.baseline_06_relative_layout_multiline);
     }
 }
