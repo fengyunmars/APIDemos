@@ -71,4 +71,11 @@ public class AJunitTest{
         System.out.println(Arrays.toString(arcs));
         System.out.println(Arrays.toString(sorted));
     }
+
+    @Test
+    public void testEdgeEffect(){
+        System.out.println("FEdgeEffect.ANGLE = "+ FEdgeEffect.ANGLE);
+        System.out.println("FEdgeEffect.SIN = "+ FEdgeEffect.SIN);
+        System.out.println("FEdgeEffect.COS = "+ FEdgeEffect.COS);
+    }
 }

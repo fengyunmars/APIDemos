@@ -117,10 +117,11 @@
         <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:textColor">@color/white_69p</item>
         --> 
-        <item name="@*android:preferenceCategoryStyle">@style/Preference.Category</item>
-        <item name="@*android:preferenceStyle">@style/Preference</item>
-        <item name="android:prizeActiobBarStyle">@style/PrizeActionBar</item>
-        <item name="@*android:actionBarSize">@dimen/actionbar_height_prize</item>
+        <item name="android:preferenceCategoryStyle">@style/Preference.Category</item>
+        <item name="android:preferenceStyle">@style/Preference</item>
+
+        <!--<item name="android:prizeActionBarStyle">@style/PrizeActionBar</item>-->
+        <item name="android:actionBarSize">@dimen/actionbar_height_prize</item>
     </style>
     
    <style name="PrizeActionBar">
@@ -171,7 +172,7 @@
         <item name="android:buttonStyle">?android:attr/borderlessButtonStyle</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@color/white</item>
-        <item name="android:statusBarInverse">gray</item>       
+        <!--<item name="android:statusBarInverse">gray</item>       -->
     </style>
     
     <style name="CitiesTheme" parent="@style/DeskClockParentThemeNew">
@@ -179,8 +180,8 @@
         <item name="android:fastScrollStyle">@style/FastScrollStyle</item>
         <item name="android:actionBarStyle">@style/CitiesTheme.ActionBar</item>
         <item name="android:homeAsUpIndicator">@drawable/go_home</item>
-        <item name="android:prizeActiobBarStyle">@style/PrizeActionBar</item>
-        <item name="@*android:actionBarSize">@dimen/actionbar_height_prize</item>
+        <!--<item name="android:prizeActionBarStyle">@style/PrizeActionBar</item>-->
+        <item name="android:actionBarSize">@dimen/actionbar_height_prize</item>
         <!-- PRIZE- 设置字体颜色为黑色- 李星-2015-5-12-start -->
         <!-- <item name="android:textColor">@color/black_6</item> -->
         <!-- PRIZE- 设置字体颜色为黑色- 李星-2015-5-12-start -->
@@ -474,8 +475,8 @@
      <!-- PRIZE-删除闹钟的style- 李星-2015-4-23-start -->
      <style name="deletalarmstyle" parent="android:Animation">  
          
-        <item name="@android:windowEnterAnimation">@anim/deletealarm_dialog_enter</item>  
-        <item name="@android:windowExitAnimation">@anim/deletealarm_dialog_exit</item>    
+        <item name="android:windowEnterAnimation">@anim/deletealarm_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/deletealarm_dialog_exit</item>
     </style>  
      
      

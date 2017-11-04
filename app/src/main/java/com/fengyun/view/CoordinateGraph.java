@@ -7,6 +7,8 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Point;
 import android.graphics.PointF;
+import android.support.v4.view.NestedScrollingChild;
+import android.support.v4.view.NestedScrollingParent;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -29,7 +31,7 @@ import java.util.Arrays;
  * Created by prize on 2017/10/13.
  */
 
-public class CoordinateGraph extends LinearLayout implements BaseViewCustom{
+public class CoordinateGraph extends View implements BaseViewCustom{
 
 
     private Paint mPaint = new Paint();

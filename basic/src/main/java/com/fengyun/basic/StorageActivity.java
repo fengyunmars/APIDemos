@@ -32,8 +32,8 @@ public class StorageActivity extends Activity {
             }
         });
         myImageView = (ImageView) findViewById(R.id.myimage);
-        Drawable drawable = getDrawable(android.R.drawable.real_device);
-        myImageView.setImageDrawable(drawable);
+//        Drawable drawable = getDrawable(android.R.drawable.real_device);
+//        myImageView.setImageDrawable(drawable);
     }
 
     @Override
