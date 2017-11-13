@@ -5,33 +5,24 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.Point;
 import android.graphics.PointF;
-import android.support.v4.view.NestedScrollingChild;
-import android.support.v4.view.NestedScrollingParent;
 import android.util.AttributeSet;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import com.example.android.apis.R;
-import com.example.android.apis.app.FragmentArguments;
 import com.fengyun.graphics.Arrows;
 import com.fengyun.graphics.DirectionLine;
 import com.fengyun.math.Function;
-import com.fengyun.math.LinearFunction;
-import com.fengyun.math.QuadraticFunction;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Created by prize on 2017/10/13.
  */
 
-public class CoordinateGraph extends View implements BaseViewCustom{
+public class CoordinateGraph extends View implements IViewCustom {
 
 
     private Paint mPaint = new Paint();

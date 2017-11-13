@@ -14,7 +14,7 @@ import com.example.android.apis.R;
  * Created by prize on 2017/10/13.
  */
 
-public class CoordinateSystem extends LinearLayout implements BaseViewCustom{
+public class CoordinateSystem extends LinearLayout implements IViewCustom {
 
     private Paint mPaint = new Paint();
     public int wp;

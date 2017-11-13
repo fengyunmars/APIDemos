@@ -9,6 +9,7 @@ import android.widget.FGridLayout;
 
 import com.example.android.apis.R;
 import com.fengyun.graphics.DirectionLine;
+import com.fengyun.view.BaseViewCustom;
 import com.fengyun.view.CoordinateGraph;
 
 import org.junit.Test;
@@ -26,6 +27,14 @@ public class CustomViewActivity extends Activity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        drawBaseViewCustom();
+    }
+
+    private void drawBaseViewCustom(){
+        setContentView(new BaseViewCustom(this));
+    }
+
+    private void drawCoordinateSystem(){
         setContentView(R.layout.customview);
         coordinateGraph = (CoordinateGraph)findViewById(R.id.coordinateGraph);
         FGridLayout grid = new FGridLayout();
@@ -52,11 +61,6 @@ public class CustomViewActivity extends Activity{
         Log.d("arcs before -->", Arrays.toString(arcs));
         System.out.println(Arrays.toString(sorted));
         Log.d("arcs after --->", Arrays.toString(sorted));
-
-    }
-
-    @Test
-    public void testTopologicalSort(){
 
     }
 }

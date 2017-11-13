@@ -24,7 +24,7 @@ import java.lang.annotation.RetentionPolicy;
  * Created by prize on 2017/10/14.
  */
 
-public class CoordinateAxis extends View implements BaseViewCustom{
+public class CoordinateAxis extends View implements IViewCustom {
 
 //    @android.support.annotation.IntDef({LinearLayout.HORIZONTAL, LinearLayout.VERTICAL})
 //    @Retention(RetentionPolicy.SOURCE)

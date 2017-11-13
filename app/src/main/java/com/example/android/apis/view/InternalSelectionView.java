@@ -28,12 +28,12 @@ import android.view.View;
 
 
 /**
- * A view that has a known number of selectable rows, and maintains a notion of which
+ * A view that has a known number of selectable rows, and maintains a notion 概念 of which
  * row is selected. The rows take up the
  * entire width of the view.  The height of the view is divided evenly among
  * the rows.
  *
- * Notice what this view does to be a good citizen w.r.t its internal selection:
+ * Notice what this view does to be a good citizen 公民；市民；老百姓 w.r.t its internal selection:
  * 1) calls {@link View#requestRectangleOnScreen} each time the selection changes due to
  *    internal navigation.
  * 2) overrides {@link View#getFocusedRect} by filling in the rectangle of the currently
@@ -142,6 +142,7 @@ public class InternalSelectionView extends View {
         int rectTop = getPaddingTop();
         int rectLeft = getPaddingLeft();
         int rectRight = getWidth() - getPaddingRight();
+        mTextPaint.setTextSize(50);
         for (int i = 0; i < mNumRows; i++) {
 
             mPainter.setColor(Color.BLACK);
@@ -154,23 +155,47 @@ public class InternalSelectionView extends View {
             // draw forground rect
             if (i == mSelectedRow && hasFocus()) {
                 mPainter.setColor(Color.RED);
+                int color1 = 0xF0;
+                int color2 = 0xFF;
                 mPainter.setAlpha(0xF0);
                 mTextPaint.setAlpha(0xFF);
+                mTextPaint.setColor(Color.GREEN);
+
+                mTempRect.set(rectLeft + 2, rectTop + 2,
+                        rectRight - 2, rectTop + rowHeight - 2);
+                canvas.drawRect(mTempRect, mPainter);
+
+                float as = mTextPaint.ascent();
+                float ds = mTextPaint.descent();
+                // draw text to help when visually inspecting
+                canvas.drawText(
+                        Integer.toString(i),
+                        rectLeft + 2,
+                        rectTop + mTextPaint.descent() - (int) mTextPaint.ascent(),
+                        mTextPaint);
+
             } else {
                 mPainter.setColor(Color.BLACK);
+                int color1 = 0x40;
+                int color2 = 0xF0;
                 mPainter.setAlpha(0x40);
                 mTextPaint.setAlpha(0xF0);
-            }
-            mTempRect.set(rectLeft + 2, rectTop + 2,
-                    rectRight - 2, rectTop + rowHeight - 2);
-            canvas.drawRect(mTempRect, mPainter);
+                mTextPaint.setColor(Color.BLUE);
 
-            // draw text to help when visually inspecting
-            canvas.drawText(
-                    Integer.toString(i),
-                    rectLeft + 2,
-                    rectTop + 2 - (int) mTextPaint.ascent(),
-                    mTextPaint);
+                mTempRect.set(rectLeft + 2, rectTop + 2,
+                        rectRight - 2, rectTop + rowHeight - 2);
+                canvas.drawRect(mTempRect, mPainter);
+
+                float as = mTextPaint.ascent();
+                float ds = mTextPaint.descent();
+                // draw text to help when visually inspecting
+                canvas.drawText(
+                        Integer.toString(i),
+                        rectLeft + 2,
+                        rectTop + mTextPaint.descent() - (int) mTextPaint.ascent(),
+                        mTextPaint);
+            }
+
 
             rectTop += rowHeight;
         }

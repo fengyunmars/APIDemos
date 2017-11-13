@@ -2032,7 +2032,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.ScrollView1"
+            android:name=".view.ScrollView01"
             android:label="Views/Layouts/ScrollView/1. Short">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -2041,7 +2041,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.ScrollView2"
+            android:name=".view.ScrollView02"
             android:label="Views/Layouts/ScrollView/2. Long">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -2114,7 +2114,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.InternalSelectionScroll"
+            android:name=".view.ScrollView03InternalSelection"
             android:label="Views/Layouts/ScrollView/3. Internal Selection">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
