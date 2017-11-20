@@ -62,7 +62,7 @@ public class PrizeHomeWatcher {
         mListener = listener; 
         mRecevier = new InnerRecevier(); 
     } 
-   
+
     /**
      * @author lixing
      * @see:Register broadcasting, pay attention to () unregister broadcast onPause, otherwise it will error
