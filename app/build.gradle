@@ -1,7 +1,6 @@
 apply plugin: 'com.android.application'
 android {
     compileSdkVersion 24
-
     defaultConfig {
         applicationId "com.example.android.apis"
         minSdkVersion 21
@@ -29,4 +28,5 @@ dependencies {
     api 'com.android.support:design:24.0.0'
     api 'com.github.orhanobut:logger:1.12'
     api 'junit:junit:4.12'
+    compile project(path: ':yunsdk')
 }

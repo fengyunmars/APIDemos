@@ -38,22 +38,21 @@ import java.util.Calendar;
 public class AlarmBroadcastReceiverOneShot extends BroadcastReceiver
 {
     @Override
-    public void onReceive(Context context, Intent intent)
-    {
+    public void onReceive(Context context, Intent intent) {
         Toast.makeText(context, R.string.one_shot_received, Toast.LENGTH_SHORT).show();
         //add fengyun
-        Intent newintent = new Intent(context, AlarmBroadcastReceiverOneShot.class);
-        PendingIntent sender = PendingIntent.getBroadcast(context,
-                0, newintent, 0);
-
-        // We want the alarm to go off 30 seconds from now.
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(System.currentTimeMillis());
-        calendar.add(Calendar.SECOND, 30);
-
-        // Schedule the alarm!
-        AlarmManager am = (AlarmManager)context.getSystemService(context.ALARM_SERVICE);
-        am.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender);
+//        Intent newintent = new Intent(context, AlarmBroadcastReceiverOneShot.class);
+//        PendingIntent sender = PendingIntent.getBroadcast(context,
+//                0, newintent, 0);
+//
+//        // We want the alarm to go off 30 seconds from now.
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.setTimeInMillis(System.currentTimeMillis());
+//        calendar.add(Calendar.SECOND, 30);
+//
+//        // Schedule the alarm!
+//        AlarmManager am = (AlarmManager)context.getSystemService(context.ALARM_SERVICE);
+//        am.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender);
         //add fengyun
     }
 }

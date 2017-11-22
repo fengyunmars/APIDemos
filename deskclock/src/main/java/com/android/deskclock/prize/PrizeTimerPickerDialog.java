@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TimePicker;
 import android.widget.TimePicker.OnTimeChangedListener;
-import android.widget.TimePicker.ValidationCallback;
+//import android.widget.TimePicker.ValidationCallback;
 
 import com.android.deskclock.R;
 
@@ -91,14 +91,14 @@ OnTimeChangedListener {
         super.onRestoreInstanceState(savedInstanceState);
     }
 
-    private final ValidationCallback mValidationCallback = new ValidationCallback() {
-        @Override
-        public void onValidationChanged(boolean valid) {
-            final Button positive = getButton(BUTTON_POSITIVE);
-            if (positive != null) {
-                positive.setEnabled(valid);
-            }
-        }
-    };
+//    private final ValidationCallback mValidationCallback = new ValidationCallback() {
+//        @Override
+//        public void onValidationChanged(boolean valid) {
+//            final Button positive = getButton(BUTTON_POSITIVE);
+//            if (positive != null) {
+//                positive.setEnabled(valid);
+//            }
+//        }
+//    };
 
 }

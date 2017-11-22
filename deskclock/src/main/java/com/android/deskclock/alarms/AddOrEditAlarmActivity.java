@@ -106,7 +106,7 @@ public class AddOrEditAlarmActivity extends Activity implements OnClickListener,
 		setVolumeControlStream(AudioManager.STREAM_ALARM);
 		setContentView(R.layout.add_or_edit_activity);
 		WindowManager.LayoutParams lp= getWindow().getAttributes();
-        lp.statusBarInverse = StatusBarManager.STATUS_BAR_INVERSE_GRAY;
+//        lp.statusBarInverse = StatusBarManager.STATUS_BAR_INVERSE_GRAY;
         getWindow().setAttributes(lp);
 		mAlarmId = getIntent().getLongExtra("alarmid", -1);
 		bindAlarm(mAlarmId);

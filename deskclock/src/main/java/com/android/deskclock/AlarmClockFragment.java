@@ -522,7 +522,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
 
     private List<Alarm> getAllAlarms(){   	
     	ContentResolver resolver = getActivity().getContentResolver();       
-    	List<Alarm> allAlarms = Alarm.getAlarms(resolver, null, null);
+    	List<Alarm> allAlarms = Alarm.getAlarms(resolver, null, (String[])null);
     	return allAlarms;
     }
     
@@ -883,7 +883,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
               if(!shouldShowRequestPermissionRationale(Manifest.permission.READ_EXTERNAL_STORAGE))
               {
                  Toast.makeText(getActivity().getApplicationContext(),
-                 getString(com.mediatek.R.string.denied_required_permission),
+                 getString(R.string.denied_required_permission),
                  Toast.LENGTH_SHORT).show();
               }
 
@@ -2977,10 +2977,10 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
 			window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);  
 			if (isUnderEdit) {
 				window.setStatusBarColor(Color.WHITE);  
-		        lp.statusBarInverse = StatusBarManager.STATUS_BAR_INVERSE_GRAY;
+		        //lp.statusBarInverse = StatusBarManager.STATUS_BAR_INVERSE_GRAY;
 			}else {
 				window.setStatusBarColor(Color.parseColor("#778dfb"));
-				lp.statusBarInverse = StatusBarManager.STATUS_BAR_COLOR_WHITE;
+				//lp.statusBarInverse = StatusBarManager.STATUS_BAR_COLOR_WHITE;
 			}
 			window.setAttributes(lp);
 		}

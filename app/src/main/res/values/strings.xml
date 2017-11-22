@@ -331,6 +331,7 @@
     <string name="isolated_service_1_label">Sample Isolated Service 1</string>
 
     <string name="one_shot_received">The one-shot alarm has gone off</string>
+    <string name="wake_screen_msg">The Wake Screen alarm has gone off !</string>
     <string name="repeating_received">The repeating alarm has gone off</string>
 
     <string name="activity_alarm_controller">App/Alarm/Alarm Controller</string>
@@ -339,7 +340,10 @@
     <string name="one_shot_alarm">One Shot Alarm</string>
     <string name="start_repeating_alarm">Start Repeating Alarm</string>
     <string name="stop_repeating_alarm">Stop Repeating Alarm</string>
+    <string name="wake_screen">wake screen after 20s</string>
     <string name="one_shot_scheduled">One-shot alarm will go off in 30 seconds based on
+        the real time clock.  Try changing the current time before then!</string>
+    <string name="wake_screen_scheduled">wake_screen will go off in 30 seconds based on
         the real time clock.  Try changing the current time before then!</string>
     <string name="repeating_scheduled">Repeating alarm will go off in 15 seconds and
         every 15 seconds after based on the elapsed realtime clock</string>

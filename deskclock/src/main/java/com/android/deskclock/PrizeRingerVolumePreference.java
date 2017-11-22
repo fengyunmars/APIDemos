@@ -48,13 +48,13 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
-import com.mediatek.audioprofile.AudioProfileManager;// prize-add for meeting mode-pengcancan-20160817
+//import com.mediatek.audioprofile.AudioProfileManager;// prize-add for meeting mode-pengcancan-20160817
 /*
  * M: We override the class VolumePreference to do something we want.
  */
 public class PrizeRingerVolumePreference extends DialogPreference implements android.view.View.OnKeyListener {
 
-	private static final String TAG = "AlarmClock_VolumePreference";
+    private static final String TAG = "AlarmClock_VolumePrefe";
 
     private int mStreamType;
 	
@@ -299,7 +299,7 @@ public class PrizeRingerVolumePreference extends DialogPreference implements and
         private Context mContext;
         private Handler mHandler;
         private AudioManager mAudioManager;
-		private AudioProfileManager mProfileManager; // prize-add for meeting mode-pengcancan-20160817
+//		private AudioProfileManager mProfileManager; // ddd alarm
         private SeekBar mSeekBar;
         private int mStreamType;
 
@@ -332,7 +332,7 @@ public class PrizeRingerVolumePreference extends DialogPreference implements and
         public SeekBarVolumizer(Context context, SeekBar seekBar, int streamType, Uri defaultUri) {
             mContext = context;
             mAudioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
-			mProfileManager = (AudioProfileManager) context.getSystemService(context.AUDIO_PROFILE_SERVICE); // prize-add for meeting mode-pengcancan-20160817
+//			mProfileManager = (AudioProfileManager) context.getSystemService(context.AUDIO_PROFILE_SERVICE); // ddd alarm
             mStreamType = streamType;
             mSeekBar = seekBar;
 
@@ -352,10 +352,14 @@ public class PrizeRingerVolumePreference extends DialogPreference implements and
             int mOriginalStreamVolume_mAudioManager = mAudioManager.getStreamVolume(mStreamType);
 			Log.d(TAG,"in initSeekBar mOriginalStreamVolume_mAudioManager is:" + mOriginalStreamVolume_mAudioManager);
 
-       		mActiveProfileKey = mProfileManager.getActiveProfileKey();
-			mOriginalStreamVolume = mProfileManager.getStreamVolume(mActiveProfileKey, mStreamType);
+//       		mActiveProfileKey = mProfileManager.getActiveProfileKey();// ddd alarm
+//			mOriginalStreamVolume = mProfileManager.getStreamVolume(mActiveProfileKey, mStreamType);// ddd alarm
+
+
+
+			/*prize-Interpretation whether the meeting mode-lixing-2015-7-31 -start*/
 			if(mActiveProfileKey.equals("mtk_audioprofile_meeting") || mActiveProfileKey.equals("mtk_audioprofile_silent")){
-				mOriginalStreamVolume = mProfileManager.getStreamVolume("mtk_audioprofile_general", mStreamType);
+//				mOriginalStreamVolume = mProfileManager.getStreamVolume("mtk_audioprofile_general", mStreamType);
 			}
 			// prize-add for meeting mode-pengcancan-20160817-end
             mLastProgress = mOriginalStreamVolume;
@@ -397,10 +401,12 @@ public class PrizeRingerVolumePreference extends DialogPreference implements and
                 case MSG_SET_STREAM_VOLUME:
                 	// prize-add for meeting mode-pengcancan-20160817-start
                     mAudioManager.setStreamVolume(mStreamType, mLastProgress, 0);
-					mActiveProfileKey = mProfileManager.getActiveProfileKey();
-		         	mProfileManager.setStreamVolume(mActiveProfileKey, mStreamType, mLastProgress);
+//					mActiveProfileKey = mProfileManager.getActiveProfileKey();// ddd alarm
+//		         	mProfileManager.setStreamVolume(mActiveProfileKey, mStreamType, mLastProgress);// ddd alarm
+
+		         	/*prize-Interpretation whether the meeting mode-lixing-2015-7-31 -start*/
 					if(mActiveProfileKey.equals("mtk_audioprofile_meeting") || mActiveProfileKey.equals("mtk_audioprofile_silent")){
-						mProfileManager.setStreamVolume("mtk_audioprofile_general", mStreamType, mLastProgress);
+//						mProfileManager.setStreamVolume("mtk_audioprofile_general", mStreamType, mLastProgress);
 					}
 					// prize-add for meeting mode-pengcancan-20160817-end
                     Log.d(TAG, "handleMessage setStreamVolume mLastProgress = " + mLastProgress);
@@ -458,11 +464,13 @@ public class PrizeRingerVolumePreference extends DialogPreference implements and
         public void revertVolume() {
             Log.d(TAG, "revertVolume mOriginalStreamVolume = " + mOriginalStreamVolume);
             mAudioManager.setStreamVolume(mStreamType, mOriginalStreamVolume, 0);
-            // prize-add for meeting mode-pengcancan-20160817-start
-			mActiveProfileKey = mProfileManager.getActiveProfileKey();// ddd alarm
-			mProfileManager.setStreamVolume(mActiveProfileKey, mStreamType, mOriginalStreamVolume);// ddd alarm
+//			mActiveProfileKey = mProfileManager.getActiveProfileKey();// ddd alarm
+//			mProfileManager.setStreamVolume(mActiveProfileKey, mStreamType, mOriginalStreamVolume);// ddd alarm
+
+
+			/*prize-Interpretation whether the meeting mode-lixing-2015-7-31 -start*/
 			if(mActiveProfileKey.equals("mtk_audioprofile_meeting") || mActiveProfileKey.equals("mtk_audioprofile_silent")){
-				mProfileManager.setStreamVolume("mtk_audioprofile_general", mStreamType, mOriginalStreamVolume);
+//				mProfileManager.setStreamVolume("mtk_audioprofile_general", mStreamType, mOriginalStreamVolume);
 			}
 			// prize-add for meeting mode-pengcancan-20160817-end
         }
@@ -470,11 +478,12 @@ public class PrizeRingerVolumePreference extends DialogPreference implements and
         public void saveVolume() {
             Log.d(TAG, "saveVolume mLastProgress = " + mLastProgress);
             mAudioManager.setStreamVolume(mStreamType, mLastProgress, 0);
-            // prize-add for meeting mode-pengcancan-20160817-start
-			mActiveProfileKey = mProfileManager.getActiveProfileKey();
-			mProfileManager.setStreamVolume(mActiveProfileKey, mStreamType, mLastProgress);
+//			mActiveProfileKey = mProfileManager.getActiveProfileKey();// ddd alarm
+//			mProfileManager.setStreamVolume(mActiveProfileKey, mStreamType, mLastProgress);// ddd alarm
+
+			/*prize-Interpretation whether the meeting mode-lixing-2015-7-31 -start*/
 			if(mActiveProfileKey.equals("mtk_audioprofile_meeting") || mActiveProfileKey.equals("mtk_audioprofile_silent")){
-				mProfileManager.setStreamVolume("mtk_audioprofile_general", mStreamType, mLastProgress);
+//				mProfileManager.setStreamVolume("mtk_audioprofile_general", mStreamType, mLastProgress);
 			}
 			// prize-add for meeting mode-pengcancan-20160817-end
         }

@@ -323,7 +323,7 @@ public class MmsMessagingDemo extends Activity {
 //        final SendReq req = new SendReq();
 //        // From, per spec
 //        final String lineNumber = getSimNumber(context);
-//        if (!TextUtils.isEmpty(lineNumber)) {
+//        if (!TextFileUtils.isEmpty(lineNumber)) {
 //            req.setFrom(new EncodedStringValue(lineNumber));
 //        }
 //        // To
@@ -333,7 +333,7 @@ public class MmsMessagingDemo extends Activity {
 //            req.setTo(encodedNumbers);
 //        }
 //        // Subject
-//        if (!TextUtils.isEmpty(subject)) {
+//        if (!TextFileUtils.isEmpty(subject)) {
 //            req.setSubject(new EncodedStringValue(subject));
 //        }
 //        // Date

@@ -38,7 +38,7 @@ import java.util.Calendar;
  * {@link AlarmBroadcastReceiverOneShot} for the code run when the one-shot alarm goes off, and
  * {@link AlarmBroadcastReceiverRepeating} for the code run when the repeating alarm goes off.
  * <h4>Demo</h4>
-App/Service/Alarm Controller
+App/Alarm/Alarm Controller
  
 <h4>Source files</h4>
 <table class="LinkTable">
@@ -79,6 +79,27 @@ public class AlarmController extends Activity {
         button.setOnClickListener(mStartRepeatingListener);
         button = (Button)findViewById(R.id.stop_repeating);
         button.setOnClickListener(mStopRepeatingListener);
+        button = (Button)findViewById(R.id.wake_screen);
+        button.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AlarmController.this, AlarmBroadcastReceiverWake.class);
+                PendingIntent sender = PendingIntent.getBroadcast(AlarmController.this, 0, intent, 0);
+                Calendar calendar = Calendar.getInstance();
+                calendar.setTimeInMillis(System.currentTimeMillis());
+                calendar.add(Calendar.SECOND, 15);
+                AlarmManager am = (AlarmManager)getSystemService(ALARM_SERVICE);
+                am.set(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), sender);
+
+                // Tell the user about what we did.
+                if (mToast != null) {
+                    mToast.cancel();
+                }
+                mToast = Toast.makeText(AlarmController.this, R.string.wake_screen_scheduled,
+                        Toast.LENGTH_LONG);
+                mToast.show();
+            }
+        });
     }
 
     private OnClickListener mOneShotListener = new OnClickListener() {

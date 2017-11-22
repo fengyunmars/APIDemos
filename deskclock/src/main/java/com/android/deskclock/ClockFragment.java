@@ -624,10 +624,10 @@ public class ClockFragment extends DeskClockFragment implements OnSharedPreferen
 			window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);  
 			if (isUnderEdit) {
 				window.setStatusBarColor(Color.WHITE);  
-		        lp.statusBarInverse = StatusBarManager.STATUS_BAR_INVERSE_GRAY;
+		        //lp.statusBarInverse = StatusBarManager.STATUS_BAR_INVERSE_GRAY;
 			}else {
 				window.setStatusBarColor(Color.parseColor("#129beb"));
-				lp.statusBarInverse = StatusBarManager.STATUS_BAR_COLOR_WHITE;
+				//lp.statusBarInverse = StatusBarManager.STATUS_BAR_COLOR_WHITE;
 			}
 			window.setAttributes(lp);
 		}

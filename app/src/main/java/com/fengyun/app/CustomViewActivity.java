@@ -8,11 +8,9 @@ import android.util.Log;
 import android.widget.FGridLayout;
 
 import com.example.android.apis.R;
-import com.fengyun.graphics.DirectionLine;
 import com.fengyun.view.BaseViewCustom;
 import com.fengyun.view.CoordinateGraph;
 
-import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Random;

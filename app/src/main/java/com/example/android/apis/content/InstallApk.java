@@ -22,25 +22,15 @@ import com.example.android.apis.R;
 import com.fengyun.util.FileUtils;
 
 import android.app.Activity;
-import android.content.ContentProvider;
-import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
-import android.content.ContentProvider.PipeDataWriter;
-import android.content.res.AssetFileDescriptor;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.ParcelFileDescriptor;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;

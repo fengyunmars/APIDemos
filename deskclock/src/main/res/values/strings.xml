@@ -1199,6 +1199,7 @@
     <string name="close_tip_prize">I know it.</string>
     <string name="timer_tip_prize">Move yellow triangle to set time</string>
     <string name="close_alarm_tip_prize">Slide up to stop alarm</string>
+    <string name="denied_required_permission">denied_required_permission</string>
     <plurals name="timer_hour">
         <!-- Duration for one hour -->
         <item quantity="one">1 Hour </item>

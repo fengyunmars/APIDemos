@@ -67,37 +67,37 @@ public class AlarmUtils {
                 : alarmTimeStr;
     }
 
-    // show time picker dialog for pre-L devices
-    public static void showTimeEditDialog(FragmentManager manager, final Alarm alarm,
-          com.android.datetimepicker.time.TimePickerDialog.OnTimeSetListener listener,
-          boolean is24HourMode) {
-
-        final int hour, minutes;
-        if (alarm == null) {
-            hour = 0;
-            minutes = 0;
-        } else {
-            hour = alarm.hour;
-            minutes = alarm.minutes;
-        }
-        com.android.datetimepicker.time.TimePickerDialog dialog =
-                com.android.datetimepicker.time.TimePickerDialog.newInstance(listener,
-                    hour, minutes, is24HourMode);
-        dialog.setThemeDark(true);
-
-        // Make sure the dialog isn't already added.
-        manager.executePendingTransactions();
-        final FragmentTransaction ft = manager.beginTransaction();
-        final Fragment prev = manager.findFragmentByTag(FRAG_TAG_TIME_PICKER);
-        if (prev != null) {
-            ft.remove(prev);
-        }
-        ft.commit();
-
-        if (!dialog.isAdded()) {
-            dialog.show(manager, FRAG_TAG_TIME_PICKER);
-        }
-    }
+//    // show time picker dialog for pre-L devices
+//    public static void showTimeEditDialog(FragmentManager manager, final Alarm alarm,
+//          com.android.datetimepicker.time.TimePickerDialog.OnTimeSetListener listener,
+//          boolean is24HourMode) {
+//
+//        final int hour, minutes;
+//        if (alarm == null) {
+//            hour = 0;
+//            minutes = 0;
+//        } else {
+//            hour = alarm.hour;
+//            minutes = alarm.minutes;
+//        }
+//        com.android.datetimepicker.time.TimePickerDialog dialog =
+//                com.android.datetimepicker.time.TimePickerDialog.newInstance(listener,
+//                    hour, minutes, is24HourMode);
+//        dialog.setThemeDark(true);
+//
+//        // Make sure the dialog isn't already added.
+//        manager.executePendingTransactions();
+//        final FragmentTransaction ft = manager.beginTransaction();
+//        final Fragment prev = manager.findFragmentByTag(FRAG_TAG_TIME_PICKER);
+//        if (prev != null) {
+//            ft.remove(prev);
+//        }
+//        ft.commit();
+//
+//        if (!dialog.isAdded()) {
+//            dialog.show(manager, FRAG_TAG_TIME_PICKER);
+//        }
+//    }
 
     /**
      * Show the time picker dialog for post-L devices.

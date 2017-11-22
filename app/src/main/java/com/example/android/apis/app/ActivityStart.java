@@ -2,14 +2,13 @@ package com.example.android.apis.app;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.android.apis.R;
-import com.fengyun.grammar.model.InnerClassAccessOutClassField;
+import com.fengyun.model.InnerClassAccessOutClassField;
 
 public class ActivityStart extends Activity {
 

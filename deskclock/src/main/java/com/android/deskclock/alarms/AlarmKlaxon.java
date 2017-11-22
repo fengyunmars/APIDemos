@@ -37,13 +37,13 @@ import com.android.deskclock.LogUtils;
 import com.android.deskclock.AlarmClockFragment;
 import com.android.deskclock.R;
 import com.android.deskclock.provider.AlarmInstance;
-import com.mediatek.deskclock.extension.OPExtensionFactory;
-import com.mediatek.deskclock.ext.IAlarmControllerExt;
+//import com.mediatek.deskclock.extension.OPExtensionFactory;
+//import com.mediatek.deskclock.ext.IAlarmControllerExt;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-import com.mediatek.audioprofile.AudioProfileManager;// ddd alarm
+//import com.mediatek.audioprofile.AudioProfileManager;// ddd alarm
 
 /**
  * Manages playing ringtone and vibrating the device.
@@ -60,7 +60,7 @@ public class AlarmKlaxon {
     private static boolean sStarted = false;
     private static MediaPlayer sMediaPlayer = null;
     ///M: to control the in call alarm
-    private static IAlarmControllerExt sAlarmControllerExt;
+//    private static IAlarmControllerExt sAlarmControllerExt;
 
     public static void stop(Context context) {
         LogUtils.v("AlarmKlaxon.stop()");
@@ -91,11 +91,11 @@ public class AlarmKlaxon {
          * M: If in call state, just vibrate the phone, and don't start the alarm @{
          */
         if (inTelephoneCall) {
-            sAlarmControllerExt = OPExtensionFactory.getAlarmControllerExt(context);
-            if (null != sAlarmControllerExt) {
-                sAlarmControllerExt.vibrate(context);
-            }
-            return;
+//            sAlarmControllerExt = OPExtensionFactory.getAlarmControllerExt(context);
+//            if (null != sAlarmControllerExt) {
+//                sAlarmControllerExt.vibrate(context);
+//            }
+//            return;
         } ///@}
 
         if (!AlarmInstance.NO_RINGTONE_URI.equals(instance.mRingtone)) {
@@ -178,15 +178,15 @@ public class AlarmKlaxon {
         
         
         /*prize-Interpretation whether the meeting and silent mode-lixing-2015-7-31 -start*/
-        AudioProfileManager mProfileManager = (AudioProfileManager) context.getSystemService(context.AUDIO_PROFILE_SERVICE); // ddd alarm
-        String mActiveProfileKey = mProfileManager.getActiveProfileKey();// ddd alarm
-        LogUtils.v("prize startAlarm, mActiveProfileKey = " + mActiveProfileKey);
-		if(mActiveProfileKey.equals("mtk_audioprofile_meeting") || mActiveProfileKey.equals("mtk_audioprofile_silent") ){
-			alarmVolume = mProfileManager.getStreamVolume("mtk_audioprofile_general", AudioManager.STREAM_ALARM);
-			LogUtils.v("startAlarm, current model is meeting.alarmVolume=" + alarmVolume);
-			audioManager.setStreamVolume(AudioManager.STREAM_ALARM, alarmVolume, 0);
-			mProfileManager.setStreamVolume(mActiveProfileKey,AudioManager.STREAM_ALARM,alarmVolume);			
-		}	
+//        AudioProfileManager mProfileManager = (AudioProfileManager) context.getSystemService(context.AUDIO_PROFILE_SERVICE); // ddd alarm
+//        String mActiveProfileKey = mProfileManager.getActiveProfileKey();// ddd alarm
+//        LogUtils.v("prize startAlarm, mActiveProfileKey = " + mActiveProfileKey);
+//		if(mActiveProfileKey.equals("mtk_audioprofile_meeting") || mActiveProfileKey.equals("mtk_audioprofile_silent") ){
+//			alarmVolume = mProfileManager.getStreamVolume("mtk_audioprofile_general", AudioManager.STREAM_ALARM);
+//			LogUtils.v("startAlarm, current model is meeting.alarmVolume=" + alarmVolume);
+//			audioManager.setStreamVolume(AudioManager.STREAM_ALARM, alarmVolume, 0);
+//			mProfileManager.setStreamVolume(mActiveProfileKey,AudioManager.STREAM_ALARM,alarmVolume);
+//		}
 		/*prize-Interpretation whether the meeting and silent mode-lixing-2015-7-31 -end*/
 
 	// do not play alarms if stream volume is 0 (typically because ringer mode is silent).

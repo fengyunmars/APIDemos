@@ -1,6 +1,5 @@
 package android.widget;
 
-import com.fengyun.grammar.test.JunitTest;
 
 import org.junit.Test;
 

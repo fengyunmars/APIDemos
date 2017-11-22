@@ -39,6 +39,7 @@
     <uses-permission android:name="android.permission.NFC"/>
     <uses-permission android:name="android.permission.TRANSMIT_IR"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
 
     <!-- For android.media.audiofx.Visualizer -->
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
@@ -739,6 +740,9 @@
             android:name=".app.AlarmBroadcastReceiverOneShot"
             android:process=":remote"/>
         <receiver
+            android:name=".app.AlarmBroadcastReceiverWake"
+            android:process=":remote"/>
+        <receiver
             android:name=".app.AlarmBroadcastReceiverRepeating"
             android:process=":remote"/>
 
@@ -1037,12 +1041,9 @@
 
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
-        </activity>
-
-        <!-- It is recommended that you use an activity-alias to provide the "CREATE_SHORTCUT" -->
+        </activity> <!-- It is recommended that you use an activity-alias to provide the "CREATE_SHORTCUT" -->
         <!-- intent-filter.  This gives you a way to set the text (and optionally the -->
         <!-- icon) that will be seen in the launcher's create-shortcut user interface. -->
-
         <activity-alias
             android:name=".app.CreateShortcuts"
             android:label="@string/sample_shortcuts"
@@ -1886,16 +1887,15 @@
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
-
         <activity
             android:name=".view.LinearLayout00SimpleForm"
             android:label="Views/Layouts/LinearLayout/00. Simple Form">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
-
         <activity
             android:name=".view.LinearLayout01VerticalBasic"
             android:label="Views/Layouts/LinearLayout/01. Vertical">
@@ -2230,34 +2230,33 @@
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
-
         <activity
             android:name=".view.AbsoluteLayout00SimpleForm"
             android:label="Views/Layouts/AbsoluteLayout/0. Simple Form">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
-
         <activity
             android:name=".view.FrameLayout00SimpleForm"
             android:label="Views/Layouts/FrameLayout/0. Simple Form">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
-
         <activity
             android:name=".view.GridLayout00SimpleForm"
             android:label="Views/Layouts/GridLayout/0. Simple Form">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
-
         <activity
             android:name=".view.GridLayout01"
             android:label="Views/Layouts/GridLayout/1. Simple Form">
@@ -2267,7 +2266,6 @@
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
-
         <activity
             android:name=".view.GridLayout02"
             android:label="Views/Layouts/GridLayout/2. Form (XML)">
@@ -3978,27 +3976,37 @@
         </activity>
         <activity android:name=".app.ActivityTarget">
         </activity>
-        <activity android:name=".view.TextViewMoreText"
-                   android:label="Views/Text/MoreText">
+        <activity
+            android:name=".view.TextViewMoreText"
+            android:label="Views/Text/MoreText">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
-        <activity android:name=".view.TextViewMoreTextHorizontal"
-                   android:label="Views/Text/MoreTextHorizontal">
+        <activity
+            android:name=".view.TextViewMoreTextHorizontal"
+            android:label="Views/Text/MoreTextHorizontal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.fengyun.app.CustomViewActivity"
-                   android:label="Fenyun/Views/CustomView">
+        <activity
+            android:name="com.fengyun.app.CustomViewActivity"
+            android:label="Fenyun/Views/CustomView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".window.WindowManagerFlagActivity"
+            android:label="Windows/Manager LayoutParam">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>

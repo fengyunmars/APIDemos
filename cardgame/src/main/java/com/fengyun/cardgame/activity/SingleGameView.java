@@ -15,6 +15,7 @@ import com.fengyun.cardgame.bean.Player;
 import com.fengyun.cardgame.bean.RealPlayer;
 import com.fengyun.cardgame.bean.ScreenType;
 import com.fengyun.cardgame.util.ImageUtil;
+import com.fengyun.util.AppUtils;
 
 import android.content.Context;
 import android.content.res.AssetManager;
@@ -646,11 +647,11 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 	
 	public void initLargeBitMap(){
 
-
+		getContext().getResources().getDisplayMetrics();
 		try {
 			background=ImageUtil.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/state/lord_play_bg.png")),
-					(float)(3/4));
+					AppUtils.getDisplayDimensions(getContext())[0], AppUtils.getDisplayDimensions(getContext())[1]);
 			
 			initHeadBitmap=BitmapFactory.decodeStream(
 					assetManager.open("images/logo_unknown.png"));

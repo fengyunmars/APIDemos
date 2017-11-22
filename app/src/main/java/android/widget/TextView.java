@@ -82,8 +82,8 @@
 //import android.text.TextDirectionHeuristic;
 //import android.text.TextDirectionHeuristics;
 //import android.text.TextPaint;
-//import android.text.TextUtils;
-//import android.text.TextUtils.TruncateAt;
+//import android.text.TextFileUtils;
+//import android.text.TextFileUtils.TruncateAt;
 //import android.text.TextWatcher;
 //import android.text.method.AllCapsTransformationMethod;
 //import android.text.method.ArrowKeyMovementMethod;
@@ -4550,7 +4550,7 @@
 //        } else if (type == BufferType.SPANNABLE || mMovement != null) {
 //            text = mSpannableFactory.newSpannable(text);
 //        } else if (!(text instanceof CharWrapper)) {
-//            text = TextUtils.stringOrSpannedString(text);
+//            text = TextFileUtils.stringOrSpannedString(text);
 //        }
 //
 //        if (mAutoLinkMask != 0) {
@@ -4717,7 +4717,7 @@
 //     */
 //    @android.view.RemotableViewMethod
 //    public final void setHint(CharSequence hint) {
-//        mHint = TextUtils.stringOrSpannedString(hint);
+//        mHint = TextFileUtils.stringOrSpannedString(hint);
 //
 //        if (mLayout != null) {
 //            checkForRelayout();
@@ -5908,10 +5908,10 @@
 //
 //    @Override
 //    protected void onDraw(Canvas canvas) {
-//        if (TextUtils.DEBUG_LOG) {
+//        if (TextFileUtils.DEBUG_LOG) {
 //            Trace.traceBegin(Trace.TRACE_TAG_VIEW, "Text-onDraw");
-//            TextUtils.printDebugLog(LOG_TAG, "[onDraw] " + "start");
-//            TextUtils.printDebugLog(LOG_TAG, "[onDraw] " + this) ;
+//            TextFileUtils.printDebugLog(LOG_TAG, "[onDraw] " + "start");
+//            TextFileUtils.printDebugLog(LOG_TAG, "[onDraw] " + this) ;
 //        }
 //        long beforeTime = System.currentTimeMillis();
 //        restartMarqueeIfNeeded();
@@ -6080,11 +6080,11 @@
 //
 //        canvas.restore();
 //        long diffTime = System.currentTimeMillis() - beforeTime ;
-//        if (TextUtils.DEBUG_LOG) {
+//        if (TextFileUtils.DEBUG_LOG) {
 //            if (diffTime > 0) {
-//                TextUtils.printDebugLog(LOG_TAG, "[onDraw] " + "diff " + String.valueOf(diffTime)) ;
+//                TextFileUtils.printDebugLog(LOG_TAG, "[onDraw] " + "diff " + String.valueOf(diffTime)) ;
 //            }
-//            TextUtils.printDebugLog(LOG_TAG, "[onDraw] " + "end");
+//            TextFileUtils.printDebugLog(LOG_TAG, "[onDraw] " + "end");
 //            Trace.traceEnd(Trace.TRACE_TAG_VIEW);
 //        }
 //    }
@@ -6736,10 +6736,10 @@
 //                }
 //
 //                removeParcelableSpans(content, start, end);
-//                if (TextUtils.equals(content.subSequence(start, end), text.text)) {
+//                if (TextFileUtils.equals(content.subSequence(start, end), text.text)) {
 //                    if (text.text instanceof Spanned) {
 //                        // OK to copy spans only.
-//                        TextUtils.copySpansFrom((Spanned) text.text, start, end,
+//                        TextFileUtils.copySpansFrom((Spanned) text.text, start, end,
 //                                Object.class, content, start);
 //                    }
 //                } else {
@@ -7232,10 +7232,10 @@
 //        BoringLayout.Metrics boring = UNKNOWN_BORING;
 //        BoringLayout.Metrics hintBoring = UNKNOWN_BORING;
 //
-//        if (TextUtils.DEBUG_LOG) {
+//        if (TextFileUtils.DEBUG_LOG) {
 //            Trace.traceBegin(Trace.TRACE_TAG_VIEW, "Text-onMeasure");
-//            TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "start " + widthMode + "," + heightMode + "," + widthSize + "," + heightSize) ;
-//            TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + this) ;
+//            TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "start " + widthMode + "," + heightMode + "," + widthSize + "," + heightSize) ;
+//            TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + this) ;
 //        }
 //        long beforeTime = System.currentTimeMillis();
 //        if (mTextDir == null) {
@@ -7244,15 +7244,15 @@
 //
 //        int des = -1;
 //        boolean fromexisting = false;
-//        if (TextUtils.DEBUG_LOG) {
-//            TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "width start") ;
-//            TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + mTransformed.toString());
+//        if (TextFileUtils.DEBUG_LOG) {
+//            TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "width start") ;
+//            TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + mTransformed.toString());
 //        }
 //        if (widthMode == MeasureSpec.EXACTLY) {
 //            // Parent has told us how big to be. So be it.
 //            width = widthSize;
-//            if (TextUtils.DEBUG_LOG) {
-//                TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 1 - " + width) ;
+//            if (TextFileUtils.DEBUG_LOG) {
+//                TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 1 - " + width) ;
 //            }
 //        } else {
 //            if (mLayout != null && mEllipsize == null) {
@@ -7260,12 +7260,12 @@
 //            }
 //
 //            if (des < 0) {
-//                if (TextUtils.DEBUG_LOG) {
-//                    TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "isBoring start") ;
+//                if (TextFileUtils.DEBUG_LOG) {
+//                    TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "isBoring start") ;
 //                }
 //                boring = BoringLayout.isBoring(mTransformed, mTextPaint, mTextDir, mBoring);
-//                if (TextUtils.DEBUG_LOG) {
-//                    TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "isBoring end") ;
+//                if (TextFileUtils.DEBUG_LOG) {
+//                    TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "isBoring end") ;
 //                }
 //                if (boring != null) {
 //                    mBoring = boring;
@@ -7279,13 +7279,13 @@
 //                    des = (int) Math.ceil(Layout.getDesiredWidth(mTransformed, mTextPaint));
 //                }
 //                width = des;
-//                if (TextUtils.DEBUG_LOG) {
-//                    TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 2 - " + width) ;
+//                if (TextFileUtils.DEBUG_LOG) {
+//                    TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 2 - " + width) ;
 //                }
 //            } else {
 //                width = boring.width;
-//                if (TextUtils.DEBUG_LOG) {
-//                    TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 3 - " + width) ;
+//                if (TextFileUtils.DEBUG_LOG) {
+//                    TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 3 - " + width) ;
 //                }
 //            }
 //
@@ -7293,8 +7293,8 @@
 //            if (dr != null) {
 //                width = Math.max(width, dr.mDrawableWidthTop);
 //                width = Math.max(width, dr.mDrawableWidthBottom);
-//                if (TextUtils.DEBUG_LOG) {
-//                    TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 4 - " + width) ;
+//                if (TextFileUtils.DEBUG_LOG) {
+//                    TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 4 - " + width) ;
 //                }
 //            }
 //
@@ -7307,12 +7307,12 @@
 //                }
 //
 //                if (hintDes < 0) {
-//                    if (TextUtils.DEBUG_LOG) {
-//                        TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "isBoringHint start") ;
+//                    if (TextFileUtils.DEBUG_LOG) {
+//                        TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "isBoringHint start") ;
 //                    }
 //                    hintBoring = BoringLayout.isBoring(mHint, mTextPaint, mTextDir, mHintBoring);
-//                    if (TextUtils.DEBUG_LOG) {
-//                        TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "isBoringHint end") ;
+//                    if (TextFileUtils.DEBUG_LOG) {
+//                        TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "isBoringHint end") ;
 //                    }
 //                    if (hintBoring != null) {
 //                        mHintBoring = hintBoring;
@@ -7334,51 +7334,51 @@
 //            }
 //
 //            width += getCompoundPaddingLeft() + getCompoundPaddingRight();
-//            if (TextUtils.DEBUG_LOG) {
-//                TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 5 - " + width) ;
+//            if (TextFileUtils.DEBUG_LOG) {
+//                TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 5 - " + width) ;
 //            }
 //
 //            if (mMaxWidthMode == EMS) {
 //                width = Math.min(width, mMaxWidth * getLineHeight());
-//                if (TextUtils.DEBUG_LOG) {
-//                    TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 6 - " + width) ;
+//                if (TextFileUtils.DEBUG_LOG) {
+//                    TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 6 - " + width) ;
 //                }
 //            } else {
 //                width = Math.min(width, mMaxWidth);
-//                if (TextUtils.DEBUG_LOG) {
-//                    TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 7 - " + width) ;
+//                if (TextFileUtils.DEBUG_LOG) {
+//                    TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 7 - " + width) ;
 //                }
 //            }
 //
 //            if (mMinWidthMode == EMS) {
 //                width = Math.max(width, mMinWidth * getLineHeight());
-//                if (TextUtils.DEBUG_LOG) {
-//                    TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 8 - " + width) ;
+//                if (TextFileUtils.DEBUG_LOG) {
+//                    TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 8 - " + width) ;
 //                }
 //            } else {
 //                width = Math.max(width, mMinWidth);
-//                if (TextUtils.DEBUG_LOG) {
-//                    TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 9 - " + width) ;
+//                if (TextFileUtils.DEBUG_LOG) {
+//                    TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 9 - " + width) ;
 //                }
 //            }
 //
 //            // Check against our minimum width
 //            width = Math.max(width, getSuggestedMinimumWidth());
-//            if (TextUtils.DEBUG_LOG) {
-//                TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 10 - " + width + "," + getSuggestedMinimumWidth()) ;
+//            if (TextFileUtils.DEBUG_LOG) {
+//                TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 10 - " + width + "," + getSuggestedMinimumWidth()) ;
 //            }
 //
 //            if (widthMode == MeasureSpec.AT_MOST) {
 //                width = Math.min(widthSize, width);
-//                if (TextUtils.DEBUG_LOG) {
-//                    TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 11 - " + width) ;
+//                if (TextFileUtils.DEBUG_LOG) {
+//                    TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 11 - " + width) ;
 //                }
 //            }
 //        }
 //
 //        int want = width - getCompoundPaddingLeft() - getCompoundPaddingRight();
-//        if (TextUtils.DEBUG_LOG) {
-//            TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 12 - " + want) ;
+//        if (TextFileUtils.DEBUG_LOG) {
+//            TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 12 - " + want) ;
 //        }
 //        int unpaddedWidth = want;
 //
@@ -7388,13 +7388,13 @@
 //        int hintWidth = (mHintLayout == null) ? hintWant : mHintLayout.getWidth();
 //
 //        if (mLayout == null) {
-//            if (TextUtils.DEBUG_LOG) {
-//                TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "makeNewLayout start 1") ;
+//            if (TextFileUtils.DEBUG_LOG) {
+//                TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "makeNewLayout start 1") ;
 //            }
 //            makeNewLayout(want, hintWant, boring, hintBoring,
 //                          width - getCompoundPaddingLeft() - getCompoundPaddingRight(), false);
-//            if (TextUtils.DEBUG_LOG) {
-//                TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "makeNewLayout end 1") ;
+//            if (TextFileUtils.DEBUG_LOG) {
+//                TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "makeNewLayout end 1") ;
 //            }
 //        } else {
 //            final boolean layoutChanged = (mLayout.getWidth() != want) ||
@@ -7413,22 +7413,22 @@
 //                if (!maximumChanged && widthChanged) {
 //                    mLayout.increaseWidthTo(want);
 //                } else {
-//                    if (TextUtils.DEBUG_LOG) {
-//                        TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "makeNewLayout start 2") ;
+//                    if (TextFileUtils.DEBUG_LOG) {
+//                        TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "makeNewLayout start 2") ;
 //                    }
 //                    makeNewLayout(want, hintWant, boring, hintBoring,
 //                            width - getCompoundPaddingLeft() - getCompoundPaddingRight(), false);
-//                    if (TextUtils.DEBUG_LOG) {
-//                        TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "makeNewLayout end 2") ;
+//                    if (TextFileUtils.DEBUG_LOG) {
+//                        TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "makeNewLayout end 2") ;
 //                    }
 //                }
 //            } else {
 //                // Nothing has changed
 //            }
 //        }
-//        if (TextUtils.DEBUG_LOG) {
-//            TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "width end" + "," + width) ;
-//            TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "height start") ;
+//        if (TextFileUtils.DEBUG_LOG) {
+//            TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "width end" + "," + width) ;
+//            TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "height start") ;
 //        }
 //        if (heightMode == MeasureSpec.EXACTLY) {
 //            // Parent has told us how big to be. So be it.
@@ -7436,21 +7436,21 @@
 //            mDesiredHeightAtMeasure = -1;
 //        } else {
 //            int desired = getDesiredHeight();
-//            if (TextUtils.DEBUG_LOG) {
-//                TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 13 - " + desired) ;
+//            if (TextFileUtils.DEBUG_LOG) {
+//                TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "check 13 - " + desired) ;
 //            }
 //            height = desired;
 //            mDesiredHeightAtMeasure = desired;
 //
 //            if (heightMode == MeasureSpec.AT_MOST) {
-//                if (TextUtils.DEBUG_LOG) {
-//                    TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + desired + "," + heightSize) ;
+//                if (TextFileUtils.DEBUG_LOG) {
+//                    TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + desired + "," + heightSize) ;
 //                }
 //                height = Math.min(desired, heightSize);
 //            }
 //        }
-//        if (TextUtils.DEBUG_LOG) {
-//            TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "height end") ;
+//        if (TextFileUtils.DEBUG_LOG) {
+//            TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "height end") ;
 //        }
 //        int unpaddedHeight = height - getCompoundPaddingTop() - getCompoundPaddingBottom();
 //        if (mMaxMode == LINES && mLayout.getLineCount() > mMaximum) {
@@ -7477,11 +7477,11 @@
 //        }
 //        setMeasuredDimension(width, height);
 //        long diffTime = System.currentTimeMillis() - beforeTime ;
-//        if (TextUtils.DEBUG_LOG) {
+//        if (TextFileUtils.DEBUG_LOG) {
 //            if (diffTime > 0) {
-//                TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "diff " + String.valueOf(diffTime)) ;
+//                TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "diff " + String.valueOf(diffTime)) ;
 //            }
-//            TextUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "end " + width + "," + height + "," + mLayout.getWidth() + "," + mLayout.getHeight() + "," + mLayout.getLineCount()) ;
+//            TextFileUtils.printDebugLog(LOG_TAG, "[onMeasure] " + "end " + width + "," + height + "," + mLayout.getWidth() + "," + mLayout.getHeight() + "," + mLayout.getLineCount()) ;
 //            Trace.traceEnd(Trace.TRACE_TAG_VIEW);
 //        }
 //    }
@@ -7525,8 +7525,8 @@
 //           preText = mText.toString() ;
 //           textSize = (int) textSizeOrigin ;
 //        }
-//        if (TextUtils.DEBUG_LOG) {
-//            TextUtils.printDebugLog(LOG_TAG, "[doSmartFit] " + textSize + "," + textSizeOrigin) ;
+//        if (TextFileUtils.DEBUG_LOG) {
+//            TextFileUtils.printDebugLog(LOG_TAG, "[doSmartFit] " + textSize + "," + textSizeOrigin) ;
 //        }
 //     }
 //
@@ -7555,8 +7555,8 @@
 //        int linecount = layout.getLineCount();
 //        int pad = getCompoundPaddingTop() + getCompoundPaddingBottom();
 //        int desired = layout.getLineTop(linecount);
-//        if (TextUtils.DEBUG_LOG) {
-//            TextUtils.printDebugLog(LOG_TAG, "[getDesiredHeight] " + "check 1 - " + desired + "," + getMaxLines()) ;
+//        if (TextFileUtils.DEBUG_LOG) {
+//            TextFileUtils.printDebugLog(LOG_TAG, "[getDesiredHeight] " + "check 1 - " + desired + "," + getMaxLines()) ;
 //        }
 //
 //        final Drawables dr = mDrawables;
@@ -7566,8 +7566,8 @@
 //        }
 //
 //        desired += pad;
-//        if (TextUtils.DEBUG_LOG) {
-//            TextUtils.printDebugLog(LOG_TAG, "[getDesiredHeight] " + "check 2 - " + desired) ;
+//        if (TextFileUtils.DEBUG_LOG) {
+//            TextFileUtils.printDebugLog(LOG_TAG, "[getDesiredHeight] " + "check 2 - " + desired) ;
 //        }
 //
 //        if (mMaxMode == LINES) {
@@ -7588,12 +7588,12 @@
 //                    linecount = mMaximum;
 //                }
 //            }
-//            if (TextUtils.DEBUG_LOG) {
-//                TextUtils.printDebugLog(LOG_TAG, "[getDesiredHeight] " + "check 3 - " + desired) ;
+//            if (TextFileUtils.DEBUG_LOG) {
+//                TextFileUtils.printDebugLog(LOG_TAG, "[getDesiredHeight] " + "check 3 - " + desired) ;
 //            }
 //        } else {
-//            if (TextUtils.DEBUG_LOG) {
-//                TextUtils.printDebugLog(LOG_TAG, "[getDesiredHeight] " + "check 4 - " + desired + "," + mMaximum) ;
+//            if (TextFileUtils.DEBUG_LOG) {
+//                TextFileUtils.printDebugLog(LOG_TAG, "[getDesiredHeight] " + "check 4 - " + desired + "," + mMaximum) ;
 //            }
 //            desired = Math.min(desired, mMaximum);
 //        }
@@ -7601,20 +7601,20 @@
 //        if (mMinMode == LINES) {
 //            if (linecount < mMinimum) {
 //                desired += getLineHeight() * (mMinimum - linecount);
-//                if (TextUtils.DEBUG_LOG) {
-//                    TextUtils.printDebugLog(LOG_TAG, "[getDesiredHeight] " + "check 5 - " + desired) ;
+//                if (TextFileUtils.DEBUG_LOG) {
+//                    TextFileUtils.printDebugLog(LOG_TAG, "[getDesiredHeight] " + "check 5 - " + desired) ;
 //                }
 //            }
 //        } else {
-//            if (TextUtils.DEBUG_LOG) {
-//                TextUtils.printDebugLog(LOG_TAG, "[getDesiredHeight] " + "check 6 - " + desired + "," + mMinimum) ;
+//            if (TextFileUtils.DEBUG_LOG) {
+//                TextFileUtils.printDebugLog(LOG_TAG, "[getDesiredHeight] " + "check 6 - " + desired + "," + mMinimum) ;
 //            }
 //            desired = Math.max(desired, mMinimum);
 //        }
 //
 //        // Check against our minimum height
-//        if (TextUtils.DEBUG_LOG) {
-//            TextUtils.printDebugLog(LOG_TAG, "[getDesiredHeight] " + "check 7 - " + desired + "," + getSuggestedMinimumHeight()) ;
+//        if (TextFileUtils.DEBUG_LOG) {
+//            TextFileUtils.printDebugLog(LOG_TAG, "[getDesiredHeight] " + "check 7 - " + desired + "," + getSuggestedMinimumHeight()) ;
 //        }
 //        desired = Math.max(desired, getSuggestedMinimumHeight());
 //
@@ -7744,7 +7744,7 @@
 //    }
 //
 //    private boolean isShowingHint() {
-//        return TextUtils.isEmpty(mText) && !TextUtils.isEmpty(mHint);
+//        return TextFileUtils.isEmpty(mText) && !TextFileUtils.isEmpty(mHint);
 //    }
 //
 //    /**
@@ -9109,7 +9109,7 @@
 //    public void findViewsWithText(ArrayList<View> outViews, CharSequence searched, int flags) {
 //        super.findViewsWithText(outViews, searched, flags);
 //        if (!outViews.contains(this) && (flags & FIND_VIEWS_WITH_TEXT) != 0
-//                && !TextUtils.isEmpty(searched) && !TextUtils.isEmpty(mText)) {
+//                && !TextFileUtils.isEmpty(searched) && !TextFileUtils.isEmpty(mText)) {
 //            String searchedLowerCase = searched.toString().toLowerCase();
 //            String textLowerCase = mText.toString().toLowerCase();
 //            if (textLowerCase.contains(searchedLowerCase)) {
@@ -9347,7 +9347,7 @@
 //        final boolean isPassword = hasPasswordTransformationMethod();
 //        if (!isPassword || shouldSpeakPasswordsForAccessibility()) {
 //            final CharSequence text = getTextForAccessibility();
-//            if (!TextUtils.isEmpty(text)) {
+//            if (!TextFileUtils.isEmpty(text)) {
 //                event.getText().add(text);
 //            }
 //        }
@@ -9518,7 +9518,7 @@
 //            }
 //        }
 //
-//        if (!TextUtils.isEmpty(mText)) {
+//        if (!TextFileUtils.isEmpty(mText)) {
 //            info.addAction(AccessibilityNodeInfo.ACTION_NEXT_AT_MOVEMENT_GRANULARITY);
 //            info.addAction(AccessibilityNodeInfo.ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY);
 //            info.setMovementGranularities(AccessibilityNodeInfo.MOVEMENT_GRANULARITY_CHARACTER
@@ -9693,7 +9693,7 @@
 //     */
 //    public CharSequence getTextForAccessibility() {
 //        CharSequence text = getText();
-//        if (TextUtils.isEmpty(text)) {
+//        if (TextFileUtils.isEmpty(text)) {
 //            text = getHint();
 //        }
 //        return text;
@@ -10327,7 +10327,7 @@
 //        switch (granularity) {
 //            case AccessibilityNodeInfo.MOVEMENT_GRANULARITY_LINE: {
 //                Spannable text = (Spannable) getIterableTextForAccessibility();
-//                if (!TextUtils.isEmpty(text) && getLayout() != null) {
+//                if (!TextFileUtils.isEmpty(text) && getLayout() != null) {
 //                    AccessibilityIterators.LineTextSegmentIterator iterator =
 //                        AccessibilityIterators.LineTextSegmentIterator.getInstance();
 //                    iterator.initialize(text, getLayout());
@@ -10336,7 +10336,7 @@
 //            } break;
 //            case AccessibilityNodeInfo.MOVEMENT_GRANULARITY_PAGE: {
 //                Spannable text = (Spannable) getIterableTextForAccessibility();
-//                if (!TextUtils.isEmpty(text) && getLayout() != null) {
+//                if (!TextFileUtils.isEmpty(text) && getLayout() != null) {
 //                    AccessibilityIterators.PageTextSegmentIterator iterator =
 //                        AccessibilityIterators.PageTextSegmentIterator.getInstance();
 //                    iterator.initialize(this);
@@ -10433,13 +10433,13 @@
 //            out.writeInt(selStart);
 //            out.writeInt(selEnd);
 //            out.writeInt(frozenWithFocus ? 1 : 0);
-//            TextUtils.writeToParcel(text, out, flags);
+//            TextFileUtils.writeToParcel(text, out, flags);
 //
 //            if (error == null) {
 //                out.writeInt(0);
 //            } else {
 //                out.writeInt(1);
-//                TextUtils.writeToParcel(error, out, flags);
+//                TextFileUtils.writeToParcel(error, out, flags);
 //            }
 //
 //            if (editorState == null) {
@@ -10478,10 +10478,10 @@
 //            selStart = in.readInt();
 //            selEnd = in.readInt();
 //            frozenWithFocus = (in.readInt() != 0);
-//            text = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
+//            text = TextFileUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
 //
 //            if (in.readInt() != 0) {
-//                error = TextUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
+//                error = TextFileUtils.CHAR_SEQUENCE_CREATOR.createFromParcel(in);
 //            }
 //
 //            if (in.readInt() != 0) {

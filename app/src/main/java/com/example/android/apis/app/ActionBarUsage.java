@@ -29,8 +29,6 @@ import android.widget.Toast;
 import com.example.android.apis.R;
 import com.fengyun.util.MenuUtils;
 
-import java.lang.reflect.Method;
-
 /**
  * This demonstrates idiomatic usage of the Action Bar. The default Honeycomb theme
  * includes the action bar by default and a menu resource is used to populate the
