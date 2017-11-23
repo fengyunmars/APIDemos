@@ -14,4 +14,14 @@ allprojects {
         maven { url "https://jitpack.io" }
 
     }
+
+    //skip Test tasks
+    gradle.taskGraph.whenReady {
+        tasks.each { task ->
+            if (task.name.contains("Test") || task.name.contains("mockableAndroidJar"))
+            {
+                task.enabled = false
+            }
+        }
+    }
 }
