@@ -4003,6 +4003,14 @@
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.fengyun.app.CoordinateSystemActivity"
+            android:label="Fenyun/Views/Coordinate System">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".window.WindowManagerFlagActivity"
             android:label="Windows/Manager LayoutParam">
             <intent-filter>

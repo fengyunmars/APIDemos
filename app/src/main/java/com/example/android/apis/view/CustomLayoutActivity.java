@@ -22,6 +22,7 @@ import com.example.android.apis.R;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.preference.Preference;
 
 public class CustomLayoutActivity extends Activity {
 
@@ -29,5 +30,6 @@ public class CustomLayoutActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.custom_layout);
+
     }
 }

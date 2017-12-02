@@ -5,7 +5,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.Choreographer;
 
-import com.fengyun.model.FGender;
+import com.fengyun.model.enumeration.FGender;
 import com.fengyun.model.Circle;
 import com.fengyun.model.Student;
 
@@ -241,5 +241,28 @@ public class JunitTest {
 
     }
 
+    @Test
+    public void testStringChangeable(){
+        String s = "hello";
+        s = s + ", world";
+        System.out.println(s);
+    }
+
+    @Test
+    public void testStringChangeable1(){
+        String s = "hello";
+//        s + ", world";
+        s.replace('h','e');
+        System.out.println(s);
+    }
+
+    @Test
+    public void testStringChangeable2(){
+        String s = "hello";
+//        s + ", world";
+//        s.replace('h','e');
+//        s.set;
+        System.out.println(s);
+    }
 }
 

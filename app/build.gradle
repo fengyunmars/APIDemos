@@ -19,14 +19,12 @@ android {
 
 dependencies {
     // 日志打印工具类
-
-
-    api 'com.android.support:support-v4:24.0.0'
-    api 'com.android.support:appcompat-v7:24.0.0'
-    api 'com.android.support:palette-v7:24.0.0'
-    api 'com.android.support.constraint:constraint-layout:1.0.2'
-    api 'com.android.support:design:24.0.0'
-    api 'com.github.orhanobut:logger:1.12'
-    api 'junit:junit:4.12'
-    compile project(path: ':yunsdk')
+    compile 'com.android.support:support-v4:24.0.0'
+    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile 'com.android.support:palette-v7:24.0.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:design:24.0.0'
+    compile 'com.github.orhanobut:logger:1.12'
+    compile 'junit:junit:4.12'
+    compile project(':yunsdk')
 }

@@ -1,4 +1,4 @@
-package com.fengyun.model;
+package com.fengyun.model.enumeration;
 
 /**
  * Created by prize on 2017/9/29.

@@ -38,19 +38,30 @@ import java.util.List;
  * 0x40: Sunday
  */
 public final class DaysOfWeek {
+
     // Number if days in the week.
     public static final int DAYS_IN_A_WEEK = 7;
 
     // Value when all days are set
-    public static final int ALL_DAYS_SET = 0x7f;
+    public static final int ALL_DAYS_SET = 0x7f;  // 0x01111111
 
     // Value when no days are set
-    public static final int NO_DAYS_SET = 0;
+    public static final int NO_DAYS_SET = 0;  // 0x00000000
+
+
+    // Bitmask of all repeating days
+    private int mBitSet;
+
+    public DaysOfWeek(int bitSet) {
+        mBitSet = bitSet;
+    }
+
 
     /**
-     * Need to have monday start at index 0 to be backwards compatible. This converts
+     * Need to have monday start at index 0 to be backwards 向后 compatible. This converts
      * Calendar.DAY_OF_WEEK constants to our internal bit structure.
      */
+    // TODO: 2017/11/29  
     private static int convertDayToBitIndex(int day) {
         return (day + 5) % DAYS_IN_A_WEEK;
     }
@@ -59,15 +70,9 @@ public final class DaysOfWeek {
      * Need to have monday start at index 0 to be backwards compatible. This converts
      * our bit structure to Calendar.DAY_OF_WEEK constant value.
      */
+    // TODO: 2017/11/29  
     private static int convertBitIndexToDay(int bitIndex) {
         return (bitIndex + 1) % DAYS_IN_A_WEEK + 1;
-    }
-
-    // Bitmask of all repeating days
-    private int mBitSet;
-
-    public DaysOfWeek(int bitSet) {
-        mBitSet = bitSet;
     }
 
     public String toString(Context context, boolean showNever) {

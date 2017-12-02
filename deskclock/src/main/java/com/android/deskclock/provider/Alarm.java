@@ -76,6 +76,18 @@ public final class Alarm implements Parcelable, ClockContract.AlarmsColumns {
 
     private static final int COLUMN_COUNT = DELETE_AFTER_USE_INDEX + 1;
 
+    // Public fields
+    // TODO: Refactor instance names
+    public long id;
+    public boolean enabled;
+    public int hour;
+    public int minutes;
+    public DaysOfWeek daysOfWeek;
+    public boolean vibrate;
+    public String label;
+    public Uri alert;
+    public boolean deleteAfterUse;
+
     public static ContentValues createContentValues(Alarm alarm) {
         ContentValues values = new ContentValues(COLUMN_COUNT);
         if (alarm.id != INVALID_ID) {
@@ -225,17 +237,7 @@ public final class Alarm implements Parcelable, ClockContract.AlarmsColumns {
         }
     };
 
-    // Public fields
-    // TODO: Refactor instance names
-    public long id;
-    public boolean enabled;
-    public int hour;
-    public int minutes;
-    public DaysOfWeek daysOfWeek;
-    public boolean vibrate;
-    public String label;
-    public Uri alert;
-    public boolean deleteAfterUse;
+
 
     // Creates a default alarm at the current time.
     public Alarm() {
