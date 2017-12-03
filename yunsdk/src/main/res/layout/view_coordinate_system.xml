@@ -20,7 +20,7 @@
             app:axis_step="10"
             android:layout_width="20dp"
             android:layout_height="match_parent"/>
-        <com.fengyun.vew.CoordinateGraph
+        <com.fengyun.view.CoordinateGraph
             android:id="@+id/coordinateGraph"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -28,7 +28,7 @@
             <!--android:background="@android:color/holo_red_light"-->
     </LinearLayout>
 
-    <com.fengyun.vew.CoordinateAxis
+    <com.fengyun.view.CoordinateAxis
         android:id="@+id/coordinateAxisX"
         app:arrowH="10dp"
         app:arrowW="5dp"

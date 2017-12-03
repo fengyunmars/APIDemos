@@ -24,4 +24,6 @@ public class AppUtils {
         dimen[1] = dm.heightPixels;
         return dimen;
     }
+
+
 }

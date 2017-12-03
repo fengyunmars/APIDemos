@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+       xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+          android:id="@+id/root"
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/v_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/question_hint"
+            android:gravity="center_horizontal"
+            android:textSize="26sp"/>
+        <RadioGroup
+            android:id="@+id/v_single_choice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="19dp">
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/v_multi_choice"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/v_welfare_image"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/v_welfare_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/welfare_hint"
+            android:gravity="center_horizontal"
+            android:textSize="25sp"/>
+    </LinearLayout>
+
+</merge>

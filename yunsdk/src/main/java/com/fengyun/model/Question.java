@@ -1,9 +1,12 @@
 package com.fengyun.model;
 
 import android.graphics.Bitmap;
-import android.provider.BaseColumns;
+import android.graphics.drawable.Drawable;
 
 import com.fengyun.model.enumeration.QuestionType;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by prize on 2017/12/2.
@@ -11,13 +14,17 @@ import com.fengyun.model.enumeration.QuestionType;
 
 public class Question extends BaseModelAndroid{
 
-
     private String description;
     private QuestionType type;
-    private int single_answer;
-    private int[] multi_answer;
-    private Bitmap welfare;
-    
+    private int singleAnswer;
+    private int[] multiAnswer;
+    private Drawable welfareDrawable;
+    private String welfareText;
+
+
+
+    private List<Option> singleOptions = new ArrayList<>();
+    private List<Option> multiOptions = new ArrayList<>();
     public String getDescription() {
         return description;
     }
@@ -34,27 +41,56 @@ public class Question extends BaseModelAndroid{
         this.type = type;
     }
 
-    public int getSingle_answer() {
-        return single_answer;
+    public int getSingleAnswer() {
+        return singleAnswer;
     }
 
-    public void setSingle_answer(int single_answer) {
-        this.single_answer = single_answer;
+    public void setSingleAnswer(int singleAnswer) {
+        this.singleAnswer = singleAnswer;
     }
 
-    public int[] getMulti_answer() {
-        return multi_answer;
+    public int[] getMultiAnswer() {
+        return multiAnswer;
     }
 
-    public void setMulti_answer(int[] multi_answer) {
-        this.multi_answer = multi_answer;
+    public void setMultiAnswer(int[] multiAnswer) {
+        this.multiAnswer = multiAnswer;
     }
 
-    public Bitmap getWelfare() {
-        return welfare;
+    public Drawable getWelfareDrawable() {
+        return welfareDrawable;
     }
 
-    public void setWelfare(Bitmap welfare) {
-        this.welfare = welfare;
+    public void setWelfareDrawable(Drawable welfareDrawable) {
+        this.welfareDrawable = welfareDrawable;
+    }
+
+    public String getWelfareText() {
+        return welfareText;
+    }
+
+    public void setWelfareText(String welfareText) {
+        this.welfareText = welfareText;
+    }
+    public void addOption(String description, int id){
+        Option option = new Option(description, id);
+        option.setQuestion(this);
+        singleOptions.add(option);
+    }
+
+    public List<Option> getSingleOptions() {
+        return singleOptions;
+    }
+
+    public void setSingleOptions(List<Option> singleOptions) {
+        this.singleOptions = singleOptions;
+    }
+
+    public List<Option> getMultiOptions() {
+        return multiOptions;
+    }
+
+    public void setMultiOptions(List<Option> multiOptions) {
+        this.multiOptions = multiOptions;
     }
 }

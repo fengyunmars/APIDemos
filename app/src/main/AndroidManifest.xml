@@ -4011,6 +4011,14 @@
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.fengyun.app.QuestionShowActivity"
+            android:label="Fenyun/Views/Question Show">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.SAMPLE_CODE"/>
+            </intent-filter>
+        </activity>
         <activity android:name=".window.WindowManagerFlagActivity"
             android:label="Windows/Manager LayoutParam">
             <intent-filter>

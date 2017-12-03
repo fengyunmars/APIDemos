@@ -11,4 +11,6 @@
     <string name="pre_use_local" translatable="false">pre_use_local</string>
     <string name="pre_status_bar" translatable="false">pre_status_bar</string>
     <string name="nevigation_item" translatable="false">nevigation_item</string>
+    <string name="question_hint">what food do you like most ?</string>
+    <string name="welfare_hint">you are awesome !</string>
 </resources>

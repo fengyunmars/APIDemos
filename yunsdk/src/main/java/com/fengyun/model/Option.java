@@ -1,5 +1,7 @@
 package com.fengyun.model;
 
+import android.graphics.Path;
+
 /**
  * Created by prize on 2017/12/2.
  */
@@ -8,6 +10,11 @@ public class Option extends BaseModelAndroid {
     private Question question;
     private String description;
     private int index;
+
+    public Option(String description, int index) {
+        this.description = description;
+        this.index = index;
+    }
 
     public Question getQuestion() {
         return question;

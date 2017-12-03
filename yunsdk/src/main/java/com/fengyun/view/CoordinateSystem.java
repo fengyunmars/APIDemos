@@ -39,7 +39,7 @@ public class CoordinateSystem extends LinearLayout implements IViewCustom {
 
     public CoordinateSystem(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        LayoutInflater.from(getContext()).inflate(R.layout.coordinate_system, this, true);
+        LayoutInflater.from(getContext()).inflate(R.layout.view_coordinate_system, this, true);
         mCoordinateAxisX = (CoordinateAxis) findViewById(R.id.coordinateAxisX);
         mCoordinateAxisY = (CoordinateAxis) findViewById(R.id.coordinateAxisY);
         mCoordinateGraph = (CoordinateGraph) findViewById(R.id.coordinateGraph);

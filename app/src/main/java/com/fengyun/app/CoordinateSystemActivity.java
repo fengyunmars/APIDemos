@@ -8,9 +8,7 @@ import android.util.Log;
 import android.widget.FGridLayout;
 
 import com.example.android.apis.R;
-import com.fengyun.view.BaseViewCustom;
 import com.fengyun.view.CoordinateGraph;
-import com.fengyun.view.CoordinateSystem;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -25,7 +23,7 @@ public class CoordinateSystemActivity extends Activity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(new CoordinateSystem(this));
+        drawCoordinateSystem();
     }
 
     private void drawBaseViewCustom(){
@@ -33,7 +31,7 @@ public class CoordinateSystemActivity extends Activity{
     }
 
     private void drawCoordinateSystem(){
-        setContentView(R.layout.customview);
+        setContentView(R.layout.coordinate_system);
         coordinateGraph = (CoordinateGraph)findViewById(R.id.coordinateGraph);
         FGridLayout grid = new FGridLayout();
         FGridLayout.FAxis axis = grid.new FAxis();

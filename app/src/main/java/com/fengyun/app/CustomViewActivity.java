@@ -33,7 +33,7 @@ public class CustomViewActivity extends Activity{
     }
 
     private void drawCoordinateSystem(){
-        setContentView(R.layout.customview);
+        setContentView(R.layout.coordinate_system);
         coordinateGraph = (CoordinateGraph)findViewById(R.id.coordinateGraph);
         FGridLayout grid = new FGridLayout();
         FGridLayout.FAxis axis = grid.new FAxis();
