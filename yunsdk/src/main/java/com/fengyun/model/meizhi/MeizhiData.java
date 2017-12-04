@@ -25,15 +25,15 @@ import java.util.ArrayList;
 /**
  * Created by drakeet on 8/9/15.
  */
-public class MeiziData extends BaseData {
+public class MeizhiData extends BaseData {
 
-    public ArrayList<Meizi> results;
+    public ArrayList<Meizhi> results;
 
-    public ArrayList<Meizi> getResults() {
+    public ArrayList<Meizhi> getResults() {
         return results;
     }
 
-    public void setResults(ArrayList<Meizi> results) {
+    public void setResults(ArrayList<Meizhi> results) {
         this.results = results;
     }
 }

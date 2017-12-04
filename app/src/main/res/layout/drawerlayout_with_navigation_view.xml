@@ -43,5 +43,5 @@
         android:layout_height="match_parent"
         android:layout_gravity="end"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/nevmenu"/>
+        app:menu="@menu/navmenu"/>
 </android.support.v4.widget.DrawerLayout>

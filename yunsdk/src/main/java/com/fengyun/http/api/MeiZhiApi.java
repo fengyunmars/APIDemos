@@ -19,7 +19,7 @@
 
 package com.fengyun.http.api;
 import com.fengyun.model.meizhi.GankData;
-import com.fengyun.model.meizhi.MeiziData;
+import com.fengyun.model.meizhi.MeizhiData;
 import com.fengyun.model.meizhi.VedioData;
 
 import retrofit2.http.GET;
@@ -34,7 +34,7 @@ import rx.Observable;
 public interface MeiZhiApi {
 
     @GET("/api/data/福利/10/{page}")
-    Observable<MeiziData> getMeizhiData(@Path("page") int page);
+    Observable<MeizhiData> getMeizhiData(@Path("page") int page);
 
     @GET("/day/{year}/{month}/{day}")
     Observable<GankData> getGankData(@Path("year") int year, @Path("month") int month,

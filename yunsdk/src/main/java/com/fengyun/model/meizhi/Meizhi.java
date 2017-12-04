@@ -24,7 +24,7 @@ import java.util.Date;
 /**
  * Created by drakeet on 6/20/15.
  */
-public class Meizi {
+public class Meizhi {
     public String objectId;
     public String url;
     public String type;
