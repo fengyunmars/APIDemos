@@ -12,6 +12,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.NestedScrollView;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -51,6 +52,8 @@ import com.fengyun.widget.TranslateYTextView;
 import com.liuguangqiang.swipeback.SwipeBackActivity;
 import com.liuguangqiang.swipeback.SwipeBackLayout;
 
+
+import org.sufficientlysecure.htmltextview.HtmlTextView;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -301,10 +304,20 @@ public class ZhihuArticleActivity extends SwipeBackActivity implements IZhihuArt
         mBody=zhihuStory.getBody();
         scc=zhihuStory.getCss();
         if (isEmpty) {
+//        if (true) {
             wvZhihu.loadUrl(url);
         } else {
             String data = WebUtils.buildHtmlWithCss(mBody, scc, Config.isNight);
-            wvZhihu.loadDataWithBaseURL(WebUtils.BASE_URL, data, WebUtils.MIME_TYPE, WebUtils.ENCODING, WebUtils.FAIL_URL);
+//            wvZhihu.loadDataWithBaseURL(WebUtils.BASE_URL, data, WebUtils.MIME_TYPE, WebUtils.ENCODING, WebUtils.FAIL_URL);
+            wvZhihu.loadDataWithBaseURL(null, data, WebUtils.MIME_TYPE, WebUtils.ENCODING, WebUtils.FAIL_URL);
+//            wvZhihu.invalidate();
+            AlertDialog.Builder dialogBuilder  = new AlertDialog.Builder(this);
+//            HtmlTextView htmlTextView = new HtmlTextView(this);
+//            htmlTextView.setHtmlFromString(newsDetailBean.getBody(), new HtmlTextView.LocalImageGetter());
+//            dialogBuilder.setView(wvZhihu);
+            dialogBuilder.setTitle("CANT SEE NOTHING !");
+            AlertDialog alertDialog = dialogBuilder.create();
+            alertDialog.show();
         }
 
 

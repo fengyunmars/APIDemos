@@ -427,12 +427,5 @@ public class TopNewsArticleActivity extends AppCompatActivity implements ITopNew
     public void updateListItem(NewsDetailBean newsDetailBean) {
         mProgress.setVisibility(View.INVISIBLE);
         mHtNewsContent.setHtmlFromString(newsDetailBean.getBody(), new HtmlTextView.LocalImageGetter());
-        mHtNewsContent.invalidate();
-        AlertDialog.Builder dialogBuilder  = new AlertDialog.Builder(this);
-        HtmlTextView htmlTextView = new HtmlTextView(this);
-        htmlTextView.setHtmlFromString(newsDetailBean.getBody(), new HtmlTextView.LocalImageGetter());
-        dialogBuilder.setView(htmlTextView);
-        AlertDialog alertDialog = dialogBuilder.create();
-        alertDialog.show();
     }
 }
