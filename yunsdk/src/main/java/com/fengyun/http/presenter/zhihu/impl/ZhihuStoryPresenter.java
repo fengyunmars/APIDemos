@@ -1,7 +1,7 @@
 package com.fengyun.http.presenter.zhihu.impl;
 
 
-import com.fengyun.app.fragment.IZhihuStory;
+import com.fengyun.app.fragment.IZhihuArticle;
 import com.fengyun.http.ApiManager;
 import com.fengyun.http.presenter.impl.BasePresenter;
 import com.fengyun.http.presenter.zhihu.IZhihuStoryPresenter;
@@ -18,9 +18,9 @@ import rx.schedulers.Schedulers;
  */
 public class ZhihuStoryPresenter extends BasePresenter implements IZhihuStoryPresenter {
 
-    private IZhihuStory mIZhihuStory;
+    private IZhihuArticle mIZhihuStory;
 
-    public ZhihuStoryPresenter(IZhihuStory zhihuStory) {
+    public ZhihuStoryPresenter(IZhihuArticle zhihuStory) {
         if (zhihuStory == null)
             throw new IllegalArgumentException("zhihuStory must not be null");
         mIZhihuStory = zhihuStory;

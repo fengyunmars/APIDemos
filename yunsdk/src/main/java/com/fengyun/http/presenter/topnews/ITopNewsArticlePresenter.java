@@ -6,6 +6,6 @@ import com.fengyun.http.presenter.impl.BasePresenter;
 /**
  * Created by xinghongfei on 16/8/17.
  */
-public interface ITopNewsDescriblePresenter extends IPresenter{
+public interface ITopNewsArticlePresenter extends IPresenter{
     void getDescribleMessage(String id);
 }

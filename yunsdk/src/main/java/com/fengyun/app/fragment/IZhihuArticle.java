@@ -3,7 +3,7 @@ package com.fengyun.app.fragment;
 
 import com.fengyun.model.zhihu.ZhihuStory;
 
-public interface IZhihuStory {
+public interface IZhihuArticle {
 
     void showError(String error);
 

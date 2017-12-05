@@ -306,6 +306,13 @@ public class NewsListActivity extends AppCompatActivity implements ISetImage, IL
 
     @Override
     public Class getDetailAcitivity() {
+        if(currentFragment.getClass().getName().equals(TopNewsFragment.class.getName())){
+            return TopNewsArticleActivity.class;
+        }else if(currentFragment.getClass().getName().equals(ZhihuFragment.class.getName())){
+            return ZhihuArticleActivity.class;
+        }else if(currentFragment.getClass().getName().equals(MeizhiFragment.class.getName())){
+            return MeizhiArticleActivity.class;
+        }
         return null;
     }
 }

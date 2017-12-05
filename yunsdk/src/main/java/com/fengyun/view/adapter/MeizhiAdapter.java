@@ -55,7 +55,7 @@ public class MeizhiAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
 
         switch (viewType) {
             case TYPE_NOMAL:
-                return new MeiziViewHolder(LayoutInflater.from(mContext).inflate(R.layout.meizi_layout_item, parent, false));
+                return new MeiziViewHolder(LayoutInflater.from(mContext).inflate(R.layout.meizhi_layout_item, parent, false));
 
             case TYPE_LOADING_MORE:
                 return new LoadingMoreHolder(LayoutInflater.from(mContext).inflate(R.layout.infinite_loading, parent, false));
