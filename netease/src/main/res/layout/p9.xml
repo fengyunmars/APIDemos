@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/awi" android:layout_width="fill_parent" android:layout_height="45.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/ay0" android:padding="15.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/a20" android:layout_alignParentLeft="true" />
+    <ImageView android:id="@id/aww" android:padding="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/a2t" android:layout_toRightOf="@id/ay0" />
+    <LinearLayout android:orientation="vertical" android:id="@id/ay1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <TextView android:textSize="14.0dip" android:textColor="#ff444444" android:layout_gravity="center_horizontal" android:id="@id/ay2" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textSize="11.0dip" android:textColor="#ff999999" android:layout_gravity="center_horizontal" android:id="@id/awd" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="网易安全支付" />
+    </LinearLayout>
+    <ImageView android:id="@id/ay3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:src="@drawable/a37" android:layout_toLeftOf="@id/ay1" android:layout_centerVertical="true" />
+    <include android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" layout="@layout/epaysdk_view_divider" />
+    <TextView android:textSize="14.0dip" android:textColor="#ff56a8ff" android:gravity="center_vertical" android:id="@id/ay4" android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="使用密码" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

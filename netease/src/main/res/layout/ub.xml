@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="0.0dip" android:layout_marginRight="0.0dip" android:layout_marginBottom="0.0dip" android:layout_alignParentBottom="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/bd7" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginLeft="10.0dip" android:layout_centerVertical="true" />
+    <TextView android:textSize="13.0dip" android:gravity="center" android:id="@id/bd8" android:layout_width="60.0dip" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_toRightOf="@id/bd7" android:layout_centerVertical="true" />
+    <SeekBar android:gravity="center" android:id="@id/bd9" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="0.0dip" android:layout_marginRight="266.0dip" android:max="1000" android:layout_toRightOf="@id/bd8" android:layout_centerVertical="true" />
+    <TextView android:textSize="13.0dip" android:gravity="center" android:id="@id/bd_" android:layout_width="60.0dip" android:layout_height="fill_parent" android:layout_marginRight="30.0dip" android:layout_toLeftOf="@id/bda" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/bda" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginRight="45.0dip" android:layout_toLeftOf="@id/bdb" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/bdb" android:focusable="true" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginRight="43.0dip" android:src="@drawable/a6c" android:layout_toLeftOf="@id/bdc" android:layout_centerVertical="true" />
+    <ImageView android:gravity="right" android:id="@id/bdc" android:focusable="true" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginRight="28.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

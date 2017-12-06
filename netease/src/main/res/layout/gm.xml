@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat android:orientation="vertical" android:id="@id/p0" android:layout_width="fill_parent" android:layout_height="wrap_content" app:showDividers="co" app:dividerPadding="5.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.LinearLayoutCompat android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:id="@id/xk" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_centerVertical="true" app:showDividers="d6" app:dividerPadding="5.0dip">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="2.0">
+            <com.netease.nr.base.view.MyTextView android:textSize="10.0sp" android:gravity="center" android:id="@id/a0z" android:layout_width="15.0dip" android:layout_height="15.0dip" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:singleLine="true" />
+            <com.netease.newsreader.newarch.view.NTESImageView2 android:gravity="center" android:id="@id/a10" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginRight="2.0dip" android:scaleType="centerCrop" />
+            <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:id="@id/a0x" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+        </LinearLayout>
+        <LinearLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.5">
+            <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:gravity="center" android:id="@id/a11" android:layout_width="0.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
+            <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:gravity="center" android:id="@id/a12" android:layout_width="0.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
+            <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:gravity="center" android:id="@id/a13" android:layout_width="0.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
+        </LinearLayout>
+        <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:gravity="center" android:id="@id/a14" android:layout_width="0.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
+        <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:gravity="center" android:id="@id/a15" android:layout_width="0.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
+    </android.support.v7.widget.LinearLayoutCompat>
+</android.support.v7.widget.LinearLayoutCompat>

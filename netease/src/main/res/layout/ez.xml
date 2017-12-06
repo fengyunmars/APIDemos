@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="vertical" android:id="@id/wx" android:paddingLeft="11.0dip" android:paddingTop="19.0dip" android:paddingRight="11.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include android:id="@id/io" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/biz_feed_list_subs_container" />
+        <com.netease.nr.base.view.MyTextView android:textSize="16.0sp" android:ellipsize="end" android:id="@id/ea" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:includeFontPadding="false" android:lineSpacingExtra="8.0dip" />
+        <ViewStub android:id="@id/wy" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" />
+        <include layout="@layout/biz_feed_list_bottom_zone" />
+    </LinearLayout>
+    <ImageView android:id="@id/g7" android:layout_width="fill_parent" android:layout_height="5.0dip" android:layout_below="@id/wx" />
+    <FrameLayout android:id="@id/wz" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/g7">
+        <ViewStub android:id="@id/in" android:visibility="gone" android:layout="@layout/ao" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/ah" android:layout_marginRight="@dimen/ah" />
+    </FrameLayout>
+</RelativeLayout>

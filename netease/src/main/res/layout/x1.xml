@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/ty" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageButton android:layout_gravity="center" android:id="@id/blt" android:background="@null" android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/asi" android:scaleType="centerInside" />
+        <LinearLayout android:gravity="center_vertical" android:layout_gravity="bottom" android:orientation="horizontal" android:background="@drawable/q9" android:layout_width="fill_parent" android:layout_height="@dimen/we">
+            <FrameLayout android:layout_gravity="center_vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/wf" android:layout_marginRight="@dimen/wg" android:layout_weight="1.0">
+                <com.netease.nr.base.view.MyTextView android:textSize="11.0sp" android:textColor="@android:color/white" android:layout_gravity="center_vertical" android:id="@id/blu" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="正在直播" android:includeFontPadding="false" />
+                <LinearLayout android:orientation="horizontal" android:id="@id/blv" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <com.netease.nr.base.view.MyTextView android:textSize="10.0sp" android:textColor="@color/a82" android:layout_gravity="center_vertical" android:id="@id/blw" android:paddingLeft="7.0dip" android:paddingRight="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" />
+                    <com.netease.newsreader.newarch.media.widget.VideoSeekBar android:layout_gravity="center_vertical" android:id="@id/blx" android:paddingLeft="2.0dip" android:paddingTop="10.0dip" android:paddingRight="2.0dip" android:paddingBottom="10.0dip" android:layout_width="0.0dip" android:layout_height="wrap_content" android:maxHeight="11.0dip" android:progressDrawable="@drawable/kp" android:thumb="@drawable/ask" android:thumbOffset="1.5dip" android:layout_weight="1.0" />
+                    <com.netease.nr.base.view.MyTextView android:textSize="10.0sp" android:textColor="@color/a82" android:layout_gravity="center_vertical" android:id="@id/bly" android:paddingLeft="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" />
+                </LinearLayout>
+            </FrameLayout>
+            <ImageButton android:id="@id/blz" android:visibility="gone" android:src="@drawable/a1m" style="@style/NTESVideoControlBtnStyle" />
+            <ImageButton android:layout_gravity="center" android:id="@id/bm0" android:background="@null" android:paddingLeft="6.0dip" android:paddingRight="6.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/ary" android:scaleType="centerInside" />
+            <com.netease.nr.base.view.MyTextView android:textSize="9.0sp" android:textColor="@android:color/white" android:layout_gravity="center_vertical" android:id="@id/bm1" android:background="@drawable/q_" android:padding="2.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:text="@string/jb" />
+            <ImageButton android:layout_gravity="center" android:id="@id/bm2" android:background="@null" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/as4" android:scaleType="centerInside" />
+        </LinearLayout>
+    </FrameLayout>
+    <ImageButton android:layout_gravity="bottom|center|right" android:id="@id/bm3" android:background="@null" android:visibility="gone" android:layout_width="26.0dip" android:layout_height="26.0dip" android:layout_marginRight="8.0dip" android:layout_marginBottom="10.0dip" android:src="@drawable/i" android:scaleType="centerInside" />
+</FrameLayout>

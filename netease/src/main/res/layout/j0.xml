@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/adx" android:paddingTop="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip">
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:id="@id/ea" android:paddingLeft="18.0dip" android:paddingRight="18.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="选择不感兴趣关键词(多选)" android:singleLine="true" android:includeFontPadding="false" />
+        <com.netease.nr.base.view.FlowLayout android:gravity="start|center|top" android:id="@id/ady" android:paddingLeft="13.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <View android:id="@id/g7" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="10.0dip" />
+        <TextView android:textSize="13.0sp" android:gravity="center" android:id="@id/adz" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="35.0dip" android:text="@string/a24" />
+    </LinearLayout>
+</LinearLayout>

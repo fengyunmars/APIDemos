@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.netease.newsreader.newarch.view.actionbar.NTESActionBar android:id="@id/ex" android:layout_width="fill_parent" android:layout_height="@dimen/ed" app:background="@drawable/u1">
+        <com.netease.newsreader.newarch.view.actionbar.ThemeImageView android:id="@id/aq4" android:layout_alignParentLeft="true" app:src="@drawable/a9t" style="@style/actionbar_item" />
+        <com.netease.newsreader.newarch.view.actionbar.ThemeTextView android:ellipsize="end" android:id="@id/e2" android:paddingLeft="0.0dip" android:paddingRight="0.0dip" android:text="@string/zc" android:lines="1" android:layout_toRightOf="@id/aq4" app:textColor="@color/wg" style="@style/actionbar_item_text" />
+    </com.netease.newsreader.newarch.view.actionbar.NTESActionBar>
+    <include android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/biz_tie_comment_recycler_layout" />
+</LinearLayout>

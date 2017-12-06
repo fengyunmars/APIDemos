@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/a13" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/epaysdk_view_titlebar" />
+    <RelativeLayout android:id="@id/aus" android:background="#ffffffff" android:paddingLeft="15.0dip" android:paddingTop="17.0dip" android:paddingRight="15.0dip" android:paddingBottom="17.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="16.0dip" android:textColor="@color/a1q" android:id="@id/aut" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="储蓄卡" />
+        <TextView android:textSize="16.0dip" android:textColor="#ff6faae9" android:ellipsize="end" android:id="@id/auu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="62.0dip" android:text="工商银行商银行行银行行" android:maxEms="@integer/b" android:singleLine="true" />
+        <TextView android:textSize="16.0dip" android:textColor="#ff6faae9" android:ellipsize="none" android:id="@id/auv" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:text="(尾号2323)" android:singleLine="true" android:layout_toRightOf="@id/auu" />
+        <com.netease.epay.sdk.view.AdjustTextSizeTextView android:textColor="#ffbbbbbb" android:id="@id/auw" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginRight="25.0dip" android:text="单笔限额 ¥40000；单日限额 ¥400000" android:singleLine="true" android:layout_below="@id/auu" android:layout_alignLeft="@id/auu" app:epaysdk_maxTextSize="@dimen/a3" app:epaysdk_minTextSize="9.0dip" />
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:src="@drawable/a2x" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <include android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="15.0dip" layout="@layout/epaysdk_view_divider" />
+    <RelativeLayout android:background="#ffffffff" android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <TextView android:textSize="16.0dip" android:textColor="@color/a1q" android:id="@id/auy" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="金额" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/auz" android:paddingRight="10.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/a3m" android:layout_alignParentRight="true" />
+        <EditText android:textSize="14.0dip" android:textColor="#ff000000" android:textColorHint="#ffbbbbbb" android:id="@id/av0" android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="62.0dip" android:singleLine="true" android:layout_toLeftOf="@id/auz" android:layout_centerVertical="true" android:inputType="numberDecimal" />
+    </RelativeLayout>
+    <include layout="@layout/epaysdk_view_divider" />
+    <TextView android:textSize="14.0dip" android:textColor="#ff999999" android:id="@id/av1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" />
+    <com.netease.epay.sdk.view.LongCommonButton android:enabled="false" android:id="@id/av2" android:layout_marginTop="15.0dip" android:text="下一步" style="@style/green_long_btn" />
+    <TextView android:textSize="14.0dip" android:textColor="@color/a1u" android:id="@id/av3" android:padding="3.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="12.0dip" android:text="使用手机充值卡/加油卡充值" />
+    <include layout="@layout/epaysdk_view_logo" />
+</LinearLayout>

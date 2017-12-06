@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TabHost android:id="@id/ag4" android:background="@color/dx" android:layout_width="fill_parent" android:layout_height="100.0dip" android:layout_alignParentBottom="true">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TabWidget android:id="@android:id/tabs" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:showDividers="none" />
+            <ImageView android:id="@id/ag5" android:background="@color/dw" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_above="@android:id/tabs" />
+            <FrameLayout android:id="@android:id/tabcontent" android:layout_width="wrap_content" android:layout_height="70.0dip" android:layout_above="@id/ag5" />
+        </RelativeLayout>
+    </TabHost>
+    <ImageView android:id="@id/g7" android:background="@color/dw" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_above="@id/ag4" />
+    <FrameLayout android:id="@id/ag6" android:background="@color/dv" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/g7">
+        <com.netease.nr.biz.plugin.wocao.ContentContainer android:layout_gravity="center_horizontal" android:id="@id/ag7" android:background="@color/dv" android:paddingTop="@dimen/kr" android:paddingBottom="@dimen/kr" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginBottom="@dimen/kp">
+            <com.netease.nr.biz.plugin.wocao.ContentContainer android:layout_gravity="center_horizontal" android:id="@id/m6" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginBottom="@dimen/kj">
+                <com.netease.newsreader.newarch.view.NTESImageView2 android:layout_gravity="center_horizontal" android:id="@id/ag8" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginBottom="@dimen/kl" android:scaleType="centerInside" android:adjustViewBounds="true" />
+                <RelativeLayout android:layout_gravity="bottom" android:id="@id/ag9" android:background="@drawable/zt" android:layout_width="fill_parent" android:layout_height="@dimen/kh">
+                    <RelativeLayout android:id="@id/ag_" android:paddingRight="@dimen/kf" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <ImageView android:id="@id/aga" android:padding="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/a13" android:layout_alignBottom="@id/agb" android:layout_alignParentRight="true" />
+                        <com.netease.nr.base.view.MyTextView android:textSize="@dimen/kg" android:textColor="@color/du" android:ellipsize="end" android:id="@id/agb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:maxLines="2" android:maxLength="17" android:layout_toLeftOf="@id/aga" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                    <RelativeLayout android:id="@id/agc" android:paddingRight="@dimen/kf" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                        <ImageView android:id="@id/agd" android:padding="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/a13" android:layout_alignBottom="@id/age" android:layout_alignParentRight="true" />
+                        <com.netease.nr.base.view.MyEditText android:textSize="@dimen/kg" android:textColor="@color/du" android:ellipsize="end" android:id="@id/age" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:maxLines="2" android:maxLength="17" android:layout_toLeftOf="@id/agd" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                    </RelativeLayout>
+                </RelativeLayout>
+                <ImageView android:layout_gravity="bottom|center|right" android:id="@id/agf" android:layout_width="@dimen/kf" android:layout_height="@dimen/kf" android:layout_marginBottom="1.5dip" />
+            </com.netease.nr.biz.plugin.wocao.ContentContainer>
+            <ImageView android:layout_gravity="bottom" android:id="@id/agg" android:paddingLeft="2.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/km" android:layout_marginLeft="@dimen/kr" android:layout_marginRight="@dimen/kr" android:layout_marginBottom="@dimen/kn" android:src="@drawable/a14" android:scaleType="fitXY" />
+            <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="horizontal" android:id="@id/agh" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="@dimen/ki" android:layout_marginLeft="@dimen/kr" android:layout_marginRight="@dimen/kr">
+                    <ImageView android:layout_gravity="center_vertical" android:id="@id/agi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/a19" />
+                    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip">
+                        <TextView android:textSize="@dimen/ks" android:textColor="@color/dz" android:ellipsize="end" android:id="@id/agj" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                        <TextView android:textSize="@dimen/ks" android:textColor="@color/dy" android:id="@id/agk" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vc" />
+                    </LinearLayout>
+                </LinearLayout>
+                <RelativeLayout android:id="@id/agl" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="26.0dip">
+                    <View android:id="@id/agm" android:layout_width="fill_parent" android:layout_height="18.0dip" android:layout_alignParentBottom="true" />
+                    <com.netease.nr.base.view.MyTextView android:textSize="9.0sp" android:gravity="center_vertical" android:id="@id/agn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/tb" android:layout_alignTop="@id/agm" android:layout_alignBottom="@id/agm" android:layout_centerHorizontal="true" />
+                    <ImageView android:id="@id/ago" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_toRightOf="@id/agn" />
+                </RelativeLayout>
+            </LinearLayout>
+        </com.netease.nr.biz.plugin.wocao.ContentContainer>
+    </FrameLayout>
+</RelativeLayout>

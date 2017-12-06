@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView android:id="@id/ajq" android:paddingLeft="@dimen/f5" android:paddingRight="@dimen/f5" android:layout_width="fill_parent" android:layout_height="fill_parent" style="@style/base_listview_style"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.newsreader.newarch.media.component.impl.BaseDisplayComp android:layout_gravity="center" android:id="@id/bmt" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <View android:id="@id/bmu" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/we" />
+    <View android:id="@id/bmv" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.netease.newsreader.newarch.media.component.impl.BaseUIStateComp android:id="@id/bmw" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <View android:layout_gravity="bottom" android:id="@id/bmx" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <View android:id="@id/bmy" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</merge>

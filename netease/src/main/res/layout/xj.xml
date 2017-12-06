@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.netease.reader.skin.view.SkinFrameLayout android:orientation="vertical" android:id="@id/p0" android:background="@color/a79" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.v7.widget.RecyclerView android:id="@id/bnr" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/bpo" android:paddingTop="100.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.netease.reader.skin.view.SkinImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/b0y" />
+        <com.netease.reader.skin.view.SkinTextView android:textSize="14.0sp" android:textColor="@color/a7s" android:gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="@string/ah0" />
+    </LinearLayout>
+</com.netease.reader.skin.view.SkinFrameLayout>

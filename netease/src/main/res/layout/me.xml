@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingTop="13.0dip" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/ap0" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="23.0dip" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+    <include android:id="@id/aox" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/biz_tie_comment_item_header" />
+    <include android:id="@id/aoy" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/aox" layout="@layout/biz_tie_comment_item_content" />
+    <include android:id="@id/aoz" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/aoy" layout="@layout/biz_tie_comment_item_footer" />
+    <ImageView android:id="@id/ap1" android:paddingLeft="16.0dip" android:paddingRight="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:src="@drawable/bs" android:scaleType="fitXY" android:layout_below="@id/aoz" />
+</RelativeLayout>

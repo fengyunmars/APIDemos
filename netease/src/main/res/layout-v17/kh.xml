@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/aja" android:paddingTop="5.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/ajb" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.netease.nr.base.view.MyTextView android:textSize="15.0sp" android:id="@id/ajc" android:paddingTop="15.0dip" android:paddingBottom="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="预览效果" android:layout_centerHorizontal="true" />
+        <ImageView android:id="@id/ajd" android:paddingLeft="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignTop="@id/ajc" android:layout_alignBottom="@id/ajc" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/aje" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/ajb">
+        <com.netease.newsreader.newarch.view.RatioByWidthImageView android:id="@id/ajf" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="centerCrop" app:whRatio="2.0" />
+        <View android:id="@id/ajg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="centerCrop" android:layout_alignTop="@id/ajf" android:layout_alignBottom="@id/ajf" />
+        <com.netease.newsreader.newarch.view.RatioByWidthRelativeLayout android:id="@id/ajh" android:layout_width="fill_parent" android:layout_height="wrap_content" app:whRatio="1.76" />
+        <com.netease.newsreader.newarch.view.RatioByWidthRelativeLayout android:id="@id/aji" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/ajh" android:layout_alignParentLeft="true" android:layout_alignParentStart="true" app:whRatio="0.815" />
+        <com.netease.newsreader.newarch.view.RatioByWidthRelativeLayout android:id="@id/ajj" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignBottom="@id/aji" app:whRatio="4.0" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="center_vertical" android:id="@id/ajk" android:layout_width="wrap_content" android:layout_height="33.0dip" android:layout_marginTop="17.0dip" android:minWidth="150.0dip" android:layout_below="@id/aje" android:layout_centerHorizontal="true">
+        <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:id="@id/ajl" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="立即使用" android:layout_centerInParent="true" />
+    </RelativeLayout>
+</RelativeLayout>

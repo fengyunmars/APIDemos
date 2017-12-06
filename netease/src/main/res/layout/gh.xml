@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/sp" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <android.support.v7.widget.Toolbar android:id="@id/sq" android:background="?dg" android:layout_width="fill_parent" android:layout_height="@dimen/cn" android:minHeight="@dimen/cn" android:layout_below="@id/sp" app:titleTextAppearance="@style/jn">
+        <com.netease.nr.base.view.TaggedSlidingTabLayout android:id="@id/sr" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </android.support.v7.widget.Toolbar>
+    <android.support.v4.view.ViewPager android:id="@id/nb" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/sq" />
+</LinearLayout>

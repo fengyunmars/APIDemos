@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:layout_marginTop="@dimen/w8" android:layout_marginRight="25.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <com.netease.luoboapi.widget.CircleImageView android:id="@id/b6m" android:background="@null" android:layout_width="@dimen/w7" android:layout_height="@dimen/w7" android:layout_marginBottom="3.0dip" android:src="@drawable/ayi" android:scaleType="centerCrop" />
+        <ImageView android:layout_gravity="bottom|center" android:id="@id/b6p" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ayo" />
+    </FrameLayout>
+    <TextView android:textSize="@dimen/sc" android:textColor="@color/a3i" android:id="@id/b6o" android:background="@drawable/axa" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/sz" android:minHeight="@dimen/sv" android:lineSpacingExtra="4.0dip" />
+</LinearLayout>

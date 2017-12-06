@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/y_" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:layout_gravity="center" android:id="@id/a35" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ProgressBar android:layout_gravity="center" android:id="@id/a36" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/base_small_progressbar_style" />
+        <com.netease.nr.base.view.MyImageView android:id="@id/a37" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/u_" />
+    </LinearLayout>
+    <com.netease.nr.base.view.MyImageView android:id="@id/a38" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/t9" android:scaleType="center" />
+    <com.netease.nr.biz.pics.PicShowView android:id="@id/ya" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <RelativeLayout android:layout_gravity="center" android:id="@id/a_h" android:layout_width="wrap_content" android:layout_height="fill_parent">
+        <com.netease.nr.biz.pics.LoadGifProgressBar android:id="@id/a_i" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <com.netease.nr.base.view.MyImageView android:layout_gravity="center|right|top" android:id="@id/a_j" android:layout_width="wrap_content" android:layout_height="17.0dip" android:adjustViewBounds="true" />
+</FrameLayout>

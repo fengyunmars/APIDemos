@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/luobo_layout_slide_title" />
+    <LinearLayout android:orientation="vertical" android:background="@color/a2z" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="4.0dip" android:layout_marginRight="4.0dip">
+        <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/tg" layout="@layout/luobo_layout_slide_online" />
+        <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/se" layout="@layout/luobo_layout_slide_invite_friend" />
+    </LinearLayout>
+</LinearLayout>

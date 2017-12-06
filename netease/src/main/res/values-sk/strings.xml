@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="a">Prejsť na plochu</string>
+    <string name="b">%1$s, %2$s</string>
+    <string name="c">%1$s, %2$s, %3$s</string>
+    <string name="d">Prejsť hore</string>
+    <string name="e">Ďalšie možnosti</string>
+    <string name="f">Hotovo</string>
+    <string name="g">Zobraziť všetko</string>
+    <string name="h">Zvoľte aplikáciu</string>
+    <string name="i">VYP.</string>
+    <string name="j">ZAP.</string>
+    <string name="k">Vyhľadať…</string>
+    <string name="l">Vymazať dopyt</string>
+    <string name="m">Vyhľadávací dopyt</string>
+    <string name="n">Hľadať</string>
+    <string name="o">Odoslať dopyt</string>
+    <string name="p">Hlasové vyhľadávanie</string>
+    <string name="q">Zdieľať pomocou</string>
+    <string name="r">Zdieľať pomocou %s</string>
+    <string name="s">Zbaliť</string>
+    <string name="t">Pretočiť dopredu</string>
+    <string name="u">Ďalšia stopa</string>
+    <string name="v">Pozastaviť</string>
+    <string name="w">Prehrať</string>
+    <string name="x">Predchádzajúca stopa</string>
+    <string name="y">Pretočiť späť</string>
+    <string name="z">Zastaviť</string>
+    <string name="a0">999+</string>
+</resources>

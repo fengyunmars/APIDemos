@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/bmc" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/bmd" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent" app:place_holder_bg="@android:color/black" app:place_holder_no_src="true" />
+        <View android:id="@id/bme" android:background="#b2000000" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/bmf" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+            <ProgressBar style="@style/NTESVideoLoadingStyle" />
+            <TextView android:textColor="@android:color/white" android:id="@id/bmg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+        <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:textColor="@color/yj" android:id="@id/bmh" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:layout_below="@id/bmf" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <FrameLayout android:id="@id/bmi" android:background="#66000000" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ProgressBar style="@style/NTESVideoLoadingStyle" />
+            <TextView android:textColor="@android:color/white" android:id="@id/bmj" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" />
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:id="@id/bmk" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/bml" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent" app:place_holder_no_bg="true" app:place_holder_src="@android:color/black" />
+        <View android:background="#b2000000" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/a84" android:layout_gravity="center" android:id="@id/bmm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/a_j" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/bmn" android:background="@android:color/black" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/bmo" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent" app:place_holder_no_bg="true" app:place_holder_src="@android:color/black" />
+        <View android:background="#b2000000" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:textColor="@color/a70" android:gravity="center_horizontal" android:layout_gravity="center" android:id="@id/bmp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/a_i" android:drawableTop="@drawable/b0r" android:drawablePadding="10.0dip" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/bmq" android:background="#ff000000" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_horizontal" android:layout_gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:textColor="@android:color/white" android:id="@id/bmr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" />
+            <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:textColor="@android:color/white" android:id="@id/bms" android:background="@drawable/qb" android:paddingLeft="25.0dip" android:paddingTop="6.0dip" android:paddingRight="25.0dip" android:paddingBottom="6.0dip" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/zy" />
+        </LinearLayout>
+    </FrameLayout>
+</merge>

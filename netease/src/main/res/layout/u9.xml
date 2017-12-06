@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.netease.mint.platform.control.GiftAdvanceComponent android:id="@id/bcr" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </ScrollView>
+    <com.netease.mint.platform.fresco.CustomDraweeView android:id="@id/bcs" android:background="@drawable/a3y" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <TextView android:textColor="#ffffffff" android:gravity="center" android:id="@id/bct" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="主播正在找信号，请稍等..." />
+    <com.netease.mint.platform.view.clearscreen.View.RelativeRootView android:orientation="vertical" android:id="@id/bcu" android:background="#00000000" android:layout_width="fill_parent" android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <FrameLayout android:id="@id/bcv" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </com.netease.mint.platform.view.clearscreen.View.RelativeRootView>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/bcw" android:visibility="invisible" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/a6f" android:text="关闭" android:layout_alignParentRight="true" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="20.0dip" android:layout_marginTop="11.5dip" android:layout_marginRight="12.0dip" android:layout_below="@id/bcw" android:layout_alignParentRight="true">
+            <ImageView android:textSize="@dimen/xs" android:id="@id/bcx" android:background="@drawable/a5s" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="3.0dip" />
+            <TextView android:textSize="10.0sp" android:textColor="@color/a5y" android:gravity="center" android:id="@id/bcy" android:background="@drawable/nn" android:paddingLeft="8.0dip" android:paddingRight="8.0dip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="20.0dip" />
+        </LinearLayout>
+    </RelativeLayout>
+    <com.netease.mint.platform.fresco.CustomDraweeView android:id="@id/bcz" android:background="@drawable/a3y" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <RelativeLayout android:id="@id/bd0" android:background="@drawable/a3y" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textColor="#ffffffff" android:gravity="center" android:id="@id/bd1" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/a7t" android:layout_centerInParent="true" />
+        <TextView android:textSize="17.0dip" android:textColor="@color/a5u" android:gravity="center" android:id="@id/bd2" android:background="@drawable/nx" android:clickable="true" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_marginLeft="57.0dip" android:layout_marginRight="57.0dip" android:layout_marginBottom="80.0dip" android:text="@string/a6_" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginLeft="12.0dip" android:layout_marginTop="9.0dip" android:layout_alignParentLeft="true" android:layout_alignParentTop="true">
+            <ImageView android:id="@id/bd3" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/a6t" />
+        </LinearLayout>
+        <ImageView android:id="@id/bd4" android:visibility="gone" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/a6f" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/bd5" android:background="@drawable/ny" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="155.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</FrameLayout>

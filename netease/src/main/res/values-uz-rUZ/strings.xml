@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="a">Boshiga o‘tish</string>
+    <string name="b">%1$s, %2$s</string>
+    <string name="c">%1$s, %2$s, %3$s</string>
+    <string name="d">Yuqoriga o‘tish</string>
+    <string name="e">Qo‘shimcha sozlamalar</string>
+    <string name="f">Tayyor</string>
+    <string name="g">Barchasini ko‘rish</string>
+    <string name="h">Dastur tanlang</string>
+    <string name="i">O‘CHIQ</string>
+    <string name="j">YONIQ</string>
+    <string name="k">Qidirish…</string>
+    <string name="l">So‘rovni tozalash</string>
+    <string name="m">So‘rovni izlash</string>
+    <string name="n">Qidirish</string>
+    <string name="o">So‘rov yaratish</string>
+    <string name="p">Ovozli qidiruv</string>
+    <string name="q">Bo‘lishish:</string>
+    <string name="s">Yig‘ish</string>
+    <string name="t">Oldinga o‘tkazish</string>
+    <string name="u">Keyingi musiqa</string>
+    <string name="v">To‘xtatib turish</string>
+    <string name="w">Ijro qilish</string>
+    <string name="x">Avvalgi musiqa</string>
+    <string name="y">Orqaga o‘tkazish</string>
+    <string name="z">To‘xtatish</string>
+    <string name="a0">999+</string>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="100.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/fb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/jv" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_centerHorizontal="true" app:place_holder_no_bg="true" app:place_holder_no_src="true" />
+        <com.netease.nr.base.view.MyTextView android:textAppearance="@style/m9" android:textSize="12.0sp" android:textColor="#ff5c5c5c" android:id="@id/ea" android:paddingTop="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_below="@id/jv" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <com.netease.nr.base.view.MyImageView android:id="@id/as4" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+    <com.netease.nr.base.view.MyImageView android:id="@id/as5" android:visibility="invisible" android:layout_width="10.0dip" android:layout_height="10.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="-5.0dip" android:layout_toRightOf="@id/fb" />
+    <View android:id="@id/as6" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" />
+    <View android:id="@id/as7" android:layout_width="1.0px" android:layout_height="100.0dip" android:layout_alignParentRight="true" />
+</RelativeLayout>

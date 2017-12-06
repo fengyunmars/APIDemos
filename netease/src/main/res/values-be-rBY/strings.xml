@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="t">Перамотка ўперад</string>
+    <string name="u">Наступны трэк</string>
+    <string name="v">Прыпыніць</string>
+    <string name="w">Прайграць</string>
+    <string name="x">Папярэдні трэк</string>
+    <string name="y">Перамотка назад</string>
+    <string name="z">Спыніць</string>
+</resources>

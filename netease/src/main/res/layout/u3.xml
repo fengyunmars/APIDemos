@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center_vertical" android:orientation="vertical" android:background="@drawable/nl" android:layout_width="wrap_content" android:layout_height="34.0dip" android:layout_centerVertical="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.mint.platform.fresco.CustomDraweeView android:id="@id/bbj" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginLeft="3.0dip" android:src="@drawable/wp" android:layout_centerVertical="true" />
+    <LinearLayout android:orientation="vertical" android:id="@id/bbr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginRight="5.0dip" android:layout_toRightOf="@id/bbj">
+        <TextView android:textSize="11.0sp" android:textColor="@color/a5_" android:ellipsize="end" android:id="@id/bbk" android:layout_width="wrap_content" android:layout_height="13.0dip" android:layout_margin="3.0dip" android:maxWidth="68.0dip" android:maxLines="1" android:layout_alignParentTop="true" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:layout_alignParentBottom="true">
+            <ImageView android:background="@drawable/a5u" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="3.0dip" />
+            <TextView android:textSize="11.0sp" android:textColor="@color/a5u" android:ellipsize="end" android:id="@id/bbl" android:layout_width="wrap_content" android:layout_height="13.0dip" android:maxWidth="40.0dip" android:maxLines="1" />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView android:id="@id/bbs" android:visibility="gone" android:layout_width="26.0dip" android:layout_height="26.0dip" android:layout_marginRight="3.0dip" android:src="@drawable/a5o" android:layout_toRightOf="@id/bbr" android:layout_centerVertical="true" />
+</RelativeLayout>

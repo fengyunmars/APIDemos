@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/epaysdk_frag_title_bar" />
+    <com.netease.epay.sdk.view.gridpwd.GridPasswordView android:id="@id/axk" android:layout_width="fill_parent" android:layout_height="@dimen/a5" android:layout_margin="15.0dip" app:epaysdk_textSize="12.0dip" />
+</LinearLayout>

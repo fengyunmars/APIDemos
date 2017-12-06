@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="10.0dip" android:paddingTop="13.0dip" android:paddingBottom="13.0dip" android:layout_width="fill_parent" android:layout_height="74.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBox android:id="@id/uj" android:focusable="false" android:clickable="false" android:layout_width="62.599976dip" android:layout_height="22.599976dip" android:layout_marginRight="5.0dip" android:button="@drawable/bh" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <com.netease.nr.base.view.MyTextView android:id="@id/uk" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/biz_column_plugin_title_style" />
+    <com.netease.nr.base.view.MyTextView android:ellipsize="end" android:id="@id/ul" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_toLeftOf="@id/uj" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" style="@style/biz_column_plugin_description_style" />
+</RelativeLayout>

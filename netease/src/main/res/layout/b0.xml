@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:paddingLeft="@dimen/h_" android:paddingTop="@dimen/hb" android:paddingRight="@dimen/ha" android:paddingBottom="@dimen/hb" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/e7" android:layout_width="@dimen/h9" android:layout_height="@dimen/h8" android:scaleType="centerCrop" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="@dimen/h7" android:layout_marginLeft="25.0dip">
+            <com.netease.nr.base.view.MyTextView android:ellipsize="end" android:id="@id/ea" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:includeFontPadding="false" android:lineSpacingMultiplier="1.0" style="@style/base_list_title_style" />
+            <com.netease.nr.base.view.MyTextView android:ellipsize="end" android:id="@id/ir" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_marginTop="4.0dip" android:maxLines="2" android:layout_weight="1.0" android:lineSpacingMultiplier="1.3" style="@style/base_list_desc_style" />
+            <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/adapter_newslist_item_book_info" />
+        </LinearLayout>
+    </LinearLayout>
+    <View android:id="@id/ia" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/adapter_newslist_item_bottom_divider" />
+</LinearLayout>

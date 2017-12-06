@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.netease.newsreader.newarch.view.RatioByWidthRelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" app:whRatio="2.3"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/bf4" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/bf7" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerVertical="true">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/bf8" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/hl" app:night_type="br" app:place_holder_no_bg="true" app:place_holder_no_src="true" style="@style/LiveSportsTeamFlagStyle" />
+            <TextView android:id="@id/hm" style="@style/LiveSportsTeamNameStyle" />
+        </LinearLayout>
+        <TextView android:id="@id/hh" android:layout_marginRight="5.0dip" style="@style/LiveSportsTeamScoreStyle" />
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/hi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="25.0dip" />
+        <TextView android:id="@id/hj" android:layout_marginLeft="5.0dip" style="@style/LiveSportsTeamScoreStyle" />
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/bf9" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/hn" app:night_type="br" app:place_holder_no_bg="true" app:place_holder_no_src="true" style="@style/LiveSportsTeamFlagStyle" />
+            <TextView android:id="@id/ho" style="@style/LiveSportsTeamNameStyle" />
+        </LinearLayout>
+    </LinearLayout>
+    <com.netease.nr.base.view.MyTextView android:id="@id/bf_" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_above="@id/bf7" android:layout_centerHorizontal="true" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:layout_marginBottom="10.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/bf6" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:id="@id/he" android:visibility="gone" android:layout_marginLeft="10.0dip" style="@style/LiveUserCountStyle" />
+    </LinearLayout>
+</com.netease.newsreader.newarch.view.RatioByWidthRelativeLayout>

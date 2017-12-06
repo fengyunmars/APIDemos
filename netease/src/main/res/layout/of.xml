@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/a13" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/epaysdk_view_titlebar" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="15.0dip" layout="@layout/epaysdk_view_divider" />
+            <RelativeLayout android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:id="@id/av7" android:text="卡号" style="@style/form_addcard_left_info_tv" />
+                <TextView android:textSize="16.0dip" android:textColor="#ff6faae9" android:gravity="center_vertical" android:id="@id/av8" android:paddingLeft="7.0dip" android:layout_width="fill_parent" android:layout_height="@dimen/a2" android:layout_marginLeft="70.0dip" />
+            </RelativeLayout>
+            <include layout="@layout/epaysdk_view_divider" />
+            <com.netease.epay.sdk.view.bankinput.InputBankItemsView android:id="@id/auc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" />
+            <TextView android:textSize="14.0dip" android:textColor="#ff999999" android:id="@id/aud" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="10.0dip" android:text="信息加密处理，仅用于银行验证" android:drawableLeft="@drawable/a3l" android:drawablePadding="5.0dip" />
+            <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+                <CheckBox android:textSize="14.0dip" android:textColor="#ff444444" android:id="@id/aue" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:checked="true" android:button="@drawable/le" android:text="  同意" />
+                <TextView android:textSize="14.0dip" android:textColor="#ff6faae9" android:id="@id/auf" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text=" 《服务协议》" />
+            </LinearLayout>
+            <com.netease.epay.sdk.view.LongCommonButton android:id="@id/av9" android:layout_marginTop="15.0dip" android:text="下一步" style="@style/green_long_btn" />
+            <include layout="@layout/epaysdk_view_logo" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

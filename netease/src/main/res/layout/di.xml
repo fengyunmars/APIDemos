@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/qd" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.nr.base.view.MyTextView android:textSize="@dimen/f4" android:textColor="@color/ba" android:layout_gravity="left" android:id="@id/qe" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="20.0dip" android:layout_marginBottom="15.0dip" android:text="@string/lq" />
+    <GridView android:gravity="center" android:id="@id/qf" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="10.0dip" android:listSelector="@drawable/iy" android:horizontalSpacing="5.0dip" android:numColumns="3" android:minHeight="@dimen/fa" />
+</LinearLayout>

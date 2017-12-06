@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:padding="@dimen/bd" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListView android:id="@id/afj" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="@android:color/transparent" android:dividerHeight="10.0dip" android:layout_alignParentTop="true" />
+    <ImageView android:id="@id/afk" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_below="@id/afj" />
+    <com.netease.nr.base.view.MyTextView android:textSize="20.0sp" android:gravity="center" android:layout_gravity="center" android:id="@id/ob" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/s2" android:layout_below="@id/afk" android:layout_centerHorizontal="true" />
+</RelativeLayout>

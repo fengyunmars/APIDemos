@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.newsreader.newarch.view.RatioByWidthImageView android:id="@id/e7" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <TextView android:textSize="11.0sp" android:textColor="#ffffffff" android:id="@id/wu" android:background="@drawable/im" android:paddingLeft="3.0dip" android:paddingTop="2.0dip" android:paddingRight="3.0dip" android:paddingBottom="2.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.0dip" android:layout_marginBottom="6.0dip" android:includeFontPadding="false" android:layout_alignBottom="@id/e7" android:layout_alignParentRight="true" />
+    <TextView android:textSize="11.0sp" android:layout_gravity="bottom|center" android:id="@id/ahr" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:layout_marginTop="2.0dip" android:text="点击下载" android:layout_alignParentTop="true" />
+</RelativeLayout>

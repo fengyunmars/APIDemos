@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:paddingBottom="@dimen/w8" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.luoboapi.widget.EmojiTextView android:textSize="@dimen/sc" android:textColor="@android:color/white" android:gravity="center" android:id="@id/b6n" android:background="@drawable/m4" android:layout_width="wrap_content" android:layout_height="fill_parent" android:includeFontPadding="false" />
+    <com.netease.luoboapi.widget.EmojiTextView android:textSize="@dimen/sc" android:textColor="@color/a3a" android:gravity="center_vertical" android:id="@id/b6o" android:background="@drawable/m5" android:layout_width="wrap_content" android:layout_height="fill_parent" android:includeFontPadding="false" />
+</LinearLayout>

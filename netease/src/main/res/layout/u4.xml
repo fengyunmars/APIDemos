@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/bbt" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip">
+        <TextView android:textColorHint="@color/a5m" android:gravity="center_vertical" android:id="@id/bbu" android:background="@drawable/nk" android:paddingLeft="12.0dip" android:layout_width="fill_parent" android:layout_height="36.0dip" android:layout_marginRight="12.0dip" android:hint="@string/a8u" android:layout_weight="1.0" android:layout_toLeftOf="@id/bbv" />
+        <ImageView android:id="@id/bbv" android:background="@drawable/ng" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginRight="12.0dip" android:layout_toLeftOf="@id/bbw" />
+        <ImageView android:id="@id/bbw" android:background="@drawable/nh" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginRight="12.0dip" android:layout_toLeftOf="@id/bbx" />
+        <ImageView android:id="@id/bbx" android:background="@drawable/ni" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_marginRight="12.0dip" android:layout_toLeftOf="@id/bby" />
+        <FrameLayout android:id="@id/bby" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:layout_alignParentRight="true">
+            <ImageView android:id="@id/bbz" android:background="@drawable/nj" android:layout_width="36.0dip" android:layout_height="36.0dip" />
+            <ImageView android:id="@id/bc0" android:background="@drawable/nm" android:layout_width="36.0dip" android:layout_height="36.0dip" android:layout_toLeftOf="@id/bbz" />
+        </FrameLayout>
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/bc1" android:background="@color/a5_" android:visibility="gone" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <EditText android:textSize="@dimen/xv" android:textColor="@color/a4l" android:textColorHint="@color/a4_" android:id="@id/bc2" android:background="@color/a5_" android:paddingLeft="10.0dip" android:focusable="true" android:layout_width="0.0dip" android:layout_height="48.0dip" android:hint="@string/a8v" android:cursorVisible="true" android:singleLine="true" android:maxLength="40" android:layout_weight="1.0" android:imeOptions="actionSend" android:textCursorDrawable="@drawable/o8" />
+        <TextView android:textSize="@dimen/xv" android:textColor="@color/a55" android:gravity="center" android:id="@id/bc3" android:background="@color/a5_" android:layout_width="48.0dip" android:layout_height="48.0dip" android:text="@string/a7m" />
+    </LinearLayout>
+</RelativeLayout>

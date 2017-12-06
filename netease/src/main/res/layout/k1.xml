@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/ah8" android:background="@drawable/f0" android:paddingLeft="13.0dip" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_weight="1.0">
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/ah9" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <com.netease.nr.base.view.MyEditText android:textSize="@dimen/au" android:textColor="@color/qh" android:textColorHint="@color/qe" android:layout_gravity="center_vertical" android:id="@id/ah_" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:hint="@string/ph" android:cursorVisible="false" android:maxLines="1" android:singleLine="true" android:layout_weight="1.0" android:imeOptions="actionSearch" android:textCursorDrawable="@drawable/ig" />
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/aha" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:src="@drawable/ux" />
+    </LinearLayout>
+    <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/ahb" android:paddingLeft="15.0dip" android:paddingTop="4.0dip" android:paddingBottom="4.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pl" />
+</LinearLayout>

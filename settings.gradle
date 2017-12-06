@@ -1,1 +1,1 @@
-include ':app', ':basic', ':deskclock', ':cardgame', ':designmode', ':yunsdk'
+include ':app', ':basic', ':deskclock', ':cardgame', ':designmode', ':yunsdk', ':netease'

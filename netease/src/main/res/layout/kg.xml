@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:paddingLeft="15.0dip" android:paddingTop="18.0dip" android:paddingRight="15.0dip" android:paddingBottom="18.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentTop="true">
+        <com.netease.nr.base.view.MyTextView android:textSize="15.0sp" android:id="@id/aay" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:id="@id/aj_" android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawablePadding="5.0dip" />
+    </LinearLayout>
+    <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/gd" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:scaleType="centerCrop" />
+</LinearLayout>

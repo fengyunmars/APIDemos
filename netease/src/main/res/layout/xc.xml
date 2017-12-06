@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.netease.reader.skin.view.SkinLinearLayout android:orientation="vertical" android:background="@color/a79" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textColor="#ff000000" android:id="@id/bni" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" />
+    <TextView android:textColor="#ff000000" android:id="@id/bnj" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+        <Button android:id="@id/bnk" android:background="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="书架" />
+        <Button android:id="@id/bnl" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="书城" />
+        <Button android:id="@id/bnm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="搜书" />
+    </LinearLayout>
+    <Button android:gravity="left" android:id="@id/bnn" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="最近阅读" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+        <Button android:id="@id/bm1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="直接进入书籍详情" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+        <Button android:id="@id/bno" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="登录" />
+        <Button android:id="@id/adm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="退出登录" />
+    </LinearLayout>
+    <Button android:id="@id/bnp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="切换夜间/白天模式" />
+</com.netease.reader.skin.view.SkinLinearLayout>

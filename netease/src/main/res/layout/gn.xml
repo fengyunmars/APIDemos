@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat android:gravity="center" android:orientation="vertical" android:id="@id/p0" android:layout_width="fill_parent" android:layout_height="wrap_content" app:showDividers="co"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.LinearLayoutCompat android:layout_gravity="center" android:orientation="horizontal" android:id="@id/xk" android:layout_width="fill_parent" android:layout_height="30.0dip" android:layout_centerVertical="true" app:showDividers="d6" app:dividerPadding="5.0dip">
+        <com.netease.nr.base.view.MyTextView android:gravity="center" android:id="@id/a0z" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/k7" android:layout_weight="2.0" />
+        <LinearLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.5">
+            <com.netease.nr.base.view.MyTextView android:gravity="center" android:id="@id/a11" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/k9" android:layout_weight="1.0" />
+            <com.netease.nr.base.view.MyTextView android:gravity="center" android:id="@id/a12" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/k4" android:layout_weight="1.0" />
+            <com.netease.nr.base.view.MyTextView android:gravity="center" android:id="@id/a13" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/k6" android:layout_weight="1.0" />
+        </LinearLayout>
+        <com.netease.nr.base.view.MyTextView android:gravity="center" android:id="@id/a14" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/k5" android:layout_weight="1.0" />
+        <com.netease.nr.base.view.MyTextView android:gravity="center" android:id="@id/a15" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/k8" android:layout_weight="1.0" />
+    </android.support.v7.widget.LinearLayoutCompat>
+</android.support.v7.widget.LinearLayoutCompat>

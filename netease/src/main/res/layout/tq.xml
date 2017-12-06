@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@color/a5u" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:fab="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:gravity="center_vertical" android:id="@id/ban" android:background="@color/a5u" android:layout_width="fill_parent" android:layout_height="44.0dip">
+        <TextView android:textSize="15.0dip" android:textColor="#ff666666" android:gravity="center" android:id="@id/bao" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_margin="10.0dip" android:layout_marginLeft="12.0dip" android:text="取消" android:layout_alignParentLeft="true" />
+        <TextView android:textSize="17.0dip" android:textStyle="bold" android:textColor="@color/a4e" android:gravity="center" android:id="@id/bap" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_margin="10.0dip" android:text="编辑图片" android:layout_centerInParent="true" />
+        <TextView android:textSize="15.0dip" android:textColor="@color/a55" android:gravity="center" android:id="@id/baq" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_margin="10.0dip" android:layout_marginLeft="12.0dip" android:text="保存" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <FrameLayout android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/ban">
+        <com.kevin.crop.view.UCropView android:id="@id/bar" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+</RelativeLayout>

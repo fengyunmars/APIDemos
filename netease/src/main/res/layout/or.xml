@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@color/a13" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/auh" android:layout_width="fill_parent" android:layout_height="55.0dip">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
+            <TextView android:textSize="20.0dip" android:id="@id/awc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="网易安全支付" android:lines="1" android:maxLength="12" />
+            <TextView android:textSize="10.0dip" android:id="@id/awd" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="网易安全支付" />
+        </LinearLayout>
+        <Button android:id="@id/awe" android:background="@null" android:paddingLeft="18.0dip" android:paddingRight="18.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:drawableLeft="@drawable/vn" android:onClick="back" />
+        <ImageView android:id="@id/awf" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/a1x" android:layout_toRightOf="@id/awe" android:onClick="close" />
+        <include android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" layout="@layout/epaysdk_view_divider" />
+    </RelativeLayout>
+    <View android:background="#ffeeeeee" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/auh" />
+    <TextView android:textSize="12.0dip" android:textColor="#ffaaaaaa" android:id="@id/awg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="网页由 %s 提供" android:layout_below="@id/auh" android:layout_centerHorizontal="true" />
+    <com.netease.epay.sdk.view.EpayWebView android:id="@id/og" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/auh" />
+    <ProgressBar android:id="@id/xo" android:layout_width="fill_parent" android:layout_height="2.0dip" android:max="100" android:layout_below="@id/auh" style="?android:attr/progressBarStyleHorizontal" />
+</RelativeLayout>

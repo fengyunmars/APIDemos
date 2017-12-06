@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.netease.nr.base.view.MyTextView android:textSize="@dimen/jn" android:textColor="@color/py" android:layout_gravity="bottom|center|right" android:id="@id/aa2" android:background="@drawable/anl" android:padding="@dimen/jm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/jl" android:layout_marginBottom="@dimen/jk" android:drawableLeft="@drawable/anm" android:drawablePadding="@dimen/jj"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:paddingBottom="@dimen/w8" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.luoboapi.widget.EmojiTextView android:textSize="@dimen/sb" android:textColor="@color/a3d" android:id="@id/b6s" android:background="@drawable/ax8" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+</FrameLayout>

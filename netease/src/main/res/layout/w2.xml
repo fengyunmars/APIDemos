@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/bir" android:layout_width="fill_parent" android:layout_height="40.0dip">
+        <com.netease.nr.base.view.MyTextView android:layout_gravity="center" android:id="@id/bis" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="展开赛事主队" android:drawableRight="@drawable/aim" android:drawablePadding="10.0dip" />
+    </FrameLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/bit" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="horizontal" android:id="@id/biu" android:layout_width="fill_parent" android:layout_height="86.5dip">
+            <include android:id="@id/biv" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:layout_weight="1.0" layout="@layout/na_news_list_sports_header_extra_match_item" />
+            <View android:id="@id/biw" android:layout_width="1.0px" android:layout_height="fill_parent" />
+            <include android:id="@id/bix" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip" android:layout_weight="1.0" layout="@layout/na_news_list_sports_header_extra_match_item" />
+        </LinearLayout>
+        <com.netease.newsreader.newarch.news.list.sports.SportsSubsBar android:id="@id/biy" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="70.0dip" />
+    </LinearLayout>
+</FrameLayout>

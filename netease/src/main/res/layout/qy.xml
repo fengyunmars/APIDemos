@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.v7.widget.RecyclerView android:id="@id/b2l" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/tg" android:layout_marginRight="@dimen/tg" android:layout_marginBottom="@dimen/s9" android:overScrollMode="never" />
+    <ImageView android:layout_gravity="bottom|center" android:id="@id/b2m" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip" />
+</FrameLayout>

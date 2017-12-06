@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.netease.nr.base.view.MyTextView android:textAppearance="@style/m9" android:textSize="10.0sp" android:ellipsize="end" android:gravity="center" android:id="@id/xf" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/kd" android:singleLine="true" android:layout_centerHorizontal="true" />
+    <LinearLayout android:orientation="vertical" android:id="@id/biz" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/xf" android:layout_alignParentLeft="true">
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:layout_gravity="center_horizontal" android:id="@id/bj0" android:layout_width="40.0dip" android:layout_height="40.0dip" android:scaleType="fitCenter" app:place_holder_bg="@color/kt" />
+        <com.netease.nr.base.view.MyTextView android:textAppearance="@style/n0" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/bj1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:text="@string/kc" android:maxLength="4" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/bj2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/xf" android:layout_alignParentRight="true">
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:layout_gravity="center_horizontal" android:id="@id/bj3" android:layout_width="40.0dip" android:layout_height="40.0dip" android:scaleType="fitCenter" app:place_holder_bg="@color/kt" />
+        <com.netease.nr.base.view.MyTextView android:textAppearance="@style/n0" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/bj4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:text="@string/kl" android:maxLength="4" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/xf" android:layout_alignTop="@id/biz" android:layout_centerInParent="true">
+        <com.netease.nr.base.view.MyTextView android:textAppearance="@style/mz" android:gravity="center" android:id="@id/q1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="46.0dip" android:text="@string/ke" android:singleLine="true" />
+        <com.netease.nr.base.view.MyTextView android:textAppearance="@style/my" android:gravity="bottom" android:id="@id/i0" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="23.0dip" android:text="@string/ka" />
+        <com.netease.nr.base.view.MyTextView android:textAppearance="@style/my" android:gravity="top" android:id="@id/s5" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="23.0dip" android:text="@string/kk" />
+        <com.netease.nr.base.view.MyTextView android:textAppearance="@style/n0" android:textColor="@color/b8" android:ellipsize="end" android:gravity="center" android:id="@id/bj5" android:background="@drawable/fy" android:paddingLeft="4.0dip" android:paddingRight="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/kf" android:singleLine="true" />
+    </LinearLayout>
+</RelativeLayout>

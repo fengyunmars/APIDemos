@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:orientation="vertical" android:id="@id/ak3" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="12.0dip" android:layout_marginBottom="12.0dip"
+      xmlns:android="http://schemas.android.com/apk/res/android" />
+    <View android:layout_gravity="bottom" android:id="@id/g7" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</LinearLayout>

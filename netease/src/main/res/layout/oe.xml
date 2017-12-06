@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/a13" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/epaysdk_view_titlebar" />
+    <TextView android:textSize="14.0dip" android:textColor="#ff999999" android:id="@id/av4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" android:layout_marginBottom="15.0dip" android:text="请重新绑定银行卡以找回密码" />
+    <include layout="@layout/epaysdk_view_divider" />
+    <com.netease.epay.sdk.view.MaxHeightRelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" app:max_height="275.0dip">
+        <ListView android:id="@id/av5" android:scrollbars="none" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" android:listSelector="@android:color/transparent" android:cacheColorHint="@android:color/transparent" android:divider="@color/a1n" android:dividerHeight="1.0px" />
+    </com.netease.epay.sdk.view.MaxHeightRelativeLayout>
+    <include layout="@layout/epaysdk_view_divider" />
+    <com.netease.epay.sdk.view.LongCommonButton android:id="@id/av6" android:layout_marginTop="15.0dip" android:text="下一步" style="@style/green_long_btn" />
+    <include layout="@layout/epaysdk_view_logo" />
+</LinearLayout>

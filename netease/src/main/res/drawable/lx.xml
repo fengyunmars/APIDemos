@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="75" android:drawable="@drawable/avp" />
+    <item android:duration="75" android:drawable="@drawable/avq" />
+    <item android:duration="75" android:drawable="@drawable/avr" />
+    <item android:duration="75" android:drawable="@drawable/avs" />
+    <item android:duration="75" android:drawable="@drawable/avt" />
+    <item android:duration="75" android:drawable="@drawable/avu" />
+    <item android:duration="75" android:drawable="@drawable/avv" />
+    <item android:duration="75" android:drawable="@drawable/avw" />
+    <item android:duration="75" android:drawable="@drawable/avx" />
+    <item android:duration="75" android:drawable="@drawable/avy" />
+    <item android:duration="75" android:drawable="@drawable/avz" />
+    <item android:duration="75" android:drawable="@drawable/aw0" />
+    <item android:duration="75" android:drawable="@drawable/aw1" />
+    <item android:duration="75" android:drawable="@drawable/aw2" />
+    <item android:duration="75" android:drawable="@drawable/aw3" />
+    <item android:duration="75" android:drawable="@drawable/aw4" />
+    <item android:duration="75" android:drawable="@drawable/aw5" />
+    <item android:duration="75" android:drawable="@drawable/aw6" />
+    <item android:duration="75" android:drawable="@drawable/aw7" />
+    <item android:duration="75" android:drawable="@drawable/aw8" />
+    <item android:duration="75" android:drawable="@drawable/aw9" />
+    <item android:duration="75" android:drawable="@drawable/aw_" />
+    <item android:duration="75" android:drawable="@drawable/awa" />
+    <item android:duration="75" android:drawable="@drawable/awb" />
+    <item android:duration="75" android:drawable="@drawable/awc" />
+    <item android:duration="75" android:drawable="@drawable/awd" />
+    <item android:duration="75" android:drawable="@drawable/awe" />
+    <item android:duration="75" android:drawable="@drawable/awf" />
+    <item android:duration="75" android:drawable="@drawable/awg" />
+    <item android:duration="75" android:drawable="@drawable/awh" />
+    <item android:duration="75" android:drawable="@drawable/awi" />
+    <item android:duration="75" android:drawable="@drawable/awj" />
+    <item android:duration="75" android:drawable="@drawable/awk" />
+    <item android:duration="75" android:drawable="@drawable/awl" />
+    <item android:duration="75" android:drawable="@drawable/awm" />
+    <item android:duration="75" android:drawable="@drawable/awn" />
+    <item android:duration="75" android:drawable="@drawable/awo" />
+    <item android:duration="75" android:drawable="@drawable/awp" />
+    <item android:duration="75" android:drawable="@drawable/awq" />
+    <item android:duration="75" android:drawable="@drawable/awr" />
+</animation-list>

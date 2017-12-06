@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@null" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.luoboapi.widget.EmojiTextView android:textSize="@dimen/sh" android:textColor="@android:color/black" android:ellipsize="end" android:id="@id/b42" android:background="@drawable/m9" android:paddingLeft="10.0dip" android:paddingTop="20.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:layout_marginRight="4.0dip" android:maxLines="2" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:layout_gravity="center_vertical" android:background="@color/a2z" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:layout_marginRight="4.0dip" android:minHeight="64.0dip">
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/t1" android:layout_marginRight="8.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+                <com.netease.luoboapi.widget.EmojiTextView android:textSize="@dimen/sa" android:textColor="@color/a3a" android:ellipsize="end" android:id="@id/b43" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:drawablePadding="4.0dip" />
+            </FrameLayout>
+        </RelativeLayout>
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/b41" android:background="@drawable/awu" android:padding="2.0dip" android:layout_width="@dimen/rb" android:layout_height="@dimen/rb" android:src="@drawable/ayi" android:scaleType="centerCrop" />
+    </FrameLayout>
+</LinearLayout>

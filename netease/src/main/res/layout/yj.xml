@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.reader.skin.view.SkinLinearLayout android:orientation="vertical" android:id="@id/bsq" android:background="@drawable/p0" android:layout_width="@dimen/w2" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:paddingLeft="@dimen/vx" android:paddingRight="@dimen/vz" android:layout_width="fill_parent" android:layout_height="102.0dip">
+            <com.netease.reader.skin.view.SkinTextView android:textSize="@dimen/vv" android:textColor="@color/a7s" android:id="@id/bsr" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <com.netease.reader.skin.view.SkinView android:background="@color/a7l" android:layout_width="fill_parent" android:layout_height="1.0px" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/bss" android:layout_width="fill_parent" android:layout_height="@dimen/vq">
+            <com.netease.reader.skin.view.SkinButton android:textSize="@dimen/vr" android:textColor="@color/a7t" android:id="@id/bst" android:background="@drawable/p3" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+            <com.netease.reader.skin.view.SkinView android:layout_gravity="center_vertical" android:background="@color/a7l" android:layout_width="1.0px" android:layout_height="28.5dip" />
+            <com.netease.reader.skin.view.SkinButton android:textSize="@dimen/vr" android:textColor="@color/a7x" android:id="@id/bsu" android:background="@drawable/p1" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        </LinearLayout>
+        <com.netease.reader.skin.view.SkinButton android:textSize="@dimen/vr" android:textColor="@color/a7x" android:id="@id/bsv" android:background="@drawable/p2" android:layout_width="fill_parent" android:layout_height="@dimen/vq" />
+    </com.netease.reader.skin.view.SkinLinearLayout>
+</RelativeLayout>

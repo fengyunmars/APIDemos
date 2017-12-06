@@ -1124,17 +1124,17 @@
 
         <!-- Action Bar Samples -->
         <activity
-            android:name=".app.ActionBarMechanics"
+            android:name=".app.ActionBar01Mechanics"
             android:enabled="@bool/atLeastHoneycomb"
             android:label="App/Action Bar/Action Bar Mechanics">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
-
                 <category android:name="android.intent.category.SAMPLE_CODE"/>
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.ActionBarUsage"
+            android:name=".app.ActionBar04Usage"
             android:enabled="@bool/atLeastHoneycomb"
             android:label="@string/action_bar_usage">
             <intent-filter>
@@ -1144,7 +1144,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.ActionBarDisplayOptions"
+            android:name=".app.ActionBar07DisplayOptions"
             android:enabled="@bool/atLeastHoneycomb"
             android:label="@string/action_bar_display_options"
             android:logo="@drawable/apidemo_androidlogo">
@@ -1155,7 +1155,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.ActionBarTabs"
+            android:name=".app.ActionBar03Tabs"
             android:enabled="@bool/atLeastHoneycomb"
             android:label="@string/action_bar_tabs">
             <intent-filter>
@@ -1165,7 +1165,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.ActionBarSettingsActionProviderActivity"
+            android:name=".app.ActionBar05SettingsActionProvider"
             android:enabled="@bool/atLeastIceCreamSandwich"
             android:label="@string/action_bar_settings_action_provider">
             <intent-filter>
@@ -1175,7 +1175,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.ActionBarShareActionProviderActivity"
+            android:name=".app.ActionBar06ShareActionProvider"
             android:enabled="@bool/atLeastIceCreamSandwich"
             android:label="@string/action_bar_share_action_provider">
             <intent-filter>
@@ -1185,7 +1185,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.ActionBarNavigation"
+            android:name=".app.ActionBar02Navigation"
             android:enabled="@bool/atLeastJellyBean"
             android:label="@string/action_bar_navigation"
             android:launchMode="singleTask"
@@ -1197,10 +1197,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".app.ActionBarNavigationTarget"
+            android:name=".app.ActionBar02NavigationTarget"
             android:enabled="@bool/atLeastJellyBean"
             android:label="@string/action_bar_navigation_target"
-            android:parentActivityName=".app.ActionBarNavigation"
+            android:parentActivityName=".app.ActionBar02Navigation"
             android:taskAffinity=":bar_navigation"/>
         <activity
             android:name=".app.PrintBitmap"

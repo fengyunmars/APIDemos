@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.netease.luoboapi.input.photo.SquareLayout android:id="@id/b4e" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="3.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/b4f" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <TextView android:textSize="@dimen/sa" android:textColor="@android:color/white" android:gravity="center" android:layout_gravity="right" android:id="@id/b2z" android:background="@drawable/m7" android:layout_width="20.0dip" android:layout_height="20.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip" />
+    <View android:layout_gravity="right" android:id="@id/b2y" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+</com.netease.luoboapi.input.photo.SquareLayout>

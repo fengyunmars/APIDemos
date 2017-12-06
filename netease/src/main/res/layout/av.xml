@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/hw" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/hx" android:layout_width="@dimen/ap" android:layout_height="@dimen/ap" />
+        <com.netease.nr.base.view.MarqueeTextView android:textSize="@dimen/ar" android:id="@id/hy" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="-15.0dip" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/hz" android:paddingLeft="@dimen/aq" android:paddingRight="@dimen/aq" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <com.netease.nr.base.view.MyTextView android:textSize="@dimen/ie" android:id="@id/i0" android:background="@drawable/z1" android:paddingLeft="2.0dip" android:paddingRight="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.netease.nr.base.view.MyTextView android:textSize="@dimen/id" android:id="@id/i1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" />
+            <com.netease.nr.base.view.MarqueeTextView android:textSize="@dimen/id" android:ellipsize="marquee" android:id="@id/i2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:maxWidth="120.0dip" android:scrollHorizontally="true" android:singleLine="true" android:marqueeRepeatLimit="3" />
+            <com.netease.nr.base.view.MarqueeTextView android:textSize="@dimen/id" android:ellipsize="marquee" android:id="@id/i3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:scrollHorizontally="true" android:singleLine="true" android:marqueeRepeatLimit="3" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/i4" android:paddingLeft="@dimen/aq" android:paddingRight="@dimen/aq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip">
+            <com.netease.nr.base.view.MyTextView android:textSize="@dimen/ie" android:id="@id/i5" android:background="@drawable/z1" android:paddingLeft="2.0dip" android:paddingRight="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/pm" />
+            <com.netease.nr.base.view.MyTextView android:textSize="@dimen/id" android:id="@id/i6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" />
+            <com.netease.nr.base.view.MyTextView android:textSize="@dimen/id" android:id="@id/i7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

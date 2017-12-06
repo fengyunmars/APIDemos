@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="a">Нүүр хуудас руу шилжих</string>
+    <string name="b">%1$s, %2$s</string>
+    <string name="c">%1$s, %2$s, %3$s</string>
+    <string name="d">Дээш шилжих</string>
+    <string name="e">Нэмэлт сонголтууд</string>
+    <string name="f">Дууссан</string>
+    <string name="g">Бүгдийг харах</string>
+    <string name="h">Апп сонгох</string>
+    <string name="i">ИДЭВХГҮЙ</string>
+    <string name="j">ИДЭВХТЭЙ</string>
+    <string name="k">Хайх...</string>
+    <string name="l">Асуулгыг цэвэрлэх</string>
+    <string name="m">Хайх асуулга</string>
+    <string name="n">Хайх</string>
+    <string name="o">Асуулгыг илгээх</string>
+    <string name="p">Дуут хайлт</string>
+    <string name="q">Хуваалцах</string>
+    <string name="r">%s-тай хуваалцах</string>
+    <string name="s">Хумих</string>
+    <string name="t">Хурдан урагшлуулах</string>
+    <string name="u">Дараагийн трек</string>
+    <string name="v">Түр зогсоох</string>
+    <string name="w">Тоглуулах</string>
+    <string name="x">Өмнөх трек</string>
+    <string name="y">Буцааж хураах</string>
+    <string name="z">Зогсоох</string>
+    <string name="a0">999+</string>
+</resources>

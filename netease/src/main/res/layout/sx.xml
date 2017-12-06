@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center" android:layout_gravity="center" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:fresco="http://schemas.android.com/apk/res-auto">
+    <TextView android:gravity="center" android:id="@id/b7r" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="15.0dip" android:text="Hello World!" android:layout_centerHorizontal="true" />
+    <TextView android:gravity="center" android:id="@id/b7s" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="15.0dip" android:text="Hello World!" android:layout_below="@id/b7r" android:layout_centerHorizontal="true" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_above="@id/b7t" android:layout_below="@id/b7s" android:layout_centerInParent="true">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@id/b7u" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="15.0dip" android:text="Hello World!" />
+            <TextView android:id="@id/b7v" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="15.0dip" android:text="Hello World!" />
+        </LinearLayout>
+        <View android:background="@color/a4k" android:layout_width="1.0dip" android:layout_height="50.0dip" />
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <TextView android:id="@id/b7w" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="15.0dip" android:text="Hello World!" />
+            <TextView android:id="@id/b7x" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="15.0dip" android:text="Hello World!" />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView android:gravity="center" android:id="@id/b7t" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" android:src="@drawable/wp" android:layout_above="@id/b7y" android:layout_centerHorizontal="true" />
+    <Button android:gravity="center" android:id="@id/b7y" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="15.0dip" android:layout_marginBottom="30.0dip" android:text="aar click" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:onClick="onClick" />
+</RelativeLayout>

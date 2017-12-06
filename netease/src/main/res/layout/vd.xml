@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/bgp" android:paddingLeft="@dimen/v9" android:paddingTop="@dimen/v8" android:paddingRight="@dimen/v9" android:paddingBottom="@dimen/v8" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.nr.base.view.MyTextView android:textSize="@dimen/vl" android:ellipsize="end" android:id="@id/bgq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lines="1" />
+    <com.netease.newsreader.newarch.live.studio.widget.MultiImageLayout android:id="@id/bgr" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/va" />
+    <com.netease.nr.base.view.MyTextView android:textSize="@dimen/v3" android:id="@id/bgs" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/va" android:includeFontPadding="false" android:lineSpacingMultiplier="1.2" />
+    <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/bgt" android:visibility="gone" android:layout_width="@dimen/ur" android:layout_height="@dimen/uo" android:layout_marginTop="@dimen/uq" />
+    <include android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/v7" layout="@layout/na_live_studio_room_msg_list_item_base_view_quote_audio" />
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/v7" layout="@layout/na_live_studio_room_msg_list_item_base_view_quote_news" />
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/v7" layout="@layout/na_live_studio_room_msg_list_item_base_view_quote_album" />
+    <include android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/v7" layout="@layout/na_live_studio_room_msg_list_item_base_view_quote_video" />
+</LinearLayout>

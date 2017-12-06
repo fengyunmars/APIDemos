@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/b51" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:textColor="@color/b8" android:id="@id/q0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="分享本地新闻" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:textColor="@color/b8" android:id="@id/q1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="+10" android:drawableLeft="@drawable/aa9" android:drawablePadding="6.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</RelativeLayout>

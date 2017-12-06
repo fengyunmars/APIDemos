@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/apn" android:visibility="gone" android:clickable="true" android:layout_width="wrap_content" android:layout_height="32.0dip" android:layout_marginBottom="8.0dip">
+        <ImageView android:id="@id/apo" android:visibility="visible" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="4.0dip" android:src="@drawable/kd" />
+        <TextView android:textSize="7.0sp" android:textColor="@color/wo" android:gravity="center" android:id="@id/app" android:background="@drawable/ke" android:visibility="gone" android:clickable="false" android:layout_width="12.0dip" android:layout_height="12.0dip" android:layout_marginLeft="-12.0dip" android:layout_marginTop="2.0dip" android:text="6" android:layout_toRightOf="@id/apo" />
+        <TextView android:textSize="13.0sp" android:textColor="@color/aay" android:gravity="center" android:id="@id/apq" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/ye" android:layout_toRightOf="@id/apo" android:layout_alignTop="@id/apo" android:layout_alignBottom="@id/apo" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/apr" android:visibility="gone" android:clickable="true" android:layout_width="wrap_content" android:layout_height="32.0dip" android:layout_marginBottom="8.0dip">
+        <ImageView android:id="@id/aps" android:visibility="visible" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:layout_marginTop="4.0dip" android:src="@drawable/kb" />
+        <TextView android:textSize="7.0sp" android:textColor="@color/wo" android:gravity="center" android:id="@id/apt" android:background="@drawable/ke" android:visibility="gone" android:clickable="false" android:layout_width="12.0dip" android:layout_height="12.0dip" android:layout_marginLeft="-12.0dip" android:layout_marginTop="2.0dip" android:text="6" android:layout_toRightOf="@id/aps" />
+        <TextView android:textSize="13.0sp" android:textColor="@color/aay" android:gravity="center" android:id="@id/apu" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/y9" android:layout_toRightOf="@id/aps" android:layout_alignTop="@id/aps" android:layout_alignBottom="@id/aps" />
+    </RelativeLayout>
+    <RelativeLayout android:gravity="right" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <com.netease.nr.biz.tie.comment.common.CommentTopicsView android:id="@id/apv" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="32.0dip" android:layout_marginLeft="15.0dip" android:layout_marginRight="15.0dip" android:layout_marginBottom="8.0dip" />
+    </RelativeLayout>
+</LinearLayout>

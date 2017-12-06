@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:icon="@drawable/anp" android:id="@id/bup" android:title="@string/he" app:showAsAction="dk" />
+    <item android:icon="@drawable/anq" android:id="@id/buq" android:title="@string/ho" app:showAsAction="dk" />
+    <item android:icon="@drawable/al5" android:id="@id/bur" android:title="@string/hf" app:showAsAction="dk" />
+    <item android:icon="@drawable/ano" android:id="@id/bus" android:title="@string/hm" app:showAsAction="dk" />
+    <item android:icon="@drawable/agu" android:id="@id/but" android:title="@string/hj" app:showAsAction="dk" />
+</menu>

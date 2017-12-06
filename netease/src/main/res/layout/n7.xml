@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <View android:id="@id/ar1" android:layout_width="fill_parent" android:layout_height="@dimen/iv" />
+    <com.netease.nr.base.view.MyTextView android:textSize="15.0sp" android:ellipsize="end" android:id="@id/ea" android:layout_width="wrap_content" android:layout_height="@dimen/it" android:layout_margin="10.0dip" android:lines="2" android:lineSpacingExtra="5.0dip" />
+    <com.netease.newsreader.newarch.view.actionbar.NTESActionBar android:id="@id/ex" style="@style/actionbar">
+        <com.netease.newsreader.newarch.view.actionbar.ThemeImageView android:id="@id/aq4" android:layout_alignParentLeft="true" app:src="@drawable/a9u" style="@style/actionbar_item" />
+        <com.netease.newsreader.newarch.view.actionbar.ThemeTextView android:textSize="@dimen/aa" android:ellipsize="end" android:gravity="center|left" android:id="@id/e2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:lines="1" android:layout_toRightOf="@id/aq4" app:textColor="@color/n" />
+    </com.netease.newsreader.newarch.view.actionbar.NTESActionBar>
+</merge>

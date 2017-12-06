@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.reader.skin.view.SkinLinearLayout android:id="@id/fb" android:background="@color/a79" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="37.0dip">
+        <com.netease.reader.skin.view.SkinRelativeLayout android:paddingLeft="19.0dip" android:paddingRight="19.0dip" android:layout_width="fill_parent" android:layout_height="17.0dip">
+            <com.netease.reader.skin.view.SkinTextView android:textSize="12.0dip" android:textColor="@color/a7v" android:gravity="center" android:id="@id/btl" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ahb" android:layout_centerInParent="true" />
+            <com.netease.reader.skin.view.SkinView android:id="@id/btm" android:background="@drawable/b1e" android:layout_width="7.0dip" android:layout_height="7.0dip" android:layout_marginRight="8.0dip" android:layout_toLeftOf="@id/btl" android:layout_centerVertical="true" />
+            <com.netease.reader.skin.view.SkinView android:background="@drawable/b0v" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_toLeftOf="@id/btm" android:layout_centerVertical="true" />
+            <com.netease.reader.skin.view.SkinView android:id="@id/bto" android:background="@drawable/b1e" android:layout_width="7.0dip" android:layout_height="7.0dip" android:layout_marginLeft="8.0dip" android:layout_toRightOf="@id/btl" android:layout_centerVertical="true" />
+            <com.netease.reader.skin.view.SkinView android:background="@drawable/b0w" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_toRightOf="@id/bto" android:layout_centerVertical="true" />
+        </com.netease.reader.skin.view.SkinRelativeLayout>
+    </com.netease.reader.skin.view.SkinLinearLayout>
+</LinearLayout>

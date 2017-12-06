@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/bg3" android:paddingLeft="18.0dip" android:paddingTop="10.0dip" android:paddingRight="18.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="90.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/bg4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/agl" android:layout_centerInParent="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:id="@id/bg5" android:paddingRight="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_toLeftOf="@id/bg4" android:layout_alignParentLeft="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:gravity="right" android:id="@id/bg6" android:paddingLeft="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_toRightOf="@id/bg4" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/bg7" android:layout_width="37.0dip" android:layout_height="37.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/bg8" android:layout_width="37.0dip" android:layout_height="37.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <com.netease.newsreader.newarch.view.VotePkBarView android:id="@id/bg9" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_marginLeft="@dimen/hd" android:layout_marginRight="@dimen/hd" android:layout_toLeftOf="@id/bg8" android:layout_toRightOf="@id/bg7" android:layout_centerVertical="true" app:corners="12.0dip" app:middle_space="2.0dip" />
+        <com.netease.nr.base.view.MyTextView android:textSize="10.0sp" android:id="@id/bg_" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:lines="1" android:layout_below="@id/bg9" android:layout_alignLeft="@id/bg9" />
+        <com.netease.nr.base.view.MyTextView android:textSize="10.0sp" android:id="@id/bga" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:lines="1" android:layout_below="@id/bg9" android:layout_alignRight="@id/bg9" />
+    </RelativeLayout>
+</LinearLayout>

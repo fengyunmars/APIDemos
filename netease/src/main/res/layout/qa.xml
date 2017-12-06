@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/azo" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <ImageView android:id="@id/azp" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_marginLeft="5.0dip" android:scaleType="centerInside" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <TextView android:textSize="10.0dip" android:id="@id/azq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip" android:layout_alignParentTop="true" android:layout_alignParentRight="true" style="@android:style/TextAppearance.StatusBar.EventContent" />
+    <ImageView android:id="@id/azr" android:layout_width="22.0dip" android:layout_height="22.0dip" android:layout_marginRight="5.0dip" android:scaleType="centerInside" android:layout_alignBottom="@id/azp" android:layout_alignParentRight="true" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/azs" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="1.0dip" android:layout_toLeftOf="@id/azq" android:layout_toRightOf="@id/azp">
+        <TextView android:textSize="16.0dip" android:id="@id/azt" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" style="@android:style/TextAppearance.StatusBar.EventContent.Title" />
+        <TextView android:textSize="13.0dip" android:id="@id/azu" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" android:maxLines="2" style="@android:style/TextAppearance.StatusBar.EventContent" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/azv" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="1.0dip" android:layout_toLeftOf="@id/azq" android:layout_toRightOf="@id/azp">
+        <TextView android:textSize="19.0dip" android:id="@id/azw" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" style="@android:style/TextAppearance.StatusBar.EventContent.Title" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/azx" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="1.0dip" android:layout_toLeftOf="@id/azq" android:layout_toRightOf="@id/azp">
+        <TextView android:textSize="13.0dip" android:id="@id/azy" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="3" style="@android:style/TextAppearance.StatusBar.EventContent.Title" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/azz" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_toLeftOf="@id/azq" android:layout_toRightOf="@id/azp">
+        <TextView android:textSize="16.0dip" android:gravity="center_vertical" android:id="@id/b00" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" style="@android:style/TextAppearance.StatusBar.EventContent.Title" />
+        <ProgressBar android:id="@id/b01" android:layout_width="fill_parent" android:layout_height="2.0dip" android:layout_marginTop="2.0dip" style="?android:attr/progressBarStyleHorizontal" />
+    </LinearLayout>
+    <ImageView android:id="@id/b02" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="256.0dip" android:scaleType="centerCrop" />
+    <ImageView android:id="@id/b03" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="64.0dip" android:scaleType="centerCrop" />
+    <RelativeLayout android:id="@id/b04" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/b05" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="64.0dip" android:scaleType="centerCrop" />
+        <ImageView android:id="@id/b06" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="0.0dip" android:scaleType="centerCrop" android:layout_below="@id/b05" android:layout_alignParentTop="false" />
+        <ImageView android:id="@id/b07" android:paddingLeft="11.0dip" android:paddingTop="8.0dip" android:paddingRight="11.0dip" android:paddingBottom="13.0dip" android:layout_width="60.0dip" android:layout_height="60.0dip" />
+        <TextView android:textSize="16.0dip" android:textColor="#ffffffff" android:id="@id/b08" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:layout_marginRight="10.0dip" android:layout_toLeftOf="@id/b09" android:layout_toRightOf="@id/b07" />
+        <TextView android:textColor="#ff808080" android:id="@id/b09" android:paddingRight="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignTop="@id/b08" android:layout_alignParentRight="true" />
+        <TextView android:textSize="14.0dip" android:textColor="#ff808080" android:id="@id/b0_" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:maxLines="2" android:layout_toRightOf="@id/b07" android:layout_below="@id/b08" />
+        <ImageView android:id="@id/b0a" android:layout_width="fill_parent" android:layout_height="0.0dip" android:scaleType="centerCrop" android:layout_below="@id/b07" android:layout_alignParentTop="false" />
+        <TextView android:textColor="#ff808080" android:id="@id/b0b" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/b07" android:layout_below="@id/b0a" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/b0c" android:background="@android:color/transparent" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/b0d" android:layout_width="fill_parent" android:layout_height="64.0dip">
+            <ImageView android:id="@id/b0e" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_marginLeft="5.0dip" android:scaleType="centerInside" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+            <TextView android:textSize="10.0dip" android:id="@id/b0f" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip" android:layout_alignParentTop="true" android:layout_alignParentRight="true" style="@android:style/TextAppearance.StatusBar.EventContent" />
+            <ImageView android:id="@id/b0g" android:layout_width="22.0dip" android:layout_height="22.0dip" android:layout_marginRight="5.0dip" android:scaleType="centerInside" android:layout_alignBottom="@id/b0e" android:layout_alignParentRight="true" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:id="@id/b0h" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="1.0dip" android:layout_toLeftOf="@id/b0f" android:layout_toRightOf="@id/b0e">
+                <TextView android:textSize="16.0dip" android:id="@id/b0i" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" style="@android:style/TextAppearance.StatusBar.EventContent.Title" />
+                <TextView android:textSize="16.0dip" android:layout_gravity="center_horizontal" android:id="@id/b0j" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" style="@android:style/TextAppearance.StatusBar.EventContent.Title" />
+                <TextView android:textSize="13.0dip" android:id="@id/b0k" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="1.0dip" android:maxLines="2" style="@android:style/TextAppearance.StatusBar.EventContent" />
+            </LinearLayout>
+        </RelativeLayout>
+        <ImageView android:id="@id/b0l" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="192.0dip" android:scaleType="centerCrop" android:layout_below="@id/b0d" />
+        <TextView android:textSize="13.0dip" android:ellipsize="end" android:id="@id/b0m" android:background="@android:color/transparent" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="63.0dip" android:layout_marginRight="15.0dip" android:maxHeight="192.0dip" android:layout_below="@id/b0d" />
+    </RelativeLayout>
+</RelativeLayout>

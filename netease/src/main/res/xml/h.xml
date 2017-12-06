@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/aam">
+        <CheckBoxPreference android:title="@string/aa3" android:key="preferences_decode_1D" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/aa5" android:key="preferences_decode_QR" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/aa4" android:key="preferences_decode_Data_Matrix" android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/a_w">
+        <CheckBoxPreference android:title="@string/aai" android:key="preferences_play_beep" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/aas" android:key="preferences_vibrate" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/aa0" android:key="preferences_copy_to_clipboard" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/aak" android:key="preferences_remember_duplicates" android:summary="@string/aaj" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/aap" android:key="preferences_supplemental" android:summary="@string/aao" android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/aal">
+        <EditTextPreference android:title="@string/aa2" android:key="preferences_custom_product_search" android:summary="@string/aa1" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/aae">
+        <ListPreference android:entries="@array/a8" android:title="@string/aad" android:key="preferences_front_light_mode" android:summary="@string/aac" android:defaultValue="OFF" android:entryValues="@array/a9" />
+        <CheckBoxPreference android:title="@string/a_x" android:key="preferences_auto_focus" android:defaultValue="true" />
+        <CheckBoxPreference android:title="@string/aag" android:key="preferences_invert_scan" android:summary="@string/aaf" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/a_z" android:key="preferences_bulk_mode" android:summary="@string/a_y" android:defaultValue="false" />
+        <ListPreference android:entries="@array/a7" android:title="@string/aan" android:key="preferences_search_country" android:defaultValue="-" android:entryValues="@array/a7" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/aa6">
+        <CheckBoxPreference android:title="@string/aa8" android:key="preferences_disable_continuous_focus" android:summary="@string/aa7" android:defaultValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/aaq">
+        <com.google.zxing.client.android.pref.BSPlusPreference android:title="@string/aaq" android:summary="@string/aar" />
+    </PreferenceCategory>
+</PreferenceScreen>

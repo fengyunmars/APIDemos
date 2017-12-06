@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/y_" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center" android:id="@id/a35" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <ProgressBar android:layout_gravity="center" android:id="@id/a36" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/base_small_progressbar_style" />
+        <com.netease.nr.base.view.MyImageView android:id="@id/a37" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/u_" />
+    </LinearLayout>
+    <com.netease.nr.base.view.MyImageView android:id="@id/a38" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/t9" android:scaleType="center" />
+    <FrameLayout android:layout_gravity="center_vertical" android:id="@id/a_e" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.netease.nr.base.view.FitImageView android:id="@id/a_f" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="centerCrop" android:layout_centerVertical="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="10.0sp" android:textColor="#fff4f4f4" android:layout_gravity="bottom|center|right" android:id="@id/a_g" android:background="#333d3d3d" android:padding="1.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </FrameLayout>
+</FrameLayout>

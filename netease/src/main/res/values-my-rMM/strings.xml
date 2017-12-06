@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="a">မူလနေရာကို သွားရန်</string>
+    <string name="b">%1$s၊ %2$s</string>
+    <string name="c">%1$s ၊ %2$s ၊ %3$s</string>
+    <string name="d">အပေါ်သို့သွားရန်</string>
+    <string name="e">ပိုမိုရွေးချယ်စရာများ</string>
+    <string name="f">ပြီးဆုံးပါပြီ</string>
+    <string name="g">အားလုံးကို ကြည့်ရန်</string>
+    <string name="h">အပလီကေးရှင်း တစ်ခုခုကို ရွေးချယ်ပါ</string>
+    <string name="i">ပိတ်</string>
+    <string name="j">ဖွင့်</string>
+    <string name="k">ရှာဖွေပါ...</string>
+    <string name="l">ရှာစရာ အချက်အလက်များ ရှင်းလင်းရန်</string>
+    <string name="m">ရှာစရာ အချက်အလက်နေရာ</string>
+    <string name="n">ရှာဖွေရန်</string>
+    <string name="o">ရှာဖွေစရာ အချက်အလက်ကို အတည်ပြုရန်</string>
+    <string name="p">အသံဖြင့် ရှာဖွေခြင်း</string>
+    <string name="q">မျှဝေဖို့ ရွေးပါ</string>
+    <string name="r">%s ကို မျှဝေပါရန်</string>
+    <string name="s">ခေါက်ရန်</string>
+    <string name="t">ရှေ့သို့ သွားရန်</string>
+    <string name="u">နောက် တစ်ပုဒ်</string>
+    <string name="v">ခဏရပ်ရန်</string>
+    <string name="w">ဖွင့်ရန်</string>
+    <string name="x">ယခင် တစ်ပုဒ်</string>
+    <string name="y">ပြန်ရစ်ရန်</string>
+    <string name="z">ရပ်ရန်</string>
+    <string name="a0">၉၉၉+</string>
+</resources>

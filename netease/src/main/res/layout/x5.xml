@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/ve" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:id="@id/sp" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <com.netease.nr.base.view.TabHost android:id="@id/bmz" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+                <TabWidget android:orientation="horizontal" android:id="@android:id/tabs" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+                <FrameLayout android:id="@android:id/tabcontent" android:layout_width="0.0dip" android:layout_height="0.0dip" />
+            </com.netease.nr.base.view.TabHost>
+            <FrameLayout android:id="@id/bn0" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/bmz" />
+            <ViewStub android:id="@id/bn1" android:background="@drawable/ww" android:layout="@layout/qu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="124.0dip" android:layout_alignParentRight="true" />
+            <ViewStub android:id="@id/bn2" android:layout="@layout/qf" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/av" android:layout_alignParentTop="true" />
+            <ViewStub android:id="@id/bn3" android:paddingBottom="@dimen/f2" android:layout="@layout/qp" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <ViewStub android:id="@id/bn4" android:layout="@layout/qr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_above="@id/bmz" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <ViewStub android:id="@id/bn5" android:layout="@layout/qs" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</FrameLayout>

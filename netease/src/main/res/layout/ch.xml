@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat android:orientation="vertical" android:id="@id/mx" android:layout_width="wrap_content" android:layout_height="wrap_content" app:showDividers="d5"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.LinearLayoutCompat android:gravity="center" android:orientation="horizontal" android:id="@id/my" android:layout_width="fill_parent" android:layout_height="wrap_content" app:showDividers="d6">
+        <com.netease.nr.base.view.MyTextView android:textSize="15.0sp" android:gravity="center" android:id="@id/mz" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="48.0dip" android:includeFontPadding="false" android:layout_weight="1.0" />
+        <com.netease.nr.base.view.MyTextView android:textSize="15.0sp" android:gravity="center" android:id="@id/n0" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="48.0dip" android:includeFontPadding="false" android:layout_weight="1.0" />
+        <com.netease.nr.base.view.MyTextView android:textSize="15.0sp" android:gravity="center" android:id="@id/n1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="48.0dip" android:includeFontPadding="false" android:layout_weight="1.0" />
+    </android.support.v7.widget.LinearLayoutCompat>
+</android.support.v7.widget.LinearLayoutCompat>

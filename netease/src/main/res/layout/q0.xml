@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/epaysdk_frag_title_bar" />
+    <include layout="@layout/epaysdk_view_pay_detail" />
+    <RelativeLayout android:id="@id/az5" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="15.0dip" android:layout_marginTop="16.0dip" android:layout_marginRight="15.0dip">
+        <include layout="@layout/epaysdk_view_divider" />
+        <ImageView android:id="@id/atp" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginRight="8.0dip" android:src="@drawable/a21" android:layout_centerVertical="true" />
+        <TextView android:textSize="14.0dip" android:textColor="#ff444444" android:gravity="center_vertical" android:id="@id/az6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/atp" android:layout_centerVertical="true" />
+        <TextView android:id="@id/az7" android:layout_width="fill_parent" android:layout_height="fill_parent" android:drawableRight="@drawable/a3_" android:layout_toRightOf="@id/az6" />
+        <include android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" layout="@layout/epaysdk_view_divider" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:paddingLeft="@dimen/ah" android:paddingTop="10.0dip" android:paddingRight="@dimen/ah" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/e7" android:layout_width="@dimen/ey" android:layout_height="@dimen/ex" android:layout_marginLeft="@dimen/af" android:scaleType="centerCrop" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <com.netease.nr.base.view.MyTextView android:textAppearance="@style/m6" android:id="@id/ip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toLeftOf="@id/e7" android:layout_alignTop="@id/e7" />
+        <com.netease.nr.base.view.MyTextView android:textAppearance="@style/m9" android:ellipsize="end" android:id="@id/ea" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:layout_marginBottom="2.0dip" android:singleLine="true" android:layout_below="@id/ip" android:layout_alignLeft="@id/ip" />
+        <com.netease.newsreader.newarch.view.TagsView android:id="@id/fk" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/e7" android:layout_alignBottom="@id/e7" />
+        <com.netease.nr.base.view.MyTextView android:textAppearance="@style/m6" android:ellipsize="end" android:id="@id/iq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_toLeftOf="@id/fk" android:layout_alignLeft="@id/ea" android:layout_alignBottom="@id/e7" />
+    </RelativeLayout>
+    <include layout="@layout/adapter_newslist_item_bottom_divider" />
+</LinearLayout>

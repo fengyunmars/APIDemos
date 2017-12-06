@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/nt" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0dip" android:textColor="@color/a4o" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14.0dip" android:text="分享" android:layout_centerHorizontal="true" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/bdm" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="60.0dip">
+        <LinearLayout android:orientation="vertical" android:id="@id/bdn" android:layout_width="60.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center_horizontal" android:id="@id/bdo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/o6" />
+            <TextView android:textSize="11.0dip" android:textColor="@color/a4t" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="新浪微博" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/bdp" android:layout_width="60.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center_horizontal" android:id="@id/bdq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/o7" />
+            <TextView android:textSize="11.0dip" android:textColor="@color/a4t" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="微信" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/bdr" android:layout_width="60.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center_horizontal" android:id="@id/bds" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/o0" />
+            <TextView android:textSize="11.0dip" android:textColor="@color/a4t" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="朋友圈" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/bdt" android:layout_width="60.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center_horizontal" android:id="@id/bdu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/o2" />
+            <TextView android:textSize="11.0dip" android:textColor="@color/a4t" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="QQ好友" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_marginBottom="30.0dip" android:layout_below="@id/bdm">
+        <LinearLayout android:orientation="vertical" android:id="@id/bdv" android:layout_width="60.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center_horizontal" android:id="@id/bdw" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/o3" />
+            <TextView android:textSize="11.0dip" android:textColor="@color/a4t" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="QQ空间" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/bdx" android:layout_width="60.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <ImageView android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/o1" />
+            <TextView android:textSize="11.0dip" android:textColor="@color/a4t" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:text="复制链接" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="60.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        <LinearLayout android:orientation="vertical" android:layout_width="60.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+    </LinearLayout>
+</RelativeLayout>

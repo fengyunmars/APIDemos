@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:video="http://schemas.android.com/apk/res-auto">
+    <com.netease.luoboapi.view.VideoRatioLayout android:id="@id/b2p" android:layout_width="fill_parent" android:layout_height="fill_parent" video:isFull="true">
+        <com.netease.luoboapi.view.NEVideoView android:layout_gravity="center" android:id="@id/b2q" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <ImageView android:layout_gravity="center" android:id="@id/b2r" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="centerInside" />
+        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="vertical" android:id="@id/b2s" android:background="@android:color/black" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <ImageView android:id="@id/b2t" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="15.0dip" android:src="@drawable/ayu" />
+            <TextView android:textSize="@dimen/sc" android:textColor="@android:color/white" android:gravity="center" android:id="@id/b2u" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ae" />
+        </LinearLayout>
+    </com.netease.luoboapi.view.VideoRatioLayout>
+    <FrameLayout android:id="@id/b2o" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.netease.luoboapi.view.EditTuwenView android:id="@id/b2v" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</FrameLayout>

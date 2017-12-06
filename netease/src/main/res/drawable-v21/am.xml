@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset android:insetLeft="@dimen/dl" android:insetRight="@dimen/dl" android:insetTop="@dimen/dm" android:insetBottom="@dimen/dk"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <selector>
+        <item android:state_enabled="false">
+            <nine-patch android:src="@drawable/t2" android:tint="?dj" android:alpha="?android:disabledAlpha" />
+        </item>
+        <item android:state_focused="false" android:state_pressed="false">
+            <nine-patch android:src="@drawable/t2" android:tint="?dj" />
+        </item>
+        <item>
+            <nine-patch android:src="@drawable/t1" android:tint="?dk" />
+        </item>
+    </selector>
+</inset>

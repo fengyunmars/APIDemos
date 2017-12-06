@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/my" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/xu" android:textColor="@color/a4l" android:gravity="center_vertical" android:id="@id/bax" android:layout_width="130.0dip" android:layout_height="48.0dip" android:layout_marginLeft="16.0dip" android:text="@string/a8s" android:drawableLeft="@drawable/a5i" android:drawablePadding="8.0dip" />
+    <View android:background="@color/a4y" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+    <TextView android:textSize="@dimen/xu" android:textColor="@color/a4l" android:gravity="center_vertical" android:id="@id/bay" android:layout_width="130.0dip" android:layout_height="48.0dip" android:layout_marginLeft="16.0dip" android:text="@string/a7v" android:drawableLeft="@drawable/a5h" android:drawablePadding="8.0dip" />
+    <View android:background="@color/a4y" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+    <TextView android:textSize="@dimen/xu" android:textColor="@color/a4l" android:gravity="center_vertical" android:id="@id/baz" android:layout_width="130.0dip" android:layout_height="48.0dip" android:layout_marginLeft="16.0dip" android:text="@string/a7n" android:drawableLeft="@drawable/a5e" android:drawablePadding="8.0dip" />
+</LinearLayout>

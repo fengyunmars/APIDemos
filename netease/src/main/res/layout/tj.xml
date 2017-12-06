@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/b_z" android:layout_width="wrap_content" android:layout_height="wrap_content"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <com.netease.mint.platform.fresco.CustomDraweeView android:id="@id/ba0" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+        <ImageView android:id="@id/ba1" android:background="@drawable/mv" android:layout_width="fill_parent" android:layout_height="53.0dip" android:layout_alignParentBottom="true" />
+        <ImageView android:id="@id/ba2" android:background="@drawable/a4k" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginBottom="10.0dip" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" />
+        <TextView android:textSize="13.0sp" android:textColor="#ffd8d8d8" android:id="@id/ba3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:layout_marginBottom="8.0dip" android:text="" android:layout_toRightOf="@id/ba2" android:layout_alignParentBottom="true" />
+        <ImageView android:id="@id/ba4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:layout_marginRight="6.0dip" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:layout_marginBottom="2.0dip">
+        <TextView android:textSize="14.0sp" android:textColor="#ff000000" android:ellipsize="end" android:gravity="center_vertical" android:id="@id/ba5" android:layout_width="0.0dip" android:layout_height="20.0dip" android:text="111" android:maxLines="1" android:layout_weight="1.0" />
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/ba6" android:background="@drawable/a3s" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip" android:layout_marginRight="3.0dip" />
+        <TextView android:textSize="14.0sp" android:textColor="#fffabf5a" android:gravity="center_vertical" android:id="@id/ba7" android:layout_width="wrap_content" android:layout_height="20.0dip" android:text="222" />
+    </LinearLayout>
+</LinearLayout>

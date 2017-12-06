@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.netease.newsreader.newarch.view.actionbar.NTESActionBar android:id="@id/ex" android:layout_width="fill_parent" android:layout_height="@dimen/cn" app:background="@android:color/transparent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.netease.newsreader.newarch.view.actionbar.ThemeImageView android:id="@id/aq4" android:layout_alignParentLeft="true" app:src="@drawable/a9u" style="@style/actionbar_item" />
+    <com.netease.newsreader.newarch.view.actionbar.ThemeTextView android:textSize="@dimen/aa" android:ellipsize="end" android:gravity="center|left" android:id="@id/e2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:lines="1" android:layout_toRightOf="@id/aq4" app:textColor="@color/n" />
+</com.netease.newsreader.newarch.view.actionbar.NTESActionBar>

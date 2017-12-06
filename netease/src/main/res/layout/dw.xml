@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.netease.nr.base.view.HeadScrollView android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:orientation="vertical" android:id="@id/t0" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/t1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/ed">
+            <FrameLayout android:id="@id/t2" android:layout_width="166.0dip" android:layout_height="166.0dip" android:layout_marginLeft="17.0dip" android:layout_marginRight="17.0dip" android:layout_centerInParent="true">
+                <com.netease.newsreader.newarch.view.NTESImageView2 android:layout_gravity="center" android:id="@id/t3" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" app:place_holder_bg="@color/a_s" app:place_holder_src="@drawable/wu" app:round_as_circle="true" />
+                <ImageView android:layout_gravity="center" android:id="@id/fg" android:padding="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="center" />
+                <ProgressBar android:layout_gravity="center" android:id="@id/t4" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/base_small_progressbar_style" />
+            </FrameLayout>
+            <ImageView android:id="@id/t5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="center" android:layout_toLeftOf="@id/t2" android:layout_centerVertical="true" />
+            <ImageView android:id="@id/t6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/t2" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:id="@id/fl" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:singleLine="true" android:layout_below="@id/t1" android:layout_centerHorizontal="true" />
+        <SeekBar android:id="@id/t7" android:paddingLeft="30.0dip" android:paddingRight="30.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:max="100" android:progressDrawable="@drawable/d3" android:thumb="@drawable/wv" android:thumbOffset="12.0dip" android:layout_below="@id/fl" style="@android:style/Widget.ProgressBar.Horizontal" />
+        <RelativeLayout android:paddingLeft="30.0dip" android:paddingRight="30.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:layout_below="@id/t7">
+            <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:id="@id/t8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_alignParentLeft="true" />
+            <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:id="@id/t9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+</com.netease.nr.base.view.HeadScrollView>

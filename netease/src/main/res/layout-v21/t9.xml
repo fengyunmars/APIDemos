@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="center" android:orientation="vertical" android:background="@drawable/n3" android:layout_width="280.0dip" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textColor="@color/a4l" android:gravity="center" android:id="@id/ea" android:paddingLeft="8.0dip" android:paddingTop="10.0dip" android:paddingRight="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" style="@style/DialogText.Title" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/fb" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip">
+        <TextView android:textColor="@color/a4l" android:gravity="center" android:layout_gravity="center" android:id="@id/b9b" android:padding="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="24.0dip" android:layout_marginRight="24.0dip" android:letterSpacing="0.1" style="@style/DialogText" />
+    </LinearLayout>
+    <View android:background="#ffcccccc" android:layout_width="wrap_content" android:layout_height="1.0dip" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <Button android:textSize="16.0dip" android:textColor="@color/a4l" android:id="@id/b9c" android:background="@android:color/transparent" android:layout_width="0.0dip" android:layout_height="48.0dip" android:layout_marginTop="3.0dip" android:singleLine="true" android:layout_weight="1.0" />
+        <View android:background="#ffcccccc" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+        <Button android:textSize="16.0dip" android:textColor="@color/a4l" android:id="@id/b9d" android:background="@android:color/transparent" android:layout_width="0.0dip" android:layout_height="48.0dip" android:layout_marginTop="3.0dip" android:singleLine="true" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/ah" android:paddingTop="@dimen/ai" android:paddingRight="@dimen/ah" android:paddingBottom="@dimen/ai" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/kv" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.netease.newsreader.newarch.view.RatioByWidthImageView android:id="@id/kw" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="4.0dip" android:scaleType="centerCrop" android:layout_weight="1.0" />
+        <com.netease.newsreader.newarch.view.RatioByWidthImageView android:id="@id/kx" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:scaleType="centerCrop" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/ky" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip">
+        <com.netease.newsreader.newarch.view.RatioByWidthImageView android:id="@id/kz" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="4.0dip" android:scaleType="centerCrop" android:layout_weight="1.0" />
+        <com.netease.newsreader.newarch.view.RatioByWidthImageView android:id="@id/l0" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:scaleType="centerCrop" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

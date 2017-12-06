@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/xr" android:background="@drawable/is" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="225.0dip" android:layout_height="248.0dip" android:layout_centerHorizontal="true">
+        <com.netease.nr.base.view.MyImageView android:id="@id/xs" android:layout_width="178.0dip" android:layout_height="71.0dip" android:layout_marginTop="15.0dip" />
+        <com.netease.nr.base.view.MyTextView android:textSize="32.0sp" android:textColor="@color/u5" android:gravity="center" android:id="@id/xt" android:layout_width="178.0dip" android:layout_height="wrap_content" android:layout_marginTop="18.0dip" android:includeFontPadding="false" />
+        <com.netease.nr.base.view.MyTextView android:textSize="16.0sp" android:textColor="@color/u6" android:id="@id/xu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+        <com.netease.nr.base.view.MyImageView android:id="@id/xv" android:background="@drawable/ap2" android:layout_width="wrap_content" android:layout_height="4.0dip" android:layout_marginTop="14.0dip" />
+        <com.netease.nr.base.view.MyTextView android:textSize="16.0sp" android:textColor="@color/u6" android:id="@id/xw" android:paddingLeft="15.0dip" android:paddingTop="6.0dip" android:paddingRight="15.0dip" android:paddingBottom="6.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="立即查看" android:drawablePadding="10.0dip" />
+    </LinearLayout>
+    <com.netease.nr.base.view.MyImageView android:id="@id/xx" android:background="@drawable/aci" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignBottom="@id/xr" android:layout_centerHorizontal="true" />
+    <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:textColor="@color/u7" android:id="@id/xy" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="30.0dip" android:layout_alignBottom="@id/xx" android:layout_centerHorizontal="true" />
+</RelativeLayout>

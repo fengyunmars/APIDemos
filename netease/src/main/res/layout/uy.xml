@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.netease.newsreader.newarch.view.RatioByWidthRelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" app:whRatio="2.4"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/bf4" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/bf5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:layout_marginBottom="10.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/bf6" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <com.netease.nr.base.view.MyTextView android:id="@id/he" android:visibility="gone" android:layout_marginLeft="10.0dip" style="@style/LiveUserCountStyle" />
+    </LinearLayout>
+    <include layout="@layout/na_live_studio_room_msg_list_header_alert_view" />
+</com.netease.newsreader.newarch.view.RatioByWidthRelativeLayout>

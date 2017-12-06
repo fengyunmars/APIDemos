@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="13.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="13.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/abo" android:layout_width="fill_parent" android:layout_height="100.0dip">
+            <com.netease.newsreader.newarch.view.BaseRatioImageView android:id="@id/abp" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_marginLeft="12.0dip" android:scaleType="centerCrop" android:layout_centerVertical="true" />
+            <com.netease.nr.base.view.MyTextView android:textSize="15.0sp" android:id="@id/abq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="11.0dip" android:layout_marginTop="23.0dip" android:layout_toRightOf="@id/abp" />
+            <com.netease.nr.base.view.MyTextView android:textSize="11.0sp" android:ellipsize="end" android:id="@id/abr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="11.0dip" android:layout_marginTop="10.0dip" android:maxLines="1" android:layout_toRightOf="@id/abp" android:layout_below="@id/abq" />
+            <com.netease.nr.base.view.MyTextView android:textSize="11.0sp" android:ellipsize="end" android:id="@id/abs" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="11.0dip" android:layout_marginTop="4.0dip" android:maxLines="1" android:layout_toRightOf="@id/abp" android:layout_below="@id/abr" />
+            <FrameLayout android:id="@id/x2" android:layout_width="27.0dip" android:layout_height="27.0dip" android:layout_marginRight="11.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+                <ImageView android:layout_gravity="center" android:id="@id/z5" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerInside" />
+                <ProgressBar android:layout_gravity="center" android:id="@id/z6" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/progressBarStyleSmallTitle" />
+            </FrameLayout>
+        </RelativeLayout>
+        <View android:id="@id/aaz" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="12.0dip" android:layout_marginRight="12.0dip" />
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:textColor="@color/qg" android:gravity="center|right" android:id="@id/abg" android:layout_width="fill_parent" android:layout_height="43.0dip" android:layout_marginRight="11.0dip" android:drawablePadding="2.0dip" />
+    </LinearLayout>
+</android.support.v7.widget.CardView>

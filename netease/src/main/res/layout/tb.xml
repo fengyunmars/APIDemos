@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/b9i" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="360.0dip" android:layout_height="640.0dip" android:layout_centerInParent="true">
+        <RelativeLayout android:id="@id/b9j" android:background="@drawable/mz" android:padding="6.0dip" android:layout_width="wrap_content" android:layout_height="436.0dip" android:layout_centerInParent="true">
+            <ImageView android:id="@id/b9k" android:layout_width="291.0dip" android:layout_height="436.0dip" android:src="@color/a0w" android:scaleType="fitXY" android:layout_centerHorizontal="true" />
+            <com.netease.mint.platform.view.mkloader.MKLoader android:id="@id/b9l" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginBottom="70.0dip" android:layout_centerInParent="true" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/b9m" android:background="@color/a62" android:layout_width="291.0dip" android:layout_height="76.0dip" android:layout_alignParentBottom="true">
+                <ImageView android:id="@id/b9n" android:paddingLeft="6.0dip" android:paddingRight="6.0dip" android:layout_width="wrap_content" android:layout_height="36.0dip" android:src="@drawable/o5" android:layout_weight="1.0" />
+                <ImageView android:id="@id/b9o" android:layout_width="wrap_content" android:layout_height="36.0dip" android:src="@drawable/a58" android:layout_weight="1.0" />
+                <ImageView android:id="@id/b9p" android:layout_width="wrap_content" android:layout_height="36.0dip" android:src="@drawable/a59" android:layout_weight="1.0" />
+                <ImageView android:id="@id/b9q" android:layout_width="wrap_content" android:layout_height="36.0dip" android:src="@drawable/a56" android:layout_weight="1.0" />
+                <ImageView android:id="@id/b9r" android:layout_width="wrap_content" android:layout_height="36.0dip" android:src="@drawable/a57" android:layout_weight="1.0" />
+            </LinearLayout>
+        </RelativeLayout>
+        <ImageView android:id="@id/b9s" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginTop="-11.0dip" android:layout_marginRight="-11.0dip" android:src="@drawable/a4n" android:layout_alignTop="@id/b9j" android:layout_alignRight="@id/b9j" />
+    </RelativeLayout>
+</RelativeLayout>

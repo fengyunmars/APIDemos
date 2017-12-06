@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:layout_gravity="right" android:id="@id/b53" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginTop="@dimen/t9" android:layout_marginBottom="@dimen/t9">
+        <com.netease.luoboapi.widget.CircleImageView android:id="@id/b4y" android:layout_width="@dimen/sp" android:layout_height="@dimen/sp" android:layout_marginLeft="@dimen/sa" android:layout_marginRight="@dimen/t6" android:src="@drawable/ayi" android:alpha="0.0" />
+        <ImageView android:id="@id/b54" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/sz" android:src="@drawable/ayz" android:alpha="0.0" />
+        <ImageView android:id="@id/b55" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/t9" android:src="@drawable/axr" android:alpha="0.0" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:id="@id/b56" android:background="@color/a3p" android:paddingTop="@dimen/t9" android:paddingRight="@dimen/s9" android:paddingBottom="@dimen/t9" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.netease.luoboapi.widget.CircleImageView android:id="@id/b57" android:layout_width="@dimen/sp" android:layout_height="@dimen/sp" android:layout_marginLeft="@dimen/sa" android:src="@drawable/ayi" />
+        <com.netease.luoboapi.widget.EmojiTextView android:textSize="@dimen/sc" android:textColor="@color/a3i" android:ellipsize="end" android:id="@id/b51" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/t6" android:text="0" android:maxLines="1" />
+        <View android:background="#28222222" android:layout_width="1.0px" android:layout_height="@dimen/sa" android:layout_marginLeft="@dimen/s9" android:layout_marginRight="@dimen/s9" />
+        <TextView android:textSize="@dimen/sa" android:textColor="@color/a3l" android:id="@id/b52" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" />
+        <TextView android:textSize="@dimen/sa" android:textColor="@color/a3l" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/a4c" />
+        <android.support.v4.widget.Space android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+        <ImageView android:id="@id/b58" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:id="@id/b59" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/sm">
+        <TextView android:textSize="@dimen/sd" android:textColor="@color/yv" android:id="@id/b5_" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View android:layout_gravity="bottom" android:background="#ffededed" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</merge>

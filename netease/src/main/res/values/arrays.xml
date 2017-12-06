@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="a">
+        <item>@drawable/aud</item>
+        <item>@drawable/aue</item>
+        <item>@drawable/auf</item>
+        <item>@drawable/aug</item>
+        <item>@drawable/auh</item>
+        <item>@drawable/aui</item>
+        <item>@drawable/auj</item>
+        <item>@drawable/auk</item>
+        <item>@drawable/aul</item>
+        <item>@drawable/aum</item>
+        <item>@drawable/aun</item>
+        <item>@drawable/auo</item>
+        <item>@drawable/aup</item>
+        <item>@drawable/auq</item>
+        <item>@drawable/aur</item>
+        <item>@drawable/aus</item>
+        <item>@drawable/aut</item>
+        <item>@drawable/auu</item>
+        <item>@drawable/auv</item>
+        <item>@drawable/auw</item>
+        <item>@drawable/auy</item>
+        <item>@drawable/auz</item>
+        <item>@drawable/av0</item>
+        <item>@drawable/av1</item>
+        <item>@drawable/av2</item>
+        <item>@drawable/av3</item>
+        <item>@drawable/av4</item>
+        <item>@drawable/av5</item>
+        <item>@drawable/av6</item>
+        <item>@drawable/av7</item>
+        <item>@drawable/av8</item>
+        <item>@drawable/av9</item>
+        <item>@drawable/av_</item>
+        <item>@drawable/ava</item>
+        <item>@drawable/avb</item>
+        <item>@drawable/avc</item>
+        <item>@drawable/avd</item>
+        <item>@drawable/ave</item>
+        <item>@drawable/avf</item>
+        <item>@drawable/avg</item>
+        <item>@drawable/avh</item>
+        <item>@drawable/avi</item>
+        <item>@drawable/avj</item>
+        <item>@drawable/avk</item>
+        <item>@drawable/avl</item>
+        <item>@drawable/avm</item>
+        <item>@drawable/avn</item>
+        <item>@drawable/avo</item>
+    </array>
+    <string-array name="b">
+        <item>本地</item>
+    </string-array>
+    <array name="c">
+        <item>@drawable/aih</item>
+        <item>@drawable/aie</item>
+    </array>
+    <string-array name="d">
+        <item>My Questions</item>
+        <item>More Experts</item>
+    </string-array>
+    <string-array name="e">
+        <item>我的问吧</item>
+        <item>更多问吧</item>
+    </string-array>
+    <string-array name="f">
+        <item>有热贴怎可不看</item>
+        <item>好跟贴不容错过</item>
+        <item>看看大神怎么说</item>
+        <item>这里有条神回复</item>
+        <item>有个神贴在等你</item>
+        <item>我是来看跟贴的</item>
+    </string-array>
+    <string-array name="g">
+        <item>元芳你怎么看？</item>
+        <item>来，闷声发个贴</item>
+        <item>发了贴还是朋友</item>
+        <item>再不发贴就晚了</item>
+        <item>发贴才是真英雄</item>
+    </string-array>
+    <string-array name="h">
+        <item>\@163.com</item>
+        <item>\@126.com</item>
+        <item>\@qq.com</item>
+        <item>\@yeah.net</item>
+        <item>\@sina.com</item>
+        <item>\@vip.163.com</item>
+        <item>\@188.com</item>
+        <item>\@vip.126.com</item>
+        <item>\@vip.188.com</item>
+    </string-array>
+    <string-array name="i">
+        <item>在问吧栏目中选择你感兴趣的问吧，阅读问答详情即可获得奖励。</item>
+    </string-array>
+    <string-array name="j">
+        <item>阅读任意一篇新闻，即可获得奖励</item>
+    </string-array>
+    <string-array name="k">
+        <item>1.打开任意一篇新闻</item>
+        <item>2.点击分享按钮</item>
+        <item>3.选择想要分享的平台</item>
+        <item>4.最后确定分享，即可获得奖励啦</item>
+    </string-array>
+    <string-array name="l">
+        <item>1.首先你需要登录我们的新闻客户端</item>
+        <item>2.每天都打开新闻，您就可以轻松拿到奖励啦</item>
+    </string-array>
+    <string-array name="m">
+        <item>在话题栏目中选择你感兴趣的话题，点击底部发布按钮，输入你想发表的内容参与讨论即可获得奖励。</item>
+    </string-array>
+    <string-array name="n">
+        <item>1.打开“视频”栏目</item>
+        <item>2.查看您喜欢的精彩视频，即可获得奖励</item>
+    </string-array>
+    <string-array name="o">
+        <item>1.打开任意新闻的跟贴页面</item>
+        <item>2.点击某跟贴右上角的“顶”按钮，即可获得奖励</item>
+    </string-array>
+    <string-array name="p">
+        <item>1.打开任意一篇新闻</item>
+        <item>2.点击跟贴输入框</item>
+        <item>3.输入您想说的话</item>
+        <item>4.输入完成后，点击确认,即可完成</item>
+    </string-array>
+    <string-array name="q">
+        <item>女</item>
+        <item>男</item>
+    </string-array>
+    <string-array name="r">
+        <item>\@163.com</item>
+        <item>\@126.com</item>
+        <item>\@yeah.net</item>
+        <item>\@188.com</item>
+    </string-array>
+    <string-array name="s">
+        <item>城市定位错误</item>
+        <item>Push推送太频繁</item>
+        <item>内容不感兴趣</item>
+        <item>推送内容重复</item>
+        <item>低俗色情</item>
+        <item>广告</item>
+        <item>标题党</item>
+        <item>虚假新闻</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="t">
+        <item>低俗色情</item>
+        <item>广告</item>
+        <item>标题党</item>
+        <item>老旧重复内容</item>
+        <item>有错别字</item>
+        <item>内容排版有误</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="u">
+        <item>低俗色情</item>
+        <item>广告</item>
+        <item>标题党/与事实不符</item>
+        <item>老旧重复内容</item>
+        <item>无法播放</item>
+        <item>视频播放卡顿</item>
+        <item>视频声音和画面不同步，视频无声音</item>
+        <item>其他</item>
+    </string-array>
+    <array name="v">
+        <item>@drawable/zu</item>
+        <item>@drawable/a01</item>
+        <item>@drawable/a02</item>
+        <item>@drawable/a03</item>
+        <item>@drawable/a04</item>
+        <item>@drawable/a05</item>
+        <item>@drawable/a06</item>
+        <item>@drawable/a07</item>
+        <item>@drawable/a08</item>
+        <item>@drawable/zv</item>
+        <item>@drawable/zw</item>
+        <item>@drawable/zx</item>
+        <item>@drawable/zy</item>
+        <item>@drawable/zz</item>
+        <item>@drawable/a00</item>
+    </array>
+    <array name="w">
+        <item>@drawable/a09</item>
+        <item>@drawable/a0f</item>
+        <item>@drawable/a0g</item>
+        <item>@drawable/a0h</item>
+        <item>@drawable/a0i</item>
+        <item>@drawable/a0j</item>
+        <item>@drawable/a0k</item>
+        <item>@drawable/a0l</item>
+        <item>@drawable/a0m</item>
+        <item>@drawable/a0_</item>
+        <item>@drawable/a0a</item>
+        <item>@drawable/a0b</item>
+        <item>@drawable/a0c</item>
+        <item>@drawable/a0d</item>
+        <item>@drawable/a0e</item>
+    </array>
+    <array name="x">
+        <item>@drawable/a0n</item>
+        <item>@drawable/a0u</item>
+        <item>@drawable/a0v</item>
+        <item>@drawable/a0w</item>
+        <item>@drawable/a0x</item>
+        <item>@drawable/a0y</item>
+        <item>@drawable/a0z</item>
+        <item>@drawable/a10</item>
+        <item>@drawable/a11</item>
+        <item>@drawable/a0o</item>
+        <item>@drawable/a0p</item>
+        <item>@drawable/a0q</item>
+        <item>@drawable/a0r</item>
+        <item>@drawable/a0s</item>
+        <item>@drawable/a0t</item>
+    </array>
+    <string-array name="y">
+        <item>@string/sx</item>
+        <item>@string/t4</item>
+        <item>@string/t5</item>
+        <item>@string/t6</item>
+        <item>@string/t7</item>
+        <item>@string/t8</item>
+        <item>@string/t9</item>
+        <item>@string/t_</item>
+        <item>@string/ta</item>
+        <item>@string/sy</item>
+        <item>@string/sz</item>
+        <item>@string/t0</item>
+        <item>@string/t1</item>
+        <item>@string/t2</item>
+        <item>@string/t3</item>
+    </string-array>
+    <string-array name="z">
+        <item>xl</item>
+        <item>l</item>
+        <item>m</item>
+        <item>s</item>
+    </string-array>
+    <string-array name="a0">
+        <item>特大号字</item>
+        <item>大号字</item>
+        <item>中号字</item>
+        <item>小号字</item>
+    </string-array>
+    <array name="a1">
+        <item>@drawable/aii</item>
+        <item>@drawable/aif</item>
+    </array>
+    <string-array name="a2">
+        <item>My Topics</item>
+        <item>More Topics</item>
+    </string-array>
+    <string-array name="a3">
+        <item>我的话题</item>
+        <item>更多话题</item>
+    </string-array>
+    <array name="a4">
+        <item>@drawable/aij</item>
+        <item>@drawable/aig</item>
+    </array>
+    <string-array name="a5">
+        <item>My subscriptions</item>
+        <item>Subscribe more</item>
+    </string-array>
+    <string-array name="a6">
+        <item>我的订阅</item>
+        <item>订阅更多</item>
+    </string-array>
+    <string-array name="a7">
+        <item>-</item>
+        <item>AR</item>
+        <item>AU</item>
+        <item>BR</item>
+        <item>BG</item>
+        <item>CA</item>
+        <item>CH</item>
+        <item>CN</item>
+        <item>CZ</item>
+        <item>DE</item>
+        <item>DK</item>
+        <item>ES</item>
+        <item>FI</item>
+        <item>FR</item>
+        <item>GB</item>
+        <item>GR</item>
+        <item>HU</item>
+        <item>ID</item>
+        <item>IT</item>
+        <item>JP</item>
+        <item>KR</item>
+        <item>NL</item>
+        <item>PL</item>
+        <item>PT</item>
+        <item>RU</item>
+        <item>SE</item>
+        <item>SK</item>
+        <item>SI</item>
+        <item>TR</item>
+        <item>TW</item>
+        <item>US</item>
+    </string-array>
+    <string-array name="a8">
+        <item>@string/aab</item>
+        <item>@string/aa_</item>
+        <item>@string/aaa</item>
+    </string-array>
+    <string-array name="a9">
+        <item>ON</item>
+        <item>AUTO</item>
+        <item>OFF</item>
+    </string-array>
+</resources>

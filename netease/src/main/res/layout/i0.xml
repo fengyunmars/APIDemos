@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:scrollbarThumbVertical="@drawable/ta" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:paddingTop="75.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:gravity="left" android:id="@id/ea" android:paddingLeft="20.0dip" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/pa" android:singleLine="true" android:drawableLeft="@drawable/ann" android:drawablePadding="10.0dip" />
+        <RelativeLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.netease.newsreader.newarch.view.RatioByWidthImageView android:id="@id/ns" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="centerCrop" android:adjustViewBounds="true" />
+            <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:gravity="left" android:id="@id/jp" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_alignBottom="@id/ns" />
+        </RelativeLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip">
+            <RelativeLayout android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="1.0dip" android:layout_weight="1.0">
+                <com.netease.newsreader.newarch.view.RatioByWidthImageView android:id="@id/nt" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="centerCrop" android:adjustViewBounds="true" />
+                <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:gravity="left" android:id="@id/js" android:paddingLeft="5.0dip" android:paddingTop="3.0dip" android:paddingRight="5.0dip" android:paddingBottom="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="2" android:layout_alignBottom="@id/nt" />
+            </RelativeLayout>
+            <RelativeLayout android:gravity="center" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="1.0dip" android:layout_weight="1.0">
+                <com.netease.newsreader.newarch.view.RatioByWidthImageView android:id="@id/nu" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="centerCrop" android:adjustViewBounds="true" />
+                <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:gravity="left" android:id="@id/a_x" android:paddingLeft="5.0dip" android:paddingTop="3.0dip" android:paddingRight="5.0dip" android:paddingBottom="3.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="2" android:layout_alignBottom="@id/nu" />
+            </RelativeLayout>
+        </LinearLayout>
+        <RelativeLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="2.0dip">
+            <com.netease.newsreader.newarch.view.RatioByWidthImageView android:id="@id/a_y" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="centerCrop" android:adjustViewBounds="true" />
+            <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:gravity="left" android:id="@id/a_z" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_alignBottom="@id/a_y" />
+            <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:id="@id/fk" android:paddingLeft="1.0dip" android:paddingRight="1.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="3.0dip" android:layout_marginBottom="3.0dip" android:layout_alignBottom="@id/a_z" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

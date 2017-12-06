@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.LinearLayoutCompat android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/na_base_header_extra" />
+    <LinearLayout android:gravity="center" android:id="@id/bhn" android:background="@drawable/bt" android:paddingLeft="@dimen/h2" android:paddingTop="@dimen/h4" android:paddingRight="@dimen/h3" android:paddingBottom="@dimen/h4" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/bho" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ak4" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/bhp" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginRight="20.0dip" android:layout_weight="1.0">
+            <com.netease.nr.base.view.MyTextView android:ellipsize="end" android:id="@id/bhq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="最近阅读" style="@style/biz_list_book_recent_read_style" />
+            <com.netease.nr.base.view.MyTextView android:id="@id/bhr" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/biz_list_book_recent_read_style" />
+        </LinearLayout>
+        <com.netease.nr.base.view.MyTextView android:id="@id/bhs" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="4.0dip" android:text="@string/dz" style="@style/biz_list_book_recent_read_style" />
+        <ImageView android:layout_gravity="center_horizontal" android:id="@id/bht" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/ama" />
+    </LinearLayout>
+    <View android:id="@id/bhu" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</android.support.v7.widget.LinearLayoutCompat>

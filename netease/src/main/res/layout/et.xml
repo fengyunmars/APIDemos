@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/wg" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <ListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:drawSelectorOnTop="false" android:cacheColorHint="@android:color/transparent" />
+        <ProgressBar android:id="@id/wh" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="@style/base_large_progressbar_style" />
+        <ProgressBar android:id="@id/wi" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" style="@style/base_large_progressbar_style" />
+        <include android:id="@android:id/empty" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/base_load_empty_layout" />
+    </RelativeLayout>
+    <LinearLayout android:layout_gravity="end|bottom|center" android:orientation="horizontal" android:id="@id/wj" android:layout_width="fill_parent" android:layout_height="46.0dip">
+        <com.netease.nr.base.view.MyTextView android:textSize="15.0sp" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/wk" android:layout_width="fill_parent" android:layout_height="34.0dip" android:layout_marginLeft="15.0dip" android:layout_marginRight="3.0dip" android:text="@string/a4a" android:layout_weight="1.0" />
+        <com.netease.nr.base.view.MyTextView android:textSize="15.0sp" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/wl" android:layout_width="fill_parent" android:layout_height="34.0dip" android:layout_marginLeft="3.0dip" android:layout_marginRight="15.0dip" android:text="@string/a45" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.netease.epay.sdk.view.MaxHeightRelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="250.0dip" app:max_height="250.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/epaysdk_frag_title_bar" />
+    <ImageView android:id="@id/awn" android:layout_width="221.0dip" android:layout_height="116.0dip" android:layout_marginTop="20.0dip" android:scaleType="centerCrop" android:layout_below="@id/awi" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="14.0dip" android:textColor="#ff444444" android:id="@id/awo" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="25.0dip" android:text="设置6位支付密码，支付更便捷" android:layout_below="@id/awn" android:layout_centerHorizontal="true" />
+</com.netease.epay.sdk.view.MaxHeightRelativeLayout>

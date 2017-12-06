@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="t">Ubrzaj</string>
+    <string name="u">Sljedeća numera</string>
+    <string name="v">Pauziraj</string>
+    <string name="w">Reproduciraj</string>
+    <string name="x">Prethodna numera</string>
+    <string name="y">Premotaj</string>
+    <string name="z">Zaustavi</string>
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="60" android:drawable="@drawable/night_acw" />
+    <item android:duration="60" android:drawable="@drawable/night_ad7" />
+    <item android:duration="60" android:drawable="@drawable/night_adh" />
+    <item android:duration="60" android:drawable="@drawable/night_adj" />
+    <item android:duration="60" android:drawable="@drawable/night_adk" />
+    <item android:duration="60" android:drawable="@drawable/night_adl" />
+    <item android:duration="60" android:drawable="@drawable/night_adm" />
+    <item android:duration="60" android:drawable="@drawable/night_adn" />
+    <item android:duration="60" android:drawable="@drawable/night_ado" />
+    <item android:duration="60" android:drawable="@drawable/night_acx" />
+    <item android:duration="60" android:drawable="@drawable/night_acy" />
+    <item android:duration="60" android:drawable="@drawable/night_acz" />
+    <item android:duration="60" android:drawable="@drawable/night_ad0" />
+    <item android:duration="60" android:drawable="@drawable/night_ad1" />
+    <item android:duration="60" android:drawable="@drawable/night_ad2" />
+    <item android:duration="60" android:drawable="@drawable/night_ad3" />
+    <item android:duration="60" android:drawable="@drawable/night_ad4" />
+    <item android:duration="60" android:drawable="@drawable/night_ad5" />
+    <item android:duration="60" android:drawable="@drawable/night_ad6" />
+    <item android:duration="60" android:drawable="@drawable/night_ad8" />
+    <item android:duration="60" android:drawable="@drawable/night_ad9" />
+    <item android:duration="60" android:drawable="@drawable/night_ad_" />
+    <item android:duration="60" android:drawable="@drawable/night_ada" />
+    <item android:duration="60" android:drawable="@drawable/night_adb" />
+    <item android:duration="60" android:drawable="@drawable/night_adc" />
+    <item android:duration="60" android:drawable="@drawable/night_add" />
+    <item android:duration="60" android:drawable="@drawable/night_ade" />
+    <item android:duration="60" android:drawable="@drawable/night_adf" />
+    <item android:duration="60" android:drawable="@drawable/night_adg" />
+    <item android:duration="60" android:drawable="@drawable/night_adi" />
+</animation-list>

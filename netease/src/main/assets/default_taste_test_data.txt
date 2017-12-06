@@ -1,0 +1,258 @@
+{
+  "male": [
+    {
+      "name": "体育赛事",
+      "sub": [
+        {
+          "name": "NBA",
+          "check": 0
+        },
+        {
+          "name": "足球",
+          "check": 0
+        },
+        {
+          "name": "国足",
+          "check": 0
+        },
+        {
+          "name": "CBA",
+          "check": 0
+        }
+      ]
+    },
+    {
+      "name": "娱乐时尚",
+      "sub": [
+        {
+          "name": "明星",
+          "check": 0
+        },
+        {
+          "name": "电影",
+          "check": 0
+        },
+        {
+          "name": "电视",
+          "check": 0
+        },
+        {
+          "name": "时装",
+          "check": 0
+        }
+      ]
+    },
+    {
+      "name": "健身健康",
+      "sub": [
+        {
+          "name": "养生",
+          "check": 0
+        },
+        {
+          "name": "医疗",
+          "check": 0
+        },
+        {
+          "name": "力量",
+          "check": 0
+        },
+        {
+          "name": "户外",
+          "check": 0
+        }
+      ]
+    },
+    {
+      "name": "搞笑萌宠",
+      "sub": [
+        {
+          "name": "搞笑",
+          "check": 0
+        },
+        {
+          "name": "奇闻",
+          "check": 0
+        },
+        {
+          "name": "萌宠",
+          "check": 0
+        },
+        {
+          "name": "动物",
+          "check": 0
+        }
+      ]
+    },
+    {
+      "name": "历史探索",
+      "sub": [
+        {
+          "name": "古代",
+          "check": 0
+        },
+        {
+          "name": "近代",
+          "check": 0
+        },
+        {
+          "name": "自然",
+          "check": 0
+        },
+        {
+          "name": "宇宙",
+          "check": 0
+        }
+      ]
+    },
+    {
+      "name": "房产汽车",
+      "sub": [
+        {
+          "name": "购房",
+          "check": 0
+        },
+        {
+          "name": "家居",
+          "check": 0
+        },
+        {
+          "name": "汽车",
+          "check": 0
+        },
+        {
+          "name": "用车",
+          "check": 0
+        }
+      ]
+    }
+  ],
+  "female": [
+    {
+      "name": "娱乐时尚",
+      "sub": [
+        {
+          "name": "明星",
+          "check": 0
+        },
+        {
+          "name": "电视",
+          "check": 0
+        },
+        {
+          "name": "时装",
+          "check": 0
+        },
+        {
+          "name": "护肤",
+          "check": 0
+        }
+      ]
+    },
+    {
+      "name": "健身健康",
+      "sub": [
+        {
+          "name": "养生",
+          "check": 0
+        },
+        {
+          "name": "医疗",
+          "check": 0
+        },
+        {
+          "name": "瘦身",
+          "check": 0
+        },
+        {
+          "name": "户外",
+          "check": 0
+        }
+      ]
+    },
+    {
+      "name": "搞笑萌宠",
+      "sub": [
+        {
+          "name": "搞笑",
+          "check": 0
+        },
+        {
+          "name": "奇闻",
+          "check": 0
+        },
+        {
+          "name": "萌宠",
+          "check": 0
+        },
+        {
+          "name": "动物",
+          "check": 0
+        }
+      ]
+    },
+    {
+      "name": "情感星座",
+      "sub": [
+        {
+          "name": "情感",
+          "check": 0
+        },
+        {
+          "name": "两性",
+          "check": 0
+        },
+        {
+          "name": "星座",
+          "check": 0
+        },
+        {
+          "name": "心理",
+          "check": 0
+        }
+      ]
+    },
+    {
+      "name": "育儿护理",
+      "sub": [
+        {
+          "name": "育儿",
+          "check": 0
+        },
+        {
+          "name": "备孕",
+          "check": 0
+        },
+        {
+          "name": "孕期",
+          "check": 0
+        },
+        {
+          "name": "亲子",
+          "check": 0
+        }
+      ]
+    },
+    {
+      "name": "生活休闲",
+      "sub": [
+        {
+          "name": "生活",
+          "check": 0
+        },
+        {
+          "name": "美食",
+          "check": 0
+        },
+        {
+          "name": "菜谱",
+          "check": 0
+        },
+        {
+          "name": "旅游",
+          "check": 0
+        }
+      ]
+    }
+  ]
+}

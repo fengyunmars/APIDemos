@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.netease.reader.skin.view.SkinRelativeLayout android:paddingLeft="8.0dip" android:paddingTop="6.0dip" android:paddingRight="15.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/brl" android:background="@drawable/b3x" android:layout_width="92.0dip" android:layout_height="123.0dip" android:layout_marginRight="@dimen/x1">
+        <com.netease.reader.skin.view.SkinImageView android:id="@id/brm" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+        <com.netease.reader.skin.view.SkinView android:background="@color/a7b" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </RelativeLayout>
+    <com.netease.reader.skin.view.SkinTextView android:textSize="9.0sp" android:textColor="@color/a79" android:gravity="center" android:id="@id/btb" android:paddingRight="2.0dip" android:paddingBottom="3.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="2.0dip" android:layout_alignParentTop="true" />
+    <com.netease.reader.skin.view.SkinTextView android:textSize="@dimen/wo" android:textColor="@color/a7s" android:ellipsize="end" android:id="@id/wm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:maxLines="1" android:layout_toRightOf="@id/brl" android:layout_alignParentTop="true" android:layout_toEndOf="@id/brl" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_toRightOf="@id/brl" android:layout_below="@id/wm" android:layout_toEndOf="@id/brl">
+        <com.netease.reader.skin.view.SkinTextView android:textSize="12.0sp" android:textColor="@color/a7t" android:ellipsize="end" android:id="@id/iu" android:layout_width="0.0dip" android:layout_height="wrap_content" android:maxLines="1" android:layout_weight="1.0" />
+        <com.netease.reader.skin.view.SkinTextView android:textSize="12.0sp" android:textColor="@color/a7t" android:ellipsize="end" android:id="@id/btc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_weight="0.0" />
+        <com.netease.reader.skin.view.SkinTextView android:textSize="14.0sp" android:textColor="@color/a7w" android:gravity="center" android:id="@id/btd" android:background="@drawable/pl" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:text="@string/agl" android:layout_weight="0.0" />
+    </LinearLayout>
+    <com.netease.reader.skin.view.SkinTextView android:textSize="@dimen/wq" android:textColor="@color/a7t" android:ellipsize="end" android:id="@id/bqd" android:paddingBottom="8.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="2" android:layout_toRightOf="@id/brl" android:layout_alignParentBottom="true" android:lineSpacingExtra="5.0dip" android:layout_toEndOf="@id/brl" />
+</com.netease.reader.skin.view.SkinRelativeLayout>

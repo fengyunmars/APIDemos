@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="17.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="17.0dip">
+        <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:id="@id/bjf" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" />
+        <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:id="@id/bjg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/nr" android:includeFontPadding="false" />
+        <android.support.v4.widget.Space android:layout_width="0.0dip" android:layout_height="5.0dip" android:layout_weight="1.0" />
+        <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:id="@id/bjh" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" />
+    </LinearLayout>
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="29.0dip" android:layout_marginLeft="17.0dip" android:layout_marginTop="13.0dip" android:layout_marginRight="17.0dip">
+        <ProgressBar android:id="@id/bji" android:layout_width="fill_parent" android:layout_height="fill_parent" android:progressDrawable="@drawable/go" style="?android:attr/progressBarStyleHorizontal" />
+        <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:layout_gravity="center" android:id="@id/bjj" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" />
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:layout_gravity="center|right" android:id="@id/bjk" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="13.0dip" android:includeFontPadding="false" />
+    </FrameLayout>
+    <View android:id="@id/g7" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_marginTop="17.0dip" />
+    <com.netease.nr.base.view.MyTextView android:textSize="16.0sp" android:gravity="center" android:id="@id/bjl" android:layout_width="fill_parent" android:layout_height="50.0dip" android:text="@string/ns" android:includeFontPadding="false" />
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/a13" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/epaysdk_view_titlebar" />
+    <include android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="12.0dip" layout="@layout/epaysdk_view_divider" />
+    <TextView android:textSize="16.0dip" android:textColor="@color/a1q" android:id="@id/aw3" android:background="@drawable/ll" android:padding="15.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="忘记手机支付密码" android:drawableRight="@drawable/a3_" android:onClick="onSetorForgetPwd" />
+    <View android:id="@id/aw4" android:background="@color/a1n" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="15.0dip" />
+    <TextView android:textSize="16.0dip" android:textColor="@color/a1q" android:id="@id/aw5" android:background="@drawable/ll" android:padding="15.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="修改手机支付密码" android:drawableRight="@drawable/a3_" android:onClick="onModifyPwd" />
+    <include layout="@layout/epaysdk_view_divider" />
+    <TextView android:textSize="12.0dip" android:textColor="#ff999999" android:padding="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="电脑端支付密码修改和找回，请电脑访问epay.163.com" />
+    <FrameLayout android:id="@id/aw6" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include layout="@layout/epaysdk_view_divider" />
+        <TextView android:textSize="16.0dip" android:textColor="@color/a1q" android:gravity="center_vertical" android:id="@id/aw7" android:background="@drawable/ll" android:paddingLeft="15.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/a2" android:layout_marginTop="1.0px" android:text="免输将军令/密保卡" android:onClick="onSwitchGen" />
+        <CheckBox android:gravity="right" android:layout_gravity="center|right" android:id="@id/aw8" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:button="@drawable/lj" />
+        <View android:layout_gravity="center|right" android:clickable="true" android:layout_width="60.0dip" android:layout_height="@dimen/a2" android:layout_marginRight="10.0dip" android:onClick="onSwitchGen" />
+        <include android:layout_gravity="bottom" android:layout_width="fill_parent" android:layout_height="1.0px" layout="@layout/epaysdk_view_divider" />
+    </FrameLayout>
+    <TextView android:textSize="12.0dip" android:textColor="#ff999999" android:id="@id/aw9" android:padding="12.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="开启后，本设备可免输将军令/密保卡" />
+    <FrameLayout android:id="@id/aw_" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include layout="@layout/epaysdk_view_divider" />
+        <TextView android:textSize="16.0dip" android:textColor="@color/a1q" android:gravity="center_vertical" android:background="@drawable/ll" android:paddingLeft="15.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/a2" android:layout_marginTop="1.0px" android:text="指纹支付" android:onClick="onSwitchFinger" />
+        <CheckBox android:gravity="right" android:layout_gravity="center|right" android:id="@id/awa" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:button="@drawable/lj" />
+        <View android:layout_gravity="center|right" android:clickable="true" android:layout_width="60.0dip" android:layout_height="@dimen/a2" android:layout_marginRight="10.0dip" android:onClick="onSwitchFinger" />
+        <include android:layout_gravity="bottom" android:layout_width="fill_parent" android:layout_height="1.0px" layout="@layout/epaysdk_view_divider" />
+    </FrameLayout>
+    <TextView android:textSize="12.0dip" android:textColor="#ff999999" android:id="@id/awb" android:padding="12.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="开启后，消费时可使用指纹验证快速完成付款" />
+    <include layout="@layout/epaysdk_view_logo" />
+</LinearLayout>

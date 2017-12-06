@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:layout_marginTop="24.0dip" android:layout_marginRight="20.0dip" android:layout_marginBottom="24.0dip">
+        <com.netease.nr.base.view.MyTextView android:textSize="11.0sp" android:id="@id/v3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ep" android:includeFontPadding="false" android:drawablePadding="4.0dip" />
+        <com.netease.nr.base.view.MyTextView android:textSize="33.0sp" android:textStyle="bold" android:id="@id/v4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:includeFontPadding="false" android:layout_below="@id/v3" />
+        <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:id="@id/v5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/er" android:includeFontPadding="false" android:drawablePadding="5.0dip" android:layout_alignBottom="@id/v4" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <View android:id="@id/v6" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/v7" android:paddingLeft="20.0dip" android:paddingTop="15.0dip" android:paddingRight="20.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="104.0dip">
+        <include android:id="@id/v8" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" layout="@layout/biz_diamond_buy_list_item" />
+        <Space android:layout_width="10.0dip" android:layout_height="fill_parent" />
+        <include android:id="@id/v9" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" layout="@layout/biz_diamond_buy_list_item" />
+        <Space android:layout_width="10.0dip" android:layout_height="fill_parent" />
+        <include android:id="@id/v_" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" layout="@layout/biz_diamond_buy_list_item" />
+    </LinearLayout>
+    <com.netease.nr.base.view.MyButton android:id="@id/va" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="20.0dip" android:layout_marginRight="20.0dip" android:text="@string/el" />
+</LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="61.0dip">
+        <LinearLayout android:orientation="vertical" android:id="@id/bry" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+            <com.netease.reader.skin.view.SkinImageView android:layout_gravity="center" android:id="@id/e_" android:layout_width="wrap_content" android:layout_height="wrap_content" android:scaleType="center" />
+            <com.netease.reader.skin.view.SkinTextView android:textSize="11.0sp" android:textColor="@color/a7s" android:layout_gravity="center" android:id="@id/brz" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" />
+        </LinearLayout>
+        <ImageView android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="-5.0dip" android:src="@drawable/a7s" android:layout_alignTop="@id/bry" android:layout_alignRight="@id/bry" />
+    </RelativeLayout>
+</LinearLayout>

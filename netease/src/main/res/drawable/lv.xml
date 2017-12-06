@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="30" android:drawable="@drawable/ata" />
+    <item android:duration="30" android:drawable="@drawable/atb" />
+    <item android:duration="30" android:drawable="@drawable/atc" />
+    <item android:duration="30" android:drawable="@drawable/atd" />
+    <item android:duration="30" android:drawable="@drawable/ate" />
+    <item android:duration="30" android:drawable="@drawable/atf" />
+    <item android:duration="30" android:drawable="@drawable/atg" />
+    <item android:duration="30" android:drawable="@drawable/ath" />
+    <item android:duration="30" android:drawable="@drawable/ati" />
+    <item android:duration="30" android:drawable="@drawable/atj" />
+    <item android:duration="30" android:drawable="@drawable/atk" />
+    <item android:duration="30" android:drawable="@drawable/atl" />
+    <item android:duration="30" android:drawable="@drawable/atm" />
+    <item android:duration="30" android:drawable="@drawable/atn" />
+    <item android:duration="30" android:drawable="@drawable/ato" />
+    <item android:duration="30" android:drawable="@drawable/atp" />
+    <item android:duration="30" android:drawable="@drawable/atq" />
+    <item android:duration="30" android:drawable="@drawable/atr" />
+    <item android:duration="30" android:drawable="@drawable/ats" />
+    <item android:duration="30" android:drawable="@drawable/att" />
+    <item android:duration="30" android:drawable="@drawable/atu" />
+    <item android:duration="30" android:drawable="@drawable/atv" />
+    <item android:duration="30" android:drawable="@drawable/atw" />
+    <item android:duration="30" android:drawable="@drawable/atx" />
+    <item android:duration="30" android:drawable="@drawable/aty" />
+    <item android:duration="30" android:drawable="@drawable/atz" />
+    <item android:duration="30" android:drawable="@drawable/au0" />
+    <item android:duration="30" android:drawable="@drawable/au1" />
+    <item android:duration="30" android:drawable="@drawable/au2" />
+    <item android:duration="30" android:drawable="@drawable/au3" />
+    <item android:duration="30" android:drawable="@drawable/au4" />
+    <item android:duration="30" android:drawable="@drawable/au5" />
+    <item android:duration="30" android:drawable="@drawable/au6" />
+    <item android:duration="30" android:drawable="@drawable/au7" />
+    <item android:duration="30" android:drawable="@drawable/au8" />
+    <item android:duration="30" android:drawable="@drawable/au9" />
+    <item android:duration="30" android:drawable="@drawable/au_" />
+    <item android:duration="30" android:drawable="@drawable/aua" />
+    <item android:duration="30" android:drawable="@drawable/aub" />
+    <item android:duration="30" android:drawable="@drawable/auc" />
+</animation-list>

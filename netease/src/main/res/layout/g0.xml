@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/z7" android:layout_width="95.0dip" android:layout_height="fill_parent" android:layout_centerVertical="true">
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/z8" android:visibility="gone" android:layout_width="25.0dip" android:layout_height="25.0dip" android:layout_marginLeft="12.0dip" app:place_holder_no_bg="true" app:round_as_circle="true" />
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/z9" android:layout_width="2.0dip" android:layout_height="2.0dip" android:layout_marginLeft="5.0dip" android:alpha="0.0" app:round_as_circle="true" />
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/z_" android:layout_width="18.0dip" android:layout_height="18.0dip" android:layout_marginLeft="4.0dip" android:alpha="0.0" app:night_type="bs" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/za" android:paddingRight="10.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="42.0dip">
+        <com.netease.nr.base.view.MyTextView android:textSize="13.0dip" android:id="@id/zb" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <View android:id="@id/zc" android:layout_width="0.5dip" android:layout_height="13.0dip" android:layout_marginLeft="9.0dip" android:layout_marginRight="7.0dip" />
+        <com.netease.nr.base.view.MyTextView android:textSize="11.5dip" android:id="@id/zd" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <android.support.v4.widget.Space android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:gravity="center" android:id="@id/ze" android:layout_width="wrap_content" android:layout_height="wrap_content" app:night_type="bs" />
+    </LinearLayout>
+</merge>

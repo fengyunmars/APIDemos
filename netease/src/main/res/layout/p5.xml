@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minWidth="@dimen/a6"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/epaysdk_frag_title_bar" />
+    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_marginBottom="20.0dip" android:src="@drawable/a33" />
+    <CheckBox android:textSize="12.0dip" android:textColor="#ff999999" android:id="@id/axq" android:paddingLeft="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:button="@drawable/le" android:text=" 开启本设备上免输将军令" />
+    <com.netease.epay.sdk.view.gridpwd.GridPasswordView android:id="@id/axr" android:layout_width="fill_parent" android:layout_height="@dimen/a5" android:layout_marginLeft="15.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="15.0dip" app:epaysdk_textSize="12.0sp" />
+</LinearLayout>

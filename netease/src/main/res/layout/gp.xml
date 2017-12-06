@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:id="@id/a17" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:maxLines="1" />
+    <com.netease.nr.base.view.MyTextView android:textSize="18.0sp" android:id="@id/a18" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:maxLines="1" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="17.0dip" android:layout_marginTop="2.0dip" android:layout_marginRight="17.0dip" android:layout_marginBottom="7.0dip">
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:id="@id/a19" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_alignParentLeft="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:id="@id/a1_" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</LinearLayout>

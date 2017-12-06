@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:paddingLeft="25.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/as">
+        <ImageView android:id="@id/a0b" android:paddingLeft="5.0dip" android:paddingTop="5.0dip" android:paddingRight="15.0dip" android:paddingBottom="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/fg" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <CheckBox android:id="@id/a0c" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:button="@drawable/ff" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="@dimen/ab" android:textColor="@color/aa8" android:gravity="center|left" android:id="@id/ea" android:paddingLeft="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:drawablePadding="5.0dip" android:layout_toLeftOf="@id/a0b" android:layout_toRightOf="@id/a0c" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <ImageView android:id="@id/g7" android:paddingLeft="14.0dip" android:paddingRight="14.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/u7" android:scaleType="fitXY" />
+</LinearLayout>

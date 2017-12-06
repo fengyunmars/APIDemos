@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:likeanim="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@id/b3f" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:layout_gravity="bottom" android:background="@null" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginBottom="12.0dip">
+            <com.netease.luoboapi.widget.LikeAnimView android:id="@id/b3p" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/o" android:layout_marginRight="8.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" likeanim:anim_style="d3" />
+            <EditText android:textSize="@dimen/sc" android:textColor="@color/a3j" android:textColorHint="@color/a3h" android:gravity="center_vertical" android:id="@id/b3q" android:background="@drawable/m3" android:layout_width="180.0dip" android:layout_height="@dimen/tu" android:layout_marginLeft="66.0dip" android:layout_marginRight="@dimen/o" android:hint="@string/a22" android:maxLength="60" android:layout_centerVertical="true" android:inputType="text" android:imeOptions="actionSend" />
+        </RelativeLayout>
+        <FrameLayout android:layout_width="320.0dip" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/p" android:layout_marginBottom="50.0dip">
+            <com.netease.luoboapi.widget.ChatMessageLayout android:orientation="vertical" android:id="@id/b3r" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </FrameLayout>
+        <com.netease.luoboapi.widget.LuoboAnimWidget android:id="@id/b3e" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+    <ImageView android:layout_gravity="bottom" android:id="@id/b3h" android:layout_width="wrap_content" android:layout_height="40.0dip" android:layout_marginLeft="@dimen/p" android:layout_marginBottom="@dimen/n" android:src="@drawable/aye" android:scaleType="centerInside" />
+    <include android:id="@id/b3m" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/layout_tip_mobile" />
+    <include android:id="@id/b3j" layout="@layout/luobo_layout_video_top_full" />
+    <com.netease.luoboapi.view.VoteSelectView android:id="@id/b3o" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</FrameLayout>

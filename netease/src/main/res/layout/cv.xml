@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/f0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ViewStub android:id="@id/nw" android:inflatedId="@id/nw" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+    <com.netease.nr.base.view.MyTextView android:textSize="@dimen/f1" android:textColor="@color/a4" android:gravity="center|left" android:id="@id/nx" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:minEms="4" android:singleLine="true" android:layout_toRightOf="@id/nw" android:layout_centerVertical="true" />
+</RelativeLayout>

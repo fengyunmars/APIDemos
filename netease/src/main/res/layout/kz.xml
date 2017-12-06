@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/alv" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.CardView android:layout_gravity="center_horizontal" android:id="@id/alw" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/en" android:layout_marginTop="@dimen/jz" android:layout_marginRight="@dimen/en" android:layout_marginBottom="@dimen/jy" app:cardBackgroundColor="@color/u" app:cardCornerRadius="@dimen/el" app:cardElevation="@dimen/em">
+        <include android:id="@id/alx" layout="@layout/biz_subject_detail_single_header" />
+    </android.support.v7.widget.CardView>
+</FrameLayout>

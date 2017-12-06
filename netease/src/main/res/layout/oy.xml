@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="15.0dip" android:textColor="#ff333333" android:gravity="left" android:id="@id/aws" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="20.0dip" />
+    <TextView android:layout_width="wrap_content" android:layout_height="1.0px" android:minWidth="200.0dip" />
+    <include layout="@layout/epaysdk_view_divider" />
+    <Button android:textSize="17.0dip" android:textColor="#ff007aff" android:id="@id/awt" android:background="@null" android:layout_width="fill_parent" android:layout_height="@dimen/a4" android:text="知道了" />
+</LinearLayout>

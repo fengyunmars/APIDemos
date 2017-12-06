@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:background="@drawable/v2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="@dimen/lr"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.nr.base.view.MyTextView android:textAppearance="@style/mw" android:gravity="center" android:id="@id/bhh" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/ls" android:text="@string/yt" android:drawableTop="@drawable/age" />
+    <com.netease.nr.base.view.MyTextView android:textAppearance="@style/mw" android:gravity="center" android:id="@id/bhi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="@dimen/ls" android:text="@string/yr" android:drawableTop="@drawable/agd" />
+</LinearLayout>

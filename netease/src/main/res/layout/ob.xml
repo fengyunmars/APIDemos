@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/a13" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/auh" layout="@layout/epaysdk_view_titlebar" />
+    <com.netease.epay.sdk.view.StepIndexShowView android:id="@id/aty" android:layout_width="fill_parent" android:layout_height="3.0dip" android:layout_below="@id/auh" app:epaysdk_stepMargin="3.0dip" app:epaysdk_stepIndex="2" app:epaysdk_stepCount="3" />
+    <TextView android:textSize="14.0dip" android:textColor="#ff999999" android:id="@id/aui" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="15.0dip" android:text="绑定银行卡需要短信确认" android:layout_below="@id/aty" />
+    <include android:id="@id/auj" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:layout_below="@id/aui" layout="@layout/epaysdk_view_sendsms" />
+    <include android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/epaysdk_view_logo" />
+</LinearLayout>

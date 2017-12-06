@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.reader.bookreader.view.CustomForBookImageRelativeLayout android:id="@id/bs5" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.netease.reader.bookreader.view.imageex.ImageViewTouch android:id="@id/bs6" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <ImageView android:id="@id/bs7" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </com.netease.reader.bookreader.view.CustomForBookImageRelativeLayout>
+    <TextView android:textSize="12.0sp" android:textColor="@color/aa0" android:id="@id/bs8" android:background="#4e000000" android:padding="8.0dip" android:focusable="true" android:visibility="invisible" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="51.0dip" android:maxLines="4" android:layout_alignParentBottom="true" android:lineSpacingExtra="4.0sp" />
+    <RelativeLayout android:orientation="vertical" android:background="#4e000000" android:layout_width="fill_parent" android:layout_height="50.0dip" android:layout_alignParentBottom="true">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <ImageView android:id="@id/bs9" android:visibility="gone" android:src="@drawable/qw" style="@style/OnscreenActionIcon" />
+            <ImageView android:id="@id/bs_" android:visibility="gone" android:src="@drawable/qv" style="@style/OnscreenActionIcon" />
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/bsa" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true">
+            <ImageView android:id="@id/bsb" android:background="@drawable/qs" android:layout_marginRight="16.0dip" android:src="@drawable/qr" android:scaleType="center" android:layout_weight="1.0" style="@style/OnscreenActionIcon" />
+            <ImageView android:id="@id/bsc" android:background="@drawable/qs" android:layout_marginRight="16.0dip" android:src="@drawable/qt" android:scaleType="center" android:layout_weight="1.0" style="@style/OnscreenActionIcon" />
+        </LinearLayout>
+    </RelativeLayout>
+    <View android:id="@id/bsd" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</RelativeLayout>

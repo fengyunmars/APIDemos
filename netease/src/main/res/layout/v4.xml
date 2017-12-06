@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="43.0dip">
+        <com.netease.nr.base.view.MyTextView android:textSize="15.0sp" android:gravity="center" android:id="@id/bfs" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="看点回放" />
+        <android.support.v4.widget.Space android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0" />
+        <ImageView android:id="@id/bft" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="4.0dip" android:src="@drawable/afl" android:scaleType="centerInside" />
+    </LinearLayout>
+    <View android:id="@id/bfu" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+    <android.support.v7.widget.RecyclerView android:id="@id/b22" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="7.0dip" android:layout_marginBottom="7.0dip" />
+</LinearLayout>

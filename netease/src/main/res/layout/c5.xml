@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="@dimen/ah" android:paddingRight="@dimen/ah" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/m4" layout="@layout/adapter_special_timeline_item_top" />
+    <include android:id="@id/m5" android:layout_width="50.0dip" android:layout_height="wrap_content" android:layout_below="@id/m4" android:layout_alignBottom="@id/m6" layout="@layout/adapter_special_timeline_item_left" />
+    <LinearLayout android:orientation="vertical" android:id="@id/m6" android:paddingTop="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/m5" android:layout_below="@id/m4">
+        <com.netease.nr.base.view.MyTextView android:textAppearance="@style/m9" android:ellipsize="end" android:layout_gravity="center|left|top" android:id="@id/ea" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:singleLine="true" android:includeFontPadding="false" />
+        <View android:id="@id/g7" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="12.0dip" />
+    </LinearLayout>
+    <include android:id="@id/m7" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/m5" layout="@layout/adapter_special_timeline_item_bottom" />
+</RelativeLayout>

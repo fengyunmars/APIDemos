@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="17.0dip" android:textColor="#ff666666" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/ay9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="20.0dip" android:minWidth="300.0dip" android:text="此处填写消息" />
+    <include layout="@layout/epaysdk_view_divider" />
+    <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="@dimen/a4">
+        <Button android:textSize="16.0dip" android:textColor="#ff007aff" android:gravity="center" android:id="@id/ay_" android:background="@null" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="左按钮" android:layout_weight="1.0" />
+        <include android:layout_width="1.0px" android:layout_height="fill_parent" layout="@layout/epaysdk_view_divider" />
+        <Button android:textSize="17.0dip" android:textColor="#ff007aff" android:gravity="center" android:id="@id/aya" android:background="@null" android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="右按钮" android:layout_weight="1.0" />
+    </LinearLayout>
+</LinearLayout>

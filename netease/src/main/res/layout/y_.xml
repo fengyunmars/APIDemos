@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.reader.skin.view.SkinImageView android:id="@id/br6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/b0y" />
+    <com.netease.reader.skin.view.SkinTextView android:textSize="14.0sp" android:textColor="@color/a7t" android:gravity="center_horizontal" android:id="@id/br7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" />
+</LinearLayout>

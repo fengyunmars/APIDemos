@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:auto="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.RecyclerView android:id="@id/bpp" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.netease.reader.store.view.SkinTabLayout android:id="@id/bpq" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="36.0dip" auto:tabIndicatorHeight="0.0dip" auto:tabTextColor="@color/aaw">
+        <android.support.design.widget.TabItem android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/ad0" />
+        <android.support.design.widget.TabItem android:layout_width="0.0dip" android:layout_height="fill_parent" android:text="@string/acv" />
+    </com.netease.reader.store.view.SkinTabLayout>
+    <RelativeLayout android:id="@id/bpr" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+        <com.netease.reader.skin.view.SkinImageView android:id="@id/bps" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/b2i" android:layout_centerHorizontal="true" />
+        <com.netease.reader.skin.view.SkinTextView android:textSize="14.0sp" android:textColor="@color/a7t" android:id="@id/bpt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="@string/afi" android:layout_below="@id/bps" android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/bpu" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+        <com.netease.reader.skin.view.SkinProgressBar android:layout_width="20.0dip" android:layout_height="20.0dip" android:indeterminateDrawable="@drawable/os" style="?android:attr/progressBarStyleSmall" />
+        <com.netease.reader.skin.view.SkinImageView android:background="@drawable/b2k" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" />
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/bpv" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+        <com.netease.reader.skin.view.SkinImageView android:id="@id/bpw" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/b0x" />
+        <com.netease.reader.skin.view.SkinTextView android:textSize="17.0sp" android:textColor="@color/a7t" android:id="@id/bpx" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="23.0dip" android:text="@string/afg" />
+    </LinearLayout>
+</RelativeLayout>

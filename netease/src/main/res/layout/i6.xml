@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <SurfaceView android:id="@id/aae" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.google.zxing.client.android.ViewfinderView2 android:id="@id/aaf" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.netease.nr.base.view.MyTextView android:textColor="#ff000000" android:gravity="center" android:id="@id/fb" android:background="#ffffffff" android:padding="10.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <LinearLayout android:orientation="vertical" android:id="@id/aag" android:background="@color/a9w" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:baselineAligned="false">
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:padding="@dimen/x7" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <LinearLayout android:gravity="center|right" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent">
+                <ImageView android:id="@id/aah" android:layout_width="160.0dip" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/tr" android:scaleType="centerInside" android:adjustViewBounds="true" android:maxWidth="160.0dip" android:maxHeight="160.0dip" />
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textStyle="bold" android:textColor="@color/a9t" android:paddingRight="@dimen/tr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/a9m" />
+                    <TextView android:textColor="@color/a9t" android:id="@id/aai" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textStyle="bold" android:textColor="@color/a9t" android:paddingRight="@dimen/tr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/a9r" />
+                    <TextView android:textColor="@color/a9t" android:id="@id/aaj" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textStyle="bold" android:textColor="@color/a9t" android:paddingRight="@dimen/tr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/a9q" />
+                    <TextView android:textColor="@color/a9t" android:id="@id/aak" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textStyle="bold" android:textColor="@color/a9t" android:id="@id/aal" android:paddingRight="@dimen/tr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/a9n" />
+                    <TextView android:textColor="@color/a9t" android:id="@id/aam" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+            <ScrollView android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <TextView android:textSize="22.0sp" android:textColor="@color/a9v" android:textColorLink="@color/a9v" android:autoLink="web" android:id="@id/aan" android:paddingLeft="12.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    <TextView android:textColor="@color/a9v" android:textColorLink="@color/a9v" android:autoLink="web" android:id="@id/aao" android:paddingLeft="12.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/aap" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <Button android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <Button android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <Button android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <Button android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0" />
+            <Button android:id="@id/aaq" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="@string/a1e" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView android:textColor="@color/a_6" android:layout_gravity="bottom|center" android:id="@id/aar" android:background="@color/a_s" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/a9p" />
+</FrameLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:id="@id/bck" android:background="@drawable/a3y" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="horizontal" android:id="@id/bcl" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.netease.mint.platform.fresco.CustomDraweeView android:id="@id/bcm" android:background="@drawable/a3y" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <TextView android:textColor="#ffffffff" android:gravity="center" android:id="@id/bcn" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="主播正在找信号，请稍等..." />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_marginLeft="12.0dip" android:layout_marginTop="9.0dip" android:layout_alignParentLeft="true" android:layout_alignParentTop="true">
+            <ImageView android:id="@id/bco" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/a6t" />
+        </LinearLayout>
+        <ImageView android:id="@id/bcp" android:visibility="gone" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="10.0dip" android:src="@drawable/a6f" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+</FrameLayout>

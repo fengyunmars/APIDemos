@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:layout_gravity="center" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:fresco="http://schemas.android.com/apk/res-auto">
+    <TextView android:id="@id/b7z" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="15.0dip" android:text="Hello World!" />
+    <Button android:gravity="center" android:id="@id/b80" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="15.0dip" android:text="aar click" android:layout_below="@id/b81" android:layout_centerHorizontal="true" android:layout_centerVertical="true" android:onClick="onClick" />
+</LinearLayout>

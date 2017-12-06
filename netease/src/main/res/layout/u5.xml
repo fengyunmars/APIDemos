@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/a3u" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android"> // 直播头部
+<include android:id="@id/bc4" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentTop="true" layout="@layout/mint_livechatroom_head_layout" />
+    <com.netease.mint.platform.ui.TouchRecyclerView android:id="@id/bc5" android:layout_width="76.0dip" android:layout_height="160.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="12.0dip" android:layout_below="@id/bc4" android:layout_alignParentRight="true" android:overScrollMode="never" /> // 直播礼物动画
+<include android:id="@id/bc6" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/bc7" layout="@layout/mint_gift_layout_animation" />
+    <include android:id="@id/bc7" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="60.0dip" android:layout_above="@id/b__" layout="@layout/mint_gift_layout_animation" /> // 直播弹幕
+<com.netease.mint.platform.ui.TouchRecyclerView android:id="@id/b__" android:layout_width="fill_parent" android:layout_height="160.0dip" android:layout_marginRight="48.0dip" android:layout_marginBottom="60.0dip" android:layout_alignParentBottom="true" android:overScrollMode="never" />
+    <View android:id="@id/bc8" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/b_a" />
+    <RelativeLayout android:id="@id/b_a" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true"> // 直播底部
+<include android:id="@id/bc9" android:layout_width="fill_parent" android:layout_height="48.0dip" layout="@layout/mint_livechatroom_bottom_layout" /> // 发送消息布局
+<include android:id="@id/bc_" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="48.0dip" android:layout_marginBottom="10.0dip" layout="@layout/mint_livechat_send_message_layout" />
+    </RelativeLayout>
+</RelativeLayout>

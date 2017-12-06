@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.netease.reader.shelf.view.ViewPurchaseListItem android:id="@id/p0" android:paddingLeft="9.0dip" android:paddingTop="5.0dip" android:paddingRight="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/bqk" android:background="@drawable/b3x" android:paddingLeft="6.0dip" android:paddingTop="5.0dip" android:paddingRight="6.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <com.netease.reader.skin.view.SkinImageView android:id="@id/bql" android:layout_width="60.0dip" android:layout_height="84.0dip" android:scaleType="fitXY" />
+        <com.netease.reader.skin.view.SkinView android:background="@color/a7b" android:layout_width="60.0dip" android:layout_height="84.0dip" />
+    </FrameLayout>
+    <View android:id="@id/bqm" android:layout_width="1.0dip" android:layout_height="0.0dip" android:layout_alignParentRight="true" />
+    <com.netease.reader.skin.view.SkinRelativeLayout android:id="@id/bqn" android:background="@drawable/pn" android:layout_width="88.0dip" android:layout_height="26.0dip" android:layout_toLeftOf="@id/bqm" android:layout_centerVertical="true">
+        <FrameLayout android:id="@id/bqo" android:layout_width="16.0dip" android:layout_height="16.0dip" android:layout_marginLeft="12.0dip" android:layout_centerVertical="true">
+            <ProgressBar android:id="@id/a35" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" style="@android:style/Widget.Holo.ProgressBar.Small" />
+            <com.netease.reader.skin.view.SkinImageView android:layout_gravity="center" android:id="@id/bqp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/b2m" />
+        </FrameLayout>
+        <com.netease.reader.skin.view.SkinTextView android:textSize="12.0sp" android:textColor="@color/a7y" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:text="@string/agn" android:layout_toRightOf="@id/bqo" android:layout_centerVertical="true" />
+    </com.netease.reader.skin.view.SkinRelativeLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginLeft="14.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="8.0dip" android:layout_toLeftOf="@id/bqn" android:layout_toRightOf="@id/bqk">
+        <com.netease.reader.skin.view.SkinTextView android:textSize="16.0sp" android:textColor="@color/a7s" android:id="@id/bqq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+        <com.netease.reader.skin.view.SkinTextView android:textSize="12.0sp" android:textColor="@color/a7u" android:id="@id/bqr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="9.0dip" />
+        <com.netease.reader.skin.view.SkinTextView android:textSize="14.0sp" android:textColor="@color/a7u" android:id="@id/bqs" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" />
+    </LinearLayout>
+</com.netease.reader.shelf.view.ViewPurchaseListItem>

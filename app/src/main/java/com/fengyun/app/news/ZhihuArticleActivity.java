@@ -52,7 +52,6 @@ import com.fengyun.widget.TranslateYTextView;
 import com.liuguangqiang.swipeback.SwipeBackActivity;
 import com.liuguangqiang.swipeback.SwipeBackLayout;
 
-
 import org.sufficientlysecure.htmltextview.HtmlTextView;
 
 import java.lang.reflect.InvocationTargetException;
@@ -103,7 +102,7 @@ public class ZhihuArticleActivity extends SwipeBackActivity implements IZhihuArt
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.zhihudescribe);
+        setContentView(R.layout.zhihu_article);
         setDragEdge(SwipeBackLayout.DragEdge.LEFT);
         ButterKnife.bind(this);
         mDeviceInfo = DensityUtils.getDeviceInfo(this);
@@ -309,15 +308,8 @@ public class ZhihuArticleActivity extends SwipeBackActivity implements IZhihuArt
         } else {
             String data = WebUtils.buildHtmlWithCss(mBody, scc, Config.isNight);
 //            wvZhihu.loadDataWithBaseURL(WebUtils.BASE_URL, data, WebUtils.MIME_TYPE, WebUtils.ENCODING, WebUtils.FAIL_URL);
-            wvZhihu.loadDataWithBaseURL(null, data, WebUtils.MIME_TYPE, WebUtils.ENCODING, WebUtils.FAIL_URL);
-//            wvZhihu.invalidate();
-            AlertDialog.Builder dialogBuilder  = new AlertDialog.Builder(this);
-//            HtmlTextView htmlTextView = new HtmlTextView(this);
-//            htmlTextView.setHtmlFromString(newsDetailBean.getBody(), new HtmlTextView.LocalImageGetter());
-//            dialogBuilder.setView(wvZhihu);
-            dialogBuilder.setTitle("CANT SEE NOTHING !");
-            AlertDialog alertDialog = dialogBuilder.create();
-            alertDialog.show();
+            wvZhihu.loadData(data, WebUtils.MIME_TYPE, WebUtils.ENCODING);
+//            htNewsContent.setHtmlFromString(data, new HtmlTextView.LocalImageGetter());
         }
 
 

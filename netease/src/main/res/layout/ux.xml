@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:id="@id/ben" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ViewStub android:id="@id/beo" android:layout="@layout/v0" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <ViewStub android:id="@id/bep" android:layout="@layout/uz" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <ViewStub android:id="@id/beq" android:layout="@layout/uy" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <com.netease.nr.base.view.ViewPagerForSlider android:id="@id/nb" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/qz" android:layout_below="@id/ben">
+        <RelativeLayout android:id="@id/ber" android:layout_width="fill_parent" android:layout_height="@dimen/vo">
+            <com.netease.nr.base.view.SlidingTabLayout android:id="@id/sr" android:layout_width="wrap_content" android:layout_height="@dimen/vo" android:layout_marginLeft="42.0dip" android:layout_marginRight="42.0dip" />
+            <ImageView android:id="@id/act" android:visibility="gone" android:layout_width="@dimen/u6" android:layout_height="@dimen/vo" android:scaleType="centerInside" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            <com.netease.newsreader.newarch.live.studio.widget.LiveSourceLayout android:id="@id/bes" android:layout_width="fill_parent" android:layout_height="@dimen/vo" />
+        </RelativeLayout>
+    </com.netease.nr.base.view.ViewPagerForSlider>
+    <FrameLayout android:id="@id/bet" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignLeft="@id/nb" android:layout_alignTop="@id/nb" android:layout_alignRight="@id/nb" android:layout_alignBottom="@id/nb">
+        <com.netease.newsreader.newarch.live.studio.widget.LiveHintTextView android:textSize="13.0sp" android:gravity="center" android:layout_gravity="bottom|center" android:id="@id/beu" android:background="@color/l" android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:layout_width="wrap_content" android:layout_height="30.0dip" android:layout_marginBottom="7.0dip" android:drawablePadding="4.0dip" />
+    </FrameLayout>
+    <FrameLayout android:id="@id/bev" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.netease.newsreader.newarch.view.actionbar.NTESActionBar android:id="@id/ex" style="@style/actionbar">
+        <com.netease.newsreader.newarch.view.actionbar.ThemeImageView android:id="@id/bew" android:visibility="invisible" android:layout_alignParentLeft="true" app:src="@drawable/a9u" style="@style/actionbar_item" />
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/bex" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true">
+            <com.netease.nr.base.view.MyTextView android:id="@id/bey" android:visibility="gone" android:layout_marginRight="@dimen/eg" style="@style/LiveUserCountStyle" />
+            <com.netease.newsreader.newarch.view.actionbar.ThemeImageView android:id="@id/bez" android:visibility="gone" app:src="@drawable/a_a" style="@style/actionbar_item" />
+        </LinearLayout>
+        <com.netease.newsreader.newarch.view.actionbar.ThemeTextView android:textSize="@dimen/aa" android:ellipsize="end" android:gravity="center|left" android:id="@id/e2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:lines="1" android:layout_toLeftOf="@id/bex" android:layout_toRightOf="@id/bew" app:textColor="@color/n" />
+    </com.netease.newsreader.newarch.view.actionbar.NTESActionBar>
+    <FrameLayout android:id="@id/bf0" android:background="@color/hr" android:layout_width="fill_parent" android:layout_height="@dimen/u2">
+        <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:textColor="@color/b8" android:layout_gravity="center" android:id="@id/bf1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/a5e" android:drawableLeft="@drawable/afe" android:drawablePadding="10.0dip" android:layout_centerInParent="true" />
+    </FrameLayout>
+    <com.netease.newsreader.newarch.view.actionbar.ThemeImageView android:id="@id/aq4" android:background="@drawable/q8" android:paddingLeft="@dimen/eg" android:paddingRight="@dimen/eg" android:layout_width="wrap_content" android:layout_height="@dimen/u1" android:layout_alignParentLeft="true" android:foregroundGravity="center_vertical" app:src="@drawable/a9u" />
+    <FrameLayout android:id="@id/qz" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+    <ViewStub android:id="@id/bf2" android:layout="@layout/qv" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <include android:id="@id/wp" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/base_loadingbar_layout" />
+    <include android:id="@id/bf3" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/na_base_empty" />
+</RelativeLayout>

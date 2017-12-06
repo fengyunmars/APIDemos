@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/a1i" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/a1j" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/biz_news_maintop_24_action_bar_layout" />
+    <include android:id="@id/a1k" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/biz_news_maintop_24_action_bar_layout" />
+    <View android:layout_gravity="bottom" android:id="@id/a1l" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+</FrameLayout>

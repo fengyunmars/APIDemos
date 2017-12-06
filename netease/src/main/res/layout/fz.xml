@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:layout_width="fill_parent" android:layout_height="49.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/e_" android:layout_width="27.0dip" android:layout_height="27.0dip" android:layout_marginRight="7.0dip" android:layout_centerVertical="true" app:place_holder_no_bg="true" app:round_as_circle="true" />
+    <com.netease.nr.base.view.MyTextView android:textSize="14.0dip" android:id="@id/z4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/e_" android:layout_centerVertical="true" />
+    <FrameLayout android:id="@id/x2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:layout_gravity="center" android:id="@id/z5" android:layout_width="23.0dip" android:layout_height="23.0dip" android:scaleType="centerInside" app:night_type="bs" />
+        <ProgressBar android:layout_gravity="center" android:id="@id/z6" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/progressBarStyleSmallTitle" />
+    </FrameLayout>
+</RelativeLayout>

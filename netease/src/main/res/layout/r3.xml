@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/a2u" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:background="@color/a3p" android:layout_width="fill_parent" android:layout_height="@dimen/t5">
+        <ImageView android:id="@id/b31" android:paddingLeft="@dimen/sk" android:paddingRight="@dimen/sk" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/ayb" />
+        <TextView android:textSize="@dimen/sg" android:textColor="@color/a3n" android:id="@id/ea" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="选择图片" android:layout_weight="1.0" />
+        <TextView android:textSize="@dimen/sg" android:textColor="@color/a3n" android:id="@id/b32" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/sh" android:text="确定" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:alpha="0.5" />
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView android:id="@id/b33" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_margin="3.0dip" />
+</LinearLayout>

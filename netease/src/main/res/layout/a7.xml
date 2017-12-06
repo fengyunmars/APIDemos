@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/fo" android:paddingLeft="@dimen/ah" android:paddingTop="@dimen/ai" android:paddingRight="@dimen/ah" android:paddingBottom="@dimen/ai" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.netease.nr.base.view.MyTextView android:textAppearance="@style/m9" android:ellipsize="end" android:id="@id/ea" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="2" android:lineSpacingExtra="3.0dip" />
+    <com.netease.nr.base.view.BigImgEditorFrameLayout android:id="@id/fe" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="8.0dip">
+        <FrameLayout android:id="@id/fn" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.netease.newsreader.newarch.view.RatioByWidthImageView android:id="@id/e7" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="centerCrop" app:place_holder_src="@drawable/wn" app:whRatio="2.0" />
+            <ImageView android:layout_gravity="center" android:id="@id/fp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/asc" />
+            <include android:layout_gravity="bottom|center|right" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="4.0dip" android:layout_marginBottom="4.0dip" layout="@layout/adapter_newslist_item_extra_content" />
+        </FrameLayout>
+        <RelativeLayout android:layout_gravity="bottom" android:id="@id/fq" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/fr" android:padding="2.0dip" android:layout_width="@dimen/gf" android:layout_height="@dimen/gf" android:layout_marginLeft="5.0dip" android:scaleType="centerCrop" android:layout_alignParentLeft="true" app:round_as_circle="true" app:padding_color="@color/ar" />
+            <com.netease.nr.base.view.MyTextView android:textAppearance="@style/m7" android:id="@id/fs" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_toRightOf="@id/fr" android:layout_alignBottom="@id/fr" />
+            <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/ft" android:padding="2.0dip" android:layout_width="@dimen/gf" android:layout_height="@dimen/gf" android:layout_marginLeft="18.0dip" android:scaleType="centerCrop" android:layout_toRightOf="@id/fs" android:layout_alignBottom="@id/fr" app:round_as_circle="true" app:padding_color="@color/ar" />
+            <com.netease.nr.base.view.MyTextView android:textAppearance="@style/m7" android:id="@id/fu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_toRightOf="@id/ft" android:layout_alignBottom="@id/ft" />
+        </RelativeLayout>
+    </com.netease.nr.base.view.BigImgEditorFrameLayout>
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" layout="@layout/adapter_newslist_item_common_info" />
+</LinearLayout>

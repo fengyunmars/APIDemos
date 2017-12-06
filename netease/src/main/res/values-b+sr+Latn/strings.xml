@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="t">Premotaj unapred</string>
+    <string name="u">Sledeća pesma</string>
+    <string name="v">Pauza</string>
+    <string name="w">Pusti</string>
+    <string name="x">Prethodna pesma</string>
+    <string name="y">Premotaj unazad</string>
+    <string name="z">Zaustavi</string>
+</resources>

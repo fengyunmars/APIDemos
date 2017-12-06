@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.luoboapi.view.NeViewPager android:id="@id/b2w" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <FrameLayout android:background="@color/a2p" android:layout_width="fill_parent" android:layout_height="@dimen/t5">
+        <ImageView android:id="@id/b2x" android:paddingLeft="@dimen/sk" android:paddingRight="@dimen/sk" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/aya" />
+        <FrameLayout android:layout_gravity="right" android:id="@id/b2y" android:visibility="gone" android:layout_width="@dimen/t5" android:layout_height="@dimen/t5">
+            <TextView android:textSize="@dimen/sa" android:textColor="@android:color/white" android:gravity="center" android:layout_gravity="center|right" android:id="@id/b2z" android:background="@drawable/m7" android:layout_width="@dimen/sk" android:layout_height="@dimen/sk" android:layout_marginRight="@dimen/sh" />
+        </FrameLayout>
+        <ImageView android:layout_gravity="center|right" android:id="@id/atm" android:paddingLeft="@dimen/sh" android:paddingRight="@dimen/sh" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/ayp" />
+    </FrameLayout>
+    <ViewStub android:layout_gravity="bottom" android:id="@id/b30" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</FrameLayout>

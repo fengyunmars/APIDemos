@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="f">48.0dip</dimen>
+    <dimen name="cn">34.0dip</dimen>
+    <dimen name="co">10.0dip</dimen>
+    <dimen name="cp">8.0dip</dimen>
+    <dimen name="cq">10.0dip</dimen>
+    <dimen name="cr">43.0dip</dimen>
+    <dimen name="cs">2.0dip</dimen>
+    <dimen name="ct">0.0dip</dimen>
+    <dimen name="cu">0.0dip</dimen>
+</resources>

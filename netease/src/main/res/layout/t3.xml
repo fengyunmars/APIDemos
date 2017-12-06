@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:background="@color/a4h" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <SeekBar android:layout_gravity="center_vertical" android:id="@id/b8k" android:paddingLeft="15.0dip" android:paddingTop="10.0dip" android:paddingRight="15.0dip" android:paddingBottom="10.0dip" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:max="100" style="@style/beauty_seekbar" />
+    </LinearLayout>
+    <View android:background="@color/a4i" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+    <android.support.v7.widget.RecyclerView android:id="@id/b8l" android:background="@color/a4h" android:layout_width="fill_parent" android:layout_height="159.0dip" />
+</LinearLayout>

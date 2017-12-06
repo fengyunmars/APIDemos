@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/m9" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/sm" android:layout_marginBottom="@dimen/sk">
+        <ImageView android:id="@id/b41" android:layout_width="@dimen/t2" android:layout_height="@dimen/t2" android:layout_marginRight="@dimen/sc" android:src="@drawable/ayi" />
+        <com.netease.luoboapi.widget.EmojiTextView android:textSize="@dimen/s_" android:textColor="#ffafafaf" android:ellipsize="end" android:id="@id/b42" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="11111" android:maxLines="1" android:layout_toRightOf="@id/b41" />
+        <com.netease.luoboapi.widget.EmojiTextView android:textSize="@dimen/sd" android:textColor="@color/a3o" android:ellipsize="end" android:id="@id/b43" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/s9" android:text="11111" android:maxLines="2" android:layout_toRightOf="@id/b41" android:layout_below="@id/b42" />
+    </RelativeLayout>
+    <View android:background="@color/a35" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <RelativeLayout android:padding="@dimen/sm" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/sc" android:textColor="@color/a3o" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="参与人次" />
+        <TextView android:textSize="@dimen/sc" android:textColor="@color/a3o" android:id="@id/b44" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="人" android:layout_alignParentRight="true" />
+        <TextView android:textSize="@dimen/sa" android:textColor="#ffdf3031" android:id="@id/b45" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/t9" android:text="1024" android:layout_toLeftOf="@id/b44" />
+    </RelativeLayout>
+    <View android:background="@color/a35" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="@dimen/sm" android:layout_marginRight="@dimen/sm" />
+    <LinearLayout android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/s9" android:textColor="@color/a3o" android:id="@id/b46" android:padding="@dimen/sm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ahu" android:drawableTop="@drawable/ayk" android:drawablePadding="4.0dip" />
+        <TextView android:textSize="@dimen/s9" android:textColor="@color/a3o" android:id="@id/b47" android:padding="@dimen/sm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="60.0dip" android:text="@string/ai9" android:drawableTop="@drawable/ayl" android:drawablePadding="4.0dip" />
+    </LinearLayout>
+</LinearLayout>

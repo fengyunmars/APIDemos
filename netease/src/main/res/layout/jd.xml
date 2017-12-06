@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.netease.nr.base.view.MyCheckBox android:textSize="15.0sp" android:id="@id/aeo" android:paddingLeft="10.0dip" android:paddingTop="@dimen/kb" android:paddingBottom="@dimen/kb" android:layout_width="fill_parent" android:layout_height="wrap_content" android:button="@drawable/i9"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

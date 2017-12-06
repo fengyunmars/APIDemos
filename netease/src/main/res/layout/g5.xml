@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/zr" android:background="@drawable/aiy" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <TextView android:textSize="14.0sp" android:textColor="@color/jt" android:gravity="center" android:layout_gravity="bottom" android:id="@id/zs" android:background="@drawable/fd" android:layout_width="fill_parent" android:layout_height="26.0dip" android:layout_marginLeft="60.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="18.0dip" android:text="@string/i9" android:layout_weight="1.0" />
+        <TextView android:textSize="14.0sp" android:textColor="@color/jv" android:gravity="center" android:layout_gravity="bottom" android:id="@id/zt" android:background="@drawable/fe" android:layout_width="fill_parent" android:layout_height="26.0dip" android:layout_marginLeft="3.0dip" android:layout_marginRight="60.0dip" android:layout_marginBottom="18.0dip" android:text="@string/id" android:layout_weight="1.0" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="102.0dip" android:layout_marginTop="7.0dip" android:layout_marginBottom="1.0dip" android:src="@drawable/aj0" android:contentDescription="@null" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="70.0dip" android:layout_marginTop="-10.0dip">
+            <ImageView android:layout_gravity="bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_marginBottom="7.0dip" android:src="@drawable/aj2" android:contentDescription="@null" />
+            <TextView android:textSize="30.0sp" android:textColor="@color/jr" android:gravity="bottom|center|left" android:layout_gravity="bottom" android:id="@id/zu" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textSize="10.0sp" android:textColor="@color/jr" android:gravity="bottom|center|left" android:layout_gravity="bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:text="@string/if" />
+        </LinearLayout>
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="102.0dip" android:layout_marginBottom="1.0dip" android:src="@drawable/aj1" android:contentDescription="@null" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="70.0dip" android:layout_marginTop="-10.0dip">
+            <ImageView android:layout_gravity="bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_marginBottom="7.0dip" android:src="@drawable/aiz" android:layout_centerVertical="true" android:contentDescription="@null" />
+            <TextView android:textSize="10.0sp" android:textColor="@color/jr" android:gravity="bottom|center|left" android:layout_gravity="bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="2.0dip" android:text="@string/ia" />
+            <TextView android:textSize="30.0sp" android:textColor="@color/jr" android:gravity="bottom|center|left" android:layout_gravity="bottom" android:id="@id/zv" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:textSize="10.0sp" android:textColor="@color/jr" android:gravity="bottom|center|left" android:layout_gravity="bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:text="@string/if" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

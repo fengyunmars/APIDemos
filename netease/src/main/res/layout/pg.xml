@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/lf" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/ayb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:src="@drawable/a2q" android:scaleType="center" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <TextView android:ellipsize="end" android:id="@id/auu" android:layout_marginRight="35.0dip" android:text="工商银行" android:singleLine="true" style="@style/form_addcard_left_info_tv" />
+    <include android:id="@id/axf" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="15.0dip" android:layout_below="@id/auu" layout="@layout/epaysdk_view_divider" />
+</RelativeLayout>

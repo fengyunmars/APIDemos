@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.netease.newsreader.newarch.view.actionbar.NTESActionBar android:id="@id/ex" style="@style/actionbar">
+        <com.netease.newsreader.newarch.view.actionbar.ThemeImageView android:background="@android:color/transparent" android:layout_alignParentLeft="true" app:src="@drawable/at_" style="@style/actionbar_item" />
+        <com.netease.nr.biz.live.LiveActionView android:id="@id/bn7" android:layout_alignParentRight="true" style="@style/actionbar_item" />
+        <com.netease.newsreader.newarch.view.actionbar.ThemeImageView android:id="@id/bn8" android:layout_toLeftOf="@id/bn7" app:src="@drawable/at6" style="@style/actionbar_item" />
+    </com.netease.newsreader.newarch.view.actionbar.NTESActionBar>
+    <com.netease.nr.base.view.ViewPagerForSlider android:id="@id/j9" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/ex">
+        <RelativeLayout android:id="@id/nc" android:layout_width="fill_parent" android:layout_height="@dimen/av">
+            <ImageView android:id="@id/nd" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/aj8" android:layout_alignParentRight="true" />
+            <com.netease.nr.base.view.MyTextView android:id="@id/oe" android:visibility="gone" android:layout_width="6.0dip" android:layout_height="6.0dip" android:layout_marginTop="5.5dip" android:layout_marginRight="7.0dip" android:layout_alignParentRight="true" />
+            <com.netease.nr.base.view.SlidingTabLayout android:layout_gravity="top" android:id="@id/bn9" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_toLeftOf="@id/nd" />
+        </RelativeLayout>
+    </com.netease.nr.base.view.ViewPagerForSlider>
+    <ViewStub android:id="@id/bn_" android:layout="@layout/qg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignTop="@id/j9" />
+</RelativeLayout>

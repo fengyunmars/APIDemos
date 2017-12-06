@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/adn" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.nr.base.view.MyEditText android:textSize="20.0sp" android:textStyle="bold" android:textColorHint="@color/a0" android:gravity="left" android:id="@id/ado" android:background="@drawable/c3" android:paddingRight="32.0dip" android:saveEnabled="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_centerVertical="true" android:inputType="textEmailAddress" android:imeOptions="actionDone" />
+    <ImageView android:id="@id/adp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:src="@drawable/ux" android:layout_alignRight="@id/ado" android:layout_centerVertical="true" />
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textAppearance="@style/id" android:ellipsize="end" android:layout_gravity="start|center" android:id="@id/ate" android:paddingLeft="@dimen/rz" android:paddingTop="@dimen/s0" android:paddingRight="@dimen/rz" android:paddingBottom="@dimen/s0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="@integer/c" android:layout_weight="1.0" />
+    <Button android:textColor="?di" android:layout_gravity="end|center" android:id="@id/atf" android:paddingLeft="@dimen/rz" android:paddingTop="@dimen/s0" android:paddingRight="@dimen/rz" android:paddingBottom="@dimen/s0" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/cf" style="?attr/borderlessButtonStyle" />
+</merge>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/btz" android:layout_width="fill_parent" android:layout_height="55.0dip">
+        <TextView android:textSize="17.0sp" android:id="@id/bu0" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+        <TextView android:textSize="18.0sp" android:textColor="#ff525252" android:id="@id/bu1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <WebView android:id="@id/bu2" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/btz" />
+    <com.sina.weibo.sdk.web.view.LoadingBar android:id="@id/bu3" android:layout_width="fill_parent" android:layout_height="3.0dip" android:layout_below="@id/btz" />
+    <View android:background="@drawable/ro" android:layout_width="fill_parent" android:layout_height="3.0dip" android:layout_below="@id/btz" />
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/bu4" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:src="@drawable/b52" />
+        <TextView android:textSize="14.0sp" android:textColor="#ffbdbdbd" android:id="@id/bu5" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <Button android:textSize="16.0sp" android:textColor="#ff787878" android:gravity="center" android:id="@id/bmm" android:background="@drawable/r6" android:layout_width="142.0dip" android:layout_height="46.0dip" android:layout_marginTop="10.0dip" android:text="重新加载" />
+    </LinearLayout>
+</RelativeLayout>

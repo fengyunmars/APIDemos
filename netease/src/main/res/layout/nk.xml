@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/arn" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/as0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <ProgressBar android:layout_gravity="center_vertical" android:id="@id/as1" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/base_small_progressbar_style" />
+        <ImageView android:layout_gravity="bottom|center|right" android:id="@id/as2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:src="@drawable/wn" />
+    </LinearLayout>
+    <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:textColor="@color/yj" android:gravity="center_horizontal" android:id="@id/as3" android:paddingTop="16.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/as0" />
+</RelativeLayout>

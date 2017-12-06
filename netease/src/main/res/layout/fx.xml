@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingTop="@dimen/hg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/p6" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentTop="true">
+        <com.netease.newsreader.newarch.view.RatioByWidthImageView android:id="@id/jv" android:layout_width="fill_parent" android:layout_height="wrap_content" android:adjustViewBounds="true" />
+        <ImageView android:layout_gravity="center" android:id="@id/t3" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    </FrameLayout>
+    <com.netease.nr.base.view.MyTextView android:textAppearance="@style/o8" android:gravity="center" android:id="@id/ea" android:paddingLeft="2.0dip" android:paddingTop="4.0dip" android:paddingRight="2.0dip" android:paddingBottom="5.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_below="@id/p6" android:layout_alignLeft="@id/p6" android:layout_alignRight="@id/p6" />
+</RelativeLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="19.0dip" android:textColor="#ff444444" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="25.0dip" android:text="收不到验证码" />
+    <TextView android:textSize="14.0dip" android:textColor="#ff999999" android:id="@id/awp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="25.0dip" android:text="验证码发送至你的银行预留手机号" />
+    <TextView android:textSize="13.0dip" android:textColor="#ff666666" android:autoLink="phone" android:id="@id/awq" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="25.0dip" android:layout_marginBottom="20.0dip" android:text="1.请确认当前是否使用银行预留的手机号码\n2.请检查短信是否被手机安全软件拦截\n3.若预留手机已停用，请联系银行客服咨询\n4.获取更多帮助，请拨打客服电话\n %s" />
+    <include layout="@layout/epaysdk_view_divider" />
+    <Button android:textSize="17.0dip" android:textColor="#ff007aff" android:id="@id/awr" android:background="@null" android:layout_width="fill_parent" android:layout_height="@dimen/a4" android:text="我知道了" />
+</LinearLayout>

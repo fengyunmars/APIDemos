@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/ty" android:paddingLeft="@dimen/k3" android:paddingTop="12.0dip" android:paddingRight="@dimen/k3" android:paddingBottom="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.netease.newsreader.newarch.view.BaseRatioImageView android:id="@id/e_" android:layout_width="56.0dip" android:layout_height="56.0dip" android:layout_marginRight="13.0dip" android:scaleType="centerCrop" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <FrameLayout android:id="@id/x2" android:paddingLeft="@dimen/k_" android:paddingTop="@dimen/k_" android:paddingBottom="@dimen/k_" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <ImageView android:layout_gravity="center" android:id="@id/z5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="22.0dip" />
+            <ProgressBar android:layout_gravity="center" android:id="@id/z6" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/progressBarStyleSmallTitle" />
+        </FrameLayout>
+        <com.netease.nr.base.view.MyTextView android:textSize="18.0sp" android:ellipsize="end" android:id="@id/ea" android:paddingTop="6.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:layout_toLeftOf="@id/x2" android:layout_toRightOf="@id/e_" android:layout_alignParentTop="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:ellipsize="end" android:id="@id/aee" android:paddingBottom="4.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_toLeftOf="@id/x2" android:layout_toRightOf="@id/e_" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+    <View android:id="@id/g7" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</LinearLayout>

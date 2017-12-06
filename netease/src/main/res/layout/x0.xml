@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/blk" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <LinearLayout android:layout_gravity="right" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="11.0dip" android:layout_marginRight="14.0dip">
+        <TextView android:textSize="13.0sp" android:textColor="@android:color/white" android:layout_gravity="center_vertical" android:id="@id/bll" android:paddingTop="5.0dip" android:paddingBottom="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:text="@string/bw" />
+        <LinearLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:id="@id/blm" android:background="@drawable/ch" android:paddingLeft="10.0dip" android:paddingTop="7.0dip" android:paddingRight="10.0dip" android:paddingBottom="7.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <com.netease.nr.biz.video.AdVideoCountDownView android:textSize="13.0sp" android:textColor="#ffea413c" android:id="@id/bln" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:textColor="#ffffffff" android:id="@id/blo" android:paddingLeft="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/c4" />
+        </LinearLayout>
+    </LinearLayout>
+    <RelativeLayout android:layout_gravity="bottom" android:background="@drawable/q9" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_gravity="bottom|center|left" android:id="@id/blp" android:padding="9.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/cg" />
+        <ImageView android:id="@id/blq" android:background="#00000000" android:paddingLeft="14.0dip" android:paddingRight="14.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/cf" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <View android:id="@id/blr" android:background="#aaffffff" android:layout_width="0.5dip" android:layout_height="18.0dip" android:layout_toLeftOf="@id/blq" android:layout_centerVertical="true" />
+        <TextView android:textSize="14.0sp" android:textColor="#ffffffff" android:id="@id/bls" android:background="#00000000" android:paddingLeft="14.0dip" android:paddingRight="14.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/a_" android:drawableRight="@drawable/aag" android:drawablePadding="8.0dip" android:layout_toLeftOf="@id/blq" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</FrameLayout>

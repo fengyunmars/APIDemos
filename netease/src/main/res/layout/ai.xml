@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="bottom" android:background="@drawable/ajf" android:paddingLeft="11.0dip" android:paddingRight="@dimen/ah" android:layout_width="fill_parent" android:layout_height="123.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/fe" android:background="@drawable/ajh" android:layout_width="91.0dip" android:layout_height="71.0dip" android:layout_marginRight="@dimen/en" android:layout_alignParentBottom="true">
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:layout_gravity="bottom|center|right" android:id="@id/e7" android:layout_width="50.0dip" android:layout_height="65.0dip" android:layout_marginRight="2.2999878dip" android:scaleType="centerCrop" />
+    </FrameLayout>
+    <ImageView android:id="@id/gt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/en" android:layout_marginBottom="@dimen/ai" android:layout_toRightOf="@id/fe" android:layout_alignBottom="@id/fe" />
+    <com.netease.nr.base.view.MyTextView android:textAppearance="@style/m9" android:ellipsize="end" android:id="@id/ea" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="47.0dip" android:maxLines="2" android:minLines="2" android:layout_toRightOf="@id/fe" android:layout_alignParentRight="true" android:lineSpacingExtra="3.0dip" />
+    <com.netease.nr.base.view.MyTextView android:textSize="11.0sp" android:ellipsize="end" android:id="@id/fl" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:singleLine="true" android:drawablePadding="5.0dip" android:layout_toRightOf="@id/gt" android:layout_alignBottom="@id/fe" />
+</RelativeLayout>

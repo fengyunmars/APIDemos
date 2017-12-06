@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="horizontal" android:id="@id/aes" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:layout_marginBottom="5.0dip" android:layout_alignParentLeft="true" android:layout_alignParentTop="true">
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/uz" android:layout_width="@dimen/ed" android:layout_height="@dimen/ed" android:scaleType="centerCrop" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="18.0sp" android:id="@id/aet" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/st" android:layout_toRightOf="@id/uz" android:layout_alignTop="@id/uz" />
+        <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:id="@id/aeu" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:text="@string/st" android:layout_toRightOf="@id/uz" android:layout_alignBottom="@id/uz" />
+    </RelativeLayout>
+    <com.netease.nr.base.view.MyTextView android:textSize="18.0sp" android:id="@id/aev" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="@string/st" android:layout_below="@id/aes" android:layout_alignLeft="@id/aes" />
+    <LinearLayout android:id="@id/aew" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_below="@id/aev">
+        <RelativeLayout android:id="@id/aex" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="3.0dip" android:layout_weight="1.0">
+            <RelativeLayout android:id="@id/aey" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="70.0dip" android:layout_alignParentTop="true" android:layout_centerHorizontal="true">
+                <ImageView android:id="@id/aez" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:src="@drawable/zm" android:scaleType="fitXY" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+                <ImageView android:id="@id/af0" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:scaleType="fitXY" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+                <com.netease.nr.base.view.MyTextView android:textSize="45.0sp" android:textColor="@color/b8" android:id="@id/aeq" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+            <com.netease.nr.base.view.MyTextView android:textSize="15.0sp" android:gravity="center_horizontal" android:id="@id/af1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/s5" android:layout_below="@id/aey" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@id/af2" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="3.0dip" android:layout_weight="1.0">
+            <RelativeLayout android:id="@id/a_6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minHeight="70.0dip" android:layout_alignParentTop="true" android:layout_centerHorizontal="true">
+                <ImageView android:id="@id/af3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:src="@drawable/zp" android:scaleType="fitXY" android:layout_centerHorizontal="true" android:layout_centerVertical="true" />
+                <ImageView android:id="@id/af4" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:scaleType="fitXY" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+                <com.netease.nr.base.view.MyTextView android:textSize="45.0sp" android:textColor="@color/b8" android:id="@id/af5" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+            <com.netease.nr.base.view.MyTextView android:textSize="15.0sp" android:gravity="center_horizontal" android:id="@id/af6" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/se" android:layout_below="@id/a_6" android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout android:id="@id/af7" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_below="@id/aew">
+        <com.netease.nr.base.view.MyTextView android:textSize="18.0sp" android:textColor="@color/t" android:id="@id/af8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/s_" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+        <com.netease.nr.base.view.MyTextView android:id="@id/af9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/s9" android:layout_alignBottom="@id/af8" android:layout_alignParentRight="true" />
+        <RelativeLayout android:id="@id/a02" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_below="@id/af8">
+            <com.netease.nr.base.view.MyEditText android:gravity="top" android:id="@id/af_" android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="70.0dip" android:minHeight="70.0dip" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:layout_alignParentStart="true" />
+            <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:id="@id/afa" android:paddingRight="5.0dip" android:paddingBottom="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/s8" android:drawableLeft="@drawable/zo" android:layout_below="@id/af_" android:layout_alignParentRight="true" />
+        </RelativeLayout>
+        <com.netease.nr.base.view.MyTextView android:textAppearance="@style/nk" android:textSize="18.0sp" android:gravity="center" android:id="@id/afb" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:text="@string/s7" android:layout_below="@id/a02" />
+    </RelativeLayout>
+    <TabHost android:id="@id/afc" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:layout_below="@id/af7">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="5.0dip">
+                <com.netease.nr.base.view.MyTextView android:textSize="18.0sp" android:id="@id/afd" android:paddingLeft="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/sl" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                <TabWidget android:orientation="horizontal" android:id="@android:id/tabs" android:layout_width="95.0dip" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+            <FrameLayout android:id="@android:id/tabcontent" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="0.0dip" />
+        </LinearLayout>
+    </TabHost>
+</RelativeLayout>

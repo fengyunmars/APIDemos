@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/ao2" android:visibility="gone" android:layout_width="@dimen/lq" android:layout_height="@dimen/lq" android:layout_marginLeft="@dimen/lp" />
+    <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/ao3" android:visibility="gone" android:layout_width="@dimen/lq" android:layout_height="@dimen/lq" android:layout_marginLeft="@dimen/lp" />
+    <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/ao4" android:visibility="gone" android:layout_width="@dimen/lq" android:layout_height="@dimen/lq" android:layout_marginLeft="@dimen/lp" />
+    <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/ao5" android:visibility="gone" android:layout_width="@dimen/lq" android:layout_height="@dimen/lq" android:layout_marginLeft="@dimen/lp" />
+</LinearLayout>

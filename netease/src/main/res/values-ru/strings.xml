@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="a">Перейти на главный экран</string>
+    <string name="b">%1$s, %2$s</string>
+    <string name="c">%1$s, %2$s, %3$s</string>
+    <string name="d">Перейти вверх</string>
+    <string name="e">Другие параметры</string>
+    <string name="f">Готово</string>
+    <string name="g">Показать все</string>
+    <string name="h">Выбрать приложение</string>
+    <string name="i">ОТКЛ.</string>
+    <string name="j">ВКЛ.</string>
+    <string name="k">Поиск</string>
+    <string name="l">Удалить запрос</string>
+    <string name="m">Поисковый запрос</string>
+    <string name="n">Поиск</string>
+    <string name="o">Отправить запрос</string>
+    <string name="p">Голосовой поиск</string>
+    <string name="q">Открыть доступ</string>
+    <string name="r">Открыть доступ пользователю %s</string>
+    <string name="s">Свернуть</string>
+    <string name="t">Перемотать вперед</string>
+    <string name="u">Следующий трек</string>
+    <string name="v">Приостановить</string>
+    <string name="w">Воспроизвести</string>
+    <string name="x">Предыдущий трек</string>
+    <string name="y">Перемотать назад</string>
+    <string name="z">Остановить</string>
+    <string name="a0">>999</string>
+</resources>

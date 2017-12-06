@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="50.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="@color/a34" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <RelativeLayout android:id="@id/b4j" android:layout_width="fill_parent" android:layout_height="50.0dip">
+        <TextView android:textSize="14.0dip" android:textColor="@color/a3p" android:gravity="center" android:id="@id/b4k" android:background="@drawable/axp" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:text="@string/a55" android:layout_centerVertical="true" />
+        <LinearLayout android:id="@id/b4l" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/sa" android:layout_centerVertical="true">
+            <FrameLayout android:id="@id/b4m" android:background="@drawable/rn" android:padding="@dimen/sz" android:layout_width="100.0dip" android:layout_height="32.0dip" style="?android:attr/buttonBarButtonStyle">
+                <TextView android:textColor="#ff333333" android:layout_gravity="center" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="图文播报" android:drawableLeft="@drawable/b00" android:drawablePadding="6.0dip" />
+            </FrameLayout>
+            <FrameLayout android:orientation="horizontal" android:id="@id/b4n" android:background="@drawable/rn" android:padding="@dimen/sz" android:layout_width="100.0dip" android:layout_height="32.0dip" android:layout_marginLeft="@dimen/tg" style="?android:attr/buttonBarButtonStyle">
+                <TextView android:textColor="#ff333333" android:layout_gravity="center" android:background="#00000000" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="文字播报" android:drawableLeft="@drawable/b00" android:drawablePadding="6.0dip" />
+            </FrameLayout>
+        </LinearLayout>
+        <android.support.v7.widget.AppCompatEditText android:textSize="@dimen/sc" android:textColor="@color/a3i" android:textColorHint="@color/a3l" android:gravity="center_vertical" android:id="@id/b4o" android:focusableInTouchMode="false" android:layout_width="160.0dip" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/sa" android:hint="@string/a22" android:maxLength="60" android:layout_toRightOf="@id/b4k" android:inputType="text" android:imeOptions="actionSend" android:textCursorDrawable="@drawable/mb" android:backgroundTint="#ffd9d9d9" />
+        <com.netease.luoboapi.widget.LikeAnimView android:id="@id/b4p" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/o" android:layout_marginRight="8.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/b4q" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/o" android:src="@drawable/axv" android:layout_toLeftOf="@id/b4p" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</FrameLayout>

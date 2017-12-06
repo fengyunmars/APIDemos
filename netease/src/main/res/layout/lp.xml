@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="9.0dip" android:paddingTop="10.0dip" android:paddingRight="9.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.nr.base.view.MyEditText android:textSize="@dimen/b_" android:gravity="center_vertical" android:id="@id/ana" android:paddingLeft="15.0dip" android:paddingTop="13.0dip" android:paddingRight="15.0dip" android:paddingBottom="13.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/ph" android:maxLines="1" android:singleLine="true" android:maxLength="10" android:drawableLeft="@drawable/anv" android:drawablePadding="8.0dip" />
+    <ImageView android:id="@id/anb" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.0dip" android:layout_marginBottom="8.0dip" android:src="@drawable/ux" android:layout_alignRight="@id/ana" android:layout_alignBottom="@id/ana" />
+</RelativeLayout>

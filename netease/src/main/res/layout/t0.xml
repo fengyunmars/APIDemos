@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:id="@id/b88" android:layout_width="300.0dip" android:layout_height="100.0dip">
+        <TextView android:textSize="20.0dip" android:id="@id/b89" android:padding="3.0dip" android:focusable="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="当前网络质量较差，请退出后重新开始直播" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/fb" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/mu"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="2.5">
+        <ListView android:id="@id/amz" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" android:cacheColorHint="@android:color/transparent" android:divider="@color/a_s" />
+        <ImageView android:id="@id/an0" android:layout_width="wrap_content" android:layout_height="fill_parent" android:scaleType="fitXY" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <FrameLayout android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="7.5">
+        <com.netease.newsreader.newarch.view.PullRefreshRecyclerView android:scrollbarThumbVertical="@drawable/ta" android:id="@id/wq" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <ViewStub android:id="@id/ne" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <include android:id="@id/an1" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/base_loadingbar_layout" />
+        <include android:id="@id/an2" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/na_base_empty" />
+    </FrameLayout>
+</LinearLayout>

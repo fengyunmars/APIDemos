@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/a7_" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.netease.nr.base.view.MyTextView android:textSize="15.0sp" android:textColor="@color/ol" android:gravity="center" android:id="@id/a7a" android:background="@drawable/h6" android:layout_width="122.0dip" android:layout_height="30.0dip" android:layout_marginLeft="12.0dip" android:layout_marginTop="25.0dip" android:text="@string/ml" />
+        <include android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" layout="@layout/biz_pc_sign_in_view" />
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:textColor="@color/aah" android:id="@id/a7b" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="32.0dip" android:layout_marginRight="12.0dip" android:text="@string/mp" android:drawablePadding="4.0dip" android:layout_toRightOf="@id/a7a" />
+    </RelativeLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="26.0dip" android:layout_marginBottom="20.0dip">
+        <LinearLayout android:gravity="center" android:id="@id/a7c" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <com.netease.nr.base.view.MyTextView android:id="@id/a7d" android:text="@string/mt" android:drawableLeft="@drawable/night_hb" style="@style/biz_pc_main_third_login_style" />
+        </LinearLayout>
+        <View android:id="@id/a7e" style="@style/biz_pc_main_vertical_divider_style" />
+        <LinearLayout android:gravity="center" android:id="@id/a7f" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <com.netease.nr.base.view.MyTextView android:id="@id/a7g" android:text="@string/mq" android:drawableLeft="@drawable/ha" style="@style/biz_pc_main_third_login_style" />
+        </LinearLayout>
+        <View android:id="@id/a7h" style="@style/biz_pc_main_vertical_divider_style" />
+        <LinearLayout android:gravity="center" android:id="@id/a7i" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+            <com.netease.nr.base.view.MyTextView android:id="@id/a7j" android:text="@string/mo" android:drawableLeft="@drawable/h9" style="@style/biz_pc_main_third_login_style" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/fo" layout="@layout/adapter_base_list_item_normal_imgleft" />
+    <View android:id="@id/ia" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_alignBottom="@id/fo" android:layout_alignParentRight="true" />
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/fo" layout="@layout/adapter_newslist_item_bottom_divider" />
+</RelativeLayout>

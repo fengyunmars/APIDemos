@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ViewStub android:id="@id/j8" android:visibility="gone" android:layout="@layout/ag" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <include android:id="@id/gu" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/adapter_newslist_item_header_img_pager" />
+    <ViewStub android:id="@id/gw" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

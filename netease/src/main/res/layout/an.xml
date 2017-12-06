@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/h0" android:paddingLeft="@dimen/ah" android:paddingRight="@dimen/ah" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/h3" android:paddingTop="17.0dip" android:paddingBottom="17.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ProgressBar android:id="@id/h1" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/base_small_progressbar_style" />
+        <com.netease.nr.base.view.MyTextView android:textAppearance="@style/m9" android:id="@id/h2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:text="@string/au" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/h4" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:gravity="center" android:id="@id/h5" android:paddingTop="11.0dip" android:paddingBottom="11.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/as" android:includeFontPadding="false" />
+        <View android:id="@id/h6" android:layout_width="10.0dip" android:layout_height="10.0dip" android:layout_marginLeft="18.0dip" />
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="e" parent="@android:style/Widget.Material.Spinner.Underlined" />
+    <style name="bg" parent="@style/q0" />
+    <style name="bh" parent="@style/q1" />
+    <style name="ce" parent="@android:style/TextAppearance.Material.Widget.ActionBar.Menu" />
+    <style name="cf" parent="@android:style/TextAppearance.Material.Widget.Button.Inverse" />
+    <style name="cg" parent="@android:style/Widget.Material.Button.Colored" />
+    <style name="ch" parent="@android:style/Widget.Material.RatingBar.Indicator" />
+    <style name="ci" parent="@android:style/Widget.Material.RatingBar.Small" />
+    <style name="cj" parent="@style/e0">
+        <item name="eo">?android:colorBackgroundFloating</item>
+    </style>
+    <style name="q0" parent="@style/py">
+        <item name="bw">?android:actionBarItemBackground</item>
+        <item name="bx">?android:actionMenuTextAppearance</item>
+        <item name="by">?android:actionMenuTextColor</item>
+        <item name="doo">@drawable/ru</item>
+        <item name="e5">?android:ratingBarStyleIndicator</item>
+        <item name="e6">?android:ratingBarStyleSmall</item>
+    </style>
+    <style name="q1" parent="@style/pz">
+        <item name="bw">?android:actionBarItemBackground</item>
+        <item name="bx">?android:actionMenuTextAppearance</item>
+        <item name="by">?android:actionMenuTextColor</item>
+        <item name="doo">@drawable/ru</item>
+        <item name="e5">?android:ratingBarStyleIndicator</item>
+        <item name="e6">?android:ratingBarStyleSmall</item>
+    </style>
+</resources>

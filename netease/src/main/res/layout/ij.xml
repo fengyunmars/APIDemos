@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/ah" android:paddingRight="@dimen/ah" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/abo" android:padding="14.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.netease.newsreader.newarch.view.BaseRatioImageView android:id="@id/abp" android:layout_width="49.0dip" android:layout_height="49.0dip" android:scaleType="centerCrop" android:layout_centerVertical="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="16.0sp" android:textColor="@color/qf" android:id="@id/abq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="11.0dip" android:layout_toRightOf="@id/abp" android:layout_alignTop="@id/abp" />
+        <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:ellipsize="end" android:id="@id/abs" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="11.0dip" android:layout_marginTop="5.0dip" android:singleLine="true" android:layout_toRightOf="@id/abp" android:layout_below="@id/abq" />
+        <FrameLayout android:id="@id/x2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <ImageView android:layout_gravity="center" android:id="@id/z5" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <ProgressBar android:layout_gravity="center" android:id="@id/z6" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/progressBarStyleSmallTitle" />
+        </FrameLayout>
+    </RelativeLayout>
+    <View android:id="@id/aaz" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" />
+</LinearLayout>

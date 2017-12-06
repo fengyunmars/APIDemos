@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/bh7" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="horizontal" android:id="@id/bh8" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <View android:id="@id/bh9" android:layout_width="fill_parent" android:layout_height="@dimen/vh" android:layout_marginLeft="@dimen/v6" />
+            <View android:id="@id/bh_" android:layout_width="@dimen/vg" android:layout_height="@dimen/vg" />
+            <View android:id="@id/bha" android:layout_width="fill_parent" android:layout_height="@dimen/vh" android:layout_marginLeft="@dimen/v6" />
+        </LinearLayout>
+        <com.netease.nr.base.view.MyTextView android:textSize="@dimen/v5" android:layout_gravity="center_vertical" android:id="@id/bhb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/v4" android:includeFontPadding="false" />
+    </LinearLayout>
+    <View android:id="@id/bhc" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/vi" />
+</FrameLayout>

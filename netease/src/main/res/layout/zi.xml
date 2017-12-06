@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:paddingTop="15.0dip" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/bti" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.netease.reader.skin.view.SkinProgressBar android:id="@id/as1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="4.0dip" android:indeterminateDrawable="@drawable/os" style="?android:attr/progressBarStyleSmall" />
+        <com.netease.reader.skin.view.SkinTextView android:textSize="14.0sp" android:textColor="@color/a7s" android:id="@id/bqf" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="@string/afk" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/btj" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.netease.reader.skin.view.SkinTextView android:textSize="14.0sp" android:textColor="@color/a7s" android:layout_gravity="center" android:id="@id/btk" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/afg" />
+    </FrameLayout>
+</FrameLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.kevin.crop.view.GestureCropImageView android:id="@id/btx" android:padding="@dimen/yc" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.kevin.crop.view.OverlayView android:id="@id/bty" android:padding="@dimen/yc" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</merge>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="77.0dip" android:layout_height="77.0dip" android:layout_marginRight="4.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/e7" android:layout_width="73.0dip" android:layout_height="73.0dip" android:layout_marginTop="4.0dip" android:layout_marginRight="4.0dip" android:scaleType="centerCrop" />
+    <ImageView android:id="@id/ud" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ar_" android:layout_alignParentRight="true" />
+</RelativeLayout>

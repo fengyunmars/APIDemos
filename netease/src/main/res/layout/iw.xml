@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="fill_parent" android:layout_height="50.0dip" layout="@layout/media_header_layout" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ScrollView android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="139.0dip">
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/adq" android:layout_width="24.0dip" android:layout_height="24.0dip" android:layout_marginLeft="11.0dip" android:layout_marginTop="10.0dip" android:scaleType="fitXY" />
+                <TextView android:textSize="13.0sp" android:textColor="#ff999999" android:gravity="center" android:id="@id/adr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="7.3299866dip" android:maxLength="14" android:layout_toRightOf="@id/adq" android:layout_alignTop="@id/adq" android:layout_alignBottom="@id/adq" />
+                <EditText android:textSize="16.0sp" android:textColor="@color/a_n" android:textColorHint="@color/a_o" android:ellipsize="end" android:gravity="top" android:id="@id/ads" android:background="@null" android:padding="11.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:minHeight="100.0dip" android:layout_below="@id/adq" android:lineSpacingExtra="3.0dip" />
+            </RelativeLayout>
+        </ScrollView>
+        <TextView android:textSize="10.0sp" android:textColor="@color/a_p" android:layout_gravity="bottom|center|right" android:id="@id/adt" android:padding="2.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    </FrameLayout>
+    <android.support.v7.widget.RecyclerView android:id="@id/adu" android:padding="11.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

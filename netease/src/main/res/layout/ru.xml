@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/b3k" android:layout_width="fill_parent" android:layout_height="80.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_gravity="bottom" android:background="@drawable/ax5" android:layout_width="fill_parent" android:layout_height="40.0dip">
+        <ImageView android:id="@id/b5h" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/az9" android:scaleType="centerInside" />
+        <ImageView android:id="@id/b5i" android:layout_width="40.0dip" android:layout_height="40.0dip" android:src="@drawable/aza" android:scaleType="centerInside" android:layout_alignParentRight="true" />
+        <TextView android:textSize="11.0dip" android:textColor="@color/a3p" android:id="@id/b5j" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:text="@string/a5k" android:layout_toRightOf="@id/b5h" android:layout_centerVertical="true" />
+        <FrameLayout android:id="@id/b5k" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_toLeftOf="@id/b5i" android:layout_toRightOf="@id/b5h">
+            <com.netease.luoboapi.player.LuoboSeekBar android:layout_gravity="center" android:id="@id/b5l" android:padding="10.0dip" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxHeight="11.0dip" android:progressDrawable="@drawable/md" android:thumb="@drawable/aze" android:thumbOffset="2.0dip" />
+            <LinearLayout android:layout_gravity="bottom" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginBottom="4.0dip">
+                <TextView android:textSize="9.0dip" android:textColor="#fffcfcfc" android:id="@id/b5m" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/a_u" />
+                <TextView android:textSize="9.0dip" android:textColor="#fffcfcfc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:layout_marginRight="4.0dip" android:text="/" />
+                <TextView android:textSize="9.0dip" android:textColor="#fffcfcfc" android:id="@id/b5n" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/a_u" />
+            </LinearLayout>
+        </FrameLayout>
+    </RelativeLayout>
+</FrameLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.netease.nr.base.view.FloorView android:paddingTop="@dimen/br" android:paddingRight="@dimen/br" android:paddingBottom="@dimen/br" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/fw" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.netease.nr.base.view.MyTextView android:textAppearance="@style/of" android:gravity="center" android:id="@id/fx" android:layout_width="12.0dip" android:layout_height="12.0dip" android:layout_marginLeft="1.0dip" android:layout_marginTop="3.0dip" android:layout_marginRight="5.0dip" android:layout_alignParentLeft="true" />
+        <com.netease.nr.biz.tie.comment.view.ThumbSupportView android:id="@id/anw" android:paddingTop="3.0dip" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="40.0dip" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/fy" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toLeftOf="@id/anw" android:layout_toRightOf="@id/fx" android:layout_alignParentTop="true">
+            <com.netease.nr.base.view.MyTextView android:textAppearance="@style/ok" android:ellipsize="end" android:layout_gravity="center" android:id="@id/a2z" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" />
+            <include android:layout_gravity="center" android:id="@id/anp" android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/biz_tie_comment_floor_user_tag" />
+        </LinearLayout>
+        <com.netease.nr.base.view.MyTextView android:textAppearance="@style/oe" android:textSize="12.0sp" android:id="@id/anx" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_below="@id/fy" android:layout_alignLeft="@id/fy" />
+        <com.netease.nr.biz.tie.comment.common.CommentContentView android:textAppearance="@style/od" android:id="@id/a30" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/anx" android:layout_alignLeft="@id/fy" android:lineSpacingExtra="3.0dip" />
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:gravity="center" android:id="@id/any" android:padding="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/z0" android:drawablePadding="1.0dip" android:layout_below="@id/a30" android:layout_alignParentRight="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:gravity="center_vertical" android:id="@id/anz" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:drawablePadding="2.0dip" android:layout_below="@id/any" android:layout_alignParentRight="true" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/anv" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:paddingBottom="1.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:layout_below="@id/any" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <ImageView android:layout_gravity="center_vertical" android:id="@id/aey" android:paddingTop="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.netease.nr.base.view.MyTextView android:textSize="11.0sp" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@id/aeq" android:paddingBottom="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout android:orientation="horizontal" android:id="@id/g1" android:paddingLeft="@dimen/br" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.netease.nr.base.view.MyTextView android:textAppearance="@style/od" android:gravity="center" android:id="@id/ao0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ze" android:drawablePadding="10.0dip" android:layout_centerInParent="true" />
+        <ProgressBar android:id="@id/ao1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/ao0" android:layout_centerVertical="true" style="@style/base_small_progressbar_style" />
+    </RelativeLayout>
+</com.netease.nr.base.view.FloorView>

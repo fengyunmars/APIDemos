@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/fo" android:paddingLeft="@dimen/ah" android:paddingTop="@dimen/ai" android:paddingRight="@dimen/ah" android:paddingBottom="@dimen/ai" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.netease.nr.base.view.MyTextView android:textAppearance="@style/m9" android:textSize="14.0sp" android:ellipsize="end" android:layout_gravity="center_horizontal" android:id="@id/ea" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:singleLine="true" />
+        <RelativeLayout android:id="@id/jc" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <LinearLayout android:orientation="vertical" android:id="@id/hk" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                <com.netease.nr.base.view.MyTextView android:textSize="26.0sp" android:textStyle="bold" android:ellipsize="marquee" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/jd" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:ellipsize="marquee" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/je" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:singleLine="true" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/jf" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toLeftOf="@id/hk">
+                <com.netease.newsreader.newarch.view.NTESImageView2 android:layout_gravity="center_horizontal" android:id="@id/jg" android:layout_width="50.0dip" android:layout_height="50.0dip" android:scaleType="fitCenter" app:place_holder_bg="@android:color/transparent" />
+                <com.netease.nr.base.view.MyTextView android:textSize="16.0sp" android:ellipsize="marquee" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/jh" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:singleLine="true" />
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:id="@id/ji" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/hk">
+                <com.netease.newsreader.newarch.view.NTESImageView2 android:layout_gravity="center_horizontal" android:id="@id/jj" android:layout_width="50.0dip" android:layout_height="50.0dip" android:scaleType="fitCenter" app:place_holder_bg="@android:color/transparent" />
+                <com.netease.nr.base.view.MyTextView android:textSize="16.0sp" android:ellipsize="marquee" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/jk" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:singleLine="true" />
+            </LinearLayout>
+        </RelativeLayout>
+        <include android:layout_gravity="right" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" android:layout_marginBottom="@dimen/ct" layout="@layout/adapter_newslist_item_common_info" />
+    </LinearLayout>
+    <View android:id="@id/ia" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_alignBottom="@id/fo" android:layout_alignParentRight="true" />
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/fo" layout="@layout/adapter_newslist_item_bottom_divider" />
+</RelativeLayout>

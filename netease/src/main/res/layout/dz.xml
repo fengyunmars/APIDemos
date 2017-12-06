@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/tj" android:layout_width="fill_parent" android:layout_height="38.0dip">
+        <FrameLayout android:layout_width="wrap_content" android:layout_height="fill_parent">
+            <View android:layout_gravity="top" android:id="@id/tk" android:layout_width="1.0px" android:layout_height="21.0dip" android:layout_marginLeft="2.2999878dip" />
+            <View android:layout_gravity="bottom" android:id="@id/tl" android:layout_width="1.0px" android:layout_height="19.0dip" android:layout_marginLeft="2.2999878dip" />
+            <ImageView android:layout_gravity="center" android:id="@id/tm" android:layout_width="5.0dip" android:layout_height="5.0dip" android:layout_marginTop="2.0dip" />
+        </FrameLayout>
+        <TextView android:textSize="12.0sp" android:id="@id/tn" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip" android:layout_marginTop="2.0dip" />
+    </LinearLayout>
+    <FrameLayout android:id="@id/to" android:layout_width="5.0dip" android:layout_height="19.0dip">
+        <View android:id="@id/tp" android:layout_width="1.0px" android:layout_height="fill_parent" android:layout_marginLeft="2.2999878dip" />
+    </FrameLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/tq" android:paddingBottom="18.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip">
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/hf" android:layout_marginTop="16.0dip" android:layout_marginRight="@dimen/hf">
+            <com.netease.newsreader.newarch.view.RatioByWidthImageView android:layout_gravity="center_horizontal" android:id="@id/tr" android:layout_width="20.0dip" android:layout_height="20.0dip" android:scaleType="centerCrop" />
+            <com.netease.nr.base.view.MyTextView android:textSize="15.0sp" android:id="@id/ts" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="7.0dip" android:singleLine="true" android:layout_weight="1.0" />
+            <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:id="@id/tt" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <com.netease.nr.base.view.MyTextView android:textSize="16.0sp" android:id="@id/tu" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/hf" android:layout_marginTop="14.0dip" android:layout_marginRight="@dimen/hf" android:includeFontPadding="false" android:layout_below="@id/ts" android:lineSpacingMultiplier="1.4" />
+        <com.netease.nr.base.view.FitImageView android:id="@id/tw" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/hf" android:layout_marginTop="@dimen/hg" android:layout_marginRight="@dimen/hf" />
+        <com.netease.nr.base.view.MyImageView android:id="@id/tx" android:layout_width="120.0dip" android:layout_height="64.0dip" android:layout_marginLeft="40.0dip" android:layout_marginTop="12.0dip" />
+        <include android:id="@id/ty" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/hf" android:layout_marginTop="@dimen/hg" android:layout_marginRight="@dimen/hf" layout="@layout/biz_chat_quto_detail" />
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:gravity="center" android:layout_gravity="right" android:id="@id/tz" android:padding="2.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8.0dip" android:layout_marginRight="@dimen/hf" android:includeFontPadding="false" />
+    </LinearLayout>
+</LinearLayout>

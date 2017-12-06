@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/ge" android:layout_width="fill_parent" android:layout_height="118.0dip" android:layout_marginLeft="9.0dip" android:layout_marginTop="6.0dip" android:layout_marginRight="9.0dip" android:layout_marginBottom="6.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="86.0dip">
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/gf" android:layout_width="46.0dip" android:layout_height="46.0dip" android:layout_marginLeft="18.0dip" android:layout_marginRight="15.0dip" android:scaleType="centerCrop" android:layout_centerVertical="true" app:round_as_circle="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="18.0sp" android:gravity="center_vertical" android:id="@id/gg" android:layout_width="wrap_content" android:layout_height="23.0dip" android:layout_toRightOf="@id/gf" android:layout_alignTop="@id/gf" />
+        <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:gravity="center_vertical" android:id="@id/gh" android:layout_width="wrap_content" android:layout_height="23.0dip" android:layout_toRightOf="@id/gf" android:layout_below="@id/gg" />
+    </RelativeLayout>
+    <ImageView android:id="@id/g7" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="30.0dip">
+        <com.netease.nr.base.view.MyTextView android:textSize="11.0sp" android:id="@id/gi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="18.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="11.0sp" android:id="@id/gj" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="11.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</LinearLayout>

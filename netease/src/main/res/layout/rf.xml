@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.netease.luoboapi.input.photo.SquareLayout android:id="@id/b4b" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="3.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="13.0dip" android:layout_gravity="center" android:id="@id/b4c" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="拍照" android:drawableTop="@drawable/ayd" android:drawablePadding="7.0dip" />
+</com.netease.luoboapi.input.photo.SquareLayout>

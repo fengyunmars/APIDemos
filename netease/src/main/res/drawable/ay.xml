@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset android:insetLeft="@dimen/da" android:insetRight="@dimen/da" android:insetTop="@dimen/da" android:insetBottom="@dimen/da"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <selector>
+        <item android:state_checked="false" android:state_pressed="false">
+            <layer-list>
+                <item android:drawable="@drawable/t2" />
+                <item android:drawable="@drawable/sy" />
+            </layer-list>
+        </item>
+        <item>
+            <layer-list>
+                <item android:drawable="@drawable/t1" />
+                <item android:drawable="@drawable/sy" />
+            </layer-list>
+        </item>
+    </selector>
+</inset>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minWidth="@dimen/a6"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/epaysdk_frag_title_bar" />
+    <TextView android:textSize="14.0dip" android:textColor="#ff666666" android:id="@id/axz" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="20.0dip" android:text="设置6位数字密码，建议勿与银行卡密码相同" />
+    <com.netease.epay.sdk.view.gridpwd.GridPasswordView android:id="@id/avx" android:layout_width="fill_parent" android:layout_height="@dimen/a5" android:layout_marginLeft="15.0dip" android:layout_marginTop="20.0dip" android:layout_marginRight="15.0dip" app:epaysdk_textSize="12.0sp" />
+</LinearLayout>

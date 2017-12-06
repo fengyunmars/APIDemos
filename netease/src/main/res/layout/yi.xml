@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/a8k" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.reader.skin.view.SkinProgressBar android:layout_gravity="center_horizontal" android:layout_width="@dimen/ri" android:layout_height="@dimen/rh" android:layout_marginTop="@dimen/rg" android:indeterminateDrawable="@drawable/os" style="?android:attr/progressBarStyleSmall" />
+    <TextView android:textSize="@dimen/rj" android:textColor="@color/a19" android:layout_gravity="center_horizontal" android:id="@id/bsp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/re" android:layout_marginTop="10.0dip" android:layout_marginRight="@dimen/rf" android:layout_marginBottom="@dimen/rd" />
+</LinearLayout>

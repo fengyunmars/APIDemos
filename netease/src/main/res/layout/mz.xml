@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/e9" android:paddingTop="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.nr.base.view.MyTextView android:textSize="@dimen/bw" android:textColor="@color/ww" android:gravity="center" android:id="@id/s8" android:background="@drawable/a1h" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginRight="9.0dip" android:minWidth="48.0dip" android:minHeight="24.0dip" android:maxEms="3" android:minEms="3" android:singleLine="true" android:layout_alignTop="@id/ea" android:layout_alignParentLeft="true" />
+    <com.netease.nr.base.view.MyTextView android:textSize="@dimen/bx" android:textColor="@color/wy" android:id="@id/ea" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:layout_marginBottom="16.0dip" android:maxLines="2" android:layout_toRightOf="@id/s8" android:layout_centerVertical="true" android:lineSpacingExtra="3.0dip" />
+    <ImageView android:id="@id/g7" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_toRightOf="@id/s8" android:layout_below="@id/ea" />
+</RelativeLayout>

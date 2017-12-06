@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:id="@id/b8t" android:background="@drawable/nf" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/b8u" android:layout_width="fill_parent" android:layout_height="110.0dip">
+        <FrameLayout android:layout_gravity="center_horizontal" android:layout_width="58.0dip" android:layout_height="58.0dip" android:layout_marginTop="7.0dip">
+            <com.netease.mint.platform.control.PreViewImageView android:id="@id/b8v" android:visibility="gone" android:layout_width="58.0dip" android:layout_height="58.0dip" />
+            <com.netease.mint.platform.fresco.CustomDraweeView android:id="@id/b8w" android:layout_width="58.0dip" android:layout_height="58.0dip" />
+        </FrameLayout>
+        <TextView android:textSize="@dimen/xr" android:textColor="@color/a5_" android:gravity="center_horizontal" android:id="@id/b8x" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip" />
+        <TextView android:textSize="@dimen/xq" android:textColor="@color/a4w" android:gravity="center_horizontal" android:id="@id/b8y" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView android:textSize="@dimen/xp" android:textColor="@color/a62" android:gravity="center" android:layout_gravity="right" android:id="@id/b8z" android:background="@drawable/n6" android:layout_width="13.0dip" android:layout_height="13.0dip" android:layout_marginTop="4.0dip" android:layout_marginRight="4.0dip" android:text="连" />
+</FrameLayout>

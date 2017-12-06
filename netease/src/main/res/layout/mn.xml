@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.v7.widget.RecyclerView android:orientation="horizontal" android:id="@id/vv" android:paddingLeft="20.0dip" android:paddingTop="15.0dip" android:paddingRight="20.0dip" android:paddingBottom="23.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="124.0dip" />
+    <com.netease.nr.biz.input.emoji.EmojiLayout android:id="@id/apw" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <View android:id="@id/apx" android:background="@color/wl" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+</FrameLayout>

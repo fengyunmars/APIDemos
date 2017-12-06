@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:id="@id/bum">
+        <item android:id="@id/bun" android:title="@string/hd" app:showAsAction="cz" />
+        <item android:icon="@drawable/at7" android:id="@id/buo" android:orderInCategory="100" android:title="@string/av" app:showAsAction="cz" />
+    </group>
+</menu>

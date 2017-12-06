@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/ba8" android:background="@color/a5u" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip">
+        <RelativeLayout android:gravity="center" android:layout_width="26.0dip" android:layout_height="26.0dip">
+            <TextView android:textColor="@color/a10" android:gravity="center" android:id="@id/ba9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" />
+            <ImageView android:id="@id/ba_" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/a5w" />
+        </RelativeLayout>
+        <RelativeLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <FrameLayout android:layout_gravity="center" android:layout_width="71.0dip" android:layout_height="wrap_content">
+                <FrameLayout android:layout_gravity="center_horizontal" android:id="@id/baa" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
+                    <com.netease.mint.platform.fresco.CustomDraweeView android:layout_gravity="center" android:id="@id/bab" android:background="@drawable/a5z" android:visibility="visible" android:layout_width="71.0dip" android:layout_height="71.0dip" />
+                    <com.netease.mint.platform.fresco.CustomDraweeView android:layout_gravity="center" android:id="@id/bac" android:background="@android:color/transparent" android:layout_width="54.0dip" android:layout_height="54.0dip" android:src="@drawable/wp" />
+                </FrameLayout>
+                <FrameLayout android:layout_gravity="center_horizontal" android:id="@id/bad" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
+                    <com.netease.mint.platform.fresco.CustomDraweeView android:layout_gravity="center" android:id="@id/bae" android:background="@drawable/a5z" android:visibility="visible" android:layout_width="55.5dip" android:layout_height="55.5dip" />
+                    <com.netease.mint.platform.fresco.CustomDraweeView android:layout_gravity="center" android:id="@id/baf" android:background="@android:color/transparent" android:layout_width="42.0dip" android:layout_height="42.0dip" android:src="@drawable/wp" />
+                </FrameLayout>
+            </FrameLayout>
+        </RelativeLayout>
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip">
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="15.0sp" android:textColor="@color/a4l" android:ellipsize="end" android:id="@id/bag" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:maxEms="5" />
+                <TextView android:textSize="11.0sp" android:textStyle="bold|italic" android:textColor="@color/a5u" android:gravity="center" android:layout_gravity="center" android:id="@id/bah" android:background="@drawable/mw" android:layout_width="26.0dip" android:layout_height="14.0dip" android:layout_marginLeft="4.0dip" android:layout_weight="1.0" />
+            </LinearLayout>
+            <TextView android:textSize="12.0sp" android:textColor="@color/a4t" android:id="@id/bai" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="" />
+        </LinearLayout>
+    </LinearLayout>
+    <View android:background="@color/a4y" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+</LinearLayout>

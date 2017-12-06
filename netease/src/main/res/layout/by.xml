@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/ah" android:paddingRight="@dimen/ah" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/ld" android:paddingLeft="10.0dip" android:paddingTop="@dimen/ai" android:paddingRight="10.0dip" android:paddingBottom="@dimen/ai" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:id="@id/le" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/kz" android:drawablePadding="5.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:id="@id/lf" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ky" android:drawablePadding="5.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <View android:id="@id/g7" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <RelativeLayout android:id="@id/lg" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/ai">
+        <View android:id="@id/lh" android:layout_width="1.0px" android:layout_height="fill_parent" android:minHeight="25.0dip" android:layout_centerInParent="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:ellipsize="end" android:gravity="center|left|top" android:id="@id/li" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:maxLines="3" android:layout_toLeftOf="@id/lh" android:layout_alignParentLeft="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:ellipsize="end" android:gravity="center|left|top" android:id="@id/lj" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="20.0dip" android:maxLines="3" android:layout_toRightOf="@id/lh" />
+    </RelativeLayout>
+    <RelativeLayout android:id="@id/lk" android:paddingLeft="10.0dip" android:paddingTop="@dimen/ai" android:paddingRight="10.0dip" android:paddingBottom="@dimen/ai" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:id="@id/ll" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/lm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/ln" android:layout_width="fill_parent" android:layout_height="4.0dip" android:layout_marginLeft="6.0dip" android:layout_marginRight="6.0dip" android:weightSum="100.0" android:layout_toLeftOf="@id/lm" android:layout_toRightOf="@id/ll" android:layout_centerVertical="true">
+            <View android:layout_gravity="left" android:id="@id/lo" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginRight="1.0dip" />
+            <View android:layout_gravity="right" android:id="@id/lp" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="1.0dip" />
+        </LinearLayout>
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0dip" android:id="@id/lq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="2.0dip" android:includeFontPadding="false" android:layout_alignLeft="@id/ln" android:layout_alignBottom="@id/ll" />
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0dip" android:id="@id/lr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="2.0dip" android:includeFontPadding="false" android:layout_alignRight="@id/ln" android:layout_alignBottom="@id/lm" />
+    </RelativeLayout>
+</LinearLayout>

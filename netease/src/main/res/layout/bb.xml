@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/io" android:paddingLeft="@dimen/ah" android:paddingTop="12.0dip" android:paddingRight="@dimen/ah" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <include android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/biz_feed_list_subs_container" />
+    </FrameLayout>
+    <include android:id="@id/fo" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/io" layout="@layout/adapter_base_list_item_no_image" />
+    <View android:id="@id/ia" android:visibility="gone" android:layout_width="40.0dip" android:layout_height="40.0dip" android:layout_alignBottom="@id/fo" android:layout_alignParentRight="true" />
+    <include android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/fo" layout="@layout/adapter_newslist_item_bottom_divider" />
+</RelativeLayout>

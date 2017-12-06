@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@color/a55" android:layout_width="wrap_content" android:layout_height="32.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.mint.platform.fresco.CustomDraweeView android:id="@id/bbj" android:layout_width="32.0dip" android:layout_height="32.0dip" android:src="@drawable/wp" />
+    <TextView android:textSize="@dimen/xq" android:textColor="@color/a5_" android:id="@id/bbk" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:text="可心老师萌…" android:layout_toRightOf="@id/bbj" android:layout_alignParentTop="true" />
+    <TextView android:textSize="@dimen/xq" android:textColor="@color/a5_" android:id="@id/bbl" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:text="1266…" android:layout_toRightOf="@id/bbj" android:layout_alignParentBottom="true" />
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/ap9" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.newsreader.newarch.view.PullRefreshRecyclerView android:id="@id/wq" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/ap_" android:layout_alignParentTop="true" />
+    <ImageView android:id="@id/r0" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/ap_" />
+    <FrameLayout android:id="@id/ap_" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+    <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/biz_tie_comment_recycle_alert" />
+</RelativeLayout>

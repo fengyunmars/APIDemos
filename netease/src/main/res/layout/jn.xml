@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:paddingLeft="@dimen/bd" android:paddingTop="@dimen/bd" android:paddingRight="@dimen/bd" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.nr.base.view.MyImageView android:id="@id/afy" android:layout_width="250.0dip" android:layout_height="150.0dip" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+    <com.netease.nr.base.view.MyTextView android:textSize="30.0sp" android:gravity="center_horizontal" android:id="@id/ea" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:text="@string/su" android:layout_below="@id/afy" android:layout_centerHorizontal="true" />
+</RelativeLayout>

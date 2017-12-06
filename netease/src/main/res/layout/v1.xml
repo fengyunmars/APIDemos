@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.newsreader.newarch.media.NTESVideoView android:layout_gravity="center" android:id="@id/xg" android:background="@android:color/black" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/bfc" android:background="@drawable/b6" android:layout_width="fill_parent" android:layout_height="52.0dip">
+        <ImageView android:id="@id/bfd" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <com.netease.nr.base.view.MyTextView android:textSize="16.0sp" android:textColor="@android:color/white" android:ellipsize="end" android:gravity="left" android:id="@id/bfe" android:layout_width="0.0dip" android:layout_height="wrap_content" android:lines="1" android:includeFontPadding="false" android:layout_weight="1.0" />
+        <com.netease.nr.base.view.MyCheckBox android:textSize="10.0dip" android:textColor="@android:color/white" android:gravity="center" android:id="@id/bff" android:background="@drawable/c0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:checked="true" android:button="@null" android:text="@string/y7" />
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical" android:id="@id/bfg" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="12.0dip" android:layout_marginBottom="66.0dip">
+        <android.support.v4.widget.Space android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:textColor="@android:color/white" android:id="@id/bfh" android:background="@drawable/er" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:textColor="@android:color/white" android:id="@id/bfi" android:background="@drawable/er" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" />
+        </LinearLayout>
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+            <com.netease.newsreader.newarch.view.PullRefreshRecyclerView android:id="@id/wq" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="10.0dip" />
+            <com.netease.newsreader.newarch.live.studio.widget.bubbling.BubblingLayout android:id="@id/bfj" android:layout_width="100.0dip" android:layout_height="fill_parent" android:layout_alignParentRight="true" android:layout_alignParentBottom="true">
+                <com.netease.newsreader.newarch.live.studio.widget.bubbling.BubblingView android:id="@id/bfk" android:layout_width="60.0dip" android:layout_height="60.0dip" android:layout_marginLeft="@dimen/r2" android:scaleType="centerInside" android:layout_alignParentBottom="true" />
+            </com.netease.newsreader.newarch.live.studio.widget.bubbling.BubblingLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

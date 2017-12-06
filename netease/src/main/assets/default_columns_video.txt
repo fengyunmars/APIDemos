@@ -1,0 +1,72 @@
+[
+    {
+        "categorys": "",
+        "cname": "推荐",
+        "ename": "Video_Recom"
+    },
+    {
+        "categorys": "自制剧,翻唱,恶搞吐槽",
+        "cname": "搞笑",
+        "ename": "Video_Funny"
+    },
+    {
+        "categorys": "国际新闻,社会新闻,社会实验,交通事故,纪实,街头采访,拍客",
+        "cname": "现场",
+        "ename": "Video_Scene"
+    },
+    {
+        "categorys": "娱乐资讯",
+        "cname": "八卦",
+        "ename": "Video_Gossip"
+    },
+    {
+        "categorys": "美妆,服饰,情感,男士时尚,奢侈品,星座,旅游,美食攻略,食谱,公益短片,小窍门,DIY,历史,教育科普,公开课,职场教育,保健养生,健身,减肥,消费理财,指数分析,财经节目,宝宝养育,早教,准妈妈,读书,绘画,设计,家居,全景",
+        "cname": "涨姿势",
+        "ename": "Video_Knowledge"
+    },
+    {
+        "categorys": "宠物,植物视频,萌宝,治愈系列短片",
+        "cname": "萌物",
+        "ename": "Video_Adorable"
+    },
+    {
+        "categorys": "电视剧,综艺,电影",
+        "cname": "影视",
+        "ename": "Video_Movies"
+    },
+    {
+        "categorys": "时尚达人,帅哥,美女,车模,秀场",
+        "cname": "美女",
+        "ename": "Video_Beauty"
+    },
+    {
+        "categorys": "相声小品",
+        "cname": "小品",
+        "ename": "Video_Opusculum"
+    },
+    {
+        "categorys": "猎奇视频,奇葩视频",
+        "cname": "猎奇",
+        "ename": "Video_Curious"
+    },
+    {
+        "categorys": "音乐",
+        "cname": "音乐",
+        "ename": "Video_Music"
+    },
+    {
+        "categorys": "军事武器,军事节目",
+        "cname": "军武",
+        "ename": "Video_Military"
+    },
+    {
+        "categorys": "科学,科普,科技前沿,航空",
+        "cname": "黑科技",
+        "ename": "Video_Technology"
+    },
+    {
+        "categorys": "动漫",
+        "cname": "二次元",
+        "ename": "Video_Comic"
+    }
+]

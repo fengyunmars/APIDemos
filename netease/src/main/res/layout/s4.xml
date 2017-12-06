@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/luobo_layout_bt_back" />
+    <FrameLayout android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <include layout="@layout/luobo_layout_live_info3" />
+    </FrameLayout>
+    <include android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/s9" android:layout_marginRight="@dimen/s9" layout="@layout/luobo_layout_info_join" />
+</LinearLayout>

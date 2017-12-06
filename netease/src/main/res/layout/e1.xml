@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ProgressBar android:layout_gravity="center|left" android:id="@id/u4" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true" style="@style/base_small_progressbar_style" />
+    <include android:id="@id/u5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_toRightOf="@id/u4" layout="@layout/biz_city_list_child_item" />
+</RelativeLayout>

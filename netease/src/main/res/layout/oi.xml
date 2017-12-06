@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/a13" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/epaysdk_view_titlebar" />
+    <LinearLayout android:orientation="vertical" android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ImageView android:layout_gravity="center_horizontal" android:layout_width="70.0dip" android:layout_height="70.0dip" android:layout_marginTop="20.0dip" android:src="@drawable/a3g" />
+        <TextView android:textSize="16.0dip" android:textColor="@color/a1v" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="已提交充值处理" />
+        <TextView android:textSize="16.0dip" android:textColor="@color/a1p" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginBottom="20.0dip" android:text="到账前请保存好卡号和卡密" />
+        <include layout="@layout/epaysdk_view_divider" />
+    </LinearLayout>
+    <View android:background="@color/a1n" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="10.0dip" />
+    <RelativeLayout android:id="@id/aus" android:background="#ffffffff" android:paddingLeft="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="16.0dip" android:textColor="@color/a1q" android:id="@id/avp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="17.0dip" android:text="到账时间" />
+        <TextView android:textSize="16.0dip" android:textColor="@color/a1q" android:id="@id/avq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="17.0dip" android:layout_marginRight="15.0dip" android:text="到账时间描述" android:layout_alignParentRight="true" />
+        <include android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginTop="50.0dip" layout="@layout/epaysdk_view_divider" />
+        <TextView android:textSize="16.0dip" android:textColor="@color/a1q" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:layout_marginBottom="17.0dip" android:text="充值金额" android:layout_below="@id/avp" />
+        <TextView android:textSize="16.0dip" android:textColor="@color/a1q" android:id="@id/avr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="30.0dip" android:layout_marginRight="15.0dip" android:text="金额元" android:layout_below="@id/avq" android:layout_alignParentRight="true" />
+    </RelativeLayout>
+    <include layout="@layout/epaysdk_view_divider" />
+    <com.netease.epay.sdk.view.LongCommonButton android:id="@id/avo" android:layout_marginTop="15.0dip" android:text="完成" style="@style/green_long_btn" />
+    <include layout="@layout/epaysdk_view_logo" />
+</LinearLayout>

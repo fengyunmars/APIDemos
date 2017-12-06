@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/b0z" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/b10" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="@dimen/av" android:layout_alignParentTop="true">
+        <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:textColor="#ff838383" android:gravity="center|left" android:id="@id/b11" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:text="@string/iv" android:layout_toLeftOf="@id/g7" />
+        <ImageView android:id="@id/b12" android:paddingLeft="10.0dip" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/aj8" android:layout_alignParentRight="true" android:layout_centerInParent="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="@dimen/e" android:textColor="#ffa10000" android:gravity="center" android:id="@id/b13" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:text="@string/ir" android:layout_alignLeft="@id/b12" android:layout_alignRight="@id/b12" />
+    </RelativeLayout>
+    <FrameLayout android:id="@id/b14" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/b10" />
+</RelativeLayout>

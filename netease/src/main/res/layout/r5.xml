@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@color/a2y" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="202.0dip">
+            <ImageView android:id="@id/b3c" android:background="@color/yv" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <ImageView android:background="#66000000" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <include android:layout_gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/sa" android:layout_marginRight="@dimen/sa" android:layout_alignParentRight="true" layout="@layout/luobo_layout_info_join" />
+            <include layout="@layout/luobo_layout_bt_back" />
+            <TextView android:textSize="@dimen/se" android:textColor="@color/a3p" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/b36" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/tc" android:text="title string" android:layout_centerHorizontal="true" />
+            <TextView android:textSize="@dimen/sc" android:textColor="@color/a2v" android:gravity="center" android:id="@id/b38" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/sk" android:layout_marginTop="@dimen/sc" android:layout_marginRight="@dimen/sk" android:text="date string" android:layout_below="@id/b36" android:layout_centerHorizontal="true" />
+            <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@id/b3d" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/t0" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+                <View android:background="#ccffffff" android:layout_width="@dimen/sx" android:layout_height="@dimen/s8" />
+                <TextView android:textSize="@dimen/sb" android:textColor="#ccffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/td" android:layout_marginRight="@dimen/td" android:text="@string/aat" />
+                <View android:background="#ccffffff" android:layout_width="@dimen/sx" android:layout_height="@dimen/s8" />
+            </LinearLayout>
+            <LinearLayout android:gravity="center" android:id="@id/b39" android:background="@drawable/aws" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/sr" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true">
+                <FrameLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <ImageView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/sj" android:src="@drawable/axy" />
+                    <ImageView android:layout_gravity="bottom|center|right" android:id="@id/b3_" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/axz" />
+                </FrameLayout>
+                <TextView android:textSize="@dimen/sc" android:textColor="@color/a2v" android:id="@id/b3a" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/sj" android:text="@string/a_o" />
+            </LinearLayout>
+        </RelativeLayout>
+        <include layout="@layout/luobo_layout_live_middle_bar" />
+        <include android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" layout="@layout/luobo_layout_pager" />
+        <include layout="@layout/luobo_layout_input_not_full" />
+    </LinearLayout>
+    <com.netease.luoboapi.widget.LuoboAnimWidget android:id="@id/b3e" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</FrameLayout>

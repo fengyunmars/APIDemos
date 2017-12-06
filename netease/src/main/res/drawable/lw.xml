@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="42" android:drawable="@drawable/aud" />
+    <item android:duration="42" android:drawable="@drawable/aue" />
+    <item android:duration="42" android:drawable="@drawable/auf" />
+    <item android:duration="42" android:drawable="@drawable/aug" />
+    <item android:duration="42" android:drawable="@drawable/auh" />
+    <item android:duration="42" android:drawable="@drawable/aui" />
+    <item android:duration="42" android:drawable="@drawable/auj" />
+    <item android:duration="42" android:drawable="@drawable/auk" />
+    <item android:duration="42" android:drawable="@drawable/aul" />
+    <item android:duration="42" android:drawable="@drawable/aum" />
+    <item android:duration="42" android:drawable="@drawable/aun" />
+    <item android:duration="42" android:drawable="@drawable/auo" />
+    <item android:duration="42" android:drawable="@drawable/aup" />
+    <item android:duration="42" android:drawable="@drawable/auq" />
+    <item android:duration="42" android:drawable="@drawable/aur" />
+    <item android:duration="42" android:drawable="@drawable/aus" />
+    <item android:duration="42" android:drawable="@drawable/aut" />
+    <item android:duration="42" android:drawable="@drawable/auu" />
+    <item android:duration="42" android:drawable="@drawable/auv" />
+    <item android:duration="42" android:drawable="@drawable/auw" />
+    <item android:duration="42" android:drawable="@drawable/auy" />
+    <item android:duration="42" android:drawable="@drawable/auz" />
+    <item android:duration="42" android:drawable="@drawable/av0" />
+    <item android:duration="42" android:drawable="@drawable/av1" />
+    <item android:duration="42" android:drawable="@drawable/av2" />
+    <item android:duration="42" android:drawable="@drawable/av3" />
+    <item android:duration="42" android:drawable="@drawable/av4" />
+    <item android:duration="42" android:drawable="@drawable/av5" />
+    <item android:duration="42" android:drawable="@drawable/av6" />
+    <item android:duration="42" android:drawable="@drawable/av7" />
+    <item android:duration="42" android:drawable="@drawable/av8" />
+    <item android:duration="42" android:drawable="@drawable/av9" />
+    <item android:duration="42" android:drawable="@drawable/av_" />
+    <item android:duration="42" android:drawable="@drawable/ava" />
+    <item android:duration="42" android:drawable="@drawable/avb" />
+    <item android:duration="42" android:drawable="@drawable/avc" />
+    <item android:duration="42" android:drawable="@drawable/avd" />
+    <item android:duration="42" android:drawable="@drawable/ave" />
+    <item android:duration="42" android:drawable="@drawable/avf" />
+    <item android:duration="42" android:drawable="@drawable/avg" />
+    <item android:duration="42" android:drawable="@drawable/avh" />
+    <item android:duration="42" android:drawable="@drawable/avi" />
+    <item android:duration="42" android:drawable="@drawable/avj" />
+    <item android:duration="42" android:drawable="@drawable/avk" />
+    <item android:duration="42" android:drawable="@drawable/avl" />
+    <item android:duration="42" android:drawable="@drawable/avm" />
+    <item android:duration="42" android:drawable="@drawable/avn" />
+    <item android:duration="42" android:drawable="@drawable/avo" />
+</animation-list>

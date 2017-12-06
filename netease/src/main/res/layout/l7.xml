@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.CardView android:layout_gravity="center_horizontal" android:id="@id/sh" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/en" android:layout_marginTop="@dimen/jz" android:layout_marginRight="@dimen/en" android:layout_marginBottom="2.0dip" app:cardCornerRadius="@dimen/el" app:cardElevation="@dimen/em">
+        <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center" android:id="@id/amb" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:gravity="center" android:layout_gravity="center" android:id="@id/ako" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="12.0dip" android:layout_marginBottom="12.0dip" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</FrameLayout>

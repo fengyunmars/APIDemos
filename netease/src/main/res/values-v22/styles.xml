@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="bg" parent="@style/py" />
+    <style name="bh" parent="@style/pz" />
+    <style name="py" parent="@style/ps">
+        <item name="c8">?android:actionModeShareDrawable</item>
+        <item name="cy">?android:editTextBackground</item>
+    </style>
+    <style name="pz" parent="@style/pu">
+        <item name="c8">?android:actionModeShareDrawable</item>
+        <item name="cy">?android:editTextBackground</item>
+    </style>
+</resources>

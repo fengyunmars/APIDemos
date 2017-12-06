@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/a08" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="5.0dip">
+        <com.netease.nr.base.view.MyTextView android:textSize="@dimen/b" android:gravity="center" android:id="@id/xf" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginBottom="5.0dip" android:layout_centerInParent="true" />
+        <RelativeLayout android:layout_width="12.0dip" android:layout_height="12.0dip" android:layout_marginLeft="0.33000004dip" android:layout_marginTop="2.0dip" android:layout_toRightOf="@id/xf" android:layout_alignParentTop="true">
+            <ImageView android:id="@id/a09" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/aj6" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+            <ImageView android:id="@id/a0_" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/aj7" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <ImageView android:id="@id/a0a" android:paddingTop="5.0dip" android:paddingRight="10.0dip" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" />
+    <com.netease.nr.base.view.TagView android:textSize="8.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/fk" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:layout_marginRight="1.0dip" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+</RelativeLayout>

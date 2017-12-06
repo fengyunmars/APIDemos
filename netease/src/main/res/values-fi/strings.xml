@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="a">Siirry etusivulle</string>
+    <string name="b">%1$s, %2$s</string>
+    <string name="c">%1$s, %2$s, %3$s</string>
+    <string name="d">Siirry ylös</string>
+    <string name="e">Lisää</string>
+    <string name="f">Valmis</string>
+    <string name="g">Näytä kaikki</string>
+    <string name="h">Valitse sovellus</string>
+    <string name="i">POIS KÄYTÖSTÄ</string>
+    <string name="j">KÄYTÖSSÄ</string>
+    <string name="k">Haku…</string>
+    <string name="l">Tyhjennä kysely</string>
+    <string name="m">Hakulauseke</string>
+    <string name="n">Haku</string>
+    <string name="o">Lähetä kysely</string>
+    <string name="p">Puhehaku</string>
+    <string name="q">Jakaminen:</string>
+    <string name="r">Jakaminen: %s</string>
+    <string name="s">Kutista</string>
+    <string name="t">Kelaa eteen</string>
+    <string name="u">Seuraava raita</string>
+    <string name="v">Tauko</string>
+    <string name="w">Toista</string>
+    <string name="x">Edellinen raita</string>
+    <string name="y">Kelaa taakse</string>
+    <string name="z">Seis</string>
+    <string name="a0">999+</string>
+</resources>

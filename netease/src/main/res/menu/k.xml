@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@id/buk" android:title="@string/ny" app:showAsAction="cz" />
+    <item android:id="@id/bul" android:title="@string/e5" app:showAsAction="cz" />
+</menu>

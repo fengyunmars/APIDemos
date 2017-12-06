@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/ve" android:background="@color/t" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.netease.newsreader.newarch.media.NTESVideoView android:layout_gravity="center" android:id="@id/vf" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <FrameLayout android:id="@id/vg" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <android.support.v4.view.ViewPager android:id="@id/nb" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <com.netease.newsreader.newarch.view.ImgIconIndicator android:layout_gravity="bottom|center" android:id="@id/ja" android:background="@drawable/ds" android:paddingLeft="9.0dip" android:paddingTop="5.0dip" android:paddingRight="9.0dip" android:paddingBottom="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/et" app:indicatorImg="@drawable/ln" app:indicatorGap="8.0dip" app:indicatorSize="10.0dip" />
+    </FrameLayout>
+    <LinearLayout android:gravity="center" android:layout_gravity="center|right|top" android:orientation="horizontal" android:id="@id/vh" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="15.0dip" android:layout_marginRight="15.0dip">
+        <ImageView android:id="@id/vi" android:layout_width="33.0dip" android:layout_height="33.0dip" android:src="@drawable/a4" android:scaleType="centerInside" />
+        <ImageView android:id="@id/g8" android:layout_width="33.0dip" android:layout_height="33.0dip" android:layout_marginLeft="@dimen/gg" android:src="@drawable/p" android:scaleType="centerInside" />
+        <ImageView android:gravity="center" android:id="@id/vj" android:layout_width="50.0dip" android:layout_height="33.0dip" android:layout_marginLeft="@dimen/gg" android:layout_marginRight="10.0dip" android:src="@drawable/q" />
+    </LinearLayout>
+    <include android:visibility="gone" layout="@layout/biz_extra_ad_enter_news_layout" />
+</FrameLayout>

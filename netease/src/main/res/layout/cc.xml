@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/i8" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/adapter_list_divider_wide_strip" />
+    <RelativeLayout android:id="@id/mo" android:paddingLeft="@dimen/ah" android:paddingTop="8.0dip" android:paddingRight="@dimen/ah" android:paddingBottom="8.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.netease.nr.base.view.MyTextView android:textSize="@dimen/e" android:id="@id/mp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/qp" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:id="@id/mq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/kw" android:drawablePadding="5.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <View android:id="@id/mr" android:paddingLeft="@dimen/ah" android:paddingRight="@dimen/ah" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layerType="software" />
+    <LinearLayout android:orientation="horizontal" android:id="@id/fo" android:paddingLeft="@dimen/ah" android:paddingTop="15.0dip" android:paddingRight="@dimen/ah" android:paddingBottom="15.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <include android:id="@id/gb" android:layout_width="fill_parent" android:layout_height="wrap_content" layout="@layout/adapter_list_divider_wide_strip" />
+</LinearLayout>

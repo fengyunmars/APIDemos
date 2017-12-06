@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/a9z" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView android:scrollbarThumbVertical="@drawable/u9" android:id="@id/a_0" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="10.0dip" android:layout_marginRight="10.0dip" android:layout_marginBottom="10.0dip" android:layout_centerHorizontal="true">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip">
+            <RelativeLayout android:id="@id/a_1" android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <com.netease.nr.base.view.MyTextView android:textSize="22.0sp" android:textStyle="bold" android:textColor="@color/pp" android:id="@id/a_2" android:paddingTop="12.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentTop="true" />
+                <com.netease.nr.base.view.MyTextView android:textSize="18.0sp" android:textColor="@color/pp" android:id="@id/xf" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/a_2" />
+                <com.netease.nr.base.view.MyTextView android:textSize="18.0sp" android:textColor="@color/pp" android:id="@id/a_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/op" android:layout_below="@id/xf" android:layout_alignLeft="@id/a_2" />
+                <com.netease.nr.base.view.MyTextView android:textSize="18.0sp" android:textColor="@color/pp" android:id="@id/a_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/a_3" android:layout_alignTop="@id/a_3" />
+                <com.netease.nr.base.view.MyTextView android:textSize="18.0sp" android:id="@id/a_5" android:paddingTop="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/om" android:layout_below="@id/a_3" android:layout_alignLeft="@id/a_2" />
+                <com.netease.nr.base.view.MyTextView android:textSize="18.0sp" android:id="@id/a_6" android:paddingTop="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawablePadding="5.0dip" android:layout_toRightOf="@id/a_5" android:layout_alignTop="@id/a_5" />
+                <com.netease.nr.base.view.MyTextView android:textSize="18.0sp" android:id="@id/a_7" android:paddingTop="5.0dip" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/ol" android:layout_below="@id/a_5" android:layout_alignLeft="@id/a_2" />
+                <com.netease.nr.base.view.MyTextView android:textSize="18.0sp" android:id="@id/a_8" android:paddingTop="5.0dip" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawablePadding="5.0dip" android:layout_toRightOf="@id/a_7" android:layout_alignTop="@id/a_7" />
+            </RelativeLayout>
+            <ImageView android:id="@id/a_9" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/xt" android:scaleType="fitXY" />
+            <com.netease.nr.base.view.MyTextView android:textSize="18.0sp" android:textStyle="bold" android:id="@id/a__" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="15.0dip" android:layout_marginTop="15.0dip" android:layout_marginRight="15.0dip" android:text="@string/od" />
+            <LinearLayout android:orientation="vertical" android:id="@id/a_a" android:paddingLeft="15.0dip" android:paddingTop="5.0dip" android:paddingRight="15.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

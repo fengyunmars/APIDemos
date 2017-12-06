@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.netease.newsreader.newarch.view.NTESImageView2 android:layout_gravity="center" android:id="@id/gd" android:layout_width="wrap_content" android:layout_height="wrap_content" app:night_type="bs" app:place_holder_no_bg="true" app:place_holder_no_src="true" />
+</FrameLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.nr.base.view.MyTextView android:textSize="@dimen/vf" android:id="@id/bhg" android:paddingLeft="@dimen/vd" android:paddingTop="@dimen/ve" android:paddingBottom="@dimen/vc" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/vb" android:includeFontPadding="false" />
+    <LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/uk" android:paddingRight="@dimen/uk" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <include layout="@layout/na_live_studio_room_msg_list_item_time_line" />
+        <include layout="@layout/na_live_studio_room_msg_list_item_base_view" />
+    </LinearLayout>
+    <android.support.v4.widget.Space android:id="@id/bem" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="@dimen/vm" />
+</LinearLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/bei" android:paddingLeft="@dimen/um" android:paddingTop="@dimen/un" android:paddingRight="@dimen/um" android:paddingBottom="@dimen/un" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.netease.nr.base.view.MyTextView android:textSize="@dimen/vl" android:ellipsize="end" android:id="@id/bgb" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lines="1" android:includeFontPadding="false" />
+        </LinearLayout>
+        <com.netease.nr.base.view.MyTextView android:textSize="@dimen/v3" android:id="@id/bej" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/v2" android:includeFontPadding="false" android:lineSpacingMultiplier="1.2" />
+        <com.netease.newsreader.newarch.live.studio.widget.MultiImageLayout android:id="@id/bek" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/uw" />
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:layout_gravity="right" android:id="@id/bgc" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/us" android:layout_marginTop="@dimen/uu" android:layout_marginBottom="@dimen/ut" android:scaleType="fitStart" android:adjustViewBounds="true" app:night_type="br" />
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/bel" android:visibility="gone" android:layout_width="@dimen/ur" android:layout_height="@dimen/uo" />
+        <include android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/v7" layout="@layout/na_live_studio_room_msg_list_item_base_view_audio" />
+        <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/v7" layout="@layout/na_live_studio_room_msg_list_item_base_view_news" />
+        <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/v7" layout="@layout/na_live_studio_room_msg_list_item_base_view_album" />
+        <include android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/v7" layout="@layout/na_live_studio_room_msg_list_item_base_view_video" />
+        <include android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/v7" layout="@layout/na_live_studio_room_msg_list_item_base_view_quote" />
+        <com.netease.nr.base.view.MyTextView android:gravity="center" android:layout_gravity="right" android:id="@id/bgd" android:padding="2.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/v7" android:includeFontPadding="false" />
+        <com.netease.nr.base.view.MyTextView android:layout_gravity="right" android:id="@id/bge" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/v7" />
+    </LinearLayout>
+    <com.netease.newsreader.newarch.view.NTESImageView2 android:layout_gravity="center|right|top" android:id="@id/bgf" android:layout_width="wrap_content" android:layout_height="wrap_content" app:night_type="bs" app:place_holder_no_bg="true" app:place_holder_no_src="true" />
+</FrameLayout>

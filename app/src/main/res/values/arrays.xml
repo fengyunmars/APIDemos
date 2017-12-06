@@ -360,7 +360,7 @@
         <item>AJS</item>
     </string-array>
 
-    <!-- Used in App/ActionBarDisplayOptions.java -->
+    <!-- Used in ActionBar07DisplayOptionsions.java -->
     <string-array name="navigation_modes">
         <item>NAVIGATION_MODE_STANDARD</item>
         <item>NAVIGATION_MODE_TABS</item>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="10.0dip" android:clickable="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/w3" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <com.netease.nr.base.view.MyTextView android:textAppearance="?android:textAppearanceLarge" android:textSize="16.0sp" android:textColorLink="@color/fl" android:gravity="top" android:autoLink="web" android:id="@id/vt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:lineSpacingExtra="2.0dip" />
+        <LinearLayout android:orientation="horizontal" android:id="@id/w4" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/w5" android:visibility="gone" android:layout_width="130.0dip" android:layout_height="130.0dip" />
+            <com.netease.nr.base.view.MyTextView android:textAppearance="?android:textAppearanceSmall" android:textSize="14.0sp" android:layout_gravity="bottom" android:id="@id/w6" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

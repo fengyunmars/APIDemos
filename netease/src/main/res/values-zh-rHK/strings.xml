@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="a">瀏覽主頁</string>
+    <string name="b">%1$s：%2$s</string>
+    <string name="c">%1$s (%2$s)：%3$s</string>
+    <string name="d">向上瀏覽</string>
+    <string name="e">更多選項</string>
+    <string name="f">完成</string>
+    <string name="g">顯示全部</string>
+    <string name="h">選擇應用程式</string>
+    <string name="i">關閉</string>
+    <string name="j">開啟</string>
+    <string name="k">搜尋…</string>
+    <string name="l">清除查詢</string>
+    <string name="m">搜尋查詢</string>
+    <string name="n">搜尋</string>
+    <string name="o">提交查詢</string>
+    <string name="p">語音搜尋</string>
+    <string name="q">分享對象</string>
+    <string name="r">與「%s」分享</string>
+    <string name="s">收合</string>
+    <string name="t">向前快轉</string>
+    <string name="u">下一首曲目</string>
+    <string name="v">暫停</string>
+    <string name="w">播放</string>
+    <string name="x">上一首曲目</string>
+    <string name="y">倒帶</string>
+    <string name="z">停止</string>
+    <string name="a0">999 +</string>
+    <string name="a2">網易新聞</string>
+    <string name="a3">網易新聞</string>
+    <string name="a4">退出</string>
+    <string name="a5">不再提示</string>
+    <string name="a6">確定</string>
+    <string name="a7">歡迎使用網易新聞客戶端軟件，客戶端使用完全免費，在使用過程中產生的數據流量費，請咨詢當地運營商，是否允許應用建立連接？</string>
+    <string name="a8">系統提示</string>
+    <string name="a9">更新序號：Build %s</string>
+</resources>

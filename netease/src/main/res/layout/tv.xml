@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center_horizontal" android:layout_gravity="bottom" android:id="@id/bb0" android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="30.0dip" android:layout_marginRight="30.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/bb1" android:layout_width="fill_parent" android:layout_height="150.0dip" android:layout_alignParentTop="true" />
+    <LinearLayout android:gravity="bottom|center" android:orientation="vertical" android:id="@id/bb2" android:background="@drawable/no" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_below="@id/bb1">
+        <LinearLayout android:gravity="center" android:layout_gravity="center" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:gravity="center_horizontal" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_weight="1.0">
+                <TextView android:textSize="13.0sp" android:textColor="@color/a4e" android:gravity="center" android:layout_gravity="center" android:id="@id/bb3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="贡献总榜" />
+            </RelativeLayout>
+            <RelativeLayout android:gravity="center" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="44.0dip" android:layout_weight="1.0">
+                <TextView android:textSize="13.0sp" android:textColor="@color/a4e" android:gravity="center" android:layout_gravity="center" android:id="@id/bb5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="贡献日榜" />
+            </RelativeLayout>
+        </LinearLayout>
+        <include layout="@layout/mint_layout_deliver_horizontal_line" />
+        <TextView android:textSize="13.0sp" android:textColor="@color/a4e" android:gravity="center" android:layout_gravity="center" android:id="@id/bb8" android:paddingTop="7.0dip" android:paddingBottom="7.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="88888888金币" />
+        <include layout="@layout/mint_layout_deliver_horizontal_line" />
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <android.support.v4.view.ViewPager android:id="@id/bb7" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <TextView android:gravity="center" android:layout_gravity="center" android:id="@id/bb9" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/a73" />
+            <ListView android:id="@id/bb_" android:visibility="gone" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <ListView android:id="@id/bba" android:visibility="gone" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <android.support.v7.widget.RecyclerView android:id="@id/bbb" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

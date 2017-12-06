@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/fv" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerVertical="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.netease.newsreader.newarch.view.RatioByWidthImageView android:id="@id/wt" android:layout_width="fill_parent" android:layout_height="fill_parent" app:place_holder_src="@drawable/wn" app:cut_from_top="true" />
+    <FrameLayout android:id="@id/ff" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:layout_gravity="center" android:id="@id/fg" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <com.netease.nr.base.view.DonutProgress android:layout_gravity="center" android:id="@id/fh" android:visibility="gone" android:layout_width="54.0dip" android:layout_height="54.0dip" />
+        <com.netease.newsreader.newarch.view.RatioByWidthImageView android:id="@id/fi" android:visibility="invisible" android:layout_width="fill_parent" android:layout_height="wrap_content" android:scaleType="centerCrop" app:place_holder_no_bg="true" app:place_holder_no_src="true" />
+    </FrameLayout>
+    <ImageView android:layout_gravity="bottom" android:id="@id/ahp" android:layout_width="fill_parent" android:layout_height="wrap_content" android:src="@drawable/aoy" android:scaleType="fitXY" />
+    <TextView android:textSize="13.0sp" android:layout_gravity="bottom|center" android:id="@id/ahq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="11.0dip" android:text="戳我看长图" />
+</FrameLayout>

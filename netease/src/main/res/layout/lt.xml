@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:padding="20.0dip" android:clipChildren="false" android:clipToPadding="false" android:layout_width="165.0dip" android:layout_height="165.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/az" android:layout_width="124.0dip" android:layout_height="124.0dip" android:layout_marginRight="-18.0dip" android:layout_marginBottom="-18.0dip" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    <View android:id="@id/aw" android:background="@drawable/k3" android:layout_width="120.0dip" android:layout_height="120.0dip" android:layout_margin="0.0dip" android:layout_centerInParent="true" />
+    <View android:id="@id/ax" android:background="@drawable/k3" android:layout_width="110.0dip" android:layout_height="110.0dip" android:layout_centerInParent="true" />
+    <com.netease.nr.base.view.MyCheckedTextView android:textSize="12.0sp" android:textColor="@drawable/k2" android:gravity="center" android:id="@id/b2" android:background="@drawable/k5" android:layout_width="@dimen/xa" android:layout_height="@dimen/xa" android:layout_marginTop="-10.0dip" android:layout_marginRight="-6.0dip" android:text="选项1" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+    <com.netease.nr.base.view.MyCheckedTextView android:textSize="12.0sp" android:textColor="@drawable/k2" android:gravity="center" android:id="@id/b3" android:background="@drawable/k5" android:layout_width="@dimen/xa" android:layout_height="@dimen/xa" android:layout_marginTop="-8.0dip" android:layout_marginRight="15.0dip" android:text="选项2" android:layout_toLeftOf="@id/b2" />
+    <com.netease.nr.base.view.MyCheckedTextView android:textSize="12.0sp" android:textColor="@drawable/k2" android:gravity="center" android:id="@id/b4" android:background="@drawable/k5" android:layout_width="@dimen/xa" android:layout_height="@dimen/xa" android:layout_marginLeft="-15.0dip" android:layout_marginTop="30.0dip" android:text="选项3" android:layout_alignParentLeft="true" />
+    <com.netease.nr.base.view.MyCheckedTextView android:textSize="12.0sp" android:textColor="@drawable/k2" android:gravity="center" android:id="@id/b5" android:background="@drawable/k5" android:layout_width="@dimen/xa" android:layout_height="@dimen/xa" android:layout_marginLeft="-12.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="-8.0dip" android:layout_marginBottom="-15.0dip" android:text="选项4" android:layout_below="@id/b4" />
+    <FrameLayout android:id="@id/b9" android:background="@drawable/k6" android:layout_width="124.0dip" android:layout_height="124.0dip" android:layout_centerInParent="true">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="124.0dip" android:layout_height="124.0dip">
+            <ImageView android:gravity="center" android:id="@id/ao" android:layout_width="18.0dip" android:layout_height="18.0dip" android:src="@drawable/a2" />
+            <com.netease.nr.base.view.MyTextView android:textSize="17.0sp" android:textColor="#ffffab44" android:gravity="center" android:id="@id/b8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="娱乐快讯" />
+        </LinearLayout>
+    </FrameLayout>
+    <com.netease.nr.base.view.MyTextView android:textSize="15.0sp" android:textColor="#ffffffff" android:gravity="center" android:id="@id/b0" android:background="@drawable/a3" android:layout_width="124.0dip" android:layout_height="124.0dip" android:text="娱乐快讯" android:layout_alignParentBottom="true" android:layout_centerInParent="true" />
+</RelativeLayout>

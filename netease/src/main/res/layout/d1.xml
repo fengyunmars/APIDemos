@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/o8" android:padding="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/n7" android:paddingLeft="22.0dip" android:paddingTop="20.0dip" android:paddingRight="22.0dip" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.netease.nr.base.view.MyTextView android:textSize="20.0sp" android:id="@id/o9" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="15.0dip" android:singleLine="true" android:drawablePadding="5.0dip" />
+        <FrameLayout android:id="@id/o_" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="10.0dip">
+            <com.netease.nr.base.view.MyTextView android:textSize="16.0sp" android:gravity="left" android:id="@id/oa" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </FrameLayout>
+        <LinearLayout android:gravity="right" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="4.0dip">
+            <com.netease.nr.base.view.MyButton android:textSize="14.0sp" android:id="@id/ob" android:paddingLeft="10.0dip" android:paddingTop="7.0dip" android:paddingRight="10.0dip" android:paddingBottom="7.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="20.0dip" android:text="@string/a1u" />
+            <com.netease.nr.base.view.MyButton android:textSize="14.0sp" android:id="@id/oc" android:paddingLeft="10.0dip" android:paddingTop="7.0dip" android:paddingRight="10.0dip" android:paddingBottom="7.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/a24" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

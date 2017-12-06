@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/a0e" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <FrameLayout android:id="@id/oh" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+        <ImageView android:id="@id/a0f" android:background="@drawable/v1" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/oh" />
+        <FrameLayout android:id="@id/a0g" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/oh" />
+        <ViewStub android:id="@id/a0h" android:layout="@layout/gc" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="@dimen/ed" />
+        <RelativeLayout android:gravity="center_horizontal" android:id="@id/a0i" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/oh">
+            <com.netease.nr.biz.pc.account.msg.PopupMsgView android:id="@id/a0j" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <include android:id="@id/a0k" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/base_loadingbar_layout" />
+    <include android:id="@id/a0l" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" layout="@layout/base_load_empty_layout" />
+</RelativeLayout>

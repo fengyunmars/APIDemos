@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="270.0dip" android:layout_height="420.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ViewStub android:id="@id/ac7" android:layout="@layout/in" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ViewStub android:id="@id/ac8" android:layout="@layout/iq" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <ViewStub android:id="@id/ac9" android:layout="@layout/ip" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

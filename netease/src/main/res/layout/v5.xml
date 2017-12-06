@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.netease.newsreader.newarch.view.PullRefreshRecyclerView android:id="@id/wq" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <FrameLayout android:layout_gravity="bottom|center|right" android:id="@id/bfv" android:visibility="gone" android:layout_width="@dimen/l0" android:layout_height="@dimen/l0" android:layout_marginRight="@dimen/u4" android:layout_marginBottom="@dimen/u3">
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/bfw" android:layout_width="@dimen/u5" android:layout_height="@dimen/u5" android:layout_marginTop="5.0dip" android:layout_marginRight="5.0dip" android:scaleType="fitXY" app:night_type="br" app:place_holder_no_bg="true" app:place_holder_no_src="true" app:round_as_circle="false" />
+        <ImageView android:layout_gravity="center|right|top" android:layout_width="14.0dip" android:layout_height="14.0dip" android:src="@drawable/g" android:scaleType="fitXY" />
+        <ImageView android:layout_gravity="center|right|top" android:id="@id/ajm" android:layout_width="26.0dip" android:layout_height="26.0dip" android:scaleType="fitXY" />
+    </FrameLayout>
+</FrameLayout>

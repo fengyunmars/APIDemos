@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/bdf" android:background="@drawable/nt" android:layout_width="fill_parent" android:layout_height="145.0dip" android:layout_marginLeft="14.0dip" android:layout_marginTop="32.0dip" android:layout_marginRight="14.0dip">
+        <TextView android:textSize="@dimen/xv" android:textColor="@color/a4o" android:ellipsize="end" android:gravity="center_horizontal" android:id="@id/bbk" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="4.0dip" android:layout_marginTop="34.0dip" android:layout_marginRight="4.0dip" android:text="" android:singleLine="true" />
+        <TextView android:textSize="@dimen/xt" android:textColor="@color/a4t" android:gravity="center_horizontal" android:id="@id/bdg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="关注主播即可订阅下次开播通知" />
+        <TextView android:textSize="@dimen/xv" android:textColor="@color/a5_" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@id/bdh" android:background="@drawable/na" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="14.0dip" android:text="关注" />
+    </LinearLayout>
+    <com.netease.mint.platform.fresco.CustomDraweeView android:id="@id/bbj" android:layout_width="64.0dip" android:layout_height="64.0dip" android:scaleType="centerCrop" android:layout_centerHorizontal="true" />
+</RelativeLayout>

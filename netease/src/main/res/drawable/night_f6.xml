@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="30" android:drawable="@drawable/night_ah2" />
+    <item android:duration="30" android:drawable="@drawable/night_ah3" />
+    <item android:duration="30" android:drawable="@drawable/night_ah4" />
+    <item android:duration="30" android:drawable="@drawable/night_ah5" />
+    <item android:duration="30" android:drawable="@drawable/night_ah6" />
+    <item android:duration="30" android:drawable="@drawable/night_ah7" />
+    <item android:duration="30" android:drawable="@drawable/night_ah8" />
+    <item android:duration="30" android:drawable="@drawable/night_ah9" />
+    <item android:duration="30" android:drawable="@drawable/night_ah_" />
+    <item android:duration="30" android:drawable="@drawable/night_aha" />
+</animation-list>

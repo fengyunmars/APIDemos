@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:padding="13.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.nr.base.view.MyTextView android:textSize="11.0sp" android:textStyle="bold" android:textColor="@android:color/white" android:gravity="center_horizontal" android:id="@id/am7" android:paddingTop="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="问" />
+    <com.netease.nr.base.view.MyTextView android:textSize="15.0sp" android:ellipsize="end" android:id="@id/sk" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginTop="3.0dip" android:maxLines="2" android:minLines="1" android:layout_toRightOf="@id/am7" android:lineSpacingMultiplier="1.2" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_below="@id/sk" android:layout_alignLeft="@id/sk">
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:id="@id/ra" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+        <View android:id="@id/g7" android:layout_width="2.0px" android:layout_height="11.0dip" android:layout_marginLeft="5.0dip" android:layout_toRightOf="@id/ra" android:layout_centerVertical="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:typeface="serif" android:id="@id/sm" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_toRightOf="@id/g7" android:layout_centerVertical="true" />
+        <View android:id="@id/ib" android:layout_width="2.0px" android:layout_height="11.0dip" android:layout_marginLeft="5.0dip" android:layout_toRightOf="@id/sm" android:layout_centerVertical="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:id="@id/am8" android:paddingLeft="5.0dip" android:paddingRight="2.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/ib" android:layout_centerVertical="true" />
+    </RelativeLayout>
+</RelativeLayout>

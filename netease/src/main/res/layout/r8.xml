@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@null" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:video="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.netease.luoboapi.view.VideoRatioLayout android:id="@id/b3f" android:layout_width="fill_parent" android:layout_height="fill_parent" video:isFull="false">
+            <ImageView android:layout_gravity="bottom" android:id="@id/b3h" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="40.0dip" android:layout_marginLeft="@dimen/p" android:layout_marginBottom="@dimen/n" android:src="@drawable/aye" android:scaleType="centerInside" />
+            <include android:id="@id/b3g" android:visibility="gone" layout="@layout/luobo_layout_live_ratio_land" />
+            <View android:id="@id/b3i" android:background="@color/a30" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <include android:id="@id/b3j" layout="@layout/luobo_layout_video_top_full" />
+            <com.netease.luoboapi.view.NEMediaController android:layout_gravity="bottom" android:id="@id/b3k" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+            <android.support.v7.widget.RecyclerView android:layout_gravity="right" android:id="@id/b3l" android:layout_width="78.0dip" android:layout_height="wrap_content" android:layout_marginTop="@dimen/t0" android:layout_marginRight="@dimen/s9" android:layout_marginBottom="40.0dip" />
+            <ImageView android:layout_gravity="center" android:id="@id/b3s" android:background="@null" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/azd" />
+            <include android:id="@id/b3m" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/layout_tip_mobile" />
+        </com.netease.luoboapi.view.VideoRatioLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/b3n" android:background="@color/a2y" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <include layout="@layout/luobo_layout_live_middle_bar" />
+            <include android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" layout="@layout/luobo_layout_pager" />
+            <include layout="@layout/luobo_layout_input_not_full" />
+        </LinearLayout>
+    </LinearLayout>
+    <com.netease.luoboapi.widget.LuoboAnimWidget android:id="@id/b3e" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</FrameLayout>

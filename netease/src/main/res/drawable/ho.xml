@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="60" android:drawable="@drawable/ap5" />
+    <item android:duration="60" android:drawable="@drawable/ap6" />
+    <item android:duration="60" android:drawable="@drawable/ap7" />
+    <item android:duration="60" android:drawable="@drawable/ap8" />
+    <item android:duration="60" android:drawable="@drawable/ap9" />
+    <item android:duration="60" android:drawable="@drawable/ap_" />
+    <item android:duration="60" android:drawable="@drawable/apa" />
+    <item android:duration="60" android:drawable="@drawable/apb" />
+    <item android:duration="60" android:drawable="@drawable/apc" />
+    <item android:duration="60" android:drawable="@drawable/apd" />
+    <item android:duration="60" android:drawable="@drawable/ape" />
+    <item android:duration="60" android:drawable="@drawable/apf" />
+    <item android:duration="60" android:drawable="@drawable/apg" />
+    <item android:duration="60" android:drawable="@drawable/aph" />
+    <item android:duration="60" android:drawable="@drawable/api" />
+    <item android:duration="60" android:drawable="@drawable/apj" />
+    <item android:duration="60" android:drawable="@drawable/apk" />
+</animation-list>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/auh" android:layout_width="fill_parent" android:layout_height="55.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:id="@id/awe" android:background="@null" android:padding="15.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:drawableLeft="@drawable/vn" android:onClick="back" />
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <TextView android:textSize="22.0dip" android:id="@id/awc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="添加银行卡" />
+        <TextView android:textSize="10.0dip" android:id="@id/awd" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="网易安全支付" />
+    </LinearLayout>
+    <TextView android:textSize="16.0dip" android:id="@id/azg" android:padding="2.0dip" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:text="完成" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    <include android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_alignParentBottom="true" layout="@layout/epaysdk_view_divider" />
+</RelativeLayout>

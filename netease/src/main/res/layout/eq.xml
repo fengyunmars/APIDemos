@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/wb" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:id="@id/ng" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/base_loadingbar_layout" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="15.0sp" android:gravity="center" android:id="@id/wc" android:paddingLeft="4.0dip" android:paddingTop="12.0dip" android:paddingRight="4.0dip" android:paddingBottom="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/gl" android:layout_marginTop="@dimen/gm" android:layout_marginRight="@dimen/gl" android:layout_marginBottom="@dimen/gm" android:text="@string/a49" android:layout_alignParentBottom="true" />
+        <ListView android:id="@android:id/list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:drawSelectorOnTop="false" android:cacheColorHint="@android:color/transparent" android:layout_above="@id/wc" />
+    </RelativeLayout>
+    <com.netease.nr.base.view.MyTextView android:textAppearance="@style/m9" android:gravity="center" android:layout_gravity="center" android:id="@android:id/empty" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/a4_" />
+</FrameLayout>

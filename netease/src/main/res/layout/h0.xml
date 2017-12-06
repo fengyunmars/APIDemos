@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/a2y" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="9.0dip" android:layout_marginRight="12.0dip">
+        <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:textColor="@color/mo" android:id="@id/ea" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:singleLine="true" android:includeFontPadding="false" android:drawableLeft="@drawable/gb" android:drawablePadding="6.0dip" />
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:textColor="@color/mp" android:id="@id/iz" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginTop="5.0dip" android:layout_marginRight="12.0dip" android:singleLine="true" android:includeFontPadding="false" android:drawablePadding="5.0dip" />
+    </LinearLayout>
+    <com.netease.nr.base.view.FloorsView android:id="@id/g5" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="17.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="12.0dip" />
+    <com.netease.nr.biz.tie.comment.common.CommentContentView android:textSize="16.0sp" android:id="@id/fb" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="17.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="12.0dip" android:includeFontPadding="false" android:lineSpacingExtra="3.0dip" />
+    <View android:id="@id/g7" android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="17.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="12.0dip" />
+    <LinearLayout android:gravity="center|right" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/g9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="65.0dip" android:minHeight="36.0dip">
+            <ImageView android:id="@id/g_" android:paddingBottom="4.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:layout_centerVertical="true" />
+            <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:gravity="center_vertical" android:id="@id/j1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:layout_toRightOf="@id/g_" android:layout_centerVertical="true" />
+        </RelativeLayout>
+        <ImageView android:layout_gravity="center_vertical" android:id="@id/g8" android:paddingLeft="20.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:scaleType="centerInside" android:minHeight="36.0dip" />
+    </LinearLayout>
+    <View android:id="@id/gb" android:layout_width="fill_parent" android:layout_height="6.0dip" />
+</LinearLayout>

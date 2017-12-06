@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/p0" android:background="@color/oj" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <RelativeLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/a4a" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <FrameLayout android:id="@id/a4b" android:background="@color/b6" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginBottom="23.0dip" android:layout_alignBottom="@id/a4c">
+            <ImageView android:id="@id/a4d" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="centerCrop" />
+            <com.netease.nr.base.view.WaveLoadingView android:id="@id/a4e" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <com.netease.nr.base.view.WaveLoadingView android:id="@id/a4f" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        </FrameLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/a4c" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_alignParentTop="true">
+            <RelativeLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ViewStub android:id="@id/a4g" android:layout="@layout/qh" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="10.0dip" />
+                <com.netease.nr.base.view.MyTextView android:layout_gravity="right" android:id="@id/a4h" android:paddingLeft="15.0dip" android:paddingTop="15.0dip" android:paddingRight="15.0dip" android:paddingBottom="5.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/m3" android:singleLine="true" android:drawablePadding="5.0dip" android:layout_alignParentRight="true" />
+            </RelativeLayout>
+            <FrameLayout android:id="@id/a4i" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <include layout="@layout/biz_pc_main_login_entry_view" />
+                <include layout="@layout/biz_user_profile_view" />
+            </FrameLayout>
+            <LinearLayout android:layout_gravity="right" android:orientation="horizontal" android:id="@id/a4j" android:paddingLeft="16.0dip" android:paddingTop="8.0dip" android:paddingRight="16.0dip" android:paddingBottom="3.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <com.netease.nr.base.view.MyTextView android:textAppearance="@style/nt" android:gravity="center_vertical" android:id="@id/a4k" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/nw" android:singleLine="true" android:drawablePadding="4.0dip" />
+                <LinearLayout android:orientation="horizontal" android:id="@id/a4l" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <com.netease.nr.base.view.MyTextView android:textAppearance="@style/nt" android:gravity="center_vertical" android:id="@id/a4m" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                    <com.netease.nr.base.view.MyTextView android:textAppearance="@style/nt" android:gravity="center_vertical" android:id="@id/a4n" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+                    <com.netease.nr.base.view.MyTextView android:textAppearance="@style/nt" android:gravity="center_vertical" android:id="@id/a4o" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/o7" android:singleLine="true" android:drawablePadding="3.0dip" />
+                </LinearLayout>
+            </LinearLayout>
+            <FrameLayout android:id="@id/a4p" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/cq" android:layout_marginRight="@dimen/cq">
+                <include layout="@layout/biz_profile_follow_follower_view" />
+            </FrameLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    <android.support.v7.widget.CardView android:id="@id/a4q" android:layout_marginTop="@dimen/cp" app:cardCornerRadius="3.0dip" app:cardElevation="2.0dip" style="@style/biz_pc_main_cardview_style">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:id="@id/a4r" style="@style/biz_pc_main_top_item_style">
+                <LinearLayout android:orientation="vertical" android:id="@id/a4s" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true">
+                    <com.netease.nr.base.view.MyTextView android:id="@id/a4t" style="@style/biz_pc_main_top_item_num_style" />
+                    <com.netease.nr.base.view.MyTextView android:id="@id/mt" android:text="@string/az" android:drawableTop="@drawable/an3" android:layout_below="@id/a4t" style="@style/biz_pc_main_top_item_title_style" />
+                </LinearLayout>
+                <ImageView android:id="@id/a4u" android:visibility="invisible" android:layout_width="7.0dip" android:layout_height="7.0dip" android:layout_marginTop="3.0dip" android:src="@drawable/h3" android:layout_toRightOf="@id/a4s" android:layout_alignTop="@id/a4s" />
+            </RelativeLayout>
+            <View android:id="@id/a4v" style="@style/biz_pc_main_nums_vertical_divider_style" />
+            <RelativeLayout android:id="@id/a4w" style="@style/biz_pc_main_top_item_style">
+                <com.netease.nr.base.view.MyTextView android:id="@id/a4x" style="@style/biz_pc_main_top_item_num_style" />
+                <com.netease.nr.base.view.MyTextView android:id="@id/a4y" android:text="@string/aw" android:drawableTop="@drawable/amb" android:layout_below="@id/a4x" style="@style/biz_pc_main_top_item_title_style" />
+            </RelativeLayout>
+            <View android:id="@id/a4z" style="@style/biz_pc_main_nums_vertical_divider_style" />
+            <RelativeLayout android:id="@id/a50" style="@style/biz_pc_main_top_item_style">
+                <com.netease.nr.base.view.MyTextView android:id="@id/im" style="@style/biz_pc_main_top_item_num_style" />
+                <com.netease.nr.base.view.MyTextView android:id="@id/a51" android:text="@string/ax" android:drawableTop="@drawable/an5" android:layout_below="@id/im" style="@style/biz_pc_main_top_item_title_style" />
+            </RelativeLayout>
+            <View android:id="@id/a52" style="@style/biz_pc_main_nums_vertical_divider_style" />
+            <RelativeLayout android:id="@id/a53" style="@style/biz_pc_main_top_item_style">
+                <com.netease.nr.base.view.MyTextView android:id="@id/a54" style="@style/biz_pc_main_top_item_num_style" />
+                <com.netease.nr.base.view.MyTextView android:id="@id/a55" android:text="@string/ay" android:drawableTop="@drawable/amy" android:layout_below="@id/a54" style="@style/biz_pc_main_top_item_title_style" />
+            </RelativeLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ScrollView android:id="@id/a56" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <LinearLayout android:layout_gravity="top" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <android.support.v7.widget.CardView android:id="@id/a57" app:cardCornerRadius="3.0dip" app:cardElevation="2.0dip" style="@style/biz_pc_main_cardview_style">
+                    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <RelativeLayout android:gravity="center_vertical" android:id="@id/a58" style="@style/biz_pc_main_item_style">
+                            <com.netease.nr.base.view.MyTextView android:id="@id/a59" android:text="@string/lz" style="@style/biz_pc_main_item_title_style" />
+                            <ImageView android:id="@id/a5_" style="@style/biz_pc_main_item_arrow_style" />
+                            <com.netease.nr.base.view.MyTextView android:textSize="10.0sp" android:textColor="@color/om" android:gravity="center" android:id="@id/a5a" android:paddingLeft="3.5dip" android:paddingTop="0.5dip" android:paddingRight="3.5dip" android:layout_toRightOf="@id/a59" android:layout_alignTop="@id/a59" style="@style/biz_pc_main_item_flag_new_style" />
+                            <ImageView android:id="@id/a5b" android:layout_toRightOf="@id/a59" android:layout_alignTop="@id/a59" style="@style/biz_pc_main_item_flag_new_style" />
+                            <com.netease.nr.base.view.MyTextView android:id="@id/a5c" android:layout_toLeftOf="@id/a5_" android:layout_toRightOf="@id/a5a" style="@style/biz_pc_main_item_info_style" />
+                        </RelativeLayout>
+                        <View android:id="@id/a5d" style="@style/biz_pc_main_item_divider_style" />
+                        <RelativeLayout android:id="@id/a5e" style="@style/biz_pc_main_item_style">
+                            <com.netease.nr.base.view.MyTextView android:id="@id/a5f" android:text="@string/ly" style="@style/biz_pc_main_item_title_style" />
+                            <ImageView android:id="@id/a5g" style="@style/biz_pc_main_item_arrow_style" />
+                            <ImageView android:id="@id/a5h" android:layout_toRightOf="@id/a5f" android:layout_alignTop="@id/a5f" style="@style/biz_pc_main_item_flag_new_style" />
+                            <com.netease.nr.base.view.MyTextView android:id="@id/a5i" android:layout_toLeftOf="@id/a5g" android:layout_toRightOf="@id/a5h" style="@style/biz_pc_main_item_info_style" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView android:id="@id/a5j" android:visibility="gone" app:cardCornerRadius="3.0dip" app:cardElevation="2.0dip" style="@style/biz_pc_main_cardview_style">
+                    <RelativeLayout android:id="@id/a5k" style="@style/biz_pc_main_item_style">
+                        <com.netease.nr.base.view.MyTextView android:id="@id/a5l" style="@style/biz_pc_main_item_title_style" />
+                        <ImageView android:id="@id/a5m" style="@style/biz_pc_main_item_arrow_style" />
+                        <ImageView android:id="@id/a5n" android:layout_toRightOf="@id/a5l" android:layout_alignTop="@id/a5l" style="@style/biz_pc_main_item_flag_new_style" />
+                        <com.netease.nr.base.view.MyTextView android:id="@id/a5o" android:layout_toLeftOf="@id/a5m" android:layout_toRightOf="@id/a5n" style="@style/biz_pc_main_item_info_style" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView android:id="@id/a5p" app:cardCornerRadius="3.0dip" app:cardElevation="2.0dip" style="@style/biz_pc_main_cardview_style">
+                    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <RelativeLayout android:id="@id/a5q" style="@style/biz_pc_main_item_style">
+                            <com.netease.nr.base.view.MyTextView android:id="@id/a5r" android:text="@string/os" android:drawablePadding="10.0dip" style="@style/biz_pc_main_item_title_style" />
+                            <ImageView android:id="@id/a5s" style="@style/biz_pc_main_item_arrow_style" />
+                            <ImageView android:id="@id/a5t" android:layout_toRightOf="@id/a5r" android:layout_alignTop="@id/a5r" style="@style/biz_pc_main_item_flag_new_style" />
+                            <com.netease.nr.base.view.MyTextView android:id="@id/a5u" android:layout_toLeftOf="@id/a5s" android:layout_toRightOf="@id/a5t" style="@style/biz_pc_main_item_info_style" />
+                        </RelativeLayout>
+                        <View android:id="@id/a5v" style="@style/biz_pc_main_item_divider_style" />
+                        <RelativeLayout android:id="@id/a5w" style="@style/biz_pc_main_item_style">
+                            <com.netease.nr.base.view.MyTextView android:id="@id/a5x" android:text="@string/on" style="@style/biz_pc_main_item_title_style" />
+                            <ImageView android:id="@id/a5y" style="@style/biz_pc_main_item_arrow_style" />
+                            <ImageView android:id="@id/a5z" android:layout_toRightOf="@id/a5x" android:layout_alignTop="@id/a5x" style="@style/biz_pc_main_item_flag_new_style" />
+                            <com.netease.nr.base.view.MyTextView android:id="@id/a60" android:layout_toLeftOf="@id/a5y" android:layout_toRightOf="@id/a5z" style="@style/biz_pc_main_item_info_style" />
+                        </RelativeLayout>
+                        <View android:id="@id/a61" style="@style/biz_pc_main_item_divider_style" />
+                        <RelativeLayout android:id="@id/a62" style="@style/biz_pc_main_item_style">
+                            <com.netease.nr.base.view.MyTextView android:id="@id/a63" android:text="@string/m4" style="@style/biz_pc_main_item_title_style" />
+                            <ImageView android:id="@id/a64" style="@style/biz_pc_main_item_arrow_style" />
+                            <ImageView android:id="@id/a65" android:layout_toRightOf="@id/a63" android:layout_alignTop="@id/a63" style="@style/biz_pc_main_item_flag_new_style" />
+                            <com.netease.nr.base.view.MyTextView android:id="@id/a66" android:layout_toLeftOf="@id/a64" android:layout_toRightOf="@id/a65" style="@style/biz_pc_main_item_info_style" />
+                        </RelativeLayout>
+                        <View android:id="@id/a67" style="@style/biz_pc_main_item_divider_style" />
+                        <RelativeLayout android:id="@id/a68" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="@style/biz_pc_main_item_style">
+                            <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/a69" android:layout_width="14.0dip" android:layout_height="14.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" app:night_type="bs" app:place_holder_no_bg="true" app:place_holder_no_src="true" />
+                            <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:gravity="center_horizontal" android:id="@id/a6_" android:paddingLeft="14.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toRightOf="@id/a69" android:layout_centerVertical="true" />
+                            <ImageView android:id="@id/a6a" style="@style/biz_pc_main_item_arrow_style" />
+                            <ImageView android:id="@id/a6b" android:layout_toRightOf="@id/a6_" android:layout_alignTop="@id/a6_" style="@style/biz_pc_main_item_flag_new_style" />
+                            <com.netease.nr.base.view.MyTextView android:id="@id/a6c" android:layout_toLeftOf="@id/a6a" android:layout_toRightOf="@id/a6b" style="@style/biz_pc_main_item_info_style" />
+                        </RelativeLayout>
+                        <View android:id="@id/a6d" style="@style/biz_pc_main_item_divider_style" />
+                        <RelativeLayout android:id="@id/a6e" android:paddingLeft="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <ImageView android:id="@id/a6f" android:layout_width="23.0dip" android:layout_height="30.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+                            <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:gravity="center_horizontal" android:id="@id/a6g" android:paddingLeft="9.0dip" android:paddingTop="16.0dip" android:paddingBottom="16.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/m6" android:layout_toRightOf="@id/a6f" android:layout_centerVertical="true" />
+                            <ImageView android:id="@id/a6h" style="@style/biz_pc_main_item_arrow_style" />
+                            <ImageView android:id="@id/a6i" android:layout_toRightOf="@id/a6g" android:layout_alignTop="@id/a6g" style="@style/biz_pc_main_item_flag_new_style" />
+                            <com.netease.nr.base.view.MyTextView android:id="@id/a6j" android:layout_toLeftOf="@id/a6h" android:layout_toRightOf="@id/a6i" style="@style/biz_pc_main_item_info_style" />
+                        </RelativeLayout>
+                        <View android:id="@id/a6k" style="@style/biz_pc_main_item_divider_style" />
+                        <RelativeLayout android:id="@id/a6l" style="@style/biz_pc_main_item_style">
+                            <com.netease.nr.base.view.MyTextView android:id="@id/a6m" style="@style/biz_pc_main_item_title_style" />
+                            <ImageView android:id="@id/a6n" style="@style/biz_pc_main_item_arrow_style" />
+                            <com.netease.nr.base.view.MyTextView android:id="@id/a6o" android:layout_toLeftOf="@id/a6n" style="@style/biz_pc_main_item_info_style" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView android:id="@id/a6p" android:layout_marginBottom="10.0dip" app:cardCornerRadius="3.0dip" app:cardElevation="2.0dip" style="@style/biz_pc_main_cardview_style">
+                    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <RelativeLayout android:id="@id/a6q" style="@style/biz_pc_main_item_style">
+                            <com.netease.nr.base.view.MyTextView android:id="@id/a6r" android:text="@string/m1" style="@style/biz_pc_main_item_title_style" />
+                            <ImageView android:id="@id/a6s" style="@style/biz_pc_main_item_arrow_style" />
+                        </RelativeLayout>
+                        <View android:id="@id/a6t" style="@style/biz_pc_main_item_divider_style" />
+                        <RelativeLayout android:id="@id/a6u" style="@style/biz_pc_main_item_style">
+                            <com.netease.nr.base.view.MyTextView android:id="@id/a6v" android:text="@string/m0" style="@style/biz_pc_main_item_title_style" />
+                            <CheckBox android:id="@id/a6w" android:layout_width="45.0dip" android:layout_height="21.0dip" android:layout_marginRight="7.0dip" android:button="@drawable/bh" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+                        </RelativeLayout>
+                        <View android:id="@id/a6x" style="@style/biz_pc_main_item_divider_style" />
+                        <RelativeLayout android:id="@id/a6y" style="@style/biz_pc_main_item_style">
+                            <com.netease.nr.base.view.MyTextView android:id="@id/a6z" android:text="@string/m2" style="@style/biz_pc_main_item_title_style" />
+                            <ImageView android:id="@id/a70" style="@style/biz_pc_main_item_arrow_style" />
+                            <ImageView android:id="@id/a71" android:layout_toRightOf="@id/a6z" android:layout_alignTop="@id/a6z" style="@style/biz_pc_main_item_flag_new_style" />
+                            <com.netease.nr.base.view.MyTextView android:id="@id/a72" android:layout_toLeftOf="@id/a70" android:layout_toRightOf="@id/a71" style="@style/biz_pc_main_item_info_style" />
+                        </RelativeLayout>
+                        <View android:id="@id/a73" style="@style/biz_pc_main_item_divider_style" />
+                        <RelativeLayout android:id="@id/a74" style="@style/biz_pc_main_item_style">
+                            <com.netease.nr.base.view.MyTextView android:id="@id/a75" android:text="@string/lv" style="@style/biz_pc_main_item_title_style" />
+                            <ImageView android:id="@id/a76" style="@style/biz_pc_main_item_arrow_style" />
+                            <ImageView android:id="@id/a77" android:layout_toRightOf="@id/a75" android:layout_alignTop="@id/a75" style="@style/biz_pc_main_item_flag_new_style" />
+                            <com.netease.nr.base.view.MyTextView android:id="@id/a78" android:layout_toLeftOf="@id/a76" android:layout_toRightOf="@id/a77" style="@style/biz_pc_main_item_info_style" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+        <ImageView android:id="@id/a79" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="12.0dip" android:layout_marginBottom="12.0dip" android:src="@drawable/aj4" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+    </RelativeLayout>
+</LinearLayout>

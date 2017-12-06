@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include android:layout_width="wrap_content" android:layout_height="wrap_content" layout="@layout/biz_sports_category_list_header" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:id="@id/ak4" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="165.0dip">
+            <com.netease.nr.base.view.MyTextView android:textSize="16.0sp" android:id="@id/ak5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/wr" />
+            <TextView android:textSize="14.0sp" android:id="@id/ak6" android:paddingLeft="25.0dip" android:paddingTop="9.0dip" android:paddingRight="25.0dip" android:paddingBottom="9.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16.0dip" android:text="@string/wq" />
+        </LinearLayout>
+        <include android:id="@id/ak7" android:layout_width="fill_parent" android:layout_height="fill_parent" layout="@layout/biz_read_subscription_media_right_empty_layout" />
+    </FrameLayout>
+</LinearLayout>

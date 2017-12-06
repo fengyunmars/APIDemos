@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.netease.epay.sdk.view.MaxHeightRelativeLayout android:background="#ffffffff" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="305.0dip" app:max_height="360.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include android:id="@id/ayp" layout="@layout/epaysdk_frag_title_bar" />
+    <ListView android:id="@id/axg" android:paddingLeft="15.0dip" android:scrollbars="none" android:fadingEdge="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="@android:color/transparent" android:cacheColorHint="@android:color/transparent" android:divider="@color/a1n" android:dividerHeight="1.0px" android:layout_below="@id/ayp" android:footerDividersEnabled="true" />
+    <include android:layout_width="fill_parent" android:layout_height="1.0px" android:layout_marginLeft="15.0dip" android:layout_below="@id/axg" layout="@layout/epaysdk_view_divider" />
+</com.netease.epay.sdk.view.MaxHeightRelativeLayout>

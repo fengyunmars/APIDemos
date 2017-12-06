@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.netease.newsreader.newarch.media.NTESVideoView android:id="@id/xg" android:background="@android:color/black" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.newsreader.newarch.live.studio.widget.MultiVideoLayout android:layout_gravity="right" android:id="@id/bfa" android:paddingTop="@dimen/uh" android:paddingBottom="@dimen/ug" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginTop="@dimen/u1" android:layout_marginRight="@dimen/ub" android:layout_marginBottom="@dimen/we" />
+    <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:textColor="@color/b8" android:ellipsize="end" android:gravity="center_vertical" android:layout_gravity="bottom" android:id="@id/bfb" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:visibility="gone" android:clickable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" />
+</com.netease.newsreader.newarch.media.NTESVideoView>

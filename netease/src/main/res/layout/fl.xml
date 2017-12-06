@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <android.support.v4.view.ViewPager android:id="@id/nb" android:layout_width="fill_parent" android:layout_height="164.0dip" />
+    <com.netease.nr.biz.input.emoji.PagerIndicator android:gravity="center" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:id="@id/ye" android:layout_width="wrap_content" android:layout_height="12.0dip" android:layout_marginBottom="9.0dip" />
+    <com.netease.nr.biz.input.emoji.FlexTabLayout android:id="@id/sr" android:layout_width="fill_parent" android:layout_height="37.0dip" />
+</LinearLayout>

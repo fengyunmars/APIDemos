@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/fb" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <com.netease.newsreader.newarch.view.actionbar.NTESActionBar android:id="@id/ex" android:layout_height="60.0dip" style="@style/actionbar" />
+</merge>

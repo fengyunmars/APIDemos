@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.netease.reader.skin.view.SkinRelativeLayout android:id="@id/auh" android:background="@color/a80" android:layout_width="fill_parent" android:layout_height="@dimen/wn"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.reader.skin.view.SkinImageView android:id="@id/bqg" android:background="@drawable/r2" android:paddingLeft="15.0dip" android:paddingRight="15.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:src="@drawable/b19" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <com.netease.reader.skin.view.SkinTextView android:textSize="16.0sp" android:textColor="@color/a7s" android:gravity="center|left" android:id="@id/bqh" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="9.0dip" android:layout_marginRight="10.0dip" android:lines="1" android:layout_toRightOf="@id/bqg" />
+    <com.netease.reader.skin.view.SkinTextView android:textSize="14.0sp" android:textColor="@color/a7t" android:gravity="center_vertical" android:id="@id/bqi" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="10.0dip" android:lines="1" android:layout_alignParentRight="true" />
+    <com.netease.reader.skin.view.SkinImageView android:id="@id/bqj" android:paddingLeft="5.0dip" android:paddingRight="5.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="10.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</com.netease.reader.skin.view.SkinRelativeLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:id="@id/g7" android:layout_width="fill_parent" android:layout_height="1.0px" />
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:gravity="center_vertical" android:id="@id/bhy" android:paddingLeft="19.0dip" android:paddingTop="14.0dip" android:paddingRight="19.0dip" android:paddingBottom="14.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <com.netease.nr.base.view.MyTextView android:textSize="15.0sp" android:id="@id/bhz" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/g5" android:includeFontPadding="false" />
+            <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:id="@id/bi0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:includeFontPadding="false" android:maxLength="3" android:layout_below="@id/bhz" />
+            <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:id="@id/bi1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="2.0dip" android:text="@string/g6" android:includeFontPadding="false" android:layout_toRightOf="@id/bi0" android:layout_alignTop="@id/bi0" />
+        </RelativeLayout>
+        <View android:id="@id/ib" android:layout_width="1.0px" android:layout_height="fill_parent" android:layout_marginTop="17.0dip" android:layout_marginBottom="17.0dip" />
+        <RelativeLayout android:id="@id/bi2" android:paddingLeft="19.0dip" android:paddingRight="19.0dip" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <com.netease.newsreader.newarch.view.CyclicFrameLayout android:id="@id/bi3" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="12.0dip" android:layout_marginBottom="10.0dip" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

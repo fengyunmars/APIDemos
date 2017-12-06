@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/bgg" android:layout_width="@dimen/hv" android:layout_height="@dimen/hv"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.newsreader.newarch.view.RatioByWidthImageView android:id="@id/bgh" android:layout_width="fill_parent" android:layout_height="wrap_content" android:adjustViewBounds="true" />
+    <ImageView android:layout_gravity="bottom|center|right" android:id="@id/bgi" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="8.0dip" android:layout_marginBottom="8.0dip" />
+</FrameLayout>

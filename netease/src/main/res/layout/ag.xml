@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/go" android:layout_width="fill_parent" android:layout_height="@dimen/ak"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:gravity="center_vertical" android:id="@id/gp" android:layout_width="30.0dip" android:layout_height="30.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+        <ImageView android:id="@id/gq" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <com.netease.nr.base.view.MyTextView android:textSize="@dimen/aj" android:gravity="center" android:id="@id/gr" android:clickable="true" android:layout_width="55.0dip" android:layout_height="20.0dip" android:layout_toLeftOf="@id/gp" android:layout_centerVertical="true" />
+    <com.netease.nr.base.view.MyTextView android:textSize="@dimen/aj" android:ellipsize="end" android:gravity="center|left" android:id="@id/gs" android:paddingLeft="@dimen/ah" android:paddingRight="@dimen/ah" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_toLeftOf="@id/gr" android:layout_centerVertical="true" />
+</RelativeLayout>

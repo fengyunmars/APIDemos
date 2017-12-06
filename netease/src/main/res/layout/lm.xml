@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/p0" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:paddingRight="@dimen/b6" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="@dimen/b5">
+        <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/e_" android:layout_width="@dimen/jw" android:layout_height="@dimen/jw" android:layout_marginLeft="16.0dip" android:layout_marginRight="10.0dip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <FrameLayout android:id="@id/x2" android:padding="16.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <ImageView android:layout_gravity="center" android:id="@id/z5" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <ProgressBar android:layout_gravity="center" android:id="@id/z6" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/progressBarStyleSmallTitle" />
+        </FrameLayout>
+        <com.netease.nr.base.view.MyTextView android:textSize="16.0sp" android:ellipsize="end" android:id="@id/ea" android:paddingTop="12.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:includeFontPadding="false" android:layout_toLeftOf="@id/x2" android:layout_toRightOf="@id/e_" android:layout_alignParentTop="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:ellipsize="end" android:id="@id/aee" android:paddingBottom="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_toLeftOf="@id/x2" android:layout_toRightOf="@id/e_" android:layout_alignParentBottom="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="12.0sp" android:gravity="center" android:id="@id/amy" android:paddingLeft="4.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_toRightOf="@id/ea" android:layout_alignTop="@id/ea" />
+    </RelativeLayout>
+    <View android:id="@id/g7" android:layout_width="fill_parent" android:layout_height="1.0px" />
+</LinearLayout>

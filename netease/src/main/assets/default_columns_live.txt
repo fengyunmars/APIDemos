@@ -1,0 +1,73 @@
+[{
+	"order": 2,
+	"id": 2,
+	"type": "PCLive",
+	"name": "热门",
+	"visible": true
+}, {
+	"order": 3,
+	"id": 20,
+	"type": "column",
+	"name": "资讯",
+	"visible": true
+}, {
+	"order": 4,
+	"id": 21,
+	"type": "column",
+	"name": "娱乐",
+	"visible": true
+}, {
+	"order": 5,
+	"id": 13,
+	"type": "column",
+	"name": "汽车",
+	"visible": true
+}, {
+	"order": 7,
+	"id": 3,
+	"type": "column",
+	"name": "直播号",
+	"visible": true
+}, {
+	"order": 8,
+	"id": 11,
+	"type": "column",
+	"name": "体育",
+	"visible": true
+}, {
+	"order": 9,
+	"id": 16,
+	"type": "column",
+	"name": "生活",
+	"visible": true
+}, {
+	"order": 10,
+	"id": 17,
+	"type": "column",
+	"name": "健康",
+	"visible": true
+}, {
+	"order": 11,
+	"id": 23,
+	"type": "column",
+	"name": "艺术",
+	"visible": true
+}, {
+	"order": 12,
+	"id": 10,
+	"type": "column",
+	"name": "本地",
+	"visible": true
+}, {
+	"order": 13,
+	"id": 24,
+	"type": "column",
+	"name": "房产",
+	"visible": true
+}, {
+	"order": 14,
+	"id": 25,
+	"type": "column",
+	"name": "家居",
+	"visible": true
+}]

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:paddingLeft="@dimen/uk" android:paddingTop="@dimen/uk" android:paddingRight="@dimen/uk" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@id/m6" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <com.netease.newsreader.newarch.live.studio.widget.ThresholdHeightLayout android:id="@id/bhd" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <include layout="@layout/na_live_studio_room_msg_list_item_base_view" />
+        </com.netease.newsreader.newarch.live.studio.widget.ThresholdHeightLayout>
+        <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.netease.nr.base.view.MyTextView android:textSize="@dimen/xr" android:id="@id/bhe" android:paddingLeft="10.0dip" android:paddingRight="@dimen/um" android:paddingBottom="9.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:drawablePadding="5.0dip" android:layout_alignParentRight="true" />
+            <com.netease.newsreader.newarch.view.NTESImageView2 android:id="@id/bhf" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="@dimen/us" android:layout_marginLeft="@dimen/um" android:layout_marginRight="@dimen/v1" android:scaleType="fitStart" android:adjustViewBounds="true" android:layout_toLeftOf="@id/bhe" android:layout_alignTop="@id/bhe" app:night_type="br" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

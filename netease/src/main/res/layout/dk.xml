@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.nr.base.view.MyTextView android:textSize="16.0sp" android:textColor="@color/q" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/a7" />
+    <LinearLayout android:gravity="center|left" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="18.0dip">
+        <CheckBox android:textSize="14.0sp" android:id="@id/qk" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:button="@drawable/ce" />
+        <com.netease.nr.base.view.MyTextView android:textSize="14.0sp" android:id="@id/ql" android:layout_width="wrap_content" android:layout_height="wrap_content" android:button="@drawable/ce" android:text="@string/a5" />
+    </LinearLayout>
+</LinearLayout>

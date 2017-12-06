@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerVertical="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.netease.newsreader.newarch.view.RatioByWidthImageView android:id="@id/wt" android:layout_width="wrap_content" android:layout_height="wrap_content" app:cut_from_top="true" />
+    <TextView android:textSize="11.0sp" android:textColor="#ffffffff" android:id="@id/wu" android:background="@drawable/im" android:paddingLeft="3.0dip" android:paddingTop="2.0dip" android:paddingRight="3.0dip" android:paddingBottom="2.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.0dip" android:layout_marginBottom="6.0dip" android:includeFontPadding="false" android:layout_alignRight="@id/wt" android:layout_alignBottom="@id/wt" />
+</RelativeLayout>

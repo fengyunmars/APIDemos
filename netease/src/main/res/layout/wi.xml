@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/aa0" android:paddingLeft="@dimen/jh" android:paddingTop="@dimen/ji" android:paddingRight="@dimen/jh" android:paddingBottom="@dimen/ji" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.nr.base.view.MyTextView android:textSize="@dimen/b1" android:textColor="@color/pz" android:ellipsize="end" android:id="@id/aa1" android:layout_width="0.0dip" android:layout_height="wrap_content" android:singleLine="true" android:layout_weight="1.0" />
+    <com.netease.nr.base.view.MyTextView android:textSize="@dimen/b0" android:textColor="@color/px" android:id="@id/a0z" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:singleLine="true" />
+</LinearLayout>

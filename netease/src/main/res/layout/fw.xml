@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="horizontal" android:paddingLeft="@dimen/hf" android:paddingTop="@dimen/hg" android:paddingRight="@dimen/hf" android:paddingBottom="@dimen/hg" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="17.0dip" android:layout_marginTop="10.0dip" android:layout_marginRight="17.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.netease.nr.base.view.MyTextView android:textSize="16.0sp" android:ellipsize="end" android:id="@id/yy" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:maxLines="2" android:layout_weight="1.0" android:layout_alignParentTop="true" />
+    <ImageView android:id="@id/yz" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</LinearLayout>

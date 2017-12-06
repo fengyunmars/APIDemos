@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.netease.epay.sdk.view.MaxHeightRelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="95.0dip" android:minHeight="95.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:wheel="http://schemas.android.com/apk/res-auto">
+    <com.netease.epay.sdk.view.ProgressWheelView android:id="@id/avs" android:background="@drawable/vo" android:layout_width="50.0dip" android:layout_height="50.0dip" android:layout_margin="15.0dip" android:layout_centerHorizontal="true" wheel:matProg_progressIndeterminate="true" wheel:matProg_barColor="#ffffffff" wheel:matProg_barWidth="2.0dip" />
+    <TextView android:textSize="15.0dip" android:textColor="#ffffffff" android:id="@id/avt" android:paddingBottom="10.0dip" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="网易安全支付" android:layout_below="@id/avs" android:layout_centerHorizontal="true" />
+</com.netease.epay.sdk.view.MaxHeightRelativeLayout>

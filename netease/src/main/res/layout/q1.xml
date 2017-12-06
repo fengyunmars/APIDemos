@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.netease.epay.sdk.view.MaxHeightRelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:minHeight="65.0dip" app:max_height="65.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ImageView android:id="@id/az8" android:layout_width="33.0dip" android:layout_height="wrap_content" />
+    <TextView android:textSize="16.0dip" android:textColor="@color/a1q" android:gravity="center_vertical" android:id="@id/az9" android:layout_width="wrap_content" android:layout_height="48.0dip" android:text="使用新卡支付" android:layout_toRightOf="@id/az8" android:layout_centerVertical="true" />
+    <ImageView android:id="@id/az_" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="15.0dip" android:src="@drawable/a3_" android:scaleType="centerCrop" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+</com.netease.epay.sdk.view.MaxHeightRelativeLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@id/p0" android:background="#ffebeef1" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="left" android:orientation="vertical" android:id="@id/oq" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <RelativeLayout android:id="@id/vt" android:paddingLeft="12.0dip" android:paddingTop="15.0dip" android:paddingRight="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.netease.nr.base.view.MyEditText android:scrollbarThumbVertical="@drawable/ta" android:scrollbarStyle="outsideOverlay" android:textSize="14.0sp" android:textColorHint="@color/a0" android:gravity="top" android:id="@id/vu" android:background="@android:color/transparent" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="70.0dip" android:layout_marginBottom="12.0dip" android:hint="@string/a3w" android:singleLine="false" android:maxLength="500" android:shadowColor="@null" />
+            <android.support.v7.widget.RecyclerView android:id="@id/vv" android:paddingBottom="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_below="@id/vu" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/vw" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="7.0dip">
+            <com.netease.nr.base.view.MyTextView android:textSize="13.0sp" android:gravity="center|left" android:id="@id/vx" android:paddingLeft="12.0dip" android:paddingRight="12.0dip" android:layout_width="fill_parent" android:layout_height="33.0dip" android:text="@string/lx" />
+            <View android:id="@id/vy" android:background="@color/p3" android:layout_width="fill_parent" android:layout_height="1.0px" />
+            <android.support.v7.widget.RecyclerView android:id="@id/vz" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:scrollbars="none" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="12.0dip" android:layout_marginRight="12.0dip" />
+        </LinearLayout>
+        <com.netease.nr.base.view.MyEditText android:textSize="14.0sp" android:textColorHint="@color/a0" android:id="@id/w0" android:background="@color/g5" android:paddingLeft="12.0dip" android:saveEnabled="true" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginTop="7.0dip" android:hint="@string/a3x" android:layout_centerVertical="true" android:inputType="textEmailAddress" />
+        <com.netease.nr.base.view.MyCheckBox android:textSize="13.0sp" android:textColor="@color/g1" android:id="@id/w1" android:paddingLeft="7.0dip" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="10.0dip" android:layout_marginTop="18.0dip" android:checked="true" android:button="@drawable/i9" android:text="@string/lw" />
+        <com.netease.nr.base.view.MyTextView android:textAppearance="@style/nk" android:textSize="17.0sp" android:gravity="center" android:id="@id/w2" android:layout_width="fill_parent" android:layout_height="40.0dip" android:layout_marginLeft="12.0dip" android:layout_marginTop="18.0dip" android:layout_marginRight="12.0dip" android:text="@string/a3t" />
+    </LinearLayout>
+</ScrollView>

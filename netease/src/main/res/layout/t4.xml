@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:gravity="center_vertical" android:id="@id/b8m" android:background="@android:color/transparent" android:layout_width="wrap_content" android:layout_height="40.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="0.0dip" android:layout_centerInParent="true">
+        <ImageView android:layout_gravity="center" android:id="@id/b8n" android:layout_width="40.0dip" android:layout_height="40.0dip" />
+        <com.netease.mint.platform.fresco.CustomDraweeView android:layout_gravity="center" android:id="@id/b8o" android:background="@android:color/transparent" android:layout_width="30.0dip" android:layout_height="30.0dip" android:src="@drawable/wp" />
+    </FrameLayout>
+</RelativeLayout>

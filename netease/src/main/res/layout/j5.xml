@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/ae5" android:paddingLeft="@dimen/k8" android:paddingTop="10.0dip" android:paddingRight="@dimen/k8" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="70.0dip">
+        <com.netease.newsreader.newarch.view.RatioByWidthImageView android:id="@id/e_" android:layout_width="@dimen/k6" android:layout_height="@dimen/k6" android:layout_marginRight="10.0dip" android:scaleType="centerCrop" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <FrameLayout android:id="@id/x2" android:paddingLeft="@dimen/k8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <ImageView android:layout_gravity="center" android:id="@id/z5" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <ProgressBar android:layout_gravity="center" android:id="@id/z6" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:attr/progressBarStyleSmallTitle" />
+        </FrameLayout>
+        <com.netease.nr.base.view.MyTextView android:textSize="@dimen/k7" android:ellipsize="end" android:id="@id/xf" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="3.0dip" android:singleLine="true" android:layout_toLeftOf="@id/x2" android:layout_toRightOf="@id/e_" android:layout_alignTop="@id/e_" />
+        <com.netease.nr.base.view.MyTextView android:textSize="@dimen/k4" android:ellipsize="end" android:id="@id/ae6" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="3.0dip" android:singleLine="true" android:layout_toLeftOf="@id/x2" android:layout_toRightOf="@id/e_" android:layout_alignBottom="@id/e_" />
+    </RelativeLayout>
+    <View android:id="@id/g7" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginLeft="@dimen/k8" android:layout_marginTop="2.0dip" android:layout_marginRight="@dimen/k8" />
+    <RelativeLayout android:gravity="center" android:id="@id/ae7" android:paddingLeft="@dimen/k8" android:paddingTop="10.0dip" android:paddingRight="@dimen/k8" android:paddingBottom="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="70.0dip">
+        <com.netease.nr.base.view.MyTextView android:textSize="@dimen/k9" android:ellipsize="end" android:id="@id/ea" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" />
+        <com.netease.nr.base.view.MyTextView android:textSize="@dimen/k5" android:ellipsize="end" android:id="@id/m9" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:maxLines="2" android:layout_below="@id/ea" android:lineSpacingExtra="2.0dip" />
+    </RelativeLayout>
+    <View android:id="@id/ae8" android:layout_width="fill_parent" android:layout_height="8.0dip" />
+</LinearLayout>
