@@ -98,7 +98,7 @@ public class SettingsActivity extends PreferenceActivity
         setStatusBarBackground(statusColor);*/
         
         
-        /*PRIZE-Get through the list and consistent preferenceActivity width to of the screen - Li Xing-2015-5-12-start*/
+        /*fengyun-Get through the list and consistent preferenceActivity width to of the screen - Li Xing-2015-5-12-start*/
         View listView = findViewById(android.R.id.list);
         if(null != listView)
         {
@@ -106,7 +106,7 @@ public class SettingsActivity extends PreferenceActivity
             getListView().setDivider(getDrawable(R.drawable.list_divider));
             getListView().setDividerHeight(1);
         }
-        /*PRIZE-Get through the list and consistent preferenceActivity width to of the screen - Li Xing-2015-5-12-end*/
+        /*fengyun-Get through the list and consistent preferenceActivity width to of the screen - Li Xing-2015-5-12-end*/
         
         
         
@@ -175,7 +175,7 @@ public class SettingsActivity extends PreferenceActivity
             final ListPreference listPref = (ListPreference) pref;
             String delay = (String) newValue;
             updateAutoSnoozeSummary(listPref, delay);
-        } else if (KEY_CLOCK_STYLE.equals(pref.getKey())) {   /*PRIZE-This entry is closed-2015-5-14-start*/
+        } else if (KEY_CLOCK_STYLE.equals(pref.getKey())) {   /*fengyun-This entry is closed-2015-5-14-start*/
             final ListPreference listPref = (ListPreference) pref;
             final int idx = listPref.findIndexOfValue((String) newValue);
             listPref.setSummary(listPref.getEntries()[idx]);
@@ -227,13 +227,13 @@ public class SettingsActivity extends PreferenceActivity
         updateAutoSnoozeSummary(listPref, delay);
         listPref.setOnPreferenceChangeListener(this);
         
-        /*PRIZE-This entry is closed-2015-5-14-start*/
+        /*fengyun-This entry is closed-2015-5-14-start*/
         /*
         listPref = (ListPreference) findPreference(KEY_CLOCK_STYLE);
         listPref.setSummary(listPref.getEntry());
         listPref.setOnPreferenceChangeListener(this);
         */
-        /*PRIZE-This entry is closed-2015-5-14-start*/
+        /*fengyun-This entry is closed-2015-5-14-start*/
         
         Preference pref = findPreference(KEY_AUTO_HOME_CLOCK);
         boolean state = ((CheckBoxPreference) pref).isChecked();

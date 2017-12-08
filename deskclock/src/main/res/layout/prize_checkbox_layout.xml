@@ -4,7 +4,7 @@
         android:layout_gravity="center_vertical"
 		android:layout_width="wrap_content"  
 		android:layout_height="wrap_content"  
-        android:button="@drawable/prize_checkbox_track"
+        android:button="@drawable/fengyun_checkbox_track"
         android:clickable="false"  
    		android:focusable="false"
         />

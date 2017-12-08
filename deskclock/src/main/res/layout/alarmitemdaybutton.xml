@@ -7,7 +7,7 @@
     android:layout_width="@dimen/addalrm_day_button_width"
     android:layout_height="@dimen/addalrm_day_button_width"
     android:background="@drawable/daybutton"
-    android:textSize="@dimen/prize_content"
+    android:textSize="@dimen/fengyun_content"
    	android:gravity="center" 
    	/>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-     <!--prize-增加1920x1080P 资源-lixing-205-6-4-start  -->
+     <!--fengyun-增加1920x1080P 资源-lixing-205-6-4-start  -->
     
     <item type="integer" name="dial_stroke_width">55</item>
     <item type="integer" name="dial_text_size">45</item>
@@ -13,5 +13,5 @@
     <item type="integer" name="seconde_hand_width">7</item>
     
     
-    <!--prize-增加1920x1080P 资源-lixing-205-6-4-end  -->
+    <!--fengyun-增加1920x1080P 资源-lixing-205-6-4-end  -->
 </resources>

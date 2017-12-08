@@ -1,7 +1,7 @@
 package com.fengyun.model.enumeration;
 
 /**
- * Created by prize on 2017/12/2.
+ * Created by fengyun on 2017/12/2.
  */
 
 public enum QuestionType {

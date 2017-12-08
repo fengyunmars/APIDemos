@@ -1,6 +1,6 @@
 
  /*******************************************
- *Copyright © 2015, Shenzhen Prize Technologies Limited
+ *Copyright © 2015, Shenzhen fengyun Technologies Limited
  *
  * Summary: Customize a clock control, display seconds, when the stopwatch
  * current version:
@@ -33,9 +33,9 @@ import android.view.View;
 
 import com.android.deskclock.R;
 import com.android.deskclock.Utils;
-import com.mediatek.deskclock.utility.PrizeUtil;
+import com.mediatek.deskclock.utility.fengyunUtil;
 
-public class PrizeStopwatchClock extends View{
+public class fengyunStopwatchClock extends View{
 
 	private Context mContext;
 	private Drawable mDial;
@@ -75,11 +75,11 @@ public class PrizeStopwatchClock extends View{
 	
 	 
 	Resources r;
-	 public PrizeStopwatchClock(Context context) {
+	 public fengyunStopwatchClock(Context context) {
 		 super(context);
 	  }
 
-	 public PrizeStopwatchClock(Context context, AttributeSet attrs) {
+	 public fengyunStopwatchClock(Context context, AttributeSet attrs) {
 	    	super(context, attrs);
 	    	mContext = context;
 	    	r = mContext.getResources();
@@ -98,18 +98,18 @@ public class PrizeStopwatchClock extends View{
 		     
 		     mPaint_in.setAntiAlias(true);
 		     mPaint_in.setStyle(Paint.Style.STROKE);		        
-		     mPaint_in.setColor(getResources().getColor(R.color.dial_prize_in));
+		     mPaint_in.setColor(getResources().getColor(R.color.dial_fengyun_in));
 		     
 		     mPaint_out.setAntiAlias(true);
 		     mPaint_out.setStyle(Paint.Style.STROKE);	
-		     mPaint_out.setColor(getResources().getColor(R.color.dial_prize_out));
+		     mPaint_out.setColor(getResources().getColor(R.color.dial_fengyun_out));
 		     
 		     mPaint_hand.setAntiAlias(true);
 		    
 		     
 	 }			
 	
-	 public PrizeStopwatchClock(Context context, AttributeSet attrs,
+	 public fengyunStopwatchClock(Context context, AttributeSet attrs,
              int defStyle) {
 		 super(context, attrs, defStyle);     
 	 }
@@ -129,7 +129,7 @@ public class PrizeStopwatchClock extends View{
 	 Runnable mClockTick = new Runnable(){
 		public void run() {
 			invalidate();
-			PrizeStopwatchClock.this.postDelayed(mClockTick, 1000);			
+			fengyunStopwatchClock.this.postDelayed(mClockTick, 1000);
 		}		 
 	 };
 	
@@ -193,8 +193,8 @@ public class PrizeStopwatchClock extends View{
 	            mChanged = false;
 	        }
 
-	        radius_in = getWidth() * PrizeUtil.PRIZE_DIAL_IN_RADIUS_SCALE;
-	        radius_out = getWidth() * PrizeUtil.PRIZE_DIAL_OUT_RADIUS_SCALE;
+	        radius_in = getWidth() * fengyunUtil.fengyun_DIAL_IN_RADIUS_SCALE;
+	        radius_out = getWidth() * fengyunUtil.fengyun_DIAL_OUT_RADIUS_SCALE;
 	        long_end = radius_in - STROK_WIDTH_IN/2.0F - minute_hand_width/2.0F; 
 	        broken_end = long_end/5.0F;
 	        
@@ -231,9 +231,9 @@ public class PrizeStopwatchClock extends View{
 	        
 	        	
 	        
-//	        drawHand(canvas, mHand, x, y, (totalTime/(1000.0f/Utils.PRIZE_DATA))*6.0f, changed);
+//	        drawHand(canvas, mHand, x, y, (totalTime/(1000.0f/Utils.fengyun_DATA))*6.0f, changed);
 
-	        drawHand(canvas , x , y , -(totalTime/(1000.0f/Utils.PRIZE_DATA))*6.0f + 90);
+	        drawHand(canvas , x , y , -(totalTime/(1000.0f/Utils.fengyun_DATA))*6.0f + 90);
 	        
 	        if (scaled) {
 	            canvas.restore();
@@ -306,7 +306,7 @@ public class PrizeStopwatchClock extends View{
 	      if (changed) {
 	          final int w = hand.getIntrinsicWidth();
 	          final int h = hand.getIntrinsicHeight();
-	        /*PRIZE--Twenty-two parameters is relatively fixed upper left corner of the control parameter is a relative coordinate three hundred forty-two lower right corner of the control point coordinates, controls the upper left corner coordinates 0.0--lixing-2015-4-15-start*/
+	        /*fengyun--Twenty-two parameters is relatively fixed upper left corner of the control parameter is a relative coordinate three hundred forty-two lower right corner of the control point coordinates, controls the upper left corner coordinates 0.0--lixing-2015-4-15-start*/
 	          hand.setBounds(x - (w / 2), y - (h / 2), x + (w / 2), y + (h / 2));
 	      }
 	      hand.draw(canvas);

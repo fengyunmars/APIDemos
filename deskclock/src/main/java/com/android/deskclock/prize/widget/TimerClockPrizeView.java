@@ -1,6 +1,6 @@
 
 /*******************************************
- * Copyright © 2015, Shenzhen Prize Technologies Limited
+ * Copyright © 2015, Shenzhen fengyun Technologies Limited
  *
  * Summary: Add custom clock timer interface
  * current version:
@@ -19,7 +19,7 @@
  * Modify the contents:
 *********************************************/
 
-package com.android.deskclock.prize.widget;
+package com.android.deskclock.fengyun.widget;
 
 import java.util.Calendar;
 
@@ -44,9 +44,9 @@ import android.view.View.OnTouchListener;
 
 import com.android.deskclock.R;
 import com.android.deskclock.Utils;
-import com.android.deskclock.timer.TimerPrizeCallBack;
+import com.android.deskclock.timer.TimerfengyunCallBack;
 
-public class TimerClockPrizeView extends View implements OnTouchListener {
+public class TimerClockfengyunView extends View implements OnTouchListener {
 
 	public static final int KEY_HOUR = 0;
 	public static final int KEY_MINUTE = 1;
@@ -56,7 +56,7 @@ public class TimerClockPrizeView extends View implements OnTouchListener {
 	private static final int HOURMODE = 0;
 	private static final int MINUTEMODE = 1;
 	private static final int SENCONDSMODE = 2;
-	private TimerPrizeCallBack callback = null;
+	private TimerfengyunCallBack callback = null;
 
 	public int STROK_WIDTH_IN = 0;
 	private int text_size = 0;
@@ -110,11 +110,11 @@ public class TimerClockPrizeView extends View implements OnTouchListener {
 	private int dial_out_color;
 	float radius_in = 0;
 
-	public TimerClockPrizeView(Context context) {
+	public TimerClockfengyunView(Context context) {
 		super(context);
 	}
 
-	public TimerClockPrizeView(Context context, AttributeSet attrs) {
+	public TimerClockfengyunView(Context context, AttributeSet attrs) {
 
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
@@ -129,8 +129,8 @@ public class TimerClockPrizeView extends View implements OnTouchListener {
 		STROK_WIDTH_IN = r.getInteger(R.integer.dial_stroke_width);
 		text_size = r.getInteger(R.integer.dial_text_size);
 		
-		mTimerArcDimen = r.getDimension(R.dimen.prize_timer_arc_dimen);
-		mTimerArcWidth = r.getDimension(R.dimen.prize_timer_arc_width);
+		mTimerArcDimen = r.getDimension(R.dimen.fengyun_timer_arc_dimen);
+		mTimerArcWidth = r.getDimension(R.dimen.fengyun_timer_arc_width);
 
 		mHand = r.getDrawable(R.drawable.timer_dot);
 
@@ -172,8 +172,8 @@ public class TimerClockPrizeView extends View implements OnTouchListener {
 			}
 		});
 
-		dial_in_color = getResources().getColor(R.color.dial_prize_in);
-		dial_out_color = getResources().getColor(R.color.dial_prize_out);
+		dial_in_color = getResources().getColor(R.color.dial_fengyun_in);
+		dial_out_color = getResources().getColor(R.color.dial_fengyun_out);
 
 		mPaint_in.setAntiAlias(true);
 		mPaint_in.setStyle(Paint.Style.STROKE);
@@ -187,7 +187,7 @@ public class TimerClockPrizeView extends View implements OnTouchListener {
 
 	}
 
-	public TimerClockPrizeView(Context context, AttributeSet attrs, int defStyle) {
+	public TimerClockfengyunView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 	}
 
@@ -251,10 +251,10 @@ public class TimerClockPrizeView extends View implements OnTouchListener {
 		radius_in = getWidth() * 0.335F;
 
 		int availableWidth = getWidth(); /*
-											 * PRIZE--width of the control--lixing-2015-4-15-start
+											 * fengyun--width of the control--lixing-2015-4-15-start
 											 */
 		int availableHeight = getHeight(); /*
-											 * PRIZE--control length--lixing-2015-4-15-
+											 * fengyun--control length--lixing-2015-4-15-
 											 * start
 											 */
 
@@ -263,11 +263,11 @@ public class TimerClockPrizeView extends View implements OnTouchListener {
 
 		final Drawable dial = mHand;
 		int w = dial.getIntrinsicWidth(); /*
-											 * PRIZE--drawable width--lixing-2015-4-15
+											 * fengyun--drawable width--lixing-2015-4-15
 											 * -start
 											 */
 		int h = dial.getIntrinsicHeight(); /*
-											 * PRIZE--drawable length-lixing-2015-4-
+											 * fengyun--drawable length-lixing-2015-4-
 											 * 15-start
 											 */
 
@@ -281,14 +281,14 @@ public class TimerClockPrizeView extends View implements OnTouchListener {
 		 */
 
 		/*
-		 * PRIZE--generate a canvas to display drawable. Twenty-two parameters are fixed relative to the bottom right of the canvas top left corner of the control point coordinates relative to the control coordinates three hundred forty-two parameters. Controls the upper left corner coordinates 0.0 - lixing-2015-4-15-start--lixing-2015-4-15-start
+		 * fengyun--generate a canvas to display drawable. Twenty-two parameters are fixed relative to the bottom right of the canvas top left corner of the control point coordinates relative to the control coordinates three hundred forty-two parameters. Controls the upper left corner coordinates 0.0 - lixing-2015-4-15-start--lixing-2015-4-15-start
 		 */
 		// dial.setBounds(x - (w / 2), y - (h / 2), x + (w / 2), y + (h / 2));
 		// drawClock(canvas);
 
 		//newDrawClock(canvas, x, y);
 		drawClockNew(canvas, x, y);
-		// Log.d("myPrize","onDraw mCurTime.mMinuteDegree is :" +
+		// Log.d("myfengyun","onDraw mCurTime.mMinuteDegree is :" +
 		// mCurTime.mCurrentDegree);
 		// drawHand(canvas, mHand, x, y, /*(mAccumulatedTime/1000f)%60.0f *
 		// 360.0f*/mCurTime.mCurrentDegree, /*changed*/true);
@@ -307,7 +307,7 @@ public class TimerClockPrizeView extends View implements OnTouchListener {
 
 	}
 	
-	//prize -- os7.0 style -pengcancan- 20160730-start
+	//fengyun -- os7.0 style -pengcancan- 20160730-start
 	private void drawClockNew(Canvas canvas, int x, int y) {
 		canvas.drawBitmap(mBaseCircle, x-mBaseCircle.getWidth()*1.0f/2, y - mBaseCircle.getHeight()*1.0f/2, null);
 	}
@@ -316,7 +316,7 @@ public class TimerClockPrizeView extends View implements OnTouchListener {
 		canvas.drawArc(new RectF(x-mTimerArcDimen, y-mTimerArcDimen, x+mTimerArcDimen, y+mTimerArcDimen),-90,degree,false,mSelPaint);
 	}
 	
-	//prize -- os7.0 style -pengcancan- 20160730-end
+	//fengyun -- os7.0 style -pengcancan- 20160730-end
 
 	/**
 	 * 
@@ -468,7 +468,7 @@ public class TimerClockPrizeView extends View implements OnTouchListener {
 		if (isCuntDown || isPaused) {
 			return false;
 		}
-		//prize-public-bug:16847/19337/19587/22271 -pengcancan-20160919-start
+		//fengyun-public-bug:16847/19337/19587/22271 -pengcancan-20160919-start
 		mCurrPointX = (int) event.getX();
 		mCurrPointY = (int) event.getY();
 		switch (event.getAction()) {
@@ -532,7 +532,7 @@ public class TimerClockPrizeView extends View implements OnTouchListener {
 		}
 		mCurrentTime = (int) ((mCurTime.mCurrentDegree * 60) / 360) % 60;
 		return true;
-		//prize-public-bug:16847/19337/19587/22271 -pengcancan-20160919-end
+		//fengyun-public-bug:16847/19337/19587/22271 -pengcancan-20160919-end
 	}
 
 	/**
@@ -544,7 +544,7 @@ public class TimerClockPrizeView extends View implements OnTouchListener {
 	 */
 	private boolean outOfArea(int x, int y) {
 		if ((x - mIndicatorCenter.x) * (x - mIndicatorCenter.x)
-				+ (y - mIndicatorCenter.y) * (y - mIndicatorCenter.y) <= mTouchAreaR * mTouchAreaR * 2) {//prize-public-bug:18775 indicator not respond-pengcancan-20160721
+				+ (y - mIndicatorCenter.y) * (y - mIndicatorCenter.y) <= mTouchAreaR * mTouchAreaR * 2) {//fengyun-public-bug:18775 indicator not respond-pengcancan-20160721
 			return false;
 		}
 		return true;
@@ -603,7 +603,7 @@ public class TimerClockPrizeView extends View implements OnTouchListener {
 	 * @return void
 	 * @param callback
 	 */
-	public void setCallBack(TimerPrizeCallBack callback) {
+	public void setCallBack(TimerfengyunCallBack callback) {
 		this.callback = callback;
 	}
 
@@ -646,7 +646,7 @@ public class TimerClockPrizeView extends View implements OnTouchListener {
 		public void calcDegreeByTime() {
 			mPreDegree = mCurrentDegree;
 			mCurrentDegree = ((mTime % 60000) / 1000F) * 6;
-			// Log.d("myPrize","in Clock mCurrentDegree is:" + mCurrentDegree);
+			// Log.d("myfengyun","in Clock mCurrentDegree is:" + mCurrentDegree);
 		}
 
 		/**
@@ -794,7 +794,7 @@ public class TimerClockPrizeView extends View implements OnTouchListener {
 		if (time < 0)
 			time = 0;
 		mCurTime.mTime = time;
-		// Log.d("myPrize","in Clock time is:" + time);
+		// Log.d("myfengyun","in Clock time is:" + time);
 		mCurTime.calcDegreeByTime();
 	}
 

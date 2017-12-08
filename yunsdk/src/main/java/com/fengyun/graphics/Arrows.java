@@ -6,7 +6,7 @@ import android.graphics.PointF;
 import com.fengyun.math.BiVector;
 
 /**
- * Created by prize on 2017/10/13.
+ * Created by fengyun on 2017/10/13.
  */
 
 public class Arrows {

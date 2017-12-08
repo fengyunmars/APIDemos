@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- PRIZE- 删除闹钟按钮使用此布局文件- 李星-2015-5-14-start -->
+<!-- fengyun- 删除闹钟按钮使用此布局文件- 李星-2015-5-14-start -->
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android" >
      <item android:state_enabled="true" android:state_pressed="true"  android:drawable="@drawable/delete_down"
@@ -9,4 +9,4 @@
    
 
 </selector>
-<!-- PRIZE- 删除闹钟按钮使用此布局文件- 李星-2015-5-14-end -->
+<!-- fengyun- 删除闹钟按钮使用此布局文件- 李星-2015-5-14-end -->

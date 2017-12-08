@@ -4,7 +4,7 @@
     android:background="#ffffff" >
 
     <ListView
-        android:id="@+id/timer_list_prize"
+        android:id="@+id/timer_list_fengyun"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clickable="true"

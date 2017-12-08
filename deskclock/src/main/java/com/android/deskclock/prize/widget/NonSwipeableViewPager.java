@@ -1,4 +1,4 @@
-package com.android.deskclock.prize.widget;
+package com.android.deskclock.fengyun.widget;
 
 import android.content.Context;
 import android.support.v4.view.ViewPager;

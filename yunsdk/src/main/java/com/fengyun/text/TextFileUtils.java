@@ -9,7 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * Created by prize on 2017/11/16.
+ * Created by fengyun on 2017/11/16.
  */
 
 public class TextFileUtils {

@@ -316,7 +316,7 @@ public final class AlarmNotifications {
                 resources.getString(R.string.alarm_alert_snooze_text), snoozePendingIntent);
 
         // Setup Dismiss Action
-        /*prize-Send broadcasts to receive Alarm stateManager*/
+        /*fengyun-Send broadcasts to receive Alarm stateManager*/
         Intent dismissIntent = AlarmStateManager.createStateChangeIntent(context, "DISMISS_TAG",
                 instance, AlarmInstance.DISMISSED_STATE);
         PendingIntent dismissPendingIntent = PendingIntent.getBroadcast(context,
@@ -333,7 +333,7 @@ public final class AlarmNotifications {
                 instance.mId);
         notification.setContentIntent(PendingIntent.getActivity(context,
                 instance.hashCode(), contentIntent, PendingIntent.FLAG_UPDATE_CURRENT));
-        /*prize-Send a broadcast to the Alarm StateManager, Alarm StateManager after receiving a broadcast start AlarmActivity used to start-lixing*/
+        /*fengyun-Send a broadcast to the Alarm StateManager, Alarm StateManager after receiving a broadcast start AlarmActivity used to start-lixing*/
         
         notification.setPriority(Notification.PRIORITY_MAX);
 
@@ -341,7 +341,7 @@ public final class AlarmNotifications {
         nm.notify(instance.hashCode(), notification.build());
     }
     
-    /* PRIZE-Remove half screen clock display, jump directly to the full-screen display-fuqiang-2015-6-15-start */
+    /* fengyun-Remove half screen clock display, jump directly to the full-screen display-fuqiang-2015-6-15-start */
     public static void showAlarmActivity(Context context, AlarmInstance instance) {
     	Intent fullScreenIntent = AlarmInstance.createIntent(context, AlarmActivity.class,
                 instance.mId);
@@ -351,6 +351,6 @@ public final class AlarmNotifications {
                 Intent.FLAG_ACTIVITY_NO_USER_ACTION);
         context.startActivity(fullScreenIntent);
     }
-    /* PRIZE-Remove half screen clock display, jump directly to the full-screen display-fuqiang-2015-6-15-end */
+    /* fengyun-Remove half screen clock display, jump directly to the full-screen display-fuqiang-2015-6-15-end */
 
 }

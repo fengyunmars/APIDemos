@@ -1,5 +1,5 @@
 /*******************************************
- * Copyright © 2015, Shenzhen Prize Technologies Limited
+ * Copyright © 2015, Shenzhen fengyun Technologies Limited
  *
  * Summary: timing end, full-screen prompt interface, and open service were sound alert
  * current version:
@@ -47,7 +47,7 @@ import com.android.deskclock.LogUtils;
 import com.android.deskclock.R;
 import com.android.deskclock.TimerRingService;
 
-public class TimerFullScreenPrizeFragmnet extends Fragment{
+public class TimerFullScreenfengyunFragmnet extends Fragment{
 
 	private TextView closeTipBtn;
 	private TimerFragment timerfragment;
@@ -71,7 +71,7 @@ public class TimerFullScreenPrizeFragmnet extends Fragment{
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 	
-	    View view = inflater.inflate(R.layout.timer_full_screen_fragment_prize, container, false);
+	    View view = inflater.inflate(R.layout.timer_full_screen_fragment_fengyun, container, false);
 	    
 		getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 	    closeTipBtn=(TextView)view.findViewById(R.id.timer_closebtn);

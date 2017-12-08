@@ -77,13 +77,13 @@ public class WheelView extends View {
 	/** Additional items height (is added to standard text item height) */
 	private static final int ADDITIONAL_ITEM_HEIGHT = 35;
 
-	/*PRIZE-界面调整 wanzhijuan 2015-7-3 start */
+	/*fengyun-界面调整 wanzhijuan 2015-7-3 start */
 	/** Text size dp*/
 	private static final int TEXT_SIZE = 16;
 
 	/** Top and bottom items offset (to hide that) */
 	private static final int ITEM_OFFSET = 6;//TEXT_SIZE / 5;
-	/*PRIZE-界面调整 wanzhijuan 2015-7-3 end */
+	/*fengyun-界面调整 wanzhijuan 2015-7-3 end */
 
 	/** Additional width for items layout */
 	private static final int ADDITIONAL_ITEMS_SPACE = 200;
@@ -144,7 +144,7 @@ public class WheelView extends View {
 	private List<OnWheelChangedListener> changingListeners = new LinkedList<OnWheelChangedListener>();
 	private List<OnWheelScrollListener> scrollingListeners = new LinkedList<OnWheelScrollListener>();
 	
-	/*PRIZE-界面调整 wanzhijuan 2015-7-3 start */
+	/*fengyun-界面调整 wanzhijuan 2015-7-3 start */
 	private int mTextSize;//px
 	/** 屏幕密度**/
     private float mDensity;
@@ -155,7 +155,7 @@ public class WheelView extends View {
 	public void setDrawRightLine(boolean isDrawRightLine) {
 		this.mIsDrawRightLine = isDrawRightLine;
 	}
-	/*PRIZE-界面调整 wanzhijuan 2015-7-3 end */
+	/*fengyun-界面调整 wanzhijuan 2015-7-3 end */
 
 	/**
 	 * Constructor
@@ -430,18 +430,18 @@ public class WheelView extends View {
 					| Paint.FAKE_BOLD_TEXT_FLAG | Paint.DITHER_FLAG);
 			//valuePaint.density = getResources().getDisplayMetrics().density;
 			valuePaint.setTextSize(mTextSize);
-			valuePaint.setShadowLayer(0.1f, 0, 0.1f, 0xFFFfffff);  /*prize-添加阴影区域-lixing-2015-6-17-start*/
+			valuePaint.setShadowLayer(0.1f, 0, 0.1f, 0xFFFfffff);  /*fengyun-添加阴影区域-lixing-2015-6-17-start*/
 		}
 		
-		/*PRIZE-界面调整 wanzhijuan 2015-7-3 start */
+		/*fengyun-界面调整 wanzhijuan 2015-7-3 start */
 		if (mLinePaint == null) {
 			mLinePaint = new TextPaint(Paint.ANTI_ALIAS_FLAG
 					| Paint.FAKE_BOLD_TEXT_FLAG | Paint.DITHER_FLAG);
-			mLinePaint.setColor(getResources().getColor(R.color.prize_divide_line_black));
+			mLinePaint.setColor(getResources().getColor(R.color.fengyun_divide_line_black));
 			mLinePaint.setAntiAlias(true);
 			mLinePaint.setStrokeWidth(0);
 		}
-		/*PRIZE-界面调整 wanzhijuan 2015-7-3 end */
+		/*fengyun-界面调整 wanzhijuan 2015-7-3 end */
 
 		if (centerDrawable == null) {
 			centerDrawable = getContext().getResources().getDrawable(R.drawable.wheel_val);
@@ -711,7 +711,7 @@ public class WheelView extends View {
 			}
 		}
 
-		/*PRIZE-界面调整 wanzhijuan 2015-7-3 start */
+		/*fengyun-界面调整 wanzhijuan 2015-7-3 start */
 		drawCenterRect(canvas);
 		if (itemsWidth > 0) {
 			canvas.save();
@@ -725,7 +725,7 @@ public class WheelView extends View {
 
 		drawShadows(canvas);
 		drawLines(canvas);
-		/*PRIZE-界面调整 wanzhijuan 2015-7-3 end */
+		/*fengyun-界面调整 wanzhijuan 2015-7-3 end */
 	}
 
 	/**
@@ -809,7 +809,7 @@ public class WheelView extends View {
 //		canvas.drawLine(0, Ycenter + offset, getWidth(), Ycenter + offset+1, mLinePaint);
 	}
 	
-	/*PRIZE-界面调整 wanzhijuan 2015-7-3 start */
+	/*fengyun-界面调整 wanzhijuan 2015-7-3 start */
 	private void drawLines(Canvas canvas) {
 		if (mIsDrawRightLine) {
 			canvas.drawLine(getWidth()-1, 0, getWidth(), getHeight(), mLinePaint);
@@ -818,7 +818,7 @@ public class WheelView extends View {
 //		canvas.drawLine(0, 0, getWidth(), 1, mLinePaint);
 //		canvas.drawLine(0, getHeight() - 1, getWidth(), getHeight(), mLinePaint);
 	}
-	/*PRIZE-界面调整 wanzhijuan 2015-7-3 end */
+	/*fengyun-界面调整 wanzhijuan 2015-7-3 end */
 	
 	/**
 	 * 

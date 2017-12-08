@@ -3,7 +3,7 @@ package android.view;
 import org.junit.Test;
 
 /**
- * Created by prize on 2017/9/25.
+ * Created by fengyun on 2017/9/25.
  */
 
 public class AJunitTest {

@@ -1,6 +1,6 @@
 
  /*******************************************
- * Copyright © 2015, Shenzhen Prize Technologies Limited
+ * Copyright © 2015, Shenzhen fengyun Technologies Limited
  *
  * Summary: for increasing the page, select the alarm time. By sliding, select a time, through a callback interface to achieve TimePickerCallBack setTime () method, you can get the time code
  * current version:
@@ -19,7 +19,7 @@
  * Modify the contents:
 *********************************************/
 
-package com.android.deskclock.prize.widget;
+package com.android.deskclock.fengyun.widget;
 
 import java.util.Calendar;
 
@@ -42,9 +42,9 @@ import android.view.View.OnTouchListener;
 
 import com.android.deskclock.R;
 import com.android.deskclock.stopwatch.TimePickerCallBack;
-import com.android.deskclock.prize.widget.TimerClockPrizeView.MyDegreeAdapter;
+import com.android.deskclock.fengyun.widget.TimerClockfengyunView.MyDegreeAdapter;
 
-public class PrizeTimePicker extends View implements OnTouchListener{
+public class fengyunTimePicker extends View implements OnTouchListener{
 
 	
 	public static final int KEY_HOUR = 0;
@@ -92,12 +92,12 @@ public class PrizeTimePicker extends View implements OnTouchListener{
  	
 	private String[] time_str;
 	
- 	public PrizeTimePicker(Context context) {
+ 	public fengyunTimePicker(Context context) {
 		 super(context);
 	 }
  	
 	@SuppressLint("ClickableViewAccessibility")
-	public PrizeTimePicker(Context context, AttributeSet attrs) {
+	public fengyunTimePicker(Context context, AttributeSet attrs) {
 		
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
@@ -123,18 +123,18 @@ public class PrizeTimePicker extends View implements OnTouchListener{
 		
 	    mPaint_in.setAntiAlias(true);
         mPaint_in.setStyle(Paint.Style.STROKE);       
-        mPaint_in.setColor(getResources().getColor(R.color.dial_prize_in));
+        mPaint_in.setColor(getResources().getColor(R.color.dial_fengyun_in));
         
         mPaint_out.setAntiAlias(true);
         mPaint_out.setStyle(Paint.Style.STROKE);       
-        mPaint_out.setColor(getResources().getColor(R.color.dial_prize_out));
+        mPaint_out.setColor(getResources().getColor(R.color.dial_fengyun_out));
         
         STROK_WIDTH_IN = r.getInteger(R.integer.dial_stroke_width);
         text_size = r.getInteger(R.integer.dial_text_size);
 		
 	}
 	
-	public PrizeTimePicker(Context context, AttributeSet attrs,
+	public fengyunTimePicker(Context context, AttributeSet attrs,
             int defStyle) {
 		super(context, attrs, defStyle);     
 	}
@@ -208,15 +208,15 @@ public class PrizeTimePicker extends View implements OnTouchListener{
 			super.onDraw(canvas);
 
 			
-			int availableWidth = getWidth();	/*PRIZE--width of the wighet--lixing-2015-4-15-start*/
-	        int availableHeight = getHeight();	/*PRIZE--height of the wighet--lixing-2015-4-15-start*/
+			int availableWidth = getWidth();	/*fengyun--width of the wighet--lixing-2015-4-15-start*/
+	        int availableHeight = getHeight();	/*fengyun--height of the wighet--lixing-2015-4-15-start*/
 
 	        int x = availableWidth / 2;
 	        int y = availableHeight / 2;
 //
 //	        final Drawable dial = mDial;
-//	        int w = dial.getIntrinsicWidth();	/*PRIZE--drawable width--lixing-2015-4-15-start*/
-//	        int h = dial.getIntrinsicHeight();	/*PRIZE--drawable height--lixing-2015-4-15-start*/
+//	        int w = dial.getIntrinsicWidth();	/*fengyun--drawable width--lixing-2015-4-15-start*/
+//	        int h = dial.getIntrinsicHeight();	/*fengyun--drawable height--lixing-2015-4-15-start*/
 			
 	        boolean scaled = false;
 
@@ -228,7 +228,7 @@ public class PrizeTimePicker extends View implements OnTouchListener{
 //	            canvas.scale(scale, scale, x, y);
 //	        }
 	       
-	        /*PRIZE--PRIZE-- generate a canvas to display drawable. Twenty-two parameters are fixed relative to the bottom right of the canvas top left corner of the control point coordinates relative to the control coordinates three hundred forty-two parameters. Controls the upper left corner coordinates 0.0 --lixing-2015-4-15-start*/
+	        /*fengyun--fengyun-- generate a canvas to display drawable. Twenty-two parameters are fixed relative to the bottom right of the canvas top left corner of the control point coordinates relative to the control coordinates three hundred forty-two parameters. Controls the upper left corner coordinates 0.0 --lixing-2015-4-15-start*/
 //	        dial.setBounds(x - (w / 2), y - (h / 2), x + (w / 2), y + (h / 2)); 	        
 	        
 			DrawClock(canvas,x,y);
@@ -370,7 +370,7 @@ public class PrizeTimePicker extends View implements OnTouchListener{
 			if (outOfArea((int) event.getX(), (int) event.getY())) {
 				return false;
 			}
-			/*PRIZE--getX():Gets the relative position of the center of the control--lixing-2015-4-15-start*/
+			/*fengyun--getX():Gets the relative position of the center of the control--lixing-2015-4-15-start*/
 			calcDegree((int)event.getX(), (int)event.getY(), false);	
 			postInvalidate();
 			
@@ -440,7 +440,7 @@ public class PrizeTimePicker extends View implements OnTouchListener{
 	 * Method Description: Sets the callback interface instance
 	 * @param Implements the interface instance TimePickerCallBack
 	 * @return void
-	 * @see PrizeTimePicker/PrizeTimePicker/PrizeTimePicker#setCallBack
+	 * @see fengyunTimePicker/fengyunTimePicker/fengyunTimePicker#setCallBack
 	 */
 	public void setCallBack(TimePickerCallBack callback){
 		this.callback = callback;
@@ -458,10 +458,10 @@ public class PrizeTimePicker extends View implements OnTouchListener{
 	 */
 
 	public void setTime(long time , int tyep){
-		if(tyep == PrizeTimePicker.KEY_HOUR){
+		if(tyep == fengyunTimePicker.KEY_HOUR){
 			mCurTime.mCurrentDegree = (time/24.0F)*360;
 			
-		}else if(tyep == PrizeTimePicker.KEY_MINUTE){
+		}else if(tyep == fengyunTimePicker.KEY_MINUTE){
 			mCurTime.mCurrentDegree = (time/60.0F)*360;
 		}
 		
@@ -536,7 +536,7 @@ public class PrizeTimePicker extends View implements OnTouchListener{
 		public void calcDegreeByTime() {
 			mPreDegree = mCurrentDegree;
 			mCurrentDegree = ((mTime % 60000) / 1000F) * 6;
-			// Log.d("myPrize","in Clock mCurrentDegree is:" + mCurrentDegree);
+			// Log.d("myfengyun","in Clock mCurrentDegree is:" + mCurrentDegree);
 		}
 		/**
 		 * @return

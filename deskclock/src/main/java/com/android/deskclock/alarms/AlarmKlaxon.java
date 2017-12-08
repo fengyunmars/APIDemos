@@ -177,17 +177,17 @@ public class AlarmKlaxon {
         int alarmVolume = audioManager.getStreamVolume(AudioManager.STREAM_ALARM);
         
         
-        /*prize-Interpretation whether the meeting and silent mode-lixing-2015-7-31 -start*/
+        /*fengyun-Interpretation whether the meeting and silent mode-lixing-2015-7-31 -start*/
 //        AudioProfileManager mProfileManager = (AudioProfileManager) context.getSystemService(context.AUDIO_PROFILE_SERVICE); // ddd alarm
 //        String mActiveProfileKey = mProfileManager.getActiveProfileKey();// ddd alarm
-//        LogUtils.v("prize startAlarm, mActiveProfileKey = " + mActiveProfileKey);
+//        LogUtils.v("fengyun startAlarm, mActiveProfileKey = " + mActiveProfileKey);
 //		if(mActiveProfileKey.equals("mtk_audioprofile_meeting") || mActiveProfileKey.equals("mtk_audioprofile_silent") ){
 //			alarmVolume = mProfileManager.getStreamVolume("mtk_audioprofile_general", AudioManager.STREAM_ALARM);
 //			LogUtils.v("startAlarm, current model is meeting.alarmVolume=" + alarmVolume);
 //			audioManager.setStreamVolume(AudioManager.STREAM_ALARM, alarmVolume, 0);
 //			mProfileManager.setStreamVolume(mActiveProfileKey,AudioManager.STREAM_ALARM,alarmVolume);
 //		}
-		/*prize-Interpretation whether the meeting and silent mode-lixing-2015-7-31 -end*/
+		/*fengyun-Interpretation whether the meeting and silent mode-lixing-2015-7-31 -end*/
 
 	// do not play alarms if stream volume is 0 (typically because ringer mode is silent).
 	if (alarmVolume > 0) {

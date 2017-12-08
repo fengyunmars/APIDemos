@@ -37,7 +37,7 @@
                 android:id="@+id/city_day"
                 android:gravity="center|start"
                 android:textColor="@color/black_9"
-                android:textSize="@dimen/prize_content"
+                android:textSize="@dimen/fengyun_content"
                 />
             <TextView 
                 android:layout_width="wrap_content"
@@ -45,7 +45,7 @@
                 android:id="@+id/city_name"
                 android:gravity="center|start"
                 android:textColor="@color/black_9"
-                android:textSize="@dimen/prize_content"
+                android:textSize="@dimen/fengyun_content"
                 />
         </LinearLayout>
     </LinearLayout>

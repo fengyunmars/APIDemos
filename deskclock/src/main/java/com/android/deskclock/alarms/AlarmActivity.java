@@ -69,12 +69,12 @@ import com.android.deskclock.R;
 import com.android.deskclock.SettingsActivity;
 import com.android.deskclock.Utils;
 import com.android.deskclock.events.Events;
-import com.android.deskclock.prize.widget.PrizeDragView;
-import com.android.deskclock.prize.widget.PrizeDragView.StopAlarmLinsener;
+import com.android.deskclock.fengyun.widget.fengyunDragView;
+import com.android.deskclock.fengyun.widget.fengyunDragView.StopAlarmLinsener;
 import com.android.deskclock.provider.AlarmInstance;
 import com.android.deskclock.widget.CircleView;
-import com.mediatek.deskclock.utility.PrizeHomeWatcher;
-import com.mediatek.deskclock.utility.PrizeHomeWatcher.OnHomePressedListener;
+import com.mediatek.deskclock.utility.fengyunHomeWatcher;
+import com.mediatek.deskclock.utility.fengyunHomeWatcher.OnHomePressedListener;
 
 public class AlarmActivity extends Activity
         implements StopAlarmLinsener {
@@ -169,7 +169,7 @@ public class AlarmActivity extends Activity
     private ImageView mDismissButton;
     private TextView mHintView;*/
     
-    private PrizeDragView mDragContainer;
+    private fengyunDragView mDragContainer;
     private TextView mSnoozeTv;
 
     private ValueAnimator mAlarmAnimator;
@@ -177,7 +177,7 @@ public class AlarmActivity extends Activity
     private ValueAnimator mDismissAnimator;
     private ValueAnimator mPulseAnimator;
 
-    private PrizeHomeWatcher mHomeWatcher;
+    private fengyunHomeWatcher mHomeWatcher;
     
     private ImageView mAlarmAminition;
     private AnimationDrawable animationDrawable;  
@@ -246,7 +246,7 @@ public class AlarmActivity extends Activity
         //mSnoozeButton = (ImageView) mContentView.findViewById(R.id.snooze);
         //mDismissButton = (ImageView) mContentView.findViewById(R.id.dismiss);
         //mHintView = (TextView) mContentView.findViewById(R.id.hint);
-        mDragContainer = (PrizeDragView)mContainerView.findViewById(R.id.drag_container);
+        mDragContainer = (fengyunDragView)mContainerView.findViewById(R.id.drag_container);
         mSnoozeTv = (TextView)mContainerView.findViewById(R.id.snooze_tv);
         
         mAlarmAminition = (ImageView) mContentView.findViewById(R.id.alarm_aminition);
@@ -257,10 +257,10 @@ public class AlarmActivity extends Activity
         final TextClock digitalClock = (TextClock) mContentView.findViewById(R.id.digital_clock);
         /*final View pulseView = mContentView.findViewById(R.id.pulse);
         pulseView.setVisibility(View.GONE);*/
-        //prize-os 7.0 hide title - pengcancan - start
+        //fengyun-os 7.0 hide title - pengcancan - start
         //final TextView titleView = (TextView) mContentView.findViewById(R.id.title);
         //titleView.setText(mAlarmInstance.getLabelOrDefault(this));
-        //prize-os 7.0 hide title - pengcancan - end
+        //fengyun-os 7.0 hide title - pengcancan - end
         Utils.setTimeFormat(this,digitalClock,
                 getResources().getDimensionPixelSize(R.dimen.main_ampm_font_size));
 
@@ -305,9 +305,9 @@ public class AlarmActivity extends Activity
 				snooze();
 			}
 		});
-        /*prize-Listener Home button click event - when you press the Home key time, snooze-lixing-2015-7-13-start*/
+        /*fengyun-Listener Home button click event - when you press the Home key time, snooze-lixing-2015-7-13-start*/
         /*
-        mHomeWatcher = new PrizeHomeWatcher(this);
+        mHomeWatcher = new fengyunHomeWatcher(this);
         mHomeWatcher.setOnHomePressedListener(new OnHomePressedListener(){
 			public void onHomePressed() {
 				// TODO Auto-generated method stub
@@ -319,7 +319,7 @@ public class AlarmActivity extends Activity
 			}
 		});
         */
-        /*prize-Listener Home button click event - when you press the Home key time, snooze-lixing--2015-7-13-end*/
+        /*fengyun-Listener Home button click event - when you press the Home key time, snooze-lixing--2015-7-13-end*/
     }
 
     @Override
@@ -330,19 +330,19 @@ public class AlarmActivity extends Activity
 
     @Override
     protected void onResume() {
-    	//prize-public-bug:17311 crash when closing alarm --pengcancan-20160614-start
+    	//fengyun-public-bug:17311 crash when closing alarm --pengcancan-20160614-start
     	// Bind to AlarmService
     	bindService(new Intent(this, AlarmService.class), mConnection, Context.BIND_AUTO_CREATE);
     	mServiceBound = true;
-    	//prize-public-bug:17311 crash when closing alarm --pengcancan-20160614-end
+    	//fengyun-public-bug:17311 crash when closing alarm --pengcancan-20160614-end
 		// TODO Auto-generated method stub
-    	/*prize-Home button click event begins listening-lixing--2015-7-13-start*/
+    	/*fengyun-Home button click event begins listening-lixing--2015-7-13-start*/
     	/*
     	try{
     		mHomeWatcher.startWatch();
     	}catch(Exception e){}
     	*/
-    	/*prize-Home button click event begins listening-lixing--2015-7-13-end*/
+    	/*fengyun-Home button click event begins listening-lixing--2015-7-13-end*/
         super.onResume();
 
         // Re-query for AlarmInstance in case the state has changed externally
@@ -377,23 +377,23 @@ public class AlarmActivity extends Activity
     @Override
     protected void onPause() {
 		// TODO Auto-generated method stub
-    /*prize-Log-out Monitor Home button click event-lixing--2015-7-13-start*/
+    /*fengyun-Log-out Monitor Home button click event-lixing--2015-7-13-start*/
 		/*
     	try{
     		mHomeWatcher.stopWatch();
     	}catch(Exception e){}
     	*/
-    /*prize-Log-out Monitor Home button click event-lixing--2015-7-13-end*/
+    /*fengyun-Log-out Monitor Home button click event-lixing--2015-7-13-end*/
         super.onPause();
 
         unbindAlarmService();
-        //prize-public-bug:17311 crash when closing alarm --pengcancan-20160614-start
+        //fengyun-public-bug:17311 crash when closing alarm --pengcancan-20160614-start
         /*// Skip if register didn't happen to avoid IllegalArgumentException
         if (mReceiverRegistered) {
             unregisterReceiver(mReceiver);
             mReceiverRegistered = false;
         }*/
-        //prize-public-bug:17311 crash when closing alarm --pengcancan-20160614-end
+        //fengyun-public-bug:17311 crash when closing alarm --pengcancan-20160614-end
     }
 	
 	@Override

@@ -26,10 +26,10 @@
     android:background="@color/timer_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/clock_prize_area"
+    android:id="@+id/clock_fengyun_area"
     >
     
-     <com.android.deskclock.prize.widget.TimerClockPrizeView
+     <com.android.deskclock.fengyun.widget.TimerClockfengyunView
        android:id="@+id/thisclock"
        android:layout_marginTop="10dp"
        android:layout_width="@dimen/new_clock_width"
@@ -98,5 +98,5 @@
     	    android:layout_marginBottom="8dp"
     	    android:textColor="@color/white"
     	    android:textSize="14sp"
-    	    android:text="@string/timer_tip_prize"/>-->
+    	    android:text="@string/timer_tip_fengyun"/>-->
 </FrameLayout>

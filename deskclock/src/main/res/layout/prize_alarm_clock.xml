@@ -62,12 +62,12 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="@dimen/bottom_button_margin_left"
                     android:layout_weight="1"
-                    android:background="@drawable/prize_add_alarm_button"
+                    android:background="@drawable/fengyun_add_alarm_button"
                     android:gravity="center"
                     android:text="@string/add_alarm"
                     android:textAllCaps="true"
                     android:textColor="@color/black_3"
-                    android:textSize="@dimen/prize_normal" />
+                    android:textSize="@dimen/fengyun_normal" />
 
                 <Button
                     android:id="@+id/alarm_set"
@@ -76,19 +76,19 @@
                     android:layout_gravity="center"
                     android:layout_marginEnd="@dimen/bottom_button_margin_left"
                     android:layout_weight="1"
-                    android:background="@drawable/prize_alarm_set_button"
+                    android:background="@drawable/fengyun_alarm_set_button"
                     android:gravity="center"
                     android:text="@string/settings"
                     android:textAllCaps="true"
                     android:textColor="@color/black_3"
-                    android:textSize="@dimen/prize_normal" />
+                    android:textSize="@dimen/fengyun_normal" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
     <include
         android:id="@+id/addalarmlayout"
-        layout="@layout/prize_add_alarm_clock" />
+        layout="@layout/fengyun_add_alarm_clock" />
 
 </FrameLayout>
 

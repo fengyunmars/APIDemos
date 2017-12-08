@@ -12,7 +12,7 @@ import com.fengyun.R;
 
 
 /**
- * Created by prize on 2017/10/13.
+ * Created by fengyun on 2017/10/13.
  */
 
 public class CoordinateSystem extends LinearLayout implements IViewCustom {

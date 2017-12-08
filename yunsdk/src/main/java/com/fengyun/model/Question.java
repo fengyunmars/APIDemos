@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by prize on 2017/12/2.
+ * Created by fengyun on 2017/12/2.
  */
 
 public class Question extends BaseModelAndroid{

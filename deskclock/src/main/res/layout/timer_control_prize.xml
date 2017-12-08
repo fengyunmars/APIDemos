@@ -43,9 +43,9 @@
             android:layout_marginStart="@dimen/bottom_button_margin_left"
             android:layout_weight="1"
             android:background="@drawable/full_btn"
-            android:text="@string/start_prize"
+            android:text="@string/start_fengyun"
             android:textColor="@color/black_3"
-            android:textSize="@dimen/prize_normal" />
+            android:textSize="@dimen/fengyun_normal" />
     </LinearLayout>
 
     <LinearLayout
@@ -64,7 +64,7 @@
             android:background="@drawable/left_btn"
             android:text="@string/timer_pause"
             android:textColor="@color/black_3"
-            android:textSize="@dimen/prize_normal" />
+            android:textSize="@dimen/fengyun_normal" />
 
         <Button
             android:id="@+id/timer_cancle_btn"
@@ -74,9 +74,9 @@
             android:layout_marginEnd="@dimen/bottom_button_margin_left"
             android:layout_weight="1"
             android:background="@drawable/right_btn"
-            android:text="@string/cancel_prize"
+            android:text="@string/cancel_fengyun"
             android:textColor="@color/black_3"
-            android:textSize="@dimen/prize_normal" />
+            android:textSize="@dimen/fengyun_normal" />
     </LinearLayout>
 
     <LinearLayout
@@ -95,7 +95,7 @@
             android:background="@drawable/left_btn"
             android:text="@string/timer_restart"
             android:textColor="@color/black_3"
-            android:textSize="@dimen/prize_normal" />
+            android:textSize="@dimen/fengyun_normal" />
 
         <Button
             android:id="@+id/timer_cancle_btn_2"
@@ -105,9 +105,9 @@
             android:layout_marginEnd="@dimen/bottom_button_margin_left"
             android:layout_weight="1"
             android:background="@drawable/right_btn"
-            android:text="@string/cancel_prize"
+            android:text="@string/cancel_fengyun"
             android:textColor="@color/black_3"
-            android:textSize="@dimen/prize_normal" />
+            android:textSize="@dimen/fengyun_normal" />
     </LinearLayout>
 
 </LinearLayout>    

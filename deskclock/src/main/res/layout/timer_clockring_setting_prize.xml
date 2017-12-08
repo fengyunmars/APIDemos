@@ -45,7 +45,7 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="8dp"
-        android:src="@drawable/prize_go_to_setting" />
+        android:src="@drawable/fengyun_go_to_setting" />
 
     <TextView
         android:id="@+id/timer_clockring_name"
@@ -59,7 +59,7 @@
         android:singleLine="true"
         android:text="@string/timer_clockring_name"
         android:textColor="@color/black_9"
-        android:textSize="@dimen/prize_content" />
+        android:textSize="@dimen/fengyun_content" />
 
     <View
         android:layout_width="fill_parent"
@@ -69,6 +69,6 @@
         android:layout_alignParentRight="true"
         android:layout_marginLeft="@dimen/bottom_button_margin_left"
         android:layout_marginRight="@dimen/bottom_button_margin_left"
-        android:background="@drawable/hriozion_prize" />
+        android:background="@drawable/hriozion_fengyun" />
 
 </RelativeLayout>

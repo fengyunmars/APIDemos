@@ -19,7 +19,7 @@
  * limitations under the License.
  
 
-package com.android.deskclock.prize;
+package com.android.deskclock.fengyun;
 
 import java.io.File;
 import java.text.DateFormatSymbols;
@@ -112,8 +112,8 @@ import com.android.deskclock.Utils;
 import com.android.deskclock.alarms.AlarmModify;
 import com.android.deskclock.alarms.AlarmStateManager;
 import com.android.deskclock.alarms.PowerOffAlarm;
-import com.android.deskclock.prize.widget.PrizeAnalogClock;
-import com.android.deskclock.prize.widget.PrizeTimePicker;
+import com.android.deskclock.fengyun.widget.fengyunAnalogClock;
+import com.android.deskclock.fengyun.widget.fengyunTimePicker;
 import com.android.deskclock.provider.Alarm;
 import com.android.deskclock.provider.AlarmInstance;
 import com.android.deskclock.provider.DaysOfWeek;
@@ -121,12 +121,12 @@ import com.android.deskclock.stopwatch.TimePickerCallBack;
 import com.android.deskclock.widget.ActionableToastBar;
 import com.android.deskclock.widget.TextTime;
 import com.mediatek.deskclock.utility.FeatureOption;
-import com.mediatek.deskclock.utility.PrizeUtil;
+import com.mediatek.deskclock.utility.fengyunUtil;
 import com.android.deskclock.R;
 *//**
  * AlarmClock application.
  *//*
-public class PrizeAlarmClockFragment extends DeskClockFragment
+public class fengyunAlarmClockFragment extends DeskClockFragment
 		implements TimePickerCallBack, LoaderManager.LoaderCallbacks<Cursor>, OnTimeSetListener, View.OnTouchListener {
 	private static final float EXPAND_DECELERATION = 1f;
 	private static final float COLLAPSE_DECELERATION = 0.7f;
@@ -169,7 +169,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 	/// M: The Uri string of system default alarm alert
 
 	
-	 * prize-由于有的项目中的OS中没有原生的"content://settings/system/alarm_alert",
+	 * fengyun-由于有的项目中的OS中没有原生的"content://settings/system/alarm_alert",
 	 * 所以用"content://settings/system/notification_sound"替换-lixing-2007-7-24-
 	 * start
 	 
@@ -179,19 +179,19 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 
 	private ListView mAlarmsList;
 	private AlarmItemAdapter mAdapter;
-	 PRIZE-添加新的闹钟item适配器对象变量-李星-2015-4-8-start 
+	 fengyun-添加新的闹钟item适配器对象变量-李星-2015-4-8-start
 	private NewBaseItemAdapter mNewAdapter;
-	 PRIZE-添加新的闹钟item适配器对象变量-李星-2015-4-8-end 
+	 fengyun-添加新的闹钟item适配器对象变量-李星-2015-4-8-end
 	private View mEmptyView;
 	private View mFooterView;
 
-	 PRIZE-添加闹钟Button对象变量-李星-2015-4-8-start 
+	 fengyun-添加闹钟Button对象变量-李星-2015-4-8-start
 	private Button addAlarm;
-	 PRIZE-添加闹钟Button对象变量-李星-2015-4-8-end 
+	 fengyun-添加闹钟Button对象变量-李星-2015-4-8-end
 
-	 PRIZE-设置Button对象变量-李星-2015-4-13-start 
+	 fengyun-设置Button对象变量-李星-2015-4-13-start
 	private Button alarm_set;
-	 PRIZE-设置Button对象变量-李星-2015-4-13-end 
+	 fengyun-设置Button对象变量-李星-2015-4-13-end
 
 	private Bundle mRingtoneTitleCache; // Key: ringtone uri, value: ringtone
 										// title
@@ -214,28 +214,28 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 	private Transition mAddRemoveTransition;
 	private Transition mRepeatTransition;
 	private Transition mEmptyViewTransition;
-	 PRIZE-添加闹钟List器对象变量-李星-2015-4-8-start 
+	 fengyun-添加闹钟List器对象变量-李星-2015-4-8-start
 	private List<Alarm> allAlarms;
-	 PRIZE-添加闹钟List器对象变量-李星-2015-4-8-end 
+	 fengyun-添加闹钟List器对象变量-李星-2015-4-8-end
 
-	 PRIZE-闹钟Layout布局，增加闹钟layout布局--李星-2015-4-22-start 
+	 fengyun-闹钟Layout布局，增加闹钟layout布局--李星-2015-4-22-start
 	LinearLayout alarmLayout;
 	LinearLayout addalarmLayout;
 
-	PrizeAnalogClock analogclock;
+	fengyunAnalogClock analogclock;
 	FrameLayout analogclock_layout;
 	FrameLayout timepicker_framelayout;
-	PrizeTimePicker timePicker;
+	fengyunTimePicker timePicker;
 	Button confirm;
 	Button cancel;
 
 	Button minuteSet;
 	Button hourSet;
-	 PRIZE-闹钟Layout布局，增加闹钟layout布局--李星-2015-4-22-end 
+	 fengyun-闹钟Layout布局，增加闹钟layout布局--李星-2015-4-22-end
 
 	private Button[] dayButtons = new Button[7];
 
-	public PrizeAlarmClockFragment() {
+	public fengyunAlarmClockFragment() {
 		// Basic provider required by Fragment.java
 	}
 
@@ -257,7 +257,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 		mFactory = LayoutInflater.from(getActivity());
 
 		
-		 * PRIZE-注册广播接收器，修改alarm状态时候收到广播，更新闹钟列表。在onCreate()中注册，在onDestroy()中注销
+		 * fengyun-注册广播接收器，修改alarm状态时候收到广播，更新闹钟列表。在onCreate()中注册，在onDestroy()中注销
 		 * -李星-2015-4-13-start
 		 
 		if (FeatureOption.MTK_DESKCLOCK_NEW_UI) {
@@ -267,7 +267,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 			getActivity().registerReceiver(changeAlarmReceiver, filter);
 		}
 		
-		 * PRIZE-注册广播接收器，修改alarm状态时候收到广播，更新闹钟列表。在onCreate()中注册，在onDestroy()中注销
+		 * fengyun-注册广播接收器，修改alarm状态时候收到广播，更新闹钟列表。在onCreate()中注册，在onDestroy()中注销
 		 * -李星-2015-4-13-end
 		 
 	}
@@ -277,7 +277,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 		final View v;
 		// Inflate the layout for this fragment
 
-		 PRIZE-添加宏开关选择布局文件-李星-2015-4-8-start 
+		 fengyun-添加宏开关选择布局文件-李星-2015-4-8-start
 		if (FeatureOption.MTK_DESKCLOCK_NEW_UI) {
 			v = inflater.inflate(R.layout.new_alarm_clock, container, false);
 			alarmLayout = (LinearLayout) v.findViewById(R.id.alarm_layout);
@@ -285,15 +285,15 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 		} else {
 			v = inflater.inflate(R.layout.alarm_clock, container, false);
 		}
-		 PRIZE-添加宏开关选择布局文件-李星-2015-4-8-end 
+		 fengyun-添加宏开关选择布局文件-李星-2015-4-8-end
 
-		 PRIZE-添加 增加闹钟布局文件-李星-2015-4-22-start 
+		 fengyun-添加 增加闹钟布局文件-李星-2015-4-22-start
 		if (FeatureOption.MTK_DESKCLOCK_NEW_UI) {
 			setAddAlarmView(v);
 		}
-		 PRIZE-添加 增加闹钟布局文件-李星-2015-4-22-end 
+		 fengyun-添加 增加闹钟布局文件-李星-2015-4-22-end
 
-		 PRIZE-添加闹钟Button点击事件-李星-2015-4-8-start 
+		 fengyun-添加闹钟Button点击事件-李星-2015-4-8-start
 		if (FeatureOption.MTK_DESKCLOCK_NEW_UI) {
 			addAlarm = (Button) v.findViewById(R.id.addalarm);
 
@@ -308,9 +308,9 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 			});
 
 		}
-		 PRIZE-添加闹钟Button点击事件-李星-2015-4-8-end 
+		 fengyun-添加闹钟Button点击事件-李星-2015-4-8-end
 
-		 PRIZE-设置Button点击事件-李星-2015-4-13-start 
+		 fengyun-设置Button点击事件-李星-2015-4-13-start
 		if (FeatureOption.MTK_DESKCLOCK_NEW_UI) {
 			alarm_set = (Button) v.findViewById(R.id.alarm_set);
 
@@ -320,7 +320,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 				}
 			});
 		}
-		 PRIZE-设置Button点击事件-李星-2015-4-13-end 
+		 fengyun-设置Button点击事件-李星-2015-4-13-end
 
 		long expandedId = INVALID_ID;
 		long[] repeatCheckedIds = null;
@@ -368,7 +368,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 
 		mAdapter = new AlarmItemAdapter(getActivity(), expandedId, repeatCheckedIds, selectedAlarms, previousDayMap,
 				mAlarmsList);
-		 PRIZE-添加宏开关关闭原生代码-李星-2015-4-11-start 
+		 fengyun-添加宏开关关闭原生代码-李星-2015-4-11-start
 		if (!FeatureOption.MTK_DESKCLOCK_NEW_UI) {
 			mEmptyView = v.findViewById(R.id.alarms_empty_view);
 			mUndoBar = (ActionableToastBar) v.findViewById(R.id.undo_bar);
@@ -405,39 +405,39 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 				}
 			});
 		}
-		 PRIZE-添加宏开关关闭原生代码-李星-2015-4-11-end 
+		 fengyun-添加宏开关关闭原生代码-李星-2015-4-11-end
 
 		if (FeatureOption.MTK_DESKCLOCK_NEW_UI) {
-			 PRIZE-新的闹钟item适配器对象变量实例化，并获取闹钟集合-李星-2015-4-8-start 
+			 fengyun-新的闹钟item适配器对象变量实例化，并获取闹钟集合-李星-2015-4-8-start
 			allAlarms = getAllAlarms();
 			mNewAdapter = new NewBaseItemAdapter(allAlarms, getActivity());
-			 PRIZE-新的闹钟item适配器对象变量实例化，并获取闹钟集合-李星-2015-4-8-end 
+			 fengyun-新的闹钟item适配器对象变量实例化，并获取闹钟集合-李星-2015-4-8-end
 		}
 
 		if (mRingtoneTitleCache == null) {
 			mRingtoneTitleCache = new Bundle();
 		}
 
-		 PRIZE-添加宏开关，选择相应的适配器-李星-2015-4-8-start 
+		 fengyun-添加宏开关，选择相应的适配器-李星-2015-4-8-start
 		if (FeatureOption.MTK_DESKCLOCK_NEW_UI) {
 			updateList();
 		} else {
 			mAlarmsList.setAdapter(mAdapter);
 		}
-		 PRIZE-添加宏开关，选择相应的适配器-李星-2015-4-8-end 
+		 fengyun-添加宏开关，选择相应的适配器-李星-2015-4-8-end
 
 		mAlarmsList.setVerticalScrollBarEnabled(true);
 		mAlarmsList.setOnCreateContextMenuListener(this);
 
 		setTouchListeners(v.findViewById(R.id.alarm_second_container), v.findViewById(R.id.alarm_primary_container));
 
-		 PRIZE-添加宏开关关闭原生代码-李星-2015-4-11-start 
+		 fengyun-添加宏开关关闭原生代码-李星-2015-4-11-start
 		if (!FeatureOption.MTK_DESKCLOCK_NEW_UI) {
 			if (mUndoShowing) {
 				showUndoBar();
 			}
 		}
-		 PRIZE-添加宏开关关闭原生代码-李星-2015-4-11-end 
+		 fengyun-添加宏开关关闭原生代码-李星-2015-4-11-end
 
 		return v;
 	}
@@ -465,17 +465,17 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 			setLeftRightButtonAppearance();
 		}
 
-		 PRIZE-添加宏开关-李星-2015-4-8-start 
+		 fengyun-添加宏开关-李星-2015-4-8-start
 		if (FeatureOption.MTK_DESKCLOCK_NEW_UI) {
-			 prize-在onResume()中重新获取闹钟数据，及时刷新。-lixing-2015-5-21-start 
+			 fengyun-在onResume()中重新获取闹钟数据，及时刷新。-lixing-2015-5-21-start
 			reGetAllAlarms();
-			 prize-在onResume()中重新获取闹钟数据，及时刷新。-lixing-2015-5-21-end 
+			 fengyun-在onResume()中重新获取闹钟数据，及时刷新。-lixing-2015-5-21-end
 		} else {
 			if (mAdapter != null) {
 				mAdapter.notifyDataSetChanged();
 			}
 		}
-		 PRIZE-添加宏开关-李星-2015-4-8-end 
+		 fengyun-添加宏开关-李星-2015-4-8-end
 
 		// Check if another app asked us to create a blank new alarm.
 		final Intent intent = getActivity().getIntent();
@@ -489,7 +489,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 			intent.removeExtra(ALARM_CREATE_NEW_INTENT_EXTRA);
 		} else if (intent.hasExtra(SCROLL_TO_ALARM_INTENT_EXTRA)) {
 			
-			 * PRIZE-1974
+			 * fengyun-1974
 			 * 时钟：设定一个闹钟后，下拉状态栏，点击闹钟通知进入闹钟，闹钟列表界面会上移-fuqiang-2015-6-24-start
 			 
 			// long alarmId = intent.getLongExtra(SCROLL_TO_ALARM_INTENT_EXTRA,
@@ -504,7 +504,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 			// }
 			// }
 			
-			 * PRIZE-1974
+			 * fengyun-1974
 			 * 时钟：设定一个闹钟后，下拉状态栏，点击闹钟通知进入闹钟，闹钟列表界面会上移-fuqiang-2015-6-24-end
 			 
 
@@ -559,14 +559,14 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 		super.onDestroy();
 		ToastMaster.cancelToast();
 		
-		 * PRIZE-注册广播接收器，当删除，增加，修改alarm时候收到广播。在onCreate()中注册，在onDestroy()中注销
+		 * fengyun-注册广播接收器，当删除，增加，修改alarm时候收到广播。在onCreate()中注册，在onDestroy()中注销
 		 * -李星-2015-4-13-start
 		 
 		if (FeatureOption.MTK_DESKCLOCK_NEW_UI) {
 			getActivity().unregisterReceiver(changeAlarmReceiver);
 		}
 		
-		 * PRIZE-注册广播接收器，当删除，增加，修改alarm时候收到广播。在onCreate()中注册，在onDestroy()中注销
+		 * fengyun-注册广播接收器，当删除，增加，修改alarm时候收到广播。在onCreate()中注册，在onDestroy()中注销
 		 * -李星-2015-4-13-end
 		 
 
@@ -753,7 +753,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 			LogUtils.v("saveRingtoneUri = " + uri.toString());
 		}
 
-		final String ringtone = PrizeUtil.getRingtoneToString(mSelectedAlarm, getActivity());
+		final String ringtone = fengyunUtil.getRingtoneToString(mSelectedAlarm, getActivity());
 		ringtone_button.setText(ringtone);
 
 		// AlarmModify.asyncUpdateAlarm(mSelectedAlarm,
@@ -830,17 +830,17 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 
 		// Used for scrolling an expanded item in the list to make sure it is
 		// fully visible.
-		private long mScrollAlarmId = PrizeAlarmClockFragment.INVALID_ID;
+		private long mScrollAlarmId = fengyunAlarmClockFragment.INVALID_ID;
 		private final Runnable mScrollRunnable = new Runnable() {
 			@Override
 			public void run() {
-				if (mScrollAlarmId != PrizeAlarmClockFragment.INVALID_ID) {
+				if (mScrollAlarmId != fengyunAlarmClockFragment.INVALID_ID) {
 					View v = getViewById(mScrollAlarmId);
 					if (v != null) {
 						Rect rect = new Rect(v.getLeft(), v.getTop(), v.getRight(), v.getBottom());
 						mList.requestChildRectangleOnScreen(v, rect, false);
 					}
-					mScrollAlarmId = PrizeAlarmClockFragment.INVALID_ID;
+					mScrollAlarmId = fengyunAlarmClockFragment.INVALID_ID;
 				}
 			}
 		};
@@ -995,7 +995,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 				@Override
 				public void onClick(View view) {
 					mSelectedAlarm = itemHolder.alarm;
-					AlarmUtils.showTimeEditDialog(PrizeAlarmClockFragment.this, alarm);
+					AlarmUtils.showTimeEditDialog(fengyunAlarmClockFragment.this, alarm);
 					expandAlarm(itemHolder, true);
 					itemHolder.alarmItem.post(mScrollRunnable);
 				}
@@ -1034,11 +1034,11 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 			itemHolder.arrow.setRotation(expanded ? ROTATE_180_DEGREE : 0);
 
 			// Set the repeat text or leave it blank if it does not repeat.
-			final String daysOfWeekStr = alarm.daysOfWeek.toString(PrizeAlarmClockFragment.this.getActivity(), false);
+			final String daysOfWeekStr = alarm.daysOfWeek.toString(fengyunAlarmClockFragment.this.getActivity(), false);
 			if (daysOfWeekStr != null && daysOfWeekStr.length() != 0) {
 				itemHolder.daysOfWeek.setText(daysOfWeekStr);
 				itemHolder.daysOfWeek.setContentDescription(
-						alarm.daysOfWeek.toAccessibilityString(PrizeAlarmClockFragment.this.getActivity()));
+						alarm.daysOfWeek.toAccessibilityString(fengyunAlarmClockFragment.this.getActivity()));
 				itemHolder.daysOfWeek.setVisibility(View.VISIBLE);
 				itemHolder.daysOfWeek.setOnClickListener(new View.OnClickListener() {
 					@Override
@@ -1498,7 +1498,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 		}
 
 		private void collapseAlarm(final ItemHolder itemHolder, boolean animate) {
-			mExpandedId = PrizeAlarmClockFragment.INVALID_ID;
+			mExpandedId = fengyunAlarmClockFragment.INVALID_ID;
 			mExpandedItemHolder = null;
 
 			// Save the starting height so we can animate from this value.
@@ -1743,10 +1743,10 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 			// We must unset the listener first because this maybe a recycled
 			// view so changing the
 			// state would affect the wrong alarm.
-			 PRIZE-注意必须设置监听器在前面，设置状态在后面-李星-2015-4-8-start 
+			 fengyun-注意必须设置监听器在前面，设置状态在后面-李星-2015-4-8-start
 			itemHolder.mToggle.setOnCheckedChangeListener(onOffListener);
 			itemHolder.mToggle.setChecked(alarm.enabled);
-			 PRIZE-注意必须设置监听器在前面，设置状态在后面-李星-2015-4-8-end 
+			 fengyun-注意必须设置监听器在前面，设置状态在后面-李星-2015-4-8-end
 
 			itemHolder.onoff_linearlayou.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View arg0) {
@@ -1778,7 +1778,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 			itemHolder.mTextTime.setText(str);
 
 			// Set the repeat text or leave it blank if it does not repeat.
-			final String daysOfWeekStr = alarm.daysOfWeek.toString(PrizeAlarmClockFragment.this.getActivity(), false);
+			final String daysOfWeekStr = alarm.daysOfWeek.toString(fengyunAlarmClockFragment.this.getActivity(), false);
 			if (daysOfWeekStr.isEmpty()) {
 				itemHolder.alldays.setText(getActivity().getResources().getString(R.string.only_once));
 			} else {
@@ -1899,7 +1899,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 		window.setGravity(Gravity.CENTER | Gravity.BOTTOM); // 此处可以设置dialog显示的位置
 		// window.setWindowAnimations(R.style.deletalarmstyle); //添加动画
 
-		 PRIZE-删除闹钟-李星-2015-5-7-start 
+		 fengyun-删除闹钟-李星-2015-5-7-start
 		Button confirm = (Button) window.findViewById(R.id.confirm);
 		confirm.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
@@ -1912,7 +1912,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 
 			}
 		});
-		 PRIZE-删除闹钟-李星-2015-5-7-end 
+		 fengyun-删除闹钟-李星-2015-5-7-end
 
 		Button cancel = (Button) window.findViewById(R.id.cancel);
 		cancel.setOnClickListener(new View.OnClickListener() {
@@ -1940,7 +1940,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 	}
 
 	private void asyncDeleteAlarm(final Alarm alarm) {
-		final Context context = PrizeAlarmClockFragment.this.getActivity().getApplicationContext();
+		final Context context = fengyunAlarmClockFragment.this.getActivity().getApplicationContext();
 		final AsyncTask<Void, Void, Void> deleteTask = new AsyncTask<Void, Void, Void>() {
 			@Override
 			protected Void doInBackground(Void... parameters) {
@@ -1962,7 +1962,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 	}
 
 	private void asyncAddAlarm(final Alarm alarm) {
-		final Context context = PrizeAlarmClockFragment.this.getActivity().getApplicationContext();
+		final Context context = fengyunAlarmClockFragment.this.getActivity().getApplicationContext();
 		final AsyncTask<Void, Void, AlarmInstance> updateTask = new AsyncTask<Void, Void, AlarmInstance>() {
 			@Override
 			protected AlarmInstance doInBackground(Void... parameters) {
@@ -1995,7 +1995,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 	}
 
 	private void asyncUpdateAlarm(final Alarm alarm, final boolean popToast) {
-		final Context context = PrizeAlarmClockFragment.this.getActivity().getApplicationContext();
+		final Context context = fengyunAlarmClockFragment.this.getActivity().getApplicationContext();
 		final AsyncTask<Void, Void, AlarmInstance> updateTask = new AsyncTask<Void, Void, AlarmInstance>() {
 			@Override
 			protected AlarmInstance doInBackground(Void... parameters) {
@@ -2157,11 +2157,11 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 	 * @version 2014.5.6
 	 *//*
 	private void updateList() {
-		 PRIZE-新的闹钟item适配器对象变量实例化，并获取闹钟集合-李星-2015-5-6-start 
+		 fengyun-新的闹钟item适配器对象变量实例化，并获取闹钟集合-李星-2015-5-6-start
 		allAlarms = getAllAlarms();
 		mNewAdapter = new NewBaseItemAdapter(allAlarms, getActivity());
 		mAlarmsList.setAdapter(mNewAdapter);
-		 PRIZE-新的闹钟item适配器对象变量实例化，并获取闹钟集合-李星-2015-5-6-end 
+		 fengyun-新的闹钟item适配器对象变量实例化，并获取闹钟集合-李星-2015-5-6-end
 		// Toast.makeText(getActivity(), "has update list ...", 200).show();
 	}
 
@@ -2256,7 +2256,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 		if (id == -1) {
 			isAdd = true;
 			current_alarm = new Alarm();
-			String defaultRingtone = PrizeAlarmClockFragment.getDefaultRingtone(getActivity());
+			String defaultRingtone = fengyunAlarmClockFragment.getDefaultRingtone(getActivity());
 			if (isRingtoneExisted(getActivity(), defaultRingtone)) {
 				current_alarm.alert = Uri.parse(defaultRingtone);
 			} else {
@@ -2265,7 +2265,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 			}
 			/// @}
 			if (current_alarm.alert == null) {
-				current_alarm.alert = Uri.parse(PrizeAlarmClockFragment.SYSTEM_SETTINGS_ALARM_ALERT);
+				current_alarm.alert = Uri.parse(fengyunAlarmClockFragment.SYSTEM_SETTINGS_ALARM_ALERT);
 			}
 
 			final Calendar c = Calendar.getInstance();
@@ -2278,7 +2278,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 			// AlarmModify.asyncAddAlarm(current_alarm,getActivity().getApplicationContext());
 		} else {
 			isAdd = false;
-			 prize-从底层重新获取Alarm，防止内存中的alarm，和底层不一样-lixing-2015-6-4-start 
+			 fengyun-从底层重新获取Alarm，防止内存中的alarm，和底层不一样-lixing-2015-6-4-start
 			current_alarm = Alarm.getAlarm(getActivity().getContentResolver(), id);
 		}
 		mSelectedAlarm = current_alarm; // mSelectedAlarm 为全局的Alarm 实例
@@ -2291,29 +2291,29 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 			public void onClick(View arg0) {
 				setHourButtonActive();
 				int time = Integer.parseInt(hourSet.getText().toString());
-				timePicker.setTime(time, PrizeTimePicker.KEY_HOUR);
+				timePicker.setTime(time, fengyunTimePicker.KEY_HOUR);
 			}
 		});
 		minuteSet.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
 				setMinuteButtonActive();
 				int time = Integer.parseInt(minuteSet.getText().toString());
-				timePicker.setTime(time, PrizeTimePicker.KEY_MINUTE);
+				timePicker.setTime(time, fengyunTimePicker.KEY_MINUTE);
 			}
 		});
 
 		
-		 * PRIZE-初始化让Hour按钮
-		 * ,使其高亮且获取PrizeTimePicker滑动数据！初始化PrizeTimePicker中时间数据-lixing-2015-4-16-
+		 * fengyun-初始化让Hour按钮
+		 * ,使其高亮且获取fengyunTimePicker滑动数据！初始化fengyunTimePicker中时间数据-lixing-2015-4-16-
 		 * start
 		 
 		setHourButtonActive();
-		timePicker.setTime(alarm.hour, PrizeTimePicker.KEY_HOUR);
+		timePicker.setTime(alarm.hour, fengyunTimePicker.KEY_HOUR);
 		minuteSet.setText(String.format("%02d", alarm.minutes));
 		hourSet.setText(String.format("%02d", alarm.hour));
 		
-		 * PRIZE-初始化让Hour按钮
-		 * ,使其高亮且获取PrizeTimePicker滑动数据！初始化PrizeTimePicker中时间数据-lixing-2015-4-16-
+		 * fengyun-初始化让Hour按钮
+		 * ,使其高亮且获取fengyunTimePicker滑动数据！初始化fengyunTimePicker中时间数据-lixing-2015-4-16-
 		 * end
 		 
 
@@ -2347,20 +2347,20 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 			dayButtons[i] = dayButton;
 			final int index = i;
 
-			 prize-这段是初始化，未按按钮之前第一次显示-lixing-start-2015-6-16-start 
+			 fengyun-这段是初始化，未按按钮之前第一次显示-lixing-start-2015-6-16-start
 			if (dayButton.isActivated()) {
 				turnOnDayOfWeek(index);
 			} else {
 				turnOffDayOfWeek(index);
 			}
-			 prize-这段是初始化，未按按钮之前第一次显示-lixing-start-2015-6-16-end 
+			 fengyun-这段是初始化，未按按钮之前第一次显示-lixing-start-2015-6-16-end
 
 			dayButton.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View arg0) {
 					final boolean isActivated = dayButtons[index].isActivated();
-					 PRIZE-这句设置闹钟重复的日期，通过移位写入数据-李星-2015-4-11-start 
+					 fengyun-这句设置闹钟重复的日期，通过移位写入数据-李星-2015-4-11-start
 					alarm.daysOfWeek.setDaysOfWeek(!isActivated, NEW_DAY_ORDER[index]);
-					 PRIZE-这句设置闹钟重复的日期，通过移位写入数据-李星-2015-4-11-end 
+					 fengyun-这句设置闹钟重复的日期，通过移位写入数据-李星-2015-4-11-end
 					if (!isActivated) {
 						turnOnDayOfWeek(index);
 					} else {
@@ -2397,7 +2397,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 			}
 		});
 
-		final String ringtone = PrizeUtil.getRingtoneToString(alarm, getActivity());
+		final String ringtone = fengyunUtil.getRingtoneToString(alarm, getActivity());
 
 		ringtone_button.setText(ringtone);
 		ringtone_button.setOnClickListener(new View.OnClickListener() {
@@ -2407,7 +2407,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 		});
 
 		String snoozeTimeStr = AlarmStateManager.getSnoozedMinutes(getActivity())
-				+ getActivity().getResources().getString(R.string.prize_minute);
+				+ getActivity().getResources().getString(R.string.fengyun_minute);
 		snoozeTime.setText(snoozeTimeStr);
 		snoozeTime.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
@@ -2476,7 +2476,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 								 * Window window = dlg.getWindow(); //
 								 * 设置窗口的内容页面,shrew_exit_dialog.xml文件中定义view内容
 								 * window.setContentView(R.layout.
-								 * prize_snooze_lenth_dialog);
+								 * fengyun_snooze_lenth_dialog);
 								 * 
 								 * 
 								 * 
@@ -2527,7 +2527,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 								 * AlarmStateManager.getSnoozedMinutes(
 								 * getActivity()) +
 								 * getActivity().getResources().getString(R.
-								 * string.prize_minute);
+								 * string.fengyun_minute);
 								 * snoozeTime.setText(snoozeTimeStr);
 								 * dlg.dismiss(); } });
 								 * 
@@ -2537,7 +2537,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 								 
 
 		LayoutInflater mInflater = LayoutInflater.from(mContext);
-		View view = mInflater.inflate(R.layout.prize_snooze_lenth_dialog, null);
+		View view = mInflater.inflate(R.layout.fengyun_snooze_lenth_dialog, null);
 
 		final NumberPicker picker = (NumberPicker) view.findViewById(R.id.minutes_picker);
 		picker.setMinValue(1);
@@ -2563,7 +2563,7 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 								editor.putString(SettingsActivity.KEY_ALARM_SNOOZE, Integer.toString(value));
 								editor.apply();
 								String snoozeTimeStr = AlarmStateManager.getSnoozedMinutes(getActivity())
-										+ getActivity().getResources().getString(R.string.prize_minute);
+										+ getActivity().getResources().getString(R.string.fengyun_minute);
 								snoozeTime.setText(snoozeTimeStr);
 								arg0.dismiss();
 							}
@@ -2592,8 +2592,8 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 		hourSet.setTextColor(getResources().getColor(R.color.white));
 		minuteSet.setActivated(false);
 		minuteSet.setTextColor(getResources().getColor(R.color.toumin_white));
-		 PRIZE-根据选择的是时钟还是分钟设置表盘-lixing-2015-4-13-start 
-		timePicker.setDial(PrizeTimePicker.KEY_DIAL_HOUR);
+		 fengyun-根据选择的是时钟还是分钟设置表盘-lixing-2015-4-13-start
+		timePicker.setDial(fengyunTimePicker.KEY_DIAL_HOUR);
 
 	}
 
@@ -2611,8 +2611,8 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 		hourSet.setTextColor(getResources().getColor(R.color.toumin_white));
 		minuteSet.setActivated(true);
 		minuteSet.setTextColor(getResources().getColor(R.color.white));
-		 PRIZE-根据选择的是时钟还是分钟设置表盘-lixing-2015-4-13-start 
-		timePicker.setDial(PrizeTimePicker.KEY_DIAL_MINUTE);
+		 fengyun-根据选择的是时钟还是分钟设置表盘-lixing-2015-4-13-start
+		timePicker.setDial(fengyunTimePicker.KEY_DIAL_MINUTE);
 	}
 
 	private void turnOffDayOfWeek(int dayIndex) {
@@ -2630,12 +2630,12 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 		super.onAttach(activity);
 		//
 		// analogclock =
-		// (PrizeAnalogClock)activity.findViewById(R.id.analogclock);
+		// (fengyunAnalogClock)activity.findViewById(R.id.analogclock);
 		// timepicker_framelayout =
 		// (FrameLayout)activity.findViewById(R.id.timepicker_framelayout);
 		//
 		//// timePicker =
-		// (PrizeTimePicker)activity.findViewById(R.id.time_picker);
+		// (fengyunTimePicker)activity.findViewById(R.id.time_picker);
 		//
 		// confirm = (Button)activity.findViewById(R.id.confirm);
 		//
@@ -2652,9 +2652,9 @@ public class PrizeAlarmClockFragment extends DeskClockFragment
 		// TODO Auto-generated method stub
 		super.onActivityCreated(savedInstanceState);
 
-		timePicker = (PrizeTimePicker) getActivity().findViewById(R.id.time_picker);
+		timePicker = (fengyunTimePicker) getActivity().findViewById(R.id.time_picker);
 		analogclock_layout = (FrameLayout) getActivity().findViewById(R.id.analogclock_layout);
-		analogclock = (PrizeAnalogClock) getActivity().findViewById(R.id.analogclock);
+		analogclock = (fengyunAnalogClock) getActivity().findViewById(R.id.analogclock);
 		timepicker_framelayout = (FrameLayout) getActivity().findViewById(R.id.timepicker_framelayout);
 		confirm = (Button) getActivity().findViewById(R.id.confirm);
 		cancel = (Button) getActivity().findViewById(R.id.cancel);

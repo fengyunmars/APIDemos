@@ -1,6 +1,6 @@
 
 /*******************************************
-* Copyright © 2015, Prize Limited
+* Copyright © 2015, fengyun Limited
 *
 * Summary: Add alarm when dynamically add this Fragment ...
 * current version:
@@ -58,7 +58,7 @@ import com.android.deskclock.alarms.AlarmStateManager;
 import com.android.deskclock.alarms.PowerOffAlarm;
 import com.android.deskclock.provider.Alarm;
 import com.android.deskclock.stopwatch.TimePickerCallBack;
-import com.android.deskclock.prize.widget.PrizeTimePicker;
+import com.android.deskclock.fengyun.widget.fengyunTimePicker;
 
 public class AddAlarmClock extends Fragment implements TimePickerCallBack{
 
@@ -70,7 +70,7 @@ public class AddAlarmClock extends Fragment implements TimePickerCallBack{
 	private static final String KEY_IS_ADD = "isadd";
 	private boolean add = false;
 	
-	private PrizeTimePicker timePicker;
+	private fengyunTimePicker timePicker;
 	private Button hourSet;
 	private Button minuteSet;
 	private Button confirm;
@@ -119,9 +119,9 @@ public class AddAlarmClock extends Fragment implements TimePickerCallBack{
 			
 		}
 		
-		/* PRIZE- If the incoming alarm object is empty it means that you want to add alarm, alarm at this time need to instantiate -lixing-2015-4-13-start */
+		/* fengyun- If the incoming alarm object is empty it means that you want to add alarm, alarm at this time need to instantiate -lixing-2015-4-13-start */
 		if(current_alarm == null){
-			add = true;			/* PRIZE-true representation is Add alarm, false alarm clock showing modifications -lixing-2015-4-13-start */
+			add = true;			/* fengyun-true representation is Add alarm, false alarm clock showing modifications -lixing-2015-4-13-start */
 			current_alarm = new Alarm();
 			   ///M: get default ringtone from preference, not the system @{
             String defaultRingtone = AlarmClockFragment.getDefaultRingtone(getActivity());
@@ -147,7 +147,7 @@ public class AddAlarmClock extends Fragment implements TimePickerCallBack{
 //            AlarmModify.asyncAddAlarm(current_alarm,getActivity().getApplicationContext());
 		
 		}
-		/* PRIZE- If the incoming alarm object is empty it means that you want to add alarm, alarm at this time need to instantiate -lixing-2015-4-13-end */
+		/* fengyun- If the incoming alarm object is empty it means that you want to add alarm, alarm at this time need to instantiate -lixing-2015-4-13-end */
 		
 		
 		if(savedInstanceState != null){
@@ -179,7 +179,7 @@ public class AddAlarmClock extends Fragment implements TimePickerCallBack{
  			public void onClick(View arg0) {
  				setHourButtonActive();
  				int time = Integer.parseInt(hourSet.getText().toString());
-// 				timePicker.setTime(time, PrizeTimePicker.KEY_HOUR);
+// 				timePicker.setTime(time, fengyunTimePicker.KEY_HOUR);
  			}
  		});
  		
@@ -188,17 +188,17 @@ public class AddAlarmClock extends Fragment implements TimePickerCallBack{
  			public void onClick(View arg0) {
  				setMinuteButtonActive();
  				int time = Integer.parseInt(minuteSet.getText().toString());
-// 				timePicker.setTime(time, PrizeTimePicker.KEY_MINUTE);
+// 				timePicker.setTime(time, fengyunTimePicker.KEY_MINUTE);
  			}
  		});
  		
  		
  	
  		
- 		/* PRIZE- initialization let Hour button to highlight it and get PrizeTimePicker slide data! The initialization PrizeTimePicker time data -lixing-2015-4-16-start */
+ 		/* fengyun- initialization let Hour button to highlight it and get fengyunTimePicker slide data! The initialization fengyunTimePicker time data -lixing-2015-4-16-start */
  		setHourButtonActive();	
-// 		timePicker.setTime(current_alarm.hour, PrizeTimePicker.KEY_HOUR);
- 		/* PRIZE- initialization let Hour button to highlight it and get PrizeTimePicker slide data! The initialization PrizeTimePicker time data -lixing-2015-4-16-end */
+// 		timePicker.setTime(current_alarm.hour, fengyunTimePicker.KEY_HOUR);
+ 		/* fengyun- initialization let Hour button to highlight it and get fengyunTimePicker slide data! The initialization fengyunTimePicker time data -lixing-2015-4-16-end */
 
 		
 		day_linearlayout = (LinearLayout)v.findViewById(R.id.day_linearlayout);
@@ -233,9 +233,9 @@ public class AddAlarmClock extends Fragment implements TimePickerCallBack{
 			public void onClick(View arg0) {
 				final boolean isActivated =
 						dayButtons[index].isActivated();
-				/*PRIZE-Phrase set the alarm to repeat the date, write data through the shift - Li Xing-2015-4-11-start*/
+				/*fengyun-Phrase set the alarm to repeat the date, write data through the shift - Li Xing-2015-4-11-start*/
 		         current_alarm.daysOfWeek.setDaysOfWeek(!isActivated, DAY_ORDER[index]);
-		         /*PRIZE-Phrase set the alarm to repeat the date, write data through the shift - Li Xing-2015-4-11-end*/
+		         /*fengyun-Phrase set the alarm to repeat the date, write data through the shift - Li Xing-2015-4-11-end*/
 		         if (!isActivated) {
 		             turnOnDayOfWeek(index);
 		         } else {
@@ -467,8 +467,8 @@ public class AddAlarmClock extends Fragment implements TimePickerCallBack{
     	 hourSet.setTextColor(getResources().getColor(R.color.white));
     	 minuteSet.setActivated(false);
     	 minuteSet.setTextColor(getResources().getColor(R.color.toumin_white));
-    	 /*PRIZE-Depending on the selected setting dial clock or minutes-lixing-2015-4-13-start*/
-    	 timePicker.setDial(PrizeTimePicker.KEY_DIAL_HOUR);	
+    	 /*fengyun-Depending on the selected setting dial clock or minutes-lixing-2015-4-13-start*/
+    	 timePicker.setDial(fengyunTimePicker.KEY_DIAL_HOUR);
     	 
      }
      
@@ -486,16 +486,16 @@ public class AddAlarmClock extends Fragment implements TimePickerCallBack{
     	 hourSet.setTextColor(getResources().getColor(R.color.toumin_white));
     	 minuteSet.setActivated(true);
     	 minuteSet.setTextColor(getResources().getColor(R.color.white));
-    	 /*PRIZE-Depending on the selected setting dial clock or minutes-lixing-2015-4-13-start*/
-    	 timePicker.setDial(PrizeTimePicker.KEY_DIAL_MINUTE);
+    	 /*fengyun-Depending on the selected setting dial clock or minutes-lixing-2015-4-13-start*/
+    	 timePicker.setDial(fengyunTimePicker.KEY_DIAL_MINUTE);
      }
      
      
      
      private void bindActivityView(Activity activity){
     	 
-    	timePicker = (PrizeTimePicker)activity.findViewById(R.id.time_picker);
- 		/*PRIZE-Sets the callback when timePicker slide when using a callback function to display the time on the two buttons-lixing-2015-4-16-start*/
+    	timePicker = (fengyunTimePicker)activity.findViewById(R.id.time_picker);
+ 		/*fengyun-Sets the callback when timePicker slide when using a callback function to display the time on the two buttons-lixing-2015-4-16-start*/
  		timePicker.setCallBack(this);	
  		
  		hourSet = (Button)activity.findViewById(R.id.hour_set);

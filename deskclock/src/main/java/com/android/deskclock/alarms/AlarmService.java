@@ -121,13 +121,13 @@ public class AlarmService extends Service {
     private static boolean  mStopPlayReceiverRegistered = false;
     /// @}
     
-    /*prize-For external calls to turn off the alarm, such as a fingerprint touch to turn off the alarm--lixing-2015-8-22-start*/
+    /*fengyun-For external calls to turn off the alarm, such as a fingerprint touch to turn off the alarm--lixing-2015-8-22-start*/
     private static final String EXTERN_REQUEST_AlARM_DISMISS_ACITON = "com.android.deskclock.EXTERN_REQUEST_AlARM_DISMISS";
-    /*prize-For external calls to turn off the alarm, such as a fingerprint touch to turn off the alarm--lixing-2015-8-22-end*/
+    /*fengyun-For external calls to turn off the alarm, such as a fingerprint touch to turn off the alarm--lixing-2015-8-22-end*/
     
-    /*prize-For external calls to delay the alarm, such as smart cover--pengcancan-2016-04-22-start*/
+    /*fengyun-For external calls to delay the alarm, such as smart cover--pengcancan-2016-04-22-start*/
     private static final String EXTERN_REQUEST_AlARM_SNOOZE_ACITON = "com.android.deskclock.EXTERN_REQUEST_AlARM_SNOOZE";
-    /*prize-For external calls to delay the alarm, such as smart cover--pengcancan-2016-04-22-end*/
+    /*fengyun-For external calls to delay the alarm, such as smart cover--pengcancan-2016-04-22-end*/
 
     private final BroadcastReceiver mStopPlayReceiver = new BroadcastReceiver() {
         @Override
@@ -142,10 +142,10 @@ public class AlarmService extends Service {
                 AlarmStateManager.setSnoozeState(context, mCurrentAlarm, false);
                 /// M: Now it is time to delete the unused backup ringtone
 
-                PowerOffAlarm.deleteRingtone(context, mCurrentAlarm); /*prize-Undelete-lixing-2015-6-10-start*/
+                PowerOffAlarm.deleteRingtone(context, mCurrentAlarm); /*fengyun-Undelete-lixing-2015-6-10-start*/
                 
-               shutDown(context); /*prize-Shutdown*/
-            /*prize-For external calls to turn off the alarm, such as a fingerprint touch to turn off the alarm--lixing-2015-8-22-start*/
+               shutDown(context); /*fengyun-Shutdown*/
+            /*fengyun-For external calls to turn off the alarm, such as a fingerprint touch to turn off the alarm--lixing-2015-8-22-start*/
             }else if(intent.getAction().equals(EXTERN_REQUEST_AlARM_DISMISS_ACITON)){
             	
             	AlarmStateManager.setDismissState(context, mCurrentAlarm);
@@ -154,11 +154,11 @@ public class AlarmService extends Service {
             	if(PowerOffAlarm.bootFromPoweroffAlarm()){
             		shutDown(context);
             	}
-            /*prize-For external calls to turn off the alarm, such as a fingerprint touch to turn off the alarm--lixing-2015-8-22-end*/	
-            /*prize-For external calls to delay the alarm, such as smart cover--pengcancan-2016-04-22-start*/
+            /*fengyun-For external calls to turn off the alarm, such as a fingerprint touch to turn off the alarm--lixing-2015-8-22-end*/
+            /*fengyun-For external calls to delay the alarm, such as smart cover--pengcancan-2016-04-22-start*/
             }else if (intent.getAction().equals(EXTERN_REQUEST_AlARM_SNOOZE_ACITON)) {
             	AlarmStateManager.setSnoozeState(context, mCurrentAlarm,false);
-            /*prize-For external calls to delay the alarm, such as smart cover--pengcancan-2016-04-22-end*/
+            /*fengyun-For external calls to delay the alarm, such as smart cover--pengcancan-2016-04-22-end*/
 			}else {
                 /// M: Power on action or pre_shutdown, so set dismiss state and don't shut down
                 AlarmStateManager.setDismissState(context, mCurrentAlarm);
@@ -303,14 +303,14 @@ public class AlarmService extends Service {
              */
             if (inCall) {
                 mInstanceAlarm = mCurrentAlarm;
-                /* PRIZE-Remove half screen clock display, jump directly to the full-screen display-fuqiang-2015-6-15-start */
+                /* fengyun-Remove half screen clock display, jump directly to the full-screen display-fuqiang-2015-6-15-start */
            //     AlarmNotifications.showAlarmActivity(this, mCurrentAlarm);		/*pirze-Send a broadcast startAlarmAcitivity-2015-5-21-lixing*/
-                /* PRIZE-Remove half screen clock display, jump directly to the full-screen display-fuqiang-2015-6-15-end */
+                /* fengyun-Remove half screen clock display, jump directly to the full-screen display-fuqiang-2015-6-15-end */
 				AlarmNotifications.updateAlarmNotification(this, mCurrentAlarm);
             } else {
-            	/* PRIZE-Remove half screen clock display, jump directly to the full-screen display-fuqiang-2015-6-15-start */
+            	/* fengyun-Remove half screen clock display, jump directly to the full-screen display-fuqiang-2015-6-15-start */
           //      AlarmNotifications.showAlarmActivity(this, mCurrentAlarm);			
-                /* PRIZE-Remove half screen clock display, jump directly to the full-screen display-fuqiang-2015-6-15-end */
+                /* fengyun-Remove half screen clock display, jump directly to the full-screen display-fuqiang-2015-6-15-end */
 				AlarmNotifications.showAlarmNotification(this, mCurrentAlarm);      /*pirze-Show notification bar-2015-5-21-lixing*/
             }
         } /// @}
@@ -417,9 +417,9 @@ public class AlarmService extends Service {
             /// M: add for privacy protection lock
             filter.addAction(PRIVACY_PROTECTION_CLOCK);
             
-            /*prize-For external calls to turn off the alarm, such as a fingerprint touch to turn off the alarm--lixing-2015-8-22-start*/
+            /*fengyun-For external calls to turn off the alarm, such as a fingerprint touch to turn off the alarm--lixing-2015-8-22-start*/
             filter.addAction(EXTERN_REQUEST_AlARM_DISMISS_ACITON);
-            /*prize-For external calls to turn off the alarm, such as a fingerprint touch to turn off the alarm--lixing-2015-8-22-end*/
+            /*fengyun-For external calls to turn off the alarm, such as a fingerprint touch to turn off the alarm--lixing-2015-8-22-end*/
             filter.addAction(EXTERN_REQUEST_AlARM_SNOOZE_ACITON);
         }
         registerReceiver(mStopPlayReceiver, filter);
@@ -468,7 +468,7 @@ public class AlarmService extends Service {
             /// M: PowerOffAlarm start and change the label @{
             if (PowerOffAlarm.bootFromPoweroffAlarm()) {
     //        	LogUtils.v("ttttt","AlarmService aciton:" + "update.power.off.alarm.label");
-                updatePoweroffAlarmLabel(this, mInstance.mLabel);  /*prize-If it is turned off the alarm sounded here to send a broadcast to Keyguard, show off alarm interface*/
+                updatePoweroffAlarmLabel(this, mInstance.mLabel);  /*fengyun-If it is turned off the alarm sounded here to send a broadcast to Keyguard, show off alarm interface*/
             }
             /// @}
             startAlarmKlaxon(mInstance);
@@ -478,9 +478,9 @@ public class AlarmService extends Service {
                         " because current alarm is: " + mCurrentAlarm.mId);
                 return Service.START_NOT_STICKY;
             }
-            //prize-public-bug:18238 alarm doesn't go silent when auto silent is up --pengcancan-20160707-start
+            //fengyun-public-bug:18238 alarm doesn't go silent when auto silent is up --pengcancan-20160707-start
         	stopCurrentAlarm();
-        	//prize-public-bug:18238 alarm doesn't go silent when auto silent is up --pengcancan-20160707-end
+        	//fengyun-public-bug:18238 alarm doesn't go silent when auto silent is up --pengcancan-20160707-end
             stopSelf();
         }
         return Service.START_NOT_STICKY;
@@ -491,7 +491,7 @@ public class AlarmService extends Service {
         LogUtils.v("AlarmService.onDestroy() called");
         /// M: Ordering corrected, onDestroy should be the last method being called
         //super.onDestroy();
-        //prize-public-bug:18238 alarm doesn't go silent when auto silent is up --pengcancan-20160707-start
+        //fengyun-public-bug:18238 alarm doesn't go silent when auto silent is up --pengcancan-20160707-start
         if (mCurrentAlarm != null) {
             stopCurrentAlarm();
         }
@@ -506,7 +506,7 @@ public class AlarmService extends Service {
             unregisterReceiver(mActionsReceiver);
             mIsRegistered = false;
         }
-        //prize-public-bug:18238 alarm doesn't go silent when auto silent is up --pengcancan-20160707-end
+        //fengyun-public-bug:18238 alarm doesn't go silent when auto silent is up --pengcancan-20160707-end
         super.onDestroy();
     }
 

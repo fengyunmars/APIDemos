@@ -3,7 +3,7 @@ package com.fengyun.model;
 import android.graphics.Path;
 
 /**
- * Created by prize on 2017/12/2.
+ * Created by fengyun on 2017/12/2.
  */
 
 public class Option extends BaseModelAndroid {

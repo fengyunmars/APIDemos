@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--prize-增加854x480P 资源-lixing-205-6-4-start  -->
+    <!--fengyun-增加854x480P 资源-lixing-205-6-4-start  -->
     
     <item type="integer" name="dial_stroke_width">25</item>
     <item type="integer" name="dial_text_size">22</item>
@@ -12,7 +12,7 @@
 
     <item type="integer" name="hour_hand_width">7</item>
     <item type="integer" name="seconde_hand_width">5</item>
-    <!--prize-增加854x480P 资源-lixing-205-6-4-start  -->
+    <!--fengyun-增加854x480P 资源-lixing-205-6-4-start  -->
     
     
     

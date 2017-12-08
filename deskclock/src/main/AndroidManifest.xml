@@ -41,16 +41,16 @@
     <!-- @} -->
     <!-- M: For multiuser -->
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
-    <!-- PRIZE- 添加写文件权限- 李星-2015-4-10-start -->
+    <!-- fengyun- 添加写文件权限- 李星-2015-4-10-start -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <!-- PRIZE- 添加写文件权限- 李星-2015-4-10-end -->
+    <!-- fengyun- 添加写文件权限- 李星-2015-4-10-end -->
     <application android:label="@string/app_label"
                  android:name=".DeskClockApplication"
                  android:allowBackup="true"
                  android:backupAgent="DeskClockBackupAgent"
                  android:fullBackupContent="@xml/backup_scheme"
                  android:fullBackupOnly="true"
-                 android:icon="@mipmap/prize_ic_launcher_alarmclock"
+                 android:icon="@mipmap/fengyun_ic_launcher_alarmclock"
                  android:requiredForAllUsers="true"
                  android:supportsRtl="true">
 
@@ -61,7 +61,7 @@
         <activity android:name="DeskClock"
                 android:label="@string/app_label"
                 android:theme="@style/DeskClock"
-                android:icon="@mipmap/prize_ic_launcher_alarmclock"
+                android:icon="@mipmap/fengyun_ic_launcher_alarmclock"
                 android:launchMode="singleTask"
                 android:screenOrientation="portrait"
                 >
@@ -77,7 +77,7 @@
                 android:targetActivity="DeskClock"
                 android:label="@string/app_label"
                 android:theme="@style/DeskClock"
-                android:icon="@mipmap/prize_ic_launcher_alarmclock"
+                android:icon="@mipmap/fengyun_ic_launcher_alarmclock"
                 android:launchMode="singleTask"
                 android:enabled="@bool/config_dockAppEnabled"
                 >
@@ -269,7 +269,7 @@
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/analog_appwidget" />
         </receiver>
 
-        <!-- prize - 因为插件界面需要调整，暂时关闭世界时钟插件 -lixing - 2015-8-19 -start -->
+        <!-- fengyun - 因为插件界面需要调整，暂时关闭世界时钟插件 -lixing - 2015-8-19 -start -->
         <!--  
         <receiver android:name="com.android.alarmclock.DigitalAppWidgetProvider" android:label="@string/digital_gadget"
            android:icon="@mipmap/ic_launcher_alarmclock">
@@ -288,7 +288,7 @@
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/digital_appwidget" />
         </receiver>
          -->
-        <!-- prize - 因为插件界面需要调整，暂时关闭世界时钟插件 -lixing - 2015-8-19 -end-->
+        <!-- fengyun - 因为插件界面需要调整，暂时关闭世界时钟插件 -lixing - 2015-8-19 -end-->
         
         
         

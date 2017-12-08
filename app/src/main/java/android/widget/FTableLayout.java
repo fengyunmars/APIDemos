@@ -6,7 +6,7 @@ import android.view.FView;
 import android.view.FViewGroup;
 
 /**
- * Created by prize on 2017/9/30.
+ * Created by fengyun on 2017/9/30.
  */
 
 public class FTableLayout extends FViewGroup {

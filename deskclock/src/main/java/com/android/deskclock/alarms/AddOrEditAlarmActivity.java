@@ -52,7 +52,7 @@ import com.android.deskclock.provider.Alarm;
 import com.android.deskclock.provider.AlarmInstance;
 import com.android.deskclock.timer.TimerObj;
 import com.mediatek.deskclock.utility.FeatureOption;
-import com.mediatek.deskclock.utility.PrizeUtil;
+import com.mediatek.deskclock.utility.fengyunUtil;
 
 public class AddOrEditAlarmActivity extends Activity implements OnClickListener,
 	AlarmLabelDialogFragment.TimerLabelDialogHandler, AlarmLabelDialogFragment.AlarmLabelDialogHandler {
@@ -142,9 +142,9 @@ public class AddOrEditAlarmActivity extends Activity implements OnClickListener,
 			hourOfDay = mSelectedAlarm.hour;
             minuteOfHour = mSelectedAlarm.minutes;
             mOrignalBackup = mSelectedAlarm;
-            //prize-public-bug:19390 did't enable alarm after editing alarm-20160804-pengcancan-start
+            //fengyun-public-bug:19390 did't enable alarm after editing alarm-20160804-pengcancan-start
             mOrignalAlarmStr = mSelectedAlarm.toString();
-            //prize-public-bug:19390 did't enable alarm after editing alarm-20160804-pengcancan-end
+            //fengyun-public-bug:19390 did't enable alarm after editing alarm-20160804-pengcancan-end
 		}
 	}
 
@@ -197,7 +197,7 @@ public class AddOrEditAlarmActivity extends Activity implements OnClickListener,
 			}
 		});
 
-		final String ringtone = PrizeUtil.getRingtoneToString(mSelectedAlarm, this);
+		final String ringtone = fengyunUtil.getRingtoneToString(mSelectedAlarm, this);
 		ringtone_button.setText(ringtone);
 		ringtone_button.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
@@ -206,7 +206,7 @@ public class AddOrEditAlarmActivity extends Activity implements OnClickListener,
 		});
 
 		String snoozeTimeStr = AlarmStateManager.getSnoozedMinutes(this)
-				+ getResources().getString(R.string.prize_minute);
+				+ getResources().getString(R.string.fengyun_minute);
 		snoozeTime.setText(snoozeTimeStr);
 		snoozeTime.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
@@ -243,20 +243,20 @@ public class AddOrEditAlarmActivity extends Activity implements OnClickListener,
       	 day_linearlayout.addView(dayButton);
          dayButtons[i] = dayButton;
          final int index = i;
-         /*prize-This is initialized, pressed the button for the first time before the show-lixing-start-2015-6-16-start*/        
+         /*fengyun-This is initialized, pressed the button for the first time before the show-lixing-start-2015-6-16-start*/
          if(dayButton.isActivated()){
        		turnOnDayOfWeek(index);
        	 }else{
        		turnOffDayOfWeek(index);
        	 }
-         /*prize-This is initialized, pressed the button for the first time before the show-lixing-start-2015-6-16-end*/
+         /*fengyun-This is initialized, pressed the button for the first time before the show-lixing-start-2015-6-16-end*/
          dayButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
 				final boolean isActivated =
 						dayButtons[index].isActivated();
-				/*PRIZE-Phrase set the alarm to repeat the date, write data through the shift - Li Xing-2015-4-11-start*/
+				/*fengyun-Phrase set the alarm to repeat the date, write data through the shift - Li Xing-2015-4-11-start*/
 				mSelectedAlarm.daysOfWeek.setDaysOfWeek(!isActivated, NEW_DAY_ORDER[index]);
-		         /*PRIZE-Phrase set the alarm to repeat the date, write data through the shift - Li Xing-2015-4-11-end*/
+		         /*fengyun-Phrase set the alarm to repeat the date, write data through the shift - Li Xing-2015-4-11-end*/
 		         if (!isActivated) {
 		             turnOnDayOfWeek(index);
 		         } else {
@@ -344,11 +344,11 @@ public class AddOrEditAlarmActivity extends Activity implements OnClickListener,
 		if(isNewlyAddedAlarm){
 			AlarmModify.addAlarm(mSelectedAlarm,this.getApplicationContext());
 		}else{
-			//prize-public-bug:19390 did't enable alarm after editing alarm-20160804-pengcancan-start
+			//fengyun-public-bug:19390 did't enable alarm after editing alarm-20160804-pengcancan-start
 			if(mSelectedAlarm.id == mOrignalBackup.id && (!mOrignalAlarmStr.equals(mSelectedAlarm.toString())) ){
 				mSelectedAlarm.enabled = true;
 			}
-			//prize-public-bug:19390 did't enable alarm after editing alarm-20160804-pengcancan-end
+			//fengyun-public-bug:19390 did't enable alarm after editing alarm-20160804-pengcancan-end
 			AlarmModify.updatAlarm(mSelectedAlarm, mSelectedAlarm.enabled, this.getApplicationContext());
 		}
 	}
@@ -424,7 +424,7 @@ public class AddOrEditAlarmActivity extends Activity implements OnClickListener,
             LogUtils.v("saveRingtoneUri = " + uri.toString());
         }
         
-        final String ringtone = PrizeUtil.getRingtoneToString(mSelectedAlarm,this);   
+        final String ringtone = fengyunUtil.getRingtoneToString(mSelectedAlarm,this);
         ringtone_button.setText(ringtone);
     }
     
@@ -531,7 +531,7 @@ public class AddOrEditAlarmActivity extends Activity implements OnClickListener,
 
 	private void showSnoozeLengthDialog(Context mContext) {
 		LayoutInflater mInflater = LayoutInflater.from(mContext);
-		View view = mInflater.inflate(R.layout.prize_snooze_lenth_dialog, null);
+		View view = mInflater.inflate(R.layout.fengyun_snooze_lenth_dialog, null);
 
 		final NumberPicker picker = (NumberPicker) view.findViewById(R.id.minutes_picker);
 		picker.setMinValue(1);
@@ -551,7 +551,7 @@ public class AddOrEditAlarmActivity extends Activity implements OnClickListener,
 								editor.putString(SettingsActivity.KEY_ALARM_SNOOZE, Integer.toString(value));
 								editor.apply();
 								String snoozeTimeStr = AlarmStateManager.getSnoozedMinutes(AddOrEditAlarmActivity.this)
-										+ getResources().getString(R.string.prize_minute);
+										+ getResources().getString(R.string.fengyun_minute);
 								snoozeTime.setText(snoozeTimeStr);
 								arg0.dismiss();
 							}

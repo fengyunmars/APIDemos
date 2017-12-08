@@ -21,7 +21,7 @@
             <ImageView 
                 android:layout_width="@dimen/stopwatch_ico_width"
                 android:layout_height="@dimen/stopwatch_ico_width"
-                android:src="@drawable/stopwatch_ico_prize"
+                android:src="@drawable/stopwatch_ico_fengyun"
                 />
             
             <TextView 

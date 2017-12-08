@@ -33,8 +33,8 @@ import android.text.format.DateFormat;
 import android.text.format.DateUtils;
 import android.widget.Toast;
 
-import com.android.deskclock.prize.PrizeTimePickerFragment;
-import com.android.deskclock.prize.PrizeTimerPickerDialog;
+import com.android.deskclock.fengyun.fengyunTimePickerFragment;
+import com.android.deskclock.fengyun.fengyunTimerPickerDialog;
 import com.android.deskclock.provider.Alarm;
 import com.android.deskclock.provider.AlarmInstance;
 
@@ -144,9 +144,9 @@ public class AlarmUtils {
         }
         /// M: Avoid exception
         ft.commitAllowingStateLoss();
-        final PrizeTimePickerFragment timePickerFragment = new PrizeTimePickerFragment();
+        final fengyunTimePickerFragment timePickerFragment = new fengyunTimePickerFragment();
         timePickerFragment.setTargetFragment(fragment, 0);
-        timePickerFragment.setOnTimeSetListener(/*(PrizeTimerPickerDialog.OnTimeSetListener) fragment*/null);
+        timePickerFragment.setOnTimeSetListener(/*(fengyunTimerPickerDialog.OnTimeSetListener) fragment*/null);
         timePickerFragment.setAlarm(alarm);
         timePickerFragment.show(manager, FRAG_TAG_TIME_PICKER);
     }

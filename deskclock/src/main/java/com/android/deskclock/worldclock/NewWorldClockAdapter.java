@@ -1,6 +1,6 @@
 
  /*******************************************
- * Copyright © 2015, Shenzhen Prize Technologies Limited
+ * Copyright © 2015, Shenzhen fengyun Technologies Limited
  *
  * Summary: World Clock displays the ListView Item adapter
  * current version:
@@ -63,8 +63,8 @@ import com.android.deskclock.widget.CityAnalogClock;
 	    private String mClockStyle;
 	    private final Collator mCollator = Collator.getInstance();
 	    
-	    protected HashMap<String, CityObj> mCitiesDb = new HashMap<String, CityObj>();	/*prize- all city names -lixing */
-	    protected HashMap<String,CityObj> mSelectedDb = new HashMap<String, CityObj>(); /*prize-Selected City Name-lixing */
+	    protected HashMap<String, CityObj> mCitiesDb = new HashMap<String, CityObj>();	/*fengyun- all city names -lixing */
+	    protected HashMap<String,CityObj> mSelectedDb = new HashMap<String, CityObj>(); /*fengyun-Selected City Name-lixing */
 	    
 	    protected int mClocksPerRow;
 
@@ -85,12 +85,12 @@ import com.android.deskclock.widget.CityAnalogClock;
 
 	    public void loadData(Context context) {
 	        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
-	        /*PRIZE-Close entry-2015-5-14-start*/
+	        /*fengyun-Close entry-2015-5-14-start*/
 	       /*
 	        mClockStyle = prefs.getString(SettingsActivity.KEY_CLOCK_STYLE,
 	                mContext.getResources().getString(R.string.default_clock_style));
 	       */
-	        /*PRIZE-Close entry-2015-5-14-end*/
+	        /*fengyun-Close entry-2015-5-14-end*/
 	        mSelectedDb = Cities.readCitiesFromSharedPrefs(prefs);
 	        mCitiesList = Cities.readCitiesFromSharedPrefs(prefs).values().toArray();
 	        sortList();
@@ -341,7 +341,7 @@ import com.android.deskclock.widget.CityAnalogClock;
 		 }
 		
 		
-		//PRIZE-view holder -pengcancan-20160411-start
+		//fengyun-view holder -pengcancan-20160411-start
 		 class ViewHolder{
 			 LinearLayout clock_linear;
 			 TextView city_name;
@@ -350,7 +350,7 @@ import com.android.deskclock.widget.CityAnalogClock;
 			 CityAnalogClock aclock;
 			 Button delete_clock_btn;
 		 }
-		//PRIZE-view holder -pengcancan-20160411-end
+		//fengyun-view holder -pengcancan-20160411-end
 		 
 		 
 		 

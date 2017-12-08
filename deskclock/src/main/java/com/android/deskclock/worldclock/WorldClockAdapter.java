@@ -65,12 +65,12 @@ public class WorldClockAdapter extends BaseAdapter {
 
     public void loadData(Context context) {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
-        /*PRIZE-close-2015-5-14-start*/
+        /*fengyun-close-2015-5-14-start*/
         /*
         mClockStyle = prefs.getString(SettingsActivity.KEY_CLOCK_STYLE,
                 mContext.getResources().getString(R.string.default_clock_style));
         */
-        /*PRIZE-close-2015-5-14-start*/
+        /*fengyun-close-2015-5-14-start*/
         mCitiesList = Cities.readCitiesFromSharedPrefs(prefs).values().toArray();
         sortList();
         mCitiesList = addHomeCity();

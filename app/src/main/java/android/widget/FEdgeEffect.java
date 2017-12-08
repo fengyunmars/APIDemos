@@ -15,7 +15,7 @@ import android.view.animation.FInterpolator;
 import android.view.animation.Interpolator;
 
 /**
- * Created by prize on 2017/10/31.
+ * Created by fengyun on 2017/10/31.
  */
 
 public class FEdgeEffect {

@@ -41,7 +41,7 @@
             android:id="@+id/city_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/prize_margin_default"
+            android:layout_marginStart="@dimen/fengyun_margin_default"
             android:ellipsize="end"
             android:singleLine="true"
             android:textAppearance="@style/PrimaryLabelTextAppearance" />
@@ -59,16 +59,16 @@
             android:id="@+id/city_onoff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/prize_margin_default"
-            android:button="@drawable/prize_checkbox_track"
+            android:layout_marginEnd="@dimen/fengyun_margin_default"
+            android:button="@drawable/fengyun_checkbox_track"
             android:clickable="false" />
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:layout_marginLeft="@dimen/prize_margin_default"
-        android:layout_marginRight="@dimen/prize_margin_default"
-        android:background="@color/prize_divide_line_default" />
+        android:layout_marginLeft="@dimen/fengyun_margin_default"
+        android:layout_marginRight="@dimen/fengyun_margin_default"
+        android:background="@color/fengyun_divide_line_default" />
 
 </LinearLayout>

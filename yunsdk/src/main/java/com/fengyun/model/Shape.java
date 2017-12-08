@@ -1,7 +1,7 @@
 package com.fengyun.model;
 
 /**
- * Created by prize on 2017/7/5.
+ * Created by fengyun on 2017/7/5.
  */
 
 public class Shape {

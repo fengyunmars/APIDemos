@@ -50,7 +50,7 @@
 	
     <color name="time_picker_gray">#212121</color>
     
-    <!-- PRIZE- 添加颜色资源- lixing-2015-4-9-start -->
+    <!-- fengyun- 添加颜色资源- lixing-2015-4-9-start -->
 	<color name="black_1">#111111</color>
 	<color name="black_3">#323232</color>
 	<color name="black_6">#646464</color>
@@ -58,7 +58,7 @@
 	<color name="black_b">#BBBBBB</color>
 	<color name="daybutton_green">#33cdcc</color>
 	<color name="city_hearder">#33cccc</color>
-	<!-- PRIZE- 添加颜色资源- lixing-2015-4-9-end -->
+	<!-- fengyun- 添加颜色资源- lixing-2015-4-9-end -->
     <color name="notif_text_grey">#9c9c9c</color>
     <color name="control_highlight_color">#42ffffff</color>
     <color name="notification_bg">#181818</color>
@@ -66,30 +66,30 @@
     <color name="notification_pressed">#333333</color>
     <color name="notification_divider">#272727</color>
     
-    	<!-- PRIZE-添加deskclock actionBar tab 中的 text资源- 李星-2015-4-17-start -->
+    	<!-- fengyun-添加deskclock actionBar tab 中的 text资源- 李星-2015-4-17-start -->
     <color name="tabtext_selected">#ffffff</color> 
     <color name="tabtext_unselected">#64ffffff</color>
     <color name="toumin_white">#64ffffff</color>
-    <!-- PRIZE-添加deskclock actionBar tab 中的 text资源- 李星-2015-4-17-end -->
+    <!-- fengyun-添加deskclock actionBar tab 中的 text资源- 李星-2015-4-17-end -->
     
-    <!-- PRIZE-添加deskclock actionBar tab 中的 text资源- 李星-2015-5-18-start -->
+    <!-- fengyun-添加deskclock actionBar tab 中的 text资源- 李星-2015-5-18-start -->
     <color name="alarm_background">#778dfb</color>
     <color name="clock_background">#129beb</color>
     <color name="stopwatch_background">#13d573</color>
     <color name="timer_background">#f7ae6c</color>
     <color name="quantouming">#00FFFFFF</color>
-    <color name="dial_prize_in">#64ffffff</color>
-    <color name="dial_prize_out">#AAffffff</color>
+    <color name="dial_fengyun_in">#64ffffff</color>
+    <color name="dial_fengyun_out">#AAffffff</color>
     <color name="list_item_bg_press">#E6E6E6</color>
     <color name="list_item_bg_normal">#FFFFFF</color>
     <color name="add_or_edit_alarm_actionbar_background">#FFF0F0F0</color>
-    <!-- PRIZE-添加deskclock actionBar tab 中的 text资源- 李星-2015-5-18-end -->
+    <!-- fengyun-添加deskclock actionBar tab 中的 text资源- 李星-2015-5-18-end -->
     <color name="city_actionbar_grey">#fff5f5f5</color>
     <color name="city_text_grey">#ff323232</color>
     
-    <color name="prize_divide_line_black">#ffffff</color>
+    <color name="fengyun_divide_line_black">#ffffff</color>
     <color name="time_select_flag">#4bd1c3</color>
-    <color name="prize_divide_line_green">#4bd1c3</color>
-    <color name="prize_divide_line_default">#dcdcdc</color>
+    <color name="fengyun_divide_line_green">#4bd1c3</color>
+    <color name="fengyun_divide_line_default">#dcdcdc</color>
     <color name="dashboard_category_title_textcolor">#30c1be</color>
 </resources>

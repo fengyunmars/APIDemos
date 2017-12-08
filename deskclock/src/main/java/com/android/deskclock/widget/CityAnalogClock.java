@@ -302,7 +302,7 @@ public class CityAnalogClock extends View {
         	
         mSeconds = second;//(float) ((second * 1000 + millis) / 166.666);
         mMinutes = minute + second / 60.0f;
-        mHour = hour + mMinutes / 60.0f;   /*prizeGet 24 hour-lixing*/
+        mHour = hour + mMinutes / 60.0f;   /*fengyunGet 24 hour-lixing*/
         
         if(mHour >20 || mHour < 6){
         	mDial = mDialNight;

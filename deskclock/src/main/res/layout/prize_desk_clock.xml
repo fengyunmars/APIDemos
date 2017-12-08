@@ -16,7 +16,7 @@
 -->
 
 
-<!-- PRIZE- 宏开关打开后DeskClock中Activity使用此布局文件- 李星-2015-4-6-start -->
+<!-- fengyun- 宏开关打开后DeskClock中Activity使用此布局文件- 李星-2015-4-6-start -->
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/deskclock_main"
@@ -58,7 +58,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent" >
 
-                            <com.android.deskclock.prize.widget.PrizeAnalogClock
+                            <com.android.deskclock.fengyun.widget.fengyunAnalogClock
                                 android:id="@+id/analogclock"
                                 android:layout_width="@dimen/new_clock_width"
                                 android:layout_height="@dimen/new_clock_height"
@@ -72,7 +72,7 @@
                                 android:layout_marginBottom="20dp"
                                 android:text="@string/Standard_time"
                                 android:textColor="@color/white"
-                                android:textSize="@dimen/prize_normal"
+                                android:textSize="@dimen/fengyun_normal"
                                 android:visibility="gone" />
                         </FrameLayout>
 
@@ -80,7 +80,7 @@
                             android:id="@+id/timepicker_layout"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            layout="@layout/prize_add_alarm_timepicker_layout" />
+                            layout="@layout/fengyun_add_alarm_timepicker_layout" />
                     </FrameLayout>
 
                     <FrameLayout
@@ -91,7 +91,7 @@
                         android:background="@color/clock_background"
                         android:visibility="gone" >
 
-                        <com.android.deskclock.prize.widget.PrizeAnalogClock
+                        <com.android.deskclock.fengyun.widget.fengyunAnalogClock
                             android:id="@+id/world_clock"
                             android:layout_width="@dimen/new_clock_width"
                             android:layout_height="@dimen/new_clock_height"
@@ -105,7 +105,7 @@
                             android:layout_marginBottom="20dp"
                             android:text="@string/Standard_time"
                             android:textColor="@color/white"
-                            android:textSize="@dimen/prize_normal" />
+                            android:textSize="@dimen/fengyun_normal" />
                     </FrameLayout>
 
                     <FrameLayout
@@ -125,7 +125,7 @@
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/stopwatch_texttime" />
 
-                        <com.android.deskclock.prize.widget.PrizeStopWatchClock
+                        <com.android.deskclock.fengyun.widget.fengyunStopWatchClock
                             android:id="@+id/stopwatch_clock"
                             android:layout_width="@dimen/new_clock_width"
                             android:layout_height="@dimen/new_clock_height"
@@ -143,7 +143,7 @@
                         <include
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            layout="@layout/prize_timerclock_prize" />
+                            layout="@layout/fengyun_timerclock_fengyun" />
                     </FrameLayout>
                 </LinearLayout>
 
@@ -163,7 +163,7 @@
                         android:background="@android:color/transparent"
                         android:gravity="center"
                         android:text="@string/menu_alarm"
-                        android:textSize="@dimen/prize_normal" />
+                        android:textSize="@dimen/fengyun_normal" />
 
                     <TextView
                         android:id="@+id/clock_title"
@@ -172,7 +172,7 @@
                         android:background="@android:color/transparent"
                         android:gravity="center"
                         android:text="@string/menu_clock"
-                        android:textSize="@dimen/prize_normal" />
+                        android:textSize="@dimen/fengyun_normal" />
 
                     <TextView
                         android:id="@+id/stopwatch_title"
@@ -181,7 +181,7 @@
                         android:background="@android:color/transparent"
                         android:gravity="center"
                         android:text="@string/menu_stopwatch"
-                        android:textSize="@dimen/prize_normal" />
+                        android:textSize="@dimen/fengyun_normal" />
 
                     <TextView
                         android:id="@+id/timer_title"
@@ -190,7 +190,7 @@
                         android:background="@android:color/transparent"
                         android:gravity="center"
                         android:text="@string/menu_timer"
-                        android:textSize="@dimen/prize_normal" />
+                        android:textSize="@dimen/fengyun_normal" />
                 </LinearLayout>
             </FrameLayout>
 

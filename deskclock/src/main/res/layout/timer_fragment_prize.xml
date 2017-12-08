@@ -24,7 +24,7 @@
 *********************************************/
  -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/timers_list_page_prize"
+    android:id="@+id/timers_list_page_fengyun"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
@@ -57,23 +57,23 @@
                 <include
                     android:layout_width="fill_parent"
                     android:layout_height="@dimen/list_item"
-                    layout="@layout/timer_clockring_setting_prize" />
+                    layout="@layout/timer_clockring_setting_fengyun" />
 
                 <include
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
-                    layout="@layout/timer_list_prize" />
+                    layout="@layout/timer_list_fengyun" />
             </LinearLayout>
         </ScrollView>
 
         <!-- <View
             android:layout_width="match_parent"
             android:layout_height="1px"
-            android:background="@color/prize_divide_line_default" /> -->
+            android:background="@color/fengyun_divide_line_default" /> -->
         <include
             android:layout_width="match_parent"
-            android:layout_height="@dimen/prize_bottom_nav_height"
-            layout="@layout/timer_control_prize" />
+            android:layout_height="@dimen/fengyun_bottom_nav_height"
+            layout="@layout/timer_control_fengyun" />
 
     </LinearLayout>
     
@@ -84,7 +84,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/button_layout"
             android:layout_alignParentBottom="true"
-            layout="@layout/timer_control_prize" />
+            layout="@layout/timer_control_fengyun" />
     </RelativeLayout> -->
 
 </FrameLayout>

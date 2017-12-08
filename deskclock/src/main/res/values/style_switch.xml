@@ -4,8 +4,8 @@
     
 
     <style name="Preze_Switch_Button">
-        <item name="track">@drawable/prize_switch_btn_selector</item>
-        <item name="thumb">@drawable/prize_switch_btn_slipper</item>
+        <item name="track">@drawable/fengyun_switch_btn_selector</item>
+        <item name="thumb">@drawable/fengyun_switch_btn_slipper</item>
         <item name="switchTextAppearance">@android:style/TextAppearance.Small</item>
         <item name="textOn">@string/switch_on</item>
         <item name="textOff">@string/switch_off</item>

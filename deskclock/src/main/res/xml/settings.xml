@@ -24,7 +24,7 @@
             android:entryValues="@array/clock_style_values"
             android:defaultValue="@string/default_clock_style"
             android:dialogTitle="@string/clock_style" 
-            android:layout="@layout/prize_deskcolock_settings_custom"     
+            android:layout="@layout/fengyun_deskcolock_settings_custom"
             /> -->
           
         <CheckBoxPreference
@@ -65,8 +65,8 @@
             />
 
        <!-- M: we override volume preference -->
-       <!-- prize-由com.android.deskclock.PrizeRingerVolumePreference 替换com.android.deskclock.RingerVolumePreference -->
-        <com.android.deskclock.PrizeRingerVolumePreference
+       <!-- fengyun-由com.android.deskclock.fengyunRingerVolumePreference 替换com.android.deskclock.RingerVolumePreference -->
+        <com.android.deskclock.fengyunRingerVolumePreference
             android:key="volume_setting"
             android:title="@string/alarm_volume_title"
             android:dialogTitle="@string/alarm_volume_title"

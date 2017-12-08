@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- PRIZE- 设置PreferencActiviy 中每一栏的布局，主要用来设置文字字体大小颜色- 李星-2015-5-12-start -->	      
+<!-- fengyun- 设置PreferencActiviy 中每一栏的布局，主要用来设置文字字体大小颜色- 李星-2015-5-12-start -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
      android:layout_width="match_parent" 
      android:layout_height="wrap_content"
@@ -25,7 +25,7 @@
              android:ellipsize="marquee" 
              android:fadingEdge="horizontal"
              android:textColor="@color/black_3"
-             android:textSize="@dimen/prize_normal"
+             android:textSize="@dimen/fengyun_normal"
              android:paddingLeft="15dp"/>
  
          <TextView android:id="@+android:id/summary"
@@ -36,7 +36,7 @@
              android:textAppearance="?android:attr/textAppearanceSmall"
              android:textColor="@color/black_6"
              android:paddingLeft="15dp"
-             android:textSize="@dimen/prize_content"/>
+             android:textSize="@dimen/fengyun_content"/>
  
      </RelativeLayout>
  
@@ -49,7 +49,7 @@
          android:orientation="vertical"/>
  
 </LinearLayout>
-<!-- PRIZE- 设置PreferencActiviy 中每一栏的布局，主要用来设置文字字体大小颜色- 李星-2015-5-12-end -->	  
+<!-- fengyun- 设置PreferencActiviy 中每一栏的布局，主要用来设置文字字体大小颜色- 李星-2015-5-12-end -->
 
 
 

@@ -1,6 +1,6 @@
 
 /*******************************************
-  * Copyright © 2015, Shenzhen Prize Technologies Limited
+  * Copyright © 2015, Shenzhen fengyun Technologies Limited
   *
   * Summary: Stopwatch times, listview in incoming messages
   * current version:

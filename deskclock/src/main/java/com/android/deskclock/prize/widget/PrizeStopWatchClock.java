@@ -1,6 +1,6 @@
 
  /*******************************************
- *Copyright © 2015, Shenzhen Prize Technologies Limited
+ *Copyright © 2015, Shenzhen fengyun Technologies Limited
  *
  * Summary: Customize a clock control, display seconds, when the stopwatch
  * current version:
@@ -19,7 +19,7 @@
  * Modify the contents:
 *********************************************/
 
-package com.android.deskclock.prize.widget;
+package com.android.deskclock.fengyun.widget;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -36,9 +36,9 @@ import android.view.View;
 
 import com.android.deskclock.R;
 import com.android.deskclock.Utils;
-import com.mediatek.deskclock.utility.PrizeUtil;
+import com.mediatek.deskclock.utility.fengyunUtil;
 
-public class PrizeStopWatchClock extends View {
+public class fengyunStopWatchClock extends View {
 
 	private Context mContext;
 	private Drawable mDial;
@@ -80,11 +80,11 @@ public class PrizeStopWatchClock extends View {
 
 	Resources r;
 
-	public PrizeStopWatchClock(Context context) {
+	public fengyunStopWatchClock(Context context) {
 		super(context);
 	}
 
-	public PrizeStopWatchClock(Context context, AttributeSet attrs) {
+	public fengyunStopWatchClock(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		mContext = context;
 		r = mContext.getResources();
@@ -103,11 +103,11 @@ public class PrizeStopWatchClock extends View {
 
 		mPaint_in.setAntiAlias(true);
 		mPaint_in.setStyle(Paint.Style.STROKE);
-		mPaint_in.setColor(getResources().getColor(R.color.dial_prize_in));
+		mPaint_in.setColor(getResources().getColor(R.color.dial_fengyun_in));
 
 		mPaint_out.setAntiAlias(true);
 		mPaint_out.setStyle(Paint.Style.STROKE);
-		mPaint_out.setColor(getResources().getColor(R.color.dial_prize_out));
+		mPaint_out.setColor(getResources().getColor(R.color.dial_fengyun_out));
 
 		mPaint_hand.setAntiAlias(true);
 
@@ -125,7 +125,7 @@ public class PrizeStopWatchClock extends View {
 		mSecondPointer = BitmapFactory.decodeResource(r, R.drawable.stopwatch_second_pointer);*/
 	}
 
-	public PrizeStopWatchClock(Context context, AttributeSet attrs, int defStyle) {
+	public fengyunStopWatchClock(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 	}
 
@@ -144,7 +144,7 @@ public class PrizeStopWatchClock extends View {
 	Runnable mClockTick = new Runnable() {
 		public void run() {
 			invalidate();
-			PrizeStopWatchClock.this.postDelayed(mClockTick, 1000);
+			fengyunStopWatchClock.this.postDelayed(mClockTick, 1000);
 		}
 	};
 
@@ -205,8 +205,8 @@ public class PrizeStopWatchClock extends View {
 			mChanged = false;
 		}
 
-		radius_in = getWidth() * PrizeUtil.PRIZE_DIAL_IN_RADIUS_SCALE;
-		radius_out = getWidth() * PrizeUtil.PRIZE_DIAL_OUT_RADIUS_SCALE;
+		radius_in = getWidth() * fengyunUtil.fengyun_DIAL_IN_RADIUS_SCALE;
+		radius_out = getWidth() * fengyunUtil.fengyun_DIAL_OUT_RADIUS_SCALE;
 		long_end = radius_in - STROK_WIDTH_IN / 2.0F - minute_hand_width / 2.0F;
 		broken_end = long_end / 5.0F;
 
@@ -238,13 +238,13 @@ public class PrizeStopWatchClock extends View {
 		//DrawClock(canvas, x, y, changed);
 		drawClockNew(canvas, x, y, changed);
 		// drawHand(canvas, mHand, x, y,
-		// (totalTime/(1000.0f/Utils.PRIZE_DATA))*6.0f, changed);
+		// (totalTime/(1000.0f/Utils.fengyun_DATA))*6.0f, changed);
 
 		// drawHand(canvas , x , y ,
-		// -(totalTime/(1000.0f/Utils.PRIZE_DATA))*6.0f + 90);
+		// -(totalTime/(1000.0f/Utils.fengyun_DATA))*6.0f + 90);
 
-		//drawIndicator(canvas, mIndicator, x, y, (totalTime / (1000.0f / Utils.PRIZE_DATA)) * 6.0f - 90, true);
-		drawSecondPointer(canvas, x, y, (totalTime / (1000.0f / Utils.PRIZE_DATA)) * 6.0f - 90, true);
+		//drawIndicator(canvas, mIndicator, x, y, (totalTime / (1000.0f / Utils.fengyun_DATA)) * 6.0f - 90, true);
+		drawSecondPointer(canvas, x, y, (totalTime / (1000.0f / Utils.fengyun_DATA)) * 6.0f - 90, true);
 		drawClockNewReflect(canvas, x, y);
 		if (scaled) {
 			canvas.restore();
@@ -252,7 +252,7 @@ public class PrizeStopWatchClock extends View {
 
 	}
 	
-	//prize -- os7.0 style -pengcancan- 20160730-start
+	//fengyun -- os7.0 style -pengcancan- 20160730-start
 	private void drawClockNew(Canvas canvas, int x, int y, boolean changed) {
 		canvas.drawBitmap(mOutsideCircle, x-mOutsideCircle.getWidth()*1.0f/2, y - mOutsideCircle.getHeight()*1.0f/2, null);
 	}
@@ -265,7 +265,7 @@ public class PrizeStopWatchClock extends View {
 		canvas.drawBitmap(mSecondPointer, x - w*1.0f / 2, y - h*1.0f/2, null);
 		canvas.restore();
 	}
-	//prize -- os7.0 style -pengcancan- 20160730-end
+	//fengyun -- os7.0 style -pengcancan- 20160730-end
 
 	private void drawClockNewReflect(Canvas canvas , float x, float y){
 		canvas.drawBitmap(mBaseClockReflect, x-mBaseClockReflect.getWidth()*1.0f/2, y - mBaseClockReflect.getHeight()*1.0f/2, null);
@@ -280,7 +280,7 @@ public class PrizeStopWatchClock extends View {
 
 		mPaint_in.setStrokeWidth(STROK_WIDTH_IN);
 
-		float angel = ((totalTime / (1000.0f / Utils.PRIZE_DATA)) * 6.0f + 270) % 360;
+		float angel = ((totalTime / (1000.0f / Utils.fengyun_DATA)) * 6.0f + 270) % 360;
 		int mCurTime = Math.round(angel / 2) * 2;
 		Log.i("pengcancan", "[DrawClock] angel : " + angel);
 
@@ -289,11 +289,11 @@ public class PrizeStopWatchClock extends View {
 				if (i == mCurTime) {
 					mPaint_in.setColor(Color.WHITE/*
 													 * getResources().getColor(R.
-													 * color.dial_prize_out)
+													 * color.dial_fengyun_out)
 													 */);
 					canvas.drawArc(mArcRect, i - 0.7F, +INTERVAL / 2.0F + 0.4f, false, mPaint_in);
 				} else {
-					mPaint_in.setColor(getResources().getColor(R.color.dial_prize_in));
+					mPaint_in.setColor(getResources().getColor(R.color.dial_fengyun_in));
 					canvas.drawArc(mArcRect, i - 0.5F, +INTERVAL / 2.0F, false, mPaint_in);
 				}
 			}
@@ -339,7 +339,7 @@ public class PrizeStopWatchClock extends View {
 			final int w = hand.getIntrinsicWidth();
 			final int h = hand.getIntrinsicHeight();
 			/*
-			 * PRIZE--Twenty-two parameters is relatively fixed upper left corner of the control parameter is a relative coordinate three hundred forty-two lower right corner of the control point coordinates, controls the upper left corner coordinates 0.0--lixing-2015-4-15-start
+			 * fengyun--Twenty-two parameters is relatively fixed upper left corner of the control parameter is a relative coordinate three hundred forty-two lower right corner of the control point coordinates, controls the upper left corner coordinates 0.0--lixing-2015-4-15-start
 			 */
 			hand.setBounds(x - (w / 2), y - (h / 2), x + (w / 2), y + (h / 2));
 		}

@@ -24,7 +24,7 @@ import android.view.ViewConfiguration;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.CompoundButton;
 
-public class PrizeSwitchButton extends CompoundButton {
+public class fengyunSwitchButton extends CompoundButton {
     private static final int TOUCH_MODE_IDLE = 0;
     private static final int TOUCH_MODE_DOWN = 1;
     private static final int TOUCH_MODE_DRAGGING = 2;
@@ -79,34 +79,34 @@ public class PrizeSwitchButton extends CompoundButton {
     };
 
 
-    public PrizeSwitchButton(Context context) {
+    public fengyunSwitchButton(Context context) {
         this(context, null);
         mContext = context;
     }
 
 
-    public PrizeSwitchButton(Context context, AttributeSet attrs) {
+    public fengyunSwitchButton(Context context, AttributeSet attrs) {
         this(context, attrs, R.attr.switchStyle);
         mContext = context;
     }
 
 
-    public PrizeSwitchButton(Context context, AttributeSet attrs, int defStyle) {
+    public fengyunSwitchButton(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         mContext = context;
         mTextPaint = new TextPaint(Paint.ANTI_ALIAS_FLAG);
         Resources res = getResources();
         mTextPaint.density = res.getDisplayMetrics().density;
-        TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.PrizeSwitchButton, defStyle, 0);//get the configuration from the configuration file
-        mThumbDrawable = a.getDrawable(R.styleable.PrizeSwitchButton_thumb);//Get the trajectory of resource allocation
-        mTrackDrawable = a.getDrawable(R.styleable.PrizeSwitchButton_track);//get the resource configuration switch
-        mTextOn = a.getText(R.styleable.PrizeSwitchButton_textOn);//Get the configuration selected text display case  on
-        mTextOff = a.getText(R.styleable.PrizeSwitchButton_textOff);//Get Configuration display text unselected case off
-        mThumbTextPadding = a.getDimensionPixelSize( R.styleable.PrizeSwitchButton_thumbTextPadding, 0);//get the configuration button font size
-        mSwitchMinWidth = a.getDimensionPixelSize(R.styleable.PrizeSwitchButton_switchMinWidth, 0);//Gets the minimum width configuration
-        mSwitchPadding = a.getDimensionPixelSize(R.styleable.PrizeSwitchButton_switchPadding, 0);//get the padding attribute configuration
+        TypedArray a = context.obtainStyledAttributes(attrs,R.styleable.fengyunSwitchButton, defStyle, 0);//get the configuration from the configuration file
+        mThumbDrawable = a.getDrawable(R.styleable.fengyunSwitchButton_thumb);//Get the trajectory of resource allocation
+        mTrackDrawable = a.getDrawable(R.styleable.fengyunSwitchButton_track);//get the resource configuration switch
+        mTextOn = a.getText(R.styleable.fengyunSwitchButton_textOn);//Get the configuration selected text display case  on
+        mTextOff = a.getText(R.styleable.fengyunSwitchButton_textOff);//Get Configuration display text unselected case off
+        mThumbTextPadding = a.getDimensionPixelSize( R.styleable.fengyunSwitchButton_thumbTextPadding, 0);//get the configuration button font size
+        mSwitchMinWidth = a.getDimensionPixelSize(R.styleable.fengyunSwitchButton_switchMinWidth, 0);//Gets the minimum width configuration
+        mSwitchPadding = a.getDimensionPixelSize(R.styleable.fengyunSwitchButton_switchPadding, 0);//get the padding attribute configuration
 
-        int appearance = a.getResourceId(R.styleable.PrizeSwitchButton_switchTextAppearance, 0);//get the configuration file to obtain the display font formatting
+        int appearance = a.getResourceId(R.styleable.fengyunSwitchButton_switchTextAppearance, 0);//get the configuration file to obtain the display font formatting
         //Set format is determined whether there exists on assignment
         if (appearance != 0) {
             setSwitchTextAppearance(context, appearance);

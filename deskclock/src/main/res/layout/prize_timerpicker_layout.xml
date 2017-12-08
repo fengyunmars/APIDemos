@@ -9,7 +9,7 @@
         android:id="@+id/timepicker_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/framelayout_top"
-        layout="@layout/prize_edit_alarm_timepicker_layout" />
+        layout="@layout/fengyun_edit_alarm_timepicker_layout" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -45,7 +45,7 @@
                         android:gravity="center"
                         android:text="@string/alarm_repeat"
                         android:textColor="@color/black_3"
-                        android:textSize="@dimen/prize_normal"
+                        android:textSize="@dimen/fengyun_normal"
                         android:typeface="serif" />
                 </LinearLayout>
 
@@ -78,7 +78,7 @@
                         android:gravity="center"
                         android:text="@string/alarm_vibrate"
                         android:textColor="@color/black_3"
-                        android:textSize="@dimen/prize_normal"
+                        android:textSize="@dimen/fengyun_normal"
                         android:typeface="serif" />
                 </LinearLayout>
 
@@ -130,7 +130,7 @@
                         android:gravity="center"
                         android:text="@string/voice"
                         android:textColor="@color/black_3"
-                        android:textSize="@dimen/prize_normal"
+                        android:textSize="@dimen/fengyun_normal"
                         android:typeface="serif" />
                 </LinearLayout>
 
@@ -150,7 +150,7 @@
                         android:gravity="center|end"
                         android:text="@string/voice"
                         android:textColor="@color/black_9"
-                        android:textSize="@dimen/prize_content" />
+                        android:textSize="@dimen/fengyun_content" />
 
                     <ImageButton
                         android:layout_width="8dp"
@@ -181,7 +181,7 @@
                         android:gravity="center"
                         android:text="@string/sleep"
                         android:textColor="@color/black_3"
-                        android:textSize="@dimen/prize_normal"
+                        android:textSize="@dimen/fengyun_normal"
                         android:typeface="serif" />
                 </LinearLayout>
 
@@ -200,7 +200,7 @@
                         android:background="@android:color/transparent"
                         android:gravity="center|end"
                         android:textColor="@color/black_9"
-                        android:textSize="@dimen/prize_content" />
+                        android:textSize="@dimen/fengyun_content" />
                 </LinearLayout>
             </LinearLayout>
 

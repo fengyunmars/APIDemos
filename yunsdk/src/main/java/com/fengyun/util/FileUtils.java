@@ -16,7 +16,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * Created by prize on 2017/7/3.
+ * Created by fengyun on 2017/7/3.
  */
 
 public class FileUtils {

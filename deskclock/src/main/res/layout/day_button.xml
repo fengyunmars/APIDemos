@@ -20,7 +20,7 @@
     android:layout_width="0dp"
     android:layout_height="40dp"
     android:layout_weight="1"
-    android:textSize="@dimen/prize_normal"
+    android:textSize="@dimen/fengyun_normal"
     android:background="@drawable/day_sel_btn"
     android:gravity="center"
     android:minWidth="0dp"

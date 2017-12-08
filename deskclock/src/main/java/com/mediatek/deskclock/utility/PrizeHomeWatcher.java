@@ -1,6 +1,6 @@
 
  /*******************************************
-  * Copyright © 2015, Shenzhen Prize Technologies Limited
+  * Copyright © 2015, Shenzhen fengyun Technologies Limited
   *
   * Summary: Home key listener wrapper classes for the alarm clock, timer ring interface, press the home key, the bell stopped ringing
   * current version:
@@ -27,9 +27,9 @@ import android.content.IntentFilter;
 import android.util.Log;
 
 
-public class PrizeHomeWatcher { 
+public class fengyunHomeWatcher {
    
-    static final String TAG = "PrizeHomeWatcher"; 
+    static final String TAG = "fengyunHomeWatcher";
     private Context mContext; 
     private IntentFilter mFilter; 
     private OnHomePressedListener mListener; 
@@ -46,7 +46,7 @@ public class PrizeHomeWatcher {
     } 
    
     
-    public PrizeHomeWatcher(Context context) { 
+    public fengyunHomeWatcher(Context context) {
         mContext = context; 
         
         mFilter = new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS); 

@@ -5,7 +5,7 @@ import com.fengyun.util.MathUtils;
 import org.junit.Test;
 
 /**
- * Created by prize on 2017/9/29.
+ * Created by fengyun on 2017/9/29.
  */
 
 public class BinaryTest {

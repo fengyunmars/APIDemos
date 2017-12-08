@@ -3,7 +3,7 @@ package com.fengyun.model;
 import org.junit.Test;
 
 /**
- * Created by prize on 2017/7/20.
+ * Created by fengyun on 2017/7/20.
  */
 
 public class InnerClassAccessOutClassField {

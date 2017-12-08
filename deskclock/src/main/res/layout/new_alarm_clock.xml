@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- PRIZE- 宏开关打开后DeskClock中AlarmClockFragment使用此布局文件- 李星-2015-4-8-start -->
+<!-- fengyun- 宏开关打开后DeskClock中AlarmClockFragment使用此布局文件- 李星-2015-4-8-start -->
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
@@ -51,11 +51,11 @@
             <!-- <View
                 android:layout_width="match_parent"
                 android:layout_height="1px"
-                android:background="@color/prize_divide_line_default" /> -->
+                android:background="@color/fengyun_divide_line_default" /> -->
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/prize_bottom_nav_height"
+                android:layout_height="@dimen/fengyun_bottom_nav_height"
                 android:layout_alignParentBottom="true"
                 android:background="@color/white"
                 android:orientation="horizontal"
@@ -73,7 +73,7 @@
                     android:text="@string/add_alarm"
                     android:textAllCaps="true"
                     android:textColor="@color/black_3"
-                    android:textSize="@dimen/prize_normal" />
+                    android:textSize="@dimen/fengyun_normal" />
 
                 <Button
                     android:id="@+id/alarm_set"
@@ -87,7 +87,7 @@
                     android:text="@string/settings"
                     android:textAllCaps="true"
                     android:textColor="@color/black_3"
-                    android:textSize="@dimen/prize_normal" />
+                    android:textSize="@dimen/fengyun_normal" />
             </LinearLayout>
             
         </LinearLayout>
@@ -99,5 +99,5 @@
         layout="@layout/addalarmclock" />
 
 </FrameLayout>
-<!-- PRIZE- 宏开关打开后DeskClock中AlarmClockFragment使用此布局文件- 李星-2015-4-8-end -->
+<!-- fengyun- 宏开关打开后DeskClock中AlarmClockFragment使用此布局文件- 李星-2015-4-8-end -->
 

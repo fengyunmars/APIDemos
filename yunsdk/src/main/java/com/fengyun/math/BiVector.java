@@ -3,7 +3,7 @@ package com.fengyun.math;
 import android.graphics.PointF;
 
 /**
- * Created by prize on 2017/10/13.
+ * Created by fengyun on 2017/10/13.
  */
 
 public class BiVector {

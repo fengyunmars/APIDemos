@@ -153,7 +153,7 @@ public class TimerRingService extends Service implements AudioManager.OnAudioFoc
 //            		SharedPreferences sharedPreferences = getSharedPreferences("timerring", Context.MODE_PRIVATE);
 //            		String url=sharedPreferences.getString(KEY_DEFAULT_RINGTONE, "sounds/Timer_Expire.ogg");
             		
-            		/*prize-Being saved ringtone of UriString--lixing--2015-6-26--start*/
+            		/*fengyun-Being saved ringtone of UriString--lixing--2015-6-26--start*/
             		String uriStr = TimerFragment.getDefaultRingtoneUriStr(getApplicationContext());
             		
             		if(uriStr == null){	
@@ -161,24 +161,24 @@ public class TimerRingService extends Service implements AudioManager.OnAudioFoc
             			AssetFileDescriptor afd = getAssets().openFd(mrui);
                 		mMediaPlayer.setDataSource(
                                 afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
-            		}else if(uriStr.equals("")){ /*prize--Ringtones select "None" in the future--lixing-*/
+            		}else if(uriStr.equals("")){ /*fengyun--Ringtones select "None" in the future--lixing-*/
             			Uri uri = Alarm.NO_RINGTONE_URI;
 //            			mMediaPlayer.setDataSource(this,uri);
             		}else{
             			
             			Uri uri ;
             			
-            			/*prize-Determine whether there are uri-lixing-2015-7-30-start*/
+            			/*fengyun-Determine whether there are uri-lixing-2015-7-30-start*/
             			if (AlarmClockFragment.isRingtoneExisted(this, uriStr)) {
             				uri = Uri.parse(uriStr);
         	            } else {
         	            	uri = RingtoneManager.getActualDefaultRingtoneUri(this,
         	                          RingtoneManager.TYPE_ALARM);
         	            }
-            			/*prize-Determine whether there are uri-lixing-2015-7-30-end*/
+            			/*fengyun-Determine whether there are uri-lixing-2015-7-30-end*/
                 		mMediaPlayer.setDataSource(this,uri);
             		}
-            		/*prize-Being saved ringtone of UriString--lixing--2015-6-26--end*/
+            		/*fengyun-Being saved ringtone of UriString--lixing--2015-6-26--end*/
             		
             		/*String mrui="sounds/Timer_Expire.ogg";
             		if(url.contains("/")){

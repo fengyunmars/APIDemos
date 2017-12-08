@@ -10,7 +10,7 @@
         android:background="@color/alarm_background"
         android:gravity="center" >
 
-        <com.android.deskclock.prize.widget.PrizeTimePicker
+        <com.android.deskclock.fengyun.widget.fengyunTimePicker
             android:id="@+id/time_picker"
             android:layout_width="@dimen/new_clock_width"
             android:layout_height="@dimen/new_clock_height"
@@ -72,7 +72,7 @@
                     android:background="@drawable/left_button"
                     android:text="@string/time_picker_set"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/prize_normal" />
+                    android:textSize="@dimen/fengyun_normal" />
             </LinearLayout>
 
             <LinearLayout
@@ -89,7 +89,7 @@
                     android:background="@drawable/right_button"
                     android:text="@string/alarm_alert_dismiss_text"
                     android:textColor="@color/white"
-                    android:textSize="@dimen/prize_normal" />
+                    android:textSize="@dimen/fengyun_normal" />
             </LinearLayout>
         </LinearLayout>
     </FrameLayout>

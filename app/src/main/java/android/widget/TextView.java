@@ -1418,13 +1418,13 @@
 //            fontFamily = null;
 //        }
 //
-////prize-themecenter  bianxinhao
+////fengyun-themecenter  bianxinhao
 //		///founder font add start
 //        mFontFamily = fontFamily;
 //        mTypefaceIndex = typefaceIndex;
 //        mStyleIndex = styleIndex;
 //		///founder font add end
-////prize-themecenter  bianxinhao
+////fengyun-themecenter  bianxinhao
 //
 //        setTypefaceFromAttrs(fontFamily, typefaceIndex, styleIndex);
 //
@@ -1566,18 +1566,18 @@
 //        return frequencys;
 //    }
 //    private CharSequence handleCPUAndDPI(CharSequence text){
-//        int srcWidth = SystemProperties.getInt("ro.prize.dpi_width", 720);
-//        int srcHeight = SystemProperties.getInt("ro.prize.dpi_height", 1280);
-//        int desWidth = SystemProperties.getInt("ro.prize.dpi_width_modified", 0);
-//        int desHeight =  SystemProperties.getInt("ro.prize.dpi_height_modified", 0);
-//        int srcDpi = SystemProperties.getInt("ro.prize.dpi", 320);
-//        int desDpi = SystemProperties.getInt("ro.prize.dpi_modified", 0);;
-//        String srcCpu = SystemProperties.get("ro.prize.cpu", "");
-//        String desCpu = SystemProperties.get("ro.prize.cpu_modified", "");
-//        int srcCpuCore = SystemProperties.getInt("ro.prize.cpu_number", 4);
-//        int desCpuCore = SystemProperties.getInt("ro.prize.cpu_number_modified", 0);
-//        String srcCpuFrequency = SystemProperties.get("ro.prize.cpu_freq", "");
-//        String desCpuFrequency = SystemProperties.get("ro.prize.cpu_freq_modified", "");
+//        int srcWidth = SystemProperties.getInt("ro.fengyun.dpi_width", 720);
+//        int srcHeight = SystemProperties.getInt("ro.fengyun.dpi_height", 1280);
+//        int desWidth = SystemProperties.getInt("ro.fengyun.dpi_width_modified", 0);
+//        int desHeight =  SystemProperties.getInt("ro.fengyun.dpi_height_modified", 0);
+//        int srcDpi = SystemProperties.getInt("ro.fengyun.dpi", 320);
+//        int desDpi = SystemProperties.getInt("ro.fengyun.dpi_modified", 0);;
+//        String srcCpu = SystemProperties.get("ro.fengyun.cpu", "");
+//        String desCpu = SystemProperties.get("ro.fengyun.cpu_modified", "");
+//        int srcCpuCore = SystemProperties.getInt("ro.fengyun.cpu_number", 4);
+//        int desCpuCore = SystemProperties.getInt("ro.fengyun.cpu_number_modified", 0);
+//        String srcCpuFrequency = SystemProperties.get("ro.fengyun.cpu_freq", "");
+//        String desCpuFrequency = SystemProperties.get("ro.fengyun.cpu_freq_modified", "");
 //        Log.d("dingxiaoquan", "srcWidth = " + srcWidth + "; srcHeight = " + srcHeight + "; desWidth = " + desWidth + "; desHeight = " + desHeight);
 //        Log.d("dingxiaoquan", "srcDpi = " + srcDpi + "; desDpi = " + desDpi + "; srcCpu = " + srcCpu + "; desCpu = " + desCpu);
 //        Log.d("dingxiaoquan", "srcCpuCore = " + srcCpuCore + "; desCpuCore = " + desCpuCore + "; srcCpuFre = " + srcCpuFrequency + "; desCpuFre = " + desCpuFrequency);
@@ -3016,13 +3016,13 @@
 //        final int typefaceIndex = ta.getInt(R.styleable.TextAppearance_typeface, -1);
 //        final int styleIndex = ta.getInt(R.styleable.TextAppearance_textStyle, -1);
 //
-////prize-themecenter  bianxinhao
+////fengyun-themecenter  bianxinhao
 //		///founder font add start
 //        mFontFamily = fontFamily;
 //        mTypefaceIndex = typefaceIndex;
 //        mStyleIndex = styleIndex;
 //		///founder font add end
-////prize-themecenter  bianxinhao
+////fengyun-themecenter  bianxinhao
 //
 //        setTypefaceFromAttrs(fontFamily, typefaceIndex, styleIndex);
 //
@@ -3082,7 +3082,7 @@
 //    protected void onConfigurationChanged(Configuration newConfig) {
 //        super.onConfigurationChanged(newConfig);
 //
-////prize-themecenter  bianxinhao
+////fengyun-themecenter  bianxinhao
 //		///founder font add start
 //		String pkgName = android.app.ActivityThread.currentPackageName();
 //        if((pkgName != null && pkgName.length() > 0) && pkgName.equals("com.android.systemui")) {
@@ -3100,7 +3100,7 @@
 //    int mTypefaceIndex;
 //    int mStyleIndex;
 //	///founder font add end
-////prize-themecenter  bianxinhao
+////fengyun-themecenter  bianxinhao
 //
 //
 //    /**

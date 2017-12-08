@@ -17,13 +17,13 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class TimerListAdapterPrize extends BaseAdapter{
+public class TimerListAdapterfengyun extends BaseAdapter{
 	private ArrayList<String>mtimerClock_list=null;
 	private LayoutInflater inflater;
 	private Context mcontext;
 	
 	
-	public  TimerListAdapterPrize(Context context,ArrayList<String> timerClock_list){
+	public  TimerListAdapterfengyun(Context context,ArrayList<String> timerClock_list){
 	
 		this.mcontext=context;
 		this.inflater=LayoutInflater.from(mcontext);
@@ -64,7 +64,7 @@ public class TimerListAdapterPrize extends BaseAdapter{
 		 ViewHoler viewholder=null;
 		if(converView==null){
 			viewholder=new ViewHoler();
-			converView=inflater.inflate(R.layout.timer_listview_item_prize, null);
+			converView=inflater.inflate(R.layout.timer_listview_item_fengyun, null);
 			viewholder.timerTextview=(TextView)converView.findViewById(R.id.timer_item_text);
 			
 			converView.setTag(viewholder);

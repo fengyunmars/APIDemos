@@ -39,17 +39,17 @@ public class Stopwatches {
     public static final String KILL_NOTIF = "kill_notification";
     public static final String PREF_START_TIME  = "sw_start_time";
     
-    public static final String PREF_PAUSE_TIME = "sw_pause_time";		/*prize-Pause When the current time -lixing-2015-5-21*/
+    public static final String PREF_PAUSE_TIME = "sw_pause_time";		/*fengyun-Pause When the current time -lixing-2015-5-21*/
     
     public static final String PREF_ACCUM_TIME = "sw_accum_time";
     public static final String PREF_STATE = "sw_state";
     public static final String PREF_LAP_NUM = "sw_lap_num";
-    public static final String PREF_LIST_NUM = "sw_list_num";	/*prize-arraylist the number -lixing-2015-5-21*/
+    public static final String PREF_LIST_NUM = "sw_list_num";	/*fengyun-arraylist the number -lixing-2015-5-21*/
     public static final String PREF_LAP_TIME = "sw_lap_time_";
     
-    public static final String PREF_LIST_TOTALTIME = "sw_list_total_time_";/*prize-key arraylist of objects -lixing-2015-5-21*/
-    public static final String PREF_LIST_TIMEBUCKET = "sw_list_time_bucket_";/*prize-key arraylist of objects -lixing-2015-5-21*/
-    public static final String PREF_LIST_COUNT = "sw_list_count_";/*prize-key arraylist of objects -lixing-2015-5-21*/
+    public static final String PREF_LIST_TOTALTIME = "sw_list_total_time_";/*fengyun-key arraylist of objects -lixing-2015-5-21*/
+    public static final String PREF_LIST_TIMEBUCKET = "sw_list_time_bucket_";/*fengyun-key arraylist of objects -lixing-2015-5-21*/
+    public static final String PREF_LIST_COUNT = "sw_list_count_";/*fengyun-key arraylist of objects -lixing-2015-5-21*/
 
     public static final String PREF_UPDATE_CIRCLE = "sw_update_circle";
     public static final String NOTIF_CLOCK_BASE = "notif_clock_base";

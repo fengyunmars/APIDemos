@@ -1,4 +1,4 @@
-package com.android.deskclock.prize.widget;
+package com.android.deskclock.fengyun.widget;
 
 /*
 * Copyright (C) 2014 MediaTek Inc.
@@ -53,7 +53,7 @@ import android.view.View;
 
 import com.android.deskclock.R;
 import com.android.deskclock.Utils;
-import com.mediatek.deskclock.utility.PrizeUtil;
+import com.mediatek.deskclock.utility.fengyunUtil;
 
 /**
  * This widget display an analogic clock with two hands for hours and minutes.
@@ -74,9 +74,9 @@ import com.mediatek.deskclock.utility.PrizeUtil;
  * 
  */
 
-public class PrizeAnalogClock extends View {
+public class fengyunAnalogClock extends View {
 	private Time mCalendar;
-	private Calendar mPrizeCalendar;
+	private Calendar mfengyunCalendar;
 
 	// private final Drawable mHourHand;
 	// private final Drawable mMinuteHand;
@@ -123,7 +123,7 @@ public class PrizeAnalogClock extends View {
 	private boolean useNewSecondStyle = true;
 	private Bitmap mIndicator;
 	
-	//prize-new style -20160728-pengcancan-start
+	//fengyun-new style -20160728-pengcancan-start
 	private Bitmap mBaseClock;
 	private Bitmap mBaseClockReflect;
 	private Bitmap mHourPointer;
@@ -132,7 +132,7 @@ public class PrizeAnalogClock extends View {
 	private Bitmap mHourCenterSmaller;
 	private Bitmap mMinutePointer;
 	private Bitmap mSecondPointer;
-	//prize-new style -20160728-pengcancan-end
+	//fengyun-new style -20160728-pengcancan-end
 
 	private float minute_hand_width = 0;
 	private float circle_out_radius = 0;
@@ -141,15 +141,15 @@ public class PrizeAnalogClock extends View {
 	private float STROK_WIDTH_IN = 0;
 	private int text_size = 0;
 
-	public PrizeAnalogClock(Context context) {
+	public fengyunAnalogClock(Context context) {
 		this(context, null);
 	}
 
-	public PrizeAnalogClock(Context context, AttributeSet attrs) {
+	public fengyunAnalogClock(Context context, AttributeSet attrs) {
 		this(context, attrs, 0);
 	}
 
-	public PrizeAnalogClock(Context context, AttributeSet attrs, int defStyle) {
+	public fengyunAnalogClock(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		mContext = context;
 		r = mContext.getResources();
@@ -179,11 +179,11 @@ public class PrizeAnalogClock extends View {
 
 		mPaint_in.setAntiAlias(true);
 		mPaint_in.setStyle(Paint.Style.STROKE);
-		mPaint_in.setColor(getResources().getColor(R.color.dial_prize_in));
+		mPaint_in.setColor(getResources().getColor(R.color.dial_fengyun_in));
 
 		mPaint_out.setAntiAlias(true);
 		mPaint_out.setStyle(Paint.Style.STROKE);
-		mPaint_out.setColor(getResources().getColor(R.color.dial_prize_out));
+		mPaint_out.setColor(getResources().getColor(R.color.dial_fengyun_out));
 
 		mPaint_hand.setAntiAlias(true);
 
@@ -203,7 +203,7 @@ public class PrizeAnalogClock extends View {
 				mPaint_indicator.setColor(Color.YELLOW);
 				mPaint_indicator.setDither(true);
 
-				//prize-new style -20160728-pengcancan-start
+				//fengyun-new style -20160728-pengcancan-start
 				Options options = new BitmapFactory.Options();
 				options.inScaled = false;
 				options.inDither = false;
@@ -223,7 +223,7 @@ public class PrizeAnalogClock extends View {
 		mPaint_indicator.setColor(Color.YELLOW);
 		mPaint_indicator.setDither(true);
 		
-		//prize-new style -20160728-pengcancan-start
+		//fengyun-new style -20160728-pengcancan-start
 		Options options = new BitmapFactory.Options();
 		options.inScaled = false;
 		options.inDither = false;
@@ -243,7 +243,7 @@ public class PrizeAnalogClock extends View {
 		mHourCenterSmall.setHasAlpha(true);
 		mMinutePointer.setHasAlpha(true);
 		mSecondPointer.setHasAlpha(true);*/
-		//prize-new style -20160728-pengcancan-end
+		//fengyun-new style -20160728-pengcancan-end
 
 		// mDialWidth = mDial.getIntrinsicWidth();
 		// mDialHeight = mDial.getIntrinsicHeight();
@@ -273,7 +273,7 @@ public class PrizeAnalogClock extends View {
 		// so update the Time
 		mCalendar = new Time();
 
-		mPrizeCalendar = Calendar.getInstance();
+		mfengyunCalendar = Calendar.getInstance();
 
 		// Make sure we update to the current time
 		onTimeChanged();
@@ -340,8 +340,8 @@ public class PrizeAnalogClock extends View {
 			mChanged = false;
 		}
 
-		radius_in = getWidth() * PrizeUtil.PRIZE_DIAL_IN_RADIUS_SCALE;
-		radius_out = getWidth() * PrizeUtil.PRIZE_DIAL_OUT_RADIUS_SCALE;
+		radius_in = getWidth() * fengyunUtil.fengyun_DIAL_IN_RADIUS_SCALE;
+		radius_out = getWidth() * fengyunUtil.fengyun_DIAL_OUT_RADIUS_SCALE;
 
 		int availableWidth = getWidth();
 		int availableHeight = getHeight();
@@ -379,7 +379,7 @@ public class PrizeAnalogClock extends View {
 		// }
 
 		/*
-		 *prize-drawLine () in the 3 o'clock direction is 0 degrees, 90 degrees to 12 o'clock,
+		 *fengyun-drawLine () in the 3 o'clock direction is 0 degrees, 90 degrees to 12 o'clock,
 		 * drawable.draw (canvas) 12 o'clock is zero degrees,drawArc () 3 o'clock direction is 0 degrees, 270 degrees 12 o'clock, when drawing a clockwise arc Videos--lixing
 		 */
 
@@ -421,7 +421,7 @@ public class PrizeAnalogClock extends View {
 		canvas.restore();
 	}
 	
-	//prize-new style -20160728-pengcancan-start
+	//fengyun-new style -20160728-pengcancan-start
 	private void drawClockNew(Canvas canvas , float x, float y){
 		canvas.drawBitmap(mBaseClock, x-mBaseClock.getWidth()*1.0f/2, y - mBaseClock.getHeight()*1.0f/2, null);
 	}
@@ -462,7 +462,7 @@ public class PrizeAnalogClock extends View {
 		canvas.drawBitmap(mSecondPointer, x - width*1.0f / 2, y - height*1.0f/2, null);
 		canvas.restore();
 	}
-	//prize-new style -20160728-pengcancan-end
+	//fengyun-new style -20160728-pengcancan-end
 	@SuppressLint("ResourceAsColor")
 	private void DrawClock(Canvas canvas, int x, int y) {
 
@@ -470,10 +470,10 @@ public class PrizeAnalogClock extends View {
 
 		drawIndicator(canvas, mIndicator, x, y, mSecondAngle, true);
 
-		//prize-public-standard:optimization of second--pengcancan-20160623-start
+		//fengyun-public-standard:optimization of second--pengcancan-20160623-start
 		int mSecondCenter = ((int)mSecondAngle/2)*2;
 		float mCenter = (SECOND_COUNT-1)/2 + (mSecondAngle-((int)mSecondAngle/2)*2)/2;
-		//prize-public-standard:optimization of second--pengcancan-20160623-end
+		//fengyun-public-standard:optimization of second--pengcancan-20160623-end
 		int mStartAngleNum = mSecondCenter - (SECOND_COUNT - 1) * 2;
 		int mTempCount = 0;
 		mArcRect.top = y - radius_in;
@@ -544,7 +544,7 @@ public class PrizeAnalogClock extends View {
 
 	}
 	
-	//prize-7.0 draw pointer style--pengcancan-20160713-start
+	//fengyun-7.0 draw pointer style--pengcancan-20160713-start
 	private void drawMinutePointer(Canvas canvas, int x, int y, float degree) {
 		degree = degree % 360;
 		degree = (float) Math.toRadians(degree); /* Convert degrees to radians */
@@ -586,7 +586,7 @@ public class PrizeAnalogClock extends View {
 		canvas.drawCircle(XStart, YStart, hour_hand_width/2, mPaint_hand);
 		canvas.drawCircle(XEnd, YEnd, hour_hand_width/2, mPaint_hand);
 	}
-	//prize-7.0 draw pointer style--pengcancan-20160713-end
+	//fengyun-7.0 draw pointer style--pengcancan-20160713-end
 
 	private void drawSecondHand(Canvas canvas, int x, int y, float degree) {
 
@@ -671,7 +671,7 @@ public class PrizeAnalogClock extends View {
 		float XEnd = (float) (x - broken_length * Math.cos(degree));
 		float YEnd = (float) (y + broken_length * Math.sin(degree));
 
-		mPaint_hand.setColor(r.getColor(R.color.dial_prize_in));
+		mPaint_hand.setColor(r.getColor(R.color.dial_fengyun_in));
 		mPaint_hand.setStrokeWidth(hour_hand_width);
 		mPaint_hand.setStyle(Paint.Style.STROKE);
 		canvas.drawLine(XStart, YStart, XEnd, YEnd, mPaint_hand);
@@ -712,18 +712,18 @@ public class PrizeAnalogClock extends View {
 	private void onTimeChanged() {
 		mCalendar.setToNow();
 
-		mPrizeCalendar.setTimeInMillis(System.currentTimeMillis());
+		mfengyunCalendar.setTimeInMillis(System.currentTimeMillis());
 		// mCalendar.set(System.currentTimeMillis());
 
 		if (mTimeZoneId != null) {
 			mCalendar.switchTimezone(mTimeZoneId);
-			mPrizeCalendar.setTimeZone(TimeZone.getTimeZone(mTimeZoneId));
+			mfengyunCalendar.setTimeZone(TimeZone.getTimeZone(mTimeZoneId));
 		}
 
-		// int hour = mCalendar.hour; /*prize-Get time is 24 hexadecimal-lixing*/
-		int hour = mPrizeCalendar.get(Calendar.HOUR);
+		// int hour = mCalendar.hour; /*fengyun-Get time is 24 hexadecimal-lixing*/
+		int hour = mfengyunCalendar.get(Calendar.HOUR);
 		// int minute = mCalendar.minute;
-		int minute = mPrizeCalendar.get(Calendar.MINUTE);
+		int minute = mfengyunCalendar.get(Calendar.MINUTE);
 		int second = mCalendar.second;
 
 		// long millionsecond = mCalendar.toMillis(true);
@@ -735,7 +735,7 @@ public class PrizeAnalogClock extends View {
 
 		// mSeconds = (millionsecond%60000)/1000F;
 
-		mSeconds = mPrizeCalendar.get(Calendar.SECOND) + mPrizeCalendar.get(Calendar.MILLISECOND) / 1000F;
+		mSeconds = mfengyunCalendar.get(Calendar.SECOND) + mfengyunCalendar.get(Calendar.MILLISECOND) / 1000F;
 
 		// Log.d("poem","mSecond is :" + mSeconds);
 
@@ -752,7 +752,7 @@ public class PrizeAnalogClock extends View {
 			if (intent.getAction().equals(Intent.ACTION_TIMEZONE_CHANGED)) {
 				String tz = intent.getStringExtra("time-zone");
 				mCalendar = new Time(TimeZone.getTimeZone(tz).getID());
-				mPrizeCalendar = Calendar.getInstance(TimeZone.getTimeZone(tz));
+				mfengyunCalendar = Calendar.getInstance(TimeZone.getTimeZone(tz));
 			}
 			onTimeChanged();
 			invalidate();
@@ -764,7 +764,7 @@ public class PrizeAnalogClock extends View {
 		public void run() {
 			onTimeChanged();
 			invalidate();
-			PrizeAnalogClock.this.postDelayed(mClockTick, 30);
+			fengyunAnalogClock.this.postDelayed(mClockTick, 30);
 		}
 	};
 

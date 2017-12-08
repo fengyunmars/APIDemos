@@ -409,41 +409,41 @@
     
     
     
-     <!-- PRIZE-添加汉字资源- 李星-2015-4-8-start -->
+     <!-- fengyun-添加汉字资源- 李星-2015-4-8-start -->
 	<string name="one">一</string>
 	<string name="voice">提示音</string>
 	 <string name="sleep">貪睡</string>
 	<string name="only_once">只響一次</string>
 	<string name="count_time">計次</string>
 	<string name="clock_add">"添加時鐘"</string>
-	<string name="prize_pause">暫停</string>
+	<string name="fengyun_pause">暫停</string>
 	<string name="delete_clock">删除時鐘</string>
 	<string name="confirm">確定</string>
 	<string name="cancel">取消</string>
 	<string name="Standard_time">標準時間</string>
-	<string name="prize_minute">分鐘</string>
-	<!-- PRIZE-添加汉字资源- 李星-2015-4-8-end -->     
+	<string name="fengyun_minute">分鐘</string>
+	<!-- fengyun-添加汉字资源- 李星-2015-4-8-end -->
     
     
-    <!-- PRIZE-添加文字资源- 李星-2015-5-9-start -->   
+    <!-- fengyun-添加文字资源- 李星-2015-5-9-start -->
  <string name="timer_clock_ring_text">鈴聲</string>
-     <string name="start_prize">開始</string>
-    <string name="cancel_prize">取消</string>
+     <string name="start_fengyun">開始</string>
+    <string name="cancel_fengyun">取消</string>
     <string name="timer_pause">暫停</string>    
     <string name="timer_restart">繼續</string>
     <string name="timer_clockring_name">默認鈴聲（聆聽幽香）</string>
-    <string name="one_minute_prize">1分鐘</string>
-    <string name="two_minute_prize">2分鐘</string>
-    <string name="thre_minute_prize">3分鐘</string>
-   <string name="self_define_prize">自定義</string>
-    <string name="tiemr_pause_prize">暫停</string>
-     <string name="tiemr_start_prize">開始</string>
+    <string name="one_minute_fengyun">1分鐘</string>
+    <string name="two_minute_fengyun">2分鐘</string>
+    <string name="thre_minute_fengyun">3分鐘</string>
+   <string name="self_define_fengyun">自定義</string>
+    <string name="tiemr_pause_fengyun">暫停</string>
+     <string name="tiemr_start_fengyun">開始</string>
      <string name="timer_time_up">計時結束</string>
      <string name="close_tip">關閉</string>
- <!-- PRIZE-添加文字资源- 李星-2015-5-9-end -->
- 	<string name="close_tip_prize">我知道了</string>    
-    <string name="timer_tip_prize">移動黃色三角形設置時間</string>
-    <string name="close_alarm_tip_prize">上滑關閉鬧鐘</string>
+ <!-- fengyun-添加文字资源- 李星-2015-5-9-end -->
+ 	<string name="close_tip_fengyun">我知道了</string>
+    <string name="timer_tip_fengyun">移動黃色三角形設置時間</string>
+    <string name="close_alarm_tip_fengyun">上滑關閉鬧鐘</string>
     <plurals name="timer_hour">
         <!-- Duration for one hour -->
         <item quantity="one">1小時 </item>

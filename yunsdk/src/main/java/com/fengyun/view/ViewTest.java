@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * Created by prize on 2017/11/7.
+ * Created by fengyun on 2017/11/7.
  */
 
 public class ViewTest extends BaseViewCustom {

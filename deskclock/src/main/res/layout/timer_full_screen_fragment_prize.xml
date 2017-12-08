@@ -74,8 +74,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="50dp"
             android:gravity="center"
-            android:background="@drawable/close_button_prizeselector"
-            android:text="@string/close_tip_prize"
+            android:background="@drawable/close_button_fengyunselector"
+            android:text="@string/close_tip_fengyun"
             android:textSize="17sp" />
     </RelativeLayout>
 

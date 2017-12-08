@@ -47,7 +47,7 @@ import android.view.View;
 
 import com.android.deskclock.R;
 import com.android.deskclock.Utils;
-import com.mediatek.deskclock.utility.PrizeUtil;
+import com.mediatek.deskclock.utility.fengyunUtil;
 
 /**
  * This widget display an analogic clock with two hands for hours and
@@ -72,9 +72,9 @@ import com.mediatek.deskclock.utility.PrizeUtil;
  * 
  */
 
-public class PrizeAnalogClock extends View {
+public class fengyunAnalogClock extends View {
     private Time mCalendar;
-    private Calendar mPrizeCalendar;
+    private Calendar mfengyunCalendar;
 
 //    private final Drawable mHourHand;
 //    private final Drawable mMinuteHand;
@@ -124,15 +124,15 @@ public class PrizeAnalogClock extends View {
     private int text_size = 0;
     
 	
-    public PrizeAnalogClock(Context context) {
+    public fengyunAnalogClock(Context context) {
         this(context, null);
     }
 
-    public PrizeAnalogClock(Context context, AttributeSet attrs) {
+    public fengyunAnalogClock(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public PrizeAnalogClock(Context context, AttributeSet attrs,
+    public fengyunAnalogClock(Context context, AttributeSet attrs,
                        int defStyle) {
         super(context, attrs, defStyle);
         mContext = context;
@@ -164,11 +164,11 @@ public class PrizeAnalogClock extends View {
 
         mPaint_in.setAntiAlias(true);
         mPaint_in.setStyle(Paint.Style.STROKE);       
-        mPaint_in.setColor(getResources().getColor(R.color.dial_prize_in));
+        mPaint_in.setColor(getResources().getColor(R.color.dial_fengyun_in));
         
         mPaint_out.setAntiAlias(true);
         mPaint_out.setStyle(Paint.Style.STROKE);       
-        mPaint_out.setColor(getResources().getColor(R.color.dial_prize_out));
+        mPaint_out.setColor(getResources().getColor(R.color.dial_fengyun_out));
         
         mPaint_hand.setAntiAlias(true);
         
@@ -200,7 +200,7 @@ public class PrizeAnalogClock extends View {
         // The time zone may have changed while the receiver wasn't registered, so update the Time
         mCalendar = new Time();
 
-        mPrizeCalendar = Calendar.getInstance();
+        mfengyunCalendar = Calendar.getInstance();
         
         // Make sure we update to the current time
         onTimeChanged();
@@ -264,8 +264,8 @@ public class PrizeAnalogClock extends View {
             mChanged = false;
         }
 
-        radius_in = getWidth() * PrizeUtil.PRIZE_DIAL_IN_RADIUS_SCALE;
-	    radius_out = getWidth() * PrizeUtil.PRIZE_DIAL_OUT_RADIUS_SCALE;
+        radius_in = getWidth() * fengyunUtil.fengyun_DIAL_IN_RADIUS_SCALE;
+	    radius_out = getWidth() * fengyunUtil.fengyun_DIAL_OUT_RADIUS_SCALE;
         
         int availableWidth = getWidth();
         int availableHeight = getHeight();
@@ -299,7 +299,7 @@ public class PrizeAnalogClock extends View {
 //        }
 
         
-        /*prize-drawLine () in the 3 o'clock direction is 0 degrees, 90 degrees to 12 o'clock,
+        /*fengyun-drawLine () in the 3 o'clock direction is 0 degrees, 90 degrees to 12 o'clock,
          * drawable.draw (canvas) 12 o'clock is zero degrees,
          * drawArc () 3 o'clock direction is 0 degrees, 270 degrees 12 o'clock, when drawing a clockwise arc Videos--lixing*/
         
@@ -464,7 +464,7 @@ public class PrizeAnalogClock extends View {
     	float XEnd = (float) (x - broken_length *Math.cos(degree));
     	float YEnd = (float) (y + broken_length * Math.sin(degree));
     	
-    	mPaint_hand.setColor(r.getColor(R.color.dial_prize_in));
+    	mPaint_hand.setColor(r.getColor(R.color.dial_fengyun_in));
     	mPaint_hand.setStrokeWidth(hour_hand_width);
     	mPaint_hand.setStyle(Paint.Style.STROKE);
     	canvas.drawLine(XStart, YStart, XEnd, YEnd, mPaint_hand);
@@ -513,20 +513,20 @@ public class PrizeAnalogClock extends View {
 	private void onTimeChanged() {
         mCalendar.setToNow();      
                     
-        mPrizeCalendar.setTimeInMillis( System.currentTimeMillis());
+        mfengyunCalendar.setTimeInMillis( System.currentTimeMillis());
 //        mCalendar.set(System.currentTimeMillis());
         
         
         
         if (mTimeZoneId != null) {
             mCalendar.switchTimezone(mTimeZoneId);
-            mPrizeCalendar.setTimeZone(TimeZone.getTimeZone(mTimeZoneId));
+            mfengyunCalendar.setTimeZone(TimeZone.getTimeZone(mTimeZoneId));
         }
 
-//        int hour = mCalendar.hour;		/*prize-Get time is 24 hexadecimal-lixing*/
-        int hour = mPrizeCalendar.get(Calendar.HOUR);
+//        int hour = mCalendar.hour;		/*fengyun-Get time is 24 hexadecimal-lixing*/
+        int hour = mfengyunCalendar.get(Calendar.HOUR);
 //        int minute = mCalendar.minute;
-        int minute = mPrizeCalendar.get(Calendar.MINUTE);
+        int minute = mfengyunCalendar.get(Calendar.MINUTE);
         int second = mCalendar.second;	
             
 
@@ -544,7 +544,7 @@ public class PrizeAnalogClock extends View {
 //        mSeconds = (millionsecond%60000)/1000F;
         
 
-        mSeconds  =  mPrizeCalendar.get(Calendar.SECOND) + mPrizeCalendar.get(Calendar.MILLISECOND)/1000F;
+        mSeconds  =  mfengyunCalendar.get(Calendar.SECOND) + mfengyunCalendar.get(Calendar.MILLISECOND)/1000F;
         
 //        Log.d("poem","mSecond is :" + mSeconds);
    
@@ -562,7 +562,7 @@ public class PrizeAnalogClock extends View {
             if (intent.getAction().equals(Intent.ACTION_TIMEZONE_CHANGED)) {
                 String tz = intent.getStringExtra("time-zone");
                 mCalendar = new Time(TimeZone.getTimeZone(tz).getID());
-                mPrizeCalendar = Calendar.getInstance(TimeZone.getTimeZone(tz));
+                mfengyunCalendar = Calendar.getInstance(TimeZone.getTimeZone(tz));
             }
             onTimeChanged();
             invalidate();
@@ -574,7 +574,7 @@ public class PrizeAnalogClock extends View {
         public void run() {
             onTimeChanged();
             invalidate();
-            PrizeAnalogClock.this.postDelayed(mClockTick, 30);
+            fengyunAnalogClock.this.postDelayed(mClockTick, 30);
         }
     };
 

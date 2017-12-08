@@ -29,11 +29,11 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/prize_bottom_nav_height" >
+        android:layout_height="@dimen/fengyun_bottom_nav_height" >
 		<View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/prize_divide_line_default" />
+        android:background="@color/fengyun_divide_line_default" />
         <LinearLayout
             android:layout_width="300dp"
             android:layout_height="wrap_content"

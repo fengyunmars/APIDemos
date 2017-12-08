@@ -28,10 +28,10 @@
 	<View
          android:layout_width="match_parent"
          android:layout_height="1px"       
-         android:background="@color/prize_divide_line_default"
+         android:background="@color/fengyun_divide_line_default"
          android:layout_alignParentBottom="true"         
-         android:layout_marginRight="@dimen/prize_margin_default"         
-         android:layout_marginLeft="@dimen/prize_margin_default"        
+         android:layout_marginRight="@dimen/fengyun_margin_default"
+         android:layout_marginLeft="@dimen/fengyun_margin_default"
          />  
     
 </RelativeLayout>

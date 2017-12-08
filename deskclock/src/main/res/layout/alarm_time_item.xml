@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- PRIZE- 宏开关打开后DeskClock中AlarmClockFragment中闹钟Item使用此布局文件- 李星-2015-4-8-start -->
+<!-- fengyun- 宏开关打开后DeskClock中AlarmClockFragment中闹钟Item使用此布局文件- 李星-2015-4-8-start -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" 
 	android:layout_width="match_parent"
 	android:layout_height="@dimen/list_item_double"
@@ -103,4 +103,4 @@
 	</FrameLayout>
 </LinearLayout>
 
-<!-- PRIZE- 宏开关打开后DeskClock中AlarmClockFragment中闹钟Item使用此布局文件- 李星-2015-4-8-end -->
+<!-- fengyun- 宏开关打开后DeskClock中AlarmClockFragment中闹钟Item使用此布局文件- 李星-2015-4-8-end -->

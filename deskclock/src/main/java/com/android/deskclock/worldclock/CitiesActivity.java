@@ -106,7 +106,7 @@ public class CitiesActivity extends Activity implements OnCheckedChangeListener,
 
     private String mSelectedCitiesHeaderString;
     
-    //prize-added by pengcancan-20160722
+    //fengyun-added by pengcancan-20160722
     private Button mCancelBtn;
     private Button mConfirmBtn;
     private HashMap<String, CityObj> mOrignalSelectedCities;
@@ -596,7 +596,7 @@ public class CitiesActivity extends Activity implements OnCheckedChangeListener,
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.cities_menu_prize, menu);
+        getMenuInflater().inflate(R.menu.cities_menu_fengyun, menu);
         /*MenuItem help = menu.findItem(R.id.menu_item_help);
         if (help != null) {
             Utils.prepareHelpMenuItem(this, help);

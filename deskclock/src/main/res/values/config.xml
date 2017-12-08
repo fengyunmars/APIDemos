@@ -30,7 +30,7 @@
     <item type="integer" name="appwidget_world_clocks_per_row">2</item>
     <item type="integer" name="snooze_default_value">10</item>
     
-    <!--prize-默认资源，默认资源为1280x720P 资源-lixing-205-6-4-start  -->
+    <!--fengyun-默认资源，默认资源为1280x720P 资源-lixing-205-6-4-start  -->
     
     <item type="integer" name="dial_stroke_width">35</item>
     <item type="integer" name="dial_text_size">33</item>
@@ -43,6 +43,6 @@
     <item type="integer" name="seconde_hand_width">5</item>
     
     
-    <!--prize-默认资源，默认资源为1280x720P 资源-lixing-205-6-4-end  -->
+    <!--fengyun-默认资源，默认资源为1280x720P 资源-lixing-205-6-4-end  -->
     
 </resources>

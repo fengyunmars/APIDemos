@@ -149,7 +149,7 @@
             android:textSize="@dimen/bottom_text_size"
             android:visibility="gone" /> -->
 
-        <com.android.deskclock.prize.widget.PrizeDragView
+        <com.android.deskclock.fengyun.widget.fengyunDragView
             android:id="@+id/drag_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -163,13 +163,13 @@
                 android:layout_marginTop="75dp"
                 android:paddingTop="30dp"
                 android:paddingBottom="30dp"
-                android:text="@string/close_alarm_tip_prize"
+                android:text="@string/close_alarm_tip_fengyun"
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:gravity="center_horizontal"
                 android:drawableTop="@drawable/stop_alarm_btn"/>
-        </com.android.deskclock.prize.widget.PrizeDragView>
+        </com.android.deskclock.fengyun.widget.fengyunDragView>
 
         <!-- <TextView
             android:layout_width="wrap_content"
@@ -179,7 +179,7 @@
             android:layout_columnSpan="3"
             android:layout_gravity="bottom|center_horizontal"
             android:layout_marginBottom="@dimen/alarm_lockscreen_bottom_margin"
-            android:text="@string/close_alarm_tip_prize"
+            android:text="@string/close_alarm_tip_fengyun"
             android:textColor="@color/white"
             android:textSize="15sp" /> -->
 

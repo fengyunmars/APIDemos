@@ -116,14 +116,14 @@ import com.android.deskclock.provider.AlarmInstance;
 import com.android.deskclock.provider.DaysOfWeek;
 import com.android.deskclock.stopwatch.TimePickerCallBack;
 import com.android.deskclock.widget.ActionableToastBar;
-import com.android.deskclock.prize.FragmentOnBackClickInterface;
-import com.android.deskclock.prize.widget.NonSwipeableViewPager;
-import com.android.deskclock.prize.widget.PrizeAnalogClock;
-import com.android.deskclock.prize.widget.PrizeTimePicker;
+import com.android.deskclock.fengyun.FragmentOnBackClickInterface;
+import com.android.deskclock.fengyun.widget.NonSwipeableViewPager;
+import com.android.deskclock.fengyun.widget.fengyunAnalogClock;
+import com.android.deskclock.fengyun.widget.fengyunTimePicker;
 import com.android.deskclock.widget.TextTime;
 import android.content.pm.PackageManager;
 import com.mediatek.deskclock.utility.FeatureOption;
-import com.mediatek.deskclock.utility.PrizeUtil;
+import com.mediatek.deskclock.utility.fengyunUtil;
 
 /**
  * AlarmClock application.
@@ -172,26 +172,26 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
     private FrameLayout mMainLayout;
     /// M: The Uri string of system default alarm alert
     
-    /*prize-Because some projects in the OS is not native "content: // settings / system / alarm_alert", so use: Replace "content // settings / system / notification_sound"-lixing-2007-7-24-start*/
+    /*fengyun-Because some projects in the OS is not native "content: // settings / system / alarm_alert", so use: Replace "content // settings / system / notification_sound"-lixing-2007-7-24-start*/
     public static final String SYSTEM_SETTINGS_ALARM_ALERT = "content://settings/system/notification_sound";
 
     private LayoutInflater mFactory;
     
     private ListView mAlarmsList;
     private AlarmItemAdapter mAdapter;
-    /*PRIZE-Add a new item adapter alarm object variables - Li Xing-2015-4-8-start*/
+    /*fengyun-Add a new item adapter alarm object variables - Li Xing-2015-4-8-start*/
     private NewBaseItemAdapter mNewAdapter;
-    /*PRIZE-Add a new item adapter alarm object variables - Li Xing-2015-4-8-end*/
+    /*fengyun-Add a new item adapter alarm object variables - Li Xing-2015-4-8-end*/
     private View mEmptyView;
     private View mFooterView;
 
-    /*PRIZE-Add alarm Button object variable - Li Xing-2015-4-8-start*/
+    /*fengyun-Add alarm Button object variable - Li Xing-2015-4-8-start*/
     private Button addAlarm;
-    /*PRIZE-Add alarm Button object variable - Li Xing-2015-4-8-end*/
+    /*fengyun-Add alarm Button object variable - Li Xing-2015-4-8-end*/
     
-    /*PRIZE-Button set the object variable - Li Xing-2015-4-13-start*/
+    /*fengyun-Button set the object variable - Li Xing-2015-4-13-start*/
     private Button alarm_set;
-    /*PRIZE-Button set the object variable - Li Xing-2015-4-13-end*/
+    /*fengyun-Button set the object variable - Li Xing-2015-4-13-end*/
     
     private Bundle mRingtoneTitleCache; // Key: ringtone uri, value: ringtone title
     private ActionableToastBar mUndoBar;
@@ -226,26 +226,26 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
     private Transition mAddRemoveTransition;
     private Transition mRepeatTransition;
     private Transition mEmptyViewTransition;
-	/*PRIZE-Add Alarm List object variable - Li Xing-2015-4-8-start*/
+	/*fengyun-Add Alarm List object variable - Li Xing-2015-4-8-start*/
     private List<Alarm> allAlarms;
-    /*PRIZE-Add Alarm List object variable - Li Xing-2015-4-8-end*/
+    /*fengyun-Add Alarm List object variable - Li Xing-2015-4-8-end*/
 	
 	
-	/*PRIZE-Alarm Layout layout, increase the alarm layout layout - Li Xing-2015-4-22-start*/
+	/*fengyun-Alarm Layout layout, increase the alarm layout layout - Li Xing-2015-4-22-start*/
     FrameLayout alarmLayout;
     LinearLayout addalarmLayout;
 	
-	PrizeAnalogClock analogclock;
+	fengyunAnalogClock analogclock;
     FrameLayout analogclock_layout ;
     FrameLayout timepicker_framelayout;
-    PrizeTimePicker timePicker;
+    fengyunTimePicker timePicker;
     Button confirm;
     Button cancel;
     
     Button minuteSet;
     Button hourSet;
     
-    /*PRIZE-Alarm Layout layout, increase the alarm layout layout - Li Xing-2015-4-22-end*/
+    /*fengyun-Alarm Layout layout, increase the alarm layout layout - Li Xing-2015-4-22-end*/
     private NonSwipeableViewPager mViewPager;
     private View mTabContainer;
     private FrameLayout mActionbarContainer;
@@ -302,14 +302,14 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
         
         mFactory = LayoutInflater.from(getActivity());
         
-        /*PRIZE-Registered broadcast receiver, modify alarm status when the received broadcast and update the alarm list. () Registered in onCreate, logout () in onDestroy - Li Xing-2015-4-13-start*/
+        /*fengyun-Registered broadcast receiver, modify alarm status when the received broadcast and update the alarm list. () Registered in onCreate, logout () in onDestroy - Li Xing-2015-4-13-start*/
         if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
 	        IntentFilter filter = new IntentFilter();
 	        filter.addAction(AlarmModify.KEY_ALARM_CHANGED);
 //	        filter.addAction(AlarmStateManager.CHANGE_STATE_ACTION);
 	        getActivity().registerReceiver(changeAlarmReceiver, filter);
         }
-        /*PRIZE-Registered broadcast receiver, modify alarm status when the received broadcast and update the alarm list. () Registered in onCreate, logout () in onDestroy - Li Xing-2015-4-13-end*/
+        /*fengyun-Registered broadcast receiver, modify alarm status when the received broadcast and update the alarm list. () Registered in onCreate, logout () in onDestroy - Li Xing-2015-4-13-end*/
     }
 
     @Override
@@ -318,7 +318,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
     	final View v;
         // Inflate the layout for this fragment
     	
-    	/*PRIZE-Add a macro switch to select the layout file - Li Xing-2015-4-8-start*/
+    	/*fengyun-Add a macro switch to select the layout file - Li Xing-2015-4-8-start*/
     	if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
     		v = inflater.inflate(R.layout.new_alarm_clock, container, false);
     		alarmLayout = (FrameLayout)v.findViewById(R.id.alarm_layout);
@@ -326,21 +326,21 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
     	}else{
     		v = inflater.inflate(R.layout.alarm_clock, container, false);
     	}
-    	/*PRIZE-Add a macro switch to select the layout file - Li Xing-2015-4-8-end*/
+    	/*fengyun-Add a macro switch to select the layout file - Li Xing-2015-4-8-end*/
     	
     	
-    	/*PRIZE-Add increased alarm layout files - Li Xing-2015-4-22-start*/
+    	/*fengyun-Add increased alarm layout files - Li Xing-2015-4-22-start*/
     	if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
     		setAddAlarmView(v);
     	}
-    	/*PRIZE-Add increased alarm layout files - Li Xing-2015-4-22-end*/
+    	/*fengyun-Add increased alarm layout files - Li Xing-2015-4-22-end*/
     	
     	
     	
     	
     	
     	
-    	/*PRIZE-Add alarm Button click event - Li Xing-2015-4-8-start*/
+    	/*fengyun-Add alarm Button click event - Li Xing-2015-4-8-start*/
     	if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
     		addAlarm = (Button)v.findViewById(R.id.addalarm);
     		
@@ -356,9 +356,9 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
 			});    	
     	    		
     	}
-    	/*PRIZE-Add alarm Button click event - Li Xing-2015-4-8-end*/
+    	/*fengyun-Add alarm Button click event - Li Xing-2015-4-8-end*/
     	
-    	/*PRIZE-Settings Button Click event - Li Xing-2015-4-13-start*/
+    	/*fengyun-Settings Button Click event - Li Xing-2015-4-13-start*/
     	if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
     		alarm_set = (Button)v.findViewById(R.id.alarm_set);
     		
@@ -368,7 +368,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
 				}
 			});
     	}
-    	/*PRIZE-Settings Button Click event - Li Xing-2015-4-13-end*/
+    	/*fengyun-Settings Button Click event - Li Xing-2015-4-13-end*/
     	
 
         long expandedId = INVALID_ID;
@@ -423,7 +423,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
         
         mAdapter = new AlarmItemAdapter(getActivity(),
                 expandedId, repeatCheckedIds, selectedAlarms, previousDayMap, mAlarmsList);
-        /*PRIZE-Add a macro switch to turn off the native code - Li Xing-2015-4-11-start*/
+        /*fengyun-Add a macro switch to turn off the native code - Li Xing-2015-4-11-start*/
         if(!FeatureOption.MTK_DESKCLOCK_NEW_UI){
 	        mEmptyView = v.findViewById(R.id.alarms_empty_view);
 	        mUndoBar = (ActionableToastBar) v.findViewById(R.id.undo_bar);
@@ -456,13 +456,13 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
 	            }
 	        });
         }
-        /*PRIZE-Add a macro switch to turn off the native code - Li Xing-2015-4-11-end*/
+        /*fengyun-Add a macro switch to turn off the native code - Li Xing-2015-4-11-end*/
         
         if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
-	        /*PRIZE-New alarm item adapter object variable instantiation, and Huoqunaozhong Collection - Li Xing-2015-4-8-start*/
+	        /*fengyun-New alarm item adapter object variable instantiation, and Huoqunaozhong Collection - Li Xing-2015-4-8-start*/
         	allAlarms = getAllAlarms();
 	        mNewAdapter = new NewBaseItemAdapter(allAlarms, getActivity());
-	        /*PRIZE-New alarm item adapter object variable instantiation, and Huoqunaozhong Collection - Li Xing-2015-4-8-end*/
+	        /*fengyun-New alarm item adapter object variable instantiation, and Huoqunaozhong Collection - Li Xing-2015-4-8-end*/
 
             mEmptyView = v.findViewById(R.id.alarms_empty_view);
             mAdapter.registerDataSetObserver(new DataSetObserver() {
@@ -492,24 +492,24 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
             mRingtoneTitleCache = new Bundle();
         }
         
-        /*PRIZE-Add a macro switch to select the appropriate adapter - Li Xing-2015-4-8-start*/
+        /*fengyun-Add a macro switch to select the appropriate adapter - Li Xing-2015-4-8-start*/
         if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
         	updateList();
         }else{
         	mAlarmsList.setAdapter(mAdapter);
         }
-        /*PRIZE-Add a macro switch to select the appropriate adapter - Li Xing-2015-4-8-end*/
+        /*fengyun-Add a macro switch to select the appropriate adapter - Li Xing-2015-4-8-end*/
         
         mAlarmsList.setVerticalScrollBarEnabled(true);
         mAlarmsList.setOnCreateContextMenuListener(this);
 
-        /*PRIZE-Add a macro switch to turn off the native code - Li Xing-2015-4-11-start*/
+        /*fengyun-Add a macro switch to turn off the native code - Li Xing-2015-4-11-start*/
         if(!FeatureOption.MTK_DESKCLOCK_NEW_UI){
 	        if (mUndoShowing) {
 	            showUndoBar();
 	        }
         }
-        /*PRIZE-Add a macro switch to turn off the native code - Li Xing-2015-4-11-end*/
+        /*fengyun-Add a macro switch to turn off the native code - Li Xing-2015-4-11-end*/
         
         return v;
     }
@@ -544,17 +544,17 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
             setLeftRightButtonAppearance();
         }
         
-        /*PRIZE-Add a macro switch - Li Xing-2015-4-8-start*/
+        /*fengyun-Add a macro switch - Li Xing-2015-4-8-start*/
         if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
-        	/*prize-Alarm retrieve data onResume () in a timely manner refresh.-lixing-2015-5-21-start*/
+        	/*fengyun-Alarm retrieve data onResume () in a timely manner refresh.-lixing-2015-5-21-start*/
         	reGetAllAlarms();
-        	/*prize-Alarm retrieve data onResume () in a timely manner refresh.-lixing-2015-5-21-end*/
+        	/*fengyun-Alarm retrieve data onResume () in a timely manner refresh.-lixing-2015-5-21-end*/
         }else{
         	if (mAdapter != null) {
                 mAdapter.notifyDataSetChanged();
             }
         }
-        /*PRIZE-Add a macro switch - Li Xing-2015-4-8-end*/
+        /*fengyun-Add a macro switch - Li Xing-2015-4-8-end*/
         
         
         // Check if another app asked us to create a blank new alarm.
@@ -568,7 +568,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
             // Remove the CREATE_NEW extra now that we've processed it.
             intent.removeExtra(ALARM_CREATE_NEW_INTENT_EXTRA);
         } else if (intent.hasExtra(SCROLL_TO_ALARM_INTENT_EXTRA)) {
-        	/* PRIZE-1974 Clock: set an alarm clock, the pull-down bar, click the alarm notification to enter the alarm, the alarm list screen moves up-fuqiang-2015-6-24-start */
+        	/* fengyun-1974 Clock: set an alarm clock, the pull-down bar, click the alarm notification to enter the alarm, the alarm list screen moves up-fuqiang-2015-6-24-start */
 //            long alarmId = intent.getLongExtra(SCROLL_TO_ALARM_INTENT_EXTRA, Alarm.INVALID_ID);
 //            if (alarmId != Alarm.INVALID_ID) {
 //                mScrollToAlarmId = alarmId;
@@ -578,7 +578,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
 //                    mCursorLoader.forceLoad();
 //                }
 //            }
-        	/* PRIZE-1974 Clock: set an alarm clock, the pull-down bar, click the alarm notification to enter the alarm, the alarm list screen moves up-fuqiang-2015-6-24-end */
+        	/* fengyun-1974 Clock: set an alarm clock, the pull-down bar, click the alarm notification to enter the alarm, the alarm list screen moves up-fuqiang-2015-6-24-end */
 
             // Remove the SCROLL_TO_ALARM extra now that we've processed it.
             intent.removeExtra(SCROLL_TO_ALARM_INTENT_EXTRA);
@@ -630,11 +630,11 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
     public void onDestroy() {
         super.onDestroy();
         ToastMaster.cancelToast();
-        /*PRIZE-Registered broadcast receiver, when the delete, add, modify alarm when the received broadcast. () Registered in onCreate, logout () in onDestroy - Li Xing-2015-4-13-start*/
+        /*fengyun-Registered broadcast receiver, when the delete, add, modify alarm when the received broadcast. () Registered in onCreate, logout () in onDestroy - Li Xing-2015-4-13-start*/
         if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
         	getActivity().unregisterReceiver(changeAlarmReceiver);
         }
-        /*PRIZE-Registered broadcast receiver, when the delete, add, modify alarm when the received broadcast. () Registered in onCreate, logout () in onDestroy - Li Xing-2015-4-13-end*/
+        /*fengyun-Registered broadcast receiver, when the delete, add, modify alarm when the received broadcast. () Registered in onCreate, logout () in onDestroy - Li Xing-2015-4-13-end*/
         
         
     }
@@ -841,7 +841,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
             LogUtils.v("saveRingtoneUri = " + uri.toString());
         }
         
-        final String ringtone = PrizeUtil.getRingtoneToString(mSelectedAlarm,getActivity());   
+        final String ringtone = fengyunUtil.getRingtoneToString(mSelectedAlarm,getActivity());
         ringtone_button.setText(ringtone);
        
 //        AlarmModify.asyncUpdateAlarm(mSelectedAlarm, false,getActivity().getApplicationContext());
@@ -1858,10 +1858,10 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
             };
             // We must unset the listener first because this maybe a recycled view so changing the
             // state would affect the wrong alarm.
-            /*PRIZE-Note that you must set in front of the listener, set the state back - Li Xing-2015-4-8-start*/
+            /*fengyun-Note that you must set in front of the listener, set the state back - Li Xing-2015-4-8-start*/
             itemHolder.mToggle.setOnCheckedChangeListener(onOffListener);
             itemHolder.mToggle.setChecked(alarm.enabled);    
-            /*PRIZE-Note that you must set in front of the listener, set the state back - Li Xing-2015-4-8-end*/
+            /*fengyun-Note that you must set in front of the listener, set the state back - Li Xing-2015-4-8-end*/
             
             
            
@@ -2067,7 +2067,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
  	   window.setGravity(Gravity.CENTER | Gravity.BOTTOM);  //Here you can set location dialog is displayed  
 //        window.setWindowAnimations(R.style.deletalarmstyle);  //Add animation
 
- 	  /*PRIZE-Delete an alarm - Li Xing-2015-5-7-start*/
+ 	  /*fengyun-Delete an alarm - Li Xing-2015-5-7-start*/
         Button confirm = (Button)window.findViewById(R.id.confirm);
         confirm.setOnClickListener(new View.OnClickListener() {
  		public void onClick(View arg0) {
@@ -2080,7 +2080,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
 			
  		}	
  		});	
-       /*PRIZE-Delete an alarm - Li Xing-2015-5-7-end*/
+       /*fengyun-Delete an alarm - Li Xing-2015-5-7-end*/
         
         Button cancel = (Button)window.findViewById(R.id.cancel);
         cancel.setOnClickListener(new View.OnClickListener() {
@@ -2338,11 +2338,11 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
      * @version 2014.5.6
      */
     private void updateList(){
-    	/*PRIZE-New alarm item adapter object variable instantiation, and Huoqunaozhong Collection - Li Xing-2015-5-6-start*/
+    	/*fengyun-New alarm item adapter object variable instantiation, and Huoqunaozhong Collection - Li Xing-2015-5-6-start*/
     	allAlarms = getAllAlarms();
     	mNewAdapter = new NewBaseItemAdapter(allAlarms, getActivity());
     	mAlarmsList.setAdapter(mNewAdapter); 
-    	/*PRIZE-New alarm item adapter object variable instantiation, and Huoqunaozhong Collection - Li Xing-2015-5-6-end*/
+    	/*fengyun-New alarm item adapter object variable instantiation, and Huoqunaozhong Collection - Li Xing-2015-5-6-end*/
 //    	Toast.makeText(getActivity(), "has update list ...", 200).show();
     }
     
@@ -2469,7 +2469,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
 //            AlarmModify.asyncAddAlarm(current_alarm,getActivity().getApplicationContext());
     	}else{
     		isAdd = false;
-    		/*prize-Alarm retrieve from the bottom to prevent the memory of alarm, and the bottom is not the same-lixing-2015-6-4-start*/
+    		/*fengyun-Alarm retrieve from the bottom to prevent the memory of alarm, and the bottom is not the same-lixing-2015-6-4-start*/
     		current_alarm = Alarm.getAlarm(getActivity().getContentResolver(),id); 
     	}
     	mSelectedAlarm = current_alarm;		//mSelectedAlarm Examples of Alarm global
@@ -2482,23 +2482,23 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
  			public void onClick(View arg0) {
  				setHourButtonActive();
  				int time = Integer.parseInt(hourSet.getText().toString());
- 				timePicker.setTime(time, PrizeTimePicker.KEY_HOUR);
+ 				timePicker.setTime(time, fengyunTimePicker.KEY_HOUR);
  			}
  		});
  		minuteSet.setOnClickListener(new View.OnClickListener() {
  			public void onClick(View arg0) {
  				setMinuteButtonActive();
  				int time = Integer.parseInt(minuteSet.getText().toString());
- 				timePicker.setTime(time, PrizeTimePicker.KEY_MINUTE);
+ 				timePicker.setTime(time, fengyunTimePicker.KEY_MINUTE);
  			}
  		});
  		
- 		/*PRIZE-Initialization let Hour button to highlight it and get PrizeTimePicker slide data! The time data initialization PrizeTimePicker-lixing-2015-4-16-start*/
+ 		/*fengyun-Initialization let Hour button to highlight it and get fengyunTimePicker slide data! The time data initialization fengyunTimePicker-lixing-2015-4-16-start*/
  		setHourButtonActive();	
- 		timePicker.setTime(alarm.hour, PrizeTimePicker.KEY_HOUR);
+ 		timePicker.setTime(alarm.hour, fengyunTimePicker.KEY_HOUR);
  		minuteSet.setText(String.format("%02d",alarm.minutes));	
  		hourSet.setText(String.format("%02d", alarm.hour));
- 		/*PRIZE-Initialization let Hour button to highlight it and get PrizeTimePicker slide data! The time data initialization PrizeTimePicker-lixing-2015-4-16-end*/
+ 		/*fengyun-Initialization let Hour button to highlight it and get fengyunTimePicker slide data! The time data initialization fengyunTimePicker-lixing-2015-4-16-end*/
 				
 		List<Integer> days = alarm.daysOfWeek.getAlltDays();
 		if(day_linearlayout.getChildCount()>0){
@@ -2536,22 +2536,22 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
          final int index = i;
         
          
-         /*prize-This is initialized, pressed the button for the first time before the show-lixing-start-2015-6-16-start*/        
+         /*fengyun-This is initialized, pressed the button for the first time before the show-lixing-start-2015-6-16-start*/
          if(dayButton.isActivated()){
        		turnOnDayOfWeek(index);
        	 }else{
        		turnOffDayOfWeek(index);
        	 }
-         /*prize-This is initialized, pressed the button for the first time before the show-lixing-start-2015-6-16-end*/
+         /*fengyun-This is initialized, pressed the button for the first time before the show-lixing-start-2015-6-16-end*/
          
          
          dayButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
 				final boolean isActivated =
 						dayButtons[index].isActivated();
-				/*PRIZE-Phrase set the alarm to repeat the date, write data through the shift - Li Xing-2015-4-11-start*/
+				/*fengyun-Phrase set the alarm to repeat the date, write data through the shift - Li Xing-2015-4-11-start*/
 				alarm.daysOfWeek.setDaysOfWeek(!isActivated, NEW_DAY_ORDER[index]);
-		         /*PRIZE-Phrase set the alarm to repeat the date, write data through the shift - Li Xing-2015-4-11-end*/
+		         /*fengyun-Phrase set the alarm to repeat the date, write data through the shift - Li Xing-2015-4-11-end*/
 		         if (!isActivated) {
 		             turnOnDayOfWeek(index);
 		         } else {
@@ -2594,7 +2594,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
 	      
 	      
 	      
-	     final String ringtone = PrizeUtil.getRingtoneToString(alarm,getActivity()); 
+	     final String ringtone = fengyunUtil.getRingtoneToString(alarm,getActivity());
 	      
 	     ringtone_button.setText(ringtone);
 	     ringtone_button.setOnClickListener(new View.OnClickListener() {
@@ -2604,7 +2604,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
 		});
 	      
 	      
-	      String snoozeTimeStr = AlarmStateManager.getSnoozedMinutes(getActivity()) + getActivity().getResources().getString(R.string.prize_minute) ;
+	      String snoozeTimeStr = AlarmStateManager.getSnoozedMinutes(getActivity()) + getActivity().getResources().getString(R.string.fengyun_minute) ;
 	      snoozeTime.setText(snoozeTimeStr);	
 	      snoozeTime.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
@@ -2670,7 +2670,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
    	   
 	   	Window window = dlg.getWindow();
 	   	   // Set the window contents page, shrew exit dialog.xml defined in the file view contents
-	   	window.setContentView(R.layout.prize_snooze_lenth_dialog);
+	   	window.setContentView(R.layout.fengyun_snooze_lenth_dialog);
 	  
 	   	
 	   	
@@ -2707,7 +2707,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
 	            SharedPreferences.Editor editor=mySharedPreferences.edit();  
 	            editor.putString(SettingsActivity.KEY_ALARM_SNOOZE,Integer.toString(value));  
 	            editor.apply();  
-	            String snoozeTimeStr = AlarmStateManager.getSnoozedMinutes(getActivity()) + getActivity().getResources().getString(R.string.prize_minute);
+	            String snoozeTimeStr = AlarmStateManager.getSnoozedMinutes(getActivity()) + getActivity().getResources().getString(R.string.fengyun_minute);
 	  	      	snoozeTime.setText(snoozeTimeStr);
 				dlg.dismiss();
 			}
@@ -2722,7 +2722,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
    	   
     	
     	LayoutInflater mInflater = LayoutInflater.from(mContext);
-    	View view = mInflater.inflate(R.layout.prize_snooze_lenth_dialog,null); 
+    	View view = mInflater.inflate(R.layout.fengyun_snooze_lenth_dialog,null);
     
     	final NumberPicker picker = (NumberPicker)view.findViewById(R.id.minutes_picker); 
 	   	picker.setMinValue(1);
@@ -2751,7 +2751,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
 	            SharedPreferences.Editor editor=mySharedPreferences.edit();  
 	            editor.putString(SettingsActivity.KEY_ALARM_SNOOZE,Integer.toString(value));  
 	            editor.apply();  
-	            String snoozeTimeStr = AlarmStateManager.getSnoozedMinutes(getActivity()) + getActivity().getResources().getString(R.string.prize_minute);
+	            String snoozeTimeStr = AlarmStateManager.getSnoozedMinutes(getActivity()) + getActivity().getResources().getString(R.string.fengyun_minute);
 	  	      	snoozeTime.setText(snoozeTimeStr);
 	  	      	arg0.dismiss();
 			}
@@ -2784,8 +2784,8 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
    	 hourSet.setTextColor(getResources().getColor(R.color.white));
    	 minuteSet.setActivated(false);
    	 minuteSet.setTextColor(getResources().getColor(R.color.toumin_white));
-   	 /*PRIZE-Depending on the selected setting dial clock or minutes-lixing-2015-4-13-start*/
-   	 timePicker.setDial(PrizeTimePicker.KEY_DIAL_HOUR);	
+   	 /*fengyun-Depending on the selected setting dial clock or minutes-lixing-2015-4-13-start*/
+   	 timePicker.setDial(fengyunTimePicker.KEY_DIAL_HOUR);
    	 
     }
     
@@ -2803,8 +2803,8 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
    	 hourSet.setTextColor(getResources().getColor(R.color.toumin_white));
    	 minuteSet.setActivated(true);
    	 minuteSet.setTextColor(getResources().getColor(R.color.white));
-   	 /*PRIZE-Depending on the selected setting dial clock or minutes-lixing-2015-4-13-start*/
-   	 timePicker.setDial(PrizeTimePicker.KEY_DIAL_MINUTE);
+   	 /*fengyun-Depending on the selected setting dial clock or minutes-lixing-2015-4-13-start*/
+   	 timePicker.setDial(fengyunTimePicker.KEY_DIAL_MINUTE);
     }
     
     private void turnOffDayOfWeek(int dayIndex) {     
@@ -2821,10 +2821,10 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
 //
-//		analogclock = (PrizeAnalogClock)activity.findViewById(R.id.analogclock);
+//		analogclock = (fengyunAnalogClock)activity.findViewById(R.id.analogclock);
 //		timepicker_framelayout = (FrameLayout)activity.findViewById(R.id.timepicker_framelayout);
 //		
-////		timePicker = (PrizeTimePicker)activity.findViewById(R.id.time_picker);
+////		timePicker = (fengyunTimePicker)activity.findViewById(R.id.time_picker);
 //		
 //		confirm = (Button)activity.findViewById(R.id.confirm);
 //		
@@ -2844,9 +2844,9 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
 		// TODO Auto-generated method stub
 		super.onActivityCreated(savedInstanceState);
 		
-		timePicker = (PrizeTimePicker)getActivity().findViewById(R.id.time_picker);
+		timePicker = (fengyunTimePicker)getActivity().findViewById(R.id.time_picker);
 		analogclock_layout = (FrameLayout)getActivity().findViewById(R.id.analogclock_layout);
-		analogclock = (PrizeAnalogClock)getActivity().findViewById(R.id.analogclock);
+		analogclock = (fengyunAnalogClock)getActivity().findViewById(R.id.analogclock);
 		timepicker_framelayout = (FrameLayout)getActivity().findViewById(R.id.timepicker_framelayout);
 		confirm = (Button)getActivity().findViewById(R.id.confirm);
 		cancel = (Button)getActivity().findViewById(R.id.cancel);
@@ -2856,7 +2856,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
 		mViewPager = (NonSwipeableViewPager)getActivity().findViewById(R.id.desk_clock_pager);
 		mActionbarContainer = (FrameLayout)getActionBarView();
 		mTabContainer = mActionbarContainer.getChildAt(mActionbarContainer.getChildCount()-1);
-		mCustomActionBar = LayoutInflater.from(getActivity()).inflate(R.layout.prize_custom_actionbar, null, false);
+		mCustomActionBar = LayoutInflater.from(getActivity()).inflate(R.layout.fengyun_custom_actionbar, null, false);
 		isUnderEdit = false;
 
         timePicker.setCallBack(this);

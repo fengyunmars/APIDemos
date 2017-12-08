@@ -19,7 +19,7 @@
 		    android:layout_marginEnd="@dimen/bottom_button_margin_left"
 		    android:background="@drawable/addworldclock_button"
 		    android:textColor="@color/black_3"
-		    android:textSize="@dimen/prize_normal"
+		    android:textSize="@dimen/fengyun_normal"
 		    android:text="@string/delete_clock"
 		    android:id="@+id/delete"
 		    android:layout_gravity="center"

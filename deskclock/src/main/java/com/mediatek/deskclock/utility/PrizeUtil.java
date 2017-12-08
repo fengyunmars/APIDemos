@@ -1,6 +1,6 @@
 
  /*******************************************
-  * Copyright © 2015, Shenzhen Prize Technologies Limited
+  * Copyright © 2015, Shenzhen fengyun Technologies Limited
   *
   * Summary: store some public custom method
   * current version:
@@ -39,13 +39,13 @@ import com.android.deskclock.Utils;
 import com.android.deskclock.alarms.PowerOffAlarm;
 import com.android.deskclock.provider.Alarm;
 
-public class PrizeUtil {
+public class fengyunUtil {
 
 	
 	
-	public final static float PRIZE_DIAL_OUT_RADIUS_SCALE = 0.43F;
+	public final static float fengyun_DIAL_OUT_RADIUS_SCALE = 0.43F;
 	
-	public final static float PRIZE_DIAL_IN_RADIUS_SCALE = 0.336F;
+	public final static float fengyun_DIAL_IN_RADIUS_SCALE = 0.336F;
 	
 	
 
@@ -56,7 +56,7 @@ public class PrizeUtil {
 	* @author Lixing
 	* @param Long argument
 	* @return String type formatted string
-	* @see PrizeUtil / PrizeUtil / PrizeUtil # timeToString
+	* @see fengyunUtil / fengyunUtil / fengyunUtil # timeToString
 	*/
 	@SuppressLint("DefaultLocale")
 	public static String timeToString(long time){
@@ -65,17 +65,17 @@ public class PrizeUtil {
 		
 		
 		
-//		String data = Utils.PRIZE_DATA + "";
+//		String data = Utils.fengyun_DATA + "";
 //		int length = data.length();
-//		long data_l = (long)Math.pow(10, length-1); /*prize-10 length-1 th power - Li Xing-2015-5-18*/
+//		long data_l = (long)Math.pow(10, length-1); /*fengyun-10 length-1 th power - Li Xing-2015-5-18*/
 		
 //		Log.d("DeskClock","data_l is :" + data_l);
 		
-		long minute = time/(1000/Utils.PRIZE_DATA)/60;
+		long minute = time/(1000/Utils.fengyun_DATA)/60;
 		
-		long second = (time/(1000/Utils.PRIZE_DATA)%60);
+		long second = (time/(1000/Utils.fengyun_DATA)%60);
 
-		long millisecond = (time%(1000/Utils.PRIZE_DATA));
+		long millisecond = (time%(1000/Utils.fengyun_DATA));
 
 		String str_min;
 		if(minute<10){
@@ -155,7 +155,7 @@ public class PrizeUtil {
 	* @return
 	*/
 	public static String getMinuteString(long time){		
-		long minute = time/(1000/Utils.PRIZE_DATA)/60;
+		long minute = time/(1000/Utils.fengyun_DATA)/60;
 		String str_min = String.format("%02d", minute);
 		return str_min;
 	}
@@ -169,7 +169,7 @@ public class PrizeUtil {
 	* @return
 	*/
 	public static String getSecondString(long time){
-		long second = (time/(1000/Utils.PRIZE_DATA)%60);
+		long second = (time/(1000/Utils.fengyun_DATA)%60);
 		String str_sec = String.format("%02d", second);
 		return str_sec;
 	}
@@ -181,7 +181,7 @@ public class PrizeUtil {
 	* @return
 	*/
 	public static String getMilliSecondString(long time){
-		long millisecond = (time%(1000/Utils.PRIZE_DATA));
+		long millisecond = (time%(1000/Utils.fengyun_DATA));
 		String str_milli = String.format("%02d", millisecond);
 		return str_milli;
 	}
@@ -283,7 +283,7 @@ public class PrizeUtil {
         }
         return title;
     }
-    /*PRIZE-Get alarm clock alarm name - Li Xing-2015-4-22-end*/
+    /*fengyun-Get alarm clock alarm name - Li Xing-2015-4-22-end*/
 	
 	
     
@@ -295,7 +295,7 @@ public class PrizeUtil {
       * @param Value
       * @return Int
       */
-    public static int prizeBigDecimal(Double value){
+    public static int fengyunBigDecimal(Double value){
     	int result = 0;
     	String str = value+"";
     	String[] strs= str.split("\\.");

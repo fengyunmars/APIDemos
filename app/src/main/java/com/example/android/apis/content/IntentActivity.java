@@ -39,12 +39,12 @@ public class IntentActivity extends Activity {
                 File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC), "JarOfLove.mp3");
                 if(file.exists()){
                     if(file.renameTo(new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC), "你存在我深深地脑海里.mp3"))){
-                        Log.v("prize_dingxiaoquan", "rename success");
+                        Log.v("fengyun_dingxiaoquan", "rename success");
                     }else{
-                        Log.v("prize_dingxiaoquan", "rename fail");
+                        Log.v("fengyun_dingxiaoquan", "rename fail");
                     }
                 }else{
-                    Log.v("prize_dingxiaoquan", "file not exsit");
+                    Log.v("fengyun_dingxiaoquan", "file not exsit");
                 }
             }
         });

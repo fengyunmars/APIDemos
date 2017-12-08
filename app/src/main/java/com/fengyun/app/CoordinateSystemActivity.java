@@ -14,7 +14,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
- * Created by prize on 2017/10/13.
+ * Created by fengyun on 2017/10/13.
  */
 
 public class CoordinateSystemActivity extends Activity{

@@ -1,6 +1,6 @@
 
 /*******************************************
-  * Copyright © 2015, Shenzhen Prize Technologies Limited
+  * Copyright © 2015, Shenzhen fengyun Technologies Limited
   *
   * Summary: 
   * current version:
@@ -29,7 +29,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.android.deskclock.R;
-import com.mediatek.deskclock.utility.PrizeUtil;
+import com.mediatek.deskclock.utility.fengyunUtil;
 
 public class NewCountListAdapter extends BaseAdapter {
 
@@ -105,15 +105,15 @@ public class NewCountListAdapter extends BaseAdapter {
         itemHolder.left_text.setText(str+countTimeInfo.getCount() + "");
         long bucketTime = countTimeInfo.getTimeBucket();
         
-        /*PRIZE--The first count times, there may be time to be negative, to make a few treatment-lixing-2015-5-8-start*/
+        /*fengyun--The first count times, there may be time to be negative, to make a few treatment-lixing-2015-5-8-start*/
         if(bucketTime<0){	
-        	itemHolder.middle_view.setText(PrizeUtil.timeToString(countTimeInfo.getTotalTime()));
+        	itemHolder.middle_view.setText(fengyunUtil.timeToString(countTimeInfo.getTotalTime()));
         }else{
-        	itemHolder.middle_view.setText("+"+PrizeUtil.timeToString(bucketTime));
+        	itemHolder.middle_view.setText("+"+fengyunUtil.timeToString(bucketTime));
         }
-        /*PRIZE--The first count times, there may be time to be negative, to make a few treatment-lixing-2015-5-8-end*/
+        /*fengyun--The first count times, there may be time to be negative, to make a few treatment-lixing-2015-5-8-end*/
         
-        itemHolder.right_view.setText(PrizeUtil.timeToString(countTimeInfo.getTotalTime()));
+        itemHolder.right_view.setText(fengyunUtil.timeToString(countTimeInfo.getTotalTime()));
 	}
 	
 	private final class ItemHolder{

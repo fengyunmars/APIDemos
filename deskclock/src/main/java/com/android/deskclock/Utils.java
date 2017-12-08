@@ -68,7 +68,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.TextClock;
 import android.widget.TextView;
 
-import com.android.deskclock.prize.PinYinUtil;
+import com.android.deskclock.fengyun.PinYinUtil;
 import com.android.deskclock.provider.AlarmInstance;
 import com.android.deskclock.provider.DaysOfWeek;
 import com.android.deskclock.stopwatch.Stopwatches;
@@ -150,7 +150,7 @@ public class Utils {
             0xFF202233 /* 10 PM */,
             0xFF20222A /* 11 PM */
     };
-    public static final long PRIZE_DATA = 10L;		/*prize-Get set system time accuracy-lixing-2015-5-18*/
+    public static final long fengyun_DATA = 10L;		/*fengyun-Get set system time accuracy-lixing-2015-5-18*/
     /**
      * Returns whether the SDK is KitKat or later
      */
@@ -257,7 +257,7 @@ public class Utils {
     
     public static long getPirzeTimeNow(){
     	/*pirze-No native divided by 10, divided by 10 for the timer needs-lixing-2015-5-18-start*/
-    	long realtime = ((SystemClock.elapsedRealtime())/PRIZE_DATA);
+    	long realtime = ((SystemClock.elapsedRealtime())/fengyun_DATA);
     	Log.d("DeskClock","realtime is :" + realtime);
         return realtime;
         
@@ -634,11 +634,11 @@ public class Utils {
 
         Date now = new Date();
         TextView dateDisplay = null;
-        /*PRIZE-Macro switch closes android native code - Li Xing-2015-4-10-start*/
+        /*fengyun-Macro switch closes android native code - Li Xing-2015-4-10-start*/
         if(!FeatureOption.MTK_DESKCLOCK_NEW_UI){
         	dateDisplay = (TextView) clock.findViewById(R.id.date);
         }
-        /*PRIZE-Macro switch closes android native code - Li Xing-2015-4-10-end*/
+        /*fengyun-Macro switch closes android native code - Li Xing-2015-4-10-end*/
         if (dateDisplay != null) {
             final Locale l = Locale.getDefault();
             dateDisplay.setText(isJBMR2OrLater()

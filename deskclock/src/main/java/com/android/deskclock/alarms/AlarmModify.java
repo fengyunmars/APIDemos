@@ -1,6 +1,6 @@
 
  /*******************************************
- * Copyright © 2015, Shenzhen Prize Technologies Limited
+ * Copyright © 2015, Shenzhen fengyun Technologies Limited
  *
  * Summary: The updateAlarm deleteAlarm addAlarm other methods to separate class in the package, easy call
  * current version:
@@ -149,9 +149,9 @@ public class AlarmModify {
 	                        return setupAlarmInstance(mContext, newAlarm);
 	                    }
 	                    
-//	                    /*PRIZE-send broadcast in the thread - Li Xing -2015-4-11-start*/
+//	                    /*fengyun-send broadcast in the thread - Li Xing -2015-4-11-start*/
 //		            	setBroadCaset(mContext);	
-//		            	/*PRIZE-send broadcast in the thread - Li Xing -2015-4-11-end*/
+//		            	/*fengyun-send broadcast in the thread - Li Xing -2015-4-11-end*/
 	                }
 	                return null;
 	            }

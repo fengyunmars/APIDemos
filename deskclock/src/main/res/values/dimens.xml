@@ -71,7 +71,7 @@
     <dimen name="alarm_lockscreen_pulse_size">256dp</dimen>
     <dimen name="alarm_lockscreen_bottom_margin">40dp</dimen>
     
-    <dimen name="alarm_lockscreen_bottom_margin_prize">60dp</dimen>
+    <dimen name="alarm_lockscreen_bottom_margin_fengyun">60dp</dimen>
 
     <dimen name="big_font_size">88sp</dimen>
     <dimen name="medium_font_size">56sp</dimen>
@@ -199,15 +199,15 @@
     <dimen name="fastscroll_preview_padding">8dp</dimen>
     <dimen name="fastscroll_track_width">8dp</dimen>
     
-    <!-- PRIZE- 默认的资源，各个分辨率公用资源- 李星-2015-7-17-start -->
-    <dimen name="prize_title">16sp</dimen>
-    <dimen name="prize_normal">14sp</dimen>
-    <dimen name="prize_content">12sp</dimen>
-    <dimen name="prize_time_text">18sp</dimen>
-    <!-- PRIZE- 默认的资源，各个分辨率公用资源- 李星-2015-7-17-end -->
+    <!-- fengyun- 默认的资源，各个分辨率公用资源- 李星-2015-7-17-start -->
+    <dimen name="fengyun_title">16sp</dimen>
+    <dimen name="fengyun_normal">14sp</dimen>
+    <dimen name="fengyun_content">12sp</dimen>
+    <dimen name="fengyun_time_text">18sp</dimen>
+    <!-- fengyun- 默认的资源，各个分辨率公用资源- 李星-2015-7-17-end -->
     
     
-    <!-- PRIZE- 默认的资源，默认资源为1280x720资源- 李星-2015-4-21-start -->
+    <!-- fengyun- 默认的资源，默认资源为1280x720资源- 李星-2015-4-21-start -->
 
   	<dimen name="framelayout_top">350dp</dimen>
   	<dimen name="primary_min_height">147dp</dimen>
@@ -258,9 +258,9 @@
     <dimen name="timer_linsheng_right">14sp</dimen>
     <dimen name="timer_list_item_text">20sp</dimen>
     
-    <!-- PRIZE- 默认的资源，默认资源为1280x720资源- 李星-2015-4-21-end -->
+    <!-- fengyun- 默认的资源，默认资源为1280x720资源- 李星-2015-4-21-end -->
     
-     <!-- prize-listview margin top-pengcancan-20160326 -->
+     <!-- fengyun-listview margin top-pengcancan-20160326 -->
     <dimen name="listview_height">405dp</dimen>
     <dimen name="listview_margintop_max">410dp</dimen>
     <dimen name="listview_margintop_min">102dp</dimen>
@@ -274,14 +274,14 @@
     <dimen name="list_item_height">54dp</dimen>
     <dimen name="day_select_wheel_margin">30dp</dimen>
     <dimen name="day_select_flag_width">4dp</dimen>
-    <dimen name="dashboard_category_height_prize">40dp</dimen>
+    <dimen name="dashboard_category_height_fengyun">40dp</dimen>
     <dimen name="dashboard_category_title_textsize">12sp</dimen>
-    <dimen name="prize_bottom_nav_height">57dp</dimen>
-    <dimen name="prize_margin_default">15dp</dimen>
+    <dimen name="fengyun_bottom_nav_height">57dp</dimen>
+    <dimen name="fengyun_margin_default">15dp</dimen>
     <dimen name="main_title_font_size">15sp</dimen>
     <dimen name="sub_title_font_size">12sp</dimen>
-    <dimen name="actionbar_height_prize">40dp</dimen>
-    <dimen name="prize_timer_arc_dimen">103dp</dimen>
-    <dimen name="prize_timer_arc_width">4dp</dimen>
+    <dimen name="actionbar_height_fengyun">40dp</dimen>
+    <dimen name="fengyun_timer_arc_dimen">103dp</dimen>
+    <dimen name="fengyun_timer_arc_width">4dp</dimen>
 
 </resources>

@@ -1,4 +1,4 @@
-package com.android.deskclock.prize;
+package com.android.deskclock.fengyun;
 
 import android.text.TextUtils;
 import net.sourceforge.pinyin4j.PinyinHelper;

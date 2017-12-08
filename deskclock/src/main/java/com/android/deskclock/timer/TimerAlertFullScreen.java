@@ -38,8 +38,8 @@ import com.android.deskclock.TimerRingService;
 import com.android.deskclock.Utils;
 import com.android.deskclock.timer.TimerFullScreenFragment.OnEmptyListListener;
 import com.mediatek.deskclock.utility.FeatureOption;
-import com.mediatek.deskclock.utility.PrizeHomeWatcher;
-import com.mediatek.deskclock.utility.PrizeHomeWatcher.OnHomePressedListener;
+import com.mediatek.deskclock.utility.fengyunHomeWatcher;
+import com.mediatek.deskclock.utility.fengyunHomeWatcher.OnHomePressedListener;
 
 /**
  * Timer alarm alert: pops visible indicator. This activity is the version which
@@ -50,11 +50,11 @@ public class TimerAlertFullScreen extends BaseActivity implements OnEmptyListLis
 
     private static final String TAG = "TimerAlertFullScreen";
     private static final String FRAGMENT = "timer";
-    private static final String FRAGMENTPRIZE="timerprize";
+    private static final String FRAGMENTfengyun="timerfengyun";
     private boolean isOrignal=!FeatureOption.MTK_DESKCLOCK_NEW_UI;
     public long alarmLength;
     
-    PrizeHomeWatcher mHomeWatcher;
+    fengyunHomeWatcher mHomeWatcher;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,13 +98,13 @@ public class TimerAlertFullScreen extends BaseActivity implements OnEmptyListLis
        	
         	}
         }else{
-        	if(getFragmentPrize()==null){
-        		TimerFullScreenPrizeFragmnet timerFragmentfragmnet = new TimerFullScreenPrizeFragmnet();
+        	if(getFragmentfengyun()==null){
+        		TimerFullScreenfengyunFragmnet timerFragmentfragmnet = new TimerFullScreenfengyunFragmnet();
        		    Bundle args = new Bundle();
                 args.putBoolean(Timers.TIMESUP_MODE, true);
                 timerFragmentfragmnet.setArguments(args);
                 getFragmentManager().beginTransaction()
-                .add(R.id.fragment_container, timerFragmentfragmnet, FRAGMENTPRIZE).commit();
+                .add(R.id.fragment_container, timerFragmentfragmnet, FRAGMENTfengyun).commit();
         	}
         	
         }
@@ -124,7 +124,7 @@ public class TimerAlertFullScreen extends BaseActivity implements OnEmptyListLis
                          .add(R.id.fragment_container, timerFragment, FRAGMENT).commit();
         	}else{
         		
-        		TimerFullScreenPrizeFragmnet timerFragmentfragmnet = new TimerFullScreenPrizeFragmnet();
+        		TimerFullScreenfengyunFragmnet timerFragmentfragmnet = new TimerFullScreenfengyunFragmnet();
         		 Bundle args = new Bundle();
                  args.putBoolean(Timers.TIMESUP_MODE, true);
                  timerFragmentfragmnet.setArguments(args);
@@ -138,8 +138,8 @@ public class TimerAlertFullScreen extends BaseActivity implements OnEmptyListLis
         
         
         
-        /*prize-Registered broadcast receiver, monitor clicks and long-press the Home key events. To onPause () cancellation of the receiver to avoid an error-lixing-2015-7-11-start*/
-        mHomeWatcher = new PrizeHomeWatcher(this); 
+        /*fengyun-Registered broadcast receiver, monitor clicks and long-press the Home key events. To onPause () cancellation of the receiver to avoid an error-lixing-2015-7-11-start*/
+        mHomeWatcher = new fengyunHomeWatcher(this);
         mHomeWatcher.setOnHomePressedListener(new OnHomePressedListener() { 
             @Override 
             public void onHomePressed() { 
@@ -154,7 +154,7 @@ public class TimerAlertFullScreen extends BaseActivity implements OnEmptyListLis
             } 
         }); 
         
-        /*prize-Registered broadcast receiver, monitor clicks and long-press the Home key events. To onPause () cancellation of the receiver to avoid an error-lixing-2015-7-11-end*/
+        /*fengyun-Registered broadcast receiver, monitor clicks and long-press the Home key events. To onPause () cancellation of the receiver to avoid an error-lixing-2015-7-11-end*/
         
         
         
@@ -187,11 +187,11 @@ public class TimerAlertFullScreen extends BaseActivity implements OnEmptyListLis
     	
         Utils.showTimesUpNotifications(this);
 
-        /*prize-Logout broadcast receiver-lixing-2015-7-11-start*/
+        /*fengyun-Logout broadcast receiver-lixing-2015-7-11-start*/
         try{
         	mHomeWatcher.stopWatch();
         }catch(Exception e){}
-        /*prize-Logout broadcast receiver-lixing-2015-7-11-end*/
+        /*fengyun-Logout broadcast receiver-lixing-2015-7-11-end*/
         super.onPause();
     }
 
@@ -278,8 +278,8 @@ public class TimerAlertFullScreen extends BaseActivity implements OnEmptyListLis
         return (TimerFullScreenFragment) getFragmentManager().findFragmentByTag(FRAGMENT);
     }
     
-    private TimerFullScreenPrizeFragmnet  getFragmentPrize(){
-    	 return (TimerFullScreenPrizeFragmnet) getFragmentManager().findFragmentByTag(FRAGMENTPRIZE);
+    private TimerFullScreenfengyunFragmnet  getFragmentfengyun(){
+    	 return (TimerFullScreenfengyunFragmnet) getFragmentManager().findFragmentByTag(FRAGMENTfengyun);
     }
 
     

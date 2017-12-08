@@ -7,7 +7,7 @@
 	<View 
 	    android:layout_width="match_parent"
 	    android:layout_height="1px"
-	    android:background="@color/prize_divide_line_black"/>
+	    android:background="@color/fengyun_divide_line_black"/>
 	
 	<View 
 	    android:layout_width="match_parent"
@@ -17,7 +17,7 @@
 	<View 
 	    android:layout_width="match_parent"
 	    android:layout_height="1px"
-	    android:background="@color/prize_divide_line_green"/>
+	    android:background="@color/fengyun_divide_line_green"/>
 	
 	<View 
 	    android:layout_width="match_parent"
@@ -28,7 +28,7 @@
 	<View 
 	    android:layout_width="match_parent"
 	    android:layout_height="1px"
-	    android:background="@color/prize_divide_line_green"/>
+	    android:background="@color/fengyun_divide_line_green"/>
 	
 	<View 
 	    android:layout_width="match_parent"
@@ -38,6 +38,6 @@
 	<View 
 	    android:layout_width="match_parent"
 	    android:layout_height="1px"
-	    android:background="@color/prize_divide_line_black"/>
+	    android:background="@color/fengyun_divide_line_black"/>
     
 </LinearLayout>

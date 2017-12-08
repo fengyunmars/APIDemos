@@ -55,9 +55,9 @@ import com.android.deskclock.R;
 import com.android.deskclock.Utils;
 import com.android.deskclock.events.Events;
 import com.android.deskclock.timer.CountingTimerView;
-import com.android.deskclock.prize.widget.PrizeStopWatchClock;
+import com.android.deskclock.fengyun.widget.fengyunStopWatchClock;
 import com.mediatek.deskclock.utility.FeatureOption;
-import com.mediatek.deskclock.utility.PrizeUtil;
+import com.mediatek.deskclock.utility.fengyunUtil;
 
 public class StopwatchFragment extends DeskClockFragment
         implements OnSharedPreferenceChangeListener {
@@ -87,38 +87,38 @@ public class StopwatchFragment extends DeskClockFragment
     private View mBottomSpace;
     private boolean mSpacersUsed;
 
-	/*PRIZE--CountingTimerView-2015-4-14-start*/
+	/*fengyun--CountingTimerView-2015-4-14-start*/
     private TextView showtime_textview;
-    /*PRIZE--CountingTimerView-2015-4-14-end*/
+    /*fengyun--CountingTimerView-2015-4-14-end*/
     
-    /*PRIZE---lixing-2015-4-14-start*/
+    /*fengyun---lixing-2015-4-14-start*/
     private Button new_start;
     private Button new_pause;
     private Button new_count_time;
     private Button new_resume;
     private Button new_reset;
-    /*PRIZE---lixing-2015-4-14-end*/
+    /*fengyun---lixing-2015-4-14-end*/
     
-    /*PRIZE---lixing-2015-4-14-start*/
-    private PrizeStopWatchClock new_clock;
-    /*PRIZE---lixing-2015-4-14-end*/
+    /*fengyun---lixing-2015-4-14-start*/
+    private fengyunStopWatchClock new_clock;
+    /*fengyun---lixing-2015-4-14-end*/
     
-    /*PRIZE--LinearLayout,Button-lixing-2015-4-14-start*/
+    /*fengyun--LinearLayout,Button-lixing-2015-4-14-start*/
     private LinearLayout allbutton_linear;
-    /*PRIZE--LinearLayout,Button-lixing-2015-4-14-end*/
+    /*fengyun--LinearLayout,Button-lixing-2015-4-14-end*/
     
-    /*PRIZE--ListView,Item-lixing-2015-4-14-start*/
+    /*fengyun--ListView,Item-lixing-2015-4-14-start*/
     private ListView count_list;
-    /*PRIZE--ListView,Item-lixing-2015-4-14-end*/
+    /*fengyun--ListView,Item-lixing-2015-4-14-end*/
     private AccessibilityManager mAccessibilityManager;
 
     // Used for calculating the time from the start taking into account the pause times
     long mStartTime = 0;
     long mAccumulatedTime = 0;
     
-    /*PRIZE--For metering, meter after each update newCount, when reset, update 0-lixing-2015-4-14-start*/
+    /*fengyun--For metering, meter after each update newCount, when reset, update 0-lixing-2015-4-14-start*/
     long newMCount = 0L;
-    /*PRIZE--For metering, meter after each update newCount, when reset, update 0-lixing-2015-4-14-start*/
+    /*fengyun--For metering, meter after each update newCount, when reset, update 0-lixing-2015-4-14-start*/
     
     List<CountTimeInfo> mCountTimeInfoList;
     NewCountListAdapter mNewAdapter;
@@ -342,17 +342,17 @@ public class StopwatchFragment extends DeskClockFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-    	/*PRIZE-Setting the macro switch to select the layout file - Li Xing-2015-4-14-start*/
+    	/*fengyun-Setting the macro switch to select the layout file - Li Xing-2015-4-14-start*/
     	ViewGroup v;
     	if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
     		v = (ViewGroup)inflater.inflate(R.layout.new_stopwatch_fragment, container, false);
     	}else{
     		v = (ViewGroup)inflater.inflate(R.layout.stopwatch_fragment, container, false);
     	}
-    	/*PRIZE-Setting the macro switch to select the layout file - Li Xing-2015-4-14-end*/
+    	/*fengyun-Setting the macro switch to select the layout file - Li Xing-2015-4-14-end*/
     	
     	
-    	/*PRIZE-Setting the macro switch to turn off the native code - Li Xing-2015-4-14-start*/
+    	/*fengyun-Setting the macro switch to turn off the native code - Li Xing-2015-4-14-start*/
     	if(!FeatureOption.MTK_DESKCLOCK_NEW_UI){
 	        mTime = (CircleTimerView)v.findViewById(R.id.stopwatch_time);
 	        mTimeText = (CountingTimerView)v.findViewById(R.id.stopwatch_time_text);
@@ -440,10 +440,10 @@ public class StopwatchFragment extends DeskClockFragment
 	            }
 	        });
     	}    	
-    	/*PRIZE-Setting the macro switch to turn off the native code - Li Xing-2015-4-14-end*/
+    	/*fengyun-Setting the macro switch to turn off the native code - Li Xing-2015-4-14-end*/
     	
     	
-    	/*PRIZE-Macro switch setting new UI- Li Xing-2015-4-14-start*/
+    	/*fengyun-Macro switch setting new UI- Li Xing-2015-4-14-start*/
     	if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
     		long time = Utils.getPirzeTimeNow();
 
@@ -460,7 +460,7 @@ public class StopwatchFragment extends DeskClockFragment
     		count_list.setAdapter(mNewAdapter);
     		
     		
-    		/*PRIZE-Start timing - Li Xing-2015-4-14-start*/
+    		/*fengyun-Start timing - Li Xing-2015-4-14-start*/
     		new_start = (Button)v.findViewById(R.id.start);
     		new_start.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View arg0) {
@@ -469,9 +469,9 @@ public class StopwatchFragment extends DeskClockFragment
 					updateButton();
 				}
 			});
-    		/*PRIZE-Start timing - Li Xing-2015-4-14-end*/
+    		/*fengyun-Start timing - Li Xing-2015-4-14-end*/
     		
-    		/*PRIZE-Pause Timing - Li Xing-2015-4-14-start*/
+    		/*fengyun-Pause Timing - Li Xing-2015-4-14-start*/
     		new_pause = (Button)v.findViewById(R.id.pause);
     		new_pause.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View arg0) {
@@ -480,8 +480,8 @@ public class StopwatchFragment extends DeskClockFragment
 	                updateButton();
 				}
 			});
-    		/*PRIZE-Pause Timing - Li Xing-2015-4-14-end*/
-    		/*PRIZE-Metering - Li Xing-2015-4-14-start*/
+    		/*fengyun-Pause Timing - Li Xing-2015-4-14-end*/
+    		/*fengyun-Metering - Li Xing-2015-4-14-start*/
     		new_count_time = (Button)v.findViewById(R.id.count_time);
     		new_count_time.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View arg0) {
@@ -490,10 +490,10 @@ public class StopwatchFragment extends DeskClockFragment
 					newCountTimes(curTime);					
 				}
 			});
-    		/*PRIZE-Metering - Li Xing-2015-4-14-end*/
+    		/*fengyun-Metering - Li Xing-2015-4-14-end*/
     		
     		
-    		/*PRIZE-After a pause, resume timing - Li Xing-2015-4-14-start*/
+    		/*fengyun-After a pause, resume timing - Li Xing-2015-4-14-start*/
     		new_resume = (Button)v.findViewById(R.id.resume);
     		new_resume.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View arg0) {
@@ -502,8 +502,8 @@ public class StopwatchFragment extends DeskClockFragment
 					updateButton();
 				}
 			});
-    		/*PRIZE-After a pause, resume timing - Li Xing-2015-4-14-end*/
-    		/*PRIZE-Reset Timing - Li Xing-2015-4-14-start*/
+    		/*fengyun-After a pause, resume timing - Li Xing-2015-4-14-end*/
+    		/*fengyun-Reset Timing - Li Xing-2015-4-14-start*/
     		new_reset = (Button)v.findViewById(R.id.reset);
     		new_reset.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View arg0) {
@@ -511,11 +511,11 @@ public class StopwatchFragment extends DeskClockFragment
 					updateButton();
 				}
 			});
-    		/*PRIZE-Reset Timing - Li Xing-2015-4-14-end*/
+    		/*fengyun-Reset Timing - Li Xing-2015-4-14-end*/
     		
     		
     	}
-    	/*PRIZE-Macro switch setting new UI- Li Xing-2015-4-14-end*/
+    	/*fengyun-Macro switch setting new UI- Li Xing-2015-4-14-end*/
     	
     	
     	
@@ -532,7 +532,7 @@ public class StopwatchFragment extends DeskClockFragment
     @Override
     public void onStart() {
         super.onStart();
-        /*PRIZE-Setting the macro switch to turn off the native code - Li Xing-2015-4-14-start*/
+        /*fengyun-Setting the macro switch to turn off the native code - Li Xing-2015-4-14-start*/
         if(!FeatureOption.MTK_DESKCLOCK_NEW_UI){
 	        boolean lapsVisible = mLapsAdapter.getCount() > 0;
 	
@@ -549,12 +549,12 @@ public class StopwatchFragment extends DeskClockFragment
 	        ((ViewGroup)getView()).setLayoutTransition(mLayoutTransition);
 	        mCircleLayout.setLayoutTransition(mCircleLayoutTransition);
         }
-        /*PRIZE-Setting the macro switch to turn off the native code - Li Xing-2015-4-14-end*/
+        /*fengyun-Setting the macro switch to turn off the native code - Li Xing-2015-4-14-end*/
     }
 
     @Override
     public void onResume() {
-    	/*PRIZE-Setting the macro switch to turn off the native code - Li Xing-2015-4-14-start*/
+    	/*fengyun-Setting the macro switch to turn off the native code - Li Xing-2015-4-14-start*/
         if(!FeatureOption.MTK_DESKCLOCK_NEW_UI){
 	        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
 	        prefs.registerOnSharedPreferenceChangeListener(this);
@@ -583,7 +583,7 @@ public class StopwatchFragment extends DeskClockFragment
 	            v.setVisibility(View.VISIBLE);
 	        }
         }
-        /*PRIZE-Setting the macro switch to turn off the native code - Li Xing-2015-4-14-end*/
+        /*fengyun-Setting the macro switch to turn off the native code - Li Xing-2015-4-14-end*/
         
         if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
         	
@@ -601,7 +601,7 @@ public class StopwatchFragment extends DeskClockFragment
 
     @Override
     public void onPause() {
-    	/*PRIZE-Setting the macro switch to turn off the native code - Li Xing-2015-4-14-start*/
+    	/*fengyun-Setting the macro switch to turn off the native code - Li Xing-2015-4-14-start*/
     	if(!FeatureOption.MTK_DESKCLOCK_NEW_UI){
 	        if (mState == Stopwatches.STOPWATCH_RUNNING) {
 	            stopUpdateThread();
@@ -625,9 +625,9 @@ public class StopwatchFragment extends DeskClockFragment
 	        releaseWakeLock();
     	}
     	
-    	/*PRIZE-Setting the macro switch to turn off the native code - Li Xing-2015-4-14-end*/
+    	/*fengyun-Setting the macro switch to turn off the native code - Li Xing-2015-4-14-end*/
     	
-    	/*prize-Saved stopwatch information, re-read data onResume () in-lixing-2015-5-21-start*/
+    	/*fengyun-Saved stopwatch information, re-read data onResume () in-lixing-2015-5-21-start*/
     	else if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
     		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
 	        prefs.unregisterOnSharedPreferenceChangeListener(this);
@@ -635,7 +635,7 @@ public class StopwatchFragment extends DeskClockFragment
             ((DeskClock)getActivity()).unregisterPageChangedListener(this);
             releaseWakeLock();
         }
-    	/*prize-Saved stopwatch information, re-read data onResume () in-lixing-2015-5-21-end*/
+    	/*fengyun-Saved stopwatch information, re-read data onResume () in-lixing-2015-5-21-end*/
     	
         super.onPause();
     }
@@ -1247,7 +1247,7 @@ public class StopwatchFragment extends DeskClockFragment
 //            }
 //            count_time_text.postDelayed(newMTimeUpdateThread, STOPWATCH_REFRESH_INTERVAL_MILLIS);
 			new_clock.setTime(totalTime);
-            showtime_textview.setText(PrizeUtil.timeToString(totalTime));
+            showtime_textview.setText(fengyunUtil.timeToString(totalTime));
             showtime_textview.postDelayed(newMTimeUpdateThread, STOPWATCH_REFRESH_INTERVAL_MILLIS);
 		}
 
@@ -1315,7 +1315,7 @@ public class StopwatchFragment extends DeskClockFragment
     	long curTime = Utils.getPirzeTimeNow();
         mAccumulatedTime += (curTime - mStartTime);
     	newStopUpdateThread();
-    	showtime_textview.setText(PrizeUtil.timeToString(mAccumulatedTime));
+    	showtime_textview.setText(fengyunUtil.timeToString(mAccumulatedTime));
         mState = Stopwatches.STOPWATCH_STOPPED;
         releaseWakeLock();
 
@@ -1330,7 +1330,7 @@ public class StopwatchFragment extends DeskClockFragment
      */
     private void newDoReset(){
     	mAccumulatedTime = 0;
-    	showtime_textview.setText(PrizeUtil.timeToString(mAccumulatedTime));
+    	showtime_textview.setText(fengyunUtil.timeToString(mAccumulatedTime));
     	
     	mState = Stopwatches.STOPWATCH_RESET;
     	
@@ -1352,9 +1352,9 @@ public class StopwatchFragment extends DeskClockFragment
      * @see  StopwatchFragment/StopwatchFragment/StopwatchFragment#newCountTimes
      */
     private void newCountTimes(long curTime){
-    	long totalTime = mAccumulatedTime + curTime - mStartTime;	/*PRIZE--The current total time Stopwatch-lixing-2015-4-14-start*/
-    	long timeBucket = totalTime - newMCount;					/*PRIZE--The total time and total time of the last time difference-lixing-2015-4-14-start*/
-    	newMCount = totalTime;										/*PRIZE--The metering time is updated to the current time-lixing-2015-4-14-start*/
+    	long totalTime = mAccumulatedTime + curTime - mStartTime;	/*fengyun--The current total time Stopwatch-lixing-2015-4-14-start*/
+    	long timeBucket = totalTime - newMCount;					/*fengyun--The total time and total time of the last time difference-lixing-2015-4-14-start*/
+    	newMCount = totalTime;										/*fengyun--The metering time is updated to the current time-lixing-2015-4-14-start*/
     	
     	int count = 0 ;
     	if(mCountTimeInfoList != null ){
@@ -1394,17 +1394,17 @@ public class StopwatchFragment extends DeskClockFragment
 		// TODO Auto-generated method stub
 		super.onActivityCreated(savedInstanceState);
 		
-		 /*PRIZE--Get Activity layout controls CountingTimerView-2015-4-14-start*/
+		 /*fengyun--Get Activity layout controls CountingTimerView-2015-4-14-start*/
 		showtime_textview = (TextView)getActivity().findViewById(R.id.showtime_textview);
-		/*PRIZE--Get Activity layout controls CountingTimerView-2015-4-14-end*/
-		new_clock = (PrizeStopWatchClock)getActivity().findViewById(R.id.stopwatch_clock);
+		/*fengyun--Get Activity layout controls CountingTimerView-2015-4-14-end*/
+		new_clock = (fengyunStopWatchClock)getActivity().findViewById(R.id.stopwatch_clock);
 		
 		
-		/*PRIZE-After changing the font size in the system settings, null pointer exceptions, catch exceptions-2015-5-14-start*/
+		/*fengyun-After changing the font size in the system settings, null pointer exceptions, catch exceptions-2015-5-14-start*/
 		
-		showtime_textview.setText(PrizeUtil.timeToString(0));
+		showtime_textview.setText(fengyunUtil.timeToString(0));
 	
-		/*PRIZE-After changing the font size in the system settings, null pointer exceptions, catch exceptions-2015-5-14-end*/
+		/*fengyun-After changing the font size in the system settings, null pointer exceptions, catch exceptions-2015-5-14-end*/
 	}
     
     

@@ -19,7 +19,7 @@ import com.fengyun.graphics.DirectionLine;
 import java.util.ArrayList;
 
 /**
- * Created by prize on 2017/10/13.
+ * Created by fengyun on 2017/10/13.
  */
 
 public class CoordinateGraph extends View implements IViewCustom {

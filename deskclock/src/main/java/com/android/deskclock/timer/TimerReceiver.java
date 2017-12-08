@@ -53,7 +53,7 @@ public class TimerReceiver extends BroadcastReceiver {
     // Must also be different than StopwatchService.NOTIFICATION_ID
     private static final int IN_USE_NOTIFICATION_ID = Integer.MAX_VALUE - 2;
 
-    public static final String TIME_IS_UP_PRIZE = "time_is_up_prize";
+    public static final String TIME_IS_UP_fengyun = "time_is_up_fengyun";
     
     ArrayList<TimerObj> mTimers;
     
@@ -93,7 +93,7 @@ public class TimerReceiver extends BroadcastReceiver {
 //            showInUseNotification(context);
             return;
         } else if (Timers.NOTIF_TIMES_UP_SHOW.equals(actionType)) {
-            showTimesUpNotification(context);  /*prize-Do not show notifications栏-lixing-2015-6-15*/
+            showTimesUpNotification(context);  /*fengyun-Do not show notifications栏-lixing-2015-6-15*/
             return;
         } else if (Timers.NOTIF_TIMES_UP_CANCEL.equals(actionType)) {
             cancelTimesUpNotification(context);
@@ -122,9 +122,9 @@ public class TimerReceiver extends BroadcastReceiver {
                 return;
             }
             
-            /*prize-When Timer time to time, send a broadcast to TimerFragment in, remove the thread updates-lixing-2015-5-25-start*/
-            sendBroadCastPrize(context);
-            /*prize-When Timer time to time, send a broadcast to TimerFragment in, remove the thread updates-lixing-2015-5-25-end*/
+            /*fengyun-When Timer time to time, send a broadcast to TimerFragment in, remove the thread updates-lixing-2015-5-25-start*/
+            sendBroadCastfengyun(context);
+            /*fengyun-When Timer time to time, send a broadcast to TimerFragment in, remove the thread updates-lixing-2015-5-25-end*/
             
 
             t.setState(TimerObj.STATE_TIMESUP);
@@ -156,9 +156,9 @@ public class TimerReceiver extends BroadcastReceiver {
             	Utils.showTimesUpNotifications(context);
            }
             
-         /*prize-Cancel status bar notification-lixing-205-6-10-start*/
+         /*fengyun-Cancel status bar notification-lixing-205-6-10-start*/
     //     cancelTimesUpNotification(context, t); 
-         /*prize-Cancel status bar notification-lixing-205-6-10-end*/
+         /*fengyun-Cancel status bar notification-lixing-205-6-10-end*/
          
             /** @} */
             // Start the TimerAlertFullScreen activity.
@@ -179,7 +179,7 @@ public class TimerReceiver extends BroadcastReceiver {
             // Stop Ringtone if all timers are not in times-up status
             stopRingtoneIfNoTimesup(context);
             /*if(!isOrignal){
-            	updateNextTimesupPrize(context);
+            	updateNextTimesupfengyun(context);
             }*/
             
         } else if (Timers.NOTIF_TIMES_UP_STOP.equals(actionType)) {
@@ -248,7 +248,7 @@ public class TimerReceiver extends BroadcastReceiver {
             if (t.mState == TimerObj.STATE_TIMESUP) {
                 // Must cancel the previous notification to get all updates displayed correctly
                 cancelTimesUpNotification(context, t);	
-//                showTimesUpNotification(context, t);    /*prize-Do not show notification bar-lixing-2015-6-15*/
+//                showTimesUpNotification(context, t);    /*fengyun-Do not show notification bar-lixing-2015-6-15*/
             }
         }
         
@@ -559,9 +559,9 @@ public class TimerReceiver extends BroadcastReceiver {
      * time : 2015-5-25
      * @param context
      */
-    public static void sendBroadCastPrize(Context context){
+    public static void sendBroadCastfengyun(Context context){
 		 Intent intent = new Intent();
-		 intent.setAction(TIME_IS_UP_PRIZE);
+		 intent.setAction(TIME_IS_UP_fengyun);
 	     context.sendBroadcast(intent);
 	 }
 }

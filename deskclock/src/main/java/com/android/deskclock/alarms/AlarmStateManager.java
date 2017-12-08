@@ -519,9 +519,9 @@ public final class AlarmStateManager extends BroadcastReceiver {
      */
     public static void setSnoozeState(final Context context, AlarmInstance instance,
                                       boolean showToast) {
-		/*Prize--When manual operation or change the alarm status will let it ring three times after the alarm goes off, the alarm clock unmanned operation reverts to think of the value of the number of defaults --lixing--2015-8-13 -start*/
+		/*fengyun--When manual operation or change the alarm status will let it ring three times after the alarm goes off, the alarm clock unmanned operation reverts to think of the value of the number of defaults --lixing--2015-8-13 -start*/
     	setAlarmMissCountLeft(context, DEFAULT_ALARM_MISS_ALL_COUNT);
-    	/*Prize--When manual operation or change the alarm status will let it ring three times after the alarm goes off, the alarm clock unmanned operation reverts to think of the value of the number of defaults --lixing--2015-8-13 -end*/
+    	/*fengyun--When manual operation or change the alarm status will let it ring three times after the alarm goes off, the alarm clock unmanned operation reverts to think of the value of the number of defaults --lixing--2015-8-13 -end*/
         // Stop alarm if this instance is firing it
         AlarmService.stopAlarm(context, instance);
 
@@ -579,7 +579,7 @@ public final class AlarmStateManager extends BroadcastReceiver {
      * @param instance
      * @param showToast
      */
-    public static void setPrizeSnoozeState(Context context, AlarmInstance instance, boolean showToast) {
+    public static void setfengyunSnoozeState(Context context, AlarmInstance instance, boolean showToast) {
         // Stop alarm if this instance is firing it
         AlarmService.stopAlarm(context, instance);
 
@@ -626,10 +626,10 @@ public final class AlarmStateManager extends BroadcastReceiver {
      * @param instance
      */
     private static boolean fireTime = true;
-    public static void setPrizeMissedState(Context context, AlarmInstance instance) {
+    public static void setfengyunMissedState(Context context, AlarmInstance instance) {
     	 LogUtils.v("Setting missed state to instance " + instance.mId);
     	 
-    	 /*prize-Make sure the boot alarm bells ringing time reaches the preset time thing-lixing-2015-10.20-start */
+    	 /*fengyun-Make sure the boot alarm bells ringing time reaches the preset time thing-lixing-2015-10.20-start */
 		if(fireTime && PowerOffAlarm.bootFromPoweroffAlarm()){
 		    	 if(instance.mAlarmState != AlarmInstance.FIRED_STATE){
 		    		 LogUtils.v("instance.mAlarmState != AlarmInstance.FIRED_STATE" + " ,is :" + instance.mAlarmState);
@@ -650,7 +650,7 @@ public final class AlarmStateManager extends BroadcastReceiver {
 		    	 }
 
 		}
-    	 /*prize-Make sure the boot alarm bells ringing time reaches the preset time thing-lixing-2015-10.20- end*/
+    	 /*fengyun-Make sure the boot alarm bells ringing time reaches the preset time thing-lixing-2015-10.20- end*/
     	 
     	 
     	 int count_left = getAlarmMissCountLeft(context);
@@ -666,30 +666,30 @@ public final class AlarmStateManager extends BroadcastReceiver {
     	            LogUtils.v("PowerOffAlarm setMissedState hasTimeout = " + hasTimeout);
     	            if (hasTimeout) {
     	                LogUtils.v("PowerOffAlarm timeout and set the alarm to snoozed state");
-    	                setPrizeSnoozeState(context, instance, true);
-    	                PowerOffAlarm.deleteRingtone(context, instance); /*prize-Undelete-lixing-2015-6-10-start*/   	                
-    	                shutDown(context); /*prize-shutDown*/
+    	                setfengyunSnoozeState(context, instance, true);
+    	                PowerOffAlarm.deleteRingtone(context, instance); /*fengyun-Undelete-lixing-2015-6-10-start*/
+    	                shutDown(context); /*fengyun-shutDown*/
     	            }
     	            
     	            
     	     }else{
-    	    	  setPrizeSnoozeState(context, instance, true);
+    	    	  setfengyunSnoozeState(context, instance, true);
     	     }
     	        /// @}
     		     		
     	 }else{    		 
     		
     	     
-    	     /*prize --copy from setMissedState() ,Here to send a broadcast to receive AlarmService --lixing -2015-8-13 --start*/
+    	     /*fengyun --copy from setMissedState() ,Here to send a broadcast to receive AlarmService --lixing -2015-8-13 --start*/
     		 if (PowerOffAlarm.bootFromPoweroffAlarm()) {
     			 Intent powerOffAlarmIntent = new Intent();
 	             powerOffAlarmIntent.setAction(AlarmService.POWER_OFF_ALARM_DISMISS_ACITION);
 	             context.sendBroadcast(powerOffAlarmIntent);
-	             /*prize --copy from setMissedState() ,Here to send a broadcast to receive AlarmService --lixing -2015-8-13 --end*/
+	             /*fengyun --copy from setMissedState() ,Here to send a broadcast to receive AlarmService --lixing -2015-8-13 --end*/
     		 }else{
-    			 /*Prize--When manual operation or change the alarm status will let it ring three times after the alarm goes off, the alarm clock unmanned operation reverts to think of the value of the number of defaults --lixing--2015-8-13 -start*/
+    			 /*fengyun--When manual operation or change the alarm status will let it ring three times after the alarm goes off, the alarm clock unmanned operation reverts to think of the value of the number of defaults --lixing--2015-8-13 -start*/
         	     setAlarmMissCountLeft(context, DEFAULT_ALARM_MISS_ALL_COUNT);
-        	     /*Prize--When manual operation or change the alarm status will let it ring three times after the alarm goes off, the alarm clock unmanned operation reverts to think of the value of the number of defaults --lixing--2015-8-13 -end*/
+        	     /*fengyun--When manual operation or change the alarm status will let it ring three times after the alarm goes off, the alarm clock unmanned operation reverts to think of the value of the number of defaults --lixing--2015-8-13 -end*/
     			 setMissedState(context, instance);
     		 }
     	 }
@@ -786,9 +786,9 @@ public final class AlarmStateManager extends BroadcastReceiver {
      */
     public static void setDismissState(Context context, AlarmInstance instance) {
         LogUtils.v("Setting dismissed state to instance " + instance.mId);
-        /*Prize--When manual operation or change the alarm status will let it ring three times after the alarm goes off, the alarm clock unmanned operation reverts to think of the value of the number of defaults --lixing--2015-8-13 -start*/
+        /*fengyun--When manual operation or change the alarm status will let it ring three times after the alarm goes off, the alarm clock unmanned operation reverts to think of the value of the number of defaults --lixing--2015-8-13 -start*/
         setAlarmMissCountLeft(context, DEFAULT_ALARM_MISS_ALL_COUNT);
-        /*Prize--When manual operation or change the alarm status will let it ring three times after the alarm goes off, the alarm clock unmanned operation reverts to think of the value of the number of defaults --lixing--2015-8-13 -end*/
+        /*fengyun--When manual operation or change the alarm status will let it ring three times after the alarm goes off, the alarm clock unmanned operation reverts to think of the value of the number of defaults --lixing--2015-8-13 -end*/
         
         /// M: Set the AlarmInstance's state to DISMISSED_STATE
         instance.mAlarmState = AlarmInstance.DISMISSED_STATE;
@@ -1043,10 +1043,10 @@ public final class AlarmStateManager extends BroadcastReceiver {
                 setSnoozeState(context, instance, true /* showToast */);
                 break;
             case AlarmInstance.MISSED_STATE:
-            	/*prize-When manual operation or change the alarm status will let it ring three times after the alarm goes off, the alarm clock unmanned operation reverts to think of the value of the number of defaults--lixing--2015-8-11-start*/
+            	/*fengyun-When manual operation or change the alarm status will let it ring three times after the alarm goes off, the alarm clock unmanned operation reverts to think of the value of the number of defaults--lixing--2015-8-11-start*/
 //                setMissedState(context, instance);
-                setPrizeMissedState(context, instance);
-                /*prize-When manual operation or change the alarm status will let it ring three times after the alarm goes off, the alarm clock unmanned operation reverts to think of the value of the number of defaults--lixing--2015-8-11-start*/
+                setfengyunMissedState(context, instance);
+                /*fengyun-When manual operation or change the alarm status will let it ring three times after the alarm goes off, the alarm clock unmanned operation reverts to think of the value of the number of defaults--lixing--2015-8-11-start*/
                 break;
             case AlarmInstance.DISMISSED_STATE:
                 setDismissState(context, instance);
@@ -1125,10 +1125,10 @@ public final class AlarmStateManager extends BroadcastReceiver {
                 registerInstance(context, instance, true);
             }
             
-            /*prize-send broadcast-2015-5-21-lixing-start*/
+            /*fengyun-send broadcast-2015-5-21-lixing-start*/
 //            Log.d("DeskClock","AlamrStateManager Receive broadcast status change");
             AlarmModify.setBroadCaset(context);
-            /*prize-send broadcast-2015-5-21-lixing-end*/
+            /*fengyun-send broadcast-2015-5-21-lixing-end*/
             
             
         } else if (SHOW_AND_DISMISS_ALARM_ACTION.equals(action)) {
@@ -1156,7 +1156,7 @@ public final class AlarmStateManager extends BroadcastReceiver {
             setDismissState(context, instance);
         /// M: Update the notification, then launch the activity @{
         } else if ("launch_activity".equals(action)) {
-        	/*prize-After the alarm sounded, receiving broadcast, display interface AlarmActivity*/
+        	/*fengyun-After the alarm sounded, receiving broadcast, display interface AlarmActivity*/
             AlarmNotifications.updateAlarmNotification(context, instance);
             Intent i = AlarmInstance.createIntent(context, AlarmActivity.class, instance.mId);
             i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

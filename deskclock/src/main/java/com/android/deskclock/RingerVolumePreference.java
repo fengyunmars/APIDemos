@@ -316,11 +316,11 @@ public class RingerVolumePreference extends VolumePreference {
 			
 			
 			
-			/*prize-Interpretation whether the meeting mode-lixing-2015-7-31 -start*/
+			/*fengyun-Interpretation whether the meeting mode-lixing-2015-7-31 -start*/
 			if(mActiveProfileKey.equals("mtk_audioprofile_meeting") || mActiveProfileKey.equals("mtk_audioprofile_silent")){
 //				mOriginalStreamVolume = mProfileManager.getStreamVolume("mtk_audioprofile_general", mStreamType);
 			}
-			/*prize-Interpretation whether the meeting mode-lixing-2015-7-31 -end*/
+			/*fengyun-Interpretation whether the meeting mode-lixing-2015-7-31 -end*/
 			
 			
             mLastProgress = mOriginalStreamVolume;
@@ -358,11 +358,11 @@ public class RingerVolumePreference extends VolumePreference {
 //					mActiveProfileKey = mProfileManager.getActiveProfileKey();// ddd alarm
 //		         	mProfileManager.setStreamVolume(mActiveProfileKey, mStreamType, mLastProgress);// ddd alarm
 		         	
-		         	/*prize-Interpretation whether the meeting mode-lixing-2015-7-31 -start*/
+		         	/*fengyun-Interpretation whether the meeting mode-lixing-2015-7-31 -start*/
 					if(mActiveProfileKey.equals("mtk_audioprofile_meeting") || mActiveProfileKey.equals("mtk_audioprofile_silent")){
 //						mProfileManager.setStreamVolume("mtk_audioprofile_general", mStreamType, mLastProgress);
 					}
-					/*prize-Interpretation whether the meeting mode-lixing-2015-7-31 -end*/
+					/*fengyun-Interpretation whether the meeting mode-lixing-2015-7-31 -end*/
 		         	
                     Log.d(TAG, "handleMessage setStreamVolume mLastProgress = " + mLastProgress);
                     break;
@@ -419,11 +419,11 @@ public class RingerVolumePreference extends VolumePreference {
 //			mProfileManager.setStreamVolume(mActiveProfileKey, mStreamType, mOriginalStreamVolume);// ddd alarm
 			
 			
-			/*prize-Interpretation whether the meeting mode-lixing-2015-7-31 -start*/
+			/*fengyun-Interpretation whether the meeting mode-lixing-2015-7-31 -start*/
 			if(mActiveProfileKey.equals("mtk_audioprofile_meeting") || mActiveProfileKey.equals("mtk_audioprofile_silent")){
 //				mProfileManager.setStreamVolume("mtk_audioprofile_general", mStreamType, mOriginalStreamVolume);
 			}
-			/*prize-Interpretation whether the meeting mode-lixing-2015-7-31 -end*/
+			/*fengyun-Interpretation whether the meeting mode-lixing-2015-7-31 -end*/
         }
 
         public void saveVolume() {
@@ -432,11 +432,11 @@ public class RingerVolumePreference extends VolumePreference {
 //			mActiveProfileKey = mProfileManager.getActiveProfileKey();// ddd alarm
 //			mProfileManager.setStreamVolume(mActiveProfileKey, mStreamType, mLastProgress);// ddd alarm
 			
-			/*prize-Interpretation whether the meeting mode-lixing-2015-7-31 -start*/
+			/*fengyun-Interpretation whether the meeting mode-lixing-2015-7-31 -start*/
 			if(mActiveProfileKey.equals("mtk_audioprofile_meeting") || mActiveProfileKey.equals("mtk_audioprofile_silent")){
 //				mProfileManager.setStreamVolume("mtk_audioprofile_general", mStreamType, mLastProgress);
 			}
-			/*prize-Interpretation whether the meeting mode-lixing-2015-7-31 -end*/
+			/*fengyun-Interpretation whether the meeting mode-lixing-2015-7-31 -end*/
 			
         }
 

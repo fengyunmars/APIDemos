@@ -98,16 +98,16 @@ import com.android.deskclock.alarms.AlarmModify;
 import com.android.deskclock.alarms.AlarmStateManager;
 import com.android.deskclock.provider.Alarm;
 import com.android.deskclock.provider.AlarmInstance;
-import com.android.deskclock.prize.widget.TimerClockPrizeView;
+import com.android.deskclock.fengyun.widget.TimerClockfengyunView;
 import com.android.deskclock.events.Events;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.widget.LinearLayout;
 
-/**prize-add-by-lixing-20150417-start*/
+/**fengyun-add-by-lixing-20150417-start*/
 import com.mediatek.deskclock.utility.FeatureOption;
-import com.mediatek.deskclock.utility.PrizeUtil;
-/**prize-add-by-lixing-20150417-start*/
+import com.mediatek.deskclock.utility.fengyunUtil;
+/**fengyun-add-by-lixing-20150417-start*/
 
 @SuppressLint("ResourceAsColor")
 public class TimerFragment extends DeskClockFragment implements OnSharedPreferenceChangeListener {
@@ -147,31 +147,31 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
     public final static String TIMER_ID = "timer_id";
 
     
-    /*PRIZE--newly added button-zhuxiaoli-2015-4-17-start*/
-    private TextView  showTimer_Countsview_prize;
+    /*fengyun--newly added button-zhuxiaoli-2015-4-17-start*/
+    private TextView  showTimer_Countsview_fengyun;
     private TextView timerHourShowbtn;
     private TextView timerMinuteShowbtn;
     private TextView timerSecondesShowbtn;
     private boolean isOrignal=!FeatureOption.MTK_DESKCLOCK_NEW_UI;
-    private ListView timer_listview_prize;
-    private TimerListAdapterPrize  timerPrizeAdapter=null;
-    private ArrayList<String> list_prize=null;
-    //private CountingTimerView showTimeViewPrize;
-    private View mTimerViewPrize;
-    private Button timer_pause_btn_prize;
-    private Button timer_start_btn_prize;
-    private Button timer_restart_btn_prize;
+    private ListView timer_listview_fengyun;
+    private TimerListAdapterfengyun  timerfengyunAdapter=null;
+    private ArrayList<String> list_fengyun=null;
+    //private CountingTimerView showTimeViewfengyun;
+    private View mTimerViewfengyun;
+    private Button timer_pause_btn_fengyun;
+    private Button timer_start_btn_fengyun;
+    private Button timer_restart_btn_fengyun;
     private LinearLayout control_area;
-    private Button timer_cancel_btn_prize;
-    private Button timer_cancel_btn_prize_2;
-    private TimerClockPrizeView timerclockprize=null;
+    private Button timer_cancel_btn_fengyun;
+    private Button timer_cancel_btn_fengyun_2;
+    private TimerClockfengyunView timerclockfengyun=null;
     private static long selfdefinetime=0;
     private static long seifSeconds=0;
     private  static int TIMERMODE=0;
     private final static int HOURMODE=0;
     private final static int MINUTEMODE=1;
     private final static int SENCONDSMODE=2;
-    /*PRIZE--newly added button-zhuxiaoli-2015-4-17-end*/
+    /*fengyun--newly added button-zhuxiaoli-2015-4-17-end*/
    
     //current page setting timerobject
     private static TimerObj currentTimerObjec=null;
@@ -185,14 +185,14 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
     private static final String KEY_SELECTED_ALARM = "selectedAlarm";
 
     private static final String KEY_DEFAULT_RINGTONE = "default_timerringtone";
-    /* PRIZE-1744 Clock: After successfully setting the timer ring tone, re-enter the ring setting screen, the cursor is still positioned in the default ringtone "Listening fragrance" on-fuqiang-2015-6-16-start */
+    /* fengyun-1744 Clock: After successfully setting the timer ring tone, re-enter the ring setting screen, the cursor is still positioned in the default ringtone "Listening fragrance" on-fuqiang-2015-6-16-start */
     private static final String KEY_DEFAULT_RINGTONE_STR = "default_timerringtone_str";
-    /* PRIZE-1744 Clock: After successfully setting the timer ring tone, re-enter the ring setting screen, the cursor is still positioned in the default ringtone "Listening fragrance" on-fuqiang-2015-6-16-end */
+    /* fengyun-1744 Clock: After successfully setting the timer ring tone, re-enter the ring setting screen, the cursor is still positioned in the default ringtone "Listening fragrance" on-fuqiang-2015-6-16-end */
     private TextView showChoiceRing;
     
     private LinearLayout showtimView;
     
-    //prize-public-bug:22688 -20160926-pengcancan-start
+    //fengyun-public-bug:22688 -20160926-pengcancan-start
     private int mSetHour = 0;
     private int mSetMinute = 0;
     private int mSetSecond = 0;
@@ -202,7 +202,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
         mSetMinute = 0;
         mSetSecond = 0;
 	}
-    //prize-public-bug:22688 -20160926-pengcancan-end
+    //fengyun-public-bug:22688 -20160926-pengcancan-end
  
   //  private Bundle ringbundle=null;
     public TimerFragment(){
@@ -280,28 +280,28 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
     };
     
     
-    /*PRIZE-Set the timer timer countdown thread-zhuxiaoli-2015-4-17-start*/
-    private final Runnable mPrizeClockTick = new Runnable(){
+    /*fengyun-Set the timer timer countdown thread-zhuxiaoli-2015-4-17-start*/
+    private final Runnable mfengyunClockTick = new Runnable(){
     	public void run() {			
            if(currentTimerObjec!=null){
         	   if (currentTimerObjec.mState == TimerObj.STATE_RUNNING || currentTimerObjec.mState == TimerObj.STATE_TIMESUP) {
                	 final long timeLeft = currentTimerObjec.updateTimeLeft(true);
                	 updateTimeTextView(timeLeft);    
-               	 timerclockprize.startBitCarton(); 
-               	 timerclockprize.setTime(timeLeft);              	 
+               	 timerclockfengyun.startBitCarton();
+               	 timerclockfengyun.setTime(timeLeft);
         	   }
 	            	
 	           if(currentTimerObjec.mTimeLeft < 0 && currentTimerObjec.mState != TimerObj.STATE_DONE
 	                         && currentTimerObjec.mState != TimerObj.STATE_RESTART) {
-		            timerclockprize.stopBitCarton();
+		            timerclockfengyun.stopBitCarton();
 		            updateTimeTextView(0);       
 	           }
 	            
-	           mTimerViewPrize.postDelayed(mPrizeClockTick, 30);            
+	           mTimerViewfengyun.postDelayed(mfengyunClockTick, 30);
            }				
     	}	
     };
-    /*PRIZE-Set the timer timer countdown thread-zhuxiaoli-2015-4-17-end*/
+    /*fengyun-Set the timer timer countdown thread-zhuxiaoli-2015-4-17-end*/
     
 
     @Override
@@ -309,13 +309,13 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
         super.onCreate(savedInstanceState);
         mViewState = savedInstanceState;
               
-        /*PRIZE-Registered broadcast receiver when the timer changes state when the received broadcast. () Registered in onCreate, logout () in onDestroy - Li Xing-2015-4-13-start*/
+        /*fengyun-Registered broadcast receiver when the timer changes state when the received broadcast. () Registered in onCreate, logout () in onDestroy - Li Xing-2015-4-13-start*/
         if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
 	        IntentFilter filter = new IntentFilter();
-	        filter.addAction(TimerReceiver.TIME_IS_UP_PRIZE);
+	        filter.addAction(TimerReceiver.TIME_IS_UP_fengyun);
 	        getActivity().registerReceiver(timerupReceiver, filter);
         }
-        /*PRIZE-Registered broadcast receiver when the timer changes state when the received broadcast. () Registered in onCreate, logout () in onDestroy - Li Xing-2015-4-13-end*/
+        /*fengyun-Registered broadcast receiver when the timer changes state when the received broadcast. () Registered in onCreate, logout () in onDestroy - Li Xing-2015-4-13-end*/
         
     }
 
@@ -355,20 +355,20 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
     	        mDeleteTransition.setInterpolator(new AccelerateDecelerateInterpolator());
     	        return view;
     	}else{
-	    	/*PRIZE-Interface initialization-zhuxiaoli-2015-4-17-start*/
-	    	final View 	Prizeview = inflater.inflate(R.layout.timer_fragment_prize, container, false);
-	    	timer_listview_prize=(ListView)Prizeview.findViewById(R.id.timer_list_prize);
+	    	/*fengyun-Interface initialization-zhuxiaoli-2015-4-17-start*/
+	    	final View 	fengyunview = inflater.inflate(R.layout.timer_fragment_fengyun, container, false);
+	    	timer_listview_fengyun=(ListView)fengyunview.findViewById(R.id.timer_list_fengyun);
 	    	
-	    	timer_start_btn_prize = (Button)Prizeview.findViewById(R.id.timer_start_btn);
-	    	timer_restart_btn_prize = (Button)Prizeview.findViewById(R.id.timer_restart_btn);
-	    	timer_pause_btn_prize=(Button)Prizeview.findViewById(R.id.timer_pause_btn);
-	    	timer_cancel_btn_prize=(Button)Prizeview.findViewById(R.id.timer_cancle_btn);
-	    	timer_cancel_btn_prize_2 = (Button)Prizeview.findViewById(R.id.timer_cancle_btn_2);
-	    	ringChoiceLayout=(RelativeLayout)Prizeview.findViewById(R.id.ring_choice_layout);
-	    	showChoiceRing=(TextView)Prizeview.findViewById(R.id.timer_clockring_name);
+	    	timer_start_btn_fengyun = (Button)fengyunview.findViewById(R.id.timer_start_btn);
+	    	timer_restart_btn_fengyun = (Button)fengyunview.findViewById(R.id.timer_restart_btn);
+	    	timer_pause_btn_fengyun=(Button)fengyunview.findViewById(R.id.timer_pause_btn);
+	    	timer_cancel_btn_fengyun=(Button)fengyunview.findViewById(R.id.timer_cancle_btn);
+	    	timer_cancel_btn_fengyun_2 = (Button)fengyunview.findViewById(R.id.timer_cancle_btn_2);
+	    	ringChoiceLayout=(RelativeLayout)fengyunview.findViewById(R.id.ring_choice_layout);
+	    	showChoiceRing=(TextView)fengyunview.findViewById(R.id.timer_clockring_name);
 	    	
 	    			
-	    	/* PRIZE-1744 Clock: After successfully setting the timer ring tone, re-enter the ring setting screen, the cursor is still positioned in the default ringtone "Listening fragrance" on-fuqiang-2015-6-16-start */
+	    	/* fengyun-1744 Clock: After successfully setting the timer ring tone, re-enter the ring setting screen, the cursor is still positioned in the default ringtone "Listening fragrance" on-fuqiang-2015-6-16-start */
 //	    	SharedPreferences sharedPreferences = getActivity().getSharedPreferences("timerring", Context.MODE_PRIVATE);
 //    		String strRingtone=sharedPreferences.getString(KEY_DEFAULT_RINGTONE_STR, "");
 //    		if(strRingtone != null && strRingtone != ""){
@@ -381,28 +381,28 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
     		
             
             
-    		/* PRIZE-1744 Clock: After successfully setting the timer ring tone, re-enter the ring setting screen, the cursor is still positioned in the default ringtone "Listening fragrance" on-fuqiang-2015-6-16-end */
+    		/* fengyun-1744 Clock: After successfully setting the timer ring tone, re-enter the ring setting screen, the cursor is still positioned in the default ringtone "Listening fragrance" on-fuqiang-2015-6-16-end */
     		
-	    	control_area = (LinearLayout)Prizeview.findViewById(R.id.control_area);
+	    	control_area = (LinearLayout)fengyunview.findViewById(R.id.control_area);
 	    	
 	    	
-	    	if(list_prize==null){
-	    		list_prize =new ArrayList<String>();
+	    	if(list_fengyun==null){
+	    		list_fengyun =new ArrayList<String>();
 	    	}
 	    	
 	    	String[] timerdefult=getActivity().getResources().getStringArray(R.array.timer_defult);
 	    	for(int i=0;i<timerdefult.length;i++){
-	    		list_prize.add(timerdefult[i]);
+	    		list_fengyun.add(timerdefult[i]);
 	    	}
-	    	timerPrizeAdapter=new TimerListAdapterPrize(getActivity(),list_prize);
-	    	timer_listview_prize.setAdapter(timerPrizeAdapter);
+	    	timerfengyunAdapter=new TimerListAdapterfengyun(getActivity(),list_fengyun);
+	    	timer_listview_fengyun.setAdapter(timerfengyunAdapter);
 	    	
 	    	initControlButton();
 	    	
-	        return Prizeview;
+	        return fengyunview;
     	}
     		
-    	/*PRIZE-Interface initialization-zhuxiaoli-2015-4-17-end*/
+    	/*fengyun-Interface initialization-zhuxiaoli-2015-4-17-end*/
         
     }									
    
@@ -413,7 +413,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
      * @Get your fingers take time zoned
      * @author lixing
      */
-    TimerPrizeCallBack timerprizecallback = new TimerPrizeCallBack() {
+    TimerfengyunCallBack timerfengyuncallback = new TimerfengyunCallBack() {
 
 		@Override
 		public void setDegree(float degree) {
@@ -469,10 +469,10 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
         mNotificationManager = (NotificationManager) context.getSystemService(Context
                 .NOTIFICATION_SERVICE);
         
-        timerclockprize=(TimerClockPrizeView)getActivity().findViewById(R.id.thisclock);
+        timerclockfengyun=(TimerClockfengyunView)getActivity().findViewById(R.id.thisclock);
 
 		showtimView=(LinearLayout)getActivity().findViewById(R.id.timer_time_show);
-		mTimerViewPrize=getActivity().findViewById(R.id.clock_prize_area);
+		mTimerViewfengyun=getActivity().findViewById(R.id.clock_fengyun_area);
 		timerHourShowbtn=(TextView)getActivity().findViewById(R.id.timer_hour_show);
     	timerMinuteShowbtn=(TextView)getActivity().findViewById(R.id.timer_minute_show);
     	timerSecondesShowbtn=(TextView)getActivity().findViewById(R.id.timer_secondes_show);
@@ -549,7 +549,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
             }
         }, 500);
 	}else{
-		/*PRIZE-Macro switch setting, turn off the native code - Li Xing-2015-4-16-start*/
+		/*fengyun-Macro switch setting, turn off the native code - Li Xing-2015-4-16-start*/
 		if(!FeatureOption.MTK_DESKCLOCK_NEW_UI){
 			mFab.setEnabled(false);
 			mFab.setVisibility(View.GONE);
@@ -562,16 +562,16 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
 			mRightButton.setVisibility(View.GONE);
 			mRightButton.setFocusable(false);
 		}
-		/*PRIZE-Macro switch setting, turn off the native code - Li Xing-2015-4-16-end*/   	
-		timer_listview_prize.setEnabled(true);
-    	timer_listview_prize.setFocusableInTouchMode(true);
-    	timer_listview_prize.setFocusable(true);
+		/*fengyun-Macro switch setting, turn off the native code - Li Xing-2015-4-16-end*/
+		timer_listview_fengyun.setEnabled(true);
+    	timer_listview_fengyun.setFocusableInTouchMode(true);
+    	timer_listview_fengyun.setFocusable(true);
     	
     	
     	getTimerState();
     	
     	
-    	getRingtoneStrFromSPAndShow(); /*prize--On onResume () used to refresh the name ringtones--lixing*/
+    	getRingtoneStrFromSPAndShow(); /*fengyun--On onResume () used to refresh the name ringtones--lixing*/
     	
     }
 
@@ -604,41 +604,41 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
     private void initControlButton() {
 		// TODO Auto-generated method stub   
     	
-    	timer_start_btn_prize.setOnClickListener(new View.OnClickListener() {
+    	timer_start_btn_fengyun.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
-				doPrizeStart();
+				dofengyunStart();
 				updateControlButton();						
-				resetTime();//prize-public-bug:22688 -20160926-pengcancan
+				resetTime();//fengyun-public-bug:22688 -20160926-pengcancan
 			}
 		});
     	
     	
-    	timer_restart_btn_prize.setOnClickListener(new View.OnClickListener() {
+    	timer_restart_btn_fengyun.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
-				doPrizeReStart();
+				dofengyunReStart();
 				updateControlButton();
 			}
 		});
     	    	    	
     	//pause  timer count
-    	timer_pause_btn_prize.setOnClickListener(new OnClickListener() {
+    	timer_pause_btn_fengyun.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-				doPrizePause();
+				dofengyunPause();
 				updateControlButton();
 			}
 		});
     	
 
-    	timer_cancel_btn_prize.setOnClickListener(new OnClickListener() {
+    	timer_cancel_btn_fengyun.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {	
-				doPrizeCancel();
+				dofengyunCancel();
 				updateControlButton();
 			}
 		});
     	
-    	timer_cancel_btn_prize_2.setOnClickListener(new View.OnClickListener() {
+    	timer_cancel_btn_fengyun_2.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
-				doPrizeCancel();
+				dofengyunCancel();
 				updateControlButton();
 			}
 		});
@@ -672,7 +672,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
    
     
     
-    private void doPrizeStart(){
+    private void dofengyunStart(){
     	
     	long mtime= getTimeFromTimeTextView();	
 		if(mtime != 0){			
@@ -680,39 +680,39 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
               timerObj.mState = TimerObj.STATE_RUNNING;
               currentTimerObjec=timerObj;
               updateTimerState(currentTimerObjec, Timers.START_TIMER);
-              startClockTicksPrize();
+              startClockTicksfengyun();
 		} 
     }
     
     
     
     
-    private void doPrizeReStart(){
+    private void dofengyunReStart(){
     	currentTimerObjec.mState = TimerObj.STATE_RUNNING;
     	currentTimerObjec.mStartTime = Utils.getTimeNow() - (currentTimerObjec.mOriginalLength - currentTimerObjec.mTimeLeft);
         updateTimerState(currentTimerObjec, Timers.START_TIMER);
-        startClockTicksPrize();
+        startClockTicksfengyun();
     }
     
     
     
     
-    private void doPrizeCancel(){
+    private void dofengyunCancel(){
     	if (currentTimerObjec.mState == TimerObj.STATE_TIMESUP) {
             cancelTimerNotification(currentTimerObjec.mTimerId);
         }
 
     	currentTimerObjec.mState = TimerObj.STATE_DELETED;
         updateTimerState(currentTimerObjec, Timers.DELETE_TIMER);
-	    stopClockTicksPrize();
-		timerclockprize.CleanTime();
+	    stopClockTicksfengyun();
+		timerclockfengyun.CleanTime();
 		updateTimeTextView(0);
     }
     
-    private void doPrizePause(){    	
+    private void dofengyunPause(){
 //		long timeleft = currentTimerObjec.updateTimeLeft(true);
 //		updateTimeTextView(timeleft);
-    	pauseClockTicksPrize();
+    	pauseClockTicksfengyun();
 		currentTimerObjec.mState = TimerObj.STATE_STOPPED;
         updateTimerState(currentTimerObjec, Timers.TIMER_STOP);       
        
@@ -731,9 +731,9 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
     private void updateTimeTextView(long time){
     	if(time < 0)
     		time = 0;
-    	timerSecondesShowbtn.setText(PrizeUtil.getTimerSecondString(time));
-		timerMinuteShowbtn.setText(PrizeUtil.getTimerMinuteString(time));
-		timerHourShowbtn.setText(PrizeUtil.getTimerHourString(time));
+    	timerSecondesShowbtn.setText(fengyunUtil.getTimerSecondString(time));
+		timerMinuteShowbtn.setText(fengyunUtil.getTimerMinuteString(time));
+		timerHourShowbtn.setText(fengyunUtil.getTimerHourString(time));
     }
     
    
@@ -758,7 +758,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
     		control_area.getChildAt(1).setVisibility(View.VISIBLE);
     		control_area.getChildAt(2).setVisibility(View.GONE);
     		
-    		timer_listview_prize.setEnabled(false);
+    		timer_listview_fengyun.setEnabled(false);
     		
     		break;
     	case TimerObj.STATE_STOPPED:
@@ -767,7 +767,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
     		control_area.getChildAt(1).setVisibility(View.GONE);
     		control_area.getChildAt(2).setVisibility(View.VISIBLE);
     		
-    		timer_listview_prize.setEnabled(false);
+    		timer_listview_fengyun.setEnabled(false);
     		
     		break;
     	case TimerObj.STATE_DELETED:
@@ -777,7 +777,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
 			control_area.getChildAt(1).setVisibility(View.GONE);
 			control_area.getChildAt(2).setVisibility(View.GONE);
 			
-			timer_listview_prize.setEnabled(true);			
+			timer_listview_fengyun.setEnabled(true);
 			break;
    		
     		default:    			
@@ -821,10 +821,10 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
 		int timerId = TIMER_ERROR_ID;
 		long time_left_from_text = getTimeFromTimeTextView();
 		if(currentTimerObjec != null){
-			int state = currentTimerObjec.mState;	/*prize-First save the state, calling doPrizePause ()-lixing*/
+			int state = currentTimerObjec.mState;	/*fengyun-First save the state, calling dofengyunPause ()-lixing*/
 			
 			if(state == TimerObj.STATE_RUNNING){
-				stopClockTicksPrize();
+				stopClockTicksfengyun();
 				time_left_from_text = 0;
 			}
 			
@@ -867,24 +867,24 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
 			case TimerObj.STATE_TIMESUP:				
 				updateTimeTextView(left_time * 1000);
 				changeSecondButtonStatu();
-				if(timerclockprize != null){
-					timerclockprize.setTime(left_time * 1000);
-					timerclockprize.startBitCarton();
-					timerclockprize.stopBitCarton();
+				if(timerclockfengyun != null){
+					timerclockfengyun.setTime(left_time * 1000);
+					timerclockfengyun.startBitCarton();
+					timerclockfengyun.stopBitCarton();
 				}
 				break;
 			case TimerObj.STATE_STOPPED:				
 				long timeleft = currentTimerObjec.mTimeLeft;
 		        updateTimeTextView(timeleft);
 		        changeSecondButtonStatu();
-				if(timerclockprize != null){
-					timerclockprize.setTime(timeleft);
-					timerclockprize.startBitCarton();
-					timerclockprize.stopBitCarton();
+				if(timerclockfengyun != null){
+					timerclockfengyun.setTime(timeleft);
+					timerclockfengyun.startBitCarton();
+					timerclockfengyun.stopBitCarton();
 				}
 				break;
 			case TimerObj.STATE_RUNNING:
-				startClockTicksPrize();
+				startClockTicksfengyun();
 				long time_left = currentTimerObjec.updateTimeLeft(true);
 				updateTimeTextView(time_left);
 				break;
@@ -923,7 +923,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
         super.onDestroyView();
         mViewState = null;
        
-        /*prize-Logout broadcast receiver-lixing-2015-5-25*/
+        /*fengyun-Logout broadcast receiver-lixing-2015-5-25*/
         getActivity().unregisterReceiver(timerupReceiver);
         
     }
@@ -934,15 +934,15 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
             mAdapter.notifyDataSetChanged();
         }
     }
-	/*PRIZE-Click the timer list already exists in response to the operation of the item-zhuxiaoli-2015-4-17-start*/
+	/*fengyun-Click the timer list already exists in response to the operation of the item-zhuxiaoli-2015-4-17-start*/
     private void initeListClickEvent (){
     	
-    	timer_listview_prize.setOnItemClickListener(new OnItemClickListener() {
+    	timer_listview_fengyun.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long itemid) {
 				// TODO Auto-generated method stub
-				String selfdefine=getActivity().getResources().getString(R.string.self_define_prize);
-				if(list_prize.get(position).equals(selfdefine)){
+				String selfdefine=getActivity().getResources().getString(R.string.self_define_fengyun);
+				if(list_fengyun.get(position).equals(selfdefine)){
 					return;
 				}
 
@@ -954,26 +954,26 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
 				}else if(position==2){
 					timerLength=60;
 				}
-				//prize-add-sync listview item time with timer-pengcancan-20161115-start
+				//fengyun-add-sync listview item time with timer-pengcancan-20161115-start
 				mSetHour = 0;
 				mSetMinute = timerLength / 60;
 				mSetSecond = 0;
 				updateTimeTextView(timerLength * 1000);
 				timerMinuteShowbtn.performClick();
-				//prize-add-sync listview item time with timer-pengcancan-20161115-end
+				//fengyun-add-sync listview item time with timer-pengcancan-20161115-end
 			}
 			
 		});	
     }
     
-    /*PRIZE- click on the OK button to save the selected ringtone, click the Cancel button to refresh the saved ringtones, ringtones are saved to prevent deleted--lixing2015-6-26-start*/
+    /*fengyun- click on the OK button to save the selected ringtone, click the Cancel button to refresh the saved ringtones, ringtones are saved to prevent deleted--lixing2015-6-26-start*/
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {    	
       if (resultCode == Activity.RESULT_OK) {
             switch (requestCode) {           
                 case REQUEST_CODE_RINGTONE:
                 
-                    saveRingtoneUriPrize(data);
+                    saveRingtoneUrifengyun(data);
                 	
                     break;
                 default:
@@ -984,15 +984,15 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
             getRingtoneStrFromSPAndShow();
         }
     }
-    /*PRIZE- click on the OK button to save the selected ringtone, click the Cancel button to refresh the saved ringtones, ringtones are saved to prevent deleted--lixing2015-6-26-end*/
+    /*fengyun- click on the OK button to save the selected ringtone, click the Cancel button to refresh the saved ringtones, ringtones are saved to prevent deleted--lixing2015-6-26-end*/
     
     
     private static final String TAG = "TimerFragment" ;
-    /*PRIZE-Ringtones save timer operation-zhuxiaoli-2015-4-17-start*/
-    private void saveRingtoneUriPrize(Intent intent) {
+    /*fengyun-Ringtones save timer operation-zhuxiaoli-2015-4-17-start*/
+    private void saveRingtoneUrifengyun(Intent intent) {
         Uri uri = intent.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
        
-        if(uri == null){ /*prize--Ringtone set to "None" when acquired url is null, uri.toString () to ""--lixing*/
+        if(uri == null){ /*fengyun--Ringtone set to "None" when acquired url is null, uri.toString () to ""--lixing*/
         	uri = Alarm.NO_RINGTONE_URI;
         	Log.d(TAG," uri is null uri.toString is:" + uri.toString());
         }else {
@@ -1001,7 +1001,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
         
         setDefaultRingtone(uri.toString());
         
-        final String ringtone = PrizeUtil.getRingtongToStringFromUri(uri,getActivity());   
+        final String ringtone = fengyunUtil.getRingtongToStringFromUri(uri,getActivity());
         showChoiceRing.setText(ringtone);
         
     }	
@@ -1010,37 +1010,37 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
    
   
     
-    /*PRIZE-timer counting started, open thread starts counting-zhuxiaoli-2015-4-17-start*/
-    private void startClockTicksPrize(){
+    /*fengyun-timer counting started, open thread starts counting-zhuxiaoli-2015-4-17-start*/
+    private void startClockTicksfengyun(){
     	mTicking = true;
-    	timerclockprize.startBitCarton();
-    	mTimerViewPrize.post(mPrizeClockTick);
+    	timerclockfengyun.startBitCarton();
+    	mTimerViewfengyun.post(mfengyunClockTick);
     	currentTimerObjec.updateTimeLeft(true);
     	updateTimerState(currentTimerObjec, Timers.START_TIMER);
         changeSecondButtonStatu();
     }
-    /*PRIZE-timer counting started, open thread starts counting-zhuxiaoli-2015-4-17-end*/
+    /*fengyun-timer counting started, open thread starts counting-zhuxiaoli-2015-4-17-end*/
     
     
-    /*PRIZE-timer timing operation canceled-zhuxiaoli-2015-4-17-start*/
-    private void stopClockTicksPrize(){
+    /*fengyun-timer timing operation canceled-zhuxiaoli-2015-4-17-start*/
+    private void stopClockTicksfengyun(){
     	if (mTicking) {
-    		timerclockprize.stopBitCarton();
-    		mTimerViewPrize.removeCallbacks(mPrizeClockTick);
+    		timerclockfengyun.stopBitCarton();
+    		mTimerViewfengyun.removeCallbacks(mfengyunClockTick);
             mTicking = false;
         }
     }
-    /*PRIZE-timer timing operation canceled-zhuxiaoli-2015-4-17-start*/
+    /*fengyun-timer timing operation canceled-zhuxiaoli-2015-4-17-start*/
     
-    /*PRIZE-timer timing operation canceled-pengcancan-20160926-start*/
-    private void pauseClockTicksPrize(){
+    /*fengyun-timer timing operation canceled-pengcancan-20160926-start*/
+    private void pauseClockTicksfengyun(){
     	if (mTicking) {
-    		timerclockprize.pauseBitCarton();
-    		mTimerViewPrize.removeCallbacks(mPrizeClockTick);
+    		timerclockfengyun.pauseBitCarton();
+    		mTimerViewfengyun.removeCallbacks(mfengyunClockTick);
             mTicking = false;
         }
     }
-    /*PRIZE-timer timing operation canceled-pengcancan-20160926-start*/
+    /*fengyun-timer timing operation canceled-pengcancan-20160926-start*/
     
     // Starts the ticks that animate the timers.
     private void startClockTicks() {
@@ -1073,7 +1073,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
     		 if (Timers.DELETE_TIMER.equals(action)){
     			 t.deleteFromSharedPref(mPrefs);
     		 }if(Timers.TIMES_UP.equals(action)){
-    				 stopClockTicksPrize();
+    				 stopClockTicksfengyun();
     		 }else{
     			 t.writeToSharedPref(mPrefs); 
     		 }
@@ -1546,19 +1546,19 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
         mNotificationManager.cancel(timerId);
     }
     /**
-     * Method Description: Save the time to timerclockprize Time TextView display, the unit is in seconds
+     * Method Description: Save the time to timerclockfengyun Time TextView display, the unit is in seconds
      * @author lixing
      * @param void
      * @return void
      */
-	private void setTimeToTimerClockPrizeView(){
-		if(timerclockprize == null || timerHourShowbtn== null || timerMinuteShowbtn==null || timerSecondesShowbtn == null)
+	private void setTimeToTimerClockfengyunView(){
+		if(timerclockfengyun == null || timerHourShowbtn== null || timerMinuteShowbtn==null || timerSecondesShowbtn == null)
 			return;
 		long hour = Long.parseLong(timerHourShowbtn.getText().toString());
 		long minute = Long.parseLong(timerMinuteShowbtn.getText().toString());
 		long second = Long.parseLong(timerSecondesShowbtn.getText().toString());
 		
-      	timerclockprize.setTime((hour*3600 + minute*60 + second)*1000);
+      	timerclockfengyun.setTime((hour*3600 + minute*60 + second)*1000);
       	
       	
 	}
@@ -1584,22 +1584,22 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
 	@SuppressLint("ResourceAsColor")
 	private void initBtn(){
 
-    	timerclockprize.setCallBack(timerprizecallback);
+    	timerclockfengyun.setCallBack(timerfengyuncallback);
     	
 		
 		updateTimeTextView(0);
 
-    	/*prize-It was selected for the second initialization -lixing-2015-5-16*/
+    	/*fengyun-It was selected for the second initialization -lixing-2015-5-16*/
 		changeSecondButtonStatu();
-		/*prize-It was selected for the second initialization -lixing-2015-5-16*/
+		/*fengyun-It was selected for the second initialization -lixing-2015-5-16*/
 		
 		
     timerHourShowbtn.setOnClickListener(new OnClickListener() {			
 			@Override
 		public void onClick(View arg0) {
-				if (!timerclockprize.getCountState()) {
+				if (!timerclockfengyun.getCountState()) {
 					changeHourButtonStatu();
-					timerclockprize.updateTimer(mSetHour);
+					timerclockfengyun.updateTimer(mSetHour);
 				}
 			}
 		});
@@ -1607,9 +1607,9 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
     	timerMinuteShowbtn.setOnClickListener(new OnClickListener() {			
 			@Override
 			public void onClick(View arg0) {
-				if (!timerclockprize.getCountState()) {
+				if (!timerclockfengyun.getCountState()) {
 					changeMinuteButtonStatu();
-					timerclockprize.updateTimer(mSetMinute);
+					timerclockfengyun.updateTimer(mSetMinute);
 				}
 			}
 		});
@@ -1617,9 +1617,9 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
     	timerSecondesShowbtn.setOnClickListener(new OnClickListener() {			
 			@Override
 			public void onClick(View arg0) {
-				if (!timerclockprize.getCountState()) {
+				if (!timerclockfengyun.getCountState()) {
 					changeSecondButtonStatu();
-					timerclockprize.updateTimer(mSetSecond);
+					timerclockfengyun.updateTimer(mSetSecond);
 				}
 			}
 		});
@@ -1677,7 +1677,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
 	    	String RingtoneUriStr = TimerFragment.getDefaultRingtoneUriStr(getActivity());
 			Uri mRingtoneUri = null;
 			
-			if(RingtoneUriStr.equals("")){ /*prize-Set a ringtone for the "no" when uri.toString () to ""--lixing*/
+			if(RingtoneUriStr.equals("")){ /*fengyun-Set a ringtone for the "no" when uri.toString () to ""--lixing*/
 				mRingtoneUri = Alarm.NO_RINGTONE_URI;
 			}else{   		
 	    		if (AlarmClockFragment.isRingtoneExisted(getActivity(), RingtoneUriStr)) {
@@ -1692,7 +1692,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
 	            }
 			}	
 	                    
-	        String mRingtongStr = PrizeUtil.getRingtongToStringFromUri(mRingtoneUri, getActivity());
+	        String mRingtongStr = fengyunUtil.getRingtongToStringFromUri(mRingtoneUri, getActivity());
 	        showChoiceRing.setText(mRingtongStr);
 	}
 	
@@ -1707,7 +1707,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
 //            LogUtils.e("setDefaultRingtone fail");
 //            return;
 //        }
-    	/*prize--default Ringtone to "" indicates when the selected ringtone is "not normal logic, non-normal logic is null--lixing*/
+    	/*fengyun--default Ringtone to "" indicates when the selected ringtone is "not normal logic, non-normal logic is null--lixing*/
     	if(defaultRingtone == null)	
     		return;
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
@@ -1744,7 +1744,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
 	 */
 	public static String getDefaultRingtoneUriStr(Context mContext){
 		 SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
-		 /*prize-The default value can not be obtained as "" because "" indicates the ringtone is "no." This string is used here to indicate when the alarm clock ringing and when the cache is first used to obtain the same default ringtone--lixing*/
+		 /*fengyun-The default value can not be obtained as "" because "" indicates the ringtone is "no." This string is used here to indicate when the alarm clock ringing and when the cache is first used to obtain the same default ringtone--lixing*/
 	     String defaultRingtone = prefs.getString(KEY_DEFAULT_RINGTONE_STR, AlarmClockFragment.SYSTEM_SETTINGS_ALARM_ALERT);
 	     LogUtils.v("Get default ringtone from preference " + defaultRingtone);
 	     return defaultRingtone;

@@ -19,7 +19,7 @@
  * limitations under the License.
  * 
  */
-/*PRIZE-Setting Macro switch - Li Xing-2015-4-6-start*/
+/*fengyun-Setting Macro switch - Li Xing-2015-4-6-start*/
 
 
 
@@ -92,9 +92,9 @@ import android.view.MenuInflater;
 import android.widget.PopupMenu;
 import com.android.deskclock.alarms.AlarmStateManager;
 import com.android.deskclock.events.Events;
-import com.android.deskclock.prize.FragmentOnBackClickInterface;
-import com.android.deskclock.prize.OnListExpandListener;
-import com.android.deskclock.prize.widget.NonSwipeableViewPager;
+import com.android.deskclock.fengyun.FragmentOnBackClickInterface;
+import com.android.deskclock.fengyun.OnListExpandListener;
+import com.android.deskclock.fengyun.widget.NonSwipeableViewPager;
 import com.android.deskclock.provider.Alarm;
 import com.android.deskclock.stopwatch.StopwatchFragment;
 import com.android.deskclock.stopwatch.StopwatchService;
@@ -158,14 +158,14 @@ public class DeskClock extends Activity
     //cancel viewpager edge effect --pengcancan-20160324
     private EdgeEffectCompat leftEdge;
     private EdgeEffectCompat rightEdge;
-    private PrizeTabAdapter mPrizeTabsAdapter;
+    private fengyunTabAdapter mfengyunTabsAdapter;
     private Handler mHander;
     private ImageButton mFab;
     private ImageButton mLeftButton;
     private ImageButton mRightButton;
-	/*PRIZE-Add background contains icons for each object variable LinearLayout - Li Xing-2015-4-8-start*/
+	/*fengyun-Add background contains icons for each object variable LinearLayout - Li Xing-2015-4-8-start*/
     private LinearLayout allclockslinear;
-    /*PRIZE-Add background contains icons for each object variable LinearLayout - Li Xing-2015-4-8-end*/
+    /*fengyun-Add background contains icons for each object variable LinearLayout - Li Xing-2015-4-8-end*/
     private TabsAdapter mTabsAdapter;
     private LinearLayout title_container;
     private int mSelectedTab;
@@ -180,10 +180,10 @@ public class DeskClock extends Activity
     private boolean mActivityResumed;
     public static final int ALARM_TAB_INDEX = 0;
     public static final int CLOCK_TAB_INDEX = 1;
-    /*PRIZE-Tab order changes according to the needs of UI - Li Xing-2015-4-9-start*/
+    /*fengyun-Tab order changes according to the needs of UI - Li Xing-2015-4-9-start*/
     public static final int TIMER_TAB_INDEX = FeatureOption.MTK_DESKCLOCK_NEW_UI?3:2;
     public static final int STOPWATCH_TAB_INDEX = FeatureOption.MTK_DESKCLOCK_NEW_UI?2:3;
-    /*PRIZE-Tab order changes according to the needs of UI - Li Xing-2015-4-9-end*/
+    /*fengyun-Tab order changes according to the needs of UI - Li Xing-2015-4-9-end*/
     
     // Tabs indices are switched for right-to-left since there is no
     // native support for RTL in the ViewPager.
@@ -328,13 +328,13 @@ public class DeskClock extends Activity
      * @param selectedIndex
      * 2015-7-14
      */
-    private void prizeCreateTabs(int selectedIndex){
-    	mPrizeTabsAdapter.addPager( AlarmClockFragment.class, ALARM_TAB_INDEX);
-    	mPrizeTabsAdapter.addPager( ClockFragment.class, CLOCK_TAB_INDEX);
-    	mPrizeTabsAdapter.addPager( StopwatchFragment.class, STOPWATCH_TAB_INDEX);
-    	mPrizeTabsAdapter.addPager( TimerFragment.class, TIMER_TAB_INDEX);
+    private void fengyunCreateTabs(int selectedIndex){
+    	mfengyunTabsAdapter.addPager( AlarmClockFragment.class, ALARM_TAB_INDEX);
+    	mfengyunTabsAdapter.addPager( ClockFragment.class, CLOCK_TAB_INDEX);
+    	mfengyunTabsAdapter.addPager( StopwatchFragment.class, STOPWATCH_TAB_INDEX);
+    	mfengyunTabsAdapter.addPager( TimerFragment.class, TIMER_TAB_INDEX);
     	
-    	mPrizeTabsAdapter.notifySelectedPage(selectedIndex);
+    	mfengyunTabsAdapter.notifySelectedPage(selectedIndex);
     }
     private void createTabs(int selectedIndex) {
         mActionBar = getActionBar();
@@ -356,7 +356,7 @@ public class DeskClock extends Activity
             clockTab.setContentDescription(R.string.menu_clock);
             mTabsAdapter.addTab(clockTab, ClockFragment.class, CLOCK_TAB_INDEX);
 
-            /*PRIZE-Tab order changes according to the needs of UI - Li Xing-2015-4-9-start*/
+            /*fengyun-Tab order changes according to the needs of UI - Li Xing-2015-4-9-start*/
             if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
             	final Tab stopwatchTab = mActionBar.newTab();
                 stopwatchTab.setIcon(R.drawable.ic_tab_stopwatch);
@@ -380,7 +380,7 @@ public class DeskClock extends Activity
                 stopwatchTab.setContentDescription(R.string.menu_stopwatch);
                 mTabsAdapter.addTab(stopwatchTab, StopwatchFragment.class, STOPWATCH_TAB_INDEX);
             }
-            /*PRIZE-Tab order changes according to the needs of UI - Li Xing-2015-4-9-end*/
+            /*fengyun-Tab order changes according to the needs of UI - Li Xing-2015-4-9-end*/
             
             mActionBar.setSelectedNavigationItem(selectedIndex);
             mTabsAdapter.notifySelectedPage(selectedIndex);
@@ -395,7 +395,7 @@ public class DeskClock extends Activity
         getWindow().setBackgroundDrawable(null);
         
         mIsFirstLaunch = true;
-        /*PRIZE-First, change the display according to UI needs Tab- Li Xing-2015-4-9-start*/
+        /*fengyun-First, change the display according to UI needs Tab- Li Xing-2015-4-9-start*/
         if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
         	mSelectedTab = ALARM_TAB_INDEX;
         }else{
@@ -407,7 +407,7 @@ public class DeskClock extends Activity
         	 }else{
         		 mSelectedTab = icicle.getInt(KEY_SELECTED_TAB, CLOCK_TAB_INDEX);
         	 }
-        /*PRIZE-First, change the display according to UI needs Tab- Li Xing-2015-4-9-end*/
+        /*fengyun-First, change the display according to UI needs Tab- Li Xing-2015-4-9-end*/
         	 
         	 
             mLastHourColor = icicle.getInt(KEY_LAST_HOUR_COLOR, UNKNOWN_COLOR_ID);
@@ -785,7 +785,7 @@ public class DeskClock extends Activity
          * @author lixing
          * @param newPage
          */
-        private void prizeNotifyPageChanged(int newPage) {
+        private void fengyunNotifyPageChanged(int newPage) {
         	for (String tag : mFragmentTags) {
                 final FragmentManager fm = getFragmentManager();
                 DeskClockFragment f = (DeskClockFragment) fm.findFragmentByTag(tag);
@@ -793,7 +793,7 @@ public class DeskClock extends Activity
                     f.onPageChanged(newPage);
                 }
             }
-            /*PRIZE-With switching LinearLayout page displays the corresponding clock icon - Li Xing-2015-4-8-start*/
+            /*fengyun-With switching LinearLayout page displays the corresponding clock icon - Li Xing-2015-4-8-start*/
             if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
             	updateClockFrameLayout(newPage);
             	changeTitleTextColor(newPage);
@@ -951,7 +951,7 @@ public class DeskClock extends Activity
      * @author lixing
      *
      */
-    private class PrizeTabAdapter extends FragmentPagerAdapter
+    private class fengyunTabAdapter extends FragmentPagerAdapter
     	implements ViewPager.OnPageChangeListener {
     	
     	private static final String KEY_TAB_POSITION = "tab_position";
@@ -977,7 +977,7 @@ public class DeskClock extends Activity
         // Used for doing callbacks to fragments.
         HashSet<String> mFragmentTags = new HashSet<String>();
 
-        public PrizeTabAdapter(Activity activity, ViewPager pager) {
+        public fengyunTabAdapter(Activity activity, ViewPager pager) {
             super(activity.getFragmentManager());
             mContext = activity;
             mPager = pager;
@@ -1034,7 +1034,7 @@ public class DeskClock extends Activity
         @Override
         public void onPageSelected(int position) {
             /// M: No need do the RTL position translate
-        	prizeNotifyPageChanged(position);
+        	fengyunNotifyPageChanged(position);
         }
 
         
@@ -1045,7 +1045,7 @@ public class DeskClock extends Activity
         
         public void notifySelectedPage(int page) {
 
-            prizeNotifyPageChanged(page);
+            fengyunNotifyPageChanged(page);
         }
         
         /**
@@ -1053,7 +1053,7 @@ public class DeskClock extends Activity
          * @author lixing
          * @param newPage
          */
-        private void prizeNotifyPageChanged(int newPage) {
+        private void fengyunNotifyPageChanged(int newPage) {
         	for (String tag : mFragmentTags) {
                 final FragmentManager fm = getFragmentManager();
                 DeskClockFragment f = (DeskClockFragment) fm.findFragmentByTag(tag);
@@ -1061,7 +1061,7 @@ public class DeskClock extends Activity
                     f.onPageChanged(newPage);
                 }
             }
-            /*PRIZE-With switching LinearLayout page displays the corresponding clock icon - Li Xing-2015-4-8-start*/
+            /*fengyun-With switching LinearLayout page displays the corresponding clock icon - Li Xing-2015-4-8-start*/
             if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
             	updateClockFrameLayout(newPage);
             	changeTitleTextColor(newPage);
@@ -1115,7 +1115,7 @@ public class DeskClock extends Activity
 //    					| View.SYSTEM_UI_FLAG_LAYOUT_STABLE);  
     			window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);  
     			window.setStatusBarColor(color);  
-//    			window.setNavigationBarColor(color);  /*prize-Does not change the bottom navigation bar background color-lixing-2015-7-15*/
+//    			window.setNavigationBarColor(color);  /*fengyun-Does not change the bottom navigation bar background color-lixing-2015-7-15*/
     		}
 
         }
@@ -1268,7 +1268,7 @@ public class DeskClock extends Activity
 			TextView title = (TextView) title_container.getChildAt(i);
 			title.setOnClickListener(new View.OnClickListener() {
 				public void onClick(View arg0) {
-					mPrizeTabsAdapter.prizeNotifyPageChanged(position);
+					mfengyunTabsAdapter.fengyunNotifyPageChanged(position);
 				}
 			});
 		}

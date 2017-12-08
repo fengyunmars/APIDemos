@@ -197,12 +197,12 @@ public class ScreensaverActivity extends Activity {
     }
 
     private void setClockStyle() {
-    	 /*PRIZE-Close entry-2015-5-14-start*/
+    	 /*fengyun-Close entry-2015-5-14-start*/
     	/*
         Utils.setClockStyle(this, mDigitalClock, mAnalogClock,
                 SettingsActivity.KEY_CLOCK_STYLE);
                 */
-        /*PRIZE-Close entry-2015-5-14-start*/
+        /*fengyun-Close entry-2015-5-14-start*/
     	
         mSaverView = findViewById(R.id.main_clock);
         mClockStyle = (mSaverView == mDigitalClock ?

@@ -74,7 +74,7 @@
     
     <View android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/prize_divide_line_default"/>
+        android:background="@color/fengyun_divide_line_default"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -144,7 +144,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/prize_divide_line_default" />
+        android:background="@color/fengyun_divide_line_default" />
 
     <LinearLayout
         android:id="@+id/first_linear"
@@ -167,7 +167,7 @@
                 android:gravity="center"
                 android:text="@string/alarm_repeat"
                 android:textColor="@color/black_3"
-                android:textSize="@dimen/prize_normal"
+                android:textSize="@dimen/fengyun_normal"
                 android:typeface="serif" />
         </LinearLayout>
 
@@ -186,7 +186,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/prize_divide_line_default"
+        android:background="@color/fengyun_divide_line_default"
         android:layout_marginStart="@dimen/bottom_button_margin_left"
         android:layout_marginEnd="@dimen/bottom_button_margin_left"/>
 
@@ -210,7 +210,7 @@
                 android:gravity="center"
                 android:text="@string/alarm_vibrate"
                 android:textColor="@color/black_3"
-                android:textSize="@dimen/prize_normal"
+                android:textSize="@dimen/fengyun_normal"
                 android:typeface="serif" />
         </LinearLayout>
 
@@ -240,7 +240,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/prize_divide_line_default"
+        android:background="@color/fengyun_divide_line_default"
         android:layout_marginStart="@dimen/bottom_button_margin_left"
         android:layout_marginEnd="@dimen/bottom_button_margin_left"/>
 
@@ -264,7 +264,7 @@
                 android:gravity="center"
                 android:text="@string/voice"
                 android:textColor="@color/black_3"
-                android:textSize="@dimen/prize_normal"
+                android:textSize="@dimen/fengyun_normal"
                 android:typeface="serif" />
         </LinearLayout>
 
@@ -284,7 +284,7 @@
                 android:gravity="center|end"
                 android:text="@string/voice"
                 android:textColor="@color/black_9"
-                android:textSize="@dimen/prize_content" />
+                android:textSize="@dimen/fengyun_content" />
 
             <ImageButton
                 android:layout_width="8dp"
@@ -299,7 +299,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/prize_divide_line_default"
+        android:background="@color/fengyun_divide_line_default"
         android:layout_marginStart="@dimen/bottom_button_margin_left"
         android:layout_marginEnd="@dimen/bottom_button_margin_left"/>
 
@@ -323,7 +323,7 @@
                 android:gravity="center"
                 android:text="@string/sleep"
                 android:textColor="@color/black_3"
-                android:textSize="@dimen/prize_normal"
+                android:textSize="@dimen/fengyun_normal"
                 android:typeface="serif" />
         </LinearLayout>
 
@@ -342,14 +342,14 @@
                 android:background="@android:color/transparent"
                 android:gravity="center|end"
                 android:textColor="@color/black_9"
-                android:textSize="@dimen/prize_content" />
+                android:textSize="@dimen/fengyun_content" />
         </LinearLayout>
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/prize_divide_line_default"
+        android:background="@color/fengyun_divide_line_default"
         android:layout_marginStart="@dimen/bottom_button_margin_left"
         android:layout_marginEnd="@dimen/bottom_button_margin_left"/>
 
@@ -373,7 +373,7 @@
                 android:gravity="center"
                 android:text="@string/label"
                 android:textColor="@color/black_3"
-                android:textSize="@dimen/prize_normal"
+                android:textSize="@dimen/fengyun_normal"
                 android:typeface="serif" />
         </LinearLayout>
 
@@ -393,7 +393,7 @@
                 android:gravity="center|end"
                 android:text="@string/default_label"
                 android:textColor="@color/black_9"
-                android:textSize="@dimen/prize_content" />
+                android:textSize="@dimen/fengyun_content" />
 
             <ImageButton
                 android:layout_width="8dp"
@@ -408,7 +408,7 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:background="@color/prize_divide_line_default"
+        android:background="@color/fengyun_divide_line_default"
         android:layout_marginStart="@dimen/bottom_button_margin_left"
         android:layout_marginEnd="@dimen/bottom_button_margin_left"/>
 

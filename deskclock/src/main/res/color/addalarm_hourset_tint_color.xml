@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- PRIZE- 添加闹钟界面，选择时间按钮- lixing-2015-4-16-start -->
+<!-- fengyun- 添加闹钟界面，选择时间按钮- lixing-2015-4-16-start -->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_activated="true" android:color="@android:color/transparent"/>
     <item android:color="@android:color/transparent" />
 </selector>
-<!-- PRIZE- 添加闹钟界面，选择时间按钮- lixing-2015-4-16-end -->
+<!-- fengyun- 添加闹钟界面，选择时间按钮- lixing-2015-4-16-end -->

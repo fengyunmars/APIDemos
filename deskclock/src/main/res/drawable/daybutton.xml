@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- PRIZE- 添加闹钟界面，选择日期按钮- lixing-2015-4-8-start -->
+<!-- fengyun- 添加闹钟界面，选择日期按钮- lixing-2015-4-8-start -->
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
     android:color="@color/clock_white">
     <item>
@@ -14,4 +14,4 @@
             android:gravity="center" />
     </item>
 </ripple>
-<!-- PRIZE- 添加闹钟界面，选择日期按钮- lixing-2015-4-8-end -->
+<!-- fengyun- 添加闹钟界面，选择日期按钮- lixing-2015-4-8-end -->

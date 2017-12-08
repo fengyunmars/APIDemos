@@ -1,5 +1,5 @@
  /*******************************************
- * Copyright © 2015, Shenzhen Prize Technologies Limited
+ * Copyright © 2015, Shenzhen fengyun Technologies Limited
  *
  * Summary: Dialog select the alarm tone volume, this native android interface and platform-dependent, may appear Bug on different platforms ...
  * current version:
@@ -48,11 +48,11 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.SeekBar.OnSeekBarChangeListener;
-//import com.mediatek.audioprofile.AudioProfileManager;// prize-add for meeting mode-pengcancan-20160817
+//import com.mediatek.audioprofile.AudioProfileManager;// fengyun-add for meeting mode-pengcancan-20160817
 /*
  * M: We override the class VolumePreference to do something we want.
  */
-public class PrizeRingerVolumePreference extends DialogPreference implements android.view.View.OnKeyListener {
+public class fengyunRingerVolumePreference extends DialogPreference implements android.view.View.OnKeyListener {
 
     private static final String TAG = "AlarmClock_VolumePrefe";
 
@@ -65,11 +65,11 @@ public class PrizeRingerVolumePreference extends DialogPreference implements and
     private boolean mCancelDialog = false;
     /// M: Recode touch ok or cancel button
     private int mTouchButton = 0;;
-    private String mActiveProfileKey;// prize-add for meeting mode-pengcancan-20160817
-    public PrizeRingerVolumePreference(Context context, AttributeSet attrs) {
+    private String mActiveProfileKey;// fengyun-add for meeting mode-pengcancan-20160817
+    public fengyunRingerVolumePreference(Context context, AttributeSet attrs) {
         super(context, attrs);
 
-        setDialogLayoutResource(R.layout.prize_ringervolume_preference);
+        setDialogLayoutResource(R.layout.fengyun_ringervolume_preference);
         setTitle(R.string.alarm_volume_title);
         
         TypedArray a = context.obtainStyledAttributes(attrs,
@@ -88,17 +88,17 @@ public class PrizeRingerVolumePreference extends DialogPreference implements and
 		 super.onBindDialogView(view);
 
 	     Log.d(TAG, "onBindDialogView");
-	     final SeekBar mPrizeSeekBar = (SeekBar) view.findViewById(R.id.prize_seekbar);
-	     if(mPrizeSeekBar != null){
-	        	Log.d(TAG, "mPrizeSeekBar != null");
+	     final SeekBar mfengyunSeekBar = (SeekBar) view.findViewById(R.id.fengyun_seekbar);
+	     if(mfengyunSeekBar != null){
+	        	Log.d(TAG, "mfengyunSeekBar != null");
 	     }
 	        
 	        
-	     mSeekBarVolumizer = new SeekBarVolumizer(getContext(), mPrizeSeekBar, mStreamType);
+	     mSeekBarVolumizer = new SeekBarVolumizer(getContext(), mfengyunSeekBar, mStreamType);
 
 	    // grab focus and key events so that pressing the volume buttons in the
 	    // dialog doesn't also show the normal volume adjust toast.
-	    view.setOnKeyListener(this); /*prize- this sentence is necessary, this sentence can truncate the physical button click event-lixing-2015-7-21-start*/
+	    view.setOnKeyListener(this); /*fengyun- this sentence is necessary, this sentence can truncate the physical button click event-lixing-2015-7-21-start*/
 	    view.setFocusableInTouchMode(true);
 	    view.requestFocus();
 	 }
@@ -190,7 +190,7 @@ public class PrizeRingerVolumePreference extends DialogPreference implements and
            Dialog dialog = getDialog();
            if (dialog != null && dialog.isShowing()) {
                View view = dialog.getWindow().getDecorView()
-                       .findViewById(R.id.prize_seekbar);
+                       .findViewById(R.id.fengyun_seekbar);
                if (view != null) {
                    view.setOnKeyListener(null);
                }
@@ -347,7 +347,7 @@ public class PrizeRingerVolumePreference extends DialogPreference implements and
             Uri localUri = defaultUri;
             seekBar.setMax(mAudioManager.getStreamMaxVolume(mStreamType));
             
-            // prize-add for meeting mode-pengcancan-20160817 - start
+            // fengyun-add for meeting mode-pengcancan-20160817 - start
 //          mOriginalStreamVolume = mAudioManager.getStreamVolume(mStreamType);
             int mOriginalStreamVolume_mAudioManager = mAudioManager.getStreamVolume(mStreamType);
 			Log.d(TAG,"in initSeekBar mOriginalStreamVolume_mAudioManager is:" + mOriginalStreamVolume_mAudioManager);
@@ -357,19 +357,19 @@ public class PrizeRingerVolumePreference extends DialogPreference implements and
 
 
 
-			/*prize-Interpretation whether the meeting mode-lixing-2015-7-31 -start*/
+			/*fengyun-Interpretation whether the meeting mode-lixing-2015-7-31 -start*/
 			if(mActiveProfileKey.equals("mtk_audioprofile_meeting") || mActiveProfileKey.equals("mtk_audioprofile_silent")){
 //				mOriginalStreamVolume = mProfileManager.getStreamVolume("mtk_audioprofile_general", mStreamType);
 			}
-			// prize-add for meeting mode-pengcancan-20160817-end
+			// fengyun-add for meeting mode-pengcancan-20160817-end
             mLastProgress = mOriginalStreamVolume;
-            /*prize-add prevent empty judgment, to prevent the collapse of－lixing-2015-7-9-start*/
+            /*fengyun-add prevent empty judgment, to prevent the collapse of－lixing-2015-7-9-start*/
             if(seekBar != null){
             	Log.d(TAG,"seekBar != null,setProgress");
 	            seekBar.setProgress(mOriginalStreamVolume);
 	            seekBar.setOnSeekBarChangeListener(this);
             }
-            /*prize-add prevent empty judgment, to prevent the collapse of－lixing-2015-7-9-end*/
+            /*fengyun-add prevent empty judgment, to prevent the collapse of－lixing-2015-7-9-end*/
             
             Log.d(TAG, "initSeekBar mOriginalStreamVolume = " + mOriginalStreamVolume);
             Log.d(TAG, "initSeekBar mLastProgress = " + mLastProgress);
@@ -399,16 +399,16 @@ public class PrizeRingerVolumePreference extends DialogPreference implements and
         public boolean handleMessage(Message msg) {
             switch (msg.what) {
                 case MSG_SET_STREAM_VOLUME:
-                	// prize-add for meeting mode-pengcancan-20160817-start
+                	// fengyun-add for meeting mode-pengcancan-20160817-start
                     mAudioManager.setStreamVolume(mStreamType, mLastProgress, 0);
 //					mActiveProfileKey = mProfileManager.getActiveProfileKey();// ddd alarm
 //		         	mProfileManager.setStreamVolume(mActiveProfileKey, mStreamType, mLastProgress);// ddd alarm
 
-		         	/*prize-Interpretation whether the meeting mode-lixing-2015-7-31 -start*/
+		         	/*fengyun-Interpretation whether the meeting mode-lixing-2015-7-31 -start*/
 					if(mActiveProfileKey.equals("mtk_audioprofile_meeting") || mActiveProfileKey.equals("mtk_audioprofile_silent")){
 //						mProfileManager.setStreamVolume("mtk_audioprofile_general", mStreamType, mLastProgress);
 					}
-					// prize-add for meeting mode-pengcancan-20160817-end
+					// fengyun-add for meeting mode-pengcancan-20160817-end
                     Log.d(TAG, "handleMessage setStreamVolume mLastProgress = " + mLastProgress);
                     break;
                 case MSG_START_SAMPLE:
@@ -454,11 +454,11 @@ public class PrizeRingerVolumePreference extends DialogPreference implements and
         public void stop() {
             postStopSample();
             mContext.getContentResolver().unregisterContentObserver(mVolumeObserver);
-            /*prize-add prevent empty judgment, to prevent the collapse of－lixing-2015-7-9-start*/
+            /*fengyun-add prevent empty judgment, to prevent the collapse of－lixing-2015-7-9-start*/
             if(mSeekBar != null){
             	mSeekBar.setOnSeekBarChangeListener(null);
             }
-            /*prize-add prevent empty judgment, to prevent the collapse of－lixing-2015-7-9-end*/
+            /*fengyun-add prevent empty judgment, to prevent the collapse of－lixing-2015-7-9-end*/
         }
 
         public void revertVolume() {
@@ -468,11 +468,11 @@ public class PrizeRingerVolumePreference extends DialogPreference implements and
 //			mProfileManager.setStreamVolume(mActiveProfileKey, mStreamType, mOriginalStreamVolume);// ddd alarm
 
 
-			/*prize-Interpretation whether the meeting mode-lixing-2015-7-31 -start*/
+			/*fengyun-Interpretation whether the meeting mode-lixing-2015-7-31 -start*/
 			if(mActiveProfileKey.equals("mtk_audioprofile_meeting") || mActiveProfileKey.equals("mtk_audioprofile_silent")){
 //				mProfileManager.setStreamVolume("mtk_audioprofile_general", mStreamType, mOriginalStreamVolume);
 			}
-			// prize-add for meeting mode-pengcancan-20160817-end
+			// fengyun-add for meeting mode-pengcancan-20160817-end
         }
 
         public void saveVolume() {
@@ -481,11 +481,11 @@ public class PrizeRingerVolumePreference extends DialogPreference implements and
 //			mActiveProfileKey = mProfileManager.getActiveProfileKey();// ddd alarm
 //			mProfileManager.setStreamVolume(mActiveProfileKey, mStreamType, mLastProgress);// ddd alarm
 
-			/*prize-Interpretation whether the meeting mode-lixing-2015-7-31 -start*/
+			/*fengyun-Interpretation whether the meeting mode-lixing-2015-7-31 -start*/
 			if(mActiveProfileKey.equals("mtk_audioprofile_meeting") || mActiveProfileKey.equals("mtk_audioprofile_silent")){
 //				mProfileManager.setStreamVolume("mtk_audioprofile_general", mStreamType, mLastProgress);
 			}
-			// prize-add for meeting mode-pengcancan-20160817-end
+			// fengyun-add for meeting mode-pengcancan-20160817-end
         }
 
         public void onProgressChanged(SeekBar seekBar, int progress,

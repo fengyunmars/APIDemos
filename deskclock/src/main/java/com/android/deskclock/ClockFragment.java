@@ -67,8 +67,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.android.deskclock.alarms.AlarmModify;
-import com.android.deskclock.prize.FragmentOnBackClickInterface;
-import com.android.deskclock.prize.widget.NonSwipeableViewPager;
+import com.android.deskclock.fengyun.FragmentOnBackClickInterface;
+import com.android.deskclock.fengyun.widget.NonSwipeableViewPager;
 import com.android.deskclock.provider.Alarm;
 import com.android.deskclock.worldclock.Cities;
 import com.android.deskclock.worldclock.CitiesActivity;
@@ -93,10 +93,10 @@ public class ClockFragment extends DeskClockFragment implements OnSharedPreferen
     private WorldClockAdapter mAdapter;
     private NewWorldClockAdapter mNewAdapter;
     private BaseAdapter mBaseAdapter;
-    /*PRIZE-According to UI needs to add into the city to select the interface buttons, icons time zone display-lixing-2015-4-16-start*/
+    /*fengyun-According to UI needs to add into the city to select the interface buttons, icons time zone display-lixing-2015-4-16-start*/
     private Button addworldclock;
     //private TextView worldclocktext;
-    /*PRIZE-According to UI needs to add into the city to select the interface buttons, icons time zone display-lixing-2015-4-16-end*/
+    /*fengyun-According to UI needs to add into the city to select the interface buttons, icons time zone display-lixing-2015-4-16-end*/
     
     private ListView mList;
     private SharedPreferences mPrefs;
@@ -122,7 +122,7 @@ public class ClockFragment extends DeskClockFragment implements OnSharedPreferen
                     || action.equals(Intent.ACTION_LOCALE_CHANGED);
             if (changed) {
                 Utils.updateDate(mDateFormat, mDateFormatForAccessibility, mClockFrame);
-                /*PRIZE-Set the switch to select the macro adapter - Li Xing-2015-4-10-start*/
+                /*fengyun-Set the switch to select the macro adapter - Li Xing-2015-4-10-start*/
                 if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
                 	if (mNewAdapter != null) {
 	                    // *CHANGED may modify the need for showing the Home City
@@ -167,17 +167,17 @@ public class ClockFragment extends DeskClockFragment implements OnSharedPreferen
                     }
 	                }
                 }
-                /*PRIZE-Set the switch to select the macro adapter - Li Xing-2015-4-10-end*/
+                /*fengyun-Set the switch to select the macro adapter - Li Xing-2015-4-10-end*/
                 Utils.setQuarterHourUpdater(mHandler, mQuarterHourUpdater);
             }
             
-            /*PRIZE-Macro switch setting, turn off the native code - Li Xing-2015-4-10-start*/
+            /*fengyun-Macro switch setting, turn off the native code - Li Xing-2015-4-10-start*/
             if(!FeatureOption.MTK_DESKCLOCK_NEW_UI){
 	            if (changed || action.equals(AlarmManager.ACTION_NEXT_ALARM_CLOCK_CHANGED)) {            	
 	                Utils.refreshAlarm(getActivity(), mClockFrame);
 	            }
             }
-            /*PRIZE-Macro switch setting, turn off the native code - Li Xing-2015-4-10-start*/
+            /*fengyun-Macro switch setting, turn off the native code - Li Xing-2015-4-10-start*/
         }
     };
 
@@ -198,14 +198,14 @@ public class ClockFragment extends DeskClockFragment implements OnSharedPreferen
         @Override
         public void run() {
         	
-        	/*PRIZE-Macro switch setting, turn off the native code - Li Xing-2015-4-10-start*/
+        	/*fengyun-Macro switch setting, turn off the native code - Li Xing-2015-4-10-start*/
             // Update the main and world clock dates
         	if(!FeatureOption.MTK_DESKCLOCK_NEW_UI){
         		Utils.updateDate(mDateFormat, mDateFormatForAccessibility, mClockFrame);
         	}
-        	/*PRIZE-Macro switch setting, turn off the native code - Li Xing-2015-4-10-end*/
+        	/*fengyun-Macro switch setting, turn off the native code - Li Xing-2015-4-10-end*/
         	
-            /*PRIZE-Set the switch to select the macro adapter - Li Xing-2015-4-10-start*/
+            /*fengyun-Set the switch to select the macro adapter - Li Xing-2015-4-10-start*/
             if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
             	 if (mNewAdapter != null) {
  	                mNewAdapter.notifyDataSetChanged();
@@ -215,7 +215,7 @@ public class ClockFragment extends DeskClockFragment implements OnSharedPreferen
 	                mAdapter.notifyDataSetChanged();
 	            }
             }
-            /*PRIZE-Set the switch to select the macro adapter - Li Xing-2015-4-10-end*/
+            /*fengyun-Set the switch to select the macro adapter - Li Xing-2015-4-10-end*/
             Utils.setQuarterHourUpdater(mHandler, mQuarterHourUpdater);
         }
     };
@@ -239,7 +239,7 @@ public class ClockFragment extends DeskClockFragment implements OnSharedPreferen
             Bundle icicle) {
         // Inflate the layout for this fragment
     	
-    	/*PRIZE-Add a macro switch to select the layout file - Li Xing-2015-4-9-start*/
+    	/*fengyun-Add a macro switch to select the layout file - Li Xing-2015-4-9-start*/
     	final View v;
     	if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
     		v = inflater.inflate(R.layout.new_clock_fragment, container, false);
@@ -247,7 +247,7 @@ public class ClockFragment extends DeskClockFragment implements OnSharedPreferen
     	}else{
     		v = inflater.inflate(R.layout.clock_fragment, container, false);
     	}
-    	/*PRIZE-Add a macro switch to select the layout file - Li Xing-2015-4-9-start*/
+    	/*fengyun-Add a macro switch to select the layout file - Li Xing-2015-4-9-start*/
     	
     	
     	
@@ -313,7 +313,7 @@ public class ClockFragment extends DeskClockFragment implements OnSharedPreferen
 
         // On tablet landscape, the clock frame will be a distinct view. Otherwise, it'll be added
         // on as a header to the main listview.        
-        /*PRIZE-Macro switch shield android native code - Li Xing-2015-4-9-start*/
+        /*fengyun-Macro switch shield android native code - Li Xing-2015-4-9-start*/
         if(!FeatureOption.MTK_DESKCLOCK_NEW_UI){
 	        mClockFrame = v.findViewById(R.id.main_clock_left_pane);
 	        mHairline = v.findViewById(R.id.hairline);       
@@ -344,20 +344,20 @@ public class ClockFragment extends DeskClockFragment implements OnSharedPreferen
         View footerView = inflater.inflate(R.layout.blank_footer_view, mList, false);
         mList.addFooterView(footerView, null, false);
         }
-        /*PRIZE-Macro switch shield android native code - Li Xing-2015-4-9-end*/
+        /*fengyun-Macro switch shield android native code - Li Xing-2015-4-9-end*/
         
         
-        /*PRIZE-The new adapter class is instantiated - Li Xing-2015-4-9-start*/
+        /*fengyun-The new adapter class is instantiated - Li Xing-2015-4-9-start*/
         if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
         	 mNewAdapter = new NewWorldClockAdapter(getActivity());
         	 mNewAdapter.setOnDeleteListener(this);
         }else{
         	mAdapter = new WorldClockAdapter(getActivity());
         }
-        /*PRIZE-The new adapter class is instantiated - Li Xing-2015-4-9-end*/
+        /*fengyun-The new adapter class is instantiated - Li Xing-2015-4-9-end*/
         
         
-        /*PRIZE-Set the switch to select the macro adapter - Li Xing-2015-4-10-start*/
+        /*fengyun-Set the switch to select the macro adapter - Li Xing-2015-4-10-start*/
         if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
 //        	if (mNewAdapter.getCount() == 0) {
 //	            mHairline.setVisibility(View.GONE);
@@ -374,7 +374,7 @@ public class ClockFragment extends DeskClockFragment implements OnSharedPreferen
 	        }
 	        mList.setAdapter(mAdapter);
         }
-        /*PRIZE-Set the switch to select the macro adapter - Li Xing-2015-4-10-end*/
+        /*fengyun-Set the switch to select the macro adapter - Li Xing-2015-4-10-end*/
         
         mPrefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
         mDefaultClockStyle = getActivity().getResources().getString(R.string.default_clock_style);
@@ -406,7 +406,7 @@ public class ClockFragment extends DeskClockFragment implements OnSharedPreferen
         activity.registerReceiver(mIntentReceiver, filter);
 
         // Resume can invoked after changing the cities list or a change in locale
-        /*PRIZE-Set the switch to select the macro adapter - Li Xing-2015-4-10-start*/
+        /*fengyun-Set the switch to select the macro adapter - Li Xing-2015-4-10-start*/
         if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
         	 if (mNewAdapter != null) {
         		 mNewAdapter.loadCitiesDb(activity);
@@ -418,7 +418,7 @@ public class ClockFragment extends DeskClockFragment implements OnSharedPreferen
 	            mAdapter.reloadData(activity);
 	        }
         }
-        /*PRIZE-Set the switch to select the macro adapter - Li Xing-2015-4-10-end*/
+        /*fengyun-Set the switch to select the macro adapter - Li Xing-2015-4-10-end*/
         
         if(!FeatureOption.MTK_DESKCLOCK_NEW_UI){
 	        // Resume can invoked after changing the clock style.
@@ -428,7 +428,7 @@ public class ClockFragment extends DeskClockFragment implements OnSharedPreferen
 	                Utils.CLOCK_TYPE_DIGITAL : Utils.CLOCK_TYPE_ANALOG);
         }
         // Center the main clock frame if cities are empty.
-        /*PRIZE-Set the switch to select the macro adapter - Li Xing-2015-4-10-start*/
+        /*fengyun-Set the switch to select the macro adapter - Li Xing-2015-4-10-start*/
         if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
 //        	if (getView().findViewById(R.id.main_clock_left_pane) != null && mNewAdapter.getCount() == 0) {
 //	            mList.setVisibility(View.GONE);
@@ -466,14 +466,14 @@ public class ClockFragment extends DeskClockFragment implements OnSharedPreferen
 	        }
 	        mAdapter.notifyDataSetChanged();
         }
-        /*PRIZE-Set the switch to select the macro adapter - Li Xing-2015-4-10-end*/
+        /*fengyun-Set the switch to select the macro adapter - Li Xing-2015-4-10-end*/
         
-        /*PRIZE-Macro switch shield android native code - Li Xing-2015-4-9-start*/
+        /*fengyun-Macro switch shield android native code - Li Xing-2015-4-9-start*/
         if(!FeatureOption.MTK_DESKCLOCK_NEW_UI){
 	        Utils.updateDate(mDateFormat, mDateFormatForAccessibility, mClockFrame);
 	        Utils.refreshAlarm(activity, mClockFrame);
         }
-        /*PRIZE-Macro switch shield android native code - Li Xing-2015-4-9-end*/
+        /*fengyun-Macro switch shield android native code - Li Xing-2015-4-9-end*/
     }
 
     @Override
@@ -495,13 +495,13 @@ public class ClockFragment extends DeskClockFragment implements OnSharedPreferen
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
         if (key == SettingsActivity.KEY_CLOCK_STYLE) {
             mClockStyle = prefs.getString(SettingsActivity.KEY_CLOCK_STYLE, mDefaultClockStyle);
-            /*PRIZE-Set the switch to select the macro adapter - Li Xing-2015-4-10-start*/
+            /*fengyun-Set the switch to select the macro adapter - Li Xing-2015-4-10-start*/
             if(FeatureOption.MTK_DESKCLOCK_NEW_UI){
             	mNewAdapter.notifyDataSetChanged();
             }else{
             	mAdapter.notifyDataSetChanged();
             }
-            /*PRIZE-Set the switch to select the macro adapter - Li Xing-2015-4-10-end*/
+            /*fengyun-Set the switch to select the macro adapter - Li Xing-2015-4-10-end*/
         }
     }
 
@@ -552,7 +552,7 @@ public class ClockFragment extends DeskClockFragment implements OnSharedPreferen
     	mViewPager = (NonSwipeableViewPager)getActivity().findViewById(R.id.desk_clock_pager);
     	mActionbarContainer = (FrameLayout)getActionBarView();
     	mTabContainer = mActionbarContainer.getChildAt(mActionbarContainer.getChildCount()-1);
-    	mCustomActionBar = LayoutInflater.from(getActivity()).inflate(R.layout.prize_custom_actionbar, null, false);
+    	mCustomActionBar = LayoutInflater.from(getActivity()).inflate(R.layout.fengyun_custom_actionbar, null, false);
     	isUnderEdit = false;
     	super.onActivityCreated(savedInstanceState);
     }

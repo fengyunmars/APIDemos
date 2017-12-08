@@ -17,7 +17,7 @@ import com.fengyun.model.Question;
 import com.fengyun.model.enumeration.QuestionType;
 
 /**
- * Created by prize on 2017/12/2.
+ * Created by fengyun on 2017/12/2.
  */
 
 public class VQuestion extends LinearLayout {

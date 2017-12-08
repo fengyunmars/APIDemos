@@ -20,7 +20,7 @@
     android:id="@+id/settingsRightArrowWidget"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-	android:src="@drawable/prize_go_to_setting"
+	android:src="@drawable/fengyun_go_to_setting"
     android:focusable="false"
     android:clickable="false"
     android:background="@null" />

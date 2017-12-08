@@ -1,4 +1,4 @@
-package com.android.deskclock.prize;
+package com.android.deskclock.fengyun;
 
 import com.android.deskclock.provider.Alarm;
 
@@ -18,21 +18,21 @@ import android.widget.TimePicker.OnTimeChangedListener;
 
 import com.android.deskclock.R;
 
-public class PrizeTimerPickerDialog extends AlertDialog implements OnClickListener,
+public class fengyunTimerPickerDialog extends AlertDialog implements OnClickListener,
 OnTimeChangedListener {
 	
 	
 
-	public PrizeTimerPickerDialog(Context context, OnTimeSetListener callBack) {
+	public fengyunTimerPickerDialog(Context context, OnTimeSetListener callBack) {
 		this(context, 0, callBack);
 	}
 
-	public PrizeTimerPickerDialog(Context context, int theme, OnTimeSetListener callBack) {
+	public fengyunTimerPickerDialog(Context context, int theme, OnTimeSetListener callBack) {
 		super(context, resolveDialogTheme(context, theme));
 		mTimeSetCallback = callBack;
 		final Context themeContext = getContext();
         final LayoutInflater inflater = LayoutInflater.from(themeContext);
-        final View view = inflater.inflate(R.layout.prize_timerpicker_layout, null, false);
+        final View view = inflater.inflate(R.layout.fengyun_timerpicker_layout, null, false);
         setView(view);
 	}
 

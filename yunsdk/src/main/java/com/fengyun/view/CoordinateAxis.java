@@ -21,7 +21,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 /**
- * Created by prize on 2017/10/14.
+ * Created by fengyun on 2017/10/14.
  */
 
 public class CoordinateAxis extends View implements IViewCustom {

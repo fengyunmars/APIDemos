@@ -196,7 +196,7 @@ public class TimerObj implements Parcelable {
         mTimerId = (int) Utils.getTimeNow();
         mStartTime = Utils.getTimeNow();
         mTimeLeft = mOriginalLength = mSetupLength = length;
-        Log.d("Prize_timer", "mTimeLeft is :" + mTimeLeft);
+        Log.d("fengyun_timer", "mTimeLeft is :" + mTimeLeft);
         mLabel = "";
     }
 

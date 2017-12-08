@@ -9,7 +9,7 @@ import com.fengyun.util.ActivityUtils;
 import com.fengyun.view.VQuestion;
 
 /**
- * Created by prize on 2017/10/13.
+ * Created by fengyun on 2017/10/13.
  */
 
 public class QuestionEditActivity extends Activity{

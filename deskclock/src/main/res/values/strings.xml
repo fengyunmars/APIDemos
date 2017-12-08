@@ -1171,34 +1171,34 @@
     <string name="only_once">Ring Once</string>
     <string name="count_time">Metering</string>
     <string name="clock_add">"Add Clock"</string>
-    <string name="prize_pause">Suspend</string>
+    <string name="fengyun_pause">Suspend</string>
     <string name="delete_clock">Delete Clock</string>
     <string name="confirm">Ok</string>
     <string name="cancel">Cancel</string>
     <string name="Standard_time">Standard Time</string>
-    <string name="prize_minute">minute</string>
-    <!-- PRIZE- 添加字符串资源文件- lixing-2015-4-8-end -->
+    <string name="fengyun_minute">minute</string>
+    <!-- fengyun- 添加字符串资源文件- lixing-2015-4-8-end -->
 
 
-    <!-- PRIZE-添加文字资源- 李星-2015-5-9-start -->
+    <!-- fengyun-添加文字资源- 李星-2015-5-9-start -->
     <string name="timer_clock_ring_text">Ringing</string>
-    <string name="start_prize">Start</string>
-    <string name="cancel_prize">Cancel</string>
+    <string name="start_fengyun">Start</string>
+    <string name="cancel_fengyun">Cancel</string>
     <string name="timer_clockring_name">Default Ringing</string>
     <string name="timer_pause">Pause</string>
     <string name="timer_restart">Continue</string>
-    <string name="one_minute_prize">1 min</string>
-    <string name="two_minute_prize">2 min</string>
-    <string name="thre_minute_prize">3 min</string>
-    <string name="self_define_prize">Custom</string>
-    <string name="tiemr_pause_prize">Pause</string>
-    <string name="tiemr_start_prize">Start</string>
+    <string name="one_minute_fengyun">1 min</string>
+    <string name="two_minute_fengyun">2 min</string>
+    <string name="thre_minute_fengyun">3 min</string>
+    <string name="self_define_fengyun">Custom</string>
+    <string name="tiemr_pause_fengyun">Pause</string>
+    <string name="tiemr_start_fengyun">Start</string>
     <string name="timer_time_up">Time up</string>
     <string name="close_tip">Close</string>
-    <!-- PRIZE-添加文字资源- 李星-2015-5-9-end -->
-    <string name="close_tip_prize">I know it.</string>
-    <string name="timer_tip_prize">Move yellow triangle to set time</string>
-    <string name="close_alarm_tip_prize">Slide up to stop alarm</string>
+    <!-- fengyun-添加文字资源- 李星-2015-5-9-end -->
+    <string name="close_tip_fengyun">I know it.</string>
+    <string name="timer_tip_fengyun">Move yellow triangle to set time</string>
+    <string name="close_alarm_tip_fengyun">Slide up to stop alarm</string>
     <string name="denied_required_permission">denied_required_permission</string>
     <plurals name="timer_hour">
         <!-- Duration for one hour -->

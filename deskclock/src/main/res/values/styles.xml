@@ -63,11 +63,11 @@
     	-->
     <style name="DeskClock" parent="@style/DeskClockParentTheme">
         <item name="android:windowActionBarOverlay">true</item> 
-        <!--prize-添加过渡页面-lixing-2015-5-18-start  -->
+        <!--fengyun-添加过渡页面-lixing-2015-5-18-start  -->
 		<item name="android:statusBarColor">@android:color/transparent</item>
 		<item name="android:windowBackground">@drawable/deskclock_background</item>
     	<item name="android:windowIsTranslucent">false</item>
-        <!--prize-添加过渡页面-lixing-2015-5-18-start  -->
+        <!--fengyun-添加过渡页面-lixing-2015-5-18-start  -->
         <item name="android:actionBarTabStyle">@style/DeskClockTabStyle</item>
   		<item name="android:actionBarStyle">@style/DeskClockBarStyle</item>       
         <item name="android:actionBarTabBarStyle">@style/DeskClockTabBarStyle</item>
@@ -120,11 +120,11 @@
         <item name="android:preferenceCategoryStyle">@style/Preference.Category</item>
         <item name="android:preferenceStyle">@style/Preference</item>
 
-        <!--<item name="android:prizeActionBarStyle">@style/PrizeActionBar</item>-->
-        <item name="android:actionBarSize">@dimen/actionbar_height_prize</item>
+        <!--<item name="android:fengyunActionBarStyle">@style/fengyunActionBar</item>-->
+        <item name="android:actionBarSize">@dimen/actionbar_height_fengyun</item>
     </style>
     
-   <style name="PrizeActionBar">
+   <style name="fengyunActionBar">
         <item name="android:visibility">visible</item>
     </style>
    
@@ -153,14 +153,14 @@
         <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:textColor">@color/white_69p</item>
         --> 
-        <!-- PRIZE- 设置状态栏颜色为黑色- 李星-2015-5-12-start -->
+        <!-- fengyun- 设置状态栏颜色为黑色- 李星-2015-5-12-start -->
         <item name="android:statusBarColor">@color/white</item>    
-        <!-- PRIZE- 设置状态栏颜色为黑色- 李星-2015-5-12-end -->
+        <!-- fengyun- 设置状态栏颜色为黑色- 李星-2015-5-12-end -->
         <item name = "android:windowActionBar">false</item>
         <item name = "android:windowNoTitle">true</item>
-        <!-- PRIZE- 设置PreferencActiviy 中文字颜色- 李星-2015-5-12-start -->	      
+        <!-- fengyun- 设置PreferencActiviy 中文字颜色- 李星-2015-5-12-start -->
         <item name="android:textColor">@color/black_9</item>
-        <!-- PRIZE- 设置PreferencActiviy 中文字颜色- 李星-2015-5-12-start -->	
+        <!-- fengyun- 设置PreferencActiviy 中文字颜色- 李星-2015-5-12-start -->
         <item name="android:textSize">@dimen/label_text_size</item>
         
     </style>
@@ -180,14 +180,14 @@
         <item name="android:fastScrollStyle">@style/FastScrollStyle</item>
         <item name="android:actionBarStyle">@style/CitiesTheme.ActionBar</item>
         <item name="android:homeAsUpIndicator">@drawable/go_home</item>
-        <!--<item name="android:prizeActionBarStyle">@style/PrizeActionBar</item>-->
-        <item name="android:actionBarSize">@dimen/actionbar_height_prize</item>
-        <!-- PRIZE- 设置字体颜色为黑色- 李星-2015-5-12-start -->
+        <!--<item name="android:fengyunActionBarStyle">@style/fengyunActionBar</item>-->
+        <item name="android:actionBarSize">@dimen/actionbar_height_fengyun</item>
+        <!-- fengyun- 设置字体颜色为黑色- 李星-2015-5-12-start -->
         <!-- <item name="android:textColor">@color/black_6</item> -->
-        <!-- PRIZE- 设置字体颜色为黑色- 李星-2015-5-12-start -->
-         <!-- PRIZE- 设置状态栏颜色为黑色- 李星-2015-5-12-start -->
+        <!-- fengyun- 设置字体颜色为黑色- 李星-2015-5-12-start -->
+         <!-- fengyun- 设置状态栏颜色为黑色- 李星-2015-5-12-start -->
         <!--< item name="android:statusBarColor">@color/city_actionbar_grey</item> -->    
-        <!-- PRIZE- 设置状态栏颜色为黑色- 李星-2015-5-12-end -->
+        <!-- fengyun- 设置状态栏颜色为黑色- 李星-2015-5-12-end -->
     </style>
     
     <style name="FastScrollStyle" parent="@android:style/Widget.Material.FastScroll">
@@ -197,18 +197,18 @@
     
     <style name="CitiesTheme.ActionBar" parent="@android:style/Widget.Material.ActionBar">
         <item name="android:displayOptions">useLogo</item>
-        <!-- PRIZE- set actionbar background with underline- pengcancan-2016-08-05-start -->
+        <!-- fengyun- set actionbar background with underline- pengcancan-2016-08-05-start -->
         <item name="android:background">@color/white</item>
-        <!-- PRIZE- set actionbar background with underline- pengcancan-2016-08-05-end -->
+        <!-- fengyun- set actionbar background with underline- pengcancan-2016-08-05-end -->
     </style>
 
     <style name="SettingsTheme.ActionBar" parent="@android:style/Widget.Material.ActionBar">
         <item name="android:titleTextStyle">@style/SettingsTheme.TextAppearance.ActionBar.Title</item>
         <item name="android:displayOptions">useLogo|showTitle</item>
         <item name="android:homeAsUpIndicator">@drawable/go_home</item>
-        <!-- PRIZE- 设置PreferencActiviy 中actionBar背景颜色为黑色- 李星-2015-5-12-start -->	      
+        <!-- fengyun- 设置PreferencActiviy 中actionBar背景颜色为黑色- 李星-2015-5-12-start -->
         <item name="android:background">@drawable/actionbar_background</item> 
-        <!-- PRIZE- 设置PreferencActiviy 中actionBar背景颜色为黑色- 李星-2015-5-12-end-->
+        <!-- fengyun- 设置PreferencActiviy 中actionBar背景颜色为黑色- 李星-2015-5-12-end-->
         	      
     </style>
     
@@ -256,9 +256,9 @@
         <item name="android:windowDrawsSystemBarBackgrounds">false</item>
     </style>
     
-    <!--prize-huangdianjun-20150904-start-->
+    <!--fengyun-huangdianjun-20150904-start-->
     <style name="ScreensaverSettingsActivityTheme" parent="@android:style/Theme.Material.Settings" />
-    <!--prize-huangdianjun-20150904-end-->
+    <!--fengyun-huangdianjun-20150904-end-->
 	
     <style name="RoundTouchButton">
         <item name="android:gravity">center</item>
@@ -436,7 +436,7 @@
         <item name="android:clickable">true</item>
     </style>
 
-    <!-- PRIZE-添加deskclock actionBar tab 中的 text资源- 李星-2015-4-17-start -->
+    <!-- fengyun-添加deskclock actionBar tab 中的 text资源- 李星-2015-4-17-start -->
    
     <style name="deskclock_TabTextColor">  
 	 <item name="android:textColor">@color/deskclock_actionbar_tabtext</item>  
@@ -465,14 +465,14 @@
         parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
     	<item name="android:titleTextStyle">@style/OctopusActionBarTittle</item>
 	</style>
-     <!-- PRIZE-添加deskclock actionBar tab 中的 text资源- 李星-2015-4-17-end -->
+     <!-- fengyun-添加deskclock actionBar tab 中的 text资源- 李星-2015-4-17-end -->
     
     
     
     
     
     
-     <!-- PRIZE-删除闹钟的style- 李星-2015-4-23-start -->
+     <!-- fengyun-删除闹钟的style- 李星-2015-4-23-start -->
      <style name="deletalarmstyle" parent="android:Animation">  
          
         <item name="android:windowEnterAnimation">@anim/deletealarm_dialog_enter</item>
@@ -485,5 +485,5 @@
          
          <item name="android:backgroundDimEnabled">true</item>
      </style>  
-  	  <!-- PRIZE-删除闹钟的style- 李星-2015-4-23-end -->
+  	  <!-- fengyun-删除闹钟的style- 李星-2015-4-23-end -->
 </resources>

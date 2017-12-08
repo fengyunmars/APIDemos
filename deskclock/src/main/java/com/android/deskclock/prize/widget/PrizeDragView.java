@@ -1,4 +1,4 @@
-package com.android.deskclock.prize.widget;
+package com.android.deskclock.fengyun.widget;
 
 import android.content.Context;
 import android.graphics.Point;
@@ -8,22 +8,22 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 
-public class PrizeDragView extends LinearLayout {
+public class fengyunDragView extends LinearLayout {
 
 	private ViewDragHelper mDragHelper;
 	private Point mChildOriginPos = new Point();
 	
 	private View child;
 
-	public PrizeDragView(Context context) {
+	public fengyunDragView(Context context) {
 		super(context, null);
 	}
 
-	public PrizeDragView(Context context, AttributeSet attrs) {
+	public fengyunDragView(Context context, AttributeSet attrs) {
 		this(context, attrs, 0);
 	}
 
-	public PrizeDragView(Context context, AttributeSet attrs, int defStyleAttr) {
+	public fengyunDragView(Context context, AttributeSet attrs, int defStyleAttr) {
 		super(context, attrs, defStyleAttr);
 		init();
 	}

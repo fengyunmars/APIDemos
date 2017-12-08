@@ -48,11 +48,11 @@
         <!-- <View
             android:layout_width="match_parent"
             android:layout_height="1px"
-            android:background="@color/prize_divide_line_default" /> -->
+            android:background="@color/fengyun_divide_line_default" /> -->
         <LinearLayout
             android:id="@+id/allbutton_linear"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/prize_bottom_nav_height"
+            android:layout_height="@dimen/fengyun_bottom_nav_height"
             android:background="@color/white"
             android:gravity="center"
             android:orientation="vertical" >
@@ -73,7 +73,7 @@
                     android:background="@drawable/full_btn"
                     android:text="@string/sw_start_button"
                     android:textColor="@color/black_3"
-                    android:textSize="@dimen/prize_normal" />
+                    android:textSize="@dimen/fengyun_normal" />
             </LinearLayout>
 
             <LinearLayout
@@ -92,9 +92,9 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:background="@drawable/left_btn"
-                    android:text="@string/prize_pause"
+                    android:text="@string/fengyun_pause"
                     android:textColor="@color/black_3"
-                    android:textSize="@dimen/prize_normal" />
+                    android:textSize="@dimen/fengyun_normal" />
 
                 <Button
                     android:id="@+id/count_time"
@@ -104,7 +104,7 @@
                     android:background="@drawable/right_btn"
                     android:text="@string/count_time"
                     android:textColor="@color/black_3"
-                    android:textSize="@dimen/prize_normal" />
+                    android:textSize="@dimen/fengyun_normal" />
             </LinearLayout>
 
             <LinearLayout
@@ -125,7 +125,7 @@
                     android:background="@drawable/left_btn"
                     android:text="@string/sw_resume_button"
                     android:textColor="@color/black_3"
-                    android:textSize="@dimen/prize_normal" />
+                    android:textSize="@dimen/fengyun_normal" />
 
                 <Button
                     android:id="@+id/reset"
@@ -135,7 +135,7 @@
                     android:background="@drawable/right_btn"
                     android:text="@string/sw_reset_button"
                     android:textColor="@color/black_3"
-                    android:textSize="@dimen/prize_normal" />
+                    android:textSize="@dimen/fengyun_normal" />
             </LinearLayout>
         </LinearLayout>
         

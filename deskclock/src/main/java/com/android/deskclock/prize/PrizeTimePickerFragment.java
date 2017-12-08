@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.deskclock.prize;
+package com.android.deskclock.fengyun;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -23,12 +23,12 @@ import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 
-import com.android.deskclock.prize.PrizeTimerPickerDialog.OnTimeSetListener;
+import com.android.deskclock.fengyun.fengyunTimerPickerDialog.OnTimeSetListener;
 import com.android.deskclock.provider.Alarm;
 
 import java.util.Calendar;
 
-public class PrizeTimePickerFragment extends DialogFragment {
+public class fengyunTimePickerFragment extends DialogFragment {
 
     private Alarm mAlarm;
     private OnTimeSetListener mListener;
@@ -45,7 +45,7 @@ public class PrizeTimePickerFragment extends DialogFragment {
             minute = mAlarm.minutes;
         }
 
-        return new PrizeTimerPickerDialog(getActivity(), 0, mListener);
+        return new fengyunTimerPickerDialog(getActivity(), 0, mListener);
     }
 
     @Override

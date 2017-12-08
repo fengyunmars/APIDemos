@@ -48,7 +48,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by prize on 2017/12/4.
+ * Created by fengyun on 2017/12/4.
  */
 
 public class NewsListActivity extends AppCompatActivity implements ISetImage, IListAcitivty{
