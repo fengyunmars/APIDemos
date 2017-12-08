@@ -11,7 +11,7 @@
         android:gravity="center"
         android:visibility="gone" >
 
-        <com.android.deskclock.fengyun.widget.fengyunTimePicker
+        <com.android.deskclock.fengyun.widget.FengyunTimePicker
             android:id="@+id/time_picker"
             android:layout_marginTop="10dp"
             android:layout_width="@dimen/new_clock_width"

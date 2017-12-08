@@ -1,6 +1,6 @@
 
  /*******************************************
-  * Copyright © 2015, Shenzhen fengyun Technologies Limited
+  *  fengyun
   *
   * Summary: Inheritance Application, store some global variables and run entry method
   * current version:

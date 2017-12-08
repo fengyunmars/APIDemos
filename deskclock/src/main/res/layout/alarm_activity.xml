@@ -149,7 +149,7 @@
             android:textSize="@dimen/bottom_text_size"
             android:visibility="gone" /> -->
 
-        <com.android.deskclock.fengyun.widget.fengyunDragView
+        <com.android.deskclock.fengyun.widget.FengyunDragView
             android:id="@+id/drag_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -169,7 +169,7 @@
                 android:textStyle="bold"
                 android:gravity="center_horizontal"
                 android:drawableTop="@drawable/stop_alarm_btn"/>
-        </com.android.deskclock.fengyun.widget.fengyunDragView>
+        </com.android.deskclock.fengyun.widget.FengyunDragView>
 
         <!-- <TextView
             android:layout_width="wrap_content"

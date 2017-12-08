@@ -98,7 +98,7 @@ import com.android.deskclock.alarms.AlarmModify;
 import com.android.deskclock.alarms.AlarmStateManager;
 import com.android.deskclock.provider.Alarm;
 import com.android.deskclock.provider.AlarmInstance;
-import com.android.deskclock.fengyun.widget.TimerClockfengyunView;
+import com.android.deskclock.fengyun.widget.TimerClockFengyunView;
 import com.android.deskclock.events.Events;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
@@ -106,7 +106,7 @@ import android.widget.LinearLayout;
 
 /**fengyun-add-by-lixing-20150417-start*/
 import com.mediatek.deskclock.utility.FeatureOption;
-import com.mediatek.deskclock.utility.fengyunUtil;
+import com.mediatek.deskclock.utility.FengyunUtil;
 /**fengyun-add-by-lixing-20150417-start*/
 
 @SuppressLint("ResourceAsColor")
@@ -147,14 +147,14 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
     public final static String TIMER_ID = "timer_id";
 
     
-    /*fengyun--newly added button-zhuxiaoli-2015-4-17-start*/
+    /*fengyun--newly added button- fengyun-2015-4-17-start*/
     private TextView  showTimer_Countsview_fengyun;
     private TextView timerHourShowbtn;
     private TextView timerMinuteShowbtn;
     private TextView timerSecondesShowbtn;
     private boolean isOrignal=!FeatureOption.MTK_DESKCLOCK_NEW_UI;
     private ListView timer_listview_fengyun;
-    private TimerListAdapterfengyun  timerfengyunAdapter=null;
+    private TimerListAdapterFengyun  timerfengyunAdapter=null;
     private ArrayList<String> list_fengyun=null;
     //private CountingTimerView showTimeViewfengyun;
     private View mTimerViewfengyun;
@@ -164,14 +164,14 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
     private LinearLayout control_area;
     private Button timer_cancel_btn_fengyun;
     private Button timer_cancel_btn_fengyun_2;
-    private TimerClockfengyunView timerclockfengyun=null;
+    private TimerClockFengyunView timerclockfengyun=null;
     private static long selfdefinetime=0;
     private static long seifSeconds=0;
     private  static int TIMERMODE=0;
     private final static int HOURMODE=0;
     private final static int MINUTEMODE=1;
     private final static int SENCONDSMODE=2;
-    /*fengyun--newly added button-zhuxiaoli-2015-4-17-end*/
+    /*fengyun--newly added button- fengyun-2015-4-17-end*/
    
     //current page setting timerobject
     private static TimerObj currentTimerObjec=null;
@@ -280,7 +280,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
     };
     
     
-    /*fengyun-Set the timer timer countdown thread-zhuxiaoli-2015-4-17-start*/
+    /*fengyun-Set the timer timer countdown thread- fengyun-2015-4-17-start*/
     private final Runnable mfengyunClockTick = new Runnable(){
     	public void run() {			
            if(currentTimerObjec!=null){
@@ -301,7 +301,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
            }				
     	}	
     };
-    /*fengyun-Set the timer timer countdown thread-zhuxiaoli-2015-4-17-end*/
+    /*fengyun-Set the timer timer countdown thread- fengyun-2015-4-17-end*/
     
 
     @Override
@@ -355,7 +355,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
     	        mDeleteTransition.setInterpolator(new AccelerateDecelerateInterpolator());
     	        return view;
     	}else{
-	    	/*fengyun-Interface initialization-zhuxiaoli-2015-4-17-start*/
+	    	/*fengyun-Interface initialization- fengyun-2015-4-17-start*/
 	    	final View 	fengyunview = inflater.inflate(R.layout.timer_fragment_fengyun, container, false);
 	    	timer_listview_fengyun=(ListView)fengyunview.findViewById(R.id.timer_list_fengyun);
 	    	
@@ -394,7 +394,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
 	    	for(int i=0;i<timerdefult.length;i++){
 	    		list_fengyun.add(timerdefult[i]);
 	    	}
-	    	timerfengyunAdapter=new TimerListAdapterfengyun(getActivity(),list_fengyun);
+	    	timerfengyunAdapter=new TimerListAdapterFengyun(getActivity(),list_fengyun);
 	    	timer_listview_fengyun.setAdapter(timerfengyunAdapter);
 	    	
 	    	initControlButton();
@@ -402,7 +402,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
 	        return fengyunview;
     	}
     		
-    	/*fengyun-Interface initialization-zhuxiaoli-2015-4-17-end*/
+    	/*fengyun-Interface initialization- fengyun-2015-4-17-end*/
         
     }									
    
@@ -413,7 +413,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
      * @Get your fingers take time zoned
      * @author lixing
      */
-    TimerfengyunCallBack timerfengyuncallback = new TimerfengyunCallBack() {
+    TimerFengyunCallBack timerfengyuncallback = new TimerFengyunCallBack() {
 
 		@Override
 		public void setDegree(float degree) {
@@ -469,7 +469,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
         mNotificationManager = (NotificationManager) context.getSystemService(Context
                 .NOTIFICATION_SERVICE);
         
-        timerclockfengyun=(TimerClockfengyunView)getActivity().findViewById(R.id.thisclock);
+        timerclockfengyun=(TimerClockFengyunView)getActivity().findViewById(R.id.thisclock);
 
 		showtimView=(LinearLayout)getActivity().findViewById(R.id.timer_time_show);
 		mTimerViewfengyun=getActivity().findViewById(R.id.clock_fengyun_area);
@@ -731,9 +731,9 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
     private void updateTimeTextView(long time){
     	if(time < 0)
     		time = 0;
-    	timerSecondesShowbtn.setText(fengyunUtil.getTimerSecondString(time));
-		timerMinuteShowbtn.setText(fengyunUtil.getTimerMinuteString(time));
-		timerHourShowbtn.setText(fengyunUtil.getTimerHourString(time));
+    	timerSecondesShowbtn.setText(FengyunUtil.getTimerSecondString(time));
+		timerMinuteShowbtn.setText(FengyunUtil.getTimerMinuteString(time));
+		timerHourShowbtn.setText(FengyunUtil.getTimerHourString(time));
     }
     
    
@@ -934,7 +934,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
             mAdapter.notifyDataSetChanged();
         }
     }
-	/*fengyun-Click the timer list already exists in response to the operation of the item-zhuxiaoli-2015-4-17-start*/
+	/*fengyun-Click the timer list already exists in response to the operation of the item- fengyun-2015-4-17-start*/
     private void initeListClickEvent (){
     	
     	timer_listview_fengyun.setOnItemClickListener(new OnItemClickListener() {
@@ -988,7 +988,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
     
     
     private static final String TAG = "TimerFragment" ;
-    /*fengyun-Ringtones save timer operation-zhuxiaoli-2015-4-17-start*/
+    /*fengyun-Ringtones save timer operation- fengyun-2015-4-17-start*/
     private void saveRingtoneUrifengyun(Intent intent) {
         Uri uri = intent.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI);
        
@@ -1001,7 +1001,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
         
         setDefaultRingtone(uri.toString());
         
-        final String ringtone = fengyunUtil.getRingtongToStringFromUri(uri,getActivity());
+        final String ringtone = FengyunUtil.getRingtongToStringFromUri(uri,getActivity());
         showChoiceRing.setText(ringtone);
         
     }	
@@ -1010,7 +1010,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
    
   
     
-    /*fengyun-timer counting started, open thread starts counting-zhuxiaoli-2015-4-17-start*/
+    /*fengyun-timer counting started, open thread starts counting- fengyun-2015-4-17-start*/
     private void startClockTicksfengyun(){
     	mTicking = true;
     	timerclockfengyun.startBitCarton();
@@ -1019,10 +1019,10 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
     	updateTimerState(currentTimerObjec, Timers.START_TIMER);
         changeSecondButtonStatu();
     }
-    /*fengyun-timer counting started, open thread starts counting-zhuxiaoli-2015-4-17-end*/
+    /*fengyun-timer counting started, open thread starts counting- fengyun-2015-4-17-end*/
     
     
-    /*fengyun-timer timing operation canceled-zhuxiaoli-2015-4-17-start*/
+    /*fengyun-timer timing operation canceled- fengyun-2015-4-17-start*/
     private void stopClockTicksfengyun(){
     	if (mTicking) {
     		timerclockfengyun.stopBitCarton();
@@ -1030,7 +1030,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
             mTicking = false;
         }
     }
-    /*fengyun-timer timing operation canceled-zhuxiaoli-2015-4-17-start*/
+    /*fengyun-timer timing operation canceled- fengyun-2015-4-17-start*/
     
     /*fengyun-timer timing operation canceled-pengcancan-20160926-start*/
     private void pauseClockTicksfengyun(){
@@ -1551,7 +1551,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
      * @param void
      * @return void
      */
-	private void setTimeToTimerClockfengyunView(){
+	private void setTimeToTimerClockFengyunView(){
 		if(timerclockfengyun == null || timerHourShowbtn== null || timerMinuteShowbtn==null || timerSecondesShowbtn == null)
 			return;
 		long hour = Long.parseLong(timerHourShowbtn.getText().toString());
@@ -1692,7 +1692,7 @@ public class TimerFragment extends DeskClockFragment implements OnSharedPreferen
 	            }
 			}	
 	                    
-	        String mRingtongStr = fengyunUtil.getRingtongToStringFromUri(mRingtoneUri, getActivity());
+	        String mRingtongStr = FengyunUtil.getRingtongToStringFromUri(mRingtoneUri, getActivity());
 	        showChoiceRing.setText(mRingtongStr);
 	}
 	

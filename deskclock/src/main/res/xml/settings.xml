@@ -65,8 +65,8 @@
             />
 
        <!-- M: we override volume preference -->
-       <!-- fengyun-由com.android.deskclock.fengyunRingerVolumePreference 替换com.android.deskclock.RingerVolumePreference -->
-        <com.android.deskclock.fengyunRingerVolumePreference
+       <!-- fengyun-由com.android.deskclock.FengyunRingerVolumePreference 替换com.android.deskclock.RingerVolumePreference -->
+        <com.android.deskclock.FengyunRingerVolumePreference
             android:key="volume_setting"
             android:title="@string/alarm_volume_title"
             android:dialogTitle="@string/alarm_volume_title"

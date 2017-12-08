@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
-    <!-- fengyun- 增加新854x480资源- 李星-2015-6-2-start     -->
+    <!-- fengyun- 增加新854x480资源-  fengyun-2015-6-2-start     -->
     
     
     <dimen name="framelayout_top">338dp</dimen>
@@ -50,7 +50,7 @@
     <dimen name="timer_linsheng_right">14sp</dimen>
     <dimen name="timer_list_item_text">20sp</dimen>
     
-    <!-- fengyun- 增加新854x480资源- 李星-2015-6-2-end -->
+    <!-- fengyun- 增加新854x480资源-  fengyun-2015-6-2-end -->
     
     
 </resources>

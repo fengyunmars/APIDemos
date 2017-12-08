@@ -1,6 +1,6 @@
 
  /*******************************************
- * Copyright © 2015, Shenzhen fengyun Technologies Limited
+ *  fengyun
  *
  * Summary: for testing to see the effect of UI
  * current version:

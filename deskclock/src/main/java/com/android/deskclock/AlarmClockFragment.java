@@ -118,12 +118,12 @@ import com.android.deskclock.stopwatch.TimePickerCallBack;
 import com.android.deskclock.widget.ActionableToastBar;
 import com.android.deskclock.fengyun.FragmentOnBackClickInterface;
 import com.android.deskclock.fengyun.widget.NonSwipeableViewPager;
-import com.android.deskclock.fengyun.widget.fengyunAnalogClock;
-import com.android.deskclock.fengyun.widget.fengyunTimePicker;
+import com.android.deskclock.fengyun.widget.FengyunAnalogClock;
+import com.android.deskclock.fengyun.widget.FengyunTimePicker;
 import com.android.deskclock.widget.TextTime;
 import android.content.pm.PackageManager;
 import com.mediatek.deskclock.utility.FeatureOption;
-import com.mediatek.deskclock.utility.fengyunUtil;
+import com.mediatek.deskclock.utility.FengyunUtil;
 
 /**
  * AlarmClock application.
@@ -235,10 +235,10 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
     FrameLayout alarmLayout;
     LinearLayout addalarmLayout;
 	
-	fengyunAnalogClock analogclock;
+	FengyunAnalogClock analogclock;
     FrameLayout analogclock_layout ;
     FrameLayout timepicker_framelayout;
-    fengyunTimePicker timePicker;
+    FengyunTimePicker timePicker;
     Button confirm;
     Button cancel;
     
@@ -841,7 +841,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
             LogUtils.v("saveRingtoneUri = " + uri.toString());
         }
         
-        final String ringtone = fengyunUtil.getRingtoneToString(mSelectedAlarm,getActivity());
+        final String ringtone = FengyunUtil.getRingtoneToString(mSelectedAlarm,getActivity());
         ringtone_button.setText(ringtone);
        
 //        AlarmModify.asyncUpdateAlarm(mSelectedAlarm, false,getActivity().getApplicationContext());
@@ -2482,23 +2482,23 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
  			public void onClick(View arg0) {
  				setHourButtonActive();
  				int time = Integer.parseInt(hourSet.getText().toString());
- 				timePicker.setTime(time, fengyunTimePicker.KEY_HOUR);
+ 				timePicker.setTime(time, FengyunTimePicker.KEY_HOUR);
  			}
  		});
  		minuteSet.setOnClickListener(new View.OnClickListener() {
  			public void onClick(View arg0) {
  				setMinuteButtonActive();
  				int time = Integer.parseInt(minuteSet.getText().toString());
- 				timePicker.setTime(time, fengyunTimePicker.KEY_MINUTE);
+ 				timePicker.setTime(time, FengyunTimePicker.KEY_MINUTE);
  			}
  		});
  		
- 		/*fengyun-Initialization let Hour button to highlight it and get fengyunTimePicker slide data! The time data initialization fengyunTimePicker-lixing-2015-4-16-start*/
+ 		/*fengyun-Initialization let Hour button to highlight it and get FengyunTimePicker slide data! The time data initialization FengyunTimePicker-lixing-2015-4-16-start*/
  		setHourButtonActive();	
- 		timePicker.setTime(alarm.hour, fengyunTimePicker.KEY_HOUR);
+ 		timePicker.setTime(alarm.hour, FengyunTimePicker.KEY_HOUR);
  		minuteSet.setText(String.format("%02d",alarm.minutes));	
  		hourSet.setText(String.format("%02d", alarm.hour));
- 		/*fengyun-Initialization let Hour button to highlight it and get fengyunTimePicker slide data! The time data initialization fengyunTimePicker-lixing-2015-4-16-end*/
+ 		/*fengyun-Initialization let Hour button to highlight it and get FengyunTimePicker slide data! The time data initialization FengyunTimePicker-lixing-2015-4-16-end*/
 				
 		List<Integer> days = alarm.daysOfWeek.getAlltDays();
 		if(day_linearlayout.getChildCount()>0){
@@ -2594,7 +2594,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
 	      
 	      
 	      
-	     final String ringtone = fengyunUtil.getRingtoneToString(alarm,getActivity());
+	     final String ringtone = FengyunUtil.getRingtoneToString(alarm,getActivity());
 	      
 	     ringtone_button.setText(ringtone);
 	     ringtone_button.setOnClickListener(new View.OnClickListener() {
@@ -2785,7 +2785,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
    	 minuteSet.setActivated(false);
    	 minuteSet.setTextColor(getResources().getColor(R.color.toumin_white));
    	 /*fengyun-Depending on the selected setting dial clock or minutes-lixing-2015-4-13-start*/
-   	 timePicker.setDial(fengyunTimePicker.KEY_DIAL_HOUR);
+   	 timePicker.setDial(FengyunTimePicker.KEY_DIAL_HOUR);
    	 
     }
     
@@ -2804,7 +2804,7 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
    	 minuteSet.setActivated(true);
    	 minuteSet.setTextColor(getResources().getColor(R.color.white));
    	 /*fengyun-Depending on the selected setting dial clock or minutes-lixing-2015-4-13-start*/
-   	 timePicker.setDial(fengyunTimePicker.KEY_DIAL_MINUTE);
+   	 timePicker.setDial(FengyunTimePicker.KEY_DIAL_MINUTE);
     }
     
     private void turnOffDayOfWeek(int dayIndex) {     
@@ -2821,10 +2821,10 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
 	public void onAttach(Activity activity) {
 		super.onAttach(activity);
 //
-//		analogclock = (fengyunAnalogClock)activity.findViewById(R.id.analogclock);
+//		analogclock = (FengyunAnalogClock)activity.findViewById(R.id.analogclock);
 //		timepicker_framelayout = (FrameLayout)activity.findViewById(R.id.timepicker_framelayout);
 //		
-////		timePicker = (fengyunTimePicker)activity.findViewById(R.id.time_picker);
+////		timePicker = (FengyunTimePicker)activity.findViewById(R.id.time_picker);
 //		
 //		confirm = (Button)activity.findViewById(R.id.confirm);
 //		
@@ -2844,9 +2844,9 @@ public class AlarmClockFragment extends DeskClockFragment implements TimePickerC
 		// TODO Auto-generated method stub
 		super.onActivityCreated(savedInstanceState);
 		
-		timePicker = (fengyunTimePicker)getActivity().findViewById(R.id.time_picker);
+		timePicker = (FengyunTimePicker)getActivity().findViewById(R.id.time_picker);
 		analogclock_layout = (FrameLayout)getActivity().findViewById(R.id.analogclock_layout);
-		analogclock = (fengyunAnalogClock)getActivity().findViewById(R.id.analogclock);
+		analogclock = (FengyunAnalogClock)getActivity().findViewById(R.id.analogclock);
 		timepicker_framelayout = (FrameLayout)getActivity().findViewById(R.id.timepicker_framelayout);
 		confirm = (Button)getActivity().findViewById(R.id.confirm);
 		cancel = (Button)getActivity().findViewById(R.id.cancel);

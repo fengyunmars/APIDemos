@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:id="@+id/timepicker_framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/alarm_background"
+        android:gravity="center" >
+
+        <com.android.deskclock.fengyun.widget.FengyunTimePicker
+            android:id="@+id/time_picker"
+            android:layout_width="@dimen/new_clock_width"
+            android:layout_height="@dimen/new_clock_height"
+            android:layout_gravity="center" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/hour_set"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/addalarm_sethour"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/timepicker_text" />
+
+            <Button
+                android:layout_width="10dp"
+                android:layout_height="60dp"
+                android:background="@android:color/transparent"
+                android:gravity="center"
+                android:text="@string/maohao"
+                android:textColor="@color/white"
+                android:textSize="@dimen/timepicker_text" />
+
+            <Button
+                android:id="@+id/minute_set"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/addalarm_sethour"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/timepicker_text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="@dimen/addalamrbutton_marginbuttom"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center|end" >
+
+                <Button
+                    android:id="@+id/confirm"
+                    android:layout_width="@dimen/addalarm_confirm_width"
+                    android:layout_height="@dimen/addalarm_confirm_heigth"
+                    android:layout_gravity="end"
+                    android:background="@drawable/left_button"
+                    android:text="@string/time_picker_set"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fengyun_normal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center|start" >
+
+                <Button
+                    android:id="@+id/cancel"
+                    android:layout_width="@dimen/addalarm_confirm_width"
+                    android:layout_height="@dimen/addalarm_confirm_heigth"
+                    android:layout_gravity="start"
+                    android:background="@drawable/right_button"
+                    android:text="@string/alarm_alert_dismiss_text"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/fengyun_normal" />
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>

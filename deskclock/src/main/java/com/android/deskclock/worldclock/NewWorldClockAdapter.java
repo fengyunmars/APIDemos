@@ -1,6 +1,6 @@
 
  /*******************************************
- * Copyright © 2015, Shenzhen fengyun Technologies Limited
+ *  fengyun
  *
  * Summary: World Clock displays the ListView Item adapter
  * current version:

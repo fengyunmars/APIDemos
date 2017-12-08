@@ -1,5 +1,5 @@
 /*******************************************
- * Copyright © 2015, Shenzhen fengyun Technologies Limited
+ *  fengyun
  *
  * Summary: toilet control list (ListView)
  * Current version: V1.0

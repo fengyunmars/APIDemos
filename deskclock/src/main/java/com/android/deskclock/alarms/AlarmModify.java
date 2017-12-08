@@ -1,6 +1,6 @@
 
  /*******************************************
- * Copyright © 2015, Shenzhen fengyun Technologies Limited
+ *  fengyun
  *
  * Summary: The updateAlarm deleteAlarm addAlarm other methods to separate class in the package, easy call
  * current version:

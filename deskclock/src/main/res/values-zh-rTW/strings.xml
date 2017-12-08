@@ -409,7 +409,7 @@
     
     
     
-     <!-- fengyun-添加汉字资源- 李星-2015-4-8-start -->
+     <!-- fengyun-添加汉字资源-  fengyun-2015-4-8-start -->
 	<string name="one">一</string>
 	<string name="voice">提示音</string>
 	 <string name="sleep">貪睡</string>
@@ -422,10 +422,10 @@
 	<string name="cancel">取消</string>
 	<string name="Standard_time">標準時間</string>
 	<string name="fengyun_minute">分鐘</string>
-	<!-- fengyun-添加汉字资源- 李星-2015-4-8-end -->
+	<!-- fengyun-添加汉字资源-  fengyun-2015-4-8-end -->
     
     
-    <!-- fengyun-添加文字资源- 李星-2015-5-9-start -->
+    <!-- fengyun-添加文字资源-  fengyun-2015-5-9-start -->
  <string name="timer_clock_ring_text">鈴聲</string>
      <string name="start_fengyun">開始</string>
     <string name="cancel_fengyun">取消</string>
@@ -440,7 +440,7 @@
      <string name="tiemr_start_fengyun">開始</string>
      <string name="timer_time_up">計時結束</string>
      <string name="close_tip">關閉</string>
- <!-- fengyun-添加文字资源- 李星-2015-5-9-end -->
+ <!-- fengyun-添加文字资源-  fengyun-2015-5-9-end -->
  	<string name="close_tip_fengyun">我知道了</string>
     <string name="timer_tip_fengyun">移動黃色三角形設置時間</string>
     <string name="close_alarm_tip_fengyun">上滑關閉鬧鐘</string>

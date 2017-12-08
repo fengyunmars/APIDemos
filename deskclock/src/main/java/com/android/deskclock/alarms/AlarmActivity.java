@@ -69,12 +69,12 @@ import com.android.deskclock.R;
 import com.android.deskclock.SettingsActivity;
 import com.android.deskclock.Utils;
 import com.android.deskclock.events.Events;
-import com.android.deskclock.fengyun.widget.fengyunDragView;
-import com.android.deskclock.fengyun.widget.fengyunDragView.StopAlarmLinsener;
+import com.android.deskclock.fengyun.widget.FengyunDragView;
+import com.android.deskclock.fengyun.widget.FengyunDragView.StopAlarmLinsener;
 import com.android.deskclock.provider.AlarmInstance;
 import com.android.deskclock.widget.CircleView;
-import com.mediatek.deskclock.utility.fengyunHomeWatcher;
-import com.mediatek.deskclock.utility.fengyunHomeWatcher.OnHomePressedListener;
+import com.mediatek.deskclock.utility.FengyunHomeWatcher;
+import com.mediatek.deskclock.utility.FengyunHomeWatcher.OnHomePressedListener;
 
 public class AlarmActivity extends Activity
         implements StopAlarmLinsener {
@@ -169,7 +169,7 @@ public class AlarmActivity extends Activity
     private ImageView mDismissButton;
     private TextView mHintView;*/
     
-    private fengyunDragView mDragContainer;
+    private FengyunDragView mDragContainer;
     private TextView mSnoozeTv;
 
     private ValueAnimator mAlarmAnimator;
@@ -177,7 +177,7 @@ public class AlarmActivity extends Activity
     private ValueAnimator mDismissAnimator;
     private ValueAnimator mPulseAnimator;
 
-    private fengyunHomeWatcher mHomeWatcher;
+    private FengyunHomeWatcher mHomeWatcher;
     
     private ImageView mAlarmAminition;
     private AnimationDrawable animationDrawable;  
@@ -246,7 +246,7 @@ public class AlarmActivity extends Activity
         //mSnoozeButton = (ImageView) mContentView.findViewById(R.id.snooze);
         //mDismissButton = (ImageView) mContentView.findViewById(R.id.dismiss);
         //mHintView = (TextView) mContentView.findViewById(R.id.hint);
-        mDragContainer = (fengyunDragView)mContainerView.findViewById(R.id.drag_container);
+        mDragContainer = (FengyunDragView)mContainerView.findViewById(R.id.drag_container);
         mSnoozeTv = (TextView)mContainerView.findViewById(R.id.snooze_tv);
         
         mAlarmAminition = (ImageView) mContentView.findViewById(R.id.alarm_aminition);
@@ -307,7 +307,7 @@ public class AlarmActivity extends Activity
 		});
         /*fengyun-Listener Home button click event - when you press the Home key time, snooze-lixing-2015-7-13-start*/
         /*
-        mHomeWatcher = new fengyunHomeWatcher(this);
+        mHomeWatcher = new FengyunHomeWatcher(this);
         mHomeWatcher.setOnHomePressedListener(new OnHomePressedListener(){
 			public void onHomePressed() {
 				// TODO Auto-generated method stub

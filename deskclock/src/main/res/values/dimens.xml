@@ -199,15 +199,15 @@
     <dimen name="fastscroll_preview_padding">8dp</dimen>
     <dimen name="fastscroll_track_width">8dp</dimen>
     
-    <!-- fengyun- 默认的资源，各个分辨率公用资源- 李星-2015-7-17-start -->
+    <!-- fengyun- 默认的资源，各个分辨率公用资源-  fengyun-2015-7-17-start -->
     <dimen name="fengyun_title">16sp</dimen>
     <dimen name="fengyun_normal">14sp</dimen>
     <dimen name="fengyun_content">12sp</dimen>
     <dimen name="fengyun_time_text">18sp</dimen>
-    <!-- fengyun- 默认的资源，各个分辨率公用资源- 李星-2015-7-17-end -->
+    <!-- fengyun- 默认的资源，各个分辨率公用资源-  fengyun-2015-7-17-end -->
     
     
-    <!-- fengyun- 默认的资源，默认资源为1280x720资源- 李星-2015-4-21-start -->
+    <!-- fengyun- 默认的资源，默认资源为1280x720资源-  fengyun-2015-4-21-start -->
 
   	<dimen name="framelayout_top">350dp</dimen>
   	<dimen name="primary_min_height">147dp</dimen>
@@ -258,7 +258,7 @@
     <dimen name="timer_linsheng_right">14sp</dimen>
     <dimen name="timer_list_item_text">20sp</dimen>
     
-    <!-- fengyun- 默认的资源，默认资源为1280x720资源- 李星-2015-4-21-end -->
+    <!-- fengyun- 默认的资源，默认资源为1280x720资源-  fengyun-2015-4-21-end -->
     
      <!-- fengyun-listview margin top-pengcancan-20160326 -->
     <dimen name="listview_height">405dp</dimen>

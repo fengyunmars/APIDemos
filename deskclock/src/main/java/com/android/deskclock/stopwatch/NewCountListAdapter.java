@@ -1,10 +1,10 @@
 
 /*******************************************
-  * Copyright © 2015, Shenzhen fengyun Technologies Limited
+  *  fengyun
   *
   * Summary: 
   * current version:
-  * Author: zhuxiaoli
+  * Author:  fengyun
   * Completion Date: 2015.04.17
   * Records:
   * Modified:
@@ -29,7 +29,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.android.deskclock.R;
-import com.mediatek.deskclock.utility.fengyunUtil;
+import com.mediatek.deskclock.utility.FengyunUtil;
 
 public class NewCountListAdapter extends BaseAdapter {
 
@@ -107,13 +107,13 @@ public class NewCountListAdapter extends BaseAdapter {
         
         /*fengyun--The first count times, there may be time to be negative, to make a few treatment-lixing-2015-5-8-start*/
         if(bucketTime<0){	
-        	itemHolder.middle_view.setText(fengyunUtil.timeToString(countTimeInfo.getTotalTime()));
+        	itemHolder.middle_view.setText(FengyunUtil.timeToString(countTimeInfo.getTotalTime()));
         }else{
-        	itemHolder.middle_view.setText("+"+fengyunUtil.timeToString(bucketTime));
+        	itemHolder.middle_view.setText("+"+FengyunUtil.timeToString(bucketTime));
         }
         /*fengyun--The first count times, there may be time to be negative, to make a few treatment-lixing-2015-5-8-end*/
         
-        itemHolder.right_view.setText(fengyunUtil.timeToString(countTimeInfo.getTotalTime()));
+        itemHolder.right_view.setText(FengyunUtil.timeToString(countTimeInfo.getTotalTime()));
 	}
 	
 	private final class ItemHolder{

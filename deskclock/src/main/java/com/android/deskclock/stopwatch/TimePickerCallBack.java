@@ -1,10 +1,10 @@
 
 /*******************************************
-  * Copyright © 2015, Shenzhen fengyun Technologies Limited
+  *  fengyun
   *
   * Summary: 
   * current version:
-  * Author: zhuxiaoli
+  * Author:  fengyun
   * Completion Date: 2015.04.17
   * Records:
   * Modified:

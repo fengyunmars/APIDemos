@@ -1,6 +1,6 @@
 
  /*******************************************
- *Copyright © 2015, Shenzhen fengyun Technologies Limited
+ * fengyun
  *
  * Summary: The format for displaying time. To be completed
  * current version:

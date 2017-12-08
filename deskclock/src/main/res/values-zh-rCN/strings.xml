@@ -406,7 +406,7 @@
     <string name="alarm_is_snoozed" msgid="7044644119744928846">"<xliff:g id="ALARM_TIME">%s</xliff:g> 的闹钟已延后 10 分钟"</string>
 	
 	
-    <!-- fengyun-添加汉字资源- 李星-2015-4-8-start -->
+    <!-- fengyun-添加汉字资源-  fengyun-2015-4-8-start -->
 <string name="one">一</string>
 <string name="voice">提示音</string>
  <string name="sleep">贪睡</string>
@@ -419,9 +419,9 @@
 <string name="cancel">取消</string>
 <string name="Standard_time">标准时间</string>
 <string name="fengyun_minute">分钟</string>
-<!-- fengyun-添加汉字资源- 李星-2015-4-8-end -->
+<!-- fengyun-添加汉字资源-  fengyun-2015-4-8-end -->
        
- <!-- fengyun-添加文字资源- 李星-2015-5-9-start -->
+ <!-- fengyun-添加文字资源-  fengyun-2015-5-9-start -->
  <string name="timer_clock_ring_text">铃声</string>
      <string name="start_fengyun">开始</string>
      <string name="timer_pause">暂停</string>    
@@ -436,7 +436,7 @@
      <string name="tiemr_start_fengyun">开始</string>
      <string name="timer_time_up">计时结束</string>
      <string name="close_tip">关闭</string>
- <!-- fengyun-添加文字资源- 李星-2015-5-9-end -->
+ <!-- fengyun-添加文字资源-  fengyun-2015-5-9-end -->
  	<string name="close_tip_fengyun">我知道了</string>
  	<string name="timer_tip_fengyun">移动黄色三角形设置时间</string>
  	<string name="close_alarm_tip_fengyun">上滑关闭闹钟</string>

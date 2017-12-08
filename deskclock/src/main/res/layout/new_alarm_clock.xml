@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- fengyun- 宏开关打开后DeskClock中AlarmClockFragment使用此布局文件- 李星-2015-4-8-start -->
+<!-- fengyun- 宏开关打开后DeskClock中AlarmClockFragment使用此布局文件-  fengyun-2015-4-8-start -->
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
@@ -99,5 +99,5 @@
         layout="@layout/addalarmclock" />
 
 </FrameLayout>
-<!-- fengyun- 宏开关打开后DeskClock中AlarmClockFragment使用此布局文件- 李星-2015-4-8-end -->
+<!-- fengyun- 宏开关打开后DeskClock中AlarmClockFragment使用此布局文件-  fengyun-2015-4-8-end -->
 

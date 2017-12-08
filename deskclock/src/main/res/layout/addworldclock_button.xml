@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- fengyun- 宏开关打开后DeskClock中ClockFragmentz中添加时钟按钮使用此布局文件- 李星-2015-4-9-start -->
+<!-- fengyun- 宏开关打开后DeskClock中ClockFragmentz中添加时钟按钮使用此布局文件-  fengyun-2015-4-9-start -->
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:drawable="@drawable/addclock_down" android:state_enabled="true" android:state_pressed="true"/>
     <item android:drawable="@drawable/addclock_up" android:state_enabled="true"/>
 
-</selector><!-- fengyun- 宏开关打开后DeskClock中ClockFragmentz中添加时钟按钮使用此布局文件- 李星-2015-4-9-end -->
+</selector><!-- fengyun- 宏开关打开后DeskClock中ClockFragmentz中添加时钟按钮使用此布局文件-  fengyun-2015-4-9-end -->
 

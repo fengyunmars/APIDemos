@@ -1180,7 +1180,7 @@
     <!-- fengyun- 添加字符串资源文件- lixing-2015-4-8-end -->
 
 
-    <!-- fengyun-添加文字资源- 李星-2015-5-9-start -->
+    <!-- fengyun-添加文字资源-  fengyun-2015-5-9-start -->
     <string name="timer_clock_ring_text">Ringing</string>
     <string name="start_fengyun">Start</string>
     <string name="cancel_fengyun">Cancel</string>
@@ -1195,7 +1195,7 @@
     <string name="tiemr_start_fengyun">Start</string>
     <string name="timer_time_up">Time up</string>
     <string name="close_tip">Close</string>
-    <!-- fengyun-添加文字资源- 李星-2015-5-9-end -->
+    <!-- fengyun-添加文字资源-  fengyun-2015-5-9-end -->
     <string name="close_tip_fengyun">I know it.</string>
     <string name="timer_tip_fengyun">Move yellow triangle to set time</string>
     <string name="close_alarm_tip_fengyun">Slide up to stop alarm</string>

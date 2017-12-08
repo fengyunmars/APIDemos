@@ -49,7 +49,7 @@
         <attr name="switchStyle" />
     </declare-styleable>
     
-    <declare-styleable name="fengyunSwitchButton">
+    <declare-styleable name="FengyunSwitchButton">
 
         <!-- Drawable to use as the "thumb" that switches back and forth. -->
         <attr name="thumb" format="reference" />

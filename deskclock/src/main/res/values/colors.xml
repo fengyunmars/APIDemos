@@ -66,13 +66,13 @@
     <color name="notification_pressed">#333333</color>
     <color name="notification_divider">#272727</color>
     
-    	<!-- fengyun-添加deskclock actionBar tab 中的 text资源- 李星-2015-4-17-start -->
+    	<!-- fengyun-添加deskclock actionBar tab 中的 text资源-  fengyun-2015-4-17-start -->
     <color name="tabtext_selected">#ffffff</color> 
     <color name="tabtext_unselected">#64ffffff</color>
     <color name="toumin_white">#64ffffff</color>
-    <!-- fengyun-添加deskclock actionBar tab 中的 text资源- 李星-2015-4-17-end -->
+    <!-- fengyun-添加deskclock actionBar tab 中的 text资源-  fengyun-2015-4-17-end -->
     
-    <!-- fengyun-添加deskclock actionBar tab 中的 text资源- 李星-2015-5-18-start -->
+    <!-- fengyun-添加deskclock actionBar tab 中的 text资源-  fengyun-2015-5-18-start -->
     <color name="alarm_background">#778dfb</color>
     <color name="clock_background">#129beb</color>
     <color name="stopwatch_background">#13d573</color>
@@ -83,7 +83,7 @@
     <color name="list_item_bg_press">#E6E6E6</color>
     <color name="list_item_bg_normal">#FFFFFF</color>
     <color name="add_or_edit_alarm_actionbar_background">#FFF0F0F0</color>
-    <!-- fengyun-添加deskclock actionBar tab 中的 text资源- 李星-2015-5-18-end -->
+    <!-- fengyun-添加deskclock actionBar tab 中的 text资源-  fengyun-2015-5-18-end -->
     <color name="city_actionbar_grey">#fff5f5f5</color>
     <color name="city_text_grey">#ff323232</color>
     

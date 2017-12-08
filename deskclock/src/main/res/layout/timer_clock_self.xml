@@ -7,7 +7,7 @@
     >
     
     
-    <com.android.deskclock.widget.timerClockfengyunView
+    <com.android.deskclock.widget.TimerClockFengyunView
        android:id="@+id/thisclock"
        android:layout_width="@dimen/new_clock_width"
        android:layout_height="@dimen/new_clock_height" 

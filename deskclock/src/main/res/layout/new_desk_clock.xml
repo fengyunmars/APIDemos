@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- fengyun- 宏开关打开后DeskClock中Activity使用此布局文件- 李星-2015-4-6-start -->
+<!-- fengyun- 宏开关打开后DeskClock中Activity使用此布局文件-  fengyun-2015-4-6-start -->
 <!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/deskclock_main"
     android:layout_width="match_parent"
@@ -48,7 +48,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent" >
 
-                            <com.android.deskclock.fengyun.widget.fengyunAnalogClock
+                            <com.android.deskclock.fengyun.widget.FengyunAnalogClock
                                 android:id="@+id/analogclock"
                                 android:layout_marginTop="10dp"
                                 android:layout_width="@dimen/new_clock_width"
@@ -86,7 +86,7 @@
                         android:background="@color/clock_background"
                         android:visibility="gone" >
 
-                        <com.android.deskclock.fengyun.widget.fengyunAnalogClock
+                        <com.android.deskclock.fengyun.widget.FengyunAnalogClock
                             android:id="@+id/world_clock"
                             android:layout_marginTop="10dp"
                             android:layout_width="@dimen/new_clock_width"
@@ -125,7 +125,7 @@
                             android:textColor="@android:color/white"
                             android:textSize="@dimen/stopwatch_texttime" />-->
 
-                        <com.android.deskclock.fengyun.widget.fengyunStopWatchClock
+                        <com.android.deskclock.fengyun.widget.FengyunStopWatchClock
                             android:id="@+id/stopwatch_clock"
                             android:layout_marginTop="10dp"
                             android:layout_width="@dimen/new_clock_width"
@@ -236,7 +236,7 @@
     </FrameLayout>
 
 <!--</FrameLayout>-->
-<!-- fengyun- 宏开关打开后DeskClock中Activity使用此布局文件- 李星-2015-4-6-end -->
+<!-- fengyun- 宏开关打开后DeskClock中Activity使用此布局文件-  fengyun-2015-4-6-end -->
 
 
 

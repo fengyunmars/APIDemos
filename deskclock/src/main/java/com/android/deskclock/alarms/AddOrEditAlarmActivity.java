@@ -52,7 +52,7 @@ import com.android.deskclock.provider.Alarm;
 import com.android.deskclock.provider.AlarmInstance;
 import com.android.deskclock.timer.TimerObj;
 import com.mediatek.deskclock.utility.FeatureOption;
-import com.mediatek.deskclock.utility.fengyunUtil;
+import com.mediatek.deskclock.utility.FengyunUtil;
 
 public class AddOrEditAlarmActivity extends Activity implements OnClickListener,
 	AlarmLabelDialogFragment.TimerLabelDialogHandler, AlarmLabelDialogFragment.AlarmLabelDialogHandler {
@@ -197,7 +197,7 @@ public class AddOrEditAlarmActivity extends Activity implements OnClickListener,
 			}
 		});
 
-		final String ringtone = fengyunUtil.getRingtoneToString(mSelectedAlarm, this);
+		final String ringtone = FengyunUtil.getRingtoneToString(mSelectedAlarm, this);
 		ringtone_button.setText(ringtone);
 		ringtone_button.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
@@ -424,7 +424,7 @@ public class AddOrEditAlarmActivity extends Activity implements OnClickListener,
             LogUtils.v("saveRingtoneUri = " + uri.toString());
         }
         
-        final String ringtone = fengyunUtil.getRingtoneToString(mSelectedAlarm,this);
+        final String ringtone = FengyunUtil.getRingtoneToString(mSelectedAlarm,this);
         ringtone_button.setText(ringtone);
     }
     

@@ -153,14 +153,14 @@
         <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:textColor">@color/white_69p</item>
         --> 
-        <!-- fengyun- 设置状态栏颜色为黑色- 李星-2015-5-12-start -->
+        <!-- fengyun- 设置状态栏颜色为黑色-  fengyun-2015-5-12-start -->
         <item name="android:statusBarColor">@color/white</item>    
-        <!-- fengyun- 设置状态栏颜色为黑色- 李星-2015-5-12-end -->
+        <!-- fengyun- 设置状态栏颜色为黑色-  fengyun-2015-5-12-end -->
         <item name = "android:windowActionBar">false</item>
         <item name = "android:windowNoTitle">true</item>
-        <!-- fengyun- 设置PreferencActiviy 中文字颜色- 李星-2015-5-12-start -->
+        <!-- fengyun- 设置PreferencActiviy 中文字颜色-  fengyun-2015-5-12-start -->
         <item name="android:textColor">@color/black_9</item>
-        <!-- fengyun- 设置PreferencActiviy 中文字颜色- 李星-2015-5-12-start -->
+        <!-- fengyun- 设置PreferencActiviy 中文字颜色-  fengyun-2015-5-12-start -->
         <item name="android:textSize">@dimen/label_text_size</item>
         
     </style>
@@ -182,12 +182,12 @@
         <item name="android:homeAsUpIndicator">@drawable/go_home</item>
         <!--<item name="android:fengyunActionBarStyle">@style/fengyunActionBar</item>-->
         <item name="android:actionBarSize">@dimen/actionbar_height_fengyun</item>
-        <!-- fengyun- 设置字体颜色为黑色- 李星-2015-5-12-start -->
+        <!-- fengyun- 设置字体颜色为黑色-  fengyun-2015-5-12-start -->
         <!-- <item name="android:textColor">@color/black_6</item> -->
-        <!-- fengyun- 设置字体颜色为黑色- 李星-2015-5-12-start -->
-         <!-- fengyun- 设置状态栏颜色为黑色- 李星-2015-5-12-start -->
+        <!-- fengyun- 设置字体颜色为黑色-  fengyun-2015-5-12-start -->
+         <!-- fengyun- 设置状态栏颜色为黑色-  fengyun-2015-5-12-start -->
         <!--< item name="android:statusBarColor">@color/city_actionbar_grey</item> -->    
-        <!-- fengyun- 设置状态栏颜色为黑色- 李星-2015-5-12-end -->
+        <!-- fengyun- 设置状态栏颜色为黑色-  fengyun-2015-5-12-end -->
     </style>
     
     <style name="FastScrollStyle" parent="@android:style/Widget.Material.FastScroll">
@@ -206,9 +206,9 @@
         <item name="android:titleTextStyle">@style/SettingsTheme.TextAppearance.ActionBar.Title</item>
         <item name="android:displayOptions">useLogo|showTitle</item>
         <item name="android:homeAsUpIndicator">@drawable/go_home</item>
-        <!-- fengyun- 设置PreferencActiviy 中actionBar背景颜色为黑色- 李星-2015-5-12-start -->
+        <!-- fengyun- 设置PreferencActiviy 中actionBar背景颜色为黑色-  fengyun-2015-5-12-start -->
         <item name="android:background">@drawable/actionbar_background</item> 
-        <!-- fengyun- 设置PreferencActiviy 中actionBar背景颜色为黑色- 李星-2015-5-12-end-->
+        <!-- fengyun- 设置PreferencActiviy 中actionBar背景颜色为黑色-  fengyun-2015-5-12-end-->
         	      
     </style>
     
@@ -436,7 +436,7 @@
         <item name="android:clickable">true</item>
     </style>
 
-    <!-- fengyun-添加deskclock actionBar tab 中的 text资源- 李星-2015-4-17-start -->
+    <!-- fengyun-添加deskclock actionBar tab 中的 text资源-  fengyun-2015-4-17-start -->
    
     <style name="deskclock_TabTextColor">  
 	 <item name="android:textColor">@color/deskclock_actionbar_tabtext</item>  
@@ -465,14 +465,14 @@
         parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
     	<item name="android:titleTextStyle">@style/OctopusActionBarTittle</item>
 	</style>
-     <!-- fengyun-添加deskclock actionBar tab 中的 text资源- 李星-2015-4-17-end -->
+     <!-- fengyun-添加deskclock actionBar tab 中的 text资源-  fengyun-2015-4-17-end -->
     
     
     
     
     
     
-     <!-- fengyun-删除闹钟的style- 李星-2015-4-23-start -->
+     <!-- fengyun-删除闹钟的style-  fengyun-2015-4-23-start -->
      <style name="deletalarmstyle" parent="android:Animation">  
          
         <item name="android:windowEnterAnimation">@anim/deletealarm_dialog_enter</item>
@@ -485,5 +485,5 @@
          
          <item name="android:backgroundDimEnabled">true</item>
      </style>  
-  	  <!-- fengyun-删除闹钟的style- 李星-2015-4-23-end -->
+  	  <!-- fengyun-删除闹钟的style-  fengyun-2015-4-23-end -->
 </resources>

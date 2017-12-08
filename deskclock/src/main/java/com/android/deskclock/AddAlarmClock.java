@@ -58,7 +58,7 @@ import com.android.deskclock.alarms.AlarmStateManager;
 import com.android.deskclock.alarms.PowerOffAlarm;
 import com.android.deskclock.provider.Alarm;
 import com.android.deskclock.stopwatch.TimePickerCallBack;
-import com.android.deskclock.fengyun.widget.fengyunTimePicker;
+import com.android.deskclock.fengyun.widget.FengyunTimePicker;
 
 public class AddAlarmClock extends Fragment implements TimePickerCallBack{
 
@@ -70,7 +70,7 @@ public class AddAlarmClock extends Fragment implements TimePickerCallBack{
 	private static final String KEY_IS_ADD = "isadd";
 	private boolean add = false;
 	
-	private fengyunTimePicker timePicker;
+	private FengyunTimePicker timePicker;
 	private Button hourSet;
 	private Button minuteSet;
 	private Button confirm;
@@ -179,7 +179,7 @@ public class AddAlarmClock extends Fragment implements TimePickerCallBack{
  			public void onClick(View arg0) {
  				setHourButtonActive();
  				int time = Integer.parseInt(hourSet.getText().toString());
-// 				timePicker.setTime(time, fengyunTimePicker.KEY_HOUR);
+// 				timePicker.setTime(time, FengyunTimePicker.KEY_HOUR);
  			}
  		});
  		
@@ -188,17 +188,17 @@ public class AddAlarmClock extends Fragment implements TimePickerCallBack{
  			public void onClick(View arg0) {
  				setMinuteButtonActive();
  				int time = Integer.parseInt(minuteSet.getText().toString());
-// 				timePicker.setTime(time, fengyunTimePicker.KEY_MINUTE);
+// 				timePicker.setTime(time, FengyunTimePicker.KEY_MINUTE);
  			}
  		});
  		
  		
  	
  		
- 		/* fengyun- initialization let Hour button to highlight it and get fengyunTimePicker slide data! The initialization fengyunTimePicker time data -lixing-2015-4-16-start */
+ 		/* fengyun- initialization let Hour button to highlight it and get FengyunTimePicker slide data! The initialization FengyunTimePicker time data -lixing-2015-4-16-start */
  		setHourButtonActive();	
-// 		timePicker.setTime(current_alarm.hour, fengyunTimePicker.KEY_HOUR);
- 		/* fengyun- initialization let Hour button to highlight it and get fengyunTimePicker slide data! The initialization fengyunTimePicker time data -lixing-2015-4-16-end */
+// 		timePicker.setTime(current_alarm.hour, FengyunTimePicker.KEY_HOUR);
+ 		/* fengyun- initialization let Hour button to highlight it and get FengyunTimePicker slide data! The initialization FengyunTimePicker time data -lixing-2015-4-16-end */
 
 		
 		day_linearlayout = (LinearLayout)v.findViewById(R.id.day_linearlayout);
@@ -468,7 +468,7 @@ public class AddAlarmClock extends Fragment implements TimePickerCallBack{
     	 minuteSet.setActivated(false);
     	 minuteSet.setTextColor(getResources().getColor(R.color.toumin_white));
     	 /*fengyun-Depending on the selected setting dial clock or minutes-lixing-2015-4-13-start*/
-    	 timePicker.setDial(fengyunTimePicker.KEY_DIAL_HOUR);
+    	 timePicker.setDial(FengyunTimePicker.KEY_DIAL_HOUR);
     	 
      }
      
@@ -487,14 +487,14 @@ public class AddAlarmClock extends Fragment implements TimePickerCallBack{
     	 minuteSet.setActivated(true);
     	 minuteSet.setTextColor(getResources().getColor(R.color.white));
     	 /*fengyun-Depending on the selected setting dial clock or minutes-lixing-2015-4-13-start*/
-    	 timePicker.setDial(fengyunTimePicker.KEY_DIAL_MINUTE);
+    	 timePicker.setDial(FengyunTimePicker.KEY_DIAL_MINUTE);
      }
      
      
      
      private void bindActivityView(Activity activity){
     	 
-    	timePicker = (fengyunTimePicker)activity.findViewById(R.id.time_picker);
+    	timePicker = (FengyunTimePicker)activity.findViewById(R.id.time_picker);
  		/*fengyun-Sets the callback when timePicker slide when using a callback function to display the time on the two buttons-lixing-2015-4-16-start*/
  		timePicker.setCallBack(this);	
  		

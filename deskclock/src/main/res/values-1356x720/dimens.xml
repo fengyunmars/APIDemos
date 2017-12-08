@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     
-    <!-- fengyun- 增加新1280x720资源- 李星-2015-4-21-start -->
+    <!-- fengyun- 增加新1280x720资源-  fengyun-2015-4-21-start -->
     
     
   	<dimen name="framelayout_top">402dp</dimen>
@@ -54,7 +54,7 @@
     
     
     
-    <!-- fengyun- 增加新1280x720资源- 李星-2015-4-21-end -->
+    <!-- fengyun- 增加新1280x720资源-  fengyun-2015-4-21-end -->
 
 
     

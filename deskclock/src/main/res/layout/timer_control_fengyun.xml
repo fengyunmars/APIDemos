@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+/*******************************************
+ * fengyun
+ *
+ *内容摘要：界面最下端的 计时器的开始 暂停 或者取消 操作界面
+ *当前版本：
+ *作	者： fengyun
+ *完成日期：2015.4.15
+ *修改记录：
+ *修改日期：
+ *版 本 号：
+ *修 改 人：
+ *修改内容：
+ ...
+ *修改记录：
+ *修改日期：
+ *版 本 号：
+ *修 改 人：
+ *修改内容：
+*********************************************/
+  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/control_area"
+    android:layout_gravity="bottom"
+    android:background="#ffffff"
+    android:gravity="center"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_bottom"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/timer_start_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_bottom"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/bottom_button_margin_left"
+            android:layout_marginStart="@dimen/bottom_button_margin_left"
+            android:layout_weight="1"
+            android:background="@drawable/full_btn"
+            android:text="@string/start_fengyun"
+            android:textColor="@color/black_3"
+            android:textSize="@dimen/fengyun_normal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_bottom"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/timer_pause_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_bottom"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/bottom_button_margin_left"
+            android:layout_weight="1"
+            android:background="@drawable/left_btn"
+            android:text="@string/timer_pause"
+            android:textColor="@color/black_3"
+            android:textSize="@dimen/fengyun_normal" />
+
+        <Button
+            android:id="@+id/timer_cancle_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_bottom"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/bottom_button_margin_left"
+            android:layout_weight="1"
+            android:background="@drawable/right_btn"
+            android:text="@string/cancel_fengyun"
+            android:textColor="@color/black_3"
+            android:textSize="@dimen/fengyun_normal" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_bottom"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/timer_restart_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_bottom"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/bottom_button_margin_left"
+            android:layout_weight="1"
+            android:background="@drawable/left_btn"
+            android:text="@string/timer_restart"
+            android:textColor="@color/black_3"
+            android:textSize="@dimen/fengyun_normal" />
+
+        <Button
+            android:id="@+id/timer_cancle_btn_2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/button_bottom"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/bottom_button_margin_left"
+            android:layout_weight="1"
+            android:background="@drawable/right_btn"
+            android:text="@string/cancel_fengyun"
+            android:textColor="@color/black_3"
+            android:textSize="@dimen/fengyun_normal" />
+    </LinearLayout>
+
+</LinearLayout>    

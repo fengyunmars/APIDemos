@@ -41,9 +41,9 @@
     <!-- @} -->
     <!-- M: For multiuser -->
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
-    <!-- fengyun- 添加写文件权限- 李星-2015-4-10-start -->
+    <!-- fengyun- 添加写文件权限-  fengyun-2015-4-10-start -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <!-- fengyun- 添加写文件权限- 李星-2015-4-10-end -->
+    <!-- fengyun- 添加写文件权限-  fengyun-2015-4-10-end -->
     <application android:label="@string/app_label"
                  android:name=".DeskClockApplication"
                  android:allowBackup="true"

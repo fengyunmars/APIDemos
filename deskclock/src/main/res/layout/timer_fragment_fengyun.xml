@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- clock show on the top,timerlist show below the clock -->
+<!-- 
+
+/*******************************************
+ * fengyun
+ *
+ *内容摘要：界面初始布局
+ *当前版本：
+ *作	者： fengyun
+ *完成日期：2015.4.15
+ *修改记录：此文件，没有用到 -lixing - 2015.4.30
+ *修改日期：
+ *版 本 号：
+ *修 改 人：
+ *修改内容：
+ ...
+ *修改记录：
+ *修改日期：
+ *版 本 号：
+ *修 改 人：
+ *修改内容：
+*********************************************/
+ -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/timers_list_page_fengyun"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- android:paddingTop="?android:attr/actionBarSize" -->
+
+    <!-- <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/framelayout_top" /> -->
+
+    <LinearLayout
+        android:id="@+id/timer_controller"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/framelayout_top"
+        android:orientation="vertical" >
+        
+        <ScrollView
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="vertical" >
+
+                <include
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/list_item"
+                    layout="@layout/timer_clockring_setting_fengyun" />
+
+                <include
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    layout="@layout/timer_list_fengyun" />
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/fengyun_divide_line_default" /> -->
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/fengyun_bottom_nav_height"
+            layout="@layout/timer_control_fengyun" />
+
+    </LinearLayout>
+    
+    <!-- <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_layout"
+            android:layout_alignParentBottom="true"
+            layout="@layout/timer_control_fengyun" />
+    </RelativeLayout> -->
+
+</FrameLayout>

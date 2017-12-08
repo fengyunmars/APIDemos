@@ -55,9 +55,9 @@ import com.android.deskclock.R;
 import com.android.deskclock.Utils;
 import com.android.deskclock.events.Events;
 import com.android.deskclock.timer.CountingTimerView;
-import com.android.deskclock.fengyun.widget.fengyunStopWatchClock;
+import com.android.deskclock.fengyun.widget.FengyunStopWatchClock;
 import com.mediatek.deskclock.utility.FeatureOption;
-import com.mediatek.deskclock.utility.fengyunUtil;
+import com.mediatek.deskclock.utility.FengyunUtil;
 
 public class StopwatchFragment extends DeskClockFragment
         implements OnSharedPreferenceChangeListener {
@@ -100,7 +100,7 @@ public class StopwatchFragment extends DeskClockFragment
     /*fengyun---lixing-2015-4-14-end*/
     
     /*fengyun---lixing-2015-4-14-start*/
-    private fengyunStopWatchClock new_clock;
+    private FengyunStopWatchClock new_clock;
     /*fengyun---lixing-2015-4-14-end*/
     
     /*fengyun--LinearLayout,Button-lixing-2015-4-14-start*/
@@ -1247,7 +1247,7 @@ public class StopwatchFragment extends DeskClockFragment
 //            }
 //            count_time_text.postDelayed(newMTimeUpdateThread, STOPWATCH_REFRESH_INTERVAL_MILLIS);
 			new_clock.setTime(totalTime);
-            showtime_textview.setText(fengyunUtil.timeToString(totalTime));
+            showtime_textview.setText(FengyunUtil.timeToString(totalTime));
             showtime_textview.postDelayed(newMTimeUpdateThread, STOPWATCH_REFRESH_INTERVAL_MILLIS);
 		}
 
@@ -1315,7 +1315,7 @@ public class StopwatchFragment extends DeskClockFragment
     	long curTime = Utils.getPirzeTimeNow();
         mAccumulatedTime += (curTime - mStartTime);
     	newStopUpdateThread();
-    	showtime_textview.setText(fengyunUtil.timeToString(mAccumulatedTime));
+    	showtime_textview.setText(FengyunUtil.timeToString(mAccumulatedTime));
         mState = Stopwatches.STOPWATCH_STOPPED;
         releaseWakeLock();
 
@@ -1330,7 +1330,7 @@ public class StopwatchFragment extends DeskClockFragment
      */
     private void newDoReset(){
     	mAccumulatedTime = 0;
-    	showtime_textview.setText(fengyunUtil.timeToString(mAccumulatedTime));
+    	showtime_textview.setText(FengyunUtil.timeToString(mAccumulatedTime));
     	
     	mState = Stopwatches.STOPWATCH_RESET;
     	
@@ -1397,12 +1397,12 @@ public class StopwatchFragment extends DeskClockFragment
 		 /*fengyun--Get Activity layout controls CountingTimerView-2015-4-14-start*/
 		showtime_textview = (TextView)getActivity().findViewById(R.id.showtime_textview);
 		/*fengyun--Get Activity layout controls CountingTimerView-2015-4-14-end*/
-		new_clock = (fengyunStopWatchClock)getActivity().findViewById(R.id.stopwatch_clock);
+		new_clock = (FengyunStopWatchClock)getActivity().findViewById(R.id.stopwatch_clock);
 		
 		
 		/*fengyun-After changing the font size in the system settings, null pointer exceptions, catch exceptions-2015-5-14-start*/
 		
-		showtime_textview.setText(fengyunUtil.timeToString(0));
+		showtime_textview.setText(FengyunUtil.timeToString(0));
 	
 		/*fengyun-After changing the font size in the system settings, null pointer exceptions, catch exceptions-2015-5-14-end*/
 	}
