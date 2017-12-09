@@ -23,6 +23,5 @@ dependencies {
 
     compile 'com.github.orhanobut:logger:1.12'
     compile project(':yunsdk')
-
     annotationProcessor 'com.jakewharton:butterknife-compiler:+'
 }

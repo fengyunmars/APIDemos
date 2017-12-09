@@ -21,7 +21,8 @@ allprojects {
     //skip Test tasks
     gradle.taskGraph.whenReady {
         tasks.each { task ->
-            if (task.name.contains("Test") || task.name.contains("mockableAndroidJar"))
+            task.println("fname = + " + task.name + "fproject = " + task.getProject().toString());
+            if (task.name.contains("Test") || task.name.contains("mockableAndroidJar") || task.project.toString().contains("netease"))
             {
                 task.enabled = false
             }
