@@ -2,7 +2,9 @@ package com.fengyun.russiacell.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.view.SurfaceHolder;
 
+import com.fengyun.russiacell.model.spirit.TetrisPalette;
 import com.fengyun.view.game.SurfaceGameView;
 
 /**
@@ -15,12 +17,21 @@ public class RussiaGameView extends SurfaceGameView{
      *
      * @param context 上下文
      */
+
+    TetrisPalette mTetrisPalette;
     public RussiaGameView(Context context) {
         super(context);
     }
 
     @Override
-    protected void onGameDraw(Canvas canvas) {
+    public void surfaceCreated(SurfaceHolder holder) {
+        mTetrisPalette = new TetrisPalette(getLeft() + getWidth() / 4, getTop() + 20,getWidth() / 2,  getHeight() - 40, 20, 10);
+        super.surfaceCreated(holder);
+    }
 
+    @Override
+    protected void onGameDraw(Canvas canvas) {
+        mTetrisPalette.onDraw(canvas);
+        repaint = true;
     }
 }

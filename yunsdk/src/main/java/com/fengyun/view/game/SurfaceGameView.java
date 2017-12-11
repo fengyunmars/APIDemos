@@ -19,7 +19,7 @@ public abstract class SurfaceGameView extends SurfaceView implements SurfaceHold
 	private SurfaceHolder surfaceHolder=null;
 	//绘图线程
 	private Thread drawThread=null;
-    private boolean repaint;
+    protected boolean repaint;
     private Canvas canvas;
 
     /**
@@ -34,6 +34,7 @@ public abstract class SurfaceGameView extends SurfaceView implements SurfaceHold
 		surfaceHolder = this.getHolder();
 		//给视图控制器添加监听
 		surfaceHolder.addCallback(this);
+		setWillNotDraw(false);
 	}
 
 
