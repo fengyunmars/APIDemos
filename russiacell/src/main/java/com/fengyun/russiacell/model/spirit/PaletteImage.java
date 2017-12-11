@@ -14,7 +14,7 @@ public class PaletteImage extends Palette {
     private static final int BACKGROUND_WIDTH = 509;
     private static final int BACKGROUND_HEIGHT = 1009;
     private static final int BACKGROUND_CELLWIDTH = 50;
-    private static final int BACKGROUND_BORDERWIDTH = 5;
+    private static final int BACKGROUND_BORDERWIDTH = 4;
     private Bitmap mBackground;
 
     public PaletteImage(int x, int y, Bitmap background){

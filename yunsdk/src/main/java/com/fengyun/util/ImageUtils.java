@@ -33,11 +33,7 @@ import android.graphics.drawable.Drawable;
 public class ImageUtils extends BaseUtils{
 	/**
 	 * 
-	 * 由资源id获取图片
-	 * @param context
-	 * 
-	 * @param resId
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -49,7 +45,7 @@ public class ImageUtils extends BaseUtils{
 			e.printStackTrace();
 		}
 		if(bitmap.getWidth() != width){
-			bitmap = ImageUtils.zoomBitmap(bitmap, width / bitmap.getWidth());
+			bitmap = ImageUtils.zoomBitmap(bitmap, (float) width / bitmap.getWidth());
 		}
 		return bitmap;
 	}

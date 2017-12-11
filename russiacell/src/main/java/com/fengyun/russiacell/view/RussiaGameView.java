@@ -28,7 +28,7 @@ public class RussiaGameView extends SurfaceGameView{
     }
 
     private void init() {
-        mPalette = new PaletteImage(300, 280 , ImageUtils.getAssetBitmap("scene/palette_background", 509));
+        mPalette = new PaletteImage(300, 280 , ImageUtils.getAssetBitmap("scene/palette_background.png", 762));
     }
 
     @Override
