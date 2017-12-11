@@ -1,16 +1,22 @@
 package com.fengyun.russiacell.app;
 
-import android.app.ActionBar;
 import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.ViewGroup;
 
-import com.fengyun.russiacell.R;
+import com.dd.plist.PropertyListFormatException;
 import com.fengyun.russiacell.view.RussiaGameView;
 import com.fengyun.util.ActivityUtils;
-import com.fengyun.util.AppUtils;
+import com.fengyun.util.XMLUtils;
+
+import org.xml.sax.SAXException;
+
+import java.io.IOException;
+import java.text.ParseException;
+
+import javax.xml.parsers.ParserConfigurationException;
 
 public class GameActivity extends AppCompatActivity {
     RussiaGameView gameView;
@@ -23,6 +29,19 @@ public class GameActivity extends AppCompatActivity {
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         gameView.setLayoutParams(layoutParams);
         setContentView(gameView);
+        try {
+            XMLUtils.parsePlist("plist/game_render");
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ParserConfigurationException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        } catch (SAXException e) {
+            e.printStackTrace();
+        } catch (PropertyListFormatException e) {
+            e.printStackTrace();
+        }
     }
 
     public void setSurfaceViewDisplay(){

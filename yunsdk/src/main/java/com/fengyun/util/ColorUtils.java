@@ -36,9 +36,7 @@ import java.lang.annotation.RetentionPolicy;
 /**
  * Utility methods for working with colors.
  */
-public class ColorUtils {
-    public static Context applicationContext = BaseApplication.getApplication().getApplicationContext();
-    private ColorUtils() { }
+public class ColorUtils extends BaseUtils{
 
     public static final int IS_LIGHT = 0;
     public static final int IS_DARK = 1;

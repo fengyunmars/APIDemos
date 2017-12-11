@@ -10,7 +10,7 @@ public class BiVector {
     double x;
     double y;
 
-    public BiVector(){};
+    private BiVector(){};
     public BiVector(double x, double y){
         this.x = x;
         this.y = y;

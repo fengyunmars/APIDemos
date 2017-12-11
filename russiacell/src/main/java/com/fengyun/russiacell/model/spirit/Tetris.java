@@ -11,15 +11,12 @@ import java.util.List;
  * Created by fengyun on 2017/12/9.
  */
 
-public class Tetris extends BaseSpirit {
-    private List<Cell> cellList;
+public abstract class Tetris extends BaseSpirit {
+    List<Cell> cellList;
+    int cx, cy;
 
     public Tetris(int x, int y) {
         super(x, y);
     }
 
-    @Override
-    public void onDraw(Canvas canvas) {
-
-    }
 }

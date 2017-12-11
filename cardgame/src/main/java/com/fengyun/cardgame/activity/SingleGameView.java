@@ -14,7 +14,7 @@ import com.fengyun.cardgame.bean.HandCardLandlord;
 import com.fengyun.cardgame.bean.Player;
 import com.fengyun.cardgame.bean.RealPlayer;
 import com.fengyun.cardgame.bean.ScreenType;
-import com.fengyun.cardgame.util.ImageUtil;
+import com.fengyun.util.ImageUtils;
 import com.fengyun.util.AppUtils;
 
 import android.content.Context;
@@ -247,50 +247,50 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 		
 		try {
 			//游戏界面背景
-			background= ImageUtil.zoomBitmap(
+			background= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/state/lord_play_bg.png")),
 					(float)(3/4));
 			
-			initHeadBitmap=ImageUtil.zoomBitmap(
+			initHeadBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/logo_unknown.png")),
 					(float)(1.0/3));
 			
-			exitBitmap=ImageUtil.zoomBitmap(
+			exitBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/game_icon_exit.png")),
 					(float)(1.0/3));
-			setupBitmap=ImageUtil.zoomBitmap(
+			setupBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/game_icon_setting.png")),
 					(float)(1.0/3));
-			cardBgBitmap=ImageUtil.zoomBitmap(
+			cardBgBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/poke_back_header.png")),
 					(float)(1.0/3));
-			prepareButtontextBitmap=ImageUtil.zoomBitmap(
+			prepareButtontextBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/text_ready.png")),
 					(float)(1.0/3));
-			prepareButtonupbgBitmap=ImageUtil.zoomBitmap(
+			prepareButtonupbgBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/big_green_btn.png")),
 					(float)(1.0/3));
 			prepareButtonbgBitmap=prepareButtonupbgBitmap;
-			prepareButtondownbgBitmap=ImageUtil.zoomBitmap(
+			prepareButtondownbgBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/big_green_btn_down.png")),
 					(float)(1.0/3));
-			prepareButtonokBitmap=ImageUtil.zoomBitmap(
+			prepareButtonokBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/ready.png")),
 					(float)(1.0/3));
 			//数字图片
 			for(int i=0;i<10;i++){
-				numberBitmaps.add(ImageUtil.zoomBitmap
+				numberBitmaps.add(ImageUtils.zoomBitmap
 						(BitmapFactory.decodeStream(assetManager.open("images/beishu_"+i+".png")),
 					    (float)(1.0/3)));
 			}
 			
 			//倍字图像
-			beiBitmap=ImageUtil.zoomBitmap(
+			beiBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/game_icon_bei.png")),
 					(float)(1.0/3));
 			
 			for(int n=0;n<10;n++){
-				cardNumberBitmaps[n]=ImageUtil.zoomBitmap(
+				cardNumberBitmaps[n]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/number/otherplayer_cards_num_"+n+".png")),
 					(float)(1.0/3));
 			}
@@ -329,32 +329,32 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 			SmallJokerSmall = BitmapFactory.decodeStream(
 					assetManager.open("images/card/lord_card_joker_small_small.png"));
 			
-			cardSelectedBitmap=ImageUtil.zoomBitmap(
+			cardSelectedBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(
 							assetManager.open("images/state/lord_card_selected.png")),
 						0.64f);
 			
 			//头像图标
 			for(int i = 1; i <= 4; i++){
-				farmerBitmaps[i-1] = ImageUtil.zoomBitmap(
+				farmerBitmaps[i-1] = ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open(
 							"images/head/lord_classic_playerinfo_icon_farmer_normal_"+i+ ".png")),
 					(float)(1.0/3));
 			}
 			for(int i = 1; i <= 4; i++){
-				farmerBitmaps[i+3] = ImageUtil.zoomBitmap(
+				farmerBitmaps[i+3] = ImageUtils.zoomBitmap(
 						BitmapFactory.decodeStream(assetManager.open(
 								"images/head/lord_classic_playerinfo_icon_farmer_think_"+i+ ".png")),
 						(float)(1.0/3));
 			}
 			for(int i = 1; i <= 4; i++){
-				landlordBitmaps[i-1] = ImageUtil.zoomBitmap(
+				landlordBitmaps[i-1] = ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open(
 							"images/head/lord_classic_playerinfo_icon_lord_normal_"+i+ ".png")),
 					(float)(1.0/3));
 			}
 			for(int i = 1; i <= 4; i++){
-				landlordBitmaps[i+3] = ImageUtil.zoomBitmap(
+				landlordBitmaps[i+3] = ImageUtils.zoomBitmap(
 						BitmapFactory.decodeStream(assetManager.open(
 								"images/head/lord_classic_playerinfo_icon_lord_think_"+i+ ".png")),
 						(float)(1.0/3));
@@ -365,66 +365,66 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 //					(float)(1.0/3));
 			
 			//抢地主
-			gramTextBitmap[0]=ImageUtil.zoomBitmap(
+			gramTextBitmap[0]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(
 							assetManager.open("images/string_bu.png")),(float)(1.0/3));
-			gramTextBitmap[1]=ImageUtil.zoomBitmap(
+			gramTextBitmap[1]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/string_chu.png")),
 					(float)(1.0/3));
-			gramTextBitmap[2]=ImageUtil.zoomBitmap(
+			gramTextBitmap[2]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/string_di.png")),
 					(float)(1.0/3));
-			gramTextBitmap[3]=ImageUtil.zoomBitmap(
+			gramTextBitmap[3]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/string_jiao.png")),
 					(float)(1.0/3));
-			gramTextBitmap[4]=ImageUtil.zoomBitmap(
+			gramTextBitmap[4]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/string_qiang.png")),
 					(float)(1.0/3));
-			gramTextBitmap[5]=ImageUtil.zoomBitmap(
+			gramTextBitmap[5]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/string_zhu.png")),
 					(float)(1.0/3));
-			gramTextBitmap[6]=ImageUtil.zoomBitmap(
+			gramTextBitmap[6]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/text_bj.png")),
 					(float)(1.0/3));
-			gramTextBitmap[7]=ImageUtil.zoomBitmap(
+			gramTextBitmap[7]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/text_bq.png")),
 					(float)(1.0/3));
-			gramTextBitmap[8]=ImageUtil.zoomBitmap(
+			gramTextBitmap[8]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/text_cue.png")),
 					(float)(1.0/3));
-			gramTextBitmap[9]=ImageUtil.zoomBitmap(
+			gramTextBitmap[9]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/text_jdz.png")),
 					(float)(1.0/3));
-			gramTextBitmap[10]=ImageUtil.zoomBitmap(
+			gramTextBitmap[10]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/text_pass.png")),
 					(float)(1.0/3));
-			gramTextBitmap[11]=ImageUtil.zoomBitmap(
+			gramTextBitmap[11]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/text_qdz.png")),
 					(float)(1.0/3));
-			gramTextBitmap[12]=ImageUtil.zoomBitmap(
+			gramTextBitmap[12]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/text_ready.png")),
 					(float)(1.0/3));
-			gramTextBitmap[13]=ImageUtil.zoomBitmap(
+			gramTextBitmap[13]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/text_repick.png")),
 					(float)(1.0/3));
-			gramTextBitmap[14]=ImageUtil.zoomBitmap(
+			gramTextBitmap[14]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/text_send_card.png")),
 					(float)(1.0/3));
-			gramTextBitmap[15]=ImageUtil.zoomBitmap(
+			gramTextBitmap[15]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/blue_btn.png")),
 					(float)(1.0/3));
-			gramTextBitmap[16]=ImageUtil.zoomBitmap(
+			gramTextBitmap[16]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/green_btn.png")),
 					(float)(1.0/3));
-			gramTextBitmap[17]=ImageUtil.zoomBitmap(
+			gramTextBitmap[17]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/red_btn.png")),
 					(float)(1.0/3));
-			gramTextBitmap[18]=ImageUtil.zoomBitmap(
+			gramTextBitmap[18]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/other_btn_disable.png")),
 					(float)(1.0/3));
 			
 			//牌正面背景
-			cardbeforeBitmap=ImageUtil.zoomBitmap(
+			cardbeforeBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/poke_gb_header.png")),
 					(float)(1.0/3));
 			
@@ -451,50 +451,50 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 			background=
 					BitmapFactory.decodeStream(assetManager.open("images/state/lord_play_bg.png"));
 			
-			initHeadBitmap=ImageUtil.zoomBitmap(
+			initHeadBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/logo_unknown.png")),
 					(float)(2.0/3));
-			exitBitmap=ImageUtil.zoomBitmap(
+			exitBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/game_icon_exit.png")),
 					(float)(2.0/3));
-			setupBitmap=ImageUtil.zoomBitmap(
+			setupBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/game_icon_setting.png")),
 					(float)(2.0/3));
-			cardBgBitmap=ImageUtil.zoomBitmap(
+			cardBgBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/poke_back_header.png")),
 					(float)(2.0/3));
-			prepareButtontextBitmap=ImageUtil.zoomBitmap(
+			prepareButtontextBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/text_ready.png")),
 					(float)(2.0/3));
-			prepareButtonupbgBitmap=ImageUtil.zoomBitmap(
+			prepareButtonupbgBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/big_green_btn.png")),
 					(float)(2.0/3));
 			prepareButtonbgBitmap=prepareButtonupbgBitmap;
-			prepareButtondownbgBitmap=ImageUtil.zoomBitmap(
+			prepareButtondownbgBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/big_green_btn_down.png")),
 					(float)(2.0/3));
-			prepareButtonokBitmap=ImageUtil.zoomBitmap(
+			prepareButtonokBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/ready.png")),
 					(float)(2.0/3));
 			//数字图片
 			for(int i=0;i<10;i++){
-				numberBitmaps.add(ImageUtil.zoomBitmap(
+				numberBitmaps.add(ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/beishu_"+i+".png")),
 					(float)(2.0/3)));
 			}
 			//倍字图像
-			beiBitmap=ImageUtil.zoomBitmap(
+			beiBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/game_icon_bei.png")),
 					(float)(2.0/3));
 			
 			for(int n=0;n<10;n++){
-				cardNumberBitmaps[n]=ImageUtil.zoomBitmap(
+				cardNumberBitmaps[n]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/number/otherplayer_cards_num_"+n+".png")),
 					(float)(3.001/3));
 			}
 			
 			for(int n=3;n<=15;n++){
-				ClubBitmaps[n]=ImageUtil.zoomBitmap(
+				ClubBitmaps[n]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(
 						assetManager.open("images/card/lord_card_club_" + n + ".png")),
 					0.64f);
@@ -502,7 +502,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 						assetManager.open("images/card/lord_card_club_" + n + "_small.png"));
 			}
 			for(int n=3;n<=15;n++){
-				DiamondBitmaps[n]=ImageUtil.zoomBitmap(
+				DiamondBitmaps[n]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(
 						assetManager.open("images/card/lord_card_diamond_" + n + ".png")),
 					0.64f);
@@ -510,7 +510,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 						assetManager.open("images/card/lord_card_diamond_" + n + "_small.png"));
 			}
 			for(int n=3;n<=15;n++){
-				HeartBitmaps[n]=ImageUtil.zoomBitmap(
+				HeartBitmaps[n]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(
 						assetManager.open("images/card/lord_card_heart_" + n + ".png")),
 					0.64f);
@@ -518,7 +518,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 						assetManager.open("images/card/lord_card_heart_" + n + "_small.png"));
 			}
 			for(int n=3;n<=15;n++){
-				SpadeBitmaps[n]=ImageUtil.zoomBitmap(
+				SpadeBitmaps[n]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(
 						assetManager.open("images/card/lord_card_spade_" + n + ".png")),
 					0.64f);
@@ -526,15 +526,15 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 						assetManager.open("images/card/lord_card_spade_" + n + "_small.png"));
 			}
 	
-			BigJoker = ImageUtil.zoomBitmap(BitmapFactory.decodeStream(
+			BigJoker = ImageUtils.zoomBitmap(BitmapFactory.decodeStream(
 					assetManager.open("images/card/lord_card_joker_big.png")), 0.64f);
 			BigJokerSmall = BitmapFactory.decodeStream(
 					assetManager.open("images/card/lord_card_joker_big_small.png"));
-			SmallJoker = ImageUtil.zoomBitmap(BitmapFactory.decodeStream(
+			SmallJoker = ImageUtils.zoomBitmap(BitmapFactory.decodeStream(
 					assetManager.open("images/card/lord_card_joker_small.png")), 0.64f);
 			SmallJokerSmall = BitmapFactory.decodeStream(
 					assetManager.open("images/card/lord_card_joker_small_small.png"));
-			cardSelectedBitmap=ImageUtil.zoomBitmap(
+			cardSelectedBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(
 							assetManager.open("images/state/lord_card_selected.png")),
 						0.64f);
@@ -542,94 +542,94 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 			
 			//头像图标
 			for(int i = 1; i <= 4; i++){
-				farmerBitmaps[i-1] = ImageUtil.zoomBitmap(
+				farmerBitmaps[i-1] = ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open(
 							"images/head/lord_classic_playerinfo_icon_farmer_normal_"+i+ ".png")),
 					0.65f);
 			}
 			for(int i = 1; i <= 4; i++){
-				farmerBitmaps[i+3] = ImageUtil.zoomBitmap(
+				farmerBitmaps[i+3] = ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open(
 								"images/head/lord_classic_playerinfo_icon_farmer_think_"+i+ ".png")),
 					0.65f);
 			}
 			for(int i = 1; i <= 4; i++){
-				landlordBitmaps[i-1] = ImageUtil.zoomBitmap(
+				landlordBitmaps[i-1] = ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open(
 							"images/head/lord_classic_playerinfo_icon_lord_normal_"+i+ ".png")),
 					0.65f);
 			}
 			for(int i = 1; i <= 4; i++){
-				landlordBitmaps[i+3] = ImageUtil.zoomBitmap(
+				landlordBitmaps[i+3] = ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open(
 							"images/head/lord_classic_playerinfo_icon_lord_think_"+i+ ".png")),
 					0.65f);
 			}
 			
-			playCardBitmap=ImageUtil.zoomBitmap(
+			playCardBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/poke_back_small.png")),
 					(float)(2.0/3));
 			//抢地主
-			gramTextBitmap[0]=ImageUtil.zoomBitmap(
+			gramTextBitmap[0]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/string_bu.png")),
 					(float)(2.0/3));
-			gramTextBitmap[1]=ImageUtil.zoomBitmap(
+			gramTextBitmap[1]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/string_chu.png")),
 					(float)(2.0/3));
-			gramTextBitmap[2]=ImageUtil.zoomBitmap(
+			gramTextBitmap[2]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/string_di.png")),
 					(float)(2.0/3));
-			gramTextBitmap[3]=ImageUtil.zoomBitmap(
+			gramTextBitmap[3]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/string_jiao.png")),
 					(float)(2.0/3));
-			gramTextBitmap[4]=ImageUtil.zoomBitmap(
+			gramTextBitmap[4]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/string_qiang.png")),
 					(float)(2.0/3));
-			gramTextBitmap[5]=ImageUtil.zoomBitmap(
+			gramTextBitmap[5]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/string_zhu.png")),
 					(float)(2.0/3));
-			gramTextBitmap[6]=ImageUtil.zoomBitmap(
+			gramTextBitmap[6]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/text_bj.png")),
 					(float)(2.0/3));
-			gramTextBitmap[7]=ImageUtil.zoomBitmap(
+			gramTextBitmap[7]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/text_bq.png")),
 					(float)(2.0/3));
-			gramTextBitmap[8]=ImageUtil.zoomBitmap(
+			gramTextBitmap[8]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/text_cue.png")),
 					(float)(2.0/3));
-			gramTextBitmap[9]=ImageUtil.zoomBitmap(
+			gramTextBitmap[9]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/text_jdz.png")),
 					(float)(2.0/3));
-			gramTextBitmap[10]=ImageUtil.zoomBitmap(
+			gramTextBitmap[10]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/text_pass.png")),
 					(float)(2.0/3));
-			gramTextBitmap[11]=ImageUtil.zoomBitmap(
+			gramTextBitmap[11]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/text_qdz.png")),
 					(float)(2.0/3));
-			gramTextBitmap[12]=ImageUtil.zoomBitmap(
+			gramTextBitmap[12]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/text_ready.png")),
 					(float)(2.0/3));
-			gramTextBitmap[13]=ImageUtil.zoomBitmap(
+			gramTextBitmap[13]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/text_repick.png")),
 					(float)(2.0/3));
-			gramTextBitmap[14]=ImageUtil.zoomBitmap(
+			gramTextBitmap[14]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/text_send_card.png")),
 					(float)(2.0/3));
-			gramTextBitmap[15]=ImageUtil.zoomBitmap(
+			gramTextBitmap[15]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/blue_btn.png")),
 					(float)(2.0/3));
-			gramTextBitmap[16]=ImageUtil.zoomBitmap(
+			gramTextBitmap[16]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/green_btn.png")),
 					(float)(2.0/3));
-			gramTextBitmap[17]=ImageUtil.zoomBitmap(
+			gramTextBitmap[17]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/red_btn.png")),
 					(float)(2.0/3));
-			gramTextBitmap[18]=ImageUtil.zoomBitmap(
+			gramTextBitmap[18]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/other_btn_disable.png")),
 					(float)(2.0/3));
 			
 			//牌正面背景
-			cardbeforeBitmap=ImageUtil.zoomBitmap(
+			cardbeforeBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/poke_gb_header.png")),
 					(float)(2.0/3));
 			overGameBitmaps[0]=BitmapFactory.decodeStream(
@@ -649,7 +649,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 
 		getContext().getResources().getDisplayMetrics();
 		try {
-			background=ImageUtil.zoomBitmap(
+			background= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/state/lord_play_bg.png")),
 					AppUtils.getDisplayDimensions(getContext())[0], AppUtils.getDisplayDimensions(getContext())[1]);
 			
@@ -682,7 +682,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 					assetManager.open("images/game_icon_bei.png"));
 			
 			for(int n=0;n<10;n++){
-				cardNumberBitmaps[n]=ImageUtil.zoomBitmap(
+				cardNumberBitmaps[n]= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/number/otherplayer_cards_num_"+n+".png")),
 					(float)(3.0/3));
 			}
@@ -723,7 +723,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 			
 //			playCardBitmap=BitmapFactory.decodeStream(
 //					assetManager.open("images/poke_back_small.png"));
-			cardSelectedBitmap=ImageUtil.zoomBitmap(
+			cardSelectedBitmap= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(
 							assetManager.open("images/state/lord_card_selected.png")),
 						0.64f);
@@ -731,25 +731,25 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 			
 			//头像图标
 			for(int i = 1; i <= 4; i++){
-				farmerBitmaps[i-1] = ImageUtil.zoomBitmap(
+				farmerBitmaps[i-1] = ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open(
 							"images/head/lord_classic_playerinfo_icon_farmer_normal_"+i+ ".png")),
 					(float)(1.0/3));
 			}
 			for(int i = 1; i <= 4; i++){
-				farmerBitmaps[i+3] = ImageUtil.zoomBitmap(
+				farmerBitmaps[i+3] = ImageUtils.zoomBitmap(
 						BitmapFactory.decodeStream(assetManager.open(
 								"images/head/lord_classic_playerinfo_icon_farmer_think_"+i+ ".png")),
 						(float)(1.0/3));
 			}
 			for(int i = 1; i <= 4; i++){
-				landlordBitmaps[i-1] = ImageUtil.zoomBitmap(
+				landlordBitmaps[i-1] = ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open(
 							"images/head/lord_classic_playerinfo_icon_lord_normal_"+i+ ".png")),
 					(float)(1.0/3));
 			}
 			for(int i = 1; i <= 4; i++){
-				landlordBitmaps[i+3] = ImageUtil.zoomBitmap(
+				landlordBitmaps[i+3] = ImageUtils.zoomBitmap(
 						BitmapFactory.decodeStream(assetManager.open(
 								"images/head/lord_classic_playerinfo_icon_lord_think_"+i+ ".png")),
 						(float)(1.0/3));

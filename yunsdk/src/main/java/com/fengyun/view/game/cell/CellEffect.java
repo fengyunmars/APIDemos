@@ -6,7 +6,6 @@ import android.graphics.Color;
  * Created by fengyun on 2017/12/9.
  */
 
-public class CellEffect {
+public class CellEffect{
     int color;
-
 }

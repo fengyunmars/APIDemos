@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v4.content.FileProvider;
+import android.util.Log;
 
 import org.junit.Test;
 
@@ -75,55 +76,22 @@ public class FileUtils {
         return uri;
     }
 
-    @Test
-    public void testCreateFile() {
-        File file = new File("share.txt");
-        System.out.println(file.getAbsolutePath());
+    public static void renameFiles(String dir){
+        File file = new File(dir);
         if(!file.exists()){
-            System.out.println("create share.txt");
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
+            System.out.println(file.getAbsolutePath() + " doesnot exist !");
+            return;
+        }
+        File[] files = file.listFiles();
+        for(int i = 0; i < files.length; i ++) {
+            File src = files[i];
+            String name = src.getName();
+            String desName = name;
+
+            boolean b = src.renameTo(new File(src.getParent(), desName));
+            if(!b){
+                System.out.println(src.getAbsolutePath() + " rename to " + desName + "failure !");
             }
-        }
-    }
-
-    @Test
-    public void testMkDir() {
-        File file = new File("share.txt");
-        System.out.println(file.getAbsolutePath());
-        if(file.mkdir()){
-            System.out.println("mkdir share.txt");
-        }
-//        if(!file.exists()){
-//            System.out.println("create share.txt");
-//            try {
-//                file.createNewFile();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-        File file1 = new File("share");
-        try {
-            file1.createNewFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        if(file1.mkdir()){
-            System.out.println("mkdir share");
-        }
-    }
-    @Test
-    public void testMkDirs(){
-        File file = new File("hello/fengyun/work/api");
-        if(file.mkdir()){
-            System.out.println("mkdir hello/fengyun/work/api");
-        }
-
-        File file1 = new File("hello/fengyun/work/api");
-        if(file1.mkdirs()){
-            System.out.println("mkdirs hello/fengyun/work/api");
         }
     }
 

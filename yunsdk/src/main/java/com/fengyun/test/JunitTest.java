@@ -264,5 +264,26 @@ public class JunitTest {
 //        s.set;
         System.out.println(s);
     }
+
+    @Test
+    public void testDebug(){
+        String bound = "{{754,103},{49,49}}";
+        String s = bound.substring(1, bound.length() - 1);
+        System.out.println(s);
+        String[] arr = s.split(",");
+        String pointstr = arr[0] + "," + arr[1];
+        String sizestr = arr[2] + "," + arr[3];
+        System.out.println(Arrays.toString(arr));
+        System.out.println(pointstr);
+        System.out.println(sizestr);
+        String[] point = pointstr.substring(1, pointstr.length() - 1).split(",");
+        String[] size = sizestr.substring(1, sizestr.length() - 1).split(",");
+        System.out.println(Arrays.toString(point));
+        System.out.println(Arrays.toString(size));
+        int x = Integer.parseInt(point[0]);
+        int y = Integer.parseInt(point[1]);
+        int width = Integer.parseInt(size[0]);
+        int height = Integer.parseInt(size[1]);
+    }
 }
 
