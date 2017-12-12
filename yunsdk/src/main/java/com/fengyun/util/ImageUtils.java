@@ -12,6 +12,7 @@ import android.graphics.Bitmap.CompressFormat;
 import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Matrix;
 import android.graphics.Paint;
@@ -37,12 +38,24 @@ public class ImageUtils extends BaseUtils{
 	 * @return
 	 */
 
+	public static final int UNCHANGE = Integer.MIN_VALUE;
+
+	public static Bitmap getAssetBitmap(String file){
+		return getAssetBitmap(file, UNCHANGE);
+	}
+
 	public static Bitmap getAssetBitmap(String file, int width){
 		Bitmap bitmap = null;
 		try {
 			bitmap = BitmapFactory.decodeStream(applicationContext.getAssets().open(file));
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+		if(width == UNCHANGE){
+			return bitmap;
+		}
+		if(width <= 0){
+			return null;
 		}
 		if(bitmap.getWidth() != width){
 			bitmap = ImageUtils.zoomBitmap(bitmap, (float) width / bitmap.getWidth());
@@ -286,33 +299,65 @@ public class ImageUtils extends BaseUtils{
 	}
 
 	/**
-	 * 
-	 * 获得圆角图片
-	 * @param bitmap
-	 * 
-	 * @param roundPx
-	 * 
-	 * @return
-	 */
-	public static Bitmap getRoundedCornerBitmap(Bitmap bitmap, float roundPx) {
-		if (bitmap == null) {
-			return null;
-		}
-		Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),
-		bitmap.getHeight(), Config.ARGB_8888);
-		Canvas canvas = new Canvas(output);
-		final int color = 0xff424242;
-		final Paint paint = new Paint();
-		final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
-		final RectF rectF = new RectF(rect);
-		paint.setAntiAlias(true);
-		canvas.drawARGB(0, 0, 0, 0);
-		paint.setColor(color);
-		canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
-		paint.setXfermode(new PorterDuffXfermode(Mode.SRC_IN));
-		canvas.drawBitmap(bitmap, rect, rect, paint);
-		return output;
-	}
+     *
+     * 获得圆角图片
+     * @param bitmap
+     *
+     * @param roundPx
+     *
+     * @return
+     */
+    public static Bitmap getRoundedCornerBitmap(Bitmap bitmap, float roundPx) {
+        if (bitmap == null) {
+            return null;
+        }
+        Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),
+                bitmap.getHeight(), Config.ARGB_8888);
+        Canvas canvas = new Canvas(output);
+        final int color = 0xff424242;
+        final Paint paint = new Paint();
+        final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
+        final RectF rectF = new RectF(rect);
+        paint.setAntiAlias(true);
+        canvas.drawARGB(0, 0, 0, 0);
+        paint.setColor(color);
+        canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
+        paint.setXfermode(new PorterDuffXfermode(Mode.SRC_IN));
+        canvas.drawBitmap(bitmap, rect, rect, paint);
+        return output;
+    }
+
+    /**
+     *
+     * 获得圆角图片
+     * @param bitmap
+     *
+
+     *
+     * @return
+     */
+    public static Bitmap hollowOutBitmap(Bitmap bitmap, int x, int y, int width, int height, File path) {
+        if (bitmap == null) {
+            return null;
+        }
+        Bitmap output = Bitmap.createBitmap(bitmap.getWidth(),
+                bitmap.getHeight(), Config.ARGB_8888);
+        Canvas canvas = new Canvas(output);
+        Bitmap top = Bitmap.createBitmap(bitmap, 0, 0, bitmap.getWidth(), y);
+        Bitmap left = Bitmap.createBitmap(bitmap, 0, y, x, bitmap.getHeight() - y);
+        Bitmap bottom = Bitmap.createBitmap(bitmap, x, y + height, bitmap.getWidth() - x, bitmap.getHeight() - y - height);
+        Bitmap right = Bitmap.createBitmap(bitmap, x + width, y, bitmap.getWidth() - x - width, height);
+        saveBitmap(top, new File(path, "top.png"));
+        saveBitmap(left, new File(path, "left.png"));
+        saveBitmap(right, new File(path, "right.png"));
+        saveBitmap(bottom, new File(path, "bottom.png"));
+        canvas.drawBitmap(top,0, 0, null);
+        canvas.drawBitmap(left,0, y, null);
+        canvas.drawBitmap(bottom,x, y + height, null);
+        canvas.drawBitmap(right,x + width, y, null);
+        return output;
+    }
+
 
 	/**
 	 * 

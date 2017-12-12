@@ -31,7 +31,7 @@ dependencies {
     compile 'com.android.support:design:24.0.0'
     compile 'com.android.support:support-v4:24.0.0'
     compile 'com.android.support:support-annotations:24.0.0'
-//    compile 'com.android.support:support-compat:24.0.0'
+    //    compile 'com.android.support:support-compat:24.0.0'
     compile 'com.android.support:support-vector-drawable:24.0.0'
     compile 'com.android.support:cardview-v7:24.0.0'
     compile 'com.android.support:recyclerview-v7:24.0.0'
@@ -52,9 +52,6 @@ dependencies {
     //butterknife
     compile 'com.jakewharton:butterknife:+'
     annotationProcessor 'com.jakewharton:butterknife-compiler:+'
-
-
-
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'org.sufficientlysecure:html-textview:1.3'
     //  富文本
@@ -63,6 +60,5 @@ dependencies {
     compile 'com.github.githubwing:DragPhotoView:1.0.1'
     //    swipeback activity
     compile 'com.github.liuguangqiang.swipeback:library:1.0.2@aar'
-
-    compile group:'com.googlecode.plist', name:'dd-plist', version:'1.20'
+    compile 'com.googlecode.plist:dd-plist:1.20'
 }

@@ -15,6 +15,8 @@ import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import Jama.Matrix;
+
 /**
  * Created by fengyun on 2017/7/5.
  */
@@ -284,6 +286,16 @@ public class JunitTest {
         int y = Integer.parseInt(point[1]);
         int width = Integer.parseInt(size[0]);
         int height = Integer.parseInt(size[1]);
+    }
+
+    @Test
+    public void testMatrix(){
+        double[][] arr = new double[][]{{0.0,1.0,1.0,1.0}, {1.0,0.0,0.0,0.0}, {0.0,1.0,0.0,0.0},{1.0,0.0,1.0,0.0}};
+        Matrix a = new Matrix(arr);
+        Matrix a1 = new Matrix(arr);
+        Matrix b = a.times(a1);
+        System.out.println(Arrays.deepToString(b.getArray()));
+        System.out.println(b.get(2,3));
     }
 }
 

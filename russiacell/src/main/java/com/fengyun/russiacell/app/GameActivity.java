@@ -29,19 +29,19 @@ public class GameActivity extends AppCompatActivity {
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         gameView.setLayoutParams(layoutParams);
         setContentView(gameView);
-        try {
-            XMLUtils.parsePlist("plist/game_render");
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (PropertyListFormatException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            XMLUtils.parsePlist("plist/game_render");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (ParserConfigurationException e) {
+//            e.printStackTrace();
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        } catch (SAXException e) {
+//            e.printStackTrace();
+//        } catch (PropertyListFormatException e) {
+//            e.printStackTrace();
+//        }
     }
 
     public void setSurfaceViewDisplay(){
