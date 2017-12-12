@@ -10,13 +10,11 @@ import org.w3c.dom.ProcessingInstruction;
  */
 
 public abstract class BaseSpirit{
-    int mx;
-    int my;
+    protected int mx;
+    protected int my;
     protected Paint mPaint;
 
-    public BaseSpirit(int x, int y) {
-        this.mx = x;
-        this.my = y;
+    public BaseSpirit() {
         mPaint = new Paint();
     }
 

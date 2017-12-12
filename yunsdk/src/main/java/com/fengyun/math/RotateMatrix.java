@@ -30,15 +30,15 @@ public class RotateMatrix extends Matrix{
         super(vals, m);
     }
 
-    public Matrix reverse(){
+    public RotateMatrix reverse(){
         double[][] arr = getArrayCopy();
         for(int i = 0; i < arr.length; i ++) {
             Collections.reverse(Arrays.asList(arr[i]));
         }
-        return new Matrix(arr);
+        return new RotateMatrix(arr);
     }
 
-    public Matrix reverseEquals(){
+    public RotateMatrix reverseEquals(){
         double[][] arr = getArray();
         for(int i = 0; i < arr.length; i ++) {
             Collections.reverse(Arrays.asList(arr[i]));
@@ -46,8 +46,13 @@ public class RotateMatrix extends Matrix{
         return this;
     }
 
-    public Matrix rotateAnticlockwise90(){
-        return reverse().transpose();
+    public RotateMatrix transposeCustom(){
+        Matrix matrix = super.transpose();
+        RotateMatrix rotateMatrix = new RotateMatrix(matrix.getArray());
+        return rotateMatrix;
+    }
+    public RotateMatrix rotateAnticlockwise90(){
+        return reverse().transposeCustom();
     }
 
 }

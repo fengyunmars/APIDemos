@@ -14,7 +14,8 @@ public class PaletteGraphical extends Palette {
     private static final String TAG = PaletteGraphical.class.getSimpleName();
 
     public PaletteGraphical(int x, int y, int width, int heigth, int widthSize, int borderSize){
-        super(x, y);
+        this.mx = x;
+        this.my = y;
         this.width = width;
         this.height = heigth;
         this.widthSize = widthSize;

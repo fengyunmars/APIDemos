@@ -202,7 +202,7 @@ public class ImageUtils extends BaseUtils{
 		
 		Bitmap newbmp = Bitmap.createBitmap(bitmap, 0, 0, width, height, matrix, true);
 		
-		bitmap.recycle();
+//		bitmap.recycle();
 		
 		return newbmp;
 	}
