@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.Choreographer;
 
+import com.fengyun.math.QuadBitMatrix;
 import com.fengyun.model.enumeration.FGender;
 import com.fengyun.model.Circle;
 import com.fengyun.model.Student;
@@ -296,6 +297,25 @@ public class JunitTest {
         Matrix b = a.times(a1);
         System.out.println(Arrays.deepToString(b.getArray()));
         System.out.println(b.get(2,3));
+    }
+
+    @Test
+    public void testMatrixRotate(){
+        double[][] arr = new double[][]{{0,1,0}, {1,1,0}, {0,1,0}};
+        QuadBitMatrix m = new QuadBitMatrix(arr);
+        QuadBitMatrix m1 = m.rotateAnticlockwise90();
+        System.out.println(Arrays.deepToString(m1.getArray()));
+    }
+
+    @Test
+    public void testMatrixProjection(){
+        QuadBitMatrix m = new QuadBitMatrix(10, 10);
+        double[][] arr = new double[][]{{0,1,0}, {1,1,0}, {0,1,0}};
+        QuadBitMatrix m1 = new QuadBitMatrix(arr);
+        QuadBitMatrix m2 = m1.projection(m, 0, 0);
+        System.out.println(m);
+        System.out.println(m1);
+        System.out.println(m2);
     }
 }
 

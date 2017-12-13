@@ -172,7 +172,7 @@ public class TouchPaint extends GraphicsActivity {
     }
 
     /**
-     * Start up the pulse to fade the screen, clearing any existing pulse to
+     * Start up the mPulse to fade the screen, clearing any existing mPulse to
      * ensure that we don't have multiple pulses running at a time.
      */
     void startFading() {

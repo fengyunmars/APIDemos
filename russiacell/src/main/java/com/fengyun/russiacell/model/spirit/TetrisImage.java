@@ -11,7 +11,7 @@ import com.fengyun.math.QuadBitMatrix;
 
 public abstract class TetrisImage extends Tetris {
 
-    Bitmap bitmap;
+    int ibitmap;
     public TetrisImage(int cx, int cy) {
         super(cx, cy);
     }
@@ -23,15 +23,15 @@ public abstract class TetrisImage extends Tetris {
         }
     }
 
-    public Bitmap getBitmap() {
-        return bitmap;
+    public int getBitmap() {
+        return ibitmap;
     }
 
-    public void setBitmap(Bitmap bitmap) {
-        this.bitmap = bitmap;
+    public void setBitmap(int ibitmap) {
+        this.ibitmap = ibitmap;
         for(int i = 0; i < getCellList().size(); i ++){
             CellImage cellImage = (CellImage)getCellList().get(i);
-            cellImage.setBitmap(bitmap);
+            cellImage.setBitmap(ibitmap);
         }
     }
 }

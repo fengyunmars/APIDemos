@@ -10,6 +10,7 @@ import Jama.Matrix;
  */
 
 public class RotateMatrix extends Matrix{
+
     public RotateMatrix(int m, int n) {
         super(m, n);
     }
@@ -55,4 +56,32 @@ public class RotateMatrix extends Matrix{
         return reverse().transposeCustom();
     }
 
+    public RotateMatrix cloneCustom(){
+        return new RotateMatrix(getArrayCopy());
+    }
+
+    public RotateMatrix projection(RotateMatrix canvasMatrix, int x, int y){
+        RotateMatrix result = new RotateMatrix(canvasMatrix.getRowDimension(), canvasMatrix.getColumnDimension());
+        for(int i = y; i < y + getRowDimension(); i ++)
+            for(int j = x; j < x + getColumnDimension(); j ++){
+                result.set(i,j,get(i - y, j - x));
+            }
+        return result;
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < getRowDimension(); i ++){
+            sb.append("[");
+            for (int j = 0; j < getColumnDimension(); j ++){
+                double d = get(i, j);
+                sb.append(d);
+                if(j < getColumnDimension() - 1)
+                    sb.append(", ");
+            }
+            sb.append("]\n");
+        }
+        return sb.toString();
+    }
 }

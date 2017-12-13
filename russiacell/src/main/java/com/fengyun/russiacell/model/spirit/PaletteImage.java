@@ -31,7 +31,8 @@ public class PaletteImage extends Palette {
         widthSize = 10;
         heightSize = 20;
         cellWidth = mBackground.getWidth() / WIDTH_DEFAULT * CELLWIDTH_DEFAULT;
-        borderWidth = mBackground.getWidth() / WIDTH_DEFAULT * BORDERWIDTH_DEFAULT;
+        borderLeftWidth = mBackground.getWidth() / WIDTH_DEFAULT * BORDERWIDTH_LEFT_DEFAULT;
+        borderTopWidth = mBackground.getWidth() / WIDTH_DEFAULT * BORDERWIDTH_TOP_DEFAULT;
         topExtra = 0;
         synchronized (Palette.lock){
             Palette.X = mx;
@@ -39,7 +40,8 @@ public class PaletteImage extends Palette {
             Palette.WIDTH = width;
             Palette.HEIGHT = height;
             Palette.CELLWIDTH = cellWidth;
-            Palette.BORDERWIDTH = borderWidth;
+            Palette.BORDERWIDTH_LEFT = borderLeftWidth;
+            Palette.BORDERWIDTH_TOP = borderTopWidth;
         }
     }
 

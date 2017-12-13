@@ -1,7 +1,5 @@
 package com.fengyun.russiacell.model.spirit;
 
-import android.graphics.Bitmap;
-
 import com.fengyun.math.QuadBitMatrix;
 
 /**
@@ -13,10 +11,10 @@ public class TetrisImageSquare extends TetrisImage {
 
 
 
-    public TetrisImageSquare(int cx, int cy, Bitmap bitmap) {
+    public TetrisImageSquare(int cx, int cy, int ibitmap) {
         super(cx, cy);
         QuadBitMatrix matrix = new QuadBitMatrix(FILL_MATRIX_2.clone());
         setMatrix(matrix);
-        setBitmap(bitmap);
+        setBitmap(ibitmap);
     }
 }

@@ -13,13 +13,14 @@ public class PaletteGraphical extends Palette {
 
     private static final String TAG = PaletteGraphical.class.getSimpleName();
 
-    public PaletteGraphical(int x, int y, int width, int heigth, int widthSize, int borderSize){
+    public PaletteGraphical(int x, int y, int width, int heigth, int widthSize, int borderLeftWidht, int borderTopWidht){
         this.mx = x;
         this.my = y;
         this.width = width;
         this.height = heigth;
         this.widthSize = widthSize;
-        this.borderWidth = borderSize;
+        this.borderLeftWidth = borderLeftWidht;
+        this.borderTopWidth = borderTopWidht;
         normalization();
     }
 
@@ -28,13 +29,13 @@ public class PaletteGraphical extends Palette {
             Log.e(TAG,TAG + "normalization with field no initialized !");
 //            throw new Exception( TAG + "normalization with field no initialized !");
         }
-        int cellSizeWidth = width - borderWidth * 2;
+        int cellSizeWidth = width - borderLeftWidth * 2;
         cellWidth = cellSizeWidth / widthSize;
-        int extra = cellSizeWidth % cellWidth;
-        borderWidth += extra / 2;
-        int cellSizeHeight = height - borderWidth * 2;
-        heightSize = cellSizeHeight / cellWidth;
-        topExtra = cellSizeHeight % cellWidth;
+        float extra = cellSizeWidth % cellWidth;
+        borderLeftWidth += extra / 2;
+        int cellSizeHeight = height - borderTopWidth * 2;
+        heightSize = (int)(cellSizeHeight / cellWidth);
+        topExtra = (int)(cellSizeHeight % cellWidth);
     }
 
     @Override
@@ -42,12 +43,12 @@ public class PaletteGraphical extends Palette {
         mPaint.setColor(ColorUtils.getColorById(android.R.color.holo_orange_light));
         canvas.drawRect(getX(), getY(), getX() + getWidth(), getY() + getHeight(),mPaint);
         mPaint.setColor(ColorUtils.getColorById(android.R.color.holo_purple));
-        canvas.drawRect(getX(),getY(),getX() + borderWidth, getY() + getHeight(), mPaint);
-        canvas.drawRect(getX() + getWidth() - borderWidth ,getY(),getX() + getWidth(), getY() + getHeight(), mPaint);
-        canvas.drawRect(getX(),getY(),getX() + getWidth(), getY() + borderWidth, mPaint);
-        canvas.drawRect(getX(),getY() + getHeight() - borderWidth,getX() + getWidth(), getY() + getHeight(), mPaint);
-        int sxline = getX() + borderWidth;
-        int syline = getY() + getHeight() - borderWidth;
+        canvas.drawRect(getX(),getY(),getX() + borderLeftWidth, getY() + getHeight(), mPaint);
+        canvas.drawRect(getX() + getWidth() - borderLeftWidth ,getY(),getX() + getWidth(), getY() + getHeight(), mPaint);
+        canvas.drawRect(getX(),getY(),getX() + getWidth(), getY() + borderTopWidth, mPaint);
+        canvas.drawRect(getX(),getY() + getHeight() - borderTopWidth,getX() + getWidth(), getY() + getHeight(), mPaint);
+        int sxline = getX() + borderLeftWidth;
+        int syline = getY() + getHeight() - borderTopWidth;
         mPaint.setColor(ColorUtils.getColorById(android.R.color.holo_red_light));
         for(int x = sxline, i = 0; i < widthSize; i ++, x += cellWidth){
             canvas.drawLine(x, syline, x, syline - heightSize * cellWidth, mPaint);

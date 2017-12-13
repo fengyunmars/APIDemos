@@ -18,9 +18,14 @@ public abstract class SurfaceGameView extends SurfaceView implements SurfaceHold
 	//视图控制器
 	private SurfaceHolder surfaceHolder=null;
 	//绘图线程
-	private Thread drawThread=null;
-    protected boolean repaint;
-    private Canvas canvas;
+	public Thread drawThread = null;
+	public Thread pulseThread = null;
+	public long mPulse = 1;
+	public int mPulseInterval = 400;
+    public boolean repaint;
+    public Canvas canvas;
+
+    protected Object lock = new Object();
 
     /**
 	 * 构造方法
@@ -58,7 +63,7 @@ public abstract class SurfaceGameView extends SurfaceView implements SurfaceHold
                     {
                         //绘制界面
                         drawGame();
-                        repaint=false;
+                        repaint=true;
                     }
                     //修改50毫秒
                     Sleep(50);
@@ -66,9 +71,27 @@ public abstract class SurfaceGameView extends SurfaceView implements SurfaceHold
             }
         });
 		drawThread.start();
+
+		// 开始绘图线程
+		pulseThread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				while (true) {
+				    synchronized (lock) {
+                        mPulse++;
+                        updatePulse();
+                    }
+					//修改50毫秒
+					Sleep(mPulseInterval);
+				}
+			}
+		});
+		pulseThread.start();
 	}
 
-	@Override
+    protected abstract void updatePulse();
+
+    @Override
 	public void surfaceDestroyed(SurfaceHolder holder) {
 	}
 	

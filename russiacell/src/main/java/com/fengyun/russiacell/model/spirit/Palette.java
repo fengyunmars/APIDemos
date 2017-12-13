@@ -12,23 +12,26 @@ public abstract class Palette extends BaseSpirit {
     public static final int Y_DEFAULT = 280;
     public static final int WIDTH_DEFAULT = 756;
     public static final int HEIGHT_DEFAULT = 1449;
-    public static final int CELLWIDTH_DEFAULT = 72;
-    public static final int BORDERWIDTH_DEFAULT = 5;
+    public static final float CELLWIDTH_DEFAULT = 74.32f;
+    public static final int BORDERWIDTH_LEFT_DEFAULT = 8;
+    public static final int BORDERWIDTH_TOP_DEFAULT = 9;
 
     public static int X = X_DEFAULT;
     public static int Y = Y_DEFAULT;
     public static int WIDTH = WIDTH_DEFAULT;
     public static int HEIGHT = HEIGHT_DEFAULT;
-    public static int CELLWIDTH = CELLWIDTH_DEFAULT;
-    public static int BORDERWIDTH = BORDERWIDTH_DEFAULT;
+    public static float CELLWIDTH = CELLWIDTH_DEFAULT;
+    public static int BORDERWIDTH_LEFT = BORDERWIDTH_LEFT_DEFAULT;
+    public static int BORDERWIDTH_TOP = BORDERWIDTH_TOP_DEFAULT;
 
     static final String TAG = Palette.class.getSimpleName();
     static Object lock = new Object();
 
     int width;
     int height;
-    int cellWidth;
-    int borderWidth;
+    float cellWidth;
+    int borderLeftWidth;
+    int borderTopWidth;
     int widthSize;
     int heightSize;
     int topExtra;
@@ -51,22 +54,13 @@ public abstract class Palette extends BaseSpirit {
         this.height = height;
     }
 
-    public int getCellWidth() {
+    public float getCellWidth() {
         return cellWidth;
     }
 
-    public void setCellWidth(int cellWidth) {
+    public void setCellWidth(float cellWidth) {
         this.cellWidth = cellWidth;
     }
-
-    public int getBorderWidth() {
-        return borderWidth;
-    }
-
-    public void setBorderWidth(int borderWidth) {
-        this.borderWidth = borderWidth;
-    }
-
 
     public int getWidthSize() {
         return widthSize;
@@ -84,15 +78,32 @@ public abstract class Palette extends BaseSpirit {
         this.heightSize = heightSize;
     }
 
+
+    public int getBorderLeftWidth() {
+        return borderLeftWidth;
+    }
+
+    public void setBorderLeftWidth(int borderLeftWidth) {
+        this.borderLeftWidth = borderLeftWidth;
+    }
+
+    public int getBorderTopWidth() {
+        return borderTopWidth;
+    }
+
+    public void setBorderTopWidth(int borderTopWidth) {
+        this.borderTopWidth = borderTopWidth;
+    }
+
     public static int cellXToPix(int x) {
-        int i = X + BORDERWIDTH;
-        int j = i + x * CELLWIDTH;
+        int i = X + BORDERWIDTH_LEFT;
+        int j = (int)(i + x * CELLWIDTH);
         return j;
     }
 
     public static int cellYToPix(int y) {
-        int i = Y + BORDERWIDTH;
-        int j = i + y * CELLWIDTH;
+        int i = Y + BORDERWIDTH_TOP;
+        int j = (int)(i + y * CELLWIDTH);
         return j;
     }
 

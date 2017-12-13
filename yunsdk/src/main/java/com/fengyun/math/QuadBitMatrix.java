@@ -1,5 +1,7 @@
 package com.fengyun.math;
 
+import com.fengyun.util.ArrayUtils;
+
 import java.util.Arrays;
 import java.util.Collections;
 
@@ -10,6 +12,10 @@ import Jama.Matrix;
  */
 
 public class QuadBitMatrix extends RotateMatrix {
+
+    public QuadBitMatrix(int m, int n){
+        super(m, n);
+    }
 
     public QuadBitMatrix(double[][] A) {
         super(A);
@@ -27,17 +33,63 @@ public class QuadBitMatrix extends RotateMatrix {
     public QuadBitMatrix reverse(){
         double[][] arr = getArrayCopy();
         for(int i = 0; i < arr.length; i ++) {
-            Collections.reverse(Arrays.asList(arr[i]));
+            ArrayUtils.reverse(arr[i]);
         }
         return new QuadBitMatrix(arr);
     }
 
     public QuadBitMatrix transposeCustom(){
-        Matrix matrix = super.transpose();
-        QuadBitMatrix quadBitMatrix = new QuadBitMatrix(matrix.getArray());
+        Matrix matrix = this.copy().transpose();
+        QuadBitMatrix quadBitMatrix = new QuadBitMatrix(matrix.getArrayCopy());
         return quadBitMatrix;
     }
     public QuadBitMatrix rotateAnticlockwise90(){
-        return reverse().transposeCustom();
+        QuadBitMatrix reverse = reverse();
+        QuadBitMatrix transpose = reverse.transposeCustom();
+        return transpose;
+    }
+
+    public QuadBitMatrix rotateClockwise90(){
+        QuadBitMatrix transpose = transposeCustom();
+        QuadBitMatrix reverse = transpose.reverse();
+        return reverse;
+    }
+
+    public QuadBitMatrix cloneCustom(){
+        return new QuadBitMatrix(getArrayCopy());
+    }
+
+    public QuadBitMatrix projection(QuadBitMatrix canvasMatrix, int x, int y){
+        QuadBitMatrix result = new QuadBitMatrix(canvasMatrix.getRowDimension(), canvasMatrix.getColumnDimension());
+        for(int i = y; i < y + getRowDimension(); i ++)
+            for(int j = x; j < x + getColumnDimension(); j ++){
+                result.set(i,j,get(i - y, j - x));
+            }
+        return result;
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < getRowDimension(); i ++){
+            sb.append("[");
+            for (int j = 0; j < getColumnDimension(); j ++){
+                int d = (int)get(i, j);
+                sb.append(d);
+                if(j < getColumnDimension() - 1)
+                    sb.append(", ");
+            }
+            sb.append("]\n");
+        }
+        return sb.toString();
+    }
+
+    public boolean hasOverlap() {
+        for(int i = getRowDimension() - 1; i >= 0; i --)
+            for(int j = 0; j < getColumnDimension(); j ++){
+                if(get(i, j) == 2)
+                    return true;
+            }
+        return false;
     }
 }

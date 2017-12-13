@@ -3,12 +3,14 @@ package com.fengyun.russiacell.model.spirit;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 
+import com.fengyun.russiacell.view.RussiaGameView;
+
 /**
  * Created by fengyun on 2017/12/12.
  */
 
 public class CellImage extends Cell {
-    Bitmap bitmap;
+    int ibitmap;
 
     public CellImage(int cx, int cy) {
         super(cx, cy);
@@ -18,15 +20,16 @@ public class CellImage extends Cell {
     public void onDraw(Canvas canvas) {
         int x = cellXToPix(cx);
         int y = cellYToPix(cy);
+        Bitmap bitmap = RussiaGameView.getBitmapByInt(ibitmap);
         canvas.drawBitmap(bitmap, x, y, null);
     }
 
-    public Bitmap getBitmap() {
-        return bitmap;
+    public int getIBitmap() {
+        return ibitmap;
     }
 
-    public void setBitmap(Bitmap bitmap) {
-        this.bitmap = bitmap;
+    public void setBitmap(int ibitmap) {
+        this.ibitmap = ibitmap;
     }
 
 }

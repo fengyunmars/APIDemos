@@ -44,7 +44,7 @@ public class ImageUtils extends BaseUtils{
 		return getAssetBitmap(file, UNCHANGE);
 	}
 
-	public static Bitmap getAssetBitmap(String file, int width){
+	public static Bitmap getAssetBitmap(String file, float width){
 		Bitmap bitmap = null;
 		try {
 			bitmap = BitmapFactory.decodeStream(applicationContext.getAssets().open(file));

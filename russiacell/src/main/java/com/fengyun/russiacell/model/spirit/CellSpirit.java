@@ -9,8 +9,8 @@ import com.fengyun.model.game.cell.spirit.BaseSpirit;
  */
 
 public abstract class CellSpirit extends BaseSpirit {
-    int cx;
-    int cy;
+    public int cx;
+    public int cy;
 
     public CellSpirit(int cx, int cy) {
         this.cx = cx;
@@ -25,4 +25,20 @@ public abstract class CellSpirit extends BaseSpirit {
         return Palette.cellYToPix(c);
     }
 
+    public boolean moveLeft(){
+        cx --;
+        return true;
+    };
+    public boolean moveRight(){
+        cx ++;
+        return true;
+    };
+    public boolean moveUp(){
+        cy --;
+        return true;
+    };
+    public boolean moveDown(){
+        cy ++;
+        return true;
+    };
 }
