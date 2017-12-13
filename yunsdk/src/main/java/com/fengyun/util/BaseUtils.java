@@ -5,7 +5,7 @@ import android.content.Context;
 import com.fengyun.app.BaseApplication;
 
 /**
- * Created by prize on 2017/12/11.
+ * Created by fengyun on 2017/12/11.
  */
 
 class BaseUtils {

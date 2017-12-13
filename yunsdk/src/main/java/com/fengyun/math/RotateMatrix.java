@@ -6,7 +6,7 @@ import java.util.Collections;
 import Jama.Matrix;
 
 /**
- * Created by prize on 2017/12/12.
+ * Created by fengyun on 2017/12/12.
  */
 
 public class RotateMatrix extends Matrix{

@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by prize on 2017/12/9.
+ * Created by fengyun on 2017/12/9.
  */
 
 public class RussiaGameView extends SurfaceGameView{
@@ -37,6 +37,7 @@ public class RussiaGameView extends SurfaceGameView{
      */
     public static final String TAG = RussiaGameView.class.getSimpleName();
     public static final int CELL_CLASSIC_GREENDRAK_INT = 0;
+    private static final int MAX_TETRIS_SIZE = 4;
     public static Bitmap CELL_CLASSIC_GREENDRAK_BITMAP;
     Palette mPalette;
     Bitmap background;
@@ -49,8 +50,8 @@ public class RussiaGameView extends SurfaceGameView{
     public GameButton buttonMoveUp;
     public GameButton buttonTransformation;
 
-    public QuadBitMatrix landMatrix = new QuadBitMatrix(23,10);
-    public static final QuadBitMatrix emptyMatrix = new QuadBitMatrix(23,10);
+    public QuadBitMatrix landMatrix = new QuadBitMatrix(GameViewConfig.PALETTE_CELL_ARRAY);
+    public static final QuadBitMatrix emptyMatrix = new QuadBitMatrix(28,18);
 
     public RussiaGameView(Context context) {
         super(context);
@@ -59,7 +60,7 @@ public class RussiaGameView extends SurfaceGameView{
 
     private void init() {
         background = ImageUtils.getAssetBitmap("scene/capture_hollow.png");
-        mLandCellBitmap = ImageUtils.getAssetBitmap("cell/cell_ring_yellowlight.png");
+        mLandCellBitmap = ImageUtils.getAssetBitmap("cell/cell_classic_yellowlight.png",Palette.CELLWIDTH_DEFAULT - 2);
         mPalette = new PaletteImage(300, 280 , ImageUtils.getAssetBitmap("scene/palette_new.png"));
         CELL_CLASSIC_GREENDRAK_BITMAP = ImageUtils.getAssetBitmap("cell/cell_classic_greendark.png", Palette.CELLWIDTH_DEFAULT - 2);
         currentTetris = new TetrisImageMountain(0, 0, CELL_CLASSIC_GREENDRAK_INT);
@@ -75,7 +76,7 @@ public class RussiaGameView extends SurfaceGameView{
         buttonMoveDown = new GameButtonImage(){
             @Override
             public boolean onClick() {
-                return currentTetris.moveDown();
+                return handleTetrisMoveDown(currentTetris);
             }
         };
         buttonMoveDown.setLocation(GameViewConfig.BUTTON_FIVE_X_DEFAULT, GameViewConfig.BUTTON_Y_DEFAULT,
@@ -83,7 +84,7 @@ public class RussiaGameView extends SurfaceGameView{
         buttonMoveUp = new GameButtonImage(){
             @Override
             public boolean onClick() {
-                return currentTetris.moveUp();
+                return handleTetrisMoveUp(currentTetris);
             }
         };
         buttonMoveUp.setLocation(GameViewConfig.BUTTON_ONE_X_DEFAULT, GameViewConfig.BUTTON_Y_DEFAULT,
@@ -91,7 +92,7 @@ public class RussiaGameView extends SurfaceGameView{
         buttonMoveLeft = new GameButtonImage(){
             @Override
             public boolean onClick() {
-                return currentTetris.moveLeft();
+                return handleTetrisMoveLeft(currentTetris);
             }
         };
         buttonMoveLeft.setLocation(GameViewConfig.BUTTON_TWO_X_DEFAULT, GameViewConfig.BUTTON_Y_DEFAULT,
@@ -99,7 +100,7 @@ public class RussiaGameView extends SurfaceGameView{
         buttonMoveRight = new GameButtonImage(){
             @Override
             public boolean onClick() {
-                return currentTetris.moveRight();
+                return handleTetrisMoveRight(currentTetris);
             }
         };
         buttonMoveRight.setLocation(GameViewConfig.BUTTON_FOUR_X_DEFAULT, GameViewConfig.BUTTON_Y_DEFAULT,
@@ -108,7 +109,7 @@ public class RussiaGameView extends SurfaceGameView{
         buttonTransformation = new GameButtonImage(){
             @Override
             public boolean onClick() {
-                return currentTetris.transformation();
+                return handleTetrisTransformation(currentTetris);
             }
         };
         buttonTransformation.setLocation(GameViewConfig.BUTTON_THREE_X_DEFAULT, GameViewConfig.BUTTON_Y_DEFAULT,
@@ -134,7 +135,8 @@ public class RussiaGameView extends SurfaceGameView{
 
     public boolean tetrisCanFall(Tetris tetris) {
         QuadBitMatrix tetrisMatrix = tetris.getMatrix();
-        QuadBitMatrix nextProjection = tetrisMatrix.projection(emptyMatrix, tetris.cx, tetris.cy + 1);
+        QuadBitMatrix nextProjection = tetrisMatrix.projection(emptyMatrix, tetris.cx + MAX_TETRIS_SIZE,
+                tetris.cy + MAX_TETRIS_SIZE + 1);
         QuadBitMatrix sum = (QuadBitMatrix) nextProjection.plusEquals(landMatrix);
         if(sum.hasOverlap()){
             return false;
@@ -145,16 +147,104 @@ public class RussiaGameView extends SurfaceGameView{
     public void handleTetrisFall(Tetris tetris) {
 
         QuadBitMatrix tetrisMatrix = tetris.getMatrix();
-        QuadBitMatrix nextProjection = tetrisMatrix.projection(emptyMatrix, tetris.cx, tetris.cy + 1);
+        QuadBitMatrix nextProjection = tetrisMatrix.projection(emptyMatrix,
+                tetris.cx + MAX_TETRIS_SIZE, tetris.cy + MAX_TETRIS_SIZE + 1);
         QuadBitMatrix sum = (QuadBitMatrix) nextProjection.plusEquals(landMatrix);
-        if(sum.hasOverlap() || tetris.cy == 19){
-            QuadBitMatrix currentProjection = tetrisMatrix.projection(emptyMatrix, tetris.cx, tetris.cy);
-            landMatrix.plusEquals(currentProjection);
+        if(sum.hasOverlap()){
+            QuadBitMatrix currentProjection = tetrisMatrix.projection(emptyMatrix,
+                    tetris.cx + MAX_TETRIS_SIZE, tetris.cy + MAX_TETRIS_SIZE);
+            synchronized (lock) {
+                landMatrix.plusEquals(currentProjection);
+            }
             tetris.setStatus(Tetris.STATUS_LAND);
             currentTetris = generateRandomTetris();
         }else {
-            tetris.moveDown();
+            synchronized (lock) {
+                tetris.moveDown();
+            }
         }
+    }
+    public boolean handleTetrisTransformation(Tetris tetris) {
+
+        QuadBitMatrix tetrisMatrix = tetris.getMatrix();
+        QuadBitMatrix transform = tetrisMatrix.rotateClockwise90();
+        QuadBitMatrix nextProjection = transform.projection(emptyMatrix,
+                tetris.cx + MAX_TETRIS_SIZE, tetris.cy + MAX_TETRIS_SIZE);
+        QuadBitMatrix sum = (QuadBitMatrix) nextProjection.plusEquals(landMatrix);
+        if(sum.hasOverlap()){
+            Log.d("dingxiaoquan", TAG + "tetris transform with  overlap!");
+        }else {
+            synchronized (lock) {
+                tetris.transformation();
+            }
+        }
+        return true;
+    }
+    public boolean handleTetrisMoveDown(Tetris tetris) {
+
+        QuadBitMatrix tetrisMatrix = tetris.getMatrix();
+        QuadBitMatrix nextProjection = tetrisMatrix.projection(emptyMatrix,
+                tetris.cx + MAX_TETRIS_SIZE, tetris.cy + MAX_TETRIS_SIZE + 1);
+        QuadBitMatrix sum = (QuadBitMatrix) nextProjection.plusEquals(landMatrix);
+        if(sum.hasOverlap()){
+            QuadBitMatrix currentProjection = tetrisMatrix.projection(emptyMatrix,
+                    tetris.cx + MAX_TETRIS_SIZE, tetris.cy + MAX_TETRIS_SIZE);
+            synchronized (lock) {
+                landMatrix.plusEquals(currentProjection);
+            }
+            tetris.setStatus(Tetris.STATUS_LAND);
+            currentTetris = generateRandomTetris();
+        }else {
+            synchronized (lock) {
+                tetris.moveDown();
+            }
+        }
+        return true;
+    }
+    public boolean handleTetrisMoveUp(Tetris tetris) {
+
+        QuadBitMatrix tetrisMatrix = tetris.getMatrix();
+        QuadBitMatrix nextProjection = tetrisMatrix.projection(emptyMatrix,
+                tetris.cx + MAX_TETRIS_SIZE, tetris.cy + MAX_TETRIS_SIZE - 1);
+        QuadBitMatrix sum = (QuadBitMatrix) nextProjection.plusEquals(landMatrix);
+        if(sum.hasOverlap()){
+            Log.d("dingxiaoquan", TAG + "tetris move up reach boundary !");
+        }else {
+            synchronized (lock) {
+                tetris.moveUp();
+            }
+        }
+        return true;
+    }
+    public boolean handleTetrisMoveLeft(Tetris tetris) {
+
+        QuadBitMatrix tetrisMatrix = tetris.getMatrix();
+        QuadBitMatrix nextProjection = tetrisMatrix.projection(emptyMatrix, tetris.
+                cx + MAX_TETRIS_SIZE - 1, tetris.cy + MAX_TETRIS_SIZE);
+        QuadBitMatrix sum = (QuadBitMatrix) nextProjection.plusEquals(landMatrix);
+        if(sum.hasOverlap()){
+            Log.d("dingxiaoquan", TAG + "tetris move left reach boundary !");
+        }else {
+            synchronized (lock) {
+                tetris.moveLeft();
+            }
+        }
+        return true;
+    }
+    public boolean handleTetrisMoveRight(Tetris tetris) {
+
+        QuadBitMatrix tetrisMatrix = tetris.getMatrix();
+        QuadBitMatrix nextProjection = tetrisMatrix.projection(emptyMatrix, tetris.
+                cx + MAX_TETRIS_SIZE + 1, tetris.cy + MAX_TETRIS_SIZE);
+        QuadBitMatrix sum = (QuadBitMatrix) nextProjection.plusEquals(landMatrix);
+        if(sum.hasOverlap()){
+          Log.d("dingxiaoquan", TAG + "tetris move right reach boundary !");
+        }else {
+            synchronized (lock) {
+                tetris.moveRight();
+            }
+        }
+        return true;
     }
 
     public Tetris generateRandomTetris() {
@@ -172,10 +262,10 @@ public class RussiaGameView extends SurfaceGameView{
     }
 
     public void drawLandTetris() {
-        for(int i = 0; i < landMatrix.getRowDimension(); i ++)
-            for(int j = 0; j < landMatrix.getColumnDimension(); j ++){
+        for(int i = MAX_TETRIS_SIZE; i < 20 + MAX_TETRIS_SIZE; i ++)
+            for(int j = MAX_TETRIS_SIZE; j < 10 + MAX_TETRIS_SIZE ; j ++){
                 if(landMatrix.get(i, j) == 1){
-                    drawCell(i, j);
+                    drawCell(j - MAX_TETRIS_SIZE, i - MAX_TETRIS_SIZE);
                 }
             }
     }

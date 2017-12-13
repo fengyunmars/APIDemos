@@ -1,7 +1,7 @@
 package com.fengyun.util;
 
 /**
- * Created by prize on 2017/12/13.
+ * Created by fengyun on 2017/12/13.
  */
 
 public class ArrayUtils {

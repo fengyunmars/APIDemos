@@ -3,7 +3,7 @@ package com.fengyun.model.game.cell.spirit;
 import android.view.MotionEvent;
 
 /**
- * Created by prize on 2017/12/13.
+ * Created by fengyun on 2017/12/13.
  */
 
 public abstract class GameButton extends BaseSpirit {

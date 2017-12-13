@@ -8,7 +8,7 @@ import com.fengyun.model.game.cell.spirit.GameButton;
 import com.fengyun.russiacell.view.RussiaGameView;
 
 /**
- * Created by prize on 2017/12/13.
+ * Created by fengyun on 2017/12/13.
  */
 
 public abstract class GameButtonImage extends GameButton {
