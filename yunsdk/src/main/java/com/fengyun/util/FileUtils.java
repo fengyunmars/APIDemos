@@ -86,7 +86,7 @@ public class FileUtils {
         for(int i = 0; i < files.length; i ++) {
             File src = files[i];
             String name = src.getName();
-            String desName = name;
+            String desName = "";
 
             boolean b = src.renameTo(new File(src.getParent(), desName));
             if(!b){

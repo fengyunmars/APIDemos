@@ -23,7 +23,7 @@ public abstract class SurfaceGameView extends SurfaceView implements SurfaceHold
 	public long mPulse = 1;
 	public int mPulseInterval = 400;
     public boolean repaint;
-    public Canvas canvas;
+    public static Canvas canvas;
 
     protected Object lock = new Object();
 
@@ -89,7 +89,7 @@ public abstract class SurfaceGameView extends SurfaceView implements SurfaceHold
 		pulseThread.start();
 	}
 
-    protected abstract void updatePulse();
+    public abstract void updatePulse();
 
     @Override
 	public void surfaceDestroyed(SurfaceHolder holder) {

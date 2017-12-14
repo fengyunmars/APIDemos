@@ -15,6 +15,9 @@ public abstract class Palette extends BaseSpirit {
     public static final float CELLWIDTH_DEFAULT = 74.32f;
     public static final int BORDERWIDTH_LEFT_DEFAULT = 8;
     public static final int BORDERWIDTH_TOP_DEFAULT = 9;
+    public static final int CELLSIZE_WIDTH_DEFAULT = 10;
+    public static final int CELLSIZE_HEIGHT_DEFAULT = 20;
+
 
     public static int X = X_DEFAULT;
     public static int Y = Y_DEFAULT;
@@ -23,7 +26,8 @@ public abstract class Palette extends BaseSpirit {
     public static float CELLWIDTH = CELLWIDTH_DEFAULT;
     public static int BORDERWIDTH_LEFT = BORDERWIDTH_LEFT_DEFAULT;
     public static int BORDERWIDTH_TOP = BORDERWIDTH_TOP_DEFAULT;
-
+    public static final int CELLSIZE_WIDTH = CELLSIZE_WIDTH_DEFAULT;
+    public static final int CELLSIZE_HEIGHT = CELLSIZE_HEIGHT_DEFAULT;
     static final String TAG = Palette.class.getSimpleName();
     static Object lock = new Object();
 

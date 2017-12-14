@@ -1,5 +1,7 @@
 package com.fengyun.math;
 
+import android.support.v7.graphics.Palette;
+
 import com.fengyun.util.ArrayUtils;
 
 import java.util.Arrays;
@@ -91,5 +93,123 @@ public class QuadBitMatrix extends RotateMatrix {
                     return true;
             }
         return false;
+    }
+
+    public boolean hasFillLine(int lineStart, int lineEnd, int columnStart, int columnEnd, boolean[] fillLines) {
+        int sum = 0;
+        boolean found = false;
+        for(int i = lineStart; i < lineEnd; i ++) {
+            for (int j = columnStart; j < columnEnd; j++) {
+                sum += get(i, j);
+            }
+            if(sum == columnEnd - columnStart){
+                fillLines[i] = true;
+                found = true;
+            }
+            sum = 0;
+        }
+        return found;
+    }
+
+    public boolean hasFillLine(int start, int end, boolean[] fillLines) {
+        return hasFillLine(4,24, start, end,fillLines);
+    }
+
+    public boolean hasFillLine(boolean[] fillLines) {
+        return hasFillLine(4, 14,fillLines);
+    }
+
+    public QuadBitMatrix removeLines(boolean[] fillLines,int lineStart, int lineEnd, int columnStart, int columnEnd) {
+        QuadBitMatrix quadBitMatrix = cloneCustom();
+        for(int i = lineStart; i < lineEnd; i ++) {
+            if (fillLines[i] == true) {
+                for (int j = columnStart; j < columnEnd; j++) {
+                    quadBitMatrix.set(i, j, 0);
+                }
+            }else {
+                continue;
+            }
+        }
+        return quadBitMatrix;
+    }
+
+    public QuadBitMatrix removeLines(boolean[] fillLines, int columnStart, int columnEnd) {
+       return removeLines(fillLines,4, 24, columnStart, columnEnd);
+    }
+
+    public QuadBitMatrix removeLines(boolean[] fillLines) {
+        return removeLines(fillLines,4, 14);
+    }
+
+    public QuadBitMatrix removeLinesEquals(boolean[] fillLines, int lineStart, int lineEnd, int columnStart, int columnEnd) {
+        int index = 0;
+        for(int i = lineStart; i < lineEnd; i ++) {
+            if (fillLines[i] == true) {
+                for (int j = columnStart; j < columnEnd; j++) {
+                    set(i, j, 0);
+                }
+            }else {
+                continue;
+            }
+        }
+        return this;
+    }
+
+    public QuadBitMatrix removeLinesEquals(boolean[] fillLines, int columnStart, int columnEnd) {
+       return removeLinesEquals(fillLines, 4, 24, columnStart, columnEnd);
+    }
+
+    public QuadBitMatrix removeLinesEquals(boolean[] fillLines) {
+        return removeLinesEquals(fillLines, 4, 14);
+    }
+
+    public void fallDown(boolean[] fillLines) {
+        fallDown(fillLines, 4, 14);
+    }
+
+    public void fallDown(boolean[] fillLines, int columnStart, int columnEnd) {
+        fallDown(fillLines, 4, 24, columnStart, columnEnd);
+    }
+
+    public void fallDown(boolean[] fillLines, int lineStart, int lineEnd, int columnStart, int columnEnd) {
+        int count = 0;
+        removeLinesEquals(fillLines, lineStart, lineEnd, columnStart, columnEnd);
+        for(int i = lineEnd - 1; i >= lineStart; i --){
+            if (fillLines[i]){
+                count ++;
+            }else {
+                fallDownLine(i, count, columnStart, columnEnd);
+            }
+        }
+    }
+
+    public void fallDownLine(int line, int count) {
+        fallDownLine(line, count, 4, 14);
+    }
+
+    public void fallDownLine(int line, int count, int columnStart, int columnEnd) {
+        for(int j = columnStart; j < columnEnd; j ++){
+            set(line + count, j ,  get(line, j));
+        }
+    }
+
+    public QuadBitMatrix shiftRight() {
+        for(int j = getColumnDimension() - 2; j >= 0 ; j --)
+            for(int i = 0; i < getRowDimension(); i ++){
+                set(i, j + 1 , get(i, j));
+            }
+        for(int i = 0; i < getRowDimension(); i ++)
+            set(i, 0, 0);
+        return this;
+    }
+
+    public QuadBitMatrix shiftLeft() {
+        for(int j = 1; j <= getColumnDimension() - 1; j ++)
+            for(int i = 0; i < getRowDimension(); i ++){
+                set(i, j - 1, get(i, j));
+            }
+        for(int i = 0; i < getRowDimension(); i ++)
+            set(i, getColumnDimension() - 1, 0);
+        return this;
     }
 }
