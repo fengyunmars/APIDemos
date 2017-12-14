@@ -2,28 +2,27 @@ package com.fengyun.russiacell.view;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.os.Environment;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
-import android.view.View;
 
 import com.fengyun.math.QuadBitMatrix;
 import com.fengyun.model.game.cell.spirit.GameButton;
-import com.fengyun.russiacell.model.spirit.Cell;
 import com.fengyun.russiacell.model.spirit.GameButtonImage;
 import com.fengyun.russiacell.model.spirit.Palette;
 import com.fengyun.russiacell.model.spirit.PaletteImage;
 import com.fengyun.russiacell.model.spirit.Tetris;
+import com.fengyun.russiacell.model.spirit.TetrisL;
+import com.fengyun.russiacell.model.spirit.TetrisLLeft;
 import com.fengyun.russiacell.model.spirit.TetrisMountain;
+import com.fengyun.russiacell.model.spirit.TetrisStairsLeft;
 import com.fengyun.util.ImageUtils;
 import com.fengyun.view.game.SurfaceGameView;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by fengyun on 2017/12/9.
@@ -55,6 +54,7 @@ public class RussiaGameView extends SurfaceGameView{
     public QuadBitMatrix landMatrix = new QuadBitMatrix(GameViewConfig.PALETTE_CELL_ARRAY);
     public static final QuadBitMatrix emptyMatrix = new QuadBitMatrix(28,18);
 
+    public Random mRandom = new Random();
     public RussiaGameView(Context context) {
         super(context);
         init();
@@ -65,7 +65,7 @@ public class RussiaGameView extends SurfaceGameView{
         mPalette = new PaletteImage(300, 280 , ImageUtils.getAssetBitmap("scene/palette_new.png"));
         CELL_LAND_BITMAP = ImageUtils.getAssetBitmap("cell/cell_classic_yellowlight.png", Palette.CELLWIDTH_DEFAULT - 2);
         CELL_CLASSIC_GREENDRAK_BITMAP = ImageUtils.getAssetBitmap("cell/cell_classic_greendark.png", Palette.CELLWIDTH_DEFAULT - 2);
-        currentTetris = new TetrisMountain(0, 0, 0, CELL_CLASSIC_GREENDRAK_INT);
+        currentTetris = new TetrisLLeft(0, 0, 1, CELL_CLASSIC_GREENDRAK_INT);
         initButtons();
 //        Bitmap bitmap = ImageUtils.getAssetBitmap("scene/capture_new.png");
 //        File path = getContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
@@ -269,7 +269,12 @@ public class RussiaGameView extends SurfaceGameView{
     }
 
     public Tetris generateRandomTetris() {
-        Tetris tetris = new TetrisMountain(0, 0,0,CELL_CLASSIC_GREENDRAK_INT);
+        int type = mRandom.nextInt(8);
+//        int shape = mRandom.nextInt(9);
+        int ibitmap = mRandom.nextInt(1);
+        int cx = mRandom.nextInt(5);
+        cx = cx + 3;
+        Tetris tetris = Tetris.generateRandomTetris(type, cx, ibitmap);
         return tetris;
     }
 

@@ -8,7 +8,7 @@ import java.util.Random;
  * Created by fengyun on 2017/12/12.
  */
 
-public abstract class TetrisSquare extends Tetris{
+public class TetrisSquare extends Tetris{
 
     public static final double[][] SHAPE_FILL = new double[][]{
             {1, 1},
@@ -24,7 +24,6 @@ public abstract class TetrisSquare extends Tetris{
     @Override
     public double[][] getShapeMatrixArray(int shape) {
         switch (shape){
-
             case SHAPE_RANDOM:
             default:
                 return SHAPE_FILL;
