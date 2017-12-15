@@ -24,12 +24,7 @@ public class QuadBitMatrix extends RotateMatrix {
 //        if(getRowDimension() != getColumnDimension()){
 //            throw new IllegalArgumentException("rows count must equals columns count .");
 //        }
-        double[] a = getRowPackedCopy();
-        for(int i = 0; i < a.length; i ++){
-            if(a[i] != 0 && a[i] != 1){
-                throw new IllegalArgumentException("all num must be 0 or 1 .");
-            }
-        }
+
     }
 
     public QuadBitMatrix reverse(){
@@ -210,6 +205,16 @@ public class QuadBitMatrix extends RotateMatrix {
             }
         for(int i = 0; i < getRowDimension(); i ++)
             set(i, getColumnDimension() - 1, 0);
+        return this;
+    }
+
+    public QuadBitMatrix setExist(int value) {
+        for(int i = 0; i < getRowDimension(); i ++)
+            for(int j = 0; j < getColumnDimension(); j ++){
+                if(get(i,j) == 1){
+                    set(i, j, value);
+                }
+            }
         return this;
     }
 }

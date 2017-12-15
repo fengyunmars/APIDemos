@@ -15,8 +15,8 @@ public class TetrisSquare extends Tetris{
             {1, 1}
     };
 
-    public TetrisSquare(int cx, int cy, int shape, int ibitmap) {
-        super(cx, cy, ibitmap);
+    public TetrisSquare(int cx, int cy, int shape, int bitmapShape) {
+        super(cx, cy, bitmapShape);
         QuadBitMatrix matrix = new QuadBitMatrix(getShapeMatrixArray(shape));
         setMatrix(matrix);
     }

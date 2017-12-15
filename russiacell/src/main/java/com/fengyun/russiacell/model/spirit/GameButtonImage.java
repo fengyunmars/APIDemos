@@ -13,18 +13,18 @@ import com.fengyun.russiacell.view.RussiaGameView;
 
 public abstract class GameButtonImage extends GameButton {
 
-    protected int ibitmap;
+    protected int bitmapShape;
 
     public int getBitmap() {
-        return ibitmap;
+        return bitmapShape;
     }
 
-    public void setBitmap(int ibitmap) {
-        this.ibitmap = ibitmap;
+    public void setBitmap(int bitmapShape) {
+        this.bitmapShape = bitmapShape;
     }
     @Override
     public void onDraw(Canvas canvas) {
-        Bitmap bitmap = RussiaGameView.getBitmapByInt(ibitmap);
+        Bitmap bitmap = RussiaGameView.getBitmapByShapeAndColor(bitmapShape, 0);
         canvas.drawBitmap(bitmap, mx, my, null);
     }
 }

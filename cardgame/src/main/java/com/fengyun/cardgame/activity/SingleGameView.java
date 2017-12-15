@@ -176,7 +176,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 	
 		
 	//倍字图像
-	public Bitmap beiBitmap=null;
+	public Bitmap bebitmapShape=null;
 
 	//文字\按钮背景图像
 	private Bitmap[] gramTextBitmap = new Bitmap[19];//图标
@@ -285,7 +285,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 			}
 			
 			//倍字图像
-			beiBitmap= ImageUtils.zoomBitmap(
+			bebitmapShape= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/game_icon_bei.png")),
 					(float)(1.0/3));
 			
@@ -483,7 +483,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 					(float)(2.0/3)));
 			}
 			//倍字图像
-			beiBitmap= ImageUtils.zoomBitmap(
+			bebitmapShape= ImageUtils.zoomBitmap(
 					BitmapFactory.decodeStream(assetManager.open("images/game_icon_bei.png")),
 					(float)(2.0/3));
 			
@@ -678,7 +678,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 			}
 			
 			//倍字图像
-			beiBitmap=BitmapFactory.decodeStream(
+			bebitmapShape=BitmapFactory.decodeStream(
 					assetManager.open("images/game_icon_bei.png"));
 			
 			for(int n=0;n<10;n++){
@@ -1226,10 +1226,10 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 					screen_width/3+4*cardBgBitmap.getWidth()+30, 
 					10+cardBgBitmap.getHeight()/2-numberBitmaps.get(dizhubei).getHeight()/2, 
 					null);
-			//绘制倍字 beiBitmap
-			canvas.drawBitmap(beiBitmap, 
+			//绘制倍字 bebitmapShape
+			canvas.drawBitmap(bebitmapShape,
 					screen_width/3+4*cardBgBitmap.getWidth()+30+numberBitmaps.get(dizhubei).getWidth(), 
-					10+cardBgBitmap.getHeight()/2-beiBitmap.getHeight()/2, null);
+					10+cardBgBitmap.getHeight()/2-bebitmapShape.getHeight()/2, null);
 			
 		}else{
 			
@@ -1244,10 +1244,10 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 					screen_width/3+4*cardBgBitmap.getWidth()+30+numberBitmaps.get(a).getWidth(), 
 					10+cardBgBitmap.getHeight()/2-numberBitmaps.get(a).getHeight()/2, 
 					null);
-			//绘制倍字 beiBitmap
-			canvas.drawBitmap(beiBitmap, 
+			//绘制倍字 bebitmapShape
+			canvas.drawBitmap(bebitmapShape,
 					screen_width/3+4*cardBgBitmap.getWidth()+30+numberBitmaps.get(a).getWidth()+numberBitmaps.get(b).getWidth(), 
-					10+cardBgBitmap.getHeight()/2-beiBitmap.getHeight()/2, 
+					10+cardBgBitmap.getHeight()/2-bebitmapShape.getHeight()/2,
 					null);
 			
 		}

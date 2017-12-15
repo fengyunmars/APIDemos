@@ -40,8 +40,8 @@ public class TetrisStairsRight extends Tetris{
     public static final int SHARP_CENTER = 4;
 
 
-    public TetrisStairsRight(int cx, int cy, int shape, int ibitmap) {
-        super(cx, cy, ibitmap);
+    public TetrisStairsRight(int cx, int cy, int shape, int bitmapShape) {
+        super(cx, cy, bitmapShape);
         QuadBitMatrix matrix = new QuadBitMatrix(getShapeMatrixArray(shape));
         setMatrix(matrix);
     }

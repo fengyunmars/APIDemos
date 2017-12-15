@@ -24,8 +24,23 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.fengyun.util.DebugUtils;
+import com.fengyun.util.FileUtils;
+
 public class FingerPaint extends GraphicsActivity
         implements ColorPickerDialog.OnColorChangedListener {
+
+    private static final String TAG = FingerPaint.class.getSimpleName();
+
+    private static final int COLOR_MENU_ID = Menu.FIRST;
+    private static final int EMBOSS_MENU_ID = Menu.FIRST + 1;
+    private static final int BLUR_MENU_ID = Menu.FIRST + 2;
+    private static final int ERASE_MENU_ID = Menu.FIRST + 3;
+    private static final int SRCATOP_MENU_ID = Menu.FIRST + 4;
+
+    private Paint       mPaint;
+    private MaskFilter  mEmboss;
+    private MaskFilter  mBlur;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +61,6 @@ public class FingerPaint extends GraphicsActivity
 
         mBlur = new BlurMaskFilter(8, BlurMaskFilter.Blur.NORMAL);
     }
-
-    private Paint       mPaint;
-    private MaskFilter  mEmboss;
-    private MaskFilter  mBlur;
 
     public void colorChanged(int color) {
         mPaint.setColor(color);
@@ -119,6 +130,8 @@ public class FingerPaint extends GraphicsActivity
             float x = event.getX();
             float y = event.getY();
 
+            DebugUtils.printMotionEvent(event, TAG);
+
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
                     touch_start(x, y);
@@ -136,12 +149,6 @@ public class FingerPaint extends GraphicsActivity
             return true;
         }
     }
-
-    private static final int COLOR_MENU_ID = Menu.FIRST;
-    private static final int EMBOSS_MENU_ID = Menu.FIRST + 1;
-    private static final int BLUR_MENU_ID = Menu.FIRST + 2;
-    private static final int ERASE_MENU_ID = Menu.FIRST + 3;
-    private static final int SRCATOP_MENU_ID = Menu.FIRST + 4;
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

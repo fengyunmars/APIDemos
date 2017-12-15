@@ -2,6 +2,9 @@ package com.fengyun.view.game;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.support.annotation.Nullable;
+import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
@@ -15,13 +18,14 @@ import android.view.SurfaceView;
  */
 public abstract class SurfaceGameView extends SurfaceView implements SurfaceHolder.Callback{
 
+	private static final String TAG = SurfaceGameView.class.getSimpleName();
 	//视图控制器
 	private SurfaceHolder surfaceHolder=null;
 	//绘图线程
 	public Thread drawThread = null;
 	public Thread pulseThread = null;
 	public long mPulse = 1;
-	public int mPulseInterval = 400;
+	public int mPulseInterval = 800;
     public boolean repaint;
     public static Canvas canvas;
 
@@ -42,8 +46,34 @@ public abstract class SurfaceGameView extends SurfaceView implements SurfaceHold
 		setWillNotDraw(false);
 	}
 
+    @Override
+    public void onWindowFocusChanged(boolean hasWindowFocus) {
+        super.onWindowFocusChanged(hasWindowFocus);
+//        if(hasWindowFocus){
+//            drawThread.notify();
+//            pulseThread.notify();
+//        }else {
+//            try {
+//                drawThread.wait();
+//                pulseThread.wait();
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
+//        }
+    }
 
-	@Override
+    @Override
+    protected void onFocusLost() {
+        super.onFocusLost();
+    }
+
+    @Override
+    protected void onFocusChanged(boolean gainFocus, int direction, @Nullable Rect previouslyFocusedRect) {
+        super.onFocusChanged(gainFocus, direction, previouslyFocusedRect);
+
+    }
+
+    @Override
 	public void surfaceChanged(SurfaceHolder holder, int format, int width,
 			int height) {
 		//SurfaceView发生更改触发
@@ -93,6 +123,7 @@ public abstract class SurfaceGameView extends SurfaceView implements SurfaceHold
 
     @Override
 	public void surfaceDestroyed(SurfaceHolder holder) {
+		Log.d("dingxiaoquan", TAG + " surfaceDestroyed !");
 	}
 	
 

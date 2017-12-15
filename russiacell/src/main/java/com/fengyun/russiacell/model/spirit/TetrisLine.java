@@ -75,8 +75,8 @@ public class TetrisLine extends Tetris{
     public static final int VERTICAL_THREE = 7;
     public static final int VERTICAL_FOUR = 8;
 
-    public TetrisLine(int cx, int cy, int shape, int ibitmap) {
-        super(cx, cy, ibitmap);
+    public TetrisLine(int cx, int cy, int shape, int bitmapShape) {
+        super(cx, cy, bitmapShape);
         QuadBitMatrix matrix = new QuadBitMatrix(getShapeMatrixArray(shape));
         setMatrix(matrix);
     }

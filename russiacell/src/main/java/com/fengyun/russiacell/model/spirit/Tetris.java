@@ -3,10 +3,9 @@ package com.fengyun.russiacell.model.spirit;
 import android.graphics.Canvas;
 
 import com.fengyun.math.QuadBitMatrix;
+import com.fengyun.russiacell.view.GameViewConfig;
 import com.fengyun.russiacell.view.RussiaGameView;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -27,31 +26,81 @@ public abstract class Tetris extends CellSpirit {
     public static final int TYPE_L = 6;
     public static final int TYPE_L_LEFT = 7;
 
+    public static final String COLOR_RANDOM_STRING = GameViewConfig.COLOR_GREEN_DARK_STRING;
+    public static final String COLOR_SQUARE_STRING = GameViewConfig.COLOR_YELLOW_LIGHT_STRING;
+    public static final String COLOR_MOUNTAIN_STRING = GameViewConfig.COLOR_GREEN_DARK_STRING;
+    public static final String COLOR_LINE_STRING = GameViewConfig.COLOR_RED_DARK_STRING;
+    public static final String COLOR_STAIRS_LEFT_STRING = GameViewConfig.COLOR_PURPLE_LIGHT_STRING;
+    public static final String COLOR_STAIRS_RIGHT_STRING = GameViewConfig.COLOR_BLUE_LIGHT_STRING;
+    public static final String COLOR_L_STRING = GameViewConfig.COLOR_BLUE_DARK_STRING;
+    public static final String COLOR_L_LEFT_STRING = GameViewConfig.COLOR_YELLOW_DARK_STRING;   
+    
+    public static final int COLOR_RANDOM = GameViewConfig.COLOR_GREEN_DARK;
+    public static final int COLOR_DEFAULT = GameViewConfig.COLOR_GREEN_DARK;
+    public static final int COLOR_SQUARE = GameViewConfig.COLOR_YELLOW_LIGHT;
+    public static final int COLOR_MOUNTAIN = GameViewConfig.COLOR_GREEN_DARK;
+    public static final int COLOR_LINE = GameViewConfig.COLOR_RED_DARK;
+    public static final int COLOR_STAIRS_LEFT = GameViewConfig.COLOR_PURPLE_LIGHT;
+    public static final int COLOR_STAIRS_RIGHT = GameViewConfig.COLOR_BLUE_LIGHT;
+    public static final int COLOR_L = GameViewConfig.COLOR_BLUE_DARK;
+    public static final int COLOR_L_LEFT = GameViewConfig.COLOR_YELLOW_DARK;
+
     public static final int STATUS_FALL = 1;
     public static final int STATUS_LAND = 2;
     public static final int SHAPE_RANDOM = 0;
 
     QuadBitMatrix mMatrix;
-    int ibitmap;
-    int status = STATUS_FALL;
+
+    int mBitmapShape;
+    int mColor;
+    int mStatus = STATUS_FALL;
 
     public Tetris(int cx, int cy) {
-        super(cx, cy);
+        this(cx, cy, 0);
     }
 
-    public Tetris(int cx, int cy, int ibitmap) {
+    public Tetris(int cx, int cy, int bitmapShape) {
+        this(cx, cy, bitmapShape, -1);
+    }   
+    
+    public Tetris(int cx, int cy, int bitmapShape, int color) {
         super(cx, cy);
-        this.ibitmap = ibitmap;
+        this.mBitmapShape = bitmapShape;
+        if(color == -1){
+            this.mColor = getDefaultColor(this);
+        }else {
+            this.mColor = color;
+        }
     }
-
+    
     @Override
     public void onDraw(Canvas canvas) {
         for(int i = 0; i < mMatrix.getRowDimension(); i ++)
             for (int j = 0; j < mMatrix.getColumnDimension(); j++){
                 if(mMatrix.get(i,j) == 1) {
-                    RussiaGameView.drawCell(ibitmap, cx + j, cy + i);
+                    RussiaGameView.drawCell(mBitmapShape, mColor, cx + j, cy + i);
                 }
             }
+    }
+    
+    public static int getDefaultColor(Tetris tetris){
+        if(tetris instanceof TetrisSquare){
+            return COLOR_SQUARE;
+        }else if(tetris instanceof TetrisMountain){
+            return COLOR_MOUNTAIN;
+        }else if(tetris instanceof TetrisLine){
+            return COLOR_LINE;
+        }else if(tetris instanceof TetrisStairsLeft){
+            return COLOR_STAIRS_LEFT;
+        }else if(tetris instanceof TetrisStairsRight){
+            return COLOR_STAIRS_RIGHT;
+        }else if(tetris instanceof TetrisL){
+            return COLOR_L;
+        }else if(tetris instanceof TetrisLLeft){
+            return COLOR_L_LEFT;
+        }else{
+            return COLOR_DEFAULT;
+        }
     }
     public boolean transformation(){
         QuadBitMatrix quadBitMatrix = getMatrix().rotateClockwise90();
@@ -63,6 +112,18 @@ public abstract class Tetris extends CellSpirit {
 
     public QuadBitMatrix getMatrix() {
         return mMatrix;
+    }
+
+    public QuadBitMatrix getColorMatrix() {
+        QuadBitMatrix matrix = mMatrix.cloneCustom();
+        matrix.setExist(getColor());
+        return matrix;
+    }
+
+    public QuadBitMatrix getShapeMatrix() {
+        QuadBitMatrix matrix = mMatrix.cloneCustom();
+        matrix.setExist(getBitmapShape());
+        return matrix;
     }
 
     public void setMatrix(QuadBitMatrix matrix) {
@@ -100,41 +161,50 @@ public abstract class Tetris extends CellSpirit {
 
 
     public int getStatus() {
-        return status;
+        return mStatus;
     }
 
     public void setStatus(int status) {
-        this.status = status;
+        this.mStatus = status;
     }
 
-
-    public int getBitmap() {
-        return ibitmap;
-    }
-
-    public void setBitmap(int ibitmap) {
-        this.ibitmap = ibitmap;
-    }
-
-    public static Tetris generateRandomTetris(int type, int cx, int ibitmap) {
+    public static Tetris generateRandomTetris(int type, int cx, int bitmapShape) {
         switch (type){
             case TYPE_SQUARE:
-                return new TetrisSquare(cx, 0, 0, ibitmap);
+                return new TetrisSquare(cx, 0, 0, bitmapShape);
             case TYPE_MOUNTAIN:
-                return new TetrisMountain(cx, 0, 0, ibitmap);
+                return new TetrisMountain(cx, 0, 0, bitmapShape);
             case TYPE_LINE:
-                return new TetrisLine(cx, 0, 0, ibitmap);
+                return new TetrisLine(cx, 0, 0, bitmapShape);
             case TYPE_STAIRS_LEFT:
-                return new TetrisStairsLeft(cx, 0, 0, ibitmap);
+                return new TetrisStairsLeft(cx, 0, 0, bitmapShape);
             case TYPE_STAIRS_RIGHT:
-                return new TetrisStairsRight(cx, 0, 0, ibitmap);
+                return new TetrisStairsRight(cx, 0, 0, bitmapShape);
             case TYPE_L:
-                return new TetrisL(cx, 0, 0, ibitmap);
-            case TYPE_L_LEFT:
-                return new TetrisLLeft(cx, 0, 0, ibitmap);
-            case SHAPE_RANDOM:
+                return new TetrisL(cx, 0, 0, bitmapShape);
+            case TYPE_RANDOM:
             default:
-                return generateRandomTetris(new Random().nextInt(8), cx, ibitmap);
+                return generateRandomTetris(new Random().nextInt(8), cx, bitmapShape);
+            case TYPE_L_LEFT:
+                return new TetrisLLeft(cx, 0, 0, bitmapShape);
         }
     }
+
+
+    public int getBitmapShape() {
+        return mBitmapShape;
+    }
+
+    public void setBitmapShape(int bitmapShape) {
+        this.mBitmapShape = bitmapShape;
+    }
+
+    public int getColor() {
+        return mColor;
+    }
+
+    public void setColor(int color) {
+        this.mColor = color;
+    }
+
 }

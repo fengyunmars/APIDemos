@@ -39,6 +39,7 @@ public class ImageUtils extends BaseUtils{
 	 */
 
 	public static final int UNCHANGE = Integer.MIN_VALUE;
+	private static final String TAG = ImageUtils.class.getSimpleName();
 
 	public static Bitmap getAssetBitmap(String file){
 		return getAssetBitmap(file, UNCHANGE);
@@ -56,6 +57,13 @@ public class ImageUtils extends BaseUtils{
 		}
 		if(width <= 0){
 			return null;
+		}
+		if(bitmap == null){
+			try {
+				throw new Exception(TAG, new Throwable("getAssetBitmap file " + file + " failure !"));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		if(bitmap.getWidth() != width){
 			bitmap = ImageUtils.zoomBitmap(bitmap, (float) width / bitmap.getWidth());
