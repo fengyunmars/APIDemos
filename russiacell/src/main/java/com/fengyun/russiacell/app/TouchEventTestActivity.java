@@ -1,5 +1,6 @@
 package com.fengyun.russiacell.app;
 
+import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.ViewGroup;
@@ -7,7 +8,7 @@ import android.view.ViewGroup;
 import com.fengyun.russiacell.R;
 import com.fengyun.view.TouchEventTestView;
 
-public class TouchEventTestActivity extends AppCompatActivity {
+public class TouchEventTestActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
