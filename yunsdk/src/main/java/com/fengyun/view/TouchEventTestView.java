@@ -40,6 +40,6 @@ public class TouchEventTestView extends View {
 //        Log.d("dingxiaoquan", TAG + " rawX = " + rawX + ", rawY = " + rawY);
         Log.d("dingxiaoquan", TAG + event.toString() + "\n\n");
 
-        return super.onTouchEvent(event);
+        return true;
     }
 }

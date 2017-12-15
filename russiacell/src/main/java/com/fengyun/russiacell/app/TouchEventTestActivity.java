@@ -1,8 +1,11 @@
 package com.fengyun.russiacell.app;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.ViewGroup;
 
 import com.fengyun.russiacell.R;
@@ -20,5 +23,20 @@ public class TouchEventTestActivity extends Activity {
         touchEventTestView.setLayoutParams(layoutParams);
 
         setContentView(touchEventTestView);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add("game");
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getTitle().equals("game")){
+            Intent intent = new Intent(this, GameActivity.class);
+            startActivity(intent);
+        };
+        return true;
     }
 }

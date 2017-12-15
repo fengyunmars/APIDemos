@@ -91,17 +91,15 @@ public class QuadBitMatrix extends RotateMatrix {
     }
 
     public boolean hasFillLine(int lineStart, int lineEnd, int columnStart, int columnEnd, boolean[] fillLines) {
-        int sum = 0;
         boolean found = false;
         for(int i = lineStart; i < lineEnd; i ++) {
             for (int j = columnStart; j < columnEnd; j++) {
-                sum += get(i, j);
+                if(get(i, j) == 0){
+                    continue;
+                }
             }
-            if(sum == columnEnd - columnStart){
-                fillLines[i] = true;
-                found = true;
-            }
-            sum = 0;
+            fillLines[i] = true;
+            found = true;
         }
         return found;
     }

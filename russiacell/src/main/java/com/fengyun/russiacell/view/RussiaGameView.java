@@ -352,7 +352,7 @@ public class RussiaGameView extends SurfaceGameView{
         for(int i = 0; i < mGameButtonList.size(); i ++){
             mGameButtonList.get(i).onTouchEvent(event);
         }
-        return super.onTouchEvent(event);
+        return true;
     }
 
 }
