@@ -39,7 +39,7 @@ import com.fengyun.http.ApiManager;
 import com.fengyun.http.presenter.IMainPresenter;
 import com.fengyun.http.presenter.impl.MainPresenter;
 import com.fengyun.util.AnimUtils;
-import com.fengyun.util.SharePreferenceUtil;
+import com.fengyun.util.SharePreferenceUtilSrc;
 import com.fengyun.util.ViewUtils;
 
 import java.io.File;
@@ -95,7 +95,7 @@ public class NewsListActivity extends AppCompatActivity implements ISetImage, IL
         addfragmentsAndTitle();
 
         if (savedInstanceState == null) {
-            navigationId = SharePreferenceUtil.getNevigationItem(this);
+            navigationId = SharePreferenceUtilSrc.getNevigationItem(this);
             if (navigationId != -1) {
                 currentMenuItem = navView.getMenu().findItem(navigationId);
             }
@@ -139,7 +139,7 @@ public class NewsListActivity extends AppCompatActivity implements ISetImage, IL
                 if (currentMenuItem != item && currentMenuItem != null) {
                     currentMenuItem.setChecked(false);
                     int id = item.getItemId();
-                    SharePreferenceUtil.putNevigationItem(NewsListActivity.this, id);
+                    SharePreferenceUtilSrc.putNevigationItem(NewsListActivity.this, id);
                     currentMenuItem = item;
                     currentMenuItem.setChecked(true);
                     switchFragment(getFragmentById(currentMenuItem.getItemId()), mTitleArryMap.get(currentMenuItem.getItemId()));

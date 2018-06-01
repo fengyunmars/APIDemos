@@ -1,9 +1,9 @@
 package com.fengyun.cardgame.activity;
 
 import com.fengyun.cardgame.app.MainApplication;
-import com.fengyun.cardgame.util.DialogUtil;
+import com.fengyun.cardgame.util.DialogUtils;
 import com.fengyun.cardgame.R;
-import com.fengyun.cardgame.util.NetworkUtil;
+import com.fengyun.cardgame.util.NetworkUtils;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -45,12 +45,12 @@ public class SelectActivity extends BaseActivity implements OnClickListener{
 				break;
 			case R.id.choose_game_btn_multi_play:
 //				多人局域网对战 判断wifi连通
-				if(NetworkUtil.isWifiConnected()){
+				if(NetworkUtils.isWifiConnected()){
 					//连通的话，进入多人游戏界面
 					startActivity(new Intent(this, Multi_Game_Join_Activity.class));
 				}else{
 					//没有连通的话，设置wifi对话框
-					DialogUtil.wifiSetDialog(this);
+					DialogUtils.wifiSetDialog(this);
 				}
 				break;
 			case R.id.choose_game_btn_single_play:

@@ -1,6 +1,10 @@
 package com.fengyun.russiacell.model.spirit;
 
-import com.fengyun.model.game.cell.spirit.BaseSpirit;
+import android.content.Context;
+
+import com.fengyun.game.spirit.BaseSpirit;
+import com.fengyun.russiacell.view.RussiaGameView;
+import com.fengyun.util.AppUtils;
 
 /**
  * Created by fengyun on 2017/12/9.
@@ -8,53 +12,68 @@ import com.fengyun.model.game.cell.spirit.BaseSpirit;
 
 public abstract class Palette extends BaseSpirit {
 
-    public static final int X_DEFAULT = 300;
-    public static final int Y_DEFAULT = 280;
-    public static final int WIDTH_DEFAULT = 756;
-    public static final int HEIGHT_DEFAULT = 1449;
-    public static final float CELLWIDTH_DEFAULT = 74.32f;
-    public static final int BORDERWIDTH_LEFT_DEFAULT = 8;
-    public static final int BORDERWIDTH_TOP_DEFAULT = 9;
-    public static final int CELLSIZE_WIDTH_DEFAULT = 10;
-    public static final int CELLSIZE_HEIGHT_DEFAULT = 20;
+    public static final float SCREEN_WIDTH = 1080;
+    public static final float SCREEN_HEIGHT = 2030;
 
+    public static final float X_DEFAULT = 300 / SCREEN_WIDTH;
+    public static final float Y_DEFAULT = 280 / SCREEN_HEIGHT;
+    public static final float WIDTH_DEFAULT = 756 / SCREEN_WIDTH;
+    public static final float HEIGHT_DEFAULT = 1449 / SCREEN_HEIGHT;
 
-    public static int X = X_DEFAULT;
-    public static int Y = Y_DEFAULT;
-    public static int WIDTH = WIDTH_DEFAULT;
-    public static int HEIGHT = HEIGHT_DEFAULT;
-    public static float CELLWIDTH = CELLWIDTH_DEFAULT;
-    public static int BORDERWIDTH_LEFT = BORDERWIDTH_LEFT_DEFAULT;
-    public static int BORDERWIDTH_TOP = BORDERWIDTH_TOP_DEFAULT;
-    public static final int CELLSIZE_WIDTH = CELLSIZE_WIDTH_DEFAULT;
-    public static final int CELLSIZE_HEIGHT = CELLSIZE_HEIGHT_DEFAULT;
+    public static final float CELL_WIDTH_DEFAULT = 74.32f / SCREEN_WIDTH;
+
+    public static final float BORDER_LEFT_WIDTH_DEFAULT = 8 / SCREEN_WIDTH;
+    public static final float BORDER_TOP_WIDTH_DEFAULT = 9 / SCREEN_HEIGHT;
+
+    public static final int CELL_SIZE_WIDTH_DEFAULT = 10;
+    public static final int CELL_SIZE_HEIGHT_DEFAULT = 20;
+
     static final String TAG = Palette.class.getSimpleName();
     static Object lock = new Object();
 
-    int width;
-    int height;
-    float cellWidth;
-    int borderLeftWidth;
-    int borderTopWidth;
-    int widthSize;
-    int heightSize;
-    int topExtra;
+    protected float width;
+    protected float height;
 
-    protected abstract void normalization();
+    protected float cellWidth;
+    protected float borderLeftWidth;
+    protected float borderTopWidth;
 
-    public int getWidth() {
+    public Palette(Context context) {
+        super(context);
+        mx = X_DEFAULT;
+        my = Y_DEFAULT;
+        width = WIDTH_DEFAULT;
+        height = HEIGHT_DEFAULT;
+        cellWidth = CELL_WIDTH_DEFAULT;
+
+        borderLeftWidth = BORDER_LEFT_WIDTH_DEFAULT;
+        borderTopWidth = BORDER_TOP_WIDTH_DEFAULT;
+    }
+
+    public Palette(float x, float y, Context context) {
+        super(x, y, context);
+        width = WIDTH_DEFAULT;
+        height = HEIGHT_DEFAULT;
+        cellWidth = CELL_WIDTH_DEFAULT;
+
+        borderLeftWidth = BORDER_LEFT_WIDTH_DEFAULT;
+        borderTopWidth = BORDER_TOP_WIDTH_DEFAULT;
+    }
+
+
+    public float getWidth() {
         return width;
     }
 
-    public void setWidth(int width) {
+    public void setWidth(float width) {
         this.width = width;
     }
 
-    public int getHeight() {
+    public float getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(float height) {
         this.height = height;
     }
 
@@ -66,48 +85,31 @@ public abstract class Palette extends BaseSpirit {
         this.cellWidth = cellWidth;
     }
 
-    public int getWidthSize() {
-        return widthSize;
-    }
-
-    public void setWidthSize(int widthSize) {
-        this.widthSize = widthSize;
-    }
-
-    public int getHeightSize() {
-        return heightSize;
-    }
-
-    public void setHeightSize(int heightSize) {
-        this.heightSize = heightSize;
-    }
-
-
-    public int getBorderLeftWidth() {
+    public float getBorderLeftWidth() {
         return borderLeftWidth;
     }
 
-    public void setBorderLeftWidth(int borderLeftWidth) {
+    public void setBorderLeftWidth(float borderLeftWidth) {
         this.borderLeftWidth = borderLeftWidth;
     }
 
-    public int getBorderTopWidth() {
+    public float getBorderTopWidth() {
         return borderTopWidth;
     }
 
-    public void setBorderTopWidth(int borderTopWidth) {
+    public void setBorderTopWidth(float borderTopWidth) {
         this.borderTopWidth = borderTopWidth;
     }
 
-    public static int cellXToPix(int x) {
-        int i = X + BORDERWIDTH_LEFT;
-        int j = (int)(i + x * CELLWIDTH);
+    public float cellXToPix(int x) {
+        float i = mx + borderLeftWidth * RussiaGameView.screen_width;
+        float j = i + x * cellWidth * RussiaGameView.screen_width;
         return j;
     }
 
-    public static int cellYToPix(int y) {
-        int i = Y + BORDERWIDTH_TOP;
-        int j = (int)(i + y * CELLWIDTH);
+    public float cellYToPix(int y) {
+        float i = my + borderTopWidth * RussiaGameView.screen_height;
+        float j = i + y * cellWidth * RussiaGameView.screen_width ;
         return j;
     }
 

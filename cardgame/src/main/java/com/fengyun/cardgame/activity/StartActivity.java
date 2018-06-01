@@ -2,7 +2,7 @@ package com.fengyun.cardgame.activity;
 
 import com.fengyun.cardgame.R;
 import com.fengyun.cardgame.app.MainApplication;
-import com.fengyun.cardgame.util.DialogUtil;
+import com.fengyun.cardgame.util.DialogUtils;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -58,12 +58,12 @@ public class StartActivity extends BaseActivity implements OnClickListener {
 		switch (item.getItemId()) {
 			case R.id.action_settings:
 				//选择设置菜单，弹出设置对话框
-				DialogUtil.setupDialog(this,1);
+				DialogUtils.setupDialog(this,1);
 				break;
 	
 			case R.id.action_exits:
 				//选择退出菜单，弹出退出对话框
-				DialogUtil.exitSystemDialog(this);
+				DialogUtils.exitSystemDialog(this);
 				break;
 		}
 		return true;
@@ -77,7 +77,7 @@ public class StartActivity extends BaseActivity implements OnClickListener {
 		//播放音乐特效
 		app.play("SpecOk.ogg");
 		//系统退出对话框
-		DialogUtil.exitSystemDialog(this);
+		DialogUtils.exitSystemDialog(this);
 		
 	}
 
@@ -99,7 +99,7 @@ public class StartActivity extends BaseActivity implements OnClickListener {
 				break;
 			case R.id.start_screen_exit:
 				//单击退出游戏，弹出系统退出对话框
-				DialogUtil.exitSystemDialog(this);
+				DialogUtils.exitSystemDialog(this);
 				break;
 		}
 		

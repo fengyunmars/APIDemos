@@ -20,7 +20,7 @@ public abstract class SurfaceGameView extends SurfaceView implements SurfaceHold
 
 	private static final String TAG = SurfaceGameView.class.getSimpleName();
 	//视图控制器
-	private SurfaceHolder surfaceHolder=null;
+	private SurfaceHolder surfaceHolder = null;
 	//绘图线程
 	public Thread drawThread = null;
 	public Thread pulseThread = null;

@@ -21,6 +21,7 @@ dependencies {
     // 日志打印工具类
 
 
+    implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     compile 'com.github.orhanobut:logger:1.12'
     compile project(':yunsdk')
     annotationProcessor 'com.jakewharton:butterknife-compiler:+'

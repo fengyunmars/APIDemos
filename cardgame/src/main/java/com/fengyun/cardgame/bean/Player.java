@@ -8,7 +8,7 @@ public abstract class Player {
 
 	private int id;//玩家编号
 	
-	private byte gender;
+	private Gender gender;
 	
 	private boolean isBot; //是不是人 ：true，电脑 false
 	
@@ -17,15 +17,16 @@ public abstract class Player {
 	private boolean out;//是否出牌或者跟牌
 	
 	private int turnId;
-	
+
 	private List<Card> cards=new ArrayList<Card>();//当前手里的牌
 	
 	private List<Card> outcards=new ArrayList<Card>();//每次出牌
 
-	public Player(int id, boolean isBot ,byte gender, int turnId){
+	public Player(int id, boolean isBot ,Gender gender, int turnId){
 		this.id=id;
 		this.setBot(isBot);
 		this.gender = gender;
+		this.turnId = turnId;
 		init();
 	}
 	
@@ -57,11 +58,11 @@ public abstract class Player {
 		return outcards;
 	}
 
-	public byte getGender() {
+	public Gender getGender() {
 		return gender;
 	}
 
-	public void setGender(byte gender) {
+	public void setGender(Gender gender) {
 		this.gender = gender;
 	}
 
@@ -104,6 +105,6 @@ public abstract class Player {
 	public void setTurnId(int turnId) {
 		this.turnId = turnId;
 	}
-	
-	
+
+
 }

@@ -90,26 +90,28 @@ public class QuadBitMatrix extends RotateMatrix {
         return false;
     }
 
-    public boolean hasFillLine(int lineStart, int lineEnd, int columnStart, int columnEnd, boolean[] fillLines) {
+    public boolean hasFillLine(int rowStart, int rowEnd, int columnStart, int columnEnd, boolean[] fillLines) {
         boolean found = false;
-        for(int i = lineStart; i < lineEnd; i ++) {
+        int sum = 0;
+        for(int i = rowStart; i < rowEnd; i ++) {
             for (int j = columnStart; j < columnEnd; j++) {
-                if(get(i, j) == 0){
-                    continue;
+                sum += get(i, j);
+                if(sum == columnEnd - columnStart) {
+                    fillLines[i] = true;
+                    found = true;
                 }
             }
-            fillLines[i] = true;
-            found = true;
+            sum = 0;
         }
         return found;
     }
 
-    public boolean hasFillLine(int start, int end, boolean[] fillLines) {
-        return hasFillLine(4,24, start, end,fillLines);
+    public boolean hasFillLine(int rowStart, int rowEnd, boolean[] fillLines) {
+        return hasFillLine(rowStart, rowEnd, 4, 14,fillLines);
     }
 
     public boolean hasFillLine(boolean[] fillLines) {
-        return hasFillLine(4, 14,fillLines);
+        return hasFillLine(4, 24,fillLines);
     }
 
     public QuadBitMatrix removeLines(boolean[] fillLines,int lineStart, int lineEnd, int columnStart, int columnEnd) {

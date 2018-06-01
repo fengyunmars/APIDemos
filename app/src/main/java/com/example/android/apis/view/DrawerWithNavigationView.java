@@ -25,7 +25,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.example.android.apis.AboutActivity;
 import com.example.android.apis.R;
-import com.fengyun.util.SharePreferenceUtil;
+import com.fengyun.util.SharePreferenceUtilSrc;
 import com.fengyun.util.ViewUtils;
 
 
@@ -76,7 +76,7 @@ public class DrawerWithNavigationView extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
 
         if (savedInstanceState == null) {
-            nevigationId = SharePreferenceUtil.getNevigationItem(this);
+            nevigationId = SharePreferenceUtilSrc.getNevigationItem(this);
             if (nevigationId != -1) {
                 currentMenuItem = mNavView.getMenu().findItem(nevigationId);
             }
@@ -120,7 +120,7 @@ public class DrawerWithNavigationView extends AppCompatActivity {
                 if (currentMenuItem != item && currentMenuItem != null) {
                     currentMenuItem.setChecked(false);
                     int id = item.getItemId();
-                    SharePreferenceUtil.putNevigationItem(DrawerWithNavigationView.this, id);
+                    SharePreferenceUtilSrc.putNevigationItem(DrawerWithNavigationView.this, id);
                     currentMenuItem = item;
                     currentMenuItem.setChecked(true);
                     switchFragment(getFragmentById(currentMenuItem.getItemId()), mTitleArryMap.get(currentMenuItem.getItemId()));

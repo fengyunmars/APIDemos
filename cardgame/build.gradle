@@ -7,11 +7,10 @@ android {
 
     defaultConfig {
         applicationId "com.fengyun.cardgame"
-        minSdkVersion 23
+        minSdkVersion 22
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "android.test.InstrumentationTestRunner"
     }
 
@@ -30,5 +29,6 @@ dependencies {
     api 'com.android.support:appcompat-v7:24.0.0'
     api 'com.android.support.constraint:constraint-layout:1.0.2'
     api 'junit:junit:4.12'
+
     compile project(path: ':yunsdk')
 }

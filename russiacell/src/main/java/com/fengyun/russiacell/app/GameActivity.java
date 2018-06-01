@@ -25,9 +25,9 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ActivityUtils.hideNavigationBar(this);
         gameView = new RussiaGameView(this);
-        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        gameView.setLayoutParams(layoutParams);
+//        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(
+//                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+//        gameView.setLayoutParams(layoutParams);
         setContentView(gameView);
 //        try {
 //            XMLUtils.parsePlist("plist/game_render");

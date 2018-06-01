@@ -21,19 +21,18 @@ public class GameViewConfig {
     public static final int BUTTON_WIDTH_DEFAULT = 181;
     public static final int BUTTON_HEIGHT_DEFAULT = 181;
 
-    public static final int COLOR_DEFAULT = 0;
-    public static final int COLOR_BLUE_DARK = 1;
-    public static final int COLOR_BLUE_LIGHT = 2;
-    public static final int COLOR_GRAY_DARK0 = 3;
-    public static final int COLOR_GRAY_DARK1 = 4;
-    public static final int COLOR_GRAY_LIGHT = 5;
-    public static final int COLOR_GREEN_DARK = 6;
-    public static final int COLOR_GREEN_LIGHT = 7;
-    public static final int COLOR_PURPLE_DARK = 8;
-    public static final int COLOR_PURPLE_LIGHT = 9;
-    public static final int COLOR_RED_DARK = 10;
-    public static final int COLOR_YELLOW_DARK = 11;
-    public static final int COLOR_YELLOW_LIGHT = 12;
+    public static final int COLOR_BLUE_DARK = 0;
+    public static final int COLOR_BLUE_LIGHT = 1;
+    public static final int COLOR_GRAY_DARK0 = 2;
+    public static final int COLOR_GRAY_DARK1 = 3;
+    public static final int COLOR_GRAY_LIGHT = 4;
+    public static final int COLOR_GREEN_DARK = 5;
+    public static final int COLOR_GREEN_LIGHT = 6;
+    public static final int COLOR_PURPLE_DARK = 7;
+    public static final int COLOR_PURPLE_LIGHT = 8;
+    public static final int COLOR_RED_DARK = 9;
+    public static final int COLOR_YELLOW_DARK = 10;
+    public static final int COLOR_YELLOW_LIGHT = 11;
 
     public static final String COLOR_BLUE_DARK_STRING = "bluedark";
     public static final String COLOR_BLUE_LIGHT_STRING = "bluelight";
@@ -51,7 +50,6 @@ public class GameViewConfig {
     public static final String COLOR_DEFAULT_STRING = COLOR_GREEN_DARK_STRING;
 
     public static final String[] COLOR_STRING_ARRAY = new String[]{
-            COLOR_DEFAULT_STRING,
             COLOR_BLUE_DARK_STRING,
             COLOR_BLUE_LIGHT_STRING,
             COLOR_GRAY_DARK0_STRING,
@@ -65,30 +63,29 @@ public class GameViewConfig {
             COLOR_YELLOW_DARK_STRING,
             COLOR_YELLOW_LIGHT_STRING
     };
-    public static final int SHAPE_DEFAULT = 0;
-    public static final int SHAPE_BAMBOO = 1;
-    public static final int SHAPE_BOX = 2;
-    public static final int SHAPE_BUBBLE = 3;
-    public static final int SHAPE_BUBBLE_HEART = 4;
-    public static final int SHAPE_CIRCLE = 5;
-    public static final int SHAPE_CLASSIC = 6;
-    public static final int SHAPE_CROSS = 7;
-    public static final int SHAPE_DIAGONAL = 8;
-    public static final int SHAPE_EMOJI = 9;
-    public static final int SHAPE_HEART = 10;
-    public static final int SHAPE_HEART_BEAUTIFUL = 11;
-    public static final int SHAPE_HOLLOW = 12;
-    public static final int SHAPE_JEWEL = 13;
-    public static final int SHAPE_PLANT = 14;
-    public static final int SHAPE_POKER = 15;
-    public static final int SHAPE_PORTLY = 16;
-    public static final int SHAPE_PROTRUDE = 17;
-    public static final int SHAPE_RING = 18;
-    public static final int SHAPE_SNOWFLAKE = 19;
-    public static final int SHAPE_SPIKE = 20;
-    public static final int SHAPE_STAR = 21;
-    public static final int SHAPE_STAR_BEAUTIFUL = 22;
-    public static final int SHAPE_UGLY_HEART = 23;
+    public static final int SHAPE_BAMBOO = 0;
+    public static final int SHAPE_BOX = 1;
+    public static final int SHAPE_BUBBLE = 2;
+    public static final int SHAPE_BUBBLE_HEART = 3;
+    public static final int SHAPE_CIRCLE = 4;
+    public static final int SHAPE_CLASSIC = 5;
+    public static final int SHAPE_CROSS = 6;
+    public static final int SHAPE_DIAGONAL = 7;
+    public static final int SHAPE_EMOJI = 8;
+    public static final int SHAPE_HEART = 9;
+    public static final int SHAPE_HEART_BEAUTIFUL = 10;
+    public static final int SHAPE_HOLLOW = 11;
+    public static final int SHAPE_JEWEL = 12;
+    public static final int SHAPE_PLANT = 13;
+    public static final int SHAPE_POKER = 14;
+    public static final int SHAPE_PORTLY = 15;
+    public static final int SHAPE_PROTRUDE = 16;
+    public static final int SHAPE_RING = 17;
+    public static final int SHAPE_SNOWFLAKE = 18;
+    public static final int SHAPE_SPIKE = 19;
+    public static final int SHAPE_STAR = 20;
+    public static final int SHAPE_STAR_BEAUTIFUL = 21;
+    public static final int SHAPE_UGLY_HEART = 22;
 
     public static final String SHAPE_BAMBOO_STRING = "bamboo";
     public static final String SHAPE_BOX_STRING = "box";
@@ -117,7 +114,6 @@ public class GameViewConfig {
     public static final String SHAPE_DEFAULT_STRING = SHAPE_CLASSIC_STRING;
 
     public static final String[] SHAPE_STRING_ARRAY = new String[]{
-        SHAPE_DEFAULT_STRING,
         SHAPE_BAMBOO_STRING,
         SHAPE_BOX_STRING,
         SHAPE_BUBBLE_STRING,

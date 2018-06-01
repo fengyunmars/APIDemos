@@ -1,5 +1,7 @@
 package com.fengyun.russiacell.model.spirit;
 
+import android.content.Context;
+
 import com.fengyun.math.QuadBitMatrix;
 
 import java.util.Random;
@@ -75,8 +77,9 @@ public class TetrisLine extends Tetris{
     public static final int VERTICAL_THREE = 7;
     public static final int VERTICAL_FOUR = 8;
 
-    public TetrisLine(int cx, int cy, int shape, int bitmapShape) {
-        super(cx, cy, bitmapShape);
+    public TetrisLine(int cx, int cy, Context context, Palette palette,
+                      int bitmap, int color, int shape) {
+        super(cx, cy, context, palette,bitmap, color);
         QuadBitMatrix matrix = new QuadBitMatrix(getShapeMatrixArray(shape));
         setMatrix(matrix);
     }

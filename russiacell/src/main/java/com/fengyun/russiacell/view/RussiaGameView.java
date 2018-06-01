@@ -1,26 +1,26 @@
 package com.fengyun.russiacell.view;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 
+import com.fengyun.util.ImageUtils;
 import com.fengyun.math.QuadBitMatrix;
-import com.fengyun.model.game.cell.spirit.GameButton;
-import com.fengyun.russiacell.app.TouchEventTestActivity;
-import com.fengyun.russiacell.model.spirit.GameButtonImage;
+import com.fengyun.game.spirit.GameButton;
 import com.fengyun.russiacell.model.spirit.Palette;
-import com.fengyun.russiacell.model.spirit.PaletteImage;
 import com.fengyun.russiacell.model.spirit.Tetris;
 import com.fengyun.russiacell.model.spirit.TetrisL;
 import com.fengyun.russiacell.model.spirit.TetrisLLeft;
+import com.fengyun.russiacell.model.spirit.TetrisLine;
 import com.fengyun.russiacell.model.spirit.TetrisMountain;
+import com.fengyun.russiacell.model.spirit.TetrisSquare;
 import com.fengyun.russiacell.model.spirit.TetrisStairsLeft;
+import com.fengyun.russiacell.model.spirit.TetrisStairsRight;
+import com.fengyun.util.AppUtils;
 import com.fengyun.util.DebugUtils;
-import com.fengyun.util.ImageUtils;
 import com.fengyun.view.game.SurfaceGameView;
 
 import java.util.ArrayList;
@@ -38,15 +38,25 @@ public class RussiaGameView extends SurfaceGameView{
      * @param context 上下文
      */
     public static final String TAG = RussiaGameView.class.getSimpleName();
+
     public static final int CELL_LAND_BITMAP_INT = 0;
     public static final int CELL_CLASSIC_GREENDRAK_INT = 1;
+
     private static final int MAX_TETRIS_SIZE = 4;
-    public static Bitmap[][] cellBitmapArray = new Bitmap[24][13];
+
+    public static Bitmap[][] cellBitmapArray = new Bitmap[23][12];
+
     public static int CELL_LAND_BITMAP_SHAPE_DEFAULT = GameViewConfig.SHAPE_CLASSIC;
     public static int CELL_LAND_COLOR_DEFAULT = GameViewConfig.COLOR_GREEN_DARK;
-    Palette mPalette;
+
+    public static int screen_width;
+    public static int screen_height;
+
+    static Palette mPalette;
     Bitmap background;
     Tetris currentTetris;
+    Context context;
+
     public List<GameButton> mGameButtonList = new ArrayList<>();
     public GameButton buttonMoveLeft;
     public GameButton buttonMoveRight;
@@ -61,23 +71,41 @@ public class RussiaGameView extends SurfaceGameView{
     public static final QuadBitMatrix emptyMatrix = new QuadBitMatrix(28,18);
 
     public Random mRandom = new Random();
+
     public RussiaGameView(Context context) {
         super(context);
         init();
     }
 
     private void init() {
-        background = ImageUtils.getAssetBitmap("scene/capture_hollow.png");
-        mPalette = new PaletteImage(300, 280 , ImageUtils.getAssetBitmap("scene/palette_new.png"));
-        for(int i = 1; i < cellBitmapArray.length; i ++) {
+        context = getContext();
+        int[] screenSize = AppUtils.getDisplayDimensions(getContext());
+        screen_width = screenSize[0];
+        screen_height = screenSize[1];
+        background = ImageUtils.getAssetBitmap(context,"scene/capture_hollow.png");
+        float x = Palette.X_DEFAULT * screen_width;
+        float y = Palette.Y_DEFAULT * screen_height;
+        mPalette = new Palette(Palette.X_DEFAULT * screen_width,
+                Palette.Y_DEFAULT * screen_height, context) {
+            @Override
+            public void onDraw(Canvas canvas) {
+                Bitmap bitmap = ImageUtils.getAssetBitmap(context,"scene/palette_new.png");
+                canvas.drawBitmap(bitmap, mx, my, null);
+            }
+        };
+        for(int i = 0; i < cellBitmapArray.length; i ++) {
             String shapeString = GameViewConfig.getShapeString(i);
-            for (int j = 1; j < cellBitmapArray[0].length; j++) {
+            for (int j = 0; j < cellBitmapArray[0].length; j++) {
                 String colorString = GameViewConfig.getColorString(j);
                 String file = "cell/cell_" + shapeString + "_" + colorString + ".png";
-                cellBitmapArray[i][j] = ImageUtils.getAssetBitmap(file, Palette.CELLWIDTH_DEFAULT - 2);
+                Bitmap bitmap = ImageUtils.getAssetBitmap(context,file);
+                float cellWidth = mPalette.getCellWidth();
+                float f = mPalette.getCellWidth() * screen_width;
+                cellBitmapArray[i][j] = ImageUtils.zoomBitmapByHeight(bitmap,
+                        mPalette.getCellWidth() * screen_width);
             }
         }
-        currentTetris = new TetrisLLeft(0, 0, GameViewConfig.SHAPE_DEFAULT, CELL_CLASSIC_GREENDRAK_INT);
+        currentTetris = new TetrisLLeft(1, 1,context, mPalette, GameViewConfig.COLOR_BLUE_LIGHT, GameViewConfig.SHAPE_BOX, 0);
         initButtons();
 //        Bitmap bitmap = ImageUtils.getAssetBitmap("scene/capture_new.png");
 //        File path = getContext().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
@@ -87,64 +115,59 @@ public class RussiaGameView extends SurfaceGameView{
     }
 
     private void initButtons() {
-        buttonMoveDown = new GameButtonImage(){
+        buttonMoveDown = new GameButton(GameViewConfig.BUTTON_FIVE_X_DEFAULT,GameViewConfig.BUTTON_Y_DEFAULT,
+        context, GameViewConfig.BUTTON_WIDTH_DEFAULT, GameViewConfig.BUTTON_HEIGHT_DEFAULT,background){
             @Override
             public boolean onClick() {
                 return handleTetrisMoveDown(currentTetris);
             }
         };
-        buttonMoveDown.setLocation(GameViewConfig.BUTTON_FIVE_X_DEFAULT, GameViewConfig.BUTTON_Y_DEFAULT,
-                GameViewConfig.BUTTON_WIDTH_DEFAULT, GameViewConfig.BUTTON_HEIGHT_DEFAULT);
-        buttonMoveUp = new GameButtonImage(){
+        buttonMoveUp = new GameButton(GameViewConfig.BUTTON_ONE_X_DEFAULT,GameViewConfig.BUTTON_Y_DEFAULT,
+                context, GameViewConfig.BUTTON_WIDTH_DEFAULT, GameViewConfig.BUTTON_HEIGHT_DEFAULT,background){
             @Override
             public boolean onClick() {
                 return handleTetrisMoveUp(currentTetris);
             }
         };
-        buttonMoveUp.setLocation(GameViewConfig.BUTTON_ONE_X_DEFAULT, GameViewConfig.BUTTON_Y_DEFAULT,
-                GameViewConfig.BUTTON_WIDTH_DEFAULT, GameViewConfig.BUTTON_HEIGHT_DEFAULT);
-        buttonMoveLeft = new GameButtonImage(){
+        buttonMoveLeft = new GameButton(GameViewConfig.BUTTON_TWO_X_DEFAULT,GameViewConfig.BUTTON_Y_DEFAULT,
+                context, GameViewConfig.BUTTON_WIDTH_DEFAULT, GameViewConfig.BUTTON_HEIGHT_DEFAULT,background){
             @Override
             public boolean onClick() {
                 return handleTetrisMoveLeft(currentTetris);
             }
         };
-        buttonMoveLeft.setLocation(GameViewConfig.BUTTON_TWO_X_DEFAULT, GameViewConfig.BUTTON_Y_DEFAULT,
-                GameViewConfig.BUTTON_WIDTH_DEFAULT, GameViewConfig.BUTTON_HEIGHT_DEFAULT);
-        buttonMoveRight = new GameButtonImage(){
+        buttonMoveRight = new GameButton(GameViewConfig.BUTTON_FOUR_X_DEFAULT,GameViewConfig.BUTTON_Y_DEFAULT,
+                context, GameViewConfig.BUTTON_WIDTH_DEFAULT, GameViewConfig.BUTTON_HEIGHT_DEFAULT,background){
             @Override
             public boolean onClick() {
                 return handleTetrisMoveRight(currentTetris);
             }
         };
-        buttonMoveRight.setLocation(GameViewConfig.BUTTON_FOUR_X_DEFAULT, GameViewConfig.BUTTON_Y_DEFAULT,
-                GameViewConfig.BUTTON_WIDTH_DEFAULT, GameViewConfig.BUTTON_HEIGHT_DEFAULT);
 
-        buttonTransformation = new GameButtonImage(){
+        buttonTransformation = new GameButton(GameViewConfig.BUTTON_THREE_X_DEFAULT,GameViewConfig.BUTTON_Y_DEFAULT,
+                context, GameViewConfig.BUTTON_WIDTH_DEFAULT, GameViewConfig.BUTTON_HEIGHT_DEFAULT,background){
             @Override
             public boolean onClick() {
                 return handleTetrisTransformation(currentTetris);
             }
         };
-        buttonTransformation.setLocation(GameViewConfig.BUTTON_THREE_X_DEFAULT, GameViewConfig.BUTTON_Y_DEFAULT,
-                GameViewConfig.BUTTON_WIDTH_DEFAULT, GameViewConfig.BUTTON_HEIGHT_DEFAULT);
 
-        buttonNavigation = new GameButtonImage(){
-            @Override
-            public boolean onClick() {
-                Intent intent = new Intent(RussiaGameView.this.getContext(), TouchEventTestActivity.class);
-                RussiaGameView.this.getContext().startActivity(intent);
-                return true;
-            }
-        };
-        buttonNavigation.setLocation(GameViewConfig.BUTTON_NAVIGATION_X_DEFAULT, GameViewConfig.BUTTON_NAVIGATION_Y_DEFAULT,
-                GameViewConfig.BUTTON_NAVIGATION_WIDTH_DEFAULT, GameViewConfig.BUTTON_NAVIGATION_HEIGHT_DEFAULT);
+//        buttonNavigation = new GameButtonImage(){
+//            @Override
+//            public boolean onClick() {
+//                Intent intent = new Intent(RussiaGameView.this.getContext(), TouchEventTestActivity.class);
+//                RussiaGameView.this.getContext().startActivity(intent);
+//                return true;
+//            }
+//        };
+//        buttonNavigation.setLocation(GameViewConfig.BUTTON_NAVIGATION_X_DEFAULT, GameViewConfig.BUTTON_NAVIGATION_Y_DEFAULT,
+//                GameViewConfig.BUTTON_NAVIGATION_WIDTH_DEFAULT, GameViewConfig.BUTTON_NAVIGATION_HEIGHT_DEFAULT);
         mGameButtonList.add(buttonMoveDown);
         mGameButtonList.add(buttonMoveUp);
         mGameButtonList.add(buttonMoveLeft);
         mGameButtonList.add(buttonMoveRight);
         mGameButtonList.add(buttonTransformation);
-        mGameButtonList.add(buttonNavigation);
+//        mGameButtonList.add(buttonNavigation);
     }
 
     @Override
@@ -155,7 +178,7 @@ public class RussiaGameView extends SurfaceGameView{
     @Override
     public void updatePulse() {
         if(currentTetris.getStatus() == Tetris.STATUS_FALL){
-//            handleTetrisFall(currentTetris);
+            handleTetrisFall(currentTetris);
         }
     }
 
@@ -189,9 +212,13 @@ public class RussiaGameView extends SurfaceGameView{
         currentTetris = generateRandomTetris();
         QuadBitMatrix currentProjection = tetris.getMatrix().projection(emptyMatrix,
                 tetris.cx + MAX_TETRIS_SIZE, tetris.cy + MAX_TETRIS_SIZE);
+//        QuadBitMatrix currentProjection = tetris.getMatrix().projection(emptyMatrix,
+//                MAX_TETRIS_SIZE, MAX_TETRIS_SIZE);
 
         QuadBitMatrix colorProjection = tetris.getColorMatrix().projection(emptyMatrix, tetris.cx + MAX_TETRIS_SIZE, tetris.cy + MAX_TETRIS_SIZE);
+//        QuadBitMatrix colorProjection = tetris.getColorMatrix().projection(emptyMatrix, MAX_TETRIS_SIZE, MAX_TETRIS_SIZE);
         QuadBitMatrix shapeProjection = tetris.getShapeMatrix().projection(emptyMatrix, tetris.cx + MAX_TETRIS_SIZE, tetris.cy + MAX_TETRIS_SIZE);
+//        QuadBitMatrix shapeProjection = tetris.getShapeMatrix().projection(emptyMatrix, MAX_TETRIS_SIZE, MAX_TETRIS_SIZE);
         synchronized (lock) {
             landMatrix.plusEquals(currentProjection);
             landColorMatrix.plusEquals(colorProjection);
@@ -283,7 +310,7 @@ public class RussiaGameView extends SurfaceGameView{
         QuadBitMatrix sum = (QuadBitMatrix) nextProjection.plusEquals(landMatrix);
         boolean overlap = sum.hasOverlap();
 
-        boolean overRight = cx + tetrisMatrix.getColumnDimension() > Palette.CELLSIZE_WIDTH - 1;
+        boolean overRight = cx + tetrisMatrix.getColumnDimension() > Palette.CELL_SIZE_WIDTH_DEFAULT - 1;
         if(overRight){
             if(!overlap){
                 synchronized (lock) {
@@ -301,12 +328,29 @@ public class RussiaGameView extends SurfaceGameView{
     }
 
     public Tetris generateRandomTetris() {
-        int type = mRandom.nextInt(8);
-//        int shape = mRandom.nextInt(9);
-        int bitmapShape = mRandom.nextInt(23) + 1;
+        int type = mRandom.nextInt(7);
+        int bitmapShape = mRandom.nextInt(23);
+        int color = mRandom.nextInt(12);
         int cx = mRandom.nextInt(4);
+        int cy = 0;
         cx = cx + 3;
-        Tetris tetris = Tetris.generateRandomTetris(type, cx, bitmapShape);
+        Tetris tetris = null;
+        switch (type){
+            case Tetris.TYPE_L:
+                tetris = new TetrisL(cx, cy, context, mPalette, bitmapShape, color, 0);
+            case Tetris.TYPE_L_LEFT:
+                tetris = new TetrisLLeft(cx, cy, context, mPalette, bitmapShape, color, 0);
+            case Tetris.TYPE_LINE:
+                tetris = new TetrisLine(cx, cy, context, mPalette, bitmapShape, color, 0);
+            case Tetris.TYPE_MOUNTAIN:
+                tetris = new TetrisMountain(cx, cy, context, mPalette, bitmapShape, color, 0);
+            case Tetris.TYPE_SQUARE:
+                tetris = new TetrisSquare(cx, cy, context, mPalette, bitmapShape, color, 0);
+            case Tetris.TYPE_STAIRS_LEFT:
+                tetris = new TetrisStairsLeft(cx, cy, context, mPalette, bitmapShape, color, 0);
+            case Tetris.TYPE_STAIRS_RIGHT:
+                tetris = new TetrisStairsRight(cx, cy, context, mPalette, bitmapShape, color, 0);
+        }
         return tetris;
     }
 
@@ -320,8 +364,8 @@ public class RussiaGameView extends SurfaceGameView{
     }
 
     public void drawLandTetris() {
-        for(int i = MAX_TETRIS_SIZE; i < Palette.CELLSIZE_HEIGHT + MAX_TETRIS_SIZE; i ++)
-            for(int j = MAX_TETRIS_SIZE; j < Palette.CELLSIZE_WIDTH + MAX_TETRIS_SIZE ; j ++){
+        for(int i = MAX_TETRIS_SIZE; i < Palette.CELL_SIZE_HEIGHT_DEFAULT + MAX_TETRIS_SIZE; i ++)
+            for(int j = MAX_TETRIS_SIZE; j < Palette.CELL_SIZE_WIDTH_DEFAULT + MAX_TETRIS_SIZE ; j ++){
                 if(landMatrix.get(i, j) == 1){
                     drawCell((int)landShapeMatrix.get(i, j), (int)landColorMatrix.get(i, j ),j - MAX_TETRIS_SIZE, i - MAX_TETRIS_SIZE);
                 }
@@ -329,7 +373,7 @@ public class RussiaGameView extends SurfaceGameView{
     }
 
     public static void drawCell(int bitmapShape, int color, int cx, int cy) {
-        canvas.drawBitmap(getBitmapByShapeAndColor(bitmapShape, color), Palette.cellXToPix(cx), Palette.cellYToPix(cy), null);
+        canvas.drawBitmap(getBitmapByShapeAndColor(bitmapShape, color), mPalette.cellXToPix(cx), mPalette.cellYToPix(cy), null);
     }
 
     private void drawScene(Canvas canvas) {
@@ -346,6 +390,7 @@ public class RussiaGameView extends SurfaceGameView{
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+
 
         DebugUtils.printMotionEvent(event, TAG);
 

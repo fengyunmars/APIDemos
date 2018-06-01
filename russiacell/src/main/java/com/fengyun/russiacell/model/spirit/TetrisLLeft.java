@@ -1,5 +1,7 @@
 package com.fengyun.russiacell.model.spirit;
 
+import android.content.Context;
+
 import com.fengyun.math.QuadBitMatrix;
 
 import java.util.Random;
@@ -69,8 +71,9 @@ public class TetrisLLeft extends Tetris{
     
 
 
-    public TetrisLLeft(int cx, int cy, int shape, int bitmapShape) {
-        super(cx, cy, bitmapShape);
+    public TetrisLLeft(int cx, int cy, Context context, Palette palette,
+                       int bitmap, int color, int shape) {
+        super(cx, cy, context, palette,bitmap, color);
         QuadBitMatrix matrix = new QuadBitMatrix(getShapeMatrixArray(shape));
         setMatrix(matrix);
     }

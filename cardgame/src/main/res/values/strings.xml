@@ -12,8 +12,9 @@
     <string name="muliti_help_title_3">· 怎么没有其他玩家？</string>
     <string name="muliti_help_content_3_1">1. 还在等什么，赶紧让你的小伙伴们安装这款斗地主</string>
     <string name="muliti_help_content_3_2">2. 接着让你的小伙伴们和你同时连接同一个WiFi</string>
-    
+
 
     <string name="message_box_user_leave">有玩家离开，游戏得分将被重置</string>
     <string name="message_box_user_leave_in_playing">有玩家离开，游戏结束</string>
+    <string name="title_activity_game_select">GameSelectActivity</string>
 </resources>

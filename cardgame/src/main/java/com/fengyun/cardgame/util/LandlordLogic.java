@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 import com.fengyun.cardgame.bean.Card;
-import com.fengyun.cardgame.bean.CardTypeGouJi;
+import com.fengyun.cardgame.bean.CardTypeLandlord;
 import com.fengyun.cardgame.bean.HandCardLandlord;
 
 public class LandlordLogic {
@@ -15,18 +15,18 @@ public class LandlordLogic {
 		if(current == null){
 			return true;
 		}
-		if(current.getCardTypeLandlord() == CardTypeGouJi.huojian){
+		if(current.getCardTypeLandlord() == CardTypeLandlord.huojian){
 			return false;
-		}else if(current.getCardTypeLandlord() == CardTypeGouJi.zhadan){
-			if(selected.getCardTypeLandlord() == CardTypeGouJi.huojian){
+		}else if(current.getCardTypeLandlord() == CardTypeLandlord.zhadan){
+			if(selected.getCardTypeLandlord() == CardTypeLandlord.huojian){
 				return true;
-			}else if(selected.getCardTypeLandlord() == CardTypeGouJi.zhadan &&
+			}else if(selected.getCardTypeLandlord() == CardTypeLandlord.zhadan &&
 					 selected.getWeight() > current.getWeight()){
 				return true;
 			}
 		}else{
-			if(selected.getCardTypeLandlord() == CardTypeGouJi.huojian ||
-			   selected.getCardTypeLandlord() == CardTypeGouJi.zhadan){
+			if(selected.getCardTypeLandlord() == CardTypeLandlord.huojian ||
+			   selected.getCardTypeLandlord() == CardTypeLandlord.zhadan){
 				return true;
 			}else{
 				if(selected.getCardTypeLandlord() == current.getCardTypeLandlord() &&
@@ -39,24 +39,24 @@ public class LandlordLogic {
 		}
 		return false;
 	}
-	public static CardTypeGouJi getCardTypeLandlord(List<Card> list){
+	public static CardTypeLandlord getCardTypeLandlord(List<Card> list){
 		Collections.sort(list);
 		if(list.size() == 1)
-			return CardTypeGouJi.dan;
+			return CardTypeLandlord.dan;
 		else if(list.size() == 2){
 			if(list.get(0).getName() == list.get(1).getName()){
-				return CardTypeGouJi.dui;
+				return CardTypeLandlord.dui;
 			}else if(list.get(0).getName() == 17 && list.get(1).getName() == 16){
-				return CardTypeGouJi.huojian;
+				return CardTypeLandlord.huojian;
 			}else{
-				return CardTypeGouJi.error;
+				return CardTypeLandlord.error;
 			}
 		}else if(list.size() == 3){
 			if(list.get(0).getName() == list.get(1).getName() && 
 			   list.get(0).getName() == list.get(2).getName())
-			   return CardTypeGouJi.sanbudai;
+			   return CardTypeLandlord.sanbudai;
 			else 
-			   return CardTypeGouJi.error;
+			   return CardTypeLandlord.error;
 		}else if(list.size() == 4){
 			   return getCardTypeLandlordFour(list);
 				}else if(list.size() == 5){
@@ -164,20 +164,20 @@ public class LandlordLogic {
 		return false;
 	}
 	
-	public static CardTypeGouJi getCardTypeLandlordFour(List<Card> list) {
+	public static CardTypeLandlord getCardTypeLandlordFour(List<Card> list) {
 		// TODO Auto-generated method stub
 		Collections.sort(list);
 		if(list.get(0).getName() == list.get(1).getName() && 
 				list.get(0).getName() == list.get(2).getName() && 
 				list.get(0).getName() == list.get(3).getName())
-			return CardTypeGouJi.zhadan;
+			return CardTypeLandlord.zhadan;
 		else if(list.get(0).getName() == list.get(1).getName() && 
 				list.get(0).getName() == list.get(2).getName())
-			return CardTypeGouJi.sandaiyi;
+			return CardTypeLandlord.sandaiyi;
 		else if(list.get(1).getName() == list.get(2).getName() && 
 				list.get(1).getName() == list.get(3).getName())
-			return CardTypeGouJi.sandaiyi;
-		return CardTypeGouJi.error;
+			return CardTypeLandlord.sandaiyi;
+		return CardTypeLandlord.error;
 	}
 	
 	public static int getWeightLandlordFour(List<Card> list) {
@@ -212,17 +212,17 @@ public class LandlordLogic {
 		}
 	}
 	
-	public static CardTypeGouJi getCardTypeLandlordFive(List<Card> list) {
+	public static CardTypeLandlord getCardTypeLandlordFive(List<Card> list) {
 		// TODO Auto-generated method stub
 		Collections.sort(list);
 		if(list.get(0).getName() == list.get(1).getName() && 
 		   list.get(0).getName() == list.get(2).getName() && 
 		   list.get(3).getName() == list.get(4).getName())
-			return CardTypeGouJi.sandaidui;
+			return CardTypeLandlord.sandaidui;
 		else if(list.get(0).getName() == list.get(1).getName() && 
 				list.get(2).getName() == list.get(3).getName() && 
 				list.get(2).getName() == list.get(4).getName())
-			return CardTypeGouJi.sandaidui;
+			return CardTypeLandlord.sandaidui;
 		else{
 			return getCardTypeLandlordRank(list);
 		}
@@ -278,35 +278,35 @@ public class LandlordLogic {
 		}
 	}
 	
-	public static CardTypeGouJi getCardTypeLandlordSix(List<Card> list) {
+	public static CardTypeLandlord getCardTypeLandlordSix(List<Card> list) {
 		// TODO Auto-generated method stub
 		Collections.sort(list);
 		if(list.get(0).getName() == list.get(1).getName() && 
 		   list.get(0).getName() == list.get(2).getName() && 
 		   list.get(0).getName() == list.get(3).getName() &&
 		   list.get(4).getName() != list.get(5).getName())
-		   return CardTypeGouJi.sidaierdan;
+		   return CardTypeLandlord.sidaierdan;
 		else if(list.get(0).getName() != list.get(5).getName() && 
 				list.get(1).getName() == list.get(2).getName() && 
 				list.get(1).getName() == list.get(3).getName() &&
 				list.get(1).getName() == list.get(4).getName())
-			    return CardTypeGouJi.sidaierdan;
+			    return CardTypeLandlord.sidaierdan;
 		else if(list.get(0).getName() != list.get(1).getName() && 
 				list.get(2).getName() == list.get(3).getName() && 
 				list.get(2).getName() == list.get(4).getName() &&
 				list.get(2).getName() == list.get(5).getName())
-			return CardTypeGouJi.sidaierdan;
+			return CardTypeLandlord.sidaierdan;
 		else if(list.get(0).getName() == list.get(1).getName() && 
 				list.get(0).getName() == list.get(2).getName() && 
 				list.get(3).getName() == list.get(4).getName() &&
 				list.get(3).getName() == list.get(5).getName())
-			return CardTypeGouJi.sanshun6;
+			return CardTypeLandlord.sanshun6;
 		else if(list.get(0).getName() == list.get(1).getName() && 
 				list.get(2).getName() == list.get(3).getName() && 
 				list.get(4).getName() == list.get(5).getName() &&
 				list.get(0).getName() - list.get(2).getName() == 1 &&
 				list.get(2).getName() - list.get(4).getName() == 1)
-			return CardTypeGouJi.shuangshun6;
+			return CardTypeLandlord.shuangshun6;
 		else{
 			return getCardTypeLandlordRank(list);
 		}
@@ -408,7 +408,7 @@ public class LandlordLogic {
 		}
 	}
 	
-	public static CardTypeGouJi getCardTypeLandlordEight(List<Card> list) {
+	public static CardTypeLandlord getCardTypeLandlordEight(List<Card> list) {
 		// TODO Auto-generated method stub
 		Collections.sort(list);
 		if(list.get(0).getName() == list.get(1).getName() && 
@@ -417,46 +417,46 @@ public class LandlordLogic {
 		   list.get(4).getName() == list.get(5).getName() &&
 		   list.get(4).getName() == list.get(6).getName() &&
 		   list.get(4).getName() == list.get(7).getName())
-	       return CardTypeGouJi.sishun8;
+	       return CardTypeLandlord.sishun8;
 		else if(list.get(0).getName() == list.get(1).getName() && 
 				list.get(0).getName() == list.get(2).getName() && 
 				list.get(0).getName() == list.get(3).getName() &&
 				list.get(4).getName() == list.get(5).getName() &&
 				list.get(6).getName() == list.get(7).getName())
-				return CardTypeGouJi.sidaierdui;
+				return CardTypeLandlord.sidaierdui;
 		else if(list.get(0).getName() == list.get(1).getName() && 
 				list.get(2).getName() == list.get(3).getName() && 
 				list.get(2).getName() == list.get(4).getName() &&
 				list.get(2).getName() == list.get(5).getName() &&
 				list.get(6).getName() == list.get(7).getName())
-				return CardTypeGouJi.sidaierdui;
+				return CardTypeLandlord.sidaierdui;
 		else if(list.get(0).getName() == list.get(1).getName() && 
 				list.get(2).getName() == list.get(3).getName() && 
 				list.get(4).getName() == list.get(5).getName() &&
 				list.get(4).getName() == list.get(6).getName() &&
 				list.get(4).getName() == list.get(7).getName())
-				return CardTypeGouJi.sidaierdui;
+				return CardTypeLandlord.sidaierdui;
 		else if(list.get(0).getName() != list.get(1).getName() && 
 				list.get(2).getName() == list.get(3).getName() && 
 				list.get(2).getName() == list.get(4).getName() &&
 				list.get(5).getName() == list.get(6).getName() &&
 				list.get(5).getName() == list.get(7).getName() &&
 				list.get(2).getName() - list.get(5).getName() == 1)
-				return CardTypeGouJi.feiji8;
+				return CardTypeLandlord.feiji8;
 		else if(list.get(0).getName() == list.get(1).getName() && 
 				list.get(0).getName() == list.get(2).getName() && 
 				list.get(3).getName() == list.get(4).getName() &&
 				list.get(3).getName() == list.get(5).getName() &&
 				list.get(6).getName() != list.get(7).getName() &&
 				list.get(0).getName() - list.get(3).getName() == 1)
-				return CardTypeGouJi.feiji8;
+				return CardTypeLandlord.feiji8;
 		else if(list.get(0).getName() != list.get(7).getName() && 
 				list.get(1).getName() == list.get(2).getName() && 
 				list.get(1).getName() == list.get(3).getName() &&
 				list.get(4).getName() == list.get(5).getName() &&
 				list.get(4).getName() == list.get(6).getName() &&
 				list.get(1).getName() - list.get(4).getName() == 1)
-				return CardTypeGouJi.feiji8;
+				return CardTypeLandlord.feiji8;
 		else if(list.get(0).getName() == list.get(1).getName() && 
 				list.get(2).getName() == list.get(3).getName() && 
 				list.get(4).getName() == list.get(5).getName() &&
@@ -464,7 +464,7 @@ public class LandlordLogic {
 				list.get(0).getName() - list.get(2).getName() == 1 &&
 				list.get(2).getName() - list.get(4).getName() == 1 &&
 				list.get(4).getName() - list.get(6).getName() == 1)
-				return CardTypeGouJi.shuangshun8;
+				return CardTypeLandlord.shuangshun8;
 		else{
 				return getCardTypeLandlordRank(list);
 		}
@@ -547,7 +547,7 @@ public class LandlordLogic {
 		}
 	}
 	
-	public static CardTypeGouJi getCardTypeLandlordNine(List<Card> list) {
+	public static CardTypeLandlord getCardTypeLandlordNine(List<Card> list) {
 		// TODO Auto-generated method stub
 		Collections.sort(list);
 		if(list.get(0).getName() == list.get(1).getName() && 
@@ -556,7 +556,7 @@ public class LandlordLogic {
 		   list.get(3).getName() == list.get(5).getName() &&
 		   list.get(6).getName() == list.get(7).getName() &&
 		   list.get(6).getName() == list.get(8).getName())
-			return CardTypeGouJi.sanshun9;
+			return CardTypeLandlord.sanshun9;
 		else{
 			return getCardTypeLandlordRank(list);
 		}
@@ -619,7 +619,7 @@ public class LandlordLogic {
 		}
 	}
 	
-	public static CardTypeGouJi getCardTypeLandlordTen(List<Card> list) {
+	public static CardTypeLandlord getCardTypeLandlordTen(List<Card> list) {
 		// TODO Auto-generated method stub
 		Collections.sort(list);
 		if(list.get(0).getName() == list.get(1).getName() && 
@@ -629,7 +629,7 @@ public class LandlordLogic {
 		   list.get(6).getName() == list.get(7).getName() &&
 		   list.get(8).getName() == list.get(9).getName() &&
 		   list.get(0).getName() - list.get(3).getName() == 1)
-		   return CardTypeGouJi.feiji10;
+		   return CardTypeLandlord.feiji10;
 		else if(list.get(0).getName() == list.get(1).getName() && 
 				list.get(2).getName() == list.get(3).getName() && 
 				list.get(2).getName() == list.get(4).getName() &&
@@ -637,7 +637,7 @@ public class LandlordLogic {
 				list.get(5).getName() == list.get(7).getName() &&
 				list.get(8).getName() == list.get(9).getName() &&
 				list.get(2).getName() - list.get(5).getName() == 1)
-				return CardTypeGouJi.feiji10;
+				return CardTypeLandlord.feiji10;
 		else if(list.get(0).getName() == list.get(1).getName() && 
 				list.get(2).getName() == list.get(3).getName() && 
 				list.get(4).getName() == list.get(5).getName() &&
@@ -645,7 +645,7 @@ public class LandlordLogic {
 				list.get(7).getName() == list.get(8).getName() &&
 				list.get(7).getName() == list.get(9).getName() &&
 				list.get(4).getName() - list.get(7).getName() == 1)
-				return CardTypeGouJi.feiji10;
+				return CardTypeLandlord.feiji10;
 		else if(list.get(0).getName() == list.get(1).getName() && 
 				list.get(2).getName() == list.get(3).getName() && 
 				list.get(4).getName() == list.get(5).getName() &&
@@ -655,7 +655,7 @@ public class LandlordLogic {
 				list.get(2).getName() - list.get(4).getName() == 1 &&
 				list.get(4).getName() - list.get(6).getName() == 1 &&
 				list.get(6).getName() - list.get(8).getName() == 1)
-				return CardTypeGouJi.shuangshun10;
+				return CardTypeLandlord.shuangshun10;
 		else{
 				return getCardTypeLandlordRank(list);
 		}
@@ -795,7 +795,7 @@ public class LandlordLogic {
 		}
 	}
 	
-	public static CardTypeGouJi getCardTypeLandlordTwelve(List<Card> list) {
+	public static CardTypeLandlord getCardTypeLandlordTwelve(List<Card> list) {
 		// TODO Auto-generated method stub
 		Collections.sort(list);
 		if(list.get(0).getName() == list.get(1).getName() && 
@@ -809,7 +809,7 @@ public class LandlordLogic {
 		   list.get(8).getName() == list.get(11).getName() &&
 		   list.get(0).getName() - list.get(4).getName() == 1 &&
 		   list.get(4).getName() - list.get(8).getName() == 1)
-		  return CardTypeGouJi.sishun12;
+		  return CardTypeLandlord.sishun12;
 		else if(list.get(0).getName() == list.get(1).getName() && 
 				list.get(0).getName() == list.get(2).getName() && 
 				list.get(3).getName() == list.get(4).getName() &&
@@ -821,7 +821,7 @@ public class LandlordLogic {
 				list.get(0).getName() - list.get(3).getName() == 1 &&
 				list.get(3).getName() - list.get(6).getName() == 1 &&
 				list.get(6).getName() - list.get(9).getName() == 1)
-				return CardTypeGouJi.sanshun12;
+				return CardTypeLandlord.sanshun12;
 		else if(list.get(0).getName() != list.get(1).getName() &&
 				list.get(0).getName() != list.get(2).getName() &&
 				list.get(1).getName() != list.get(2).getName() &&
@@ -833,7 +833,7 @@ public class LandlordLogic {
 				list.get(9).getName() == list.get(11).getName() &&
 				list.get(3).getName() - list.get(6).getName() == 1 &&
 				list.get(6).getName() - list.get(9).getName() == 1)
-				return CardTypeGouJi.feiji12;
+				return CardTypeLandlord.feiji12;
 		else if(list.get(0).getName() != list.get(1).getName() &&
 				list.get(0).getName() != list.get(11).getName() &&
 				list.get(1).getName() != list.get(11).getName() &&
@@ -845,7 +845,7 @@ public class LandlordLogic {
 				list.get(8).getName() == list.get(10).getName() &&
 				list.get(2).getName() - list.get(5).getName() == 1 &&
 				list.get(5).getName() - list.get(8).getName() == 1)
-			return CardTypeGouJi.feiji12;
+			return CardTypeLandlord.feiji12;
 		else if(list.get(0).getName() != list.get(10).getName() &&
 				list.get(0).getName() != list.get(11).getName() &&
 				list.get(10).getName() != list.get(11).getName() &&
@@ -857,7 +857,7 @@ public class LandlordLogic {
 				list.get(7).getName() == list.get(9).getName() &&
 				list.get(1).getName() - list.get(4).getName() == 1 &&
 				list.get(4).getName() - list.get(7).getName() == 1)
-			return CardTypeGouJi.feiji12;
+			return CardTypeLandlord.feiji12;
 		else if(list.get(9).getName() != list.get(10).getName() &&
 				list.get(9).getName() != list.get(11).getName() &&
 				list.get(10).getName() != list.get(11).getName() &&
@@ -869,7 +869,7 @@ public class LandlordLogic {
 				list.get(6).getName() == list.get(8).getName() &&
 				list.get(0).getName() - list.get(3).getName() == 1 &&
 				list.get(3).getName() - list.get(6).getName() == 1)
-			return CardTypeGouJi.feiji12;
+			return CardTypeLandlord.feiji12;
 		else if(list.get(0).getName() == list.get(1).getName() && 
 				list.get(2).getName() == list.get(3).getName() && 
 				list.get(4).getName() == list.get(5).getName() &&
@@ -881,7 +881,7 @@ public class LandlordLogic {
 				list.get(4).getName() - list.get(6).getName() == 1 &&
 				list.get(6).getName() - list.get(8).getName() == 1 &&
 				list.get(8).getName() - list.get(10).getName() == 1)
-				return CardTypeGouJi.shuangshun12;
+				return CardTypeLandlord.shuangshun12;
 		else{
 			return getCardTypeLandlordRank(list);
 		}
@@ -1001,7 +1001,7 @@ public class LandlordLogic {
 		}
 	}
 	
-	public static CardTypeGouJi getCardTypeLandlordFourTeen(List<Card> list) {
+	public static CardTypeLandlord getCardTypeLandlordFourTeen(List<Card> list) {
 		// TODO Auto-generated method stub
 		Collections.sort(list);
 		if(list.get(0).getName() == list.get(1).getName() && 
@@ -1017,9 +1017,9 @@ public class LandlordLogic {
 		   list.get(6).getName() - list.get(8).getName() == 1 &&
 		   list.get(8).getName() - list.get(10).getName() == 1 &&
 		   list.get(10).getName() - list.get(12).getName() == 1)
-		   return CardTypeGouJi.shuangshun14;
+		   return CardTypeLandlord.shuangshun14;
 		else{
-			return CardTypeGouJi.error;
+			return CardTypeLandlord.error;
 		}
 	}
 	
@@ -1056,33 +1056,33 @@ public class LandlordLogic {
 		return true;
 	}
 	
-	public static CardTypeGouJi getCardTypeLandlordRank(List<Card> list) {
+	public static CardTypeLandlord getCardTypeLandlordRank(List<Card> list) {
 		// TODO Auto-generated method stub
 		Collections.sort(list);
 		for(int i = 0; i < list.size() - 1; i++){
 			if(list.get(0).getName() < 15 && list.get(i).getName() - list.get(i+1).getName() != 1){
-				return CardTypeGouJi.error;
+				return CardTypeLandlord.error;
 			}
 		}
 		switch (list.size()) {
 			case 5:
-				return CardTypeGouJi.danshun5;
+				return CardTypeLandlord.danshun5;
 			case 6:
-				return CardTypeGouJi.danshun6;
+				return CardTypeLandlord.danshun6;
 			case 7:
-				return CardTypeGouJi.danshun7;
+				return CardTypeLandlord.danshun7;
 			case 8:
-				return CardTypeGouJi.danshun8;
+				return CardTypeLandlord.danshun8;
 			case 9:
-				return CardTypeGouJi.danshun9;
+				return CardTypeLandlord.danshun9;
 			case 10:
-				return CardTypeGouJi.danshun10;
+				return CardTypeLandlord.danshun10;
 			case 11:
-				return CardTypeGouJi.danshun11;
+				return CardTypeLandlord.danshun11;
 			case 12:
-				return CardTypeGouJi.danshun12;
+				return CardTypeLandlord.danshun12;
 			default:
-				return CardTypeGouJi.error;
+				return CardTypeLandlord.error;
 		}
 	}
 	
@@ -1102,60 +1102,60 @@ public class LandlordLogic {
 	 */
 	public static void main(String[] args) {
 		
-		Card card1 = new Card("c1", 3, null, null);
-		Card card2 = new Card("c2", 3, null, null);
-		Card card3 = new Card("c3", 3, null, null);
-		Card card4 = new Card("c4", 3, null, null);
-		Card card5 = new Card("c5", 4, null, null);
-		Card card6 = new Card("c6", 4, null, null);
-		Card card7 = new Card("c7", 4, null, null);
-		Card card8 = new Card("c8", 4, null, null);
-		Card card9 = new Card("c9", 5, null, null);
-		Card card10 = new Card("c10", 5, null, null);
-		Card card11 = new Card("c11", 5, null, null);
-		Card card12 = new Card("c12", 5, null, null);
-		Card card13 = new Card("c13", 6, null, null);
-		Card card14 = new Card("c14", 6, null, null);
-		Card card15 = new Card("c15", 6, null, null);
-		Card card16 = new Card("c16", 6, null, null);
-		Card card17 = new Card("c17", 7, null, null);
-		Card card18 = new Card("c18", 7, null, null);
-		Card card19 = new Card("c19", 7, null, null);
-		Card card20 = new Card("c20", 7, null, null);
-		Card card21 = new Card("c21", 8, null, null);
-		Card card22 = new Card("c22", 8, null, null);
-		Card card23 = new Card("c23", 8, null, null);
-		Card card24 = new Card("c24", 8, null, null);
-		Card card25 = new Card("c25", 9, null, null);
-		Card card26 = new Card("c26", 9, null, null);
-		Card card27 = new Card("c27", 9, null, null);
-		Card card28 = new Card("c28", 9, null, null);
-		Card card29 = new Card("c29", 10, null, null);
-		Card card30 = new Card("C30", 10, null, null);
-		Card card31 = new Card("c31", 10, null, null);
-		Card card32 = new Card("c32", 10, null, null);
-		Card card33 = new Card("c33", 11, null, null);
-		Card card34 = new Card("c34", 11, null, null);
-		Card card35 = new Card("c35", 11, null, null);
-		Card card36 = new Card("c36", 11, null, null);
-		Card card37 = new Card("c37", 12, null, null);
-		Card card38 = new Card("c38", 12, null, null);
-		Card card39 = new Card("c39", 12, null, null);
-		Card card40 = new Card("c40", 12, null, null);
-		Card card41 = new Card("c41", 13, null, null);
-		Card card42 = new Card("c42", 13, null, null);
-		Card card43 = new Card("c43", 13, null, null);
-		Card card44 = new Card("c44", 13, null, null);
-		Card card45 = new Card("c45", 14, null, null);
-		Card card46 = new Card("c46", 14, null, null);
-		Card card47 = new Card("c47", 14, null, null);
-		Card card48 = new Card("c48", 14, null, null);
-		Card card49 = new Card("c49", 15, null, null);
-		Card card50 = new Card("c50", 15, null, null);
-		Card card51 = new Card("c51", 15, null, null);
-		Card card52 = new Card("c52", 15, null, null);
-		Card card53 = new Card("c53", 16, null, null);
-		Card card54 = new Card("c54", 17, null, null);
+		Card card1 = new Card("c1", 3, null,null,null);
+		Card card2 = new Card("c2", 3, null,null,null);
+		Card card3 = new Card("c3", 3, null,null,null);
+		Card card4 = new Card("c4", 3, null,null,null);
+		Card card5 = new Card("c5", 4, null,null,null);
+		Card card6 = new Card("c6", 4, null,null,null);
+		Card card7 = new Card("c7", 4, null,null,null);
+		Card card8 = new Card("c8", 4, null,null,null);
+		Card card9 = new Card("c9", 5, null,null,null);
+		Card card10 = new Card("c10", 5, null,null, null);
+		Card card11 = new Card("c11", 5, null,null, null);
+		Card card12 = new Card("c12", 5, null,null, null);
+		Card card13 = new Card("c13", 6, null,null, null);
+		Card card14 = new Card("c14", 6, null,null, null);
+		Card card15 = new Card("c15", 6, null,null, null);
+		Card card16 = new Card("c16", 6, null,null, null);
+		Card card17 = new Card("c17", 7, null,null, null);
+		Card card18 = new Card("c18", 7, null,null, null);
+		Card card19 = new Card("c19", 7, null,null, null);
+		Card card20 = new Card("c20", 7, null,null, null);
+		Card card21 = new Card("c21", 8, null,null, null);
+		Card card22 = new Card("c22", 8, null,null, null);
+		Card card23 = new Card("c23", 8, null,null, null);
+		Card card24 = new Card("c24", 8, null,null, null);
+		Card card25 = new Card("c25", 9, null,null, null);
+		Card card26 = new Card("c26", 9, null,null, null);
+		Card card27 = new Card("c27", 9, null,null, null);
+		Card card28 = new Card("c28", 9, null,null, null);
+		Card card29 = new Card("c29", 10, null,null, null);
+		Card card30 = new Card("C30", 10, null,null, null);
+		Card card31 = new Card("c31", 10, null,null, null);
+		Card card32 = new Card("c32", 10, null,null, null);
+		Card card33 = new Card("c33", 11, null,null, null);
+		Card card34 = new Card("c34", 11, null,null, null);
+		Card card35 = new Card("c35", 11, null,null, null);
+		Card card36 = new Card("c36", 11, null,null, null);
+		Card card37 = new Card("c37", 12, null,null, null);
+		Card card38 = new Card("c38", 12, null,null, null);
+		Card card39 = new Card("c39", 12, null,null, null);
+		Card card40 = new Card("c40", 12, null,null, null);
+		Card card41 = new Card("c41", 13, null,null, null);
+		Card card42 = new Card("c42", 13, null,null, null);
+		Card card43 = new Card("c43", 13, null,null, null);
+		Card card44 = new Card("c44", 13, null,null, null);
+		Card card45 = new Card("c45", 14, null,null, null);
+		Card card46 = new Card("c46", 14, null,null, null);
+		Card card47 = new Card("c47", 14, null,null, null);
+		Card card48 = new Card("c48", 14, null,null, null);
+		Card card49 = new Card("c49", 15, null,null, null);
+		Card card50 = new Card("c50", 15, null,null, null);
+		Card card51 = new Card("c51", 15, null,null, null);
+		Card card52 = new Card("c52", 15, null,null, null);
+		Card card53 = new Card("c53", 16, null,null, null);
+		Card card54 = new Card("c54", 17, null,null, null);
 		List<Card> list = new ArrayList<Card>();
 //		list.add(card1);  //3
 		list.add(card2);  //3
@@ -1218,7 +1218,7 @@ public class LandlordLogic {
 		List<Card> handcardlist = new ArrayList<Card>();
 		handcardlist.add(card13);
 		HandCardLandlord handCardLandlord = new HandCardLandlord(
-				handcardlist, CardTypeGouJi.dan, card13.getName());
+				handcardlist, CardTypeLandlord.dan, card13.getName());
 //		List<HandCardLandlord> handCardLandlordList = HandCardLandlord.getHintList
 //				(list, handCardLandlord);
 //		System.out.println(handCardLandlordList);

@@ -8,11 +8,11 @@ import java.util.List;
 public class HandCardLandlord implements Comparable<HandCardLandlord>{
 	
 	private List<Card> list = new ArrayList<Card>();
-	private CardTypeGouJi cardTypeLandlord;
+	private CardTypeLandlord cardTypeLandlord;
 	private int weight;
 	private int count;
 	
-	public HandCardLandlord(List<Card> list, CardTypeGouJi cardTypeLandlord, int weight){
+	public HandCardLandlord(List<Card> list, CardTypeLandlord cardTypeLandlord, int weight){
 		this.setList(list); 
 		this.setCardTypeLandlord(cardTypeLandlord);
 		this.weight = weight;
@@ -27,11 +27,11 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 		this.list = list;
 	}
 	
-	public CardTypeGouJi getCardTypeLandlord() {
+	public CardTypeLandlord getCardTypeLandlord() {
 		return cardTypeLandlord;
 	}
 
-	public void setCardTypeLandlord(CardTypeGouJi cardTypeLandlord) {
+	public void setCardTypeLandlord(CardTypeLandlord cardTypeLandlord) {
 		this.cardTypeLandlord = cardTypeLandlord;
 	}
 	
@@ -128,7 +128,7 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 					return rankList.get(0);
 			}
 			return new HandCardLandlord(lowestCards, 
-					CardTypeGouJi.dan, lowestCards.get(0).getName());
+					CardTypeLandlord.dan, lowestCards.get(0).getName());
 		}else if(lowestCards.size() == 2){
 			List<HandCardLandlord> rankList = getRankDui(allCards);
 			if(rankList.size() > 0){
@@ -136,7 +136,7 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 					return rankList.get(0);
 			}
 			return new HandCardLandlord(lowestCards, 
-					CardTypeGouJi.dui, lowestCards.get(0).getName());
+					CardTypeLandlord.dui, lowestCards.get(0).getName());
 		}else if(lowestCards.size() == 3){
 			
 			List<HandCardLandlord> feiji15 = getFeiji15(allCards);
@@ -990,7 +990,7 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 	}
 	
 	public static List<HandCardLandlord> getAllRank(List<Card> allCards, 
-			CardTypeGouJi cardTypeLandlord){
+			CardTypeLandlord cardTypeLandlord){
 		switch (cardTypeLandlord) {
 		case danshun5:
 			return getAllSubRankAll(getRank(allCards), 5);
@@ -1128,7 +1128,7 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 						cardList.addAll(sanList.get(i).getList());
 						cardList.addAll(danList.get(j).getList());
 						handCardLandlord = new HandCardLandlord(cardList, 
-								CardTypeGouJi.sandaiyi, sanList.get(i).getWeight());
+								CardTypeLandlord.sandaiyi, sanList.get(i).getWeight());
 						handCardLandlordList.add(handCardLandlord);
 						
 					}
@@ -1141,7 +1141,7 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 						cardList.addAll(sanList.get(i).getList());
 						cardList.add(duiList.get(j).getList().get(0));
 						handCardLandlord = new HandCardLandlord(cardList, 
-								CardTypeGouJi.sandaiyi, sanList.get(i).getWeight());
+								CardTypeLandlord.sandaiyi, sanList.get(i).getWeight());
 						handCardLandlordList.add(handCardLandlord);
 						
 					}
@@ -1155,7 +1155,7 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 							cardList.addAll(sanList.get(i).getList());
 							cardList.add(sanList.get(j).getList().get(0));
 							handCardLandlord = new HandCardLandlord(cardList, 
-									CardTypeGouJi.sandaiyi, sanList.get(i).getWeight());
+									CardTypeLandlord.sandaiyi, sanList.get(i).getWeight());
 							handCardLandlordList.add(handCardLandlord);
 						}
 						
@@ -1184,7 +1184,7 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 						cardList.addAll(daipaiList.get(j).getList());
 						cardList.addAll(daipaiList.get(k).getList());
 						handCardLandlord = new HandCardLandlord(cardList, 
-								CardTypeGouJi.sidaierdui, siList.get(i).getWeight());
+								CardTypeLandlord.sidaierdui, siList.get(i).getWeight());
 						handCardLandlordList.add(handCardLandlord);
 					}
 				}
@@ -1195,7 +1195,7 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 	
 	public static List<HandCardLandlord> getFeiji8(List<Card> allCards){ 
 		Collections.sort(allCards);
-		List<HandCardLandlord> sanshunList = getAllRank(allCards, CardTypeGouJi.sanshun6);
+		List<HandCardLandlord> sanshunList = getAllRank(allCards, CardTypeLandlord.sanshun6);
 		System.out.println(sanshunList);
 		List<HandCardLandlord> daipaiList = getCardTypesBetween(allCards, 1, 4, 1);
 		System.out.println(daipaiList);
@@ -1215,7 +1215,7 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 						cardList.addAll(daipaiList.get(j).getList());
 						cardList.addAll(daipaiList.get(k).getList());
 						handCardLandlord = new HandCardLandlord(cardList, 
-								CardTypeGouJi.feiji8, sanshunList.get(i).getWeight());
+								CardTypeLandlord.feiji8, sanshunList.get(i).getWeight());
 						handCardLandlordList.add(handCardLandlord);
 					}
 				}
@@ -1227,7 +1227,7 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 	
 	public static List<HandCardLandlord> getFeiji10(List<Card> allCards){ 
 		Collections.sort(allCards);
-		List<HandCardLandlord> sanshunList = getAllRank(allCards, CardTypeGouJi.sanshun6);
+		List<HandCardLandlord> sanshunList = getAllRank(allCards, CardTypeLandlord.sanshun6);
 		System.out.println(sanshunList);
 		List<HandCardLandlord> daipaiList = getCardTypesBetween(allCards, 2, 4, 2);
 		System.out.println(daipaiList);
@@ -1247,7 +1247,7 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 						cardList.addAll(daipaiList.get(j).getList());
 						cardList.addAll(daipaiList.get(k).getList());
 						handCardLandlord = new HandCardLandlord(cardList, 
-								CardTypeGouJi.feiji10, sanshunList.get(i).getWeight());
+								CardTypeLandlord.feiji10, sanshunList.get(i).getWeight());
 						handCardLandlordList.add(handCardLandlord);
 					}
 				}
@@ -1258,7 +1258,7 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 	
 	public static List<HandCardLandlord> getFeiji12(List<Card> allCards){
 		Collections.sort(allCards);
-		List<HandCardLandlord> sanshunList = getAllRank(allCards, CardTypeGouJi.sanshun9);
+		List<HandCardLandlord> sanshunList = getAllRank(allCards, CardTypeLandlord.sanshun9);
 		System.out.println(sanshunList);
 		List<HandCardLandlord> daipaiList = getCardTypesBetween(allCards, 1, 4, 1);
 		System.out.println(daipaiList);
@@ -1286,7 +1286,7 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 				   cardList.addAll(daipaiList.get(k).getList());
 				   cardList.addAll(daipaiList.get(l).getList());
 				   handCardLandlord = new HandCardLandlord(cardList, 
-						   CardTypeGouJi.feiji12, sanshunList.get(i).getWeight());
+						   CardTypeLandlord.feiji12, sanshunList.get(i).getWeight());
 				   handCardLandlordList.add(handCardLandlord);
 				  }
 			  }
@@ -1298,7 +1298,7 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 	
 	public static List<HandCardLandlord> getFeiji15(List<Card> allCards){ 
 		Collections.sort(allCards);
-		List<HandCardLandlord> sanshunList = getAllRank(allCards, CardTypeGouJi.sanshun9);
+		List<HandCardLandlord> sanshunList = getAllRank(allCards, CardTypeLandlord.sanshun9);
 		System.out.println(sanshunList);
 		List<HandCardLandlord> daipaiList = getCardTypesBetween(allCards, 2, 4, 2);
 		System.out.println(daipaiList);
@@ -1326,7 +1326,7 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 							cardList.addAll(daipaiList.get(k).getList());
 							cardList.addAll(daipaiList.get(l).getList());
 							handCardLandlord = new HandCardLandlord(cardList, 
-									CardTypeGouJi.feiji15, sanshunList.get(i).getWeight());
+									CardTypeLandlord.feiji15, sanshunList.get(i).getWeight());
 							handCardLandlordList.add(handCardLandlord);
 						}
 					}
@@ -1350,7 +1350,7 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 		if(allCards.get(0).getName() == 17 && allCards.get(1).getName() == 16){
 			list.add(allCards.get(0));
 			list.add(allCards.get(1));
-			handCardLandlord = new HandCardLandlord(list, CardTypeGouJi.huojian, 16);
+			handCardLandlord = new HandCardLandlord(list, CardTypeLandlord.huojian, 16);
 			handCardLandlordList.add(handCardLandlord);
 		}
 		return handCardLandlordList;
@@ -1372,7 +1372,7 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 						cardList.addAll(daipaiList.get(j).getList());
 						cardList.addAll(daipaiList.get(k).getList());
 						handCardLandlord = new HandCardLandlord(cardList, 
-								CardTypeGouJi.sidaierdui, siList.get(i).getWeight());
+								CardTypeLandlord.sidaierdui, siList.get(i).getWeight());
 						handCardLandlordList.add(handCardLandlord);
 					}
 				}
@@ -1397,7 +1397,7 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 						cardList.addAll(sanList.get(i).getList());
 						cardList.addAll(duiList.get(j).getList());
 						handCardLandlord = new HandCardLandlord(cardList, 
-								CardTypeGouJi.sandaidui, sanList.get(i).getWeight());
+								CardTypeLandlord.sandaidui, sanList.get(i).getWeight());
 						handCardLandlordList.add(handCardLandlord);
 						
 					}
@@ -1412,7 +1412,7 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 							cardList.add(sanList.get(j).getList().get(0));
 							cardList.add(sanList.get(j).getList().get(1));
 							handCardLandlord = new HandCardLandlord(cardList, 
-									CardTypeGouJi.sandaidui, sanList.get(i).getWeight());
+									CardTypeLandlord.sandaidui, sanList.get(i).getWeight());
 							handCardLandlordList.add(handCardLandlord);
 						}
 						
@@ -1422,82 +1422,82 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 		}
 		return handCardLandlordList; 
 	}
-	public static CardTypeGouJi getCardTypeLandlordRank(int size){
+	public static CardTypeLandlord getCardTypeLandlordRank(int size){
 		switch (size) {
 		case 5:
-			return CardTypeGouJi.danshun5;
+			return CardTypeLandlord.danshun5;
 		case 6: 
-			return CardTypeGouJi.danshun6;
+			return CardTypeLandlord.danshun6;
 		case 7:
-			return CardTypeGouJi.danshun7;
+			return CardTypeLandlord.danshun7;
 		case 8:
-			return CardTypeGouJi.danshun8;
+			return CardTypeLandlord.danshun8;
 		case 9:
-			return CardTypeGouJi.danshun9;
+			return CardTypeLandlord.danshun9;
 		case 10:
-			return CardTypeGouJi.danshun10;
+			return CardTypeLandlord.danshun10;
 		case 11:
-			return CardTypeGouJi.danshun11;
+			return CardTypeLandlord.danshun11;
 		case 12:
-			return CardTypeGouJi.danshun12;
+			return CardTypeLandlord.danshun12;
 		default:
-			return CardTypeGouJi.error;
+			return CardTypeLandlord.error;
 		}
 	}
 	
-	public static CardTypeGouJi getCardType(int size){
+	public static CardTypeLandlord getCardType(int size){
 		switch (size) {
 		case 1:
-			return CardTypeGouJi.dan;
+			return CardTypeLandlord.dan;
 		case 2: 
-			return CardTypeGouJi.dui;
+			return CardTypeLandlord.dui;
 		case 3:
-			return CardTypeGouJi.sanbudai;
+			return CardTypeLandlord.sanbudai;
 		case 4:
-			return CardTypeGouJi.zhadan;
+			return CardTypeLandlord.zhadan;
 		default:
-			return CardTypeGouJi.error;
+			return CardTypeLandlord.error;
 		}
 	}
 	
-	public static CardTypeGouJi getCardTypeLandlordRankDui(int size){
+	public static CardTypeLandlord getCardTypeLandlordRankDui(int size){
 		switch (size) {
 		case 6:
-			return CardTypeGouJi.shuangshun6;
+			return CardTypeLandlord.shuangshun6;
 		case 8:
-			return CardTypeGouJi.shuangshun8;
+			return CardTypeLandlord.shuangshun8;
 		case 10:
-			return CardTypeGouJi.shuangshun10;
+			return CardTypeLandlord.shuangshun10;
 		case 12:
-			return CardTypeGouJi.shuangshun12;
+			return CardTypeLandlord.shuangshun12;
 		case 14:
-			return CardTypeGouJi.shuangshun14;
+			return CardTypeLandlord.shuangshun14;
 		default:
-			return CardTypeGouJi.error;
+			return CardTypeLandlord.error;
 		}
 	}
 	
-	public static CardTypeGouJi getCardTypeLandlordRankSan(int size){
+	public static CardTypeLandlord getCardTypeLandlordRankSan(int size){
 		switch (size) {
 		case 6:
-			return CardTypeGouJi.sanshun6;
+			return CardTypeLandlord.sanshun6;
 		case 9:
-			return CardTypeGouJi.sanshun9;
+			return CardTypeLandlord.sanshun9;
 		case 12:
-			return CardTypeGouJi.sanshun12;
+			return CardTypeLandlord.sanshun12;
 		default:
-			return CardTypeGouJi.error;
+			return CardTypeLandlord.error;
 		}
 	}
 	
-	public static CardTypeGouJi getCardTypeLandlordRankSi(int size){
+	public static CardTypeLandlord getCardTypeLandlordRankSi(int size){
 		switch (size) {
 		case 8:
-			return CardTypeGouJi.sishun8;
+			return CardTypeLandlord.sishun8;
 		case 12:
-			return CardTypeGouJi.sishun12;
+			return CardTypeLandlord.sishun12;
 		default:
-			return CardTypeGouJi.error;
+			return CardTypeLandlord.error;
 		} 
 	}
 	
@@ -1506,54 +1506,54 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 	@Override
 	public int compareTo(HandCardLandlord another) {
 		// TODO Auto-generated method stub
-		if(this.cardTypeLandlord == CardTypeGouJi.sandaiyi && 
-		   another.cardTypeLandlord == CardTypeGouJi.sandaiyi){
+		if(this.cardTypeLandlord == CardTypeLandlord.sandaiyi &&
+		   another.cardTypeLandlord == CardTypeLandlord.sandaiyi){
 			if(this.weight == another.weight){
 				return another.list.get(3).getName() - this.list.get(3).getName();
 			}else{
 				return another.weight - this.weight;
 			}
-		}else if(this.cardTypeLandlord == CardTypeGouJi.sandaidui &&
-				 another.cardTypeLandlord == CardTypeGouJi.sandaidui){
+		}else if(this.cardTypeLandlord == CardTypeLandlord.sandaidui &&
+				 another.cardTypeLandlord == CardTypeLandlord.sandaidui){
 			if(this.weight == another.weight){
 				return another.list.get(3).getName() - this.list.get(3).getName();
 			}else{
 				return another.weight - this.weight;
 			}
-		}else if(this.cardTypeLandlord == CardTypeGouJi.sidaierdan &&
-				 another.cardTypeLandlord == CardTypeGouJi.sidaierdan){
+		}else if(this.cardTypeLandlord == CardTypeLandlord.sidaierdan &&
+				 another.cardTypeLandlord == CardTypeLandlord.sidaierdan){
 			if(this.weight == another.weight){
 				return another.list.get(4).getName() + another.list.get(5).getName() - 
 					   this.list.get(4).getName() - this.list.get(5).getName();
 			}else{
 				return another.weight - this.weight;
 			}
-		}else if(this.cardTypeLandlord == CardTypeGouJi.sidaierdui &&
-				 another.cardTypeLandlord == CardTypeGouJi.sidaierdui){
+		}else if(this.cardTypeLandlord == CardTypeLandlord.sidaierdui &&
+				 another.cardTypeLandlord == CardTypeLandlord.sidaierdui){
 			if(this.weight == another.weight){
 				return another.list.get(4).getName() + another.list.get(6).getName() - 
 					   this.list.get(4).getName() - this.list.get(6).getName();
 			}else{
 				return another.weight - this.weight;
 			}
-		}else if(this.cardTypeLandlord == CardTypeGouJi.feiji8 &&
-				 another.cardTypeLandlord == CardTypeGouJi.feiji8){
+		}else if(this.cardTypeLandlord == CardTypeLandlord.feiji8 &&
+				 another.cardTypeLandlord == CardTypeLandlord.feiji8){
 			if(this.weight == another.weight){
 				return another.list.get(6).getName() + another.list.get(7).getName() - 
 					   this.list.get(6).getName() - this.list.get(7).getName();
 			}else{
 				return another.weight - this.weight;
 			}
-		}else if(this.cardTypeLandlord == CardTypeGouJi.feiji10 &&
-				 another.cardTypeLandlord == CardTypeGouJi.feiji10){
+		}else if(this.cardTypeLandlord == CardTypeLandlord.feiji10 &&
+				 another.cardTypeLandlord == CardTypeLandlord.feiji10){
 			if(this.weight == another.weight){
 				return another.list.get(6).getName() + another.list.get(8).getName() - 
 					   this.list.get(6).getName() - this.list.get(8).getName();
 			}else{
 				return another.weight - this.weight;
 			}
-		}else if(this.cardTypeLandlord == CardTypeGouJi.feiji12 &&
-				 another.cardTypeLandlord == CardTypeGouJi.feiji12){
+		}else if(this.cardTypeLandlord == CardTypeLandlord.feiji12 &&
+				 another.cardTypeLandlord == CardTypeLandlord.feiji12){
 			if(this.weight == another.weight){
 				return another.list.get(9).getName() + another.list.get(10).getName() + 
 					   another.list.get(11).getName() - this.list.get(9).getName() - 
@@ -1561,8 +1561,8 @@ public class HandCardLandlord implements Comparable<HandCardLandlord>{
 			}else{
 				return another.weight - this.weight;
 			}
-		}else if(this.cardTypeLandlord == CardTypeGouJi.feiji15 &&
-				 another.cardTypeLandlord == CardTypeGouJi.feiji15){
+		}else if(this.cardTypeLandlord == CardTypeLandlord.feiji15 &&
+				 another.cardTypeLandlord == CardTypeLandlord.feiji15){
 			if(this.weight == another.weight){
 				return another.list.get(9).getName() + another.list.get(11).getName() + 
 					   another.list.get(13).getName() - this.list.get(9).getName() - 

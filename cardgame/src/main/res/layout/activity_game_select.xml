@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg_sandbeach"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.GameSelectActivity">
+    <ImageView
+        android:id="@+id/laizi"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/game_select_laizi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:id="@+id/flash"
+        android:layout_toRightOf="@id/laizi"
+        android:layout_above="@id/laizi"
+        android:src="@drawable/game_select_flash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/classic"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/flash"
+        android:src="@drawable/game_select_classic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/two"
+        android:layout_toRightOf="@id/classic"
+        android:layout_above="@id/classic"
+        android:src="@drawable/game_select_two"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <ImageView
+        android:id="@+id/happy"
+        android:layout_toRightOf="@id/two"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/game_select_happy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+</RelativeLayout>

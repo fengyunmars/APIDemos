@@ -4,10 +4,10 @@ import java.util.List;
 
 import com.fengyun.cardgame.app.MainApplication;
 import com.fengyun.cardgame.bean.Card;
-import com.fengyun.cardgame.bean.CardTypeGouJi;
+import com.fengyun.cardgame.bean.CardTypeLandlord;
 import com.fengyun.cardgame.bean.GameStep;
 import com.fengyun.cardgame.bean.HandCardLandlord;
-import com.fengyun.cardgame.util.DialogUtil;
+import com.fengyun.cardgame.util.DialogUtils;
 import com.fengyun.cardgame.util.LandlordLogic;
 
 import android.content.Context;
@@ -23,6 +23,7 @@ public class EventAction {
 	private MotionEvent event;
 	private SingleGameView gameView;
 	private Context context;
+
 	public EventAction(Context context,SingleGameView view, MotionEvent event) {
 		this.context=context;
 		this.event = event;
@@ -45,7 +46,7 @@ public class EventAction {
 			MainApplication.getInstance().play("SpecOk.ogg");
 			System.out.println("退出按钮被点击：");
 			
-			DialogUtil.exitGameDialog(context);
+			DialogUtils.exitGameDialog(context);
 			
 		}
 	}
@@ -65,7 +66,7 @@ public class EventAction {
 		if((x>sx)&&(y>sy)&&(x<ex)&&(y<ey)){
 			MainApplication.getInstance().play("SpecOk.ogg");
 			System.out.println("设置按钮被点击");
-			DialogUtil.setupDialog(context,2);
+			DialogUtils.setupDialog(context,2);
 		}
 	}
 	
@@ -82,73 +83,31 @@ public class EventAction {
 		}
 		float x=event.getX();
 		float y=event.getY();
-		if((x>sx)&&(y>sy)&&(x<ex)&&(y<ey)){
-			MainApplication.getInstance().play("SpecOk.ogg");
-			System.out.println("准备按钮被点击 :"+event.getAction());
-			
-			if(event.getAction()==MotionEvent.ACTION_DOWN){
-				gameView.prepareButtonbgBitmap=gameView.prepareButtondownbgBitmap;
-			}else if(event.getAction()==MotionEvent.ACTION_UP){
-				gameView.prepareButtonbgBitmap=gameView.prepareButtonupbgBitmap;
-				//发牌状态
-				gameView.gameStep=GameStep.deal;
-			}
-			gameView.repaint=true;
-		}
-		if(event.getAction()==MotionEvent.ACTION_MOVE){
-			if(((x>sx)&&(y>sy)&&(x<ex)&&(y<ey))==false){
-				gameView.repaint=true;
-				gameView.prepareButtonbgBitmap=gameView.prepareButtonupbgBitmap;
-			}
-		}
+//		if((x>sx)&&(y>sy)&&(x<ex)&&(y<ey)){
+//			MainApplication.getInstance().play("SpecOk.ogg");
+//			System.out.println("准备按钮被点击 :"+event.getAction());
+//
+//			if(event.getAction()==MotionEvent.ACTION_DOWN){
+//				gameView.prepareButtonbgBitmap=gameView.prepareButtondownbgBitmap;
+//			}else if(event.getAction()==MotionEvent.ACTION_UP){
+//				gameView.prepareButtonbgBitmap=gameView.prepareButtonupbgBitmap;
+//				//发牌状态
+//				gameView.gameStep=GameStep.deal;
+//			}
+//			gameView.repaint=true;
+//		}
+//		if(event.getAction()==MotionEvent.ACTION_MOVE){
+//			if(((x>sx)&&(y>sy)&&(x<ex)&&(y<ey))==false){
+//				gameView.repaint=true;
+//				gameView.prepareButtonbgBitmap=gameView.prepareButtonupbgBitmap;
+//			}
+//		}
 	}
 	
 	/**
 	 * 每张牌单击
 	 */
-	public void setCard(){
-		
-//		if(gameView.gameStep!=GameStep.landlords){
-//			return;
-//		}
-		List<Card> cards=gameView.player2.getCards();
-		float x=event.getX();
-		float y=event.getY();
-		int i = -1;
-		for(Card card:cards){
-			if((x>card.getX())
-			 &&(y>card.getY())
-			 &&(x<card.getX()+card.getSw())
-			 &&(y<card.getY()+card.getHeight())){
-				i = cards.indexOf(card);
-			}
-		}
-		if(event.getAction() == MotionEvent.ACTION_DOWN){
-			gameView.sx = x;
-			gameView.sy = y;
-		}else if(event.getAction() == MotionEvent.ACTION_MOVE){
-			if(i == -1){
-				return;
-			}
-			if(i == gameView.preSelected){
-//				gameView.repaint=true;
-				return;
-			}else{
-				gameView.preSelected = i;
-				gameView.selectedCards.add(cards.get(i));
-				gameView.repaint=true;
-			}
-	    }else{
-		   System.out.println("点击扑克牌");
-		   
-		   for(Card card:gameView.selectedCards){
-			   card.setClicked(true);
-		   }
-		   gameView.selectedCards.clear();
-		   gameView.repaint=true;
-		   MainApplication.getInstance().play("SpecSelectCard.ogg");
-		}
-	}
+
 	
 	/**
 	 * 不抢、不叫按钮
@@ -245,7 +204,7 @@ public class EventAction {
 					}
 				}
 				if(LandlordLogic.getCardTypeLandlord(gameView.player2.getOutcards()) !=
-						CardTypeGouJi.error){
+						CardTypeLandlord.error){
 					HandCardLandlord selected = new HandCardLandlord(
 							gameView.player2.getOutcards(), 
 							LandlordLogic.getCardTypeLandlord(gameView.player2.getOutcards()),

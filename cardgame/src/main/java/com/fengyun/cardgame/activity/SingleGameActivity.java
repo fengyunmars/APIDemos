@@ -2,7 +2,7 @@ package com.fengyun.cardgame.activity;
 
 import com.fengyun.cardgame.app.MainApplication;
 import com.fengyun.cardgame.bean.ScreenType;
-import com.fengyun.cardgame.util.DialogUtil;
+import com.fengyun.cardgame.util.DialogUtils;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -25,11 +25,6 @@ public class SingleGameActivity extends BaseActivity {
 	//分辨率大小
 	private ScreenType screenType;
 	
-	//创建Handler对象，用于子线程与UI线程通信
-	private Handler handler=new Handler(){
-		
-	};
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -37,20 +32,13 @@ public class SingleGameActivity extends BaseActivity {
 		Display display=getWindowManager().getDefaultDisplay();
 		DisplayMetrics metrics=new DisplayMetrics();
 		display.getMetrics(metrics);
-		if(metrics.heightPixels<480){
-			screenType=ScreenType.low;
-		}else if(metrics.heightPixels>=480&&metrics.heightPixels<720){
-			screenType=ScreenType.middle;
-		}else if(metrics.heightPixels>=720){
-			screenType=ScreenType.large;
-		}
-		
+
 		//创建游戏界面视图
-		gameview=new SingleGameView(this,handler,screenType);
+		gameview=new SingleGameView(this);
 		//加载界面
 		setContentView(gameview);
 		//播放音乐特效
-		app.playbgMusic("MusicEx_Normal2.ogg");
+		app.playbgMusic("MusicEx_Normal.ogg");
 		
 		setSurfaceViewDisplay();
 	}
@@ -80,16 +68,16 @@ public class SingleGameActivity extends BaseActivity {
 		   gameview.getLayoutParams().height = H;  
   
 	    }else{  
-	    	gameview.getLayoutParams().width = W;  
-		    gameview.getLayoutParams().height = H;  
-	    }  
+	    	gameview.getLayoutParams().width = W;
+		    gameview.getLayoutParams().height = H;
+	    }
 	}
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		//当按返回按钮的时候，弹出退出对话框。
 		//System.out.println(KeyEvent.KEYCODE_BACK+","+keyCode+","+event.getKeyCode());
 		if(KeyEvent.KEYCODE_BACK==keyCode){
-			DialogUtil.exitGameDialog(this);
+			DialogUtils.exitGameDialog(this);
 		}		
 		return true;
 		

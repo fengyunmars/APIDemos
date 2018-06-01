@@ -27,13 +27,13 @@ import android.graphics.drawable.Drawable;
 
 /**
  * 图像工具类
- * 
+ *
  * @author Administrator
- * 
+ *
  */
-public class ImageUtils extends BaseUtils{
+public class ImageUtils{
 	/**
-	 * 
+	 *
 	 *
 	 * @return
 	 */
@@ -41,14 +41,14 @@ public class ImageUtils extends BaseUtils{
 	public static final int UNCHANGE = Integer.MIN_VALUE;
 	private static final String TAG = ImageUtils.class.getSimpleName();
 
-	public static Bitmap getAssetBitmap(String file){
-		return getAssetBitmap(file, UNCHANGE);
+	public static Bitmap getAssetBitmap(Context context,String file){
+		return getAssetBitmap(context,file, UNCHANGE);
 	}
 
-	public static Bitmap getAssetBitmap(String file, float width){
+	public static Bitmap getAssetBitmap(Context context,String file, float width){
 		Bitmap bitmap = null;
 		try {
-			bitmap = BitmapFactory.decodeStream(applicationContext.getAssets().open(file));
+			bitmap = BitmapFactory.decodeStream(context.getAssets().open(file));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -79,12 +79,12 @@ public class ImageUtils extends BaseUtils{
 	}
 
 	/**
-	 * 
+	 *
 	 * 由资源id获取位图
 	 * @param context
-	 * 
+	 *
 	 * @param resId
-	 * 
+	 *
 	 * @return
 	 */
 	public static Bitmap getBitmapById(Context context, int resId) {
@@ -95,10 +95,10 @@ public class ImageUtils extends BaseUtils{
 	}
 
 	/**
-	 * 
+	 *
 	 * 将Bitmap转化为字节数组
 	 * @param bitmap
-	 * 
+	 *
 	 * @return
 	 */
 
@@ -118,10 +118,10 @@ public class ImageUtils extends BaseUtils{
 	}
 
 	/**
-	 * 
+	 *
 	 * 将byte数组转化为bitmap
 	 * @param data
-	 * 
+	 *
 	 * @return
 	 */
 	public static Bitmap byte2bitmap(byte[] data) {
@@ -132,10 +132,10 @@ public class ImageUtils extends BaseUtils{
 	}
 
 	/**
-	 * 
+	 *
 	 * 将Drawable转化为Bitmap
 	 * @param drawable
-	 * 
+	 *
 	 * @return
 	 */
 	public static Bitmap drawable2bitmap(Drawable drawable) {
@@ -154,7 +154,7 @@ public class ImageUtils extends BaseUtils{
 	}
 
 	/**
-	 * 
+	 *
 	 * 将bitmap转化为drawable
 	 * @param bitmap
 	 * @return
@@ -167,7 +167,7 @@ public class ImageUtils extends BaseUtils{
 	}
 
 	/**
-	 * 
+	 *
 	 * 按指定宽度和高度缩放图片,不保证宽高比例
 	 * @param bitmap
 	 * @param w
@@ -188,14 +188,40 @@ public class ImageUtils extends BaseUtils{
 		matrix, true);
 		return newbmp;
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * 按指定宽度和高度缩放图片,按比例
 	 * @param bitmap
 	 * @return
 	 */
 	public static Bitmap zoomBitmap(Bitmap bitmap,float scale) {
+
+		if (bitmap == null) {
+			return null;
+		}
+
+		int width = bitmap.getWidth();
+		int height = bitmap.getHeight();
+
+		Matrix matrix = new Matrix();
+
+		matrix.postScale(scale, scale);
+
+		Bitmap newbmp = Bitmap.createBitmap(bitmap, 0, 0, width, height, matrix, true);
+
+		bitmap.recycle();
+
+		return newbmp;
+	}
+	/**
+	 * 
+	 * 按指定宽度和高度缩放图片,按比例
+	 * @param bitmap
+	 * @param h 指定高度
+	 * @return
+	 */
+	public static Bitmap zoomBitmapByHeight(Bitmap bitmap, float h) {
 		
 		if (bitmap == null) {
 			return null;
@@ -203,23 +229,23 @@ public class ImageUtils extends BaseUtils{
 		
 		int width = bitmap.getWidth();
 		int height = bitmap.getHeight();
-		
+		float scale = (float)  h / height;
 		Matrix matrix = new Matrix();
 		
 		matrix.postScale(scale, scale);
 		
 		Bitmap newbmp = Bitmap.createBitmap(bitmap, 0, 0, width, height, matrix, true);
 		
-//		bitmap.recycle();
+		bitmap.recycle();
 		
 		return newbmp;
 	}
 
 	/**
-	 * 
+	 *
 	 * 将bitmap位图保存到path路径下，图片格式为Bitmap.CompressFormat.PNG，质量为100
 	 * @param bitmap
-	 * 
+	 *
 	 * @param path
 	 */
 	public static boolean saveBitmap(Bitmap bitmap, String path) {
@@ -269,20 +295,20 @@ public class ImageUtils extends BaseUtils{
 	}
 
 	/**
-	 * 
+	 *
 	 * 将bitmap位图保存到path路径下
 	 * @param bitmap
-	 * 
+	 *
 	 * @param path      保存路径-Bitmap.CompressFormat.PNG或Bitmap.CompressFormat.JPEG.PNG
-	 * 
+	 *
 	 * @param format     格式
-	 * 
+	 *
 	 * @param quality    Hint to the compressor, 0-100. 0 meaning compress for small
-	 * 
+	 *
 	 *            size, 100 meaning compress for max quality. Some formats, like
-	 * 
+	 *
 	 *            PNG which is lossless, will ignore the quality setting
-	 * 
+	 *
 	 * @return
 	 */
 	public static boolean saveBitmap(Bitmap bitmap, String path,
@@ -368,7 +394,7 @@ public class ImageUtils extends BaseUtils{
 
 
 	/**
-	 * 
+	 *
 	 * 获得带倒影的图片
 	 */
 	public static Bitmap createReflectionImageWithOrigin(Bitmap bitmap) {
@@ -401,35 +427,35 @@ public class ImageUtils extends BaseUtils{
 		return bitmapWithReflection;
 	}
 
-	/** 
-     * 图片加水印 
+	/**
+     * 图片加水印
      * @param src
-     * @return 
-     */  
-    public static Bitmap createBitmapForWatermark(Bitmap src, Bitmap watermark) {  
-        if (src == null) {  
-            return null;  
-        }  
-        int w = src.getWidth();  
-        int h = src.getHeight();  
-        int ww = watermark.getWidth();  
-        int wh = watermark.getHeight();  
-        // create the new blank bitmap  
-        Bitmap newb = Bitmap.createBitmap(w, h, Config.ARGB_8888);// 创建一个新的和SRC长度宽度一样的位图  
-        Canvas cv = new Canvas(newb);  
-        // draw src into  
-        cv.drawBitmap(src, 0, 0, null);// 在 0，0坐标开始画入src  
-        // draw watermark into  
-        cv.drawBitmap(watermark, w - ww + 5, h - wh + 5, null);// 在src的右下角画入水印  
-        // save all clip  
-        cv.save(Canvas.ALL_SAVE_FLAG);// 保存  
-        // store  
-        cv.restore();// 存储  
-        return newb;  
-    }  
+     * @return
+     */
+    public static Bitmap createBitmapForWatermark(Bitmap src, Bitmap watermark) {
+        if (src == null) {
+            return null;
+        }
+        int w = src.getWidth();
+        int h = src.getHeight();
+        int ww = watermark.getWidth();
+        int wh = watermark.getHeight();
+        // create the new blank bitmap
+        Bitmap newb = Bitmap.createBitmap(w, h, Config.ARGB_8888);// 创建一个新的和SRC长度宽度一样的位图
+        Canvas cv = new Canvas(newb);
+        // draw src into
+        cv.drawBitmap(src, 0, 0, null);// 在 0，0坐标开始画入src
+        // draw watermark into
+        cv.drawBitmap(watermark, w - ww + 5, h - wh + 5, null);// 在src的右下角画入水印
+        // save all clip
+        cv.save(Canvas.ALL_SAVE_FLAG);// 保存
+        // store
+        cv.restore();// 存储
+        return newb;
+    }
 
 
-    
+
     /**
      * 上下左右翻转图片
      */

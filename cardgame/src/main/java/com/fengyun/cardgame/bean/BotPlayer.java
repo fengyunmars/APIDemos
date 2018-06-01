@@ -4,8 +4,8 @@ import java.util.List;
 
 public class BotPlayer extends Player{
 
-	public BotPlayer(int id, boolean isBot, byte gender, int turnId) {
-		super(id, isBot, gender, turnId);
+	public BotPlayer(int id, Gender gender, int turnId) {
+		super(id, false, gender, turnId);
 		// TODO Auto-generated constructor stub
 	}
 

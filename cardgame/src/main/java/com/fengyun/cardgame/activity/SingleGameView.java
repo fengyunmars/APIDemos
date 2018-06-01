@@ -5,17 +5,19 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-
+import com.fengyun.util.ImageUtils;
 import com.fengyun.cardgame.app.MainApplication;
 import com.fengyun.cardgame.bean.BotPlayer;
 import com.fengyun.cardgame.bean.Card;
+import com.fengyun.cardgame.bean.CardTypeLandlord;
+import com.fengyun.cardgame.bean.GameButton;
 import com.fengyun.cardgame.bean.GameStep;
+import com.fengyun.cardgame.bean.Gender;
 import com.fengyun.cardgame.bean.HandCardLandlord;
 import com.fengyun.cardgame.bean.Player;
 import com.fengyun.cardgame.bean.RealPlayer;
-import com.fengyun.cardgame.bean.ScreenType;
-import com.fengyun.util.ImageUtils;
-import com.fengyun.util.AppUtils;
+import com.fengyun.cardgame.util.DialogUtils;
+import com.fengyun.cardgame.util.LandlordLogic;
 
 import android.content.Context;
 import android.content.res.AssetManager;
@@ -24,7 +26,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -33,78 +34,73 @@ import android.view.SurfaceView;
  * 
  * 单机游戏视图
  * 继承SurfaceView，实现SurfaceHolder.Callback和Runnable
- * 
- *实现Runnable  作用：用于绘制界面线程
- *
  */
-public class SingleGameView extends SurfaceView implements SurfaceHolder.Callback,Runnable  {
+public class SingleGameView extends SurfaceView implements SurfaceHolder.Callback {
 
 	//获得MainApplication实例
 	private MainApplication app = MainApplication.getInstance();
 	
 	//获得Asset资源管理器
 	private AssetManager assetManager;
-	
-	//分辨率大小
-	private ScreenType screenType;
-	
+
 	//视图控制器
-	private SurfaceHolder surfaceHolder=null;
+	private SurfaceHolder surfaceHolder = null;
 	
 	//画布
 	private Canvas canvas=null;
 	
-	
-	
 	// 屏幕宽度和高度
-	private	int screen_height=0;
-	private	int screen_width=0;
+	private int screen_height = 0;
+	private	 int screen_width = 0;
 	
 	//游戏线程
-	private Thread gameThread=null;
+	private Thread gameThread = null;
 	
-	private Thread animationThread=null;
+	private Thread animationThread = null;
 	
 	//绘图线程
-	private Thread drawThread=null;
-	
+	private Thread drawThread = null;
+
+	private Object lock = new Object();
 	////轮流
-	private int turn=-1;
-	
+	private int gameturn = -1;
+	private boolean firstTurn1 = true;
+	private boolean firstTurn3 = true;
+
 	public int turnState = 2;
 	
 	public int hintIndex = 0;
 	
 	public HandCardLandlord currentHandCardLandLord;
 	
-	public float sx,sy,fx,fy;
+	public float esx, esy;
 	
-	public List<Card> selectedCards = new ArrayList<Card>();
+	public List<Card> selectedCards = new ArrayList<>();
 	
 	public int preSelected = -1;
-	
+
 	//是否重绘
-	public Boolean repaint=false;
+	public Boolean repaint = false;
 	
 	//是否开始游戏
-	private Boolean start=false;
+	private Boolean start = false;
 	
 	//上下文
-	private Context appContext=null;
+	private Context appContext = null;
 	
 	//游戏状态
-	public GameStep gameStep=GameStep.init;
+	public GameStep gameStep = GameStep.init;
 	
 	// 牌对象
 	private Card card[] = new Card[54];
 	
 	//地主牌
-	private List<Card> dizhuList=new ArrayList<Card>();
+	private List<Card> dizhuList=new ArrayList<>();
 	
 	//玩家信息 ：左边 电脑 ，中间 自己 ， 右边 电脑
-	public BotPlayer player1=new BotPlayer(1,false,(byte)0, 0);
-	public RealPlayer player2=new RealPlayer(2,true, (byte)1, 1);//设置自己
-	public BotPlayer player3=new BotPlayer(3,false,(byte)1,2);
+	public BotPlayer player1=new BotPlayer(1,Gender.famale, 1);
+	public RealPlayer player2=new RealPlayer(2, Gender.male, 2);//设置自己
+	public BotPlayer player3=new BotPlayer(3,Gender.male,3);
 	
 	//下注倍数
 	public	int dizhubei=1;
@@ -113,17 +109,27 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 	public int grabindex=0;
 	
 	private Bitmap[] ClubBitmaps = new Bitmap[16];
+	private Bitmap[] ClubOutBitmaps = new Bitmap[16];
 	private Bitmap[] ClubSmallBitmaps = new Bitmap[16];
+
 	private Bitmap[] DiamondBitmaps = new Bitmap[16];
+	private Bitmap[] DiamondOutBitmaps = new Bitmap[16];
 	private Bitmap[] DiamondSmallBitmaps = new Bitmap[16];
+
 	private Bitmap[] HeartBitmaps = new Bitmap[16];
+	private Bitmap[] HeartOutBitmaps = new Bitmap[16];
 	private Bitmap[] HeartSmallBitmaps = new Bitmap[16];
+
 	private Bitmap[] SpadeBitmaps = new Bitmap[16];
+	private Bitmap[] SpadeOutBitmaps = new Bitmap[16];
 	private Bitmap[] SpadeSmallBitmaps = new Bitmap[16];
 	
 	private Bitmap BigJoker = null;
+	private Bitmap BigJokerOut = null;
 	private Bitmap BigJokerSmall = null;
+
 	private Bitmap SmallJoker = null;
+	private Bitmap SmallJokerOut = null;
 	private Bitmap SmallJokerSmall = null;
 	
 	private Bitmap cardSelectedBitmap;//玩家2的 牌正背景
@@ -140,64 +146,64 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 	
 	//背景图像
 	private Bitmap background;
-	//初始化是的玩家头像图标
-	private Bitmap initHeadBitmap=null;
-	
-	private Bitmap playCardBitmap = null;
-	//退出图标
-	private Bitmap exitBitmap=null;
-	
-	//设置图标
-	private Bitmap setupBitmap=null;
-	
+
 	//牌背景图标
-	private Bitmap cardBgBitmap=null;
-	
-	//牌背景图标
-	private Bitmap cardbeforeBitmap=null;
-	
-	//准备按钮文字
-	private Bitmap prepareButtontextBitmap=null;
-	
-	//当前准备按钮背景
-	public Bitmap prepareButtonbgBitmap=null;
-	
-	//准备没有按下按钮背景
-	public Bitmap prepareButtonupbgBitmap=null;
-	
-	//准备按下按钮背景
-	public Bitmap prepareButtondownbgBitmap=null;
-	
+	private Bitmap threeCardBgBitmap=null;
+
 	//准备好图标
-	public Bitmap prepareButtonokBitmap=null;
-	
+	public Bitmap prepareOkBitmap =null;
+
+	public Bitmap noOutCardLeftBitmap = null;
+	public Bitmap noOutCardRightBitmap = null;
+
+	public Bitmap noGrabLeftBitmap = null;
+	public Bitmap noGrabRightBitmap = null;
+
 	//数字图标
-	public List<Bitmap> numberBitmaps=new ArrayList<Bitmap>();
-	
+	public List<Bitmap> numberBitmaps=new ArrayList<>();
 		
 	//倍字图像
-	public Bitmap bebitmapShape=null;
+	public Bitmap beiBitmap = null;
 
-	//文字\按钮背景图像
-	private Bitmap[] gramTextBitmap = new Bitmap[19];//图标
-	
 	//游戏结束的谁输谁赢祝贺
 	private Bitmap[] overGameBitmaps=new Bitmap[4];
 	
-	private Bitmap overGamecurrBitmap=null;
+	private Bitmap overGamecurrBitmap = null;
+
+	private Bitmap exitBitmap;
+	private Bitmap settingBitmap;
 	
+	private Bitmap prepareBitmap;
+	private Bitmap noOutBitmap;
+	private Bitmap outBitmap;
+	private Bitmap hintBitmap;
+	private Bitmap noAffordBitmap;
+
+	private Bitmap prepareBgBitmap;
+	private Bitmap noOutDownBitmap;
+	private Bitmap outDownBitmap;
+	private Bitmap hintDownBitmap;
+	private Bitmap noAffordDownBitmap;
+
+	private GameButton exitButton;
+	private GameButton settingButton;
+
+	private GameButton prepareButton;
+
+	private GameButton noOutButton;
+	private GameButton hintButton;
+	private GameButton outButton;
+	private GameButton noAffordButton;
 	/**
 	 * 构造方法
 	 * @param context 上下文
-	 * @param handler handler对象
 	 */
-	public SingleGameView(Context context,Handler handler,ScreenType screenType) { 
+	public SingleGameView(Context context) {
 		super(context);
 		assetManager=context.getAssets();
 		//当前视图获得焦点
 		setFocusable(true);
 		//赋值
-		this.screenType=screenType;
 		this.appContext=context;
 		
 		//获得视图控制器，赋值
@@ -205,8 +211,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 		
 		//给视图控制器添加监听
 		surfaceHolder.addCallback(this);
-		
-	} 
+	}
 	
 	/**
 	 * 初始化牌  创建54张扑克牌
@@ -219,616 +224,388 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 				switch (j) {
 				case 0:
 					card[(i-3)*4+j] = new Card("c"+(i-3)*4+j, i, 
-							                   ClubBitmaps[i], ClubSmallBitmaps[i]);
+							                   ClubBitmaps[i],ClubOutBitmaps[i], ClubSmallBitmaps[i]);
 					break;
 				case 1:
 					card[(i-3)*4+j] = new Card("c"+(i-3)*4+j, i, 
-							                   DiamondBitmaps[i], DiamondSmallBitmaps[i]);
+							                   DiamondBitmaps[i], DiamondOutBitmaps[i], DiamondSmallBitmaps[i]);
 					break;
 				case 2:
 					card[(i-3)*4+j] = new Card("c"+(i-3)*4+j, i, 
-							                   HeartBitmaps[i], DiamondSmallBitmaps[i]);
+							                   HeartBitmaps[i], HeartOutBitmaps[i],  DiamondSmallBitmaps[i]);
 					break;
 				case 3:
 					card[(i-3)*4+j] = new Card("c"+(i-3)*4+j, i, 
-							                   SpadeBitmaps[i], SpadeSmallBitmaps[i]);
+							                   SpadeBitmaps[i], SpadeOutBitmaps[i], SpadeSmallBitmaps[i]);
 					break;
 				}
 			}
 		}
 		
 		//最后小王，大王
-		card[52]=new Card("c"+54,16, SmallJoker, SmallJokerSmall);
-		card[53]=new Card("c"+53,17, BigJoker, BigJokerSmall);
+		card[52]=new Card("c"+54,16, SmallJoker,SmallJokerOut, SmallJokerSmall);
+		card[53]=new Card("c"+53,17, BigJoker, BigJokerOut,BigJokerSmall);
 	}
 
-	public void initLowBitMap(){
+	public void initBitMap(){
 
-		
 		try {
 			//游戏界面背景
-			background= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/state/lord_play_bg.png")),
-					(float)(3/4));
-			
-			initHeadBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/logo_unknown.png")),
-					(float)(1.0/3));
-			
-			exitBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/game_icon_exit.png")),
-					(float)(1.0/3));
-			setupBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/game_icon_setting.png")),
-					(float)(1.0/3));
-			cardBgBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/poke_back_header.png")),
-					(float)(1.0/3));
-			prepareButtontextBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/text_ready.png")),
-					(float)(1.0/3));
-			prepareButtonupbgBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/big_green_btn.png")),
-					(float)(1.0/3));
-			prepareButtonbgBitmap=prepareButtonupbgBitmap;
-			prepareButtondownbgBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/big_green_btn_down.png")),
-					(float)(1.0/3));
-			prepareButtonokBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/ready.png")),
-					(float)(1.0/3));
-			//数字图片
-			for(int i=0;i<10;i++){
-				numberBitmaps.add(ImageUtils.zoomBitmap
-						(BitmapFactory.decodeStream(assetManager.open("images/beishu_"+i+".png")),
-					    (float)(1.0/3)));
-			}
-			
-			//倍字图像
-			bebitmapShape= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/game_icon_bei.png")),
-					(float)(1.0/3));
-			
-			for(int n=0;n<10;n++){
-				cardNumberBitmaps[n]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/number/otherplayer_cards_num_"+n+".png")),
-					(float)(1.0/3));
-			}
-			
-			for(int n=3;n<=15;n++){
-				ClubBitmaps[n]=BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_club_" + n + ".png"));
-				ClubSmallBitmaps[n]=BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_club_" + n + "_small.png"));
-			}
-			for(int n=3;n<=15;n++){
-				DiamondBitmaps[n]=BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_diamond_" + n + ".png"));
-				DiamondSmallBitmaps[n]=BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_diamond_" + n + "_small.png"));
-			}
-			for(int n=3;n<=15;n++){
-				HeartBitmaps[n]=BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_heart_" + n + ".png"));
-				HeartSmallBitmaps[n]=BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_heart_" + n + "_small.png"));
-			}
-			for(int n=3;n<=15;n++){
-				SpadeBitmaps[n]=BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_spade_" + n + ".png"));
-				SpadeSmallBitmaps[n]=BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_spade_" + n + "_small.png"));
-			}
-	
-			BigJoker = BitmapFactory.decodeStream(
-					assetManager.open("images/card/lord_card_joker_big.png"));
-			BigJokerSmall = BitmapFactory.decodeStream(
-					assetManager.open("images/card/lord_card_joker_big_small.png"));
-			SmallJoker = BitmapFactory.decodeStream(
-					assetManager.open("images/card/lord_card_joker_small.png"));
-			SmallJokerSmall = BitmapFactory.decodeStream(
-					assetManager.open("images/card/lord_card_joker_small_small.png"));
-			
-			cardSelectedBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(
-							assetManager.open("images/state/lord_card_selected.png")),
-						0.64f);
-			
-			//头像图标
-			for(int i = 1; i <= 4; i++){
-				farmerBitmaps[i-1] = ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open(
-							"images/head/lord_classic_playerinfo_icon_farmer_normal_"+i+ ".png")),
-					(float)(1.0/3));
-			}
-			for(int i = 1; i <= 4; i++){
-				farmerBitmaps[i+3] = ImageUtils.zoomBitmap(
-						BitmapFactory.decodeStream(assetManager.open(
-								"images/head/lord_classic_playerinfo_icon_farmer_think_"+i+ ".png")),
-						(float)(1.0/3));
-			}
-			for(int i = 1; i <= 4; i++){
-				landlordBitmaps[i-1] = ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open(
-							"images/head/lord_classic_playerinfo_icon_lord_normal_"+i+ ".png")),
-					(float)(1.0/3));
-			}
-			for(int i = 1; i <= 4; i++){
-				landlordBitmaps[i+3] = ImageUtils.zoomBitmap(
-						BitmapFactory.decodeStream(assetManager.open(
-								"images/head/lord_classic_playerinfo_icon_lord_think_"+i+ ".png")),
-						(float)(1.0/3));
-			}
-			
-//			playCardBitmap=ImageUtil.zoomBitmap(
-//					BitmapFactory.decodeStream(assetManager.open("images/poke_back_small.png")),
-//					(float)(1.0/3));
-			
-			//抢地主
-			gramTextBitmap[0]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(
-							assetManager.open("images/string_bu.png")),(float)(1.0/3));
-			gramTextBitmap[1]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/string_chu.png")),
-					(float)(1.0/3));
-			gramTextBitmap[2]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/string_di.png")),
-					(float)(1.0/3));
-			gramTextBitmap[3]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/string_jiao.png")),
-					(float)(1.0/3));
-			gramTextBitmap[4]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/string_qiang.png")),
-					(float)(1.0/3));
-			gramTextBitmap[5]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/string_zhu.png")),
-					(float)(1.0/3));
-			gramTextBitmap[6]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/text_bj.png")),
-					(float)(1.0/3));
-			gramTextBitmap[7]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/text_bq.png")),
-					(float)(1.0/3));
-			gramTextBitmap[8]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/text_cue.png")),
-					(float)(1.0/3));
-			gramTextBitmap[9]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/text_jdz.png")),
-					(float)(1.0/3));
-			gramTextBitmap[10]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/text_pass.png")),
-					(float)(1.0/3));
-			gramTextBitmap[11]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/text_qdz.png")),
-					(float)(1.0/3));
-			gramTextBitmap[12]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/text_ready.png")),
-					(float)(1.0/3));
-			gramTextBitmap[13]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/text_repick.png")),
-					(float)(1.0/3));
-			gramTextBitmap[14]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/text_send_card.png")),
-					(float)(1.0/3));
-			gramTextBitmap[15]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/blue_btn.png")),
-					(float)(1.0/3));
-			gramTextBitmap[16]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/green_btn.png")),
-					(float)(1.0/3));
-			gramTextBitmap[17]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/red_btn.png")),
-					(float)(1.0/3));
-			gramTextBitmap[18]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/other_btn_disable.png")),
-					(float)(1.0/3));
-			
-			//牌正面背景
-			cardbeforeBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/poke_gb_header.png")),
-					(float)(1.0/3));
-			
-			overGameBitmaps[0]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_dizhu_lose.png"));
-			overGameBitmaps[1]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_dizhu_win.png"));
-			overGameBitmaps[2]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_nongmin_lose.png"));
-			overGameBitmaps[3]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_nongmin_win.png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public void initMiddleBitMap(){
+            Bitmap bitmap = BitmapFactory.decodeStream(assetManager.open("images/scene/lord_play_bg.png"));
+			background = ImageUtils.zoomBitmapByHeight(bitmap,screen_height);
 
-		
-		try {
-//			background=ImageUtil.zoomBitmap(
-//					BitmapFactory.decodeStream(assetManager.open("images/state/lord_play_bg.png")),
-//					(float)(3/4));
-			background=
-					BitmapFactory.decodeStream(assetManager.open("images/state/lord_play_bg.png"));
-			
-			initHeadBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/logo_unknown.png")),
-					(float)(2.0/3));
-			exitBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/game_icon_exit.png")),
-					(float)(2.0/3));
-			setupBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/game_icon_setting.png")),
-					(float)(2.0/3));
-			cardBgBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/poke_back_header.png")),
-					(float)(2.0/3));
-			prepareButtontextBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/text_ready.png")),
-					(float)(2.0/3));
-			prepareButtonupbgBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/big_green_btn.png")),
-					(float)(2.0/3));
-			prepareButtonbgBitmap=prepareButtonupbgBitmap;
-			prepareButtondownbgBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/big_green_btn_down.png")),
-					(float)(2.0/3));
-			prepareButtonokBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/ready.png")),
-					(float)(2.0/3));
-			//数字图片
-			for(int i=0;i<10;i++){
-				numberBitmaps.add(ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/beishu_"+i+".png")),
-					(float)(2.0/3)));
-			}
-			//倍字图像
-			bebitmapShape= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/game_icon_bei.png")),
-					(float)(2.0/3));
-			
-			for(int n=0;n<10;n++){
-				cardNumberBitmaps[n]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/number/otherplayer_cards_num_"+n+".png")),
-					(float)(3.001/3));
-			}
-			
-			for(int n=3;n<=15;n++){
-				ClubBitmaps[n]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_club_" + n + ".png")),
-					0.64f);
-				ClubSmallBitmaps[n]=BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_club_" + n + "_small.png"));
-			}
-			for(int n=3;n<=15;n++){
-				DiamondBitmaps[n]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_diamond_" + n + ".png")),
-					0.64f);
-				DiamondSmallBitmaps[n]=BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_diamond_" + n + "_small.png"));
-			}
-			for(int n=3;n<=15;n++){
-				HeartBitmaps[n]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_heart_" + n + ".png")),
-					0.64f);
-				HeartSmallBitmaps[n]=BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_heart_" + n + "_small.png"));
-			}
-			for(int n=3;n<=15;n++){
-				SpadeBitmaps[n]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_spade_" + n + ".png")),
-					0.64f);
-				SpadeSmallBitmaps[n]=BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_spade_" + n + "_small.png"));
-			}
-	
-			BigJoker = ImageUtils.zoomBitmap(BitmapFactory.decodeStream(
-					assetManager.open("images/card/lord_card_joker_big.png")), 0.64f);
-			BigJokerSmall = BitmapFactory.decodeStream(
-					assetManager.open("images/card/lord_card_joker_big_small.png"));
-			SmallJoker = ImageUtils.zoomBitmap(BitmapFactory.decodeStream(
-					assetManager.open("images/card/lord_card_joker_small.png")), 0.64f);
-			SmallJokerSmall = BitmapFactory.decodeStream(
-					assetManager.open("images/card/lord_card_joker_small_small.png"));
-			cardSelectedBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(
-							assetManager.open("images/state/lord_card_selected.png")),
-						0.64f);
-			
-			
-			//头像图标
-			for(int i = 1; i <= 4; i++){
-				farmerBitmaps[i-1] = ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open(
-							"images/head/lord_classic_playerinfo_icon_farmer_normal_"+i+ ".png")),
-					0.65f);
-			}
-			for(int i = 1; i <= 4; i++){
-				farmerBitmaps[i+3] = ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open(
-								"images/head/lord_classic_playerinfo_icon_farmer_think_"+i+ ".png")),
-					0.65f);
-			}
-			for(int i = 1; i <= 4; i++){
-				landlordBitmaps[i-1] = ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open(
-							"images/head/lord_classic_playerinfo_icon_lord_normal_"+i+ ".png")),
-					0.65f);
-			}
-			for(int i = 1; i <= 4; i++){
-				landlordBitmaps[i+3] = ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open(
-							"images/head/lord_classic_playerinfo_icon_lord_think_"+i+ ".png")),
-					0.65f);
-			}
-			
-			playCardBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/poke_back_small.png")),
-					(float)(2.0/3));
-			//抢地主
-			gramTextBitmap[0]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/string_bu.png")),
-					(float)(2.0/3));
-			gramTextBitmap[1]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/string_chu.png")),
-					(float)(2.0/3));
-			gramTextBitmap[2]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/string_di.png")),
-					(float)(2.0/3));
-			gramTextBitmap[3]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/string_jiao.png")),
-					(float)(2.0/3));
-			gramTextBitmap[4]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/string_qiang.png")),
-					(float)(2.0/3));
-			gramTextBitmap[5]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/string_zhu.png")),
-					(float)(2.0/3));
-			gramTextBitmap[6]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/text_bj.png")),
-					(float)(2.0/3));
-			gramTextBitmap[7]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/text_bq.png")),
-					(float)(2.0/3));
-			gramTextBitmap[8]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/text_cue.png")),
-					(float)(2.0/3));
-			gramTextBitmap[9]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/text_jdz.png")),
-					(float)(2.0/3));
-			gramTextBitmap[10]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/text_pass.png")),
-					(float)(2.0/3));
-			gramTextBitmap[11]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/text_qdz.png")),
-					(float)(2.0/3));
-			gramTextBitmap[12]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/text_ready.png")),
-					(float)(2.0/3));
-			gramTextBitmap[13]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/text_repick.png")),
-					(float)(2.0/3));
-			gramTextBitmap[14]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/text_send_card.png")),
-					(float)(2.0/3));
-			gramTextBitmap[15]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/blue_btn.png")),
-					(float)(2.0/3));
-			gramTextBitmap[16]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/green_btn.png")),
-					(float)(2.0/3));
-			gramTextBitmap[17]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/red_btn.png")),
-					(float)(2.0/3));
-			gramTextBitmap[18]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/other_btn_disable.png")),
-					(float)(2.0/3));
-			
-			//牌正面背景
-			cardbeforeBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/poke_gb_header.png")),
-					(float)(2.0/3));
-			overGameBitmaps[0]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_dizhu_lose.png"));
-			overGameBitmaps[1]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_dizhu_win.png"));
-			overGameBitmaps[2]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_nongmin_lose.png"));
-			overGameBitmaps[3]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_nongmin_win.png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public void initLargeBitMap(){
+//            bitmap = BitmapFactory.decodeStream(assetManager.open("images/logo_unknown.png"));
+//            initHeadBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int) (screen_height * 0.15));
 
-		getContext().getResources().getDisplayMetrics();
-		try {
-			background= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/state/lord_play_bg.png")),
-					AppUtils.getDisplayDimensions(getContext())[0], AppUtils.getDisplayDimensions(getContext())[1]);
-			
-			initHeadBitmap=BitmapFactory.decodeStream(
-					assetManager.open("images/logo_unknown.png"));
-			exitBitmap=BitmapFactory.decodeStream(
-					assetManager.open("images/game_icon_exit.png"));
-			setupBitmap=BitmapFactory.decodeStream(
-					assetManager.open("images/game_icon_setting.png"));
-			cardBgBitmap=BitmapFactory.decodeStream(
-					assetManager.open("images/poke_back_header.png"));
-			prepareButtontextBitmap=BitmapFactory.decodeStream(
-					assetManager.open("images/text_ready.png"));
-			prepareButtonupbgBitmap=BitmapFactory.decodeStream(
-					assetManager.open("images/big_green_btn.png"));
-			prepareButtonbgBitmap=prepareButtonupbgBitmap;
-			prepareButtondownbgBitmap=BitmapFactory.decodeStream(
-					assetManager.open("images/big_green_btn_down.png"));
-			prepareButtonokBitmap=BitmapFactory.decodeStream(
-					assetManager.open("images/ready.png"));
+            bitmap = BitmapFactory.decodeStream(assetManager.open("images/poke_back_header.png"));
+            threeCardBgBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
+
+            bitmap = BitmapFactory.decodeStream(assetManager.open("images/ready.png"));
+            prepareOkBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
+
 			//数字图片
 			for(int i=0;i<10;i++){
-				numberBitmaps.add(
-						BitmapFactory.decodeStream(
-								assetManager.open("images/beishu_"+i+".png")));
+                bitmap = BitmapFactory.decodeStream(assetManager.open("images/beishu_"+i+".png"));
+                Bitmap numberBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
+				numberBitmaps.add(numberBitmap);
 			}
 			
 			//倍字图像
-			bebitmapShape=BitmapFactory.decodeStream(
-					assetManager.open("images/game_icon_bei.png"));
-			
+            bitmap = BitmapFactory.decodeStream(assetManager.open("images/game_icon_bei.png"));
+            beiBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
 			for(int n=0;n<10;n++){
-				cardNumberBitmaps[n]= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open("images/number/otherplayer_cards_num_"+n+".png")),
-					(float)(3.0/3));
+                bitmap = BitmapFactory.decodeStream(assetManager.open("images/number/otherplayer_cards_num_"+n+".png"));
+                
+                Bitmap numberBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
+                cardNumberBitmaps[n] = numberBitmap;
 			}
 			
 			for(int n=3;n<=15;n++){
-				ClubBitmaps[n]=BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_club_" + n + ".png"));
-				ClubSmallBitmaps[n]=BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_club_" + n + "_small.png"));
+                bitmap = BitmapFactory.decodeStream(assetManager.open("images/card/lord_card_club_" + n + ".png"));
+                Bitmap clubBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.35));
+                ClubBitmaps[n] = clubBitmap;
+
+                bitmap = BitmapFactory.decodeStream(assetManager.open("images/card/lord_card_club_" + n + ".png"));
+                Bitmap clubOutBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.35 * 0.65));
+                ClubOutBitmaps[n] = clubOutBitmap;
+
+                bitmap = BitmapFactory.decodeStream(assetManager.open("images/card/lord_card_club_" + n + "_small.png"));
+                Bitmap clubSmallBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
+                ClubSmallBitmaps[n] = clubSmallBitmap;
+
 			}
 			for(int n=3;n<=15;n++){
-				DiamondBitmaps[n]=BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_diamond_" + n + ".png"));
-				DiamondSmallBitmaps[n]=BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_diamond_" + n + "_small.png"));
+
+                bitmap = BitmapFactory.decodeStream(assetManager.open("images/card/lord_card_diamond_" + n + ".png"));
+                Bitmap clubBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.35));
+                DiamondBitmaps[n] = clubBitmap;
+
+				bitmap = BitmapFactory.decodeStream(assetManager.open("images/card/lord_card_diamond_" + n + ".png"));
+				Bitmap clubOutBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.35 * 0.65));
+				DiamondOutBitmaps[n] = clubOutBitmap;
+
+                bitmap = BitmapFactory.decodeStream(assetManager.open("images/card/lord_card_diamond_" + n + "_small.png"));
+                Bitmap clubSmallBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
+                DiamondSmallBitmaps[n] = clubSmallBitmap;
 			}
 			for(int n=3;n<=15;n++){
-				HeartBitmaps[n]=BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_heart_" + n + ".png"));
-				HeartSmallBitmaps[n]=BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_heart_" + n + "_small.png"));
+
+                bitmap = BitmapFactory.decodeStream(assetManager.open("images/card/lord_card_heart_" + n + ".png"));
+                Bitmap clubBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.35));
+                HeartBitmaps[n] = clubBitmap;
+
+				bitmap = BitmapFactory.decodeStream(assetManager.open("images/card/lord_card_heart_" + n + ".png"));
+				Bitmap clubOutBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.35 * 0.65));
+				HeartOutBitmaps[n] = clubOutBitmap;
+
+                bitmap = BitmapFactory.decodeStream(assetManager.open("images/card/lord_card_heart_" + n + "_small.png"));
+                Bitmap clubSmallBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
+                HeartSmallBitmaps[n] = clubSmallBitmap;
+
 			}
 			for(int n=3;n<=15;n++){
-				SpadeBitmaps[n]=BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_spade_" + n + ".png"));
-				SpadeSmallBitmaps[n]=BitmapFactory.decodeStream(
-						assetManager.open("images/card/lord_card_spade_" + n + "_small.png"));
+
+                bitmap = BitmapFactory.decodeStream(assetManager.open("images/card/lord_card_spade_" + n + ".png"));
+                Bitmap clubBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.35));
+                SpadeBitmaps[n] = clubBitmap;
+
+				bitmap = BitmapFactory.decodeStream(assetManager.open("images/card/lord_card_spade_" + n + ".png"));
+				Bitmap clubOutBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.35 * 0.65));
+				SpadeOutBitmaps[n] = clubOutBitmap;
+
+                bitmap = BitmapFactory.decodeStream(assetManager.open("images/card/lord_card_spade_" + n + "_small.png"));
+                Bitmap clubSmallBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
+                SpadeSmallBitmaps[n] = clubSmallBitmap;
 			}
-	
-			BigJoker = BitmapFactory.decodeStream(
-					assetManager.open("images/card/lord_card_joker_big.png"));
-			BigJokerSmall = BitmapFactory.decodeStream(
-					assetManager.open("images/card/lord_card_joker_big_small.png"));
-			SmallJoker = BitmapFactory.decodeStream(
-					assetManager.open("images/card/lord_card_joker_small.png"));
-			SmallJokerSmall = BitmapFactory.decodeStream(
-					assetManager.open("images/card/lord_card_joker_small_small.png"));
-			
-//			playCardBitmap=BitmapFactory.decodeStream(
-//					assetManager.open("images/poke_back_small.png"));
-			cardSelectedBitmap= ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(
-							assetManager.open("images/state/lord_card_selected.png")),
-						0.64f);
-			
-			
+
+            bitmap = BitmapFactory.decodeStream(assetManager.open("images/card/lord_card_joker_big.png"));
+            Bitmap bigJokerBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.35));
+            BigJoker = bigJokerBitmap;
+
+			bitmap = BitmapFactory.decodeStream(assetManager.open("images/card/lord_card_joker_big.png"));
+			Bitmap bigJokerOutBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.35 * 0.65));
+			BigJokerOut = bigJokerOutBitmap;
+
+            bitmap = BitmapFactory.decodeStream(assetManager.open("images/card/lord_card_joker_big_small.png"));
+            Bitmap bigJokerSmallBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
+            BigJokerSmall = bigJokerSmallBitmap;
+
+            bitmap = BitmapFactory.decodeStream(assetManager.open("images/card/lord_card_joker_small.png"));
+			Bitmap smallJokerBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.35));
+			SmallJoker = smallJokerBitmap;
+
+			bitmap = BitmapFactory.decodeStream(assetManager.open("images/card/lord_card_joker_small.png"));
+			Bitmap smallJokerOutBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.35 * 0.65));
+			SmallJokerOut = smallJokerOutBitmap;
+
+            bitmap = BitmapFactory.decodeStream(assetManager.open("images/card/lord_card_joker_small_small.png"));
+            Bitmap smallJokerSmallBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
+            SmallJokerSmall = smallJokerSmallBitmap;
+
+            bitmap = BitmapFactory.decodeStream(assetManager.open("images/state/lord_card_selected.png"));
+            bitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.35));
+            cardSelectedBitmap = bitmap;
+
 			//头像图标
 			for(int i = 1; i <= 4; i++){
-				farmerBitmaps[i-1] = ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open(
-							"images/head/lord_classic_playerinfo_icon_farmer_normal_"+i+ ".png")),
-					(float)(1.0/3));
+                bitmap = BitmapFactory.decodeStream(assetManager.open("images/head/lord_classic_playerinfo_icon_farmer_normal_"+i+ ".png"));
+                bitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.3));
+                farmerBitmaps[i-1] = bitmap;
 			}
 			for(int i = 1; i <= 4; i++){
-				farmerBitmaps[i+3] = ImageUtils.zoomBitmap(
-						BitmapFactory.decodeStream(assetManager.open(
-								"images/head/lord_classic_playerinfo_icon_farmer_think_"+i+ ".png")),
-						(float)(1.0/3));
+
+                bitmap = BitmapFactory.decodeStream(assetManager.open("images/head/lord_classic_playerinfo_icon_farmer_think_"+i+ ".png"));
+                bitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.3));
+                farmerBitmaps[i+3] = bitmap;
 			}
 			for(int i = 1; i <= 4; i++){
-				landlordBitmaps[i-1] = ImageUtils.zoomBitmap(
-					BitmapFactory.decodeStream(assetManager.open(
-							"images/head/lord_classic_playerinfo_icon_lord_normal_"+i+ ".png")),
-					(float)(1.0/3));
+                bitmap = BitmapFactory.decodeStream(assetManager.open("images/head/lord_classic_playerinfo_icon_lord_normal_"+i+ ".png"));
+                bitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.3));
+                landlordBitmaps[i-1] = bitmap;
 			}
 			for(int i = 1; i <= 4; i++){
-				landlordBitmaps[i+3] = ImageUtils.zoomBitmap(
-						BitmapFactory.decodeStream(assetManager.open(
-								"images/head/lord_classic_playerinfo_icon_lord_think_"+i+ ".png")),
-						(float)(1.0/3));
+                bitmap = BitmapFactory.decodeStream(assetManager.open("images/head/lord_classic_playerinfo_icon_lord_think_"+i+ ".png"));
+                bitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int) (0.3 * screen_height));
+                landlordBitmaps[i+3] = bitmap;
 			}
-			
-			//抢地主
-			gramTextBitmap[0]=BitmapFactory.decodeStream(
-					assetManager.open("images/string_bu.png"));
-			gramTextBitmap[1]=BitmapFactory.decodeStream(
-					assetManager.open("images/string_chu.png"));
-			gramTextBitmap[2]=BitmapFactory.decodeStream(
-					assetManager.open("images/string_di.png"));
-			gramTextBitmap[3]=BitmapFactory.decodeStream(
-					assetManager.open("images/string_jiao.png"));
-			gramTextBitmap[4]=BitmapFactory.decodeStream(
-					assetManager.open("images/string_qiang.png"));
-			gramTextBitmap[5]=BitmapFactory.decodeStream(
-					assetManager.open("images/string_zhu.png"));
-			gramTextBitmap[6]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_bj.png"));
-			gramTextBitmap[7]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_bq.png"));
-			gramTextBitmap[8]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_cue.png"));
-			gramTextBitmap[9]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_jdz.png"));
-			gramTextBitmap[10]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_pass.png"));
-			gramTextBitmap[11]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_qdz.png"));
-			gramTextBitmap[12]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_ready.png"));
-			gramTextBitmap[13]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_repick.png"));
-			gramTextBitmap[14]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_send_card.png"));
-			gramTextBitmap[15]=BitmapFactory.decodeStream(
-					assetManager.open("images/blue_btn.png"));
-			gramTextBitmap[16]=BitmapFactory.decodeStream(
-					assetManager.open("images/green_btn.png"));
-			gramTextBitmap[17]=BitmapFactory.decodeStream(
-					assetManager.open("images/red_btn.png"));
-			gramTextBitmap[18]=BitmapFactory.decodeStream(
-					assetManager.open("images/other_btn_disable.png"));
-	
+
 			//牌正面背景
-			cardbeforeBitmap=BitmapFactory.decodeStream(
-					assetManager.open("images/poke_gb_header.png"));
-			overGameBitmaps[0]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_dizhu_lose.png"));
-			overGameBitmaps[1]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_dizhu_win.png"));
-			overGameBitmaps[2]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_nongmin_lose.png"));
-			overGameBitmaps[3]=BitmapFactory.decodeStream(
-					assetManager.open("images/text_nongmin_win.png"));
+            bitmap = BitmapFactory.decodeStream(assetManager.open("images/poke_gb_header.png"));
+            bitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.15));
+
+			bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/lord_speak_pass_left.png"));
+			bitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
+			noOutCardLeftBitmap = bitmap;
+
+			bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/lord_speak_pass_right.png"));
+			bitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
+			noOutCardRightBitmap = bitmap;
+
+			bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/lord_speak_no_call_left.png"));
+			bitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
+			noGrabLeftBitmap = bitmap;
+
+			bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/lord_speak_no_call_right.png"));
+			bitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
+			noGrabRightBitmap = bitmap;
+
+            //牌正面背景
+            bitmap = BitmapFactory.decodeStream(assetManager.open("images/text_dizhu_lose.png"));
+            bitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.20));
+            overGameBitmaps[0] = bitmap;
+
+            bitmap = BitmapFactory.decodeStream(assetManager.open("images/text_dizhu_win.png"));
+            bitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.20));
+            overGameBitmaps[1] = bitmap;
+
+            bitmap = BitmapFactory.decodeStream(assetManager.open("images/text_nongmin_lose.png"));
+            bitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.20));
+            overGameBitmaps[2] = bitmap;
+
+            bitmap = BitmapFactory.decodeStream(assetManager.open("images/text_nongmin_win.png"));
+            bitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.20));
+            overGameBitmaps[3] = bitmap;
+
+			;bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/big_blue_btn.png"));
+			 prepareBgBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));;
+			 bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/text_ready.png"));
+			 prepareBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
+			 prepareButton = new GameButton(screen_width * 0.45f, screen_height * 0.55f,
+					 prepareBitmap,prepareBgBitmap, SingleGameView.this) {
+				 @Override
+				 protected void doAction() {
+					 if(gameView.gameStep!= GameStep.ready){
+						 return;
+					 }
+					 MainApplication.getInstance().play("SpecOk.ogg");
+					 System.out.println("准备按钮被点击 :");
+					 gameView.gameStep=GameStep.deal;
+					 gameView.repaint=true;
+				 }
+			 };
+
+			bitmap = BitmapFactory.decodeStream(assetManager.open("images/game_icon_exit.png"));
+			exitBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
+			exitButton = new GameButton(screen_width * 0.3f, screen_height * 0.02f, exitBitmap,exitBitmap, SingleGameView.this) {
+				@Override
+				protected void doAction() {
+					MainApplication.getInstance().play("SpecOk.ogg");
+					System.out.println("退出按钮被点击：");
+					DialogUtils.exitGameDialog(this.gameView.appContext);
+				}
+			};
+			bitmap = BitmapFactory.decodeStream(assetManager.open("images/game_icon_setting.png"));
+			settingBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
+			settingButton = new GameButton(screen_width * 0.38f
+			, screen_height * 0.02f, settingBitmap, settingBitmap, SingleGameView.this) {
+				@Override
+				protected void doAction() {
+					MainApplication.getInstance().play("SpecOk.ogg");
+					System.out.println("设置按钮被点击");
+					DialogUtils.setupDialog(this.gameView.appContext,2);
+				}
+			};
+			bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/lord_btn_pass_n.png"));
+			noOutBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.15));
+			bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/lord_btn_pass_d.png"));
+			noOutDownBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.15));
+			noOutButton = new GameButton(screen_width * 0.27f, screen_height * 0.48f,
+					noOutBitmap, noOutDownBitmap, SingleGameView.this) {
+				@Override
+				protected void doAction() {
+					if(gameView.gameStep!=GameStep.landlords){
+						return;
+					}
+					MainApplication.getInstance().play("SpecOk.ogg");
+					gameView.player2.setOut(false);
+					gameView.turnState ++;
+					gameView.nextTurn();
+				}
+			};
+
+			bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/lord_btn_prompt_n.png"));
+			hintBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.15));
+			bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/lord_btn_prompt_d.png"));
+			hintDownBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.15));
+			hintButton = new GameButton(screen_width * 0.27f + noOutBitmap.getWidth(),// + screen_width * 0.02f,
+					screen_height * 0.48f, hintBitmap, hintDownBitmap, SingleGameView.this) {
+				@Override
+				protected void doAction() {
+					if(gameView.gameStep!=GameStep.landlords){
+						return;
+					}
+
+					MainApplication.getInstance().play("SpecOk.ogg");
+					List<Card> cards=gameView.player2.getCards();
+					gameView.player2.getOutcards().clear();
+					gameView.player2.clearClick();
+					//需智能算法
+					if(cards.size()>0){
+						HandCardLandlord handCardLandlord = null;
+						if(gameView.turnState == 2){
+							handCardLandlord = HandCardLandlord.getLowestHandCardLandlord(cards);
+						}else{
+							List<HandCardLandlord> handCardLandlordList = HandCardLandlord.getHintList(
+									cards, gameView.currentHandCardLandLord);
+							if(handCardLandlordList.size() > 0){
+								if(gameView.hintIndex > handCardLandlordList.size() - 1){
+									gameView.hintIndex = 0;
+								}
+								handCardLandlord = handCardLandlordList.get(
+										handCardLandlordList.size() - 1 - gameView.hintIndex);
+								gameView.hintIndex ++;
+							}
+						}
+						if(handCardLandlord != null){
+							for(int i = 0; i < cards.size(); i ++){
+								for(int j = 0; j < handCardLandlord.getList().size(); j++){
+									if(cards.get(i) == handCardLandlord.getList().get(j)){
+										cards.get(i).setClicked(true);
+									}
+								}
+							}
+						}
+					}
+					gameView.repaint=true;
+				}
+			};
+			bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/lord_btn_product_n.png"));
+			outBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.15));
+			bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/lord_btn_product_d.png"));
+			outDownBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.15));
+			outButton = new GameButton(screen_width * 0.27f + noOutBitmap.getWidth() + hintBitmap.getWidth(), //+ screen_width * 0.02f,
+					screen_height * 0.48f, outBitmap, outDownBitmap, SingleGameView.this) {
+				@Override
+				protected void doAction() {
+					if(gameView.gameStep!=GameStep.landlords){
+						return;
+					}
+
+					MainApplication.getInstance().play("SpecOk.ogg");
+					List<Card> cards=gameView.player2.getCards();
+					gameView.player2.getOutcards().clear();
+
+					for(Card card:cards){
+						if(card.isClicked()){
+							System.out.println("选择牌为:"+card.getName());
+							gameView.player2.getOutcards().add(card);
+						}
+					}
+					if(LandlordLogic.getCardTypeLandlord(gameView.player2.getOutcards()) !=
+							CardTypeLandlord.error){
+						HandCardLandlord selected = new HandCardLandlord(
+								gameView.player2.getOutcards(),
+								LandlordLogic.getCardTypeLandlord(gameView.player2.getOutcards()),
+								LandlordLogic.getWeightLandlord(gameView.player2.getOutcards()));
+						if(gameView.turnState == 2){
+							gameView.currentHandCardLandLord = selected;
+							gameView.playSound(gameView.player2.getGender());
+							gameView.player2.getCards().removeAll(gameView.player2.getOutcards());
+							gameView.turnState = 0;
+							gameView.hintIndex = 0;
+							gameView.player2.setOut(true);
+							gameView.nextTurn();
+						}else if(LandlordLogic.reasonable(gameView.currentHandCardLandLord, selected)){
+							gameView.currentHandCardLandLord = selected;
+							gameView.playSound(gameView.player2.getGender());
+							gameView.player2.getCards().removeAll(gameView.player2.getOutcards());
+							gameView.turnState = 0;
+							gameView.hintIndex = 0;
+							gameView.player2.setOut(true);
+							gameView.nextTurn();
+						}else{
+							gameView.showUnResonable();
+						}
+					}else{
+						gameView.showIllegal();
+					}
+				}
+			};
+
+			bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/lord_btn_nobig_n.png"));
+			noAffordBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.15));
+			bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/lord_btn_nobig_d.png"));
+			noAffordDownBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.15));
+			noAffordButton = new GameButton(screen_width * 0.45f, screen_height * 0.48f,
+					noAffordBitmap, noAffordDownBitmap, SingleGameView.this) {
+				@Override
+				protected void doAction() {
+					if(gameView.gameStep!=GameStep.landlords){
+						return;
+					}
+					MainApplication.getInstance().play("SpecOk.ogg");
+					gameView.player2.setOut(false);
+					gameView.turnState ++;
+					gameView.nextTurn();
+				}
+			};
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
 	
 	// 初始化 加载资源图片
-	public void initBitMap() {
-		
-		switch (screenType) {
-		case large:
-				initLargeBitMap();
-			break;
-		case middle:
-			initMiddleBitMap();
-			break;
-		case low:
-		default:
-			initLowBitMap();
-			break;
-		
-		}
-	}
-	
+
 	
 	public void initData(){
 		//清空基本數據
@@ -846,7 +623,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 		
 		//游戏状态设置准备状态
 		gameStep=GameStep.ready;
-		
+//		repaint = true;
 	}
 
 	@Override
@@ -858,22 +635,22 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 
 	@Override
 	public void surfaceCreated(SurfaceHolder holder) {
-		
+
 		//SurfaceView创建成功触发
 		//获得屏幕高度、宽度
 		screen_height = this.getHeight();
 		screen_width = this.getWidth();
 		System.out.println("屏幕分辨率："+screen_width+"*"+screen_height);
 		// 初始化基本信息 加载资源
-		initBitMap();
-		
+        initBitMap();
+
 		player1Head = farmerBitmaps[0];
 		player2Head = farmerBitmaps[0];
 		player3Head = farmerBitmaps[0];
-		
+
 		//游戏开始
 		start=true;
-		
+
 		// 开始游戏线程，负责游戏业务流程处理
 		//在游戏线程中控制绘图线程通过 rapaint标示
 		animationThread = new Thread(new Runnable() {
@@ -899,7 +676,6 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 			@Override
 			public void run() {
 				while(start){
-					
 					if(gameStep==GameStep.init){
 						initData();
 					}
@@ -916,7 +692,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 					//斗地主进行中
 					if(gameStep==GameStep.landlords){
 						HandCardLandlord handCardLandlord = null;
-							switch (turn) {
+							switch (gameturn) {
 								case 0:
 									Sleep(5000-app.getSpeed());
 									handCardLandlord = player1.play(currentHandCardLandLord,turnState);
@@ -954,11 +730,26 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 			}
 		});
 		gameThread.start();
-		
+
 		// 开始绘图线程
-		drawThread=new Thread(this);
+		drawThread=new Thread(new Runnable() {
+			@Override
+			public void run() {
+				onGameDraw();
+
+				while (start) {
+					if(repaint)
+					{
+						//绘制界面
+						onGameDraw();
+						repaint=false;
+					}
+					//修改50毫秒
+					Sleep(50);
+				}
+			}
+		});
 		drawThread.start();
-		
 	}
 
 	@Override
@@ -966,55 +757,55 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 		start=false;
 	}
 	
-	public void playSound(byte gender){
+	public void playSound(Gender gender){
 		String str = "";
 		switch (currentHandCardLandLord.getCardTypeLandlord()) {
 		case dan:
-			if(gender == 1){
+			if(gender == Gender.male){
 				str = "Man_" + currentHandCardLandLord.getWeight() + ".mp3";
-			}else if(gender == 0){
+			}else if(gender == Gender.famale){
 				str = "Woman_" + currentHandCardLandLord.getWeight() + ".mp3";
 			}
 			break;
 		case dui:
-			if(gender == 1){
+			if(gender == Gender.male){
 				str = "Man_dui" + currentHandCardLandLord.getWeight() + ".mp3";
-			}else if(gender == 0){
+			}else if(gender == Gender.famale){
 				str = "Woman_dui" + currentHandCardLandLord.getWeight() + ".mp3";
 			}
 			break;
 		case sanbudai:
-			if(gender == 1){
+			if(gender == Gender.male){
 				str = "Man_triple" + currentHandCardLandLord.getWeight() + ".mp3";
-			}else if(gender == 0){
+			}else if(gender == Gender.famale){
 				str = "Woman_triple" + currentHandCardLandLord.getWeight() + ".mp3";
 			}
 			break;
 		case sandaiyi:
-			if(gender == 1){
+			if(gender == Gender.male){
 				str = "Man_sandaiyi.mp3";
-			}else if(gender == 0){
+			}else if(gender == Gender.famale){
 				str = "Woman_sandaiyi.mp3";
 			}
 			break;
 		case sandaidui:
-			if(gender == 1){
+			if(gender == Gender.male){
 				str = "Man_sandaiyidui.mp3";
-			}else if(gender == 0){
+			}else if(gender == Gender.famale){
 				str = "Woman_sandaiyidui.mp3";
 			}
 			break;
 		case sidaierdan:
-			if(gender == 1){
+			if(gender == Gender.male){
 				str = "Man_sidaier.mp3";
-			}else if(gender == 0){
+			}else if(gender == Gender.famale){
 				str = "Woman_sidaier.mp3";
 			}
 			break;
 		case sidaierdui:
-			if(gender == 1){
+			if(gender == Gender.male){
 				str = "Man_sidailiangdui.mp3";
-			}else if(gender == 0){
+			}else if(gender == Gender.famale){
 				str = "Woman_sidailiangdui.mp3";
 			}
 			break;	
@@ -1026,9 +817,9 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 		case danshun10:
 		case danshun11:
 		case danshun12:
-			if(gender == 1){
+			if(gender == Gender.male){
 				str = "Man_shunzi.mp3";
-			}else if(gender == 0){
+			}else if(gender == Gender.famale){
 				str = "Woman_shunzi.mp3";
 			}
 			break;
@@ -1037,9 +828,9 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 		case shuangshun10:
 		case shuangshun12:
 		case shuangshun14:
-			if(gender == 1){
+			if(gender == Gender.male){
 				str = "Man_liandui.mp3";
-			}else if(gender == 0){
+			}else if(gender == Gender.famale){
 				str = "Woman_liandui.mp3";
 			}
 			break;
@@ -1047,23 +838,23 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 		case feiji10:
 		case feiji12:
 		case feiji15:
-			if(gender == 1){
+			if(gender == Gender.male){
 				str = "Man_feiji.mp3";
-			}else if(gender == 0){
+			}else if(gender == Gender.famale){
 				str = "Woman_feiji.mp3";
 			}
 			break;
 		case zhadan:
-			if(gender == 1){
+			if(gender == Gender.male){
 				str = "Man_zhadan.mp3";
-			}else if(gender == 0){
+			}else if(gender == Gender.famale){
 				str = "Woman_zhadan.mp3";
 			}
 			break;
 		case huojian:
-			if(gender == 1){
+			if(gender == Gender.male){
 				str = "Man_wangzha.mp3";
-			}else if(gender == 0){
+			}else if(gender == Gender.famale){
 				str = "Woman_wangzha.mp3";
 			}
 			break;
@@ -1083,6 +874,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 				// 画背景
 				drawBackground();
 				//绘制准备界面
+				drawHead();
 				drawPrepareScreen();
 				//绘制关闭、设置按钮等
 				drawCommonButton();
@@ -1109,151 +901,109 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 		}
 	}
 	
-	
-
-	//主要绘图线程
-	@Override
-	public void run() {
-		
-		onGameDraw();
-		
-		while (start) {
-			if(repaint)
-			{
-				//绘制界面
-				onGameDraw();
-				repaint=false;
-			}
-			//修改50毫秒
-			Sleep(50);
-		}
-	}
 	// 画背景
 	public void drawBackground() {
 			Rect src = new Rect(0, 0, background.getWidth(),background.getHeight());
 			Rect dst = new Rect(0, 0, screen_width, screen_height);
 			canvas.drawBitmap(background, src, dst, null);
 	}
-	
+
+	public void onGameDrawHead(){
+		synchronized (surfaceHolder) {
+			try {
+				//锁定整个视图
+				canvas = surfaceHolder.lockCanvas();
+				drawHead();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				if (canvas != null){
+					//绘制完毕，进行关闭，提交刷新
+					surfaceHolder.unlockCanvasAndPost(canvas);
+				}
+			}
+		}
+	}
+
+	public void drawHead(){
+		if(player1.isDizhu()){
+			if(player1.getGender() == Gender.famale)
+				canvas.drawBitmap(player1Head, 10, 10, null);
+			else if(player1.getGender() == Gender.male)
+				canvas.drawBitmap(player1Head, 10, 10, null);
+		}else{
+			if(player1.getGender() == Gender.famale)
+				canvas.drawBitmap(player1Head, 10, 10, null);
+			else if(player1.getGender() == Gender.male)
+				canvas.drawBitmap(player1Head, 10, 10, null);
+		}
+		if(player2.isDizhu()){
+			if(player2.getGender() == Gender.famale)
+				canvas.drawBitmap(player2Head, 10, screen_height * 0.35f, null);
+			else if(player2.getGender() == Gender.male)
+				canvas.drawBitmap(player2Head, 10, screen_height * 0.35f, null);
+		}else{
+			if(player2.getGender() == Gender.famale)
+				canvas.drawBitmap(player2Head, 10, screen_height * 0.35f, null);
+			else if(player2.getGender() == Gender.male)
+				canvas.drawBitmap(player2Head, 10, screen_height * 0.35f, null);
+		}
+
+		if(player3.isDizhu()){
+			if(player3.getGender() == Gender.famale)
+				canvas.drawBitmap(player3Head, screen_width-10-player3Head.getWidth(), 10, null);
+			else if(player3.getGender() == Gender.male)
+				canvas.drawBitmap(player3Head, screen_width-10-player3Head.getWidth(), 10, null);
+		}else{
+			if(player3.getGender() == Gender.famale)
+				canvas.drawBitmap(player3Head, screen_width-10-player3Head.getWidth(), 10, null);
+			else if(player3.getGender() == Gender.male)
+				canvas.drawBitmap(player3Head, screen_width-10-player3Head.getWidth(), 10, null);
+		}
+	}
 	//绘制准备界面
 	public void drawPrepareScreen(){
 		//绘制玩家头像
-		if(gameStep==GameStep.landlords){
-			if(player1.isDizhu()){
-				if(player1.getGender() == 0)
-					canvas.drawBitmap(player1Head, 10, 10, null);
-				else if(player1.getGender() == 1)
-					canvas.drawBitmap(player1Head, 10, 10, null);
-			}else{
-				if(player1.getGender() == 0)
-					canvas.drawBitmap(player1Head, 10, 10, null);
-				else if(player1.getGender() == 1)
-					canvas.drawBitmap(player1Head, 10, 10, null);
-			}
-			if(player2.isDizhu()){
-				if(player2.getGender() == 0)
-					canvas.drawBitmap(player2Head, 10, screen_height/2, null);
-				else if(player2.getGender() == 1)
-					canvas.drawBitmap(player2Head, 10, screen_height/2, null);
-			}else{
-				if(player2.getGender() == 0)
-					canvas.drawBitmap(player2Head, 10, screen_height/2, null);
-				else if(player2.getGender() == 1)
-					canvas.drawBitmap(player2Head, 10, screen_height/2, null);
-			}
-			
-			if(player3.isDizhu()){
-				if(player3.getGender() == 0)
-					canvas.drawBitmap(player3Head, screen_width-10-player3Head.getWidth(), 10, null);
-				else if(player3.getGender() == 1)
-					canvas.drawBitmap(player3Head, screen_width-10-player3Head.getWidth(), 10, null);
-			}else{
-				if(player3.getGender() == 0)
-					canvas.drawBitmap(player3Head, screen_width-10-player3Head.getWidth(), 10, null);
-				else if(player3.getGender() == 1)
-					canvas.drawBitmap(player3Head, screen_width-10-player3Head.getWidth(), 10, null);
-			}
-			
-		}else{
-			canvas.drawBitmap(initHeadBitmap, 10, 10, null);
-			canvas.drawBitmap(initHeadBitmap, 10, screen_height/2, null);
-			canvas.drawBitmap(initHeadBitmap, screen_width-10-initHeadBitmap.getWidth(), 10, null);
-		}
-		
-		
+
 		if(gameStep==GameStep.landlords){
 			//绘制三张牌
-			
-			drawThreeBitmap(dizhuList.get(0), screen_width/3+cardbeforeBitmap.getWidth()+5, 10);
-			drawThreeBitmap(dizhuList.get(1), screen_width/3+2*cardbeforeBitmap.getWidth()+10, 10);
-			drawThreeBitmap(dizhuList.get(2), screen_width/3+3*cardbeforeBitmap.getWidth()+15, 10);
-			
+			drawThreeBitmap(dizhuList.get(0), screen_width * 0.45f, screen_height * 0.02f);
+			drawThreeBitmap(dizhuList.get(1), screen_width * 0.50f, screen_height * 0.02f);
+			drawThreeBitmap(dizhuList.get(2), screen_width * 0.55f, screen_height * 0.02f);
 		}else{
 			//绘制三张牌
-			canvas.drawBitmap(cardBgBitmap, screen_width/3+cardBgBitmap.getWidth()+5, 10, null);
-			canvas.drawBitmap(cardBgBitmap, screen_width/3+2*cardBgBitmap.getWidth()+10, 10, null);
-			canvas.drawBitmap(cardBgBitmap, screen_width/3+3*cardBgBitmap.getWidth()+15, 10, null);
+			canvas.drawBitmap(threeCardBgBitmap, screen_width * 0.45f, screen_height * 0.02f, null);
+			canvas.drawBitmap(threeCardBgBitmap, screen_width * 0.50f, screen_height * 0.02f, null);
+			canvas.drawBitmap(threeCardBgBitmap, screen_width * 0.55f, screen_height * 0.02f, null);
 		}
 	
 		
 		if(gameStep==GameStep.ready){
 			//绘制准备按钮
-			canvas.drawBitmap(prepareButtonbgBitmap, 
-					          screen_width/2-prepareButtonbgBitmap.getWidth()/2, 
-					          screen_height/2, 
-					          null);
-			canvas.drawBitmap(prepareButtontextBitmap, 
-						      screen_width/2-prepareButtontextBitmap.getWidth()/2, 
-	 screen_height/2+prepareButtonbgBitmap.getHeight()/2-prepareButtontextBitmap.getHeight()/2, 
-	 						  null);
+			prepareButton.onDraw(canvas);
 		}
 		
 		if(gameStep==GameStep.ready){
 			//准备ok图标
-			canvas.drawBitmap(prepareButtonokBitmap, 
-					10+initHeadBitmap.getWidth()/2-prepareButtonokBitmap.getWidth()/2, 
-					20+initHeadBitmap.getHeight(), 
-					null);
-			canvas.drawBitmap(prepareButtonokBitmap, 
-					screen_width-prepareButtonokBitmap.getWidth()-10-(initHeadBitmap.getWidth()/2-prepareButtonokBitmap.getWidth()/2),
-					20+initHeadBitmap.getHeight(), 
-					null);
+			canvas.drawBitmap(prepareOkBitmap, screen_width * 0.02f, screen_height * 0.22f, null);
+			canvas.drawBitmap(prepareOkBitmap, screen_width * 0.95f, screen_height * 0.22f, null);
 		}
-		
 		if(dizhubei<10){
-			//绘制数字图标 
-			canvas.drawBitmap(numberBitmaps.get(dizhubei), 
-					screen_width/3+4*cardBgBitmap.getWidth()+30, 
-					10+cardBgBitmap.getHeight()/2-numberBitmaps.get(dizhubei).getHeight()/2, 
-					null);
-			//绘制倍字 bebitmapShape
-			canvas.drawBitmap(bebitmapShape,
-					screen_width/3+4*cardBgBitmap.getWidth()+30+numberBitmaps.get(dizhubei).getWidth(), 
-					10+cardBgBitmap.getHeight()/2-bebitmapShape.getHeight()/2, null);
-			
+			//绘制数字图标
+			canvas.drawBitmap(numberBitmaps.get(dizhubei), screen_width * 0.60f,screen_height * 0.02f, null);
+			//绘制倍字 beiBitmap
+			canvas.drawBitmap(beiBitmap, screen_width * 0.63f, screen_height * 0.02f, null);
 		}else{
-			
 			int a=dizhubei/10;
 			int b=dizhubei%10;
 			//绘制数字图标 
-			canvas.drawBitmap(numberBitmaps.get(a), 
-					screen_width/3+4*cardBgBitmap.getWidth()+30, 
-					10+cardBgBitmap.getHeight()/2-numberBitmaps.get(a).getHeight()/2, 
-					null);
-			canvas.drawBitmap(numberBitmaps.get(b), 
-					screen_width/3+4*cardBgBitmap.getWidth()+30+numberBitmaps.get(a).getWidth(), 
-					10+cardBgBitmap.getHeight()/2-numberBitmaps.get(a).getHeight()/2, 
-					null);
-			//绘制倍字 bebitmapShape
-			canvas.drawBitmap(bebitmapShape,
-					screen_width/3+4*cardBgBitmap.getWidth()+30+numberBitmaps.get(a).getWidth()+numberBitmaps.get(b).getWidth(), 
-					10+cardBgBitmap.getHeight()/2-bebitmapShape.getHeight()/2,
-					null);
-			
+			canvas.drawBitmap(numberBitmaps.get(a), screen_width * 0.60f, screen_height * 0.02f, null);
+			canvas.drawBitmap(numberBitmaps.get(b), screen_width * 0.63f, screen_height * 0.02f, null);
+			//绘制倍字 beiBitmap
+			canvas.drawBitmap(beiBitmap, screen_width * 0.66f, screen_height * 0.02f, null);
 		}
-		
-		
-		
+
 	}
 	
 	/**
@@ -1262,7 +1012,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 	 * @param left
 	 * @param top
 	 */
-	public void drawThreeBitmap(Card card,int left,int top){
+	public void drawThreeBitmap(Card card,float left,float top){
 		//cardbeforeBitmap  判斷是不是地主牌
 		canvas.drawBitmap(card.getSmallBitmap(), left, top, null);
 	}
@@ -1270,14 +1020,8 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 	
 	//绘制关闭、设置按钮
 	public void drawCommonButton(){
-		canvas.drawBitmap(exitBitmap, 
-				          screen_width/3-exitBitmap.getWidth()-10, 
-				          20, 
-				          null);
-		canvas.drawBitmap(setupBitmap, 
-				          screen_width/3-5, 
-				          20, 
-				          null);
+		exitButton.onDraw(canvas);
+		settingButton.onDraw(canvas);
 	}
 	
 	//线程休眠方法
@@ -1356,7 +1100,6 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 		
 		//进入抢地主阶段
 		gameStep=GameStep.grab;
-		
 	}
 	
 	// 玩家1、3的牌
@@ -1366,7 +1109,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 			return;
 		}
 		//发牌图标
-//		canvas.drawBitmap(playCardBitmap, 
+//		canvas.drawBitmap(BigJoker, 
 //				          5, 
 //				          20+initHeadBitmap.getHeight(), 
 //				          null);
@@ -1410,30 +1153,28 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 		}
 		int count=player2.getCards().size();
 		System.out.println("自己牌数目："+count);
-		int w=screen_width/21;
-		int span=(screen_width-w*count-(cardSelectedBitmap.getWidth()-w))/2;
-		Card card=null;
+		float w = screen_width * 0.048f;
+		float sx = (screen_width - w * count - w + screen_width * 0.01f) / 2;
+		Card card = null;
 		for(int i=0;i<count;i++){
 			card=player2.getCards().get(i);
 			if(card.isClicked()){
 				card.setLocationAndSize(
-						span+i*w,
-						screen_height-cardSelectedBitmap.getHeight()-35,
+						sx+i*w,
+						screen_height - BigJoker.getHeight() - screen_height * 0.05f,
 						cardSelectedBitmap.getWidth(),
-						cardSelectedBitmap.getHeight(),
-						w);
+						cardSelectedBitmap.getHeight(), w);
 			}else{
 				card.setLocationAndSize(
-						span+i*w,
-						screen_height-cardSelectedBitmap.getHeight()-15,
+						sx+i*w,
+						screen_height - BigJoker.getHeight(),
 						cardSelectedBitmap.getWidth(),
-						cardSelectedBitmap.getHeight(),
-						w);
+						cardSelectedBitmap.getHeight(), w);
 			}
 			canvas.drawBitmap(card.getBitmap(), card.getX(), card.getY(), null);
 //			for(Card selectedCard:selectedCards){
 			Paint paint = new Paint();
-			paint.setAlpha(60);
+			paint.setAlpha(150);
 			for(int j = 0; j < selectedCards.size(); j ++){
 				Card selectedCard = selectedCards.get(j);
 				canvas.drawBitmap(cardSelectedBitmap, selectedCard.getX(), selectedCard.getY(), paint);
@@ -1455,7 +1196,9 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 	public void grabDiZhu(){
 			Player dizhu = player2;
 			player2.setDizhu(true);
-			turn = 1;
+			synchronized (lock) {
+				gameturn = 1;
+			}
 			//牌进行排序
 			//地主牌交个地址
 			dizhu.getCards().addAll(dizhuList);
@@ -1464,179 +1207,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 			//设置游戏状态，出牌
 			gameStep=GameStep.landlords;
 	}
-	
-	/**
-	 * 绘制抢地主情况
-	 */
-//	public void drawGrabDiZhu(){
-//		//是不是抢地主界面
-//		if(GameStep.grab==gameStep){
-//			//输出玩家1
-//			switch (player1.getStatus()) {
-//				case jdz:
-//					canvas.drawBitmap(gramTextBitmap[3],
-//							10+playCardBitmap.getWidth(),
-//							20+initHeadBitmap.getHeight(),
-//							null);
-//					canvas.drawBitmap(gramTextBitmap[2],
-//							10+playCardBitmap.getWidth()+gramTextBitmap[3].getWidth(),
-//							20+initHeadBitmap.getHeight(),null);
-//					canvas.drawBitmap(gramTextBitmap[5],
-//							10+playCardBitmap.getWidth()+gramTextBitmap[3].getWidth()+gramTextBitmap[2].getWidth(),
-//							20+initHeadBitmap.getHeight(),null);
-//					break;
-//	
-//				case qdz:
-//					canvas.drawBitmap(gramTextBitmap[4],
-//							10+playCardBitmap.getWidth(),
-//							20+initHeadBitmap.getHeight(),
-//							null);
-//					canvas.drawBitmap(gramTextBitmap[2],
-//							10+playCardBitmap.getWidth()+gramTextBitmap[4].getWidth(),
-//							20+initHeadBitmap.getHeight(),
-//							null);
-//					canvas.drawBitmap(gramTextBitmap[5],
-//							10+playCardBitmap.getWidth()+gramTextBitmap[4].getWidth()+gramTextBitmap[2].getWidth(),
-//							20+initHeadBitmap.getHeight(),
-//							null);
-//					break;
-//				case bj:
-//					canvas.drawBitmap(gramTextBitmap[0],
-//							10+playCardBitmap.getWidth(),
-//							20+initHeadBitmap.getHeight(),
-//							null);
-//					canvas.drawBitmap(gramTextBitmap[3],
-//							10+playCardBitmap.getWidth()+gramTextBitmap[3].getWidth(),
-//							20+initHeadBitmap.getHeight(),
-//							null);
-//					break;
-//				case bq:
-//					canvas.drawBitmap(gramTextBitmap[0],
-//							10+playCardBitmap.getWidth(),
-//							20+initHeadBitmap.getHeight(),
-//							null);
-//					canvas.drawBitmap(gramTextBitmap[4],
-//							10+playCardBitmap.getWidth()+gramTextBitmap[0].getWidth(),
-//							20+initHeadBitmap.getHeight(),
-//							null);
-//					break;
-//				default:
-//					
-//					break;
-//			}
-//			
-//			//输出玩家2
-//			if(grabindex<4&&nextGrab[grabindex]==1){
-//				if((grabindex==0&&nextGrab[0]==1)||dizhubei==0){
-//					//不叫
-//					canvas.drawBitmap(gramTextBitmap[17], 
-//							screen_width/2-gramTextBitmap[17].getWidth(), 
-//							screen_height/2, 
-//							null);
-//					canvas.drawBitmap(gramTextBitmap[6], 
-//							screen_width/2-gramTextBitmap[17].getWidth()+(gramTextBitmap[17].getWidth()/2-gramTextBitmap[6].getWidth()/2),
-//							screen_height/2+(gramTextBitmap[17].getHeight()/2-gramTextBitmap[6].getHeight()/2), null);
-//					//叫地主
-//					canvas.drawBitmap(gramTextBitmap[15], 
-//							screen_width/2+20, 
-//							screen_height/2, 
-//							null);
-//					canvas.drawBitmap(gramTextBitmap[9], 
-//							screen_width/2+20+(gramTextBitmap[15].getWidth()/2-gramTextBitmap[9].getWidth()/2), 
-//							screen_height/2+(gramTextBitmap[15].getHeight()/2-gramTextBitmap[9].getHeight()/2), 
-//							null);
-//				}else{
-//					//不抢
-//					canvas.drawBitmap(gramTextBitmap[17], 
-//							screen_width/2-gramTextBitmap[17].getWidth(), 
-//							screen_height/2, 
-//							null);
-//					canvas.drawBitmap(gramTextBitmap[7], 
-//							screen_width/2-gramTextBitmap[17].getWidth()+(gramTextBitmap[17].getWidth()/2-gramTextBitmap[7].getWidth()/2), 
-//							screen_height/2+(gramTextBitmap[17].getHeight()/2-gramTextBitmap[7].getHeight()/2), 
-//							null);
-//					//抢地主
-//					canvas.drawBitmap(gramTextBitmap[15], 
-//							screen_width/2+20, 
-//							screen_height/2, 
-//							null);
-//					canvas.drawBitmap(gramTextBitmap[11], 
-//							screen_width/2+20+(gramTextBitmap[15].getWidth()/2-gramTextBitmap[11].getWidth()/2), 
-//							screen_height/2+(gramTextBitmap[15].getHeight()/2-gramTextBitmap[11].getHeight()/2), 
-//							null);
-//
-//				}
-//			}else{
-//				switch (player2.getStatus()) {
-//					case jdz:
-//						canvas.drawBitmap(gramTextBitmap[3],screen_width/2-gramTextBitmap[3].getWidth(),screen_height/2,null);
-//						canvas.drawBitmap(gramTextBitmap[2],screen_width/2,screen_height/2,null);
-//						canvas.drawBitmap(gramTextBitmap[5],screen_width/2+gramTextBitmap[2].getWidth(),screen_height/2,null);	
-//						break;
-//					case qdz:
-//						canvas.drawBitmap(gramTextBitmap[4],screen_width/2-gramTextBitmap[4].getWidth(),screen_height/2,null);
-//						canvas.drawBitmap(gramTextBitmap[2],screen_width/2,screen_height/2,null);
-//						canvas.drawBitmap(gramTextBitmap[5],screen_width/2+gramTextBitmap[2].getWidth(),screen_height/2,null);
-//						break;
-//					case bj:
-//						canvas.drawBitmap(gramTextBitmap[0],screen_width/2-gramTextBitmap[0].getWidth(),screen_height/2,null);
-//						canvas.drawBitmap(gramTextBitmap[3],screen_width/2,screen_height/2,null);
-//						break;
-//					case bq:
-//						canvas.drawBitmap(gramTextBitmap[0],screen_width/2-gramTextBitmap[0].getWidth(),screen_height/2,null);
-//						canvas.drawBitmap(gramTextBitmap[4],screen_width/2,screen_height/2,null);
-//						break;
-//					default:
-//						
-//						break;
-//				}
-//			}
-//			
-//			
-//			//输出玩家3
-//			switch (player3.getStatus()) {
-//				case jdz:
-//					canvas.drawBitmap(gramTextBitmap[3],screen_width-10-playCardBitmap.getWidth()-gramTextBitmap[3].getWidth()-gramTextBitmap[2].getWidth()-gramTextBitmap[5].getWidth(),20+initHeadBitmap.getHeight(),null);
-//					canvas.drawBitmap(gramTextBitmap[2],screen_width-10-playCardBitmap.getWidth()-gramTextBitmap[2].getWidth()-gramTextBitmap[5].getWidth(),20+initHeadBitmap.getHeight(),null);
-//					canvas.drawBitmap(gramTextBitmap[5],screen_width-10-playCardBitmap.getWidth()-gramTextBitmap[5].getWidth(),20+initHeadBitmap.getHeight(),null);	
-//					break;
-//				case qdz:
-//					canvas.drawBitmap(gramTextBitmap[4],screen_width-10-playCardBitmap.getWidth()-gramTextBitmap[4].getWidth()-gramTextBitmap[2].getWidth()-gramTextBitmap[5].getWidth(),20+initHeadBitmap.getHeight(),null);
-//					canvas.drawBitmap(gramTextBitmap[2],screen_width-10-playCardBitmap.getWidth()-gramTextBitmap[2].getWidth()-gramTextBitmap[5].getWidth(),20+initHeadBitmap.getHeight(),null);
-//					canvas.drawBitmap(gramTextBitmap[5],screen_width-10-playCardBitmap.getWidth()-gramTextBitmap[5].getWidth(),20+initHeadBitmap.getHeight(),null);
-//					break;
-//				case bj:
-//					canvas.drawBitmap(gramTextBitmap[0],screen_width-10-playCardBitmap.getWidth()-gramTextBitmap[3].getWidth()-gramTextBitmap[0].getWidth(),20+initHeadBitmap.getHeight(),null);
-//					canvas.drawBitmap(gramTextBitmap[3],screen_width-10-playCardBitmap.getWidth()-gramTextBitmap[3].getWidth(),20+initHeadBitmap.getHeight(),null);
-//					break;
-//				case bq:
-//					canvas.drawBitmap(gramTextBitmap[0],screen_width-10-playCardBitmap.getWidth()-gramTextBitmap[4].getWidth()-gramTextBitmap[0].getWidth(),20+initHeadBitmap.getHeight(),null);
-//					canvas.drawBitmap(gramTextBitmap[4],screen_width-10-playCardBitmap.getWidth()-gramTextBitmap[4].getWidth(),20+initHeadBitmap.getHeight(),null);
-//					break;
-//				default:
-//					
-//					break;
-//			}
-//			
-//			
-//		}
-//	}
-	
-	/**
-	 * 玩家1是否确定叫 、抢地主
-	 * @return
-	 */
-	public boolean player1grabdizhu(){
-		return new Random().nextBoolean();
-	}
-	/**
-	 * 玩家3是否确定叫 、抢地主
-	 * @return
-	 */
-	public boolean player3grabdizhu(){
-		return new Random().nextBoolean();
-	}
-	
+
 	/**
 	 * 绘制扑克牌出牌情况图
 	 */
@@ -1662,22 +1233,21 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 				return;
 			}
 			System.out.println("palyer1出牌数目："+count);
-			int w=(screen_width-2*playCardBitmap.getWidth()-20)/20;
-		//	int span=((screen_width-2*playCardBitmap.getWidth()-20)-w*count-(cardSelectedBitmap.getWidth()-w))/2;
-			Card card=null;
+			float w = screen_width * 0.032f;
+			Card card = null;
 			for(int i=0;i<count;i++){
 				card=player1.getOutcards().get(i);
-				card.setLocationAndSize(playCardBitmap.getWidth()+i*w+5,initHeadBitmap.getHeight()+10,cardSelectedBitmap.getWidth(),cardSelectedBitmap.getHeight(),w);
-				canvas.drawBitmap(card.getBitmap(), card.getX(), card.getY(), null);
+				card.setLocationAndSize(farmerBitmaps[0].getWidth() + i * w + 5,screen_height * 0.20f ,BigJokerOut.getWidth(),BigJokerOut.getHeight(),w);
+				canvas.drawBitmap(card.getOutBitmap(), card.getX(), card.getY(), null);
 			}
 		}else{
 			//绘制不出牌图标
-			canvas.drawBitmap(gramTextBitmap[0],10+playCardBitmap.getWidth(),20+initHeadBitmap.getHeight(),null);
-			canvas.drawBitmap(gramTextBitmap[1],10+playCardBitmap.getWidth()+gramTextBitmap[1].getWidth(),20+initHeadBitmap.getHeight(),null);
-
+			if(firstTurn3){
+				canvas.drawBitmap(noGrabLeftBitmap, screen_width * 0.10f, screen_height * 0.2f, null);
+			}else {
+				canvas.drawBitmap(noOutCardLeftBitmap, screen_width * 0.10f, screen_height * 0.2f, null);
+			}
 		}
-		
-				
 	}
 	
 	/**
@@ -1688,55 +1258,32 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 			return;
 		}
 		//已经出牌
-		if(turn==1){
+		if(gameturn == 1){
 			//未出牌，显示出牌按钮
-			boolean selected = false;
-			for(Card card : player2.getCards()){
-				if(card.isClicked()){
-					selected = true;
-				}
-			}
-			if(!selected){
-					//绘制出牌按钮 不可用
-					canvas.drawBitmap(gramTextBitmap[18], screen_width-gramTextBitmap[18].getWidth()-10, screen_height-cardSelectedBitmap.getHeight()-gramTextBitmap[18].getHeight()-30, null);
-					canvas.drawBitmap(gramTextBitmap[14],screen_width-gramTextBitmap[18].getWidth()-10+(gramTextBitmap[18].getWidth()-gramTextBitmap[14].getWidth())/2,screen_height-cardSelectedBitmap.getHeight()-30-gramTextBitmap[18].getHeight()+(gramTextBitmap[18].getHeight()-gramTextBitmap[14].getHeight())/2,null);
-					//提示按钮
-					canvas.drawBitmap(gramTextBitmap[15], screen_width-2*gramTextBitmap[18].getWidth()-20, screen_height-cardSelectedBitmap.getHeight()-gramTextBitmap[15].getHeight()-30, null);
-					canvas.drawBitmap(gramTextBitmap[8],screen_width-2*gramTextBitmap[18].getWidth()-20+(gramTextBitmap[15].getWidth()-gramTextBitmap[8].getWidth())/2,screen_height-cardSelectedBitmap.getHeight()-30-gramTextBitmap[15].getHeight()+(gramTextBitmap[15].getHeight()-gramTextBitmap[8].getHeight())/2,null);
-					//重选按钮
-					canvas.drawBitmap(gramTextBitmap[18], screen_width-3*gramTextBitmap[18].getWidth()-30, screen_height-cardSelectedBitmap.getHeight()-gramTextBitmap[16].getHeight()-30, null);
-					canvas.drawBitmap(gramTextBitmap[13],screen_width-3*gramTextBitmap[18].getWidth()-30+(gramTextBitmap[18].getWidth()-gramTextBitmap[13].getWidth())/2,screen_height-cardSelectedBitmap.getHeight()-30-gramTextBitmap[18].getHeight()+(gramTextBitmap[18].getHeight()-gramTextBitmap[13].getHeight())/2,null);
-		    }else{
-					//绘制出牌按钮 可用
-					canvas.drawBitmap(gramTextBitmap[16], screen_width-gramTextBitmap[16].getWidth()-10, screen_height-cardSelectedBitmap.getHeight()-gramTextBitmap[16].getHeight()-30, null);
-					canvas.drawBitmap(gramTextBitmap[14],screen_width-gramTextBitmap[16].getWidth()-10+(gramTextBitmap[16].getWidth()-gramTextBitmap[14].getWidth())/2,screen_height-cardSelectedBitmap.getHeight()-30-gramTextBitmap[16].getHeight()+(gramTextBitmap[16].getHeight()-gramTextBitmap[14].getHeight())/2,null);
-					//提示按钮
-					canvas.drawBitmap(gramTextBitmap[15], screen_width-2*gramTextBitmap[18].getWidth()-20, screen_height-cardSelectedBitmap.getHeight()-gramTextBitmap[15].getHeight()-30, null);
-					canvas.drawBitmap(gramTextBitmap[8],screen_width-2*gramTextBitmap[18].getWidth()-20+(gramTextBitmap[15].getWidth()-gramTextBitmap[8].getWidth())/2,screen_height-cardSelectedBitmap.getHeight()-30-gramTextBitmap[15].getHeight()+(gramTextBitmap[15].getHeight()-gramTextBitmap[8].getHeight())/2,null);
-					//重选按钮
-					canvas.drawBitmap(gramTextBitmap[15], screen_width-3*gramTextBitmap[18].getWidth()-30, screen_height-cardSelectedBitmap.getHeight()-gramTextBitmap[16].getHeight()-30, null);
-					canvas.drawBitmap(gramTextBitmap[13],screen_width-3*gramTextBitmap[18].getWidth()-30+(gramTextBitmap[18].getWidth()-gramTextBitmap[13].getWidth())/2,screen_height-cardSelectedBitmap.getHeight()-30-gramTextBitmap[18].getHeight()+(gramTextBitmap[18].getHeight()-gramTextBitmap[13].getHeight())/2,null);
-			}
-			//绘制不出按钮
-			canvas.drawBitmap(gramTextBitmap[17], screen_width-4*gramTextBitmap[17].getWidth()-40, screen_height-cardSelectedBitmap.getHeight()-gramTextBitmap[17].getHeight()-30, null);
-			canvas.drawBitmap(gramTextBitmap[10],screen_width-4*gramTextBitmap[17].getWidth()-40+(gramTextBitmap[17].getWidth()-gramTextBitmap[10].getWidth())/2,screen_height-cardSelectedBitmap.getHeight()-30-gramTextBitmap[17].getHeight()+(gramTextBitmap[17].getHeight()-gramTextBitmap[10].getHeight())/2,null);
+			//绘制出牌按钮 不可用
+			outButton.onDraw(canvas);
+			//提示按钮
+			hintButton.onDraw(canvas);
+			//不出按钮
+			noOutButton.onDraw(canvas);
+			//重选按钮
+
 		}else if(player2.isOut()){
 				//绘制出牌情况
 				Collections.sort(player2.getOutcards());//排序一下
 				int count=player2.getOutcards().size();
 				System.out.println("player2出牌数目："+count);
-				int w=screen_width/21;
-				int span=(screen_width-w*count-(cardSelectedBitmap.getWidth()-w))/2;
-				Card card=null;
+				float w = screen_width * 0.032f;
+				float sx = screen_width / 2 - w * count / 2;
+				Card card = null;
 				for(int i=0;i<count;i++){
 					card=player2.getOutcards().get(i);
-					card.setLocationAndSize(span+i*w,screen_height-2*cardSelectedBitmap.getHeight()-5,cardSelectedBitmap.getWidth(),cardSelectedBitmap.getHeight(),w);
-					canvas.drawBitmap(card.getBitmap(), card.getX(), card.getY(), null);
+					card.setLocationAndSize(sx + i * w,screen_height * 0.4f,BigJokerOut.getWidth(),BigJokerOut.getHeight(),w);
+					canvas.drawBitmap(card.getOutBitmap(), card.getX(), card.getY(), null);
 				}
 			}else{
 				//绘制不出牌图标
-				canvas.drawBitmap(gramTextBitmap[0],screen_width/2-gramTextBitmap[0].getWidth(),screen_height-cardSelectedBitmap.getHeight()-gramTextBitmap[0].getHeight()-30,null);
-				canvas.drawBitmap(gramTextBitmap[1],screen_width/2,screen_height-cardSelectedBitmap.getHeight()-gramTextBitmap[1].getHeight()-30,null);
+				canvas.drawBitmap(noOutCardLeftBitmap,10 + landlordBitmaps[0].getWidth(),screen_height * 0.55f,null);
 			}
 	}
 		
@@ -1755,35 +1302,43 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 			Collections.sort(player3.getOutcards());
 			int count=player3.getOutcards().size();
 			System.out.println("player3出牌数目："+count);
-			int w=(screen_width-2*playCardBitmap.getWidth()-20)/20;
-			int span=screen_width-playCardBitmap.getWidth()-(cardSelectedBitmap.getWidth()-w)-w*count-10;
+			float w = screen_width * 0.032f;
+			float sx = screen_width - farmerBitmaps[0].getWidth() - w * count - BigJokerOut.getWidth() / 2 - screen_width * 0.02f;
 			Card card=null;
 			for(int i=0;i<count;i++){
 				card=player3.getOutcards().get(i);
-				card.setLocationAndSize(span+i*w+10,initHeadBitmap.getHeight()+10,cardSelectedBitmap.getWidth(),cardSelectedBitmap.getHeight(),w);
-				canvas.drawBitmap(card.getBitmap(), card.getX(), card.getY(), null);
+				card.setLocationAndSize(sx + i * w,screen_height * 0.20f,BigJokerOut.getWidth(),BigJokerOut.getHeight(),w);
+				canvas.drawBitmap(card.getOutBitmap(), card.getX(), card.getY(), null);
 			}
 		}else{
 			//绘制不出牌图标
-			canvas.drawBitmap(gramTextBitmap[0],screen_width-10-playCardBitmap.getWidth()-gramTextBitmap[0].getWidth()-gramTextBitmap[1].getWidth(),20+initHeadBitmap.getHeight(),null);
-			canvas.drawBitmap(gramTextBitmap[1],screen_width-10-playCardBitmap.getWidth()-gramTextBitmap[1].getWidth(),20+initHeadBitmap.getHeight(),null);
+			if(firstTurn3){
+				canvas.drawBitmap(noGrabRightBitmap, screen_width * 0.78f, screen_height * 0.2f, null);
+			}else {
+				canvas.drawBitmap(noOutCardRightBitmap, screen_width * 0.78f, screen_height * 0.2f, null);
+			}
 
 		}
 	}
 
 	//下一个玩家
 	public void nextTurn(){
-		turn=(turn+1)%3;
+		if(gameturn == 3 && firstTurn1){
+			firstTurn1 = false;
+		}
+		if(gameturn == 1 && firstTurn3){
+			firstTurn3 = false;
+		}
+		synchronized (lock) {
+			gameturn = (gameturn + 1) % 3;
+		}
 		repaint=true;
 	}
 	
 	public void  drawGameOverBitmap(){
 		if(gameStep==GameStep.over){
 			//overGamecurrBitmap
-			canvas.drawBitmap(overGamecurrBitmap, 
-					screen_width/2-overGamecurrBitmap.getWidth()/2, 
-					screen_height/2-overGamecurrBitmap.getHeight(), 
-					null);
+			canvas.drawBitmap(overGamecurrBitmap, screen_width * 0.40f, screen_height * 0.45f, null);
 		}
 	}
 	
@@ -1796,19 +1351,20 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 				overGamecurrBitmap=overGameBitmaps[2];//农民失败
 				repaint=true;
 				MainApplication.getInstance().play("MusicEx_Lose.ogg");
-				Sleep(1000);
-				overGamecurrBitmap=overGameBitmaps[1];//地主胜利
-				repaint=true;
-				MainApplication.getInstance().play("MusicEx_Win.ogg");
+//				Sleep(1000);
+//				overGamecurrBitmap=overGameBitmaps[1];//地主胜利
+//				repaint=true;
+//				MainApplication.getInstance().play("MusicEx_Win.ogg");
 				
 			}else{
-				overGamecurrBitmap=overGameBitmaps[0];//地主失败
-				repaint=true;
-				MainApplication.getInstance().play("MusicEx_Lose.ogg");
-				Sleep(1000);
+//				overGamecurrBitmap=overGameBitmaps[0];//地主失败
+//				repaint=true;
+//				MainApplication.getInstance().play("MusicEx_Lose.ogg");
+//				Sleep(1000);
 				overGamecurrBitmap=overGameBitmaps[3];//农民胜利
 				repaint=true;
-				MainApplication.getInstance().play("MusicEx_Win.ogg");
+				MainApplication.getInstance().play("MusicEx_Lose.ogg");
+//				MainApplication.getInstance().play("MusicEx_Win.ogg");
 			}
 			Sleep(2000);
 			gameStep=GameStep.init;
@@ -1819,19 +1375,19 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 			gameStep=GameStep.over;
 			turnState = 2;
 			if(player2.isDizhu()){
-				overGamecurrBitmap=overGameBitmaps[2];//农民失败
-				repaint=true;
-				MainApplication.getInstance().play("MusicEx_Lose.ogg");
-				Sleep(1000);
+//				overGamecurrBitmap=overGameBitmaps[2];//农民失败
+//				repaint=true;
+//				MainApplication.getInstance().play("MusicEx_Lose.ogg");
+//				Sleep(1000);
 				overGamecurrBitmap=overGameBitmaps[1];//地主胜利
 				repaint=true;
 				MainApplication.getInstance().play("MusicEx_Win.ogg");
 				
 			}else{
-				overGamecurrBitmap=overGameBitmaps[0];//地主失败
-				repaint=true;
-				MainApplication.getInstance().play("MusicEx_Lose.ogg");
-				Sleep(1000);
+//				overGamecurrBitmap=overGameBitmaps[0];//地主失败
+//				repaint=true;
+//				MainApplication.getInstance().play("MusicEx_Lose.ogg");
+//				Sleep(1000);
 				overGamecurrBitmap=overGameBitmaps[3];//农民胜利
 				repaint=true;
 				MainApplication.getInstance().play("MusicEx_Win.ogg");
@@ -1848,26 +1404,24 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 				overGamecurrBitmap=overGameBitmaps[2];//农民失败
 				repaint=true;
 				MainApplication.getInstance().play("MusicEx_Lose.ogg");
-				Sleep(1000);
-				overGamecurrBitmap=overGameBitmaps[1];//地主胜利
-				repaint=true;
-				MainApplication.getInstance().play("MusicEx_Win.ogg");
+//				Sleep(1000);
+//				overGamecurrBitmap=overGameBitmaps[1];//地主胜利
+//				repaint=true;
+//				MainApplication.getInstance().play("MusicEx_Win.ogg");
 				
 			}else{
-				overGamecurrBitmap=overGameBitmaps[0];//地主失败
-				repaint=true;
-				MainApplication.getInstance().play("MusicEx_Lose.ogg");
-				Sleep(1000);
+//				overGamecurrBitmap=overGameBitmaps[0];//地主失败
+//				repaint=true;
+//				MainApplication.getInstance().play("MusicEx_Lose.ogg");
+//				Sleep(1000);
 				overGamecurrBitmap=overGameBitmaps[3];//农民胜利
 				repaint=true;
-				MainApplication.getInstance().play("MusicEx_Win.ogg");
-				
+//				MainApplication.getInstance().play("MusicEx_Win.ogg");
+				MainApplication.getInstance().play("MusicEx_Lose.ogg");
 			}
 			Sleep(2000);
 			gameStep=GameStep.init;
 			repaint=true;
-			
-			
 		}
 		
 	}
@@ -1882,78 +1436,92 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
 		//按钮事件
-		EventAction eventAction=new EventAction(appContext,this,event);
-		
+
 		//牌的监听
-		eventAction.setCard();
+        setCard(event);
 		
 		//只接受按下事件
 		if(event.getAction()!=MotionEvent.ACTION_UP){
 			return true;
 		}
 		//监听准备按钮是否按下
-		eventAction.setPrepareButtont(
-				screen_width/2-prepareButtonbgBitmap.getWidth()/2, 
-				screen_height/2, 
-				screen_width/2+prepareButtonbgBitmap.getWidth()/2, 
-				screen_height/2+prepareButtonbgBitmap.getHeight()/2);
+		prepareButton.onTouchEvent(event);
 		
-		//不抢、不叫按钮
-		eventAction.setGrabGameBQButton(
-				screen_width/2-gramTextBitmap[17].getWidth(),
-				screen_height/2,
-				screen_width/2,
-				screen_height/2+gramTextBitmap[17].getHeight());
-		//抢、叫地主
-		eventAction.setGrabGameQDZButton(
-				screen_width/2+20,
-				screen_height/2,
-				screen_width/2+20+gramTextBitmap[15].getWidth(),
-				screen_height/2+gramTextBitmap[15].getHeight());
-		//出牌 
-		eventAction.setlandlordsGameQDZButton(
-				screen_width-gramTextBitmap[18].getWidth()-10, 
-				screen_height-cardSelectedBitmap.getHeight()-gramTextBitmap[18].getHeight()-30, 
-				screen_width-10, 
-				screen_height-cardSelectedBitmap.getHeight()-30);
+		//出牌
+		outButton.onTouchEvent(event);
 		//提示按钮
-		eventAction.setHintGameQDZButton(
-				screen_width-2*gramTextBitmap[18].getWidth()-20, 
-				screen_height-cardSelectedBitmap.getHeight()-gramTextBitmap[18].getHeight()-30, 
-				screen_width-20-gramTextBitmap[18].getWidth(), 
-				screen_height-cardSelectedBitmap.getHeight()-30);
+		hintButton.onTouchEvent(event);
 		//重选按钮
-		eventAction.setResetGameQDZButton(
-				screen_width-3*gramTextBitmap[18].getWidth()-30, 
-				screen_height-cardSelectedBitmap.getHeight()-gramTextBitmap[18].getHeight()-30, 
-				screen_width-30-gramTextBitmap[18].getWidth()*2, 
-				screen_height-cardSelectedBitmap.getHeight()-30);
+//		eventAction.setResetGameQDZButton(
+//				screen_width-3*gramTextBitmap[18].getWidth()-30,
+//				screen_height-cardSelectedBitmap.getHeight()-gramTextBitmap[18].getHeight()-30,
+//				screen_width-30-gramTextBitmap[18].getWidth()*2,
+//				screen_height-cardSelectedBitmap.getHeight()-30);
 		//不出按钮
-		eventAction.setNotLandlordsGameQDZButton(
-				screen_width-4*gramTextBitmap[18].getWidth()-40, 
-				screen_height-cardSelectedBitmap.getHeight()-gramTextBitmap[18].getHeight()-30, 
-				screen_width-40-gramTextBitmap[18].getWidth()*3, 
-				screen_height-cardSelectedBitmap.getHeight()-30);
+		noOutButton.onTouchEvent(event);
 	
 		//监听退出按钮、设置按钮是否按下。
-		eventAction.exitButton(
-				screen_width/3-exitBitmap.getWidth()-10,
-				20,
-				screen_width/3-10,
-				20+exitBitmap.getHeight());
-		eventAction.setButton(
-				screen_width/3-5,
-				20,
-				screen_width/3-5+setupBitmap.getWidth(),
-				20+setupBitmap.getHeight());
-		
+		exitButton.onTouchEvent(event);
+		settingButton.onTouchEvent(event);
 		return true;
 		
 	}
 
+    public void setCard(MotionEvent event){
+
+//		if(gameView.gameStep!=GameStep.landlords){
+//			return;
+//		}
+        List<Card> cards = player2.getCards();
+        float x = event.getX();
+        float y = event.getY();
+        int i = -1;
+        for(Card card:cards){
+            if((x>card.getX())
+                    &&(y>card.getY())
+                    &&(x<card.getX()+card.getSw())
+                    &&(y<card.getY()+card.getHeight())){
+                i = cards.indexOf(card);
+            }
+        }
+        if(event.getAction() == MotionEvent.ACTION_DOWN){
+//            esx = x;
+//            esy = y;
+			if(i >= 0) {
+				selectedCards.add(cards.get(i));
+				repaint = true;
+			}
+        }else if(event.getAction() == MotionEvent.ACTION_MOVE){
+            if(i == -1){
+                return;
+            }
+            if(i == preSelected){
+//				gameView.repaint=true;
+                return;
+            }else{
+                preSelected = i;
+                selectedCards.add(cards.get(i));
+                repaint=true;
+            }
+        }else{
+            System.out.println("点击扑克牌");
+
+            for(Card card:selectedCards){
+                if(card.isClicked()) {
+                    card.setClicked(false);
+                }else {
+                    card.setClicked(true);
+                }
+            }
+            selectedCards.clear();
+            repaint=true;
+            MainApplication.getInstance().play("SpecSelectCard.ogg");
+        }
+    }
+
 	public void showIllegal() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void showUnResonable() {
