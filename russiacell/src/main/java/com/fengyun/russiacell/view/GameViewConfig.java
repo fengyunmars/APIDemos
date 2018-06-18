@@ -11,6 +11,7 @@ public class GameViewConfig {
     public static final int BUTTON_THREE_X_DEFAULT = 450;
     public static final int BUTTON_FOUR_X_DEFAULT = 650;
     public static final int BUTTON_FIVE_X_DEFAULT = 850;
+    public static final int BUTTON_PAUSE_X_DEFAULT = 988;
 
     public static final int BUTTON_NAVIGATION_X_DEFAULT = 17;
     public static final int BUTTON_NAVIGATION_Y_DEFAULT = 285;
@@ -18,8 +19,11 @@ public class GameViewConfig {
     public static final int BUTTON_NAVIGATION_HEIGHT_DEFAULT = 179;
 
     public static final int BUTTON_Y_DEFAULT = 1810;
+    public static final int BUTTON_PAUSE_Y_DEFAULT = 70;
     public static final int BUTTON_WIDTH_DEFAULT = 181;
+    public static final int BUTTON_PAUSE_WIDTH_DEFAULT = 73;
     public static final int BUTTON_HEIGHT_DEFAULT = 181;
+    public static final int BUTTON_PAUSE_HEIGHT_DEFAULT = 73;
 
     public static final int COLOR_BLUE_DARK = 0;
     public static final int COLOR_BLUE_LIGHT = 1;

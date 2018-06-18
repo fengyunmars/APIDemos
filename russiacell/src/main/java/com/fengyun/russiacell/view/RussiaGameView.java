@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 
@@ -27,11 +28,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+
 /**
  * Created by fengyun on 2017/12/9.
  */
 
-public class RussiaGameView extends SurfaceGameView{
+public class RussiaGameView extends SurfaceGameView implements GestureDetector.OnGestureListener{
     /**
      * 构造方法
      *
@@ -60,9 +62,10 @@ public class RussiaGameView extends SurfaceGameView{
     public List<GameButton> mGameButtonList = new ArrayList<>();
     public GameButton buttonMoveLeft;
     public GameButton buttonMoveRight;
-    public GameButton buttonMoveDown;
+    public GameButton buttonMoveFallDown;
     public GameButton buttonMoveUp;
     public GameButton buttonTransformation;
+    public GameButton buttonPause;
     public GameButton buttonNavigation;
 
     public QuadBitMatrix landMatrix = new QuadBitMatrix(GameViewConfig.PALETTE_CELL_ARRAY);
@@ -71,6 +74,7 @@ public class RussiaGameView extends SurfaceGameView{
     public static final QuadBitMatrix emptyMatrix = new QuadBitMatrix(28,18);
 
     public Random mRandom = new Random();
+    private boolean mPause;
 
     public RussiaGameView(Context context) {
         super(context);
@@ -115,11 +119,12 @@ public class RussiaGameView extends SurfaceGameView{
     }
 
     private void initButtons() {
-        buttonMoveDown = new GameButton(GameViewConfig.BUTTON_FIVE_X_DEFAULT,GameViewConfig.BUTTON_Y_DEFAULT,
+        buttonMoveFallDown = new GameButton(GameViewConfig.BUTTON_FIVE_X_DEFAULT,GameViewConfig.BUTTON_Y_DEFAULT,
         context, GameViewConfig.BUTTON_WIDTH_DEFAULT, GameViewConfig.BUTTON_HEIGHT_DEFAULT,background){
             @Override
             public boolean onClick() {
-                return handleTetrisMoveDown(currentTetris);
+//                return handleTetrisMoveDown(currentTetris);
+                return handleTetrisFallDown(currentTetris);
             }
         };
         buttonMoveUp = new GameButton(GameViewConfig.BUTTON_ONE_X_DEFAULT,GameViewConfig.BUTTON_Y_DEFAULT,
@@ -152,6 +157,14 @@ public class RussiaGameView extends SurfaceGameView{
             }
         };
 
+        buttonPause = new GameButton(GameViewConfig.BUTTON_PAUSE_X_DEFAULT,GameViewConfig.BUTTON_PAUSE_Y_DEFAULT,
+                context, GameViewConfig.BUTTON_PAUSE_WIDTH_DEFAULT, GameViewConfig.BUTTON_PAUSE_HEIGHT_DEFAULT,background){
+            @Override
+            public boolean onClick() {
+                return handlePause();
+            }
+        };
+
 //        buttonNavigation = new GameButtonImage(){
 //            @Override
 //            public boolean onClick() {
@@ -162,12 +175,18 @@ public class RussiaGameView extends SurfaceGameView{
 //        };
 //        buttonNavigation.setLocation(GameViewConfig.BUTTON_NAVIGATION_X_DEFAULT, GameViewConfig.BUTTON_NAVIGATION_Y_DEFAULT,
 //                GameViewConfig.BUTTON_NAVIGATION_WIDTH_DEFAULT, GameViewConfig.BUTTON_NAVIGATION_HEIGHT_DEFAULT);
-        mGameButtonList.add(buttonMoveDown);
+        mGameButtonList.add(buttonMoveFallDown);
         mGameButtonList.add(buttonMoveUp);
         mGameButtonList.add(buttonMoveLeft);
         mGameButtonList.add(buttonMoveRight);
         mGameButtonList.add(buttonTransformation);
+        mGameButtonList.add(buttonPause);
 //        mGameButtonList.add(buttonNavigation);
+    }
+
+    private boolean handlePause() {
+        mPause = !mPause;
+        return mPause;
     }
 
     @Override
@@ -177,7 +196,7 @@ public class RussiaGameView extends SurfaceGameView{
 
     @Override
     public void updatePulse() {
-        if(currentTetris.getStatus() == Tetris.STATUS_FALL){
+        if(!mPause && currentTetris.getStatus() == Tetris.STATUS_FALL){
             handleTetrisFall(currentTetris);
         }
     }
@@ -266,6 +285,10 @@ public class RussiaGameView extends SurfaceGameView{
         }
         return true;
     }
+
+    private boolean handleTetrisFallDown(Tetris currentTetris) {
+    }
+
     public boolean handleTetrisMoveUp(Tetris tetris) {
 
         QuadBitMatrix tetrisMatrix = tetris.getMatrix();
@@ -338,18 +361,25 @@ public class RussiaGameView extends SurfaceGameView{
         switch (type){
             case Tetris.TYPE_L:
                 tetris = new TetrisL(cx, cy, context, mPalette, bitmapShape, color, 0);
+                break;
             case Tetris.TYPE_L_LEFT:
                 tetris = new TetrisLLeft(cx, cy, context, mPalette, bitmapShape, color, 0);
+                break;
             case Tetris.TYPE_LINE:
                 tetris = new TetrisLine(cx, cy, context, mPalette, bitmapShape, color, 0);
+                break;
             case Tetris.TYPE_MOUNTAIN:
                 tetris = new TetrisMountain(cx, cy, context, mPalette, bitmapShape, color, 0);
+                break;
             case Tetris.TYPE_SQUARE:
                 tetris = new TetrisSquare(cx, cy, context, mPalette, bitmapShape, color, 0);
+                break;
             case Tetris.TYPE_STAIRS_LEFT:
                 tetris = new TetrisStairsLeft(cx, cy, context, mPalette, bitmapShape, color, 0);
+                break;
             case Tetris.TYPE_STAIRS_RIGHT:
                 tetris = new TetrisStairsRight(cx, cy, context, mPalette, bitmapShape, color, 0);
+                break;
         }
         return tetris;
     }
@@ -400,4 +430,36 @@ public class RussiaGameView extends SurfaceGameView{
         return true;
     }
 
+    @Override
+    public boolean onDown(MotionEvent e) {
+        return false;
+    }
+
+    @Override
+    public void onShowPress(MotionEvent e) {
+
+    }
+
+    @Override
+    public boolean onSingleTapUp(MotionEvent e) {
+        return false;
+    }
+
+    @Override
+    public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
+        Log.e("e1", e1.toString());
+        return false;
+    }
+
+    @Override
+    public void onLongPress(MotionEvent e) {
+
+    }
+
+    @Override
+    public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
+        return false;
+    }
 }
+
+
