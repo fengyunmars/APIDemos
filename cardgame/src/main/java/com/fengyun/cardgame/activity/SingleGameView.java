@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-import com.fengyun.util.ImageUtils;
+import com.fengyun.utils.ImageUtils;
 import com.fengyun.cardgame.app.MainApplication;
 import com.fengyun.cardgame.bean.BotPlayer;
 import com.fengyun.cardgame.bean.Card;

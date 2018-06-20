@@ -12,7 +12,6 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.NestedScrollView;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -40,19 +39,17 @@ import com.fengyun.config.Config;
 import com.fengyun.http.presenter.zhihu.IZhihuStoryPresenter;
 import com.fengyun.http.presenter.zhihu.impl.ZhihuStoryPresenter;
 import com.fengyun.model.zhihu.ZhihuStory;
-import com.fengyun.util.AnimUtils;
-import com.fengyun.util.ColorUtils;
-import com.fengyun.util.DensityUtils;
-import com.fengyun.util.GlideUtils;
-import com.fengyun.util.ViewUtils;
-import com.fengyun.util.WebUtils;
+import com.fengyun.utils.AnimUtils;
+import com.fengyun.utils.ColorUtils;
+import com.fengyun.utils.DensityUtils;
+import com.fengyun.utils.GlideUtils;
+import com.fengyun.utils.ViewUtils;
+import com.fengyun.utils.WebUtils;
 import com.fengyun.widget.ElasticDragDismissFrameLayout;
 import com.fengyun.widget.ParallaxScrimageView;
 import com.fengyun.widget.TranslateYTextView;
 import com.liuguangqiang.swipeback.SwipeBackActivity;
 import com.liuguangqiang.swipeback.SwipeBackLayout;
-
-import org.sufficientlysecure.htmltextview.HtmlTextView;
 
 import java.lang.reflect.InvocationTargetException;
 

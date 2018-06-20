@@ -24,8 +24,7 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.fengyun.util.DebugUtils;
-import com.fengyun.util.FileUtils;
+import com.fengyun.utils.DebugUtils;
 
 public class FingerPaint extends GraphicsActivity
         implements ColorPickerDialog.OnColorChangedListener {

@@ -1,11 +1,6 @@
 package com.fengyun.math;
 
-import android.support.v7.graphics.Palette;
-
-import com.fengyun.util.ArrayUtils;
-
-import java.util.Arrays;
-import java.util.Collections;
+import com.fengyun.utils.ArrayUtils;
 
 import Jama.Matrix;
 

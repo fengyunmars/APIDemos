@@ -27,8 +27,8 @@ import android.util.AttributeSet;
 import android.util.Property;
 
 import com.fengyun.R;
-import com.fengyun.util.AnimUtils;
-import com.fengyun.util.ColorUtils;
+import com.fengyun.utils.AnimUtils;
+import com.fengyun.utils.ColorUtils;
 
 
 /**

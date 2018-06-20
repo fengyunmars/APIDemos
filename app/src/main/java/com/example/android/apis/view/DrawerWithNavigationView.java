@@ -25,8 +25,8 @@ import android.support.v7.widget.Toolbar;
 
 import com.example.android.apis.AboutActivity;
 import com.example.android.apis.R;
-import com.fengyun.util.SharePreferenceUtilSrc;
-import com.fengyun.util.ViewUtils;
+import com.fengyun.utils.SharePreferenceUtilSrc;
+import com.fengyun.utils.ViewUtils;
 
 
 public class DrawerWithNavigationView extends AppCompatActivity {

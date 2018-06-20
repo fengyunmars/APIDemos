@@ -17,7 +17,7 @@
 package com.example.android.apis.app;
 
 import com.example.android.apis.R;
-import com.fengyun.util.MenuUtils;
+import com.fengyun.utils.MenuUtils;
 
 import android.app.Activity;
 import android.os.Bundle;

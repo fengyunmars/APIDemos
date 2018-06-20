@@ -19,7 +19,7 @@ package com.fengyun.graphics;
 import android.graphics.ColorMatrix;
 import android.util.Property;
 
-import com.fengyun.util.AnimUtils;
+import com.fengyun.utils.AnimUtils;
 
 /**
  * An extension to {@link ColorMatrix} which caches the saturation value for animation purposes.

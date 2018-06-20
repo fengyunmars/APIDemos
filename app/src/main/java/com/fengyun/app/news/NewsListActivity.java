@@ -38,9 +38,9 @@ import com.fengyun.app.ibehavior.ISetImage;
 import com.fengyun.http.ApiManager;
 import com.fengyun.http.presenter.IMainPresenter;
 import com.fengyun.http.presenter.impl.MainPresenter;
-import com.fengyun.util.AnimUtils;
-import com.fengyun.util.SharePreferenceUtilSrc;
-import com.fengyun.util.ViewUtils;
+import com.fengyun.utils.AnimUtils;
+import com.fengyun.utils.SharePreferenceUtilSrc;
+import com.fengyun.utils.ViewUtils;
 
 import java.io.File;
 

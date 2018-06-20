@@ -27,7 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.android.apis.R;
-import com.fengyun.util.MenuUtils;
+import com.fengyun.utils.MenuUtils;
 
 /**
  * This demonstrates idiomatic 惯用的 usage of the Action Bar. The default Honeycomb theme

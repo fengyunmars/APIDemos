@@ -18,7 +18,7 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 
 import com.fengyun.cardgame.app.MainApplication;
 import com.fengyun.cardgame.R;
-import com.fengyun.util.SharedPreferencesUtils;
+import com.fengyun.utils.SharedPreferencesUtils;
 
 /**
  * 对话框操作类

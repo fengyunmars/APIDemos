@@ -1,6 +1,6 @@
 package com.fengyun.test;
 
-import com.fengyun.util.FileUtils;
+import com.fengyun.utils.FileUtils;
 
 import org.junit.Test;
 

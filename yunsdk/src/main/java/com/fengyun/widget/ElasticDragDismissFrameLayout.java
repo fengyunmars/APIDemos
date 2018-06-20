@@ -27,9 +27,9 @@ import android.widget.FrameLayout;
 
 
 import com.fengyun.R;
-import com.fengyun.util.AnimUtils;
-import com.fengyun.util.ColorUtils;
-import com.fengyun.util.ViewUtils;
+import com.fengyun.utils.AnimUtils;
+import com.fengyun.utils.ColorUtils;
+import com.fengyun.utils.ViewUtils;
 
 import java.util.ArrayList;
 import java.util.List;

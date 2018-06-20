@@ -19,7 +19,7 @@ package com.example.android.apis.content;
 // Need the following import to get access to the app resources, since this
 // class is in a sub-package.
 import com.example.android.apis.R;
-import com.fengyun.util.FileUtils;
+import com.fengyun.utils.FileUtils;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -1,6 +1,6 @@
 package com.fengyun.text;
 
-import com.fengyun.util.FileUtils;
+import com.fengyun.utils.FileUtils;
 
 import java.io.BufferedReader;
 import java.io.File;

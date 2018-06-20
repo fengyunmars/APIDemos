@@ -4,7 +4,6 @@ import android.content.Context;
 
 import com.fengyun.game.spirit.BaseSpirit;
 import com.fengyun.russiacell.view.RussiaGameView;
-import com.fengyun.util.AppUtils;
 
 /**
  * Created by fengyun on 2017/12/9.

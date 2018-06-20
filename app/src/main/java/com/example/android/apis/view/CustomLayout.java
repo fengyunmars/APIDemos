@@ -20,7 +20,7 @@ package com.example.android.apis.view;
 // class is in a sub-package.
 import android.graphics.Rect;
 import com.example.android.apis.R;
-import com.fengyun.util.ViewUtils;
+import com.fengyun.utils.ViewUtils;
 
 //BEGIN_INCLUDE(Complete)
 import android.content.Context;

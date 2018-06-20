@@ -10,11 +10,10 @@ import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.util.Property;
-import android.widget.TextView;
 
 import com.fengyun.R;
-import com.fengyun.util.AnimUtils;
-import com.fengyun.util.ColorUtils;
+import com.fengyun.utils.AnimUtils;
+import com.fengyun.utils.ColorUtils;
 
 
 /**

@@ -4,19 +4,9 @@ import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.view.ViewGroup;
 
-import com.dd.plist.PropertyListFormatException;
 import com.fengyun.russiacell.view.RussiaGameView;
-import com.fengyun.util.ActivityUtils;
-import com.fengyun.util.XMLUtils;
-
-import org.xml.sax.SAXException;
-
-import java.io.IOException;
-import java.text.ParseException;
-
-import javax.xml.parsers.ParserConfigurationException;
+import com.fengyun.utils.ActivityUtils;
 
 public class GameActivity extends AppCompatActivity {
     RussiaGameView gameView;

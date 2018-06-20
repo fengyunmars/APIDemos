@@ -26,8 +26,8 @@ import com.bumptech.glide.load.resource.gif.GifDrawable;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.fengyun.R;
-import com.fengyun.util.ColorUtils;
-import com.fengyun.util.ViewUtils;
+import com.fengyun.utils.ColorUtils;
+import com.fengyun.utils.ViewUtils;
 import com.fengyun.widget.BadgedFourThreeImageView;
 
 

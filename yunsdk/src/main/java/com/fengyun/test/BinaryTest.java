@@ -1,6 +1,6 @@
 package com.fengyun.test;
 
-import com.fengyun.util.MathUtils;
+import com.fengyun.utils.MathUtils;
 
 import org.junit.Test;
 

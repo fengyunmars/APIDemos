@@ -17,7 +17,7 @@ import android.media.SoundPool;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.fengyun.util.SharedPreferencesUtils;
+import com.fengyun.utils.SharedPreferencesUtils;
 
 public class MainApplication extends Application {
 

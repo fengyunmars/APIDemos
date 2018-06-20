@@ -8,7 +8,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 
-import com.fengyun.util.ImageUtils;
+import com.fengyun.utils.ImageUtils;
 import com.fengyun.math.QuadBitMatrix;
 import com.fengyun.game.spirit.GameButton;
 import com.fengyun.russiacell.model.spirit.Palette;
@@ -20,8 +20,8 @@ import com.fengyun.russiacell.model.spirit.TetrisMountain;
 import com.fengyun.russiacell.model.spirit.TetrisSquare;
 import com.fengyun.russiacell.model.spirit.TetrisStairsLeft;
 import com.fengyun.russiacell.model.spirit.TetrisStairsRight;
-import com.fengyun.util.AppUtils;
-import com.fengyun.util.DebugUtils;
+import com.fengyun.utils.AppUtils;
+import com.fengyun.utils.DebugUtils;
 import com.fengyun.view.game.SurfaceGameView;
 
 import java.util.ArrayList;
@@ -124,7 +124,8 @@ public class RussiaGameView extends SurfaceGameView implements GestureDetector.O
             @Override
             public boolean onClick() {
 //                return handleTetrisMoveDown(currentTetris);
-                return handleTetrisFallDown(currentTetris);
+                handleTetrisFallDown(currentTetris);
+                return true;
             }
         };
         buttonMoveUp = new GameButton(GameViewConfig.BUTTON_ONE_X_DEFAULT,GameViewConfig.BUTTON_Y_DEFAULT,
@@ -286,7 +287,54 @@ public class RussiaGameView extends SurfaceGameView implements GestureDetector.O
         return true;
     }
 
-    private boolean handleTetrisFallDown(Tetris currentTetris) {
+    private void handleTetrisFallDown(Tetris tetris) {
+        int i = 0;
+        QuadBitMatrix sum;
+        do {
+            i++;
+            QuadBitMatrix tetrisMatrix = tetris.getMatrix();
+            QuadBitMatrix nextProjection = tetrisMatrix.projection(emptyMatrix,
+                    tetris.cx + MAX_TETRIS_SIZE, tetris.cy + MAX_TETRIS_SIZE + i);
+            sum = (QuadBitMatrix) nextProjection.plusEquals(landMatrix);
+            }while (!sum.hasOverlap());
+        animateFallDown(tetris, i);
+    }
+
+    private void animateFallDown(final Tetris tetris, final int i) {
+//        synchronized (drawThread) {
+////            try {
+////                drawThread.wait();
+////            } catch (InterruptedException e) {
+////                e.printStackTrace();
+////            }
+////        }
+////        synchronized (pulseThread) {
+////            try {
+////                pulseThread.wait();
+////            } catch (InterruptedException e) {
+////                e.printStackTrace();
+////            }
+////        }
+        try {
+            drawThread.sleep( 20 * i);
+            pulseThread.sleep(20 * i);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Thread animThread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for(int j = 1; j <= i; j++){
+                    handleTetrisMoveDown(tetris);
+                    drawGame();
+                    Sleep(20);
+                }
+//                drawThread.notify();
+//                pulseThread.notify();
+            }
+        });
+        animThread.start();
+        handleTetrisLand(tetris);
     }
 
     public boolean handleTetrisMoveUp(Tetris tetris) {

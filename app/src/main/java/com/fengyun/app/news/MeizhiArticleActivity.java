@@ -28,8 +28,8 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.example.android.apis.R;
-import com.fengyun.util.ColorUtils;
-import com.fengyun.util.GlideUtils;
+import com.fengyun.utils.ColorUtils;
+import com.fengyun.utils.GlideUtils;
 import com.wingsofts.dragphotoview.DragPhotoView;
 
 

@@ -1,20 +1,13 @@
 package com.fengyun.app;
 
 import android.app.Activity;
-import android.graphics.PointF;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
-import android.widget.FGridLayout;
 
 import com.example.android.apis.R;
 import com.fengyun.model.utils.ModelUtils;
-import com.fengyun.util.ActivityUtils;
-import com.fengyun.view.CoordinateGraph;
+import com.fengyun.utils.ActivityUtils;
 import com.fengyun.view.VQuestion;
-
-import java.util.Arrays;
-import java.util.Random;
 
 /**
  * Created by fengyun on 2017/10/13.

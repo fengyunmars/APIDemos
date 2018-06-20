@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.fengyun.model.utils.ModelUtils;
-import com.fengyun.util.ActivityUtils;
+import com.fengyun.utils.ActivityUtils;
 import com.fengyun.view.VQuestion;
 
 /**
