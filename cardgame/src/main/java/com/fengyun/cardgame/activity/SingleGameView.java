@@ -478,6 +478,8 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 					}
 					MainApplication.getInstance().play("SpecOk.ogg");
 					gameView.player2.setOut(false);
+					Random random = new Random();
+					playSound(player2.getGender(), "buyao" + random.nextInt(4) + 1);
 					gameView.turnState ++;
 					gameView.nextTurn();
 				}
@@ -559,7 +561,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 								LandlordLogic.getWeightLandlord(gameView.player2.getOutcards()));
 						if(gameView.turnState == 2){
 							gameView.currentHandCardLandLord = selected;
-							gameView.playSound(gameView.player2.getGender());
+							gameView.playSound(gameView.player2.getGender(),"");
 							gameView.player2.getCards().removeAll(gameView.player2.getOutcards());
 							gameView.turnState = 0;
 							gameView.hintIndex = 0;
@@ -567,7 +569,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 							gameView.nextTurn();
 						}else if(LandlordLogic.reasonable(gameView.currentHandCardLandLord, selected)){
 							gameView.currentHandCardLandLord = selected;
-							gameView.playSound(gameView.player2.getGender());
+							gameView.playSound(gameView.player2.getGender(), "");
 							gameView.player2.getCards().removeAll(gameView.player2.getOutcards());
 							gameView.turnState = 0;
 							gameView.hintIndex = 0;
@@ -697,10 +699,12 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 									Sleep(5000-app.getSpeed());
 									handCardLandlord = player1.play(currentHandCardLandLord,turnState);
 									if(handCardLandlord == null){
+										Random random = new Random();
+										playSound(player1.getGender(), "buyao" + random.nextInt(4) + 1);
 										turnState++;
 									}else{
 										currentHandCardLandLord = handCardLandlord;
-										playSound(player1.getGender());
+										playSound(player1.getGender(), "");
 										turnState = 0;
 									}
 									nextTurn();
@@ -712,10 +716,12 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 									Sleep(5000-app.getSpeed());
 									handCardLandlord = player3.play(currentHandCardLandLord,turnState);
 									if(handCardLandlord == null){
+										Random random = new Random();
+										playSound(player3.getGender(), "buyao" + random.nextInt(4) + 1);
 										turnState++;
 									}else{
 										currentHandCardLandLord = handCardLandlord;
-										playSound(player3.getGender());
+										playSound(player3.getGender(), "");
 										turnState = 0;
 									}
 									nextTurn();
@@ -757,111 +763,119 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 		start=false;
 	}
 	
-	public void playSound(Gender gender){
-		String str = "";
-		switch (currentHandCardLandLord.getCardTypeLandlord()) {
-		case dan:
-			if(gender == Gender.male){
-				str = "Man_" + currentHandCardLandLord.getWeight() + ".mp3";
-			}else if(gender == Gender.famale){
-				str = "Woman_" + currentHandCardLandLord.getWeight() + ".mp3";
+	public void playSound(Gender gender, String string){
+		if(string == "") {
+			String str = "";
+			switch (currentHandCardLandLord.getCardTypeLandlord()) {
+				case dan:
+					if (gender == Gender.male) {
+						str = "Man_" + currentHandCardLandLord.getWeight() + ".mp3";
+					} else if (gender == Gender.famale) {
+						str = "Woman_" + currentHandCardLandLord.getWeight() + ".mp3";
+					}
+					break;
+				case dui:
+					if (gender == Gender.male) {
+						str = "Man_dui" + currentHandCardLandLord.getWeight() + ".mp3";
+					} else if (gender == Gender.famale) {
+						str = "Woman_dui" + currentHandCardLandLord.getWeight() + ".mp3";
+					}
+					break;
+				case sanbudai:
+					if (gender == Gender.male) {
+						str = "Man_triple" + currentHandCardLandLord.getWeight() + ".mp3";
+					} else if (gender == Gender.famale) {
+						str = "Woman_triple" + currentHandCardLandLord.getWeight() + ".mp3";
+					}
+					break;
+				case sandaiyi:
+					if (gender == Gender.male) {
+						str = "Man_sandaiyi.mp3";
+					} else if (gender == Gender.famale) {
+						str = "Woman_sandaiyi.mp3";
+					}
+					break;
+				case sandaidui:
+					if (gender == Gender.male) {
+						str = "Man_sandaiyidui.mp3";
+					} else if (gender == Gender.famale) {
+						str = "Woman_sandaiyidui.mp3";
+					}
+					break;
+				case sidaierdan:
+					if (gender == Gender.male) {
+						str = "Man_sidaier.mp3";
+					} else if (gender == Gender.famale) {
+						str = "Woman_sidaier.mp3";
+					}
+					break;
+				case sidaierdui:
+					if (gender == Gender.male) {
+						str = "Man_sidailiangdui.mp3";
+					} else if (gender == Gender.famale) {
+						str = "Woman_sidailiangdui.mp3";
+					}
+					break;
+				case danshun5:
+				case danshun6:
+				case danshun7:
+				case danshun8:
+				case danshun9:
+				case danshun10:
+				case danshun11:
+				case danshun12:
+					if (gender == Gender.male) {
+						str = "Man_shunzi.mp3";
+					} else if (gender == Gender.famale) {
+						str = "Woman_shunzi.mp3";
+					}
+					break;
+				case shuangshun6:
+				case shuangshun8:
+				case shuangshun10:
+				case shuangshun12:
+				case shuangshun14:
+					if (gender == Gender.male) {
+						str = "Man_liandui.mp3";
+					} else if (gender == Gender.famale) {
+						str = "Woman_liandui.mp3";
+					}
+					break;
+				case feiji8:
+				case feiji10:
+				case feiji12:
+				case feiji15:
+					if (gender == Gender.male) {
+						str = "Man_feiji.mp3";
+					} else if (gender == Gender.famale) {
+						str = "Woman_feiji.mp3";
+					}
+					break;
+				case zhadan:
+					if (gender == Gender.male) {
+						str = "Man_zhadan.mp3";
+					} else if (gender == Gender.famale) {
+						str = "Woman_zhadan.mp3";
+					}
+					break;
+				case huojian:
+					if (gender == Gender.male) {
+						str = "Man_wangzha.mp3";
+					} else if (gender == Gender.famale) {
+						str = "Woman_wangzha.mp3";
+					}
+					break;
+				default:
+					break;
 			}
-			break;
-		case dui:
-			if(gender == Gender.male){
-				str = "Man_dui" + currentHandCardLandLord.getWeight() + ".mp3";
-			}else if(gender == Gender.famale){
-				str = "Woman_dui" + currentHandCardLandLord.getWeight() + ".mp3";
+			app.play(str);
+		}else {
+			if(gender == Gender.male) {
+				app.play("Man_" + string + ".mp3");
+			}else if(gender == Gender.famale) {
+				app.play("Woman_" + string + ".mp3");
 			}
-			break;
-		case sanbudai:
-			if(gender == Gender.male){
-				str = "Man_triple" + currentHandCardLandLord.getWeight() + ".mp3";
-			}else if(gender == Gender.famale){
-				str = "Woman_triple" + currentHandCardLandLord.getWeight() + ".mp3";
-			}
-			break;
-		case sandaiyi:
-			if(gender == Gender.male){
-				str = "Man_sandaiyi.mp3";
-			}else if(gender == Gender.famale){
-				str = "Woman_sandaiyi.mp3";
-			}
-			break;
-		case sandaidui:
-			if(gender == Gender.male){
-				str = "Man_sandaiyidui.mp3";
-			}else if(gender == Gender.famale){
-				str = "Woman_sandaiyidui.mp3";
-			}
-			break;
-		case sidaierdan:
-			if(gender == Gender.male){
-				str = "Man_sidaier.mp3";
-			}else if(gender == Gender.famale){
-				str = "Woman_sidaier.mp3";
-			}
-			break;
-		case sidaierdui:
-			if(gender == Gender.male){
-				str = "Man_sidailiangdui.mp3";
-			}else if(gender == Gender.famale){
-				str = "Woman_sidailiangdui.mp3";
-			}
-			break;	
-		case danshun5:
-		case danshun6:	
-		case danshun7:
-		case danshun8:
-		case danshun9:
-		case danshun10:
-		case danshun11:
-		case danshun12:
-			if(gender == Gender.male){
-				str = "Man_shunzi.mp3";
-			}else if(gender == Gender.famale){
-				str = "Woman_shunzi.mp3";
-			}
-			break;
-		case shuangshun6:
-		case shuangshun8:	
-		case shuangshun10:
-		case shuangshun12:
-		case shuangshun14:
-			if(gender == Gender.male){
-				str = "Man_liandui.mp3";
-			}else if(gender == Gender.famale){
-				str = "Woman_liandui.mp3";
-			}
-			break;
-		case feiji8:
-		case feiji10:
-		case feiji12:
-		case feiji15:
-			if(gender == Gender.male){
-				str = "Man_feiji.mp3";
-			}else if(gender == Gender.famale){
-				str = "Woman_feiji.mp3";
-			}
-			break;
-		case zhadan:
-			if(gender == Gender.male){
-				str = "Man_zhadan.mp3";
-			}else if(gender == Gender.famale){
-				str = "Woman_zhadan.mp3";
-			}
-			break;
-		case huojian:
-			if(gender == Gender.male){
-				str = "Man_wangzha.mp3";
-			}else if(gender == Gender.famale){
-				str = "Woman_wangzha.mp3";
-			}
-			break;
-		default:
-			break;
 		}
-		app.play(str);
 	}
 	/**
 	 *绘图函数

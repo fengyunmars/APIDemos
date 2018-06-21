@@ -3,7 +3,6 @@ package com.fengyun.math;
 import java.util.Arrays;
 import java.util.Collections;
 
-import Jama.Matrix;
 
 /**
  * Created by fengyun on 2017/12/12.

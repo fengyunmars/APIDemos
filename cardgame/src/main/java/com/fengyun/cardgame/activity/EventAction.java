@@ -211,7 +211,7 @@ public class EventAction {
 							LandlordLogic.getWeightLandlord(gameView.player2.getOutcards()));
 					if(gameView.turnState == 2){
 						gameView.currentHandCardLandLord = selected;
-						gameView.playSound(gameView.player2.getGender());
+						gameView.playSound(gameView.player2.getGender(),"");
 						gameView.player2.getCards().removeAll(gameView.player2.getOutcards());
 						gameView.turnState = 0;
 						gameView.hintIndex = 0;
@@ -219,7 +219,7 @@ public class EventAction {
 						gameView.nextTurn();
 					}else if(LandlordLogic.reasonable(gameView.currentHandCardLandLord, selected)){
 						gameView.currentHandCardLandLord = selected;
-						gameView.playSound(gameView.player2.getGender());
+						gameView.playSound(gameView.player2.getGender(),"");
 						gameView.player2.getCards().removeAll(gameView.player2.getOutcards());
 						gameView.turnState = 0;
 						gameView.hintIndex = 0;

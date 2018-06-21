@@ -26,6 +26,7 @@ public abstract class SurfaceGameView extends SurfaceView implements SurfaceHold
 	public Thread pulseThread = null;
 	public long mPulse = 1;
 	public int mPulseInterval = 800;
+	public int mDrawInterval = 50;
     public boolean repaint;
     public static Canvas canvas;
 
@@ -96,7 +97,7 @@ public abstract class SurfaceGameView extends SurfaceView implements SurfaceHold
                         repaint=true;
                     }
                     //修改50毫秒
-                    Sleep(50);
+                    Sleep(mDrawInterval);
                 }
             }
         });

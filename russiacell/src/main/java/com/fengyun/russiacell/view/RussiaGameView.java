@@ -75,6 +75,7 @@ public class RussiaGameView extends SurfaceGameView implements GestureDetector.O
 
     public Random mRandom = new Random();
     private boolean mPause;
+    private boolean animating;
 
     public RussiaGameView(Context context) {
         super(context);
@@ -220,6 +221,11 @@ public class RussiaGameView extends SurfaceGameView implements GestureDetector.O
         QuadBitMatrix sum = (QuadBitMatrix) nextProjection.plusEquals(landMatrix);
         if(sum.hasOverlap()){
             handleTetrisLand(tetris);
+            if(animating) {
+                animating = false;
+                mPulseInterval = 800;
+                mDrawInterval = 50;
+            }
         }else {
             synchronized (lock) {
                 tetris.moveDown();
@@ -279,6 +285,11 @@ public class RussiaGameView extends SurfaceGameView implements GestureDetector.O
         QuadBitMatrix sum = (QuadBitMatrix) nextProjection.plusEquals(landMatrix);
         if(sum.hasOverlap()){
             handleTetrisLand(tetris);
+            if(animating) {
+                animating = false;
+                mPulseInterval = 800;
+                mDrawInterval = 50;
+            }
         }else {
             synchronized (lock) {
                 tetris.moveDown();
@@ -290,13 +301,13 @@ public class RussiaGameView extends SurfaceGameView implements GestureDetector.O
     private void handleTetrisFallDown(Tetris tetris) {
         int i = 0;
         QuadBitMatrix sum;
-        do {
-            i++;
-            QuadBitMatrix tetrisMatrix = tetris.getMatrix();
-            QuadBitMatrix nextProjection = tetrisMatrix.projection(emptyMatrix,
-                    tetris.cx + MAX_TETRIS_SIZE, tetris.cy + MAX_TETRIS_SIZE + i);
-            sum = (QuadBitMatrix) nextProjection.plusEquals(landMatrix);
-            }while (!sum.hasOverlap());
+//        do {
+//            i++;
+//            QuadBitMatrix tetrisMatrix = tetris.getMatrix();
+//            QuadBitMatrix nextProjection = tetrisMatrix.projection(emptyMatrix,
+//                    tetris.cx + MAX_TETRIS_SIZE, tetris.cy + MAX_TETRIS_SIZE + i);
+//            sum = (QuadBitMatrix) nextProjection.plusEquals(landMatrix);
+//            }while (!sum.hasOverlap());
         animateFallDown(tetris, i);
     }
 
@@ -315,26 +326,31 @@ public class RussiaGameView extends SurfaceGameView implements GestureDetector.O
 ////                e.printStackTrace();
 ////            }
 ////        }
-        try {
-            drawThread.sleep( 20 * i);
-            pulseThread.sleep(20 * i);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        Thread animThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for(int j = 1; j <= i; j++){
-                    handleTetrisMoveDown(tetris);
-                    drawGame();
-                    Sleep(20);
-                }
+//        try {
+//            drawThread.sleep( 20 * i);
+//            pulseThread.sleep(20 * i);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        Thread animThread = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                for(int j = 1; j <= i; j++){
+//                    handleTetrisMoveDown(tetris);
+//                    drawGame();
+//                    Sleep(20);
+//                }
 //                drawThread.notify();
 //                pulseThread.notify();
-            }
-        });
-        animThread.start();
-        handleTetrisLand(tetris);
+//            }
+//        });
+//        animThread.start();
+//        handleTetrisLand(tetris);
+        animating = true;
+        if(animating){
+            mPulseInterval = 20;
+            mDrawInterval = 5;
+        }
     }
 
     public boolean handleTetrisMoveUp(Tetris tetris) {

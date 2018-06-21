@@ -92,4 +92,34 @@ public class FileUtils {
         }
     }
 
+    public static void deleteFolder(String path){
+        File folder = new File(path);
+        if(folder.isDirectory()){
+            deleteAllFile(folder);
+            folder.delete();
+        }else {
+            folder.delete();
+        }
+    }
+    public static void deleteFolder(File folder) {
+        if(folder.isDirectory()){
+            deleteAllFile(folder);
+        }else {
+            folder.delete();
+        }
+    }
+
+    public static void deleteAllFile(File folder) {
+        for(File file : folder.listFiles()){
+            deleteFolder(file);
+            file.delete();
+        }
+    }
+
+    public static void getFilePath(String file){
+        File fileF = new File(file);
+        String s = fileF.getAbsolutePath();
+        System.out.println(s);
+    }
+
 }

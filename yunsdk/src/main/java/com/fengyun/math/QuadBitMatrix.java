@@ -2,7 +2,6 @@ package com.fengyun.math;
 
 import com.fengyun.utils.ArrayUtils;
 
-import Jama.Matrix;
 
 /**
  * Created by fengyun on 2017/12/12.

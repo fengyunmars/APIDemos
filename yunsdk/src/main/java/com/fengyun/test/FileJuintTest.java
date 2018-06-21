@@ -69,4 +69,10 @@ public class FileJuintTest {
             System.out.println("mkdirs hello/fengyun/work/api");
         }
     }
+
+    @Test
+    public void testFile(){
+        FileUtils.getFilePath("a.txt");
+        FileUtils.deleteFolder("E:\\fengyun\\APIDemos\\yunsdk\\security");
+    }
 }
