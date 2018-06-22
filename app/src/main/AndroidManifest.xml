@@ -4018,25 +4018,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.fengyun.app.news.NewsListActivity"
-            android:label="Fenyun/News/NewsList"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.SAMPLE_CODE" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.fengyun.app.news.TopNewsArticleActivity"
-            android:theme="@style/Look.Translucent.Look.Image"></activity>
-        <activity
-            android:name="com.fengyun.app.news.ZhihuArticleActivity"
-            android:theme="@style/Look.Translucent.Look.Image"></activity>
-        <activity
-            android:name="com.fengyun.app.news.MeizhiArticleActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity
             android:name=".window.WindowManagerFlagActivity"
             android:label="Windows/Manager LayoutParam">
             <intent-filter>

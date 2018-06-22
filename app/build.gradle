@@ -1,7 +1,8 @@
 apply plugin: 'com.android.application'
-//apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'org.greenrobot.greendao'
 android {
-    compileSdkVersion 24
+    compileSdkVersion 25
+    buildToolsVersion '24.0.0'
     defaultConfig {
         applicationId "com.example.android.apis"
         minSdkVersion 21
@@ -9,7 +10,6 @@ android {
         testApplicationId "com.example.android.apis.tests"
         testInstrumentationRunner "android.test.InstrumentationTestRunner"
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -18,21 +18,18 @@ android {
     }
 }
 
-//greendao {
-//    schemaVersion 1
-//    daoPackage 'com.example.android.api.db'
-//    targetGenDir 'src/main/java'
-//}
+greendao {
+    schemaVersion 1
+    daoPackage 'com.example.android.api.db'
+    targetGenDir 'src/main/java'
+}
 
 dependencies {
     // 日志打印工具类
-
-
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     compile 'com.github.orhanobut:logger:1.12'
     compile project(':yunsdk')
     annotationProcessor 'com.jakewharton:butterknife-compiler:+'
-
-//    compile 'org.greenrobot:greendao:3.0.1'
-//    compile 'org.greenrobot:greendao-generator:3.0.0'
+    compile 'org.greenrobot:greendao:3.0.1'
+    compile 'org.greenrobot:greendao-generator:3.0.0'
 }
