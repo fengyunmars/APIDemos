@@ -183,12 +183,12 @@ public class PowerOffAlarm {
     }
 
     /**M: @{
-     * copy one file from source to target
+     * copy one file from source to com.fengyun.request.target
      * @param from source
-     * @param to   target
+     * @param to   com.fengyun.request.target
      */
     private static int copyFile(String from, String to) throws IOException {
-        LogUtils.v("source: " + from + "  target: " + to);
+        LogUtils.v("source: " + from + "  com.fengyun.request.target: " + to);
         int result = 0;
         if (TextUtils.isEmpty(from) || TextUtils.isEmpty(to)) {
             result = -1;

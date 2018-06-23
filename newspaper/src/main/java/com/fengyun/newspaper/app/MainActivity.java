@@ -34,13 +34,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.fengyun.newspaper.R;
+import com.fengyun.newspaper.fragment.MeiziFragment;
+import com.fengyun.newspaper.fragment.NetEaseFragment;
+import com.fengyun.newspaper.fragment.ZhihuFragment;
+import com.fengyun.newspaper.presenter.MainPresenter;
+import com.fengyun.utils.AnimUtils;
+import com.fengyun.newspaper.utils.ViewUtils;
 
 import java.io.File;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements IMain {
+public class MainActivity extends AppCompatActivity{
 
     @BindView(R.id.fragment_container)
     FrameLayout mFragmentContainer;
@@ -60,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements IMain {
     private SwitchCompat mThemeSwitch;
     private MenuItem currentMenuItem;
     private Fragment currentFragment;
-    private MainPresenterImpl IMainPresenter;
+    private MainPresenter IMainPresenter;
 
     private Toolbar.OnMenuItemClickListener onMenuItemClick = new Toolbar.OnMenuItemClickListener() {
         @Override
@@ -74,11 +80,11 @@ public class MainActivity extends AppCompatActivity implements IMain {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_layout);
+        setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
-        IMainPresenter = new MainPresenterImpl(this, this);
+        IMainPresenter = new MainPresenter(this, this);
         IMainPresenter.getBackground();
 
         toolbar.setOnMenuItemClickListener(onMenuItemClick);
@@ -236,7 +242,7 @@ public class MainActivity extends AppCompatActivity implements IMain {
                 fragment = new ZhihuFragment();
                 break;
             case R.id.topnewsitem:
-                fragment = new TopNewsFragment();
+                fragment = new NetEaseFragment();
                 break;
             case R.id.meiziitem:
                 fragment = new MeiziFragment();
@@ -338,7 +344,6 @@ public class MainActivity extends AppCompatActivity implements IMain {
     }
 
 
-    @Override
     public void getPic() {
         View headerLayout = navView.getHeaderView(0);
         LinearLayout llImage = (LinearLayout) headerLayout.findViewById(R.id.side_image);

@@ -20,7 +20,6 @@ package com.example.android.apis.view;
 // class is in a sub-package.
 import android.graphics.Rect;
 import com.example.android.apis.R;
-import com.fengyun.utils.ViewUtils;
 
 //BEGIN_INCLUDE(Complete)
 import android.content.Context;
@@ -96,7 +95,7 @@ public class CustomLayout extends ViewGroup {
             if (child.getVisibility() != GONE) {
                 // Measure the child.
                 // add fengyun
-                String sid = ViewUtils.getViewIdString(child);
+//                String sid = ViewUtils.getViewIdString(child);
                 // add fengyun
                 measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, 0);
 

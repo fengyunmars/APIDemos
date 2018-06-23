@@ -27,7 +27,7 @@
 
     <!-- Size of alarm alert outer ring. -->
     <dimen name="glowpadview_outerring_diameter">260dip</dimen>
-    <!-- Default target placement radius for GlowPadView. Should be 1/2 of outerring diameter. -->
+    <!-- Default com.fengyun.request.target placement radius for GlowPadView. Should be 1/2 of outerring diameter. -->
     <dimen name="glowpadview_target_placement_radius">130dip</dimen>
 
     <!-- M:add for timer's delete button when textsize is set as extra large -->

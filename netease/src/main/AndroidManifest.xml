@@ -153,7 +153,7 @@
         </receiver>
         <provider android:authorities="com.netease.newsreader.provider.feedback" android:exported="false" android:name="com.netease.nr.biz.fb.FeedBackProvider" android:readPermission="com.netease.newsreader.permission.READ" android:writePermission="com.netease.newsreader.permission.WRITE"/>
         <service android:exported="true" android:name="com.netease.nr.biz.push.wakeup.MyWakeUpService">
-            <meta-data android:name="com.netease.wakeup.target" android:value=""/>
+            <meta-data android:name="com.netease.wakeup.com.fengyun.request.target" android:value=""/>
         </service>
         <service android:exported="false" android:name="com.netease.nr.biz.offline.OffLineService"/>
         <service android:exported="false" android:name="com.netease.nr.biz.download.DownloadService"/>

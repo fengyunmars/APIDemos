@@ -1,6 +1,6 @@
 package com.fengyun.newspaper.api;
 
-import com.fengyun.newspaper.app.MyApplication;
+import com.fengyun.newspaper.MyApplication;
 import com.fengyun.utils.NetWorkUtils;
 
 import java.io.File;

@@ -1,14 +1,14 @@
 package com.fengyun.russiacell.app;
 
+import android.app.Activity;
 import android.content.res.Configuration;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 
 import com.fengyun.russiacell.view.RussiaGameView;
 import com.fengyun.utils.ActivityUtils;
 
-public class GameActivity extends AppCompatActivity {
+public class GameActivity extends Activity {
     RussiaGameView gameView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

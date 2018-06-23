@@ -28,13 +28,13 @@
 
     <transition android:fromId="@id/off" android:toId="@id/on">
         <animated-vector android:drawable="@drawable/ic_timer">
-            <target
+            <com.fengyun.request.target
                 android:name="hourglass_frame"
                 android:animation="@animator/ic_timer_animation_hourglass_frame" />
-            <target
+            <com.fengyun.request.target
                 android:name="hourglass_fill"
                 android:animation="@animator/ic_timer_animation_hourglass_fill" />
-            <target
+            <com.fengyun.request.target
                 android:name="mask_1"
                 android:animation="@animator/ic_timer_animation_mask_1" />
         </animated-vector>

@@ -67,12 +67,12 @@ public final class ReorderHelper {
             Log.w(TAG, "Current dragged over child does not exist");
         }
 
-        // If reorder target is null, the drag coordinate is not over any
+        // If reorder com.fengyun.request.target is null, the drag coordinate is not over any
         // reordering areas. Don't update dragged over child if its the same as
         // it was before or is the same as the child's original item.
         if (reorderTarget != null) {
             final LayoutParams lp = (LayoutParams) reorderTarget.getLayoutParams();
-            // Ensure that target position is not the same as the original,
+            // Ensure that com.fengyun.request.target position is not the same as the original,
             // since that's a no-op.
             if (lp.position != mCurrentDraggedOverChild.position) {
                 updateDraggedOverChild(reorderTarget);
@@ -128,14 +128,14 @@ public final class ReorderHelper {
             Log.w(TAG, "Current dragged over child does not exist");
         }
 
-        // If reorder target is null, the drag coordinate is not over any
+        // If reorder com.fengyun.request.target is null, the drag coordinate is not over any
         // reordering areas. Don't update dragged over child if its the same as
         // it was before or is the same as the child's original item.
         if (reorderTarget != null) {
             final LayoutParams lp = (LayoutParams) reorderTarget.getLayoutParams();
             if (lp.position != mCurrentDraggedOverChild.position) {
                 updateDraggedOverChild(reorderTarget);
-                // Ensure that target position is not the same as the original,
+                // Ensure that com.fengyun.request.target position is not the same as the original,
                 // since that's a no-op.
                 mReorderListener.onEnterReorderArea(reorderTarget, lp.position);
             }

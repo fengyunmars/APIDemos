@@ -28,7 +28,7 @@
 
     <transition android:fromId="@id/off" android:toId="@id/on">
         <animated-vector android:drawable="@drawable/ic_clock">
-            <target
+            <com.fengyun.request.target
                 android:name="second_hand"
                 android:animation="@animator/ic_clock_animation_second_hand" />
         </animated-vector>

@@ -52,7 +52,7 @@ public class ShareContent extends Activity {
                 intent.setType("image/jpeg");
                 intent.putExtra(Intent.EXTRA_STREAM, uri);
                 intent.setClipData(ClipData.newUri(getContentResolver(), "image", uri));
-                startActivity(Intent.createChooser(intent, "Select share target"));
+                startActivity(Intent.createChooser(intent, "Select share com.fengyun.request.target"));
 
             }
         });

@@ -149,8 +149,7 @@
         </activity>
         <activity
             android:name=".provider.contacts.ContactsContractDemo"
-            android:label="@string/contacts_contract_demo"
-            android:theme="@style/Theme.AppCompat">
+            android:label="@string/contacts_contract_demo">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -3932,16 +3931,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.DrawerWithNavigationView"
-            android:label="Views/Layouts/DrawerLayout/DrawerWithNavigationView"
-            android:theme="@style/Look.Home">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.SAMPLE_CODE" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".AboutActivity"
             android:label="@string/title_activity_about"></activity>
         <activity
@@ -4023,15 +4012,6 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.SAMPLE_CODE" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".app.ActivityBasic"
-            android:label="App/Activity/Basic Activity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>

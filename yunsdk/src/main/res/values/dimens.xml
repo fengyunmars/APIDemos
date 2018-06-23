@@ -54,7 +54,7 @@
 
     <!-- dribbble shot -->
     <dimen name="shot_collapsed_app_bar_height">168dp</dimen> <!-- 3 * ?android:actionBarSize -->
-    <!-- avatar should be a 40dp asset in a 48dp touch target & optically aligned with standard padding -->
+    <!-- avatar should be a 40dp asset in a 48dp touch com.fengyun.request.target & optically aligned with standard padding -->
     <dimen name="avatar_size">40dp</dimen>
     <dimen name="avatar_bounds">48dp</dimen>
     <dimen name="avatar_padding">4dp</dimen> <!-- (avatar_bounds - avatar_size) / 2 -->

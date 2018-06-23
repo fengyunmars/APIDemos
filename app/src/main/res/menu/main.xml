@@ -24,6 +24,6 @@
         android:id="@+id/menu_open"
         android:title="@string/open"
         android:icon="@drawable/open"
-        app:showAsAction="ifRoom" />
+        android:showAsAction="ifRoom" />
 
 </menu>

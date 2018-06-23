@@ -28,10 +28,10 @@
 
     <transition android:fromId="@id/off" android:toId="@id/on">
         <animated-vector android:drawable="@drawable/ic_stopwatch">
-            <target
+            <com.fengyun.request.target
                 android:name="hand"
                 android:animation="@animator/ic_stopwatch_animation_hand" />
-            <target
+            <com.fengyun.request.target
                 android:name="button"
                 android:animation="@animator/ic_stopwatch_animation_button" />
         </animated-vector>

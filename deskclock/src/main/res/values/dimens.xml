@@ -190,7 +190,7 @@
     <!-- Divider height -->
     <dimen name="hairline_height">1dip</dimen>
 
-    <!-- The minimum height/width of any touch target -->
+    <!-- The minimum height/width of any touch com.fengyun.request.target -->
     <dimen name="touch_target_min_size">48dip</dimen>
 
     <!-- Dimens for cities fastscroll -->
