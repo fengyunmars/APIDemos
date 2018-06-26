@@ -17,12 +17,23 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.fengyun.newpaper.bean.meizi;
+package com.fengyun.newspaper.bean.meizi;
+
+import java.util.ArrayList;
+
 
 /**
  * Created by drakeet on 8/9/15.
  */
-public class BaseData {
+public class MeiziData extends BaseData {
 
-    public boolean error;
+    public ArrayList<Meizi> results;
+
+    public ArrayList<Meizi> getResults() {
+        return results;
+    }
+
+    public void setResults(ArrayList<Meizi> results) {
+        this.results = results;
+    }
 }

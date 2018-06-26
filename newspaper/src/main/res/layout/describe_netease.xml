@@ -15,7 +15,7 @@
   limitations under the License.
   -->
 
-<com.fengyun.look.looklook.widget.ElasticDragDismissFrameLayout
+<com.fengyun.newspaper.widget.ElasticDragDismissFrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -24,7 +24,7 @@
     android:layout_height="match_parent"
     app:dragDismissDistance="@dimen/drag_dismiss_distance"
     app:dragDismissScale="0.95"
-    tools:context="com.fengyun.look.looklook.activity.ZhihuDescribeActivity">
+    tools:context="com.fengyun.newspaper.app.NetEaseArticleActivity">
 
 
     <FrameLayout
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content">
 
 
-        <com.fengyun.look.looklook.widget.ParallaxScrimageView
+        <com.fengyun.newspaper.widget.ParallaxScrimageView
             android:id="@+id/shot"
             android:layout_width="match_parent"
             android:layout_height="250dp"
@@ -52,7 +52,7 @@
             app:maxScrimAlpha="0.4"
             app:parallaxFactor="-0.5"/>
 
-            <com.fengyun.look.looklook.widget.TranslateYTextView
+            <com.fengyun.newspaper.widget.TranslateYTextView
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -134,4 +134,4 @@
         </android.support.v4.widget.NestedScrollView>
     </FrameLayout>
 
-</com.fengyun.look.looklook.widget.ElasticDragDismissFrameLayout>
+</com.fengyun.newspaper.widget.ElasticDragDismissFrameLayout>

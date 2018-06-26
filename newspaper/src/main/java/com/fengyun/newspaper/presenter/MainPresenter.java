@@ -4,7 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
-import com.fengyun.newpaper.bean.ImageResponse;
+import com.fengyun.newspaper.bean.ImageResponse;
 import com.fengyun.newspaper.api.ApiManager;
 import com.fengyun.newspaper.app.MainActivity;
 
@@ -14,11 +14,9 @@ import java.io.IOException;
 import java.net.URL;
 
 import rx.Observer;
-import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
-import rx.subscriptions.CompositeSubscription;
 
 /**
  * Created by xumaodun on 2016/12/1.

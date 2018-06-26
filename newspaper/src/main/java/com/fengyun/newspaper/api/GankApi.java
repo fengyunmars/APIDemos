@@ -21,9 +21,9 @@ package com.fengyun.newspaper.api;
 
 
 
-import com.fengyun.newpaper.bean.meizi.GankData;
-import com.fengyun.newpaper.bean.meizi.MeiziData;
-import com.fengyun.newpaper.bean.meizi.VedioData;
+import com.fengyun.newspaper.bean.meizi.GankData;
+import com.fengyun.newspaper.bean.meizi.MeiziData;
+import com.fengyun.newspaper.bean.meizi.VedioData;
 
 import retrofit2.http.GET;
 import retrofit2.http.Path;

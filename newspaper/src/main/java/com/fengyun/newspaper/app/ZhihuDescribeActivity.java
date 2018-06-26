@@ -33,7 +33,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
-import com.fengyun.newpaper.bean.ZhihuStory;
+import com.fengyun.newspaper.bean.ZhihuStory;
 import com.fengyun.newspaper.Config;
 import com.fengyun.newspaper.R;
 import com.fengyun.newspaper.fragment.IZhihuStoryFragment;

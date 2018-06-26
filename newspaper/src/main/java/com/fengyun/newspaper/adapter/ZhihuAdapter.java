@@ -23,7 +23,7 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.fengyun.graphics.ObservableColorMatrix;
-import com.fengyun.newpaper.bean.ZhihuDailyItem;
+import com.fengyun.newspaper.bean.ZhihuDailyItem;
 import com.fengyun.newspaper.Config;
 import com.fengyun.newspaper.R;
 import com.fengyun.newspaper.app.MainActivity;

@@ -23,11 +23,11 @@ import com.bumptech.glide.load.resource.drawable.GlideDrawable;
 import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.fengyun.graphics.ObservableColorMatrix;
-import com.fengyun.newpaper.bean.meizi.Gank;
-import com.fengyun.newpaper.bean.meizi.Meizi;
+import com.fengyun.newspaper.app.MeiziPhotoActivity;
+import com.fengyun.newspaper.bean.meizi.Gank;
+import com.fengyun.newspaper.bean.meizi.Meizi;
 import com.fengyun.newspaper.R;
 import com.fengyun.newspaper.app.MainActivity;
-import com.fengyun.newspaper.app.MeiziDescribeActivity;
 import com.fengyun.newspaper.widget.BadgedFourThreeImageView;
 import com.fengyun.request.target.DribbbleTarget;
 import com.fengyun.utils.Help;
@@ -139,7 +139,7 @@ public class MeiziAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     private void startDescribeActivity(Meizi meizi,RecyclerView.ViewHolder holder){
 
-        Intent intent = new Intent(mContext, MeiziDescribeActivity.class);
+        Intent intent = new Intent(mContext, MeiziPhotoActivity.class);
         int location[] = new int[2];
 
         BadgedFourThreeImageView imageView=((MeiziViewHolder)holder).getBitmap();

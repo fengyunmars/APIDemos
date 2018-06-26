@@ -1,6 +1,6 @@
 package com.fengyun.newspaper.presenter;
 
-import com.fengyun.newpaper.bean.NewsList;
+import com.fengyun.newspaper.bean.NewsList;
 import com.fengyun.newspaper.api.ApiManager;
 import com.fengyun.newspaper.fragment.NetEaseFragment;
 
@@ -21,7 +21,7 @@ public class NetEasePrensenter extends BasePresenter{
 
     public void getNewsList(int t) {
         mNetEaseFragment.showProgressDialog();
-        Subscription subscription= ApiManager.getInstence().getTopNewsService().getNews(t)
+        Subscription subscription = ApiManager.getInstence().getTopNewsService().getNews(t)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<NewsList>() {

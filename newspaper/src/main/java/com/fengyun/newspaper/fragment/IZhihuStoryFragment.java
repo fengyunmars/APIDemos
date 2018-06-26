@@ -1,7 +1,7 @@
 package com.fengyun.newspaper.fragment;
 
 
-import com.fengyun.newpaper.bean.ZhihuStory;
+import com.fengyun.newspaper.bean.ZhihuStory;
 
 
 public interface IZhihuStoryFragment {

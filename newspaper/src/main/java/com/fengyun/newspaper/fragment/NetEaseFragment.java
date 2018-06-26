@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
-import com.fengyun.newpaper.bean.NewsList;
+import com.fengyun.newspaper.bean.NewsList;
 import com.fengyun.newspaper.R;
 import com.fengyun.newspaper.adapter.NetEaseAdapter;
 import com.fengyun.newspaper.presenter.NetEasePrensenter;

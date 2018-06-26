@@ -1,4 +1,4 @@
-package com.fengyun.newpaper.bean;
+package com.fengyun.newspaper.bean;
 
 import com.google.gson.annotations.SerializedName;
 

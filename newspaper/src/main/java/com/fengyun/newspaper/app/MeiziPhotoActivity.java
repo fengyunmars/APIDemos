@@ -44,7 +44,7 @@ import uk.co.senab.photoview.PhotoViewAttacher;
 /**
  * Created by xinghongfei on 16/8/13.
  */
-public class MeiziDescribeActivity extends AppCompatActivity {
+public class MeiziPhotoActivity extends AppCompatActivity {
     public static final String EXTRA_IMAGE_URL = "image";
     private static final float SCRIM_ADJUSTMENT = 0.075f;
 
@@ -107,7 +107,7 @@ public class MeiziDescribeActivity extends AppCompatActivity {
                                        boolean isFirstResource) {
             final Bitmap bitmap = GlideUtils.getBitmap(resource);
             final int twentyFourDip = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
-                    24, MeiziDescribeActivity.this.getResources().getDisplayMetrics());
+                    24, MeiziPhotoActivity.this.getResources().getDisplayMetrics());
             Palette.from(bitmap)
                     .maximumColorCount(3)
                     .clearFilters() /* by default palette ignore certain hues

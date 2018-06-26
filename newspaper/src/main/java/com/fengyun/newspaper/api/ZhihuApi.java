@@ -1,9 +1,9 @@
 package com.fengyun.newspaper.api;
 
 
-import com.fengyun.newpaper.bean.ImageResponse;
-import com.fengyun.newpaper.bean.ZhihuDaily;
-import com.fengyun.newpaper.bean.ZhihuStory;
+import com.fengyun.newspaper.bean.ImageResponse;
+import com.fengyun.newspaper.bean.ZhihuDaily;
+import com.fengyun.newspaper.bean.ZhihuStory;
 
 import retrofit2.http.GET;
 import retrofit2.http.Path;

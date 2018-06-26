@@ -1,6 +1,6 @@
 package com.fengyun.newspaper.presenter;
 
-import com.fengyun.newpaper.bean.NewsDetailBean;
+import com.fengyun.newspaper.bean.NewsDetailBean;
 import com.fengyun.newspaper.Urls;
 import com.fengyun.newspaper.fragment.INetEaseArticleFragment;
 import com.fengyun.newspaper.utils.NetEaseArticleJsonUtils;

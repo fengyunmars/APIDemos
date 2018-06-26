@@ -1,55 +1,54 @@
-package com.fengyun.newpaper.bean;
+package com.fengyun.newspaper.bean;
 
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
- * Description : 新闻实体类
+ * Description : 新闻详情实体类
  * Author : lauren
  * Email  : lauren.liuling@gmail.com
  * Blog   : http://www.liuling123.com
  * Date   : 15/12/19
  */
-public class NewsBean implements Serializable {
-
+public class NewsDetailBean implements Serializable {
     /**
      * docid
      */
     @SerializedName("docid")
     private String docid;
     /**
-     * 标题
+     * title
      */
     @SerializedName("title")
     private String title;
     /**
-     * 小内容
-     */
-    @SerializedName("digest")
-    private String digest;
-    /**
-     * 图片地址
-     */
-    @SerializedName("imgsrc")
-    private String imgsrc;
-    /**
-     * 来源
+     * source
      */
     @SerializedName("source")
     private String source;
     /**
-     * 时间
+     * body
+     */
+    @SerializedName("body")
+    private String body;
+    /**
+     * ptime
      */
     @SerializedName("ptime")
     private String ptime;
     /**
-     * TAG
+     * cover
      */
-    @SerializedName("tag")
-    private String tag;
+    @SerializedName("cover")
+    private String cover;
+    /**
+     * 图片列表
+     */
+    @SerializedName("imgList")
+    private List<String> imgList;
 
-    public boolean hasFadedIn=false;
 
     public String getDocid() {
         return docid;
@@ -67,28 +66,20 @@ public class NewsBean implements Serializable {
         this.title = title;
     }
 
-    public String getDigest() {
-        return digest;
-    }
-
-    public void setDigest(String digest) {
-        this.digest = digest;
-    }
-
-    public String getImgsrc() {
-        return imgsrc;
-    }
-
-    public void setImgsrc(String imgsrc) {
-        this.imgsrc = imgsrc;
-    }
-
     public String getSource() {
         return source;
     }
 
     public void setSource(String source) {
         this.source = source;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
     }
 
     public String getPtime() {
@@ -99,11 +90,19 @@ public class NewsBean implements Serializable {
         this.ptime = ptime;
     }
 
-    public String getTag() {
-        return tag;
+    public String getCover() {
+        return cover;
     }
 
-    public void setTag(String tag) {
-        this.tag = tag;
+    public void setCover(String cover) {
+        this.cover = cover;
+    }
+
+    public List<String> getImgList() {
+        return imgList;
+    }
+
+    public void setImgList(List<String> imgList) {
+        this.imgList = imgList;
     }
 }

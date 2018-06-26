@@ -24,7 +24,7 @@
     android:layout_height="match_parent"
     app:dragDismissDistance="@dimen/drag_dismiss_distance"
     app:dragDismissScale="0.95"
-    tools:context="com.fengyun.look.looklook.activity.ZhihuDescribeActivity">
+    tools:context="com.fengyun.newspaper.app.ZhihuDescribeActivity">
 
 
     <LinearLayout
@@ -48,7 +48,7 @@
             android:layout_height="wrap_content">
 
 
-            <com.fengyun.look.looklook.widget.ParallaxScrimageView
+            <com.fengyun.newspaper.widget.ParallaxScrimageView
                 android:id="@+id/shot"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
@@ -62,7 +62,7 @@
                 app:scrimColor="@color/scrim"/>
 
         <!--<TextView-->
-        <com.fengyun.look.looklook.widget.TranslateYTextView
+        <com.fengyun.newspaper.widget.TranslateYTextView
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

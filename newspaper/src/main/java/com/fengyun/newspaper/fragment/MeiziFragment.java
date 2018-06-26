@@ -11,8 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
-import com.fengyun.newpaper.bean.meizi.Gank;
-import com.fengyun.newpaper.bean.meizi.Meizi;
+import com.fengyun.newspaper.bean.meizi.Gank;
+import com.fengyun.newspaper.bean.meizi.Meizi;
 import com.fengyun.newspaper.R;
 import com.fengyun.newspaper.adapter.MeiziAdapter;
 import com.fengyun.newspaper.presenter.MeiziPresenter;

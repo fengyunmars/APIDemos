@@ -1,7 +1,7 @@
 package com.fengyun.newspaper.presenter;
 
 
-import com.fengyun.newpaper.bean.ZhihuStory;
+import com.fengyun.newspaper.bean.ZhihuStory;
 import com.fengyun.newspaper.api.ApiManager;
 import com.fengyun.newspaper.fragment.IZhihuStoryFragment;
 

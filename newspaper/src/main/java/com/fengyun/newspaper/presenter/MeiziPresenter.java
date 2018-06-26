@@ -2,8 +2,8 @@ package com.fengyun.newspaper.presenter;
 
 import android.content.Context;
 
-import com.fengyun.newpaper.bean.meizi.MeiziData;
-import com.fengyun.newpaper.bean.meizi.VedioData;
+import com.fengyun.newspaper.bean.meizi.MeiziData;
+import com.fengyun.newspaper.bean.meizi.VedioData;
 import com.fengyun.newspaper.Config;
 import com.fengyun.newspaper.api.ApiManager;
 import com.fengyun.newspaper.fragment.MeiziFragment;

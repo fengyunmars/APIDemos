@@ -22,7 +22,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 
-import com.fengyun.newpaper.bean.ZhihuDaily;
+import com.fengyun.newspaper.bean.ZhihuDaily;
 import com.fengyun.newspaper.R;
 import com.fengyun.newspaper.adapter.ZhihuAdapter;
 import com.fengyun.newspaper.presenter.ZhihuPresenter;

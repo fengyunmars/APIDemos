@@ -1,6 +1,6 @@
 package com.fengyun.newspaper.api;
 
-import com.fengyun.newpaper.bean.NewsList;
+import com.fengyun.newspaper.bean.NewsList;
 
 import retrofit2.http.GET;
 import retrofit2.http.Path;

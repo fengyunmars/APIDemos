@@ -9,7 +9,7 @@
               android:orientation="horizontal"
               android:stateListAnimator="@animator/raise">
 
-    <com.fengyun.look.looklook.widget.BadgedFourThreeImageView
+    <com.fengyun.newspaper.widget.BadgedFourThreeImageView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/item_image_id"

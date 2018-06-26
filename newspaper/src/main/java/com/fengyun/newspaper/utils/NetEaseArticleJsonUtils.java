@@ -1,7 +1,7 @@
 package com.fengyun.newspaper.utils;
 
-import com.fengyun.newpaper.bean.NewsBean;
-import com.fengyun.newpaper.bean.NewsDetailBean;
+import com.fengyun.newspaper.bean.NewsBean;
+import com.fengyun.newspaper.bean.NewsDetailBean;
 import com.fengyun.utils.JsonUtils;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;

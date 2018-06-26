@@ -17,7 +17,7 @@
  * along with Meizhi.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package com.fengyun.newpaper.bean.meizi;
+package com.fengyun.newspaper.bean.meizi;
 
 import java.util.Date;
 

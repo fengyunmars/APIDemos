@@ -2,8 +2,8 @@ package com.fengyun.newspaper.presenter;
 
 import android.content.Context;
 
-import com.fengyun.newpaper.bean.ZhihuDaily;
-import com.fengyun.newpaper.bean.ZhihuDailyItem;
+import com.fengyun.newspaper.bean.ZhihuDaily;
+import com.fengyun.newspaper.bean.ZhihuDailyItem;
 import com.fengyun.newspaper.Config;
 import com.fengyun.newspaper.api.ApiManager;
 import com.fengyun.newspaper.fragment.ZhihuFragment;

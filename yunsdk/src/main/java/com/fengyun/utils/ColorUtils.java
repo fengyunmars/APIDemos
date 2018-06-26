@@ -16,6 +16,7 @@
 
 package com.fengyun.utils;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.support.annotation.CheckResult;
@@ -33,15 +34,15 @@ import java.lang.annotation.RetentionPolicy;
 /**
  * Utility methods for working with colors.
  */
-public class ColorUtils extends BaseUtils{
+public class ColorUtils{
 
     public static final int IS_LIGHT = 0;
     public static final int IS_DARK = 1;
     public static final int LIGHTNESS_UNKNOWN = 2;
 
 
-    public static int getColorById(int id){
-        return applicationContext.getResources().getColor(id);
+    public static int getColorById(Context context, int id){
+        return context.getResources().getColor(id);
     }
     /**
      * Set the alpha component of {@code color} to be {@code alpha}.
