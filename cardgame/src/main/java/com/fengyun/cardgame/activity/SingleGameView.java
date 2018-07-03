@@ -185,6 +185,11 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 	private Bitmap hintDownBitmap;
 	private Bitmap noAffordDownBitmap;
 
+    private Bitmap noOutDisableBitmap;
+    private Bitmap outDisableBitmap;
+    private Bitmap hintDisableBitmap;
+    private Bitmap noAffordDisableBitmap;
+
 	private GameButton exitButton;
 	private GameButton settingButton;
 
@@ -194,6 +199,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 	private GameButton hintButton;
 	private GameButton outButton;
 	private GameButton noAffordButton;
+
 	/**
 	 * 构造方法
 	 * @param context 上下文
@@ -431,7 +437,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 			 bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/text_ready.png"));
 			 prepareBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
 			 prepareButton = new GameButton(screen_width * 0.45f, screen_height * 0.55f,
-					 prepareBitmap,prepareBgBitmap, SingleGameView.this) {
+					 prepareBitmap, prepareBgBitmap, prepareBitmap, SingleGameView.this) {
 				 @Override
 				 protected void doAction() {
 					 if(gameView.gameStep!= GameStep.ready){
@@ -446,7 +452,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 
 			bitmap = BitmapFactory.decodeStream(assetManager.open("images/game_icon_exit.png"));
 			exitBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
-			exitButton = new GameButton(screen_width * 0.3f, screen_height * 0.02f, exitBitmap,exitBitmap, SingleGameView.this) {
+			exitButton = new GameButton(screen_width * 0.3f, screen_height * 0.02f, exitBitmap,exitBitmap,exitBitmap, SingleGameView.this) {
 				@Override
 				protected void doAction() {
 					MainApplication.getInstance().play("SpecOk.ogg");
@@ -457,7 +463,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 			bitmap = BitmapFactory.decodeStream(assetManager.open("images/game_icon_setting.png"));
 			settingBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.10));
 			settingButton = new GameButton(screen_width * 0.38f
-			, screen_height * 0.02f, settingBitmap, settingBitmap, SingleGameView.this) {
+			, screen_height * 0.02f, settingBitmap, settingBitmap, settingBitmap,SingleGameView.this) {
 				@Override
 				protected void doAction() {
 					MainApplication.getInstance().play("SpecOk.ogg");
@@ -469,8 +475,10 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 			noOutBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.15));
 			bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/lord_btn_pass_d.png"));
 			noOutDownBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.15));
+			bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/lord_btn_pass_disable.png"));
+			noOutDisableBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.15));
 			noOutButton = new GameButton(screen_width * 0.27f, screen_height * 0.48f,
-					noOutBitmap, noOutDownBitmap, SingleGameView.this) {
+					noOutBitmap, noOutDownBitmap,noOutDisableBitmap, SingleGameView.this) {
 				@Override
 				protected void doAction() {
 					if(gameView.gameStep!=GameStep.landlords){
@@ -479,7 +487,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 					MainApplication.getInstance().play("SpecOk.ogg");
 					gameView.player2.setOut(false);
 					Random random = new Random();
-					playSound(player2.getGender(), "buyao" + random.nextInt(4) + 1);
+					playSound(player2.getGender(), "buyao" + (random.nextInt(4) + 1));
 					gameView.turnState ++;
 					gameView.nextTurn();
 				}
@@ -490,7 +498,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 			bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/lord_btn_prompt_d.png"));
 			hintDownBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.15));
 			hintButton = new GameButton(screen_width * 0.27f + noOutBitmap.getWidth(),// + screen_width * 0.02f,
-					screen_height * 0.48f, hintBitmap, hintDownBitmap, SingleGameView.this) {
+					screen_height * 0.48f, hintBitmap, hintDownBitmap, hintBitmap, SingleGameView.this) {
 				@Override
 				protected void doAction() {
 					if(gameView.gameStep!=GameStep.landlords){
@@ -531,12 +539,15 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 					gameView.repaint=true;
 				}
 			};
+
 			bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/lord_btn_product_n.png"));
 			outBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.15));
 			bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/lord_btn_product_d.png"));
 			outDownBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.15));
+			bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/lord_btn_product_disable.png"));
+			outDisableBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.15));
 			outButton = new GameButton(screen_width * 0.27f + noOutBitmap.getWidth() + hintBitmap.getWidth(), //+ screen_width * 0.02f,
-					screen_height * 0.48f, outBitmap, outDownBitmap, SingleGameView.this) {
+					screen_height * 0.48f, outBitmap, outDownBitmap, outDisableBitmap,SingleGameView.this) {
 				@Override
 				protected void doAction() {
 					if(gameView.gameStep!=GameStep.landlords){
@@ -589,7 +600,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 			bitmap = BitmapFactory.decodeStream(assetManager.open("images/button/lord_btn_nobig_d.png"));
 			noAffordDownBitmap = ImageUtils.zoomBitmapByHeight(bitmap, (int)(screen_height * 0.15));
 			noAffordButton = new GameButton(screen_width * 0.45f, screen_height * 0.48f,
-					noAffordBitmap, noAffordDownBitmap, SingleGameView.this) {
+					noAffordBitmap, noAffordDownBitmap, noAffordBitmap,SingleGameView.this) {
 				@Override
 				protected void doAction() {
 					if(gameView.gameStep!=GameStep.landlords){
@@ -700,7 +711,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 									handCardLandlord = player1.play(currentHandCardLandLord,turnState);
 									if(handCardLandlord == null){
 										Random random = new Random();
-										playSound(player1.getGender(), "buyao" + random.nextInt(4) + 1);
+										playSound(player1.getGender(), "buyao" + (random.nextInt(4) + 1));
 										turnState++;
 									}else{
 										currentHandCardLandLord = handCardLandlord;
@@ -717,7 +728,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 									handCardLandlord = player3.play(currentHandCardLandLord,turnState);
 									if(handCardLandlord == null){
 										Random random = new Random();
-										playSound(player3.getGender(), "buyao" + random.nextInt(4) + 1);
+										playSound(player3.getGender(), "buyao" + (random.nextInt(4) + 1));
 										turnState++;
 									}else{
 										currentHandCardLandLord = handCardLandlord;
@@ -995,7 +1006,7 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 		
 		if(gameStep==GameStep.ready){
 			//绘制准备按钮
-			prepareButton.onDraw(canvas);
+			prepareButton.onDraw(canvas, GameButton.NORMAL);
 		}
 		
 		if(gameStep==GameStep.ready){
@@ -1034,8 +1045,8 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 	
 	//绘制关闭、设置按钮
 	public void drawCommonButton(){
-		exitButton.onDraw(canvas);
-		settingButton.onDraw(canvas);
+		exitButton.onDraw(canvas, GameButton.NORMAL);
+		settingButton.onDraw(canvas, GameButton.NORMAL);
 	}
 	
 	//线程休眠方法
@@ -1275,11 +1286,19 @@ public class SingleGameView extends SurfaceView implements SurfaceHolder.Callbac
 		if(gameturn == 1){
 			//未出牌，显示出牌按钮
 			//绘制出牌按钮 不可用
-			outButton.onDraw(canvas);
+            if(player2.getOutcards() == null || player2.getOutcards().size() == 0) {
+                outButton.onDraw(canvas,GameButton.DISABLE);
+            }else {
+                outButton.onDraw(canvas, GameButton.NORMAL);
+            }
 			//提示按钮
-			hintButton.onDraw(canvas);
+			hintButton.onDraw(canvas, GameButton.NORMAL);
 			//不出按钮
-			noOutButton.onDraw(canvas);
+            if(turnState == 2) {
+                noOutButton.onDraw(canvas, GameButton.DISABLE);
+            }else {
+                noOutButton.onDraw(canvas, GameButton.NORMAL);
+            }
 			//重选按钮
 
 		}else if(player2.isOut()){

@@ -132,7 +132,6 @@ public class ZhihuFragment extends Fragment implements IFragment{
         }
         currentLoadDate = "0";
         zhihuPresenter.getLastZhihuNews();
-
     }
 
     private void loadMoreDate() {

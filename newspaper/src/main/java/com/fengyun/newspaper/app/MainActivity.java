@@ -130,12 +130,12 @@ public class MainActivity extends AppCompatActivity{
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {
-                if(currentMenuItem!=null && item.getItemId()==R.id.menu_about)
-                {
-                    Intent intent = new Intent(getApplication(), AboutActivity.class);
-                    getApplication().startActivity(intent);
-                    return true;
-                }
+//                if(currentMenuItem!=null && item.getItemId()==R.id.menu_about)
+//                {
+//                    Intent intent = new Intent(getApplication(), AboutActivity.class);
+//                    getApplication().startActivity(intent);
+//                    return true;
+//                }
 
 
                 if (currentMenuItem != item && currentMenuItem != null) {

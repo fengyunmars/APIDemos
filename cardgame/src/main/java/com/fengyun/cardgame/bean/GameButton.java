@@ -12,13 +12,19 @@ public abstract class GameButton {
     private float y;
     private Bitmap bitmap;
     private Bitmap downbitmap;
+    private Bitmap disablebitmap;
     public SingleGameView gameView;
 
-    public GameButton(float x, float y, Bitmap bitmap, Bitmap downbitmap, SingleGameView gameView) {
+    public static int NORMAL = 0;
+    public static int DOWN = 1;
+    public static int DISABLE = 2;
+
+    public GameButton(float x, float y, Bitmap bitmap, Bitmap downbitmap, Bitmap disableBitmap, SingleGameView gameView) {
         this.x = x;
         this.y = y;
         this.bitmap = bitmap;
         this.downbitmap = downbitmap;
+        this.disablebitmap = disableBitmap;
         this.gameView = gameView;
     }
 
@@ -30,8 +36,15 @@ public abstract class GameButton {
         }
     }
 
-    public void onDraw(Canvas canvas){
+    public void onDraw(Canvas canvas, int state){
         canvas.drawBitmap(bitmap, x, y, null);
+//        if(state == NORMAL) {
+//            canvas.drawBitmap(bitmap, x, y, null);
+//        }else if(state == DOWN){
+//            canvas.drawBitmap(downbitmap, x, y, null);
+//        }else if(state == DISABLE){
+//            canvas.drawBitmap(disablebitmap, x, y, null);
+//        }
     }
 
     protected abstract void doAction();

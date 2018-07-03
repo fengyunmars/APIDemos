@@ -3932,7 +3932,7 @@
         </activity>
         <activity
             android:name=".AboutActivity"
-            android:label="@string/title_activity_about"></activity>
+            android:label="@string/title_activity_about" />
         <activity
             android:name=".view.StyleBaisc"
             android:label="Views/Style/StyleBasic">
@@ -3960,7 +3960,7 @@
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
-        <activity android:name=".app.ActivityTarget"></activity>
+        <activity android:name=".app.ActivityTarget" />
         <activity
             android:name=".view.TextViewMoreText"
             android:label="Views/Text/MoreText">
@@ -4012,6 +4012,13 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.fengyun.app.GifPlayActivity"
+                   android:label="Fenyun/Views/Gif Play">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
