@@ -21,9 +21,10 @@ public class WindowManagerFlagActivity extends Activity {
 
     public void showToast(View view) {
         Toast toast = Toast.makeText(this, R.string.funnylong, Toast.LENGTH_LONG);
-        toast.getWindowParams().gravity = Gravity.CENTER_VERTICAL;
-        toast.getWindowParams().flags |= WindowManager.LayoutParams.FLAG_DIM_BEHIND;
-        toast.getWindowParams().dimAmount = 0.5f;
+        // TODO: 2018/8/15  
+//        toast.getWindowParams().gravity = Gravity.CENTER_VERTICAL;
+//        toast.getWindowParams().flags |= WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+//        toast.getWindowParams().dimAmount = 0.5f;
         toast.setGravity(Gravity.CENTER, 0, 0);
         toast.show();
     }

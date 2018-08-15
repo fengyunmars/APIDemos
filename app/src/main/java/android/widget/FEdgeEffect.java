@@ -1,6 +1,5 @@
 package android.widget;
 
-import android.annotation.ColorInt;
 import android.content.res.TypedArray;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;

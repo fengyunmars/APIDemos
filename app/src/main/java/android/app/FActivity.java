@@ -1,6 +1,5 @@
 package android.app;
 
-import android.annotation.NonNull;
 import android.content.FContext;
 
 /**
@@ -10,7 +9,7 @@ import android.content.FContext;
 public class FActivity extends FContext{
 
     @Override
-    public Object getSystemService(@NonNull String name) {
+    public Object getSystemService(String name) {
         return null;
     }
 }

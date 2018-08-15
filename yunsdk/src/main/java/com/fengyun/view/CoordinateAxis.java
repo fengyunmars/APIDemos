@@ -237,7 +237,7 @@ public class CoordinateAxis extends View implements IViewCustom {
 
     private void drawCalibration(Canvas canvas) {
         if(orientation == LinearLayout.HORIZONTAL) {
-            int x = mLeft + startOffset;
+            int x = getLeft() + startOffset;
             float xstep = getWidth() / (end - start) * step;
             Log.d("dingxiaoquan", "xtep = "+ xstep);
             for (float i = start; i <= end; i += step) {
@@ -247,7 +247,7 @@ public class CoordinateAxis extends View implements IViewCustom {
                 x += xstep;
             }
         }else if(orientation == LinearLayout.VERTICAL){
-            int y = mBottom;
+            int y = getBottom();
             ViewGroup parent = (ViewGroup) getParent().getParent();
             float ystep = parent.getHeight() / (end - start) * step;
             Log.d("dingxiaoquan", "ytep = "+ ystep);
@@ -263,7 +263,7 @@ public class CoordinateAxis extends View implements IViewCustom {
     private void drawArrow(Canvas canvas) {
         if(orientation == LinearLayout.HORIZONTAL) {
             PointF[] points = Arrows.getFoots(arrowW, arrowH, 0, 0, (int)end, 0);
-            canvas.drawRect(0, arrowHY, mRight, arrowHY + arrowLineWidth, mPaint);
+            canvas.drawRect(0, arrowHY, getRight(), arrowHY + arrowLineWidth, mPaint);
             Path triangle = new Path();
             triangle.moveTo(getWidth(), arrowHY + arrowLineWidth / 2);
             triangle.lineTo(points[0].x, points[0].y);
@@ -273,7 +273,7 @@ public class CoordinateAxis extends View implements IViewCustom {
             canvas.drawPath(triangle, mPaint);
         }else if(orientation == LinearLayout.VERTICAL){
             PointF[] points = Arrows.getFoots(arrowW, arrowH, 0, 0, (int)end, 0);
-            canvas.drawRect(arrowVX, mTop, arrowVX + arrowLineWidth, mBottom, mPaint);
+            canvas.drawRect(arrowVX, getTop(), arrowVX + arrowLineWidth, getBottom(), mPaint);
             Path triangle = new Path();
             triangle.moveTo(arrowVX, 0);
             triangle.lineTo(points[0].x, points[0].y);

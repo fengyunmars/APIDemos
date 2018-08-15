@@ -71,9 +71,10 @@ public class ScrollView03InternalSelection extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                KeyEvent keyEvent = KeyEvent.obtain(System.currentTimeMillis(),System.currentTimeMillis(),
-                        KeyEvent.ACTION_DOWN,KeyEvent.KEYCODE_DPAD_DOWN,0,0,0,0,0,0,null);
-                sv.executeKeyEvent(keyEvent);
+                // TODO: 2018/8/15  
+//                KeyEvent keyEvent = KeyEvent.obtain(System.currentTimeMillis(),System.currentTimeMillis(),
+//                        KeyEvent.ACTION_DOWN,KeyEvent.KEYCODE_DPAD_DOWN,0,0,0,0,0,0,null);
+//                sv.executeKeyEvent(keyEvent);
             }
         });
 //        ll.addView(button);
@@ -100,11 +101,13 @@ public class ScrollView03InternalSelection extends Activity {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
 //                isv.requestFocus();
-                KeyEvent keyEvent = KeyEvent.obtain(System.currentTimeMillis(),System.currentTimeMillis(),
-                        KeyEvent.ACTION_DOWN,KeyEvent.KEYCODE_DPAD_DOWN,0,0,0,0,0,0,null);
-                //dispatchKeyEvent(keyEvent);
-//                return true;
-                return sv.executeKeyEvent(keyEvent);
+                // TODO: 2018/8/15  
+//                KeyEvent keyEvent = KeyEvent.obtain(System.currentTimeMillis(),System.currentTimeMillis(),
+//                        KeyEvent.ACTION_DOWN,KeyEvent.KEYCODE_DPAD_DOWN,0,0,0,0,0,0,null);
+//                //dispatchKeyEvent(keyEvent);
+////                return true;
+//                return sv.executeKeyEvent(keyEvent);
+                return true;
             }
         });
         return true;

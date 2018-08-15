@@ -4015,8 +4015,16 @@
                 <category android:name="android.intent.category.SAMPLE_CODE" />
             </intent-filter>
         </activity>
-        <activity android:name="com.fengyun.app.GifPlayActivity"
-                   android:label="Fenyun/Views/Gif Play">
+        <activity
+            android:name="com.fengyun.app.GifPlayActivity"
+            android:label="Fenyun/Views/Gif Play">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.SAMPLE_CODE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ringtone.RingtoneActivity"
+                   android:label="Ringtone/Ringtone Play">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.SAMPLE_CODE" />

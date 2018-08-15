@@ -63,10 +63,10 @@ public abstract class SurfaceGameView extends SurfaceView implements SurfaceHold
 //        }
     }
 
-    @Override
-    protected void onFocusLost() {
-        super.onFocusLost();
-    }
+//    @Override
+//    protected void onFocusLost() {
+//        super.onFocusLost();
+//    }
 
     @Override
     protected void onFocusChanged(boolean gainFocus, int direction, @Nullable Rect previouslyFocusedRect) {

@@ -1,6 +1,5 @@
 package android.view;
 
-import android.annotation.Nullable;
 
 /**
  * Created by fengyun on 2017/9/30.
@@ -39,7 +38,7 @@ public class FView {
         return result;
     }
 
-    public void setOnClickListener(@Nullable OnClickListener l) {
+    public void setOnClickListener( OnClickListener l) {
         getListenerInfo().mOnClickListener = l;
     }
 
